@@ -69,29 +69,3 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
  * Note: Do not add any custom code here. Please use a custom plugin so that your customizations aren't lost during updates.
  * https://github.com/woocommerce/theme-customisations
  */
-// control order status if vnpay succes pay
-add_action( 'woocommerce_thankyou', 'bbloomer_thankyou_change_order_status' );
-function bbloomer_thankyou_change_order_status( $order_id ){
-   if( ! $order_id ) return;
-   $order = wc_get_order( $order_id );
-	 $is_payment = $order->get_payment_method();
-	 if($is_payment == 'vnpay'){
-			$order->update_status( 'wc-completed' );
-	 	}
-	 else{
-		$order->update_status( 'wc-processing' );
-	 }
-}
-// !control order status if vnpay succes pay
-
-#Disable Self Pingbacks in WordPress Using Plugins
-function no_self_ping( &$links ) {
-	$home = get_option( 'home' );
-	foreach ( $links as $l => $link )
-			if ( 0 === strpos( $link, $home ) )
-					unset($links[$l]);
-}
-
-add_action( 'pre_ping', 'no_self_ping' );
-add_filter('xmlrpc_enabled', '__return_false');
-#!Disable Self Pingbacks in WordPress Using Plugins

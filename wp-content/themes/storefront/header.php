@@ -16,6 +16,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+<?php do_action( 'wp_language_switcher' ); ?>
 </head>
 
 <body <?php body_class(); ?>>
