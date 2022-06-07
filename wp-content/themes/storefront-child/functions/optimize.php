@@ -113,7 +113,8 @@ add_filter( 'wpcf7_load_css', '__return_false' );
 function remove_dashboard_widgets() {
 	global $wp_meta_boxes;
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['normal-sortables']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
