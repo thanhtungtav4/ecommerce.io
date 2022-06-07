@@ -1,0 +1,6 @@
+2022-06-07T09:23:43+00:00 CRITICAL require_once(): Failed opening required 'D:\xampp\htdocs\ecommerce/wp-content/themes/storefront-childoptimize.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions.php on line 2
+
+2022-06-07T09:23:58+00:00 CRITICAL require_once(): Failed opening required 'D:\xampp\htdocs\ecommerce/wp-content/themes/storefront-childfunctions/optimize.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions.php on line 2
+
+2022-06-07T09:23:58+00:00 CRITICAL require_once(): Failed opening required 'D:\xampp\htdocs\ecommerce/wp-content/themes/storefront-childfunctions/optimize.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions.php on line 2
+
