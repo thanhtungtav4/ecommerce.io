@@ -121,6 +121,7 @@ function remove_dashboard_widgets() {
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+	unset($wp_meta_boxes['dashboard']['normal']);
 }
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
 // ! Disable Unnecessary Dashboard Widgets
