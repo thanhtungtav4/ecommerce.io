@@ -3,6 +3,7 @@ require_once( get_stylesheet_directory() . '/functions/optimize.php' );
 require_once( get_stylesheet_directory() . '/functions/taxonomy.php' );
 require_once( get_stylesheet_directory() . '/functions/acf.php' );
 require_once( get_stylesheet_directory() . '/functions/woo.php' );
+require_once( get_stylesheet_directory() . '/functions/auth.php' );
 
 // control order status if vnpay succes pay
 add_action( 'woocommerce_thankyou', 'bbloomer_thankyou_change_order_status' );
