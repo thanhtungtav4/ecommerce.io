@@ -40,7 +40,6 @@ const settings: BlockConfiguration = {
 		color: {
 			link: true,
 		},
-		lock: false,
 	},
 	attributes: {
 		isPreview: {

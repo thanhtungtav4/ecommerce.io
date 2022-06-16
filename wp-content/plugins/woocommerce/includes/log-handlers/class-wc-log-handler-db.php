@@ -78,11 +78,7 @@ class WC_Log_Handler_DB extends WC_Log_Handler {
 		);
 
 		if ( ! empty( $context ) ) {
-			try {
-				$insert['context'] = serialize( $context ); // @codingStandardsIgnoreLine.
-			} catch ( Exception $e ) {
-				$insert['context'] = serialize( 'There was an error while serializing the context: ' . $e->getMessage() );
-			}
+			$insert['context'] = serialize( $context ); // @codingStandardsIgnoreLine.
 		}
 
 		return false !== $wpdb->insert( "{$wpdb->prefix}woocommerce_log", $insert, $format );

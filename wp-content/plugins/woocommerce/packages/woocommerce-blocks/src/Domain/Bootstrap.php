@@ -12,8 +12,6 @@ use Automattic\WooCommerce\Blocks\Domain\Services\FeatureGating;
 use Automattic\WooCommerce\Blocks\Domain\Services\GoogleAnalytics;
 use Automattic\WooCommerce\Blocks\InboxNotifications;
 use Automattic\WooCommerce\Blocks\Installer;
-use Automattic\WooCommerce\Blocks\Templates\ProductSearchResultsTemplate;
-use Automattic\WooCommerce\Blocks\Templates\ClassicTemplatesCompatibility;
 use Automattic\WooCommerce\Blocks\Payments\Api as PaymentsApi;
 use Automattic\WooCommerce\Blocks\Payments\Integrations\BankTransfer;
 use Automattic\WooCommerce\Blocks\Payments\Integrations\CashOnDelivery;
@@ -97,8 +95,6 @@ class Bootstrap {
 		$this->container->get( GoogleAnalytics::class );
 		$this->container->get( BlockTypesController::class );
 		$this->container->get( BlockTemplatesController::class );
-		$this->container->get( ProductSearchResultsTemplate::class );
-		$this->container->get( ClassicTemplatesCompatibility::class );
 		if ( $this->package->feature()->is_feature_plugin_build() ) {
 			$this->container->get( PaymentsApi::class );
 		}
@@ -223,19 +219,6 @@ class Bootstrap {
 			BlockTemplatesController::class,
 			function () {
 				return new BlockTemplatesController();
-			}
-		);
-		$this->container->register(
-			ProductSearchResultsTemplate::class,
-			function () {
-				return new ProductSearchResultsTemplate();
-			}
-		);
-		$this->container->register(
-			ClassicTemplatesCompatibility::class,
-			function ( Container $container ) {
-				$asset_data_registry = $container->get( AssetDataRegistry::class );
-				return new ClassicTemplatesCompatibility( $asset_data_registry );
 			}
 		);
 		$this->container->register(

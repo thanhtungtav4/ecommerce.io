@@ -127,16 +127,10 @@ const DropdownSelector = ( {
 							const option = options.find(
 								( o ) => o.value === value
 							);
-
-							if ( ! option ) {
-								return null;
-							}
-
 							const onRemoveItem = ( val ) => {
 								onChange( val );
 								inputRef.current.focus();
 							};
-
 							return multiple ? (
 								<DropdownSelectorSelectedChip
 									key={ value }

@@ -223,10 +223,7 @@ class WC_Helper {
 
 				$action['message']     .= ' ' . __( 'To enable this update you need to <strong>purchase</strong> a new subscription.', 'woocommerce' );
 				$action['button_label'] = __( 'Purchase', 'woocommerce' );
-				$action['button_url']   = self::add_utm_params_to_url_for_subscription_link(
-					$subscription['product_url'],
-					'purchase'
-				);
+				$action['button_url']   = $subscription['product_url'];
 
 				$subscription['actions'][] = $action;
 			} elseif ( $subscription['expired'] && ! empty( $subscription['master_user_email'] ) ) {
@@ -241,10 +238,7 @@ class WC_Helper {
 				$action = array(
 					'message'      => sprintf( __( 'This subscription has expired. Please <strong>renew</strong> to receive updates and support.', 'woocommerce' ) ),
 					'button_label' => __( 'Renew', 'woocommerce' ),
-					'button_url'   => self::add_utm_params_to_url_for_subscription_link(
-						'https://woocommerce.com/my-account/my-subscriptions/',
-						'renew'
-					),
+					'button_url'   => 'https://woocommerce.com/my-account/my-subscriptions/',
 					'status'       => 'expired',
 					'icon'         => 'dashicons-info',
 				);
@@ -256,10 +250,7 @@ class WC_Helper {
 				$action = array(
 					'message'      => __( 'Subscription is <strong>expiring</strong> soon.', 'woocommerce' ),
 					'button_label' => __( 'Enable auto-renew', 'woocommerce' ),
-					'button_url'   => self::add_utm_params_to_url_for_subscription_link(
-						'https://woocommerce.com/my-account/my-subscriptions/',
-						'auto-renew'
-					),
+					'button_url'   => 'https://woocommerce.com/my-account/my-subscriptions/',
 					'status'       => 'expired',
 					'icon'         => 'dashicons-info',
 				);
@@ -270,10 +261,7 @@ class WC_Helper {
 				$action = array(
 					'message'      => sprintf( __( 'This subscription is expiring soon. Please <strong>renew</strong> to continue receiving updates and support.', 'woocommerce' ) ),
 					'button_label' => __( 'Renew', 'woocommerce' ),
-					'button_url'   => self::add_utm_params_to_url_for_subscription_link(
-						'https://woocommerce.com/my-account/my-subscriptions/',
-						'renew'
-					),
+					'button_url'   => 'https://woocommerce.com/my-account/my-subscriptions/',
 					'status'       => 'expired',
 					'icon'         => 'dashicons-info',
 				);
@@ -321,10 +309,7 @@ class WC_Helper {
 					/* translators: %s: version number */
 					'message'      => sprintf( __( 'Version %s is <strong>available</strong>. To enable this update you need to <strong>purchase</strong> a new subscription.', 'woocommerce' ), esc_html( $updates[ $data['_product_id'] ]['version'] ) ),
 					'button_label' => __( 'Purchase', 'woocommerce' ),
-					'button_url'   => self::add_utm_params_to_url_for_subscription_link(
-						$data['_product_url'],
-						'purchase'
-					),
+					'button_url'   => $data['_product_url'],
 					'status'       => 'expired',
 					'icon'         => 'dashicons-info',
 				);
@@ -335,10 +320,7 @@ class WC_Helper {
 					/* translators: 1: subscriptions docs 2: subscriptions docs */
 					'message'      => sprintf( __( 'To receive updates and support for this extension, you need to <strong>purchase</strong> a new subscription or consolidate your extensions to one connected account by <strong><a href="%1$s" title="Sharing Docs">sharing</a> or <a href="%2$s" title="Transferring Docs">transferring</a></strong> this extension to this connected account.', 'woocommerce' ), 'https://docs.woocommerce.com/document/managing-woocommerce-com-subscriptions/#section-10', 'https://docs.woocommerce.com/document/managing-woocommerce-com-subscriptions/#section-5' ),
 					'button_label' => __( 'Purchase', 'woocommerce' ),
-					'button_url'   => self::add_utm_params_to_url_for_subscription_link(
-						$data['_product_url'],
-						'purchase'
-					),
+					'button_url'   => $data['_product_url'],
 					'status'       => 'expired',
 					'icon'         => 'dashicons-info',
 				);
@@ -366,28 +348,6 @@ class WC_Helper {
 		// We have an active connection.
 		include self::get_view_filename( 'html-main.php' );
 		return;
-	}
-
-	/**
-	 * Add tracking parameters to buttons (Renew, Purchase, etc.) on subscriptions page
-	 *
-	 * @param string $url URL to product page or to https://woocommerce.com/my-account/my-subscriptions/
-	 * @param string $utm_content value of utm_content query parameter used for tracking
-	 *
-	 * @return string URL including utm parameters for tracking
-	 */
-	public static function add_utm_params_to_url_for_subscription_link( $url, $utm_content ) {
-		$utm_params = 'utm_source=subscriptionsscreen&' .
-					  'utm_medium=product&' .
-					  'utm_campaign=wcaddons&' .
-					  'utm_content=' . $utm_content;
-
-		// there are already some URL parameters
-		if ( strpos( $url, '?' ) ) {
-			return $url . '&' . $utm_params;
-		}
-
-		return $url . '?' . $utm_params;
 	}
 
 	/**

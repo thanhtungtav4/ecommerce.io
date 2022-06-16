@@ -9,8 +9,7 @@
 		"html": false,
 		"multiple": false,
 		"reusable": false,
-		"inserter": false,
-		"lock": false
+		"inserter": false
 	},
 	"attributes": {
 		"lock": {

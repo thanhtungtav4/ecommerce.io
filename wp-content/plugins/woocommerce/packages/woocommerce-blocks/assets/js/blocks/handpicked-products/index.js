@@ -70,7 +70,6 @@ registerBlockType( 'woocommerce/handpicked-products', {
 		contentVisibility: {
 			type: 'object',
 			default: {
-				image: true,
 				title: true,
 				price: true,
 				rating: true,

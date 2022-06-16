@@ -71,7 +71,6 @@ registerBlockType( 'woocommerce/product-tag', {
 		contentVisibility: {
 			type: 'object',
 			default: {
-				image: true,
 				title: true,
 				price: true,
 				rating: true,

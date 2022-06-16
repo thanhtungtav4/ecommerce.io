@@ -16,7 +16,7 @@ return array(
 	),
 	'title'                 => array(
 		'title'       => __( 'Title', 'woocommerce' ),
-		'type'        => 'safe_text',
+		'type'        => 'text',
 		'description' => __( 'This controls the title which the user sees during checkout.', 'woocommerce' ),
 		'default'     => __( 'PayPal', 'woocommerce' ),
 		'desc_tip'    => true,

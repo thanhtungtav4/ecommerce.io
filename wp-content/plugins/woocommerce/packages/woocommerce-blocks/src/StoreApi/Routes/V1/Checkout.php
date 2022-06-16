@@ -438,7 +438,6 @@ class Checkout extends AbstractCartRoute {
 			'woocommerce_blocks_checkout_update_order_from_request',
 			array(
 				$this->order,
-				$request,
 			),
 			'7.2.0',
 			'woocommerce_store_api_checkout_update_order_from_request',

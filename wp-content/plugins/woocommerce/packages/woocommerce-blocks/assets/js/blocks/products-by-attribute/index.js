@@ -78,7 +78,6 @@ registerBlockType( blockTypeName, {
 		contentVisibility: {
 			type: 'object',
 			default: {
-				image: true,
 				title: true,
 				price: true,
 				rating: true,

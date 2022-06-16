@@ -15,7 +15,6 @@ use Automattic\WooCommerce\Internal\ProductAttributesLookup\DataRegenerator;
 use Automattic\WooCommerce\Internal\ProductAttributesLookup\LookupDataStore;
 use Automattic\WooCommerce\Internal\ProductDownloads\ApprovedDirectories\Register as ProductDownloadDirectories;
 use Automattic\WooCommerce\Internal\RestockRefundedItemsAdjuster;
-use Automattic\WooCommerce\Internal\Settings\OptionSanitizer;
 use Automattic\WooCommerce\Proxies\LegacyProxy;
 
 /**
@@ -30,7 +29,7 @@ final class WooCommerce {
 	 *
 	 * @var string
 	 */
-	public $version = '6.6.0';
+	public $version = '6.5.1';
 
 	/**
 	 * WooCommerce Schema version.
@@ -221,7 +220,6 @@ final class WooCommerce {
 		wc_get_container()->get( LookupDataStore::class );
 		wc_get_container()->get( RestockRefundedItemsAdjuster::class );
 		wc_get_container()->get( CustomOrdersTableController::class );
-		wc_get_container()->get( OptionSanitizer::class );
 	}
 
 	/**

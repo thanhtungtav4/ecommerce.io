@@ -29,20 +29,6 @@ jest.mock( '@woocommerce/base-context/hooks', () => {
 	};
 } );
 
-jest.mock( '@woocommerce/settings', () => {
-	return {
-		...jest.requireActual( '@woocommerce/settings' ),
-		getSettingWithCoercion: jest
-			.fn()
-			.mockImplementation( ( key, defaultValue ) => {
-				if ( key === 'has_filterable_products' ) {
-					return true;
-				}
-				return defaultValue;
-			} ),
-	};
-} );
-
 const StockFilterBlock = ( props ) => <Block { ...props } />;
 describe( 'Testing stock filter', () => {
 	beforeEach( () => {

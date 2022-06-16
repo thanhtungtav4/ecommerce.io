@@ -58,7 +58,6 @@ export default {
 	contentVisibility: {
 		type: 'object',
 		default: {
-			image: true,
 			title: true,
 			price: true,
 			rating: true,

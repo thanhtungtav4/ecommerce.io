@@ -6,7 +6,6 @@ import { previewCategories } from '@woocommerce/resource-previews';
 
 export const example = {
 	attributes: {
-		alt: '',
 		contentAlign: 'center',
 		dimRatio: 50,
 		editMode: false,
