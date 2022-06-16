@@ -85,7 +85,7 @@ remove_action( 'wp_head', 'wlwmanifest_link' ) ;
 // !Remove WLManifest Link
 
 // To limit  post revisions
-	define('WP_POST_REVISIONS', 2);
+	//define('WP_POST_REVISIONS', 2);
 // !To limit  post revisions
 
 // Disable Heartbeat
