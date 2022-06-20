@@ -350,18 +350,20 @@
                   </div>
                 </div>
               </li>
-              <li class="lang c-menu_dropdown"><a class="icon_inner" href="#">
+              <li class="lang c-menu_dropdown">
+                <a class="icon_inner" href="#">
+                  <?php if(apply_filters('wpml_current_language', null) == 'vi') : ?>
                   <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect y="0.5" width="29" height="29" rx="14.5" fill="#EA403F"></rect>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 18.4463L10.0916 21.746L11.7182 16.3241L7.36708 12.9415L12.7807 12.8903L14.5 7.5L16.2193 12.8903L21.6329 12.9415L17.2818 16.3241L18.9084 21.746L14.5 18.4463Z" fill="#FFFE4E"></path>
-                  </svg></a>
+                  </svg>
+                  <?php endif; ?>
+                </a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <ol>
                       <li><strong>Thay Đổi Ngôn Ngữ</strong></li>
-                      <li class="is_active"><a href="http://">Tiếng Việt - Vi</a></li>
-                      <li><a href="http://">Tiếng Anh - Eng</a></li>
-                      <li><a href="http://">Filipano - Fi</a></li>
+                      <?php do_action('wpml_add_language_selector'); ?>
                     </ol>
                   </div>
                 </div>
