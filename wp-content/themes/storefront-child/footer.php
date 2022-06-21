@@ -35,7 +35,7 @@
             <dd><strong>Hotline:&nbsp;</strong><a href="tel:1900636304">1900 63 63 04</a></dd>
           </dl>
           <dl>
-            <dt>HỖ TRỢ KHÁCH HÀNG
+            <dt><?php echo __( 'HỖ TRỢ KHÁCH HÀNG', '' ) ?>
               <dl>
                 <dd><a href="#">Chính sách bảo hành</a></dd>
                 <dd><a href="#">Chính sách đổi trả</a></dd>
