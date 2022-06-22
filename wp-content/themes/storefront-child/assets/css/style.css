@@ -425,7 +425,7 @@ body.js-active {
             left: 0; }
         .c-header_icon > li.lang .c-menu_sub ol li:hover a::before {
           background-image: url(../../assets/images/radiobutton.svg); }
-        .c-header_icon > li.lang .c-menu_sub ol li.is_active a::before {
+        .c-header_icon > li.lang .c-menu_sub ol li.wpml-ls-current-language a::before {
           background-image: url(../../assets/images/radiobutton.svg); }
   .c-header_bottom {
     display: flex;

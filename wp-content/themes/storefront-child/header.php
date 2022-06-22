@@ -288,12 +288,23 @@
               <li class="cart c-menu_dropdown"><a class="icon_inner" href="#">
                   <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M26.6821 17.9563C26.1863 18.8605 25.2238 19.4584 24.13 19.4584H13.2654L11.6613 22.3751H29.1613V25.2917H11.6613C9.44459 25.2917 8.04459 22.9147 9.10917 20.9605L11.0779 17.4022L5.82792 6.33341H2.91125V3.41675H7.68001L9.05084 6.33341H30.6342C31.7425 6.33341 32.4425 7.52925 31.9029 8.49175L26.6821 17.9563ZM28.155 9.25008H10.4363L13.8925 16.5417H24.13L28.155 9.25008ZM11.6613 26.7501C10.0571 26.7501 8.75917 28.0626 8.75917 29.6667C8.75917 31.2709 10.0571 32.5834 11.6613 32.5834C13.2654 32.5834 14.5779 31.2709 14.5779 29.6667C14.5779 28.0626 13.2654 26.7501 11.6613 26.7501ZM23.3425 29.6667C23.3425 28.0626 24.6404 26.7501 26.2446 26.7501C27.8488 26.7501 29.1613 28.0626 29.1613 29.6667C29.1613 31.2709 27.8488 32.5834 26.2446 32.5834C24.6404 32.5834 23.3425 31.2709 23.3425 29.6667Z"></path>
-                  </svg><span>2</span></a>
+                  </svg>
+                    <?php
+                    if (function_exists( 'WC' ) ) {
+                      if(WC()->cart->cart_contents_count >= 1){
+                        echo '<span class="m-cart_num" id="m-cart_num">';
+                        echo (WC()->cart->cart_contents_count);
+                        echo '</span>';
+                      }
+                    }
+                    ?>
+                  </a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <ul class="cart_inner">
-                      <li>
-												<a class="cart_img" href="#">
+                      <?php woocommerce_mini_cart(); ?>
+                      <!-- <li>
+												<a class="cart_img" href="<?php echo WC()->cart->get_cart_url(); ?>">
 												<img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" alt="Logo" loading="lazy" width="80" height="80"></a>
                         <div class="cart_content">
                           <div class="cart_content_top"><a href="#"><strong>LAVIER BROWN</strong>
@@ -306,8 +317,11 @@
                             <p>400.000VND</p>
                           </div>
                         </div>
-                      </li>
-                      <li><a class="cart_img" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" alt="Logo" loading="lazy" width="80" height="80"></a>
+                      </li> -->
+                      <!-- <li>
+                        <a class="cart_img" href="#">
+                        <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" alt="Logo" loading="lazy" width="80" height="80">
+                        </a>
                         <div class="cart_content">
                           <div class="cart_content_top"><a href="#"><strong>LAVIER BROWN</strong>
                               <p>8h/ngày | 3 tháng</p>
@@ -319,7 +333,7 @@
                             <p>400.000VND</p>
                           </div>
                         </div>
-                      </li>
+                      </li> -->
                     </ul>
                   </div>
                 </div>
@@ -331,7 +345,7 @@
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <form action="/" method="get">
-                      <input type="text" name="s" id="search" placeholder="Search"><i class="gg-search"></i>
+                      <input type="text" name="s" value="<?php the_search_query(); ?>"  id="search"  placeholder="Search"><i class="gg-search"></i>
                     </form>
                   </div>
                 </div>
@@ -357,6 +371,8 @@
                     <rect y="0.5" width="29" height="29" rx="14.5" fill="#EA403F"></rect>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 18.4463L10.0916 21.746L11.7182 16.3241L7.36708 12.9415L12.7807 12.8903L14.5 7.5L16.2193 12.8903L21.6329 12.9415L17.2818 16.3241L18.9084 21.746L14.5 18.4463Z" fill="#FFFE4E"></path>
                   </svg>
+                  <?php elseif(apply_filters('wpml_current_language', null) == 'en') : ?>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" xmlns:v="https://vecta.io/nano"><path d="M30 15c0 8.285-6.715 15-15 15S0 23.285 0 15 6.715 0 15 0s15 6.715 15 15zm0 0" fill="rgb(94.117647%,94.117647%,94.117647%)"/><g fill="rgb(0%,32.156863%,70.588235%)"><path d="M3.102 5.867a14.99 14.99 0 0 0-2.586 5.219H8.32zm26.382 5.219a14.99 14.99 0 0 0-2.586-5.219l-5.219 5.219zM.516 18.914a14.99 14.99 0 0 0 2.586 5.219l5.219-5.219zM24.133 3.102A14.99 14.99 0 0 0 18.914.516V8.32zM5.867 26.898a14.99 14.99 0 0 0 5.219 2.586V21.68zm0 0"/><path d="M11.086.516a14.99 14.99 0 0 0-5.219 2.586l5.219 5.219zm7.828 28.968a14.99 14.99 0 0 0 5.219-2.586l-5.219-5.219zm2.766-10.57l5.219 5.219a14.99 14.99 0 0 0 2.586-5.219zm0 0"/></g><g fill="rgb(84.705882%,0%,15.294118%)"><path d="M29.871 13.043H16.957V.129A14.7 14.7 0 0 0 15 0a14.7 14.7 0 0 0-1.957.129v12.914H.129A14.7 14.7 0 0 0 0 15a14.7 14.7 0 0 0 .129 1.957h12.914v12.914A14.7 14.7 0 0 0 15 30a14.7 14.7 0 0 0 1.957-.129V16.957h12.914A14.7 14.7 0 0 0 30 15a14.7 14.7 0 0 0-.129-1.957zm-10.957 5.871l6.691 6.691.883-.961-5.73-5.73zm-7.828 0l-6.691 6.691.961.883 5.73-5.73zm0-7.828L4.395 4.395l-.883.961 5.73 5.73zm0 0"/><path d="M18.914 11.086l6.691-6.691-.961-.883-5.73 5.73zm0 0"/></g></svg>
                   <?php endif; ?>
                 </a>
                 <div class="c-menu_sub">
