@@ -301,7 +301,7 @@
                   </a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
-                    <ul class="cart_inner">
+                    <div  class="cart_inner widget_shopping_cart_content">
                       <?php woocommerce_mini_cart(); ?>
                       <!-- <li>
 												<a class="cart_img" href="<?php echo WC()->cart->get_cart_url(); ?>">
@@ -334,7 +334,7 @@
                           </div>
                         </div>
                       </li> -->
-                    </ul>
+                    </div>
                   </div>
                 </div>
               </li>
