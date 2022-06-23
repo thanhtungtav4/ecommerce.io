@@ -18,7 +18,7 @@
                 </picture></a>
               <dd class="c-footer_copy">© Copyright 2022 CARAS LENS. All rights reserved.</dd>
             </dd>
-            <dt class="c-footer_fw">THEO DÕI TẠI
+            <dt class="c-footer_fw"><?php _e('THEO DÕI TẠI', 'storefront') ?>
               <dl class="c-footer_social c-footer_certificates">
                 <dd><img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" width="39" height="39"></dd>
                 <dd><img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png" width="39" height="39"></dd>

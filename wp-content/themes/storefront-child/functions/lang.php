@@ -1,7 +1,9 @@
 <?php
   function storefront_child_theme_setup() {
-    load_child_theme_textdomain( 'storefront', get_stylesheet_directory() . '/languages' );
-    load_theme_textdomain( 'storefront_child', get_stylesheet_directory() . '/languages');
+    load_theme_textdomain( 'Storefront', get_stylesheet_directory() . '/languages');
+    load_child_theme_textdomain( 'Storefront', get_stylesheet_directory() . '/languages');
+    var_dump(load_theme_textdomain( 'Storefront', get_stylesheet_directory() . '/languages'));
+    var_dump(load_child_theme_textdomain( 'Storefront', get_stylesheet_directory() . '/languages'));
   }
   add_action( 'after_setup_theme', 'storefront_child_theme_setup' );
 
