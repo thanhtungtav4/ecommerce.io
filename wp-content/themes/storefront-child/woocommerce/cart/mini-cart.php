@@ -44,14 +44,12 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
                           <div class="cart_content_top"><a href="#"><strong>LAVIER BROWN</strong>
                               <p>8h/ngày | 3 tháng</p>
                               <p>Độ cận: 0.5</p></a>
-                            <div class="btn_area">
+                            <div class="btn_area1">
 							<?php
 								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									'woocommerce_cart_item_remove_link',
 									sprintf(
-										'<a href="%s" class="btn_area__del remove1 remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" clip-rule="evenodd" d="M1.15515 1.35552L2.04144 0.469238L15.5306 13.9584L14.6443 14.8447L12.8592 13.0595C12.6329 13.3801 12.262 13.5875 11.8409 13.5875C11.1494 13.5875 10.59 13.0218 10.59 12.3304C10.59 11.9092 10.7974 11.5384 11.1117 11.3121L10.2443 10.4447H5.55515C4.86372 10.4447 4.29801 9.87895 4.29801 9.18752C4.29801 8.96752 4.35458 8.7601 4.45515 8.5841L5.30372 7.0441L3.91458 4.11495L1.15515 1.35552ZM6.24658 7.93038L5.55515 9.18752H8.98715L7.73001 7.93038H6.24658ZM13.7266 2.27324H5.63058L6.88772 3.53038H12.6643L10.9294 6.67324H10.0243L11.2437 7.89267C11.5832 7.80467 11.866 7.58467 12.0294 7.28295L14.2797 3.20352C14.5123 2.78867 14.2043 2.27324 13.7266 2.27324ZM4.30429 12.3304C4.30429 11.639 4.86372 11.0732 5.55515 11.0732C6.24658 11.0732 6.81229 11.639 6.81229 12.3304C6.81229 13.0218 6.24658 13.5875 5.55515 13.5875C4.86372 13.5875 4.30429 13.0218 4.30429 12.3304Z" fill="white"/>
-									</svg></a>',
+										'<a href="%s" class="remove1 remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><svg width="35" height="35" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="35" height="35" rx="5" fill="#EB6A6A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.518 7.81 8.81 6.519 28.482 26.19l-1.292 1.292-2.604-2.603c-.33.467-.87.77-1.485.77a1.83 1.83 0 0 1-1.063-3.318l-1.265-1.265h-6.838a1.839 1.839 0 0 1-1.834-1.834c0-.32.083-.623.23-.88l1.237-2.246-2.026-4.271L7.518 7.81zm7.425 9.589-1.008 1.833h5.005L17.106 17.4h-2.163zm10.908-8.25H14.045l1.833 1.833h8.424l-2.53 4.584h-1.32l1.778 1.778c.495-.128.908-.45 1.146-.89l3.282-5.948c.34-.605-.11-1.357-.807-1.357zm-13.74 14.667c0-1.009.815-1.834 1.824-1.834 1.008 0 1.833.825 1.833 1.834a1.839 1.839 0 0 1-1.833 1.833 1.83 1.83 0 0 1-1.825-1.833z" fill="#fff"/></svg></a>',
 										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 										esc_attr__( 'Remove this item', 'woocommerce' ),
 										esc_attr( $product_id ),
@@ -61,7 +59,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 									$cart_item_key
 								);
 								?>
-								
+
 							</div>
                           </div>
                           <div class="cart_content_bottom">
