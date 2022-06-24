@@ -2,10 +2,10 @@
 /**
  * Loads the child theme textdomain.
  */
-function wpdocs_child_theme_setup() {
-  load_child_theme_textdomain( 'storefront', get_stylesheet_directory() . '/languages' );
-}
-add_action( 'after_setup_theme', 'wpdocs_child_theme_setup' );
+// function wpdocs_child_theme_setup() {
+//   load_child_theme_textdomain( 'storefront', get_stylesheet_directory() . '/languages' );
+// }
+// add_action( 'after_setup_theme', 'wpdocs_child_theme_setup' );
 
 // !control order status if vnpay succes pay
 //WPML - Add a floating language switcher

@@ -314,7 +314,7 @@
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <form action="/" method="get">
-                      <input type="text" name="s" value="<?php the_search_query(); ?>"  id="search"  placeholder="Search"><i class="gg-search"></i>
+                      <input type="text" name="s" value="<?php the_search_query(); ?>"  id="search"  placeholder="<?php _e('Search', 'storefront') ?>"><i class="gg-search"></i>
                     </form>
                   </div>
                 </div>
@@ -326,9 +326,9 @@
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <ol>
-                      <li><a href="http://"><strong>Đăng Nhập</strong></a></li>
-                      <li><a href="http://"><strong>Đăng Ký</strong></a></li>
-                      <li><a href="http://"><strong>Tra Cứu Đơn Hàng</strong></a></li>
+                      <li><a href="http://"><strong><?php _e('Login', 'storefront') ?></strong></a></li>
+                      <li><a href="http://"><strong><?php _e('Create an account', 'storefront') ?></strong></a></li>
+                      <li><a href="http://"><strong><?php _e('Tracking order', 'storefront') ?></strong></a></li>
                     </ol>
                   </div>
                 </div>
@@ -347,7 +347,7 @@
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <ol>
-                      <li><strong>Thay Đổi Ngôn Ngữ</strong></li>
+                      <li><strong><?php _e('Change Language', 'storefront') ?></strong></li>
                       <?php do_action('wpml_add_language_selector'); ?>
                     </ol>
                   </div>

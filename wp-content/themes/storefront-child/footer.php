@@ -18,7 +18,7 @@
                 </picture></a>
               <dd class="c-footer_copy">© Copyright 2022 CARAS LENS. All rights reserved.</dd>
             </dd>
-            <dt class="c-footer_fw"><?php _e('THEO DÕI TẠI', 'storefront') ?>
+            <dt class="c-footer_fw"><?php _e('FOLLOW AT', 'storefront') ?>
               <dl class="c-footer_social c-footer_certificates">
                 <dd><img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" width="39" height="39"></dd>
                 <dd><img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png" width="39" height="39"></dd>
@@ -27,11 +27,11 @@
             </dt>
           </dl>
           <dl>
-            <dt>CÔNG TY TNHH CARAS LENS</dt>
-            <dd><strong>GĐKKD:&nbsp;</strong>0314882698 do Sở Kế hoạch và Đầu tư TP.HCM cấp ngày 07/02/2018.</dd>
+            <dt><?php _e('CARAS LENS CO., LTD', 'storefront') ?></dt>
+            <dd><strong><?php _e('Business registration certificate:', 'storefront') ?>&nbsp;</strong><?php _e('0314882698 issued by the Department of Planning and Investment of Ho Chi Minh City. HCM on Feb 07th, 2018.', 'storefront') ?></dd>
             <dd><strong>Email:&nbsp;</strong><a href="mailto:support@caraslens.vn">support@caraslens.vn</a></dd>
-            <dd><strong>Giấy phép nhập khẩu chính ngạch số 17830NK/BYT-TB-CT của Bộ Y tế</strong></dd>
-            <dd><strong>Giấy phép nhập khẩu Kính áp tròng/ Trang thiết bị y tế:</strong>20210259-ADJVINA/170000008/PCBPL-BYT</dd>
+            <dd><strong><?php _e('Import license No. 17830NK/BYT-TB-CT granted by the Ministry of Health', 'storefront') ?></strong></dd>
+            <dd><strong><?php _e('Issue of Contact Lens/Medical Equipment Import Permit:', 'storefront') ?></strong>20210259-ADJVINA/170000008/PCBPL-BYT</dd>
             <dd><strong>Hotline:&nbsp;</strong><a href="tel:1900636304">1900 63 63 04</a></dd>
           </dl>
           <dl>
@@ -65,7 +65,7 @@
             </dt>
           </dl>
           <dl>
-            <dt>CHƯƠNG TRÌNH CARAS AFFILIATE
+            <dt><?php _e('CARAS AFFILIATE PROGRAM', 'storefront') ?>
               <dl>
                 <dd><a href="#">Affiliate program</a></dd>
               </dl>
