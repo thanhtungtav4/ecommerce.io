@@ -303,37 +303,6 @@
                   <div class="c-menu_subinner">
                     <div  class="cart_inner widget_shopping_cart_content">
                       <?php woocommerce_mini_cart(); ?>
-                      <!-- <li>
-												<a class="cart_img" href="<?php echo WC()->cart->get_cart_url(); ?>">
-												<img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" alt="Logo" loading="lazy" width="80" height="80"></a>
-                        <div class="cart_content">
-                          <div class="cart_content_top"><a href="#"><strong>LAVIER BROWN</strong>
-                              <p>8h/ngày | 3 tháng</p>
-                              <p>Độ cận: 0.5</p></a>
-                            <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
-                          </div>
-                          <div class="cart_content_bottom">
-                            <p>x 1</p>
-                            <p>400.000VND</p>
-                          </div>
-                        </div>
-                      </li> -->
-                      <!-- <li>
-                        <a class="cart_img" href="#">
-                        <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" alt="Logo" loading="lazy" width="80" height="80">
-                        </a>
-                        <div class="cart_content">
-                          <div class="cart_content_top"><a href="#"><strong>LAVIER BROWN</strong>
-                              <p>8h/ngày | 3 tháng</p>
-                              <p>Độ cận: 0.5</p></a>
-                            <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
-                          </div>
-                          <div class="cart_content_bottom">
-                            <p>x 1</p>
-                            <p>400.000VND</p>
-                          </div>
-                        </div>
-                      </li> -->
                     </div>
                   </div>
                 </div>

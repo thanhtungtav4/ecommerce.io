@@ -1,11 +1,11 @@
 <?php
-  function storefront_child_theme_setup() {
-    load_theme_textdomain( 'Storefront', get_stylesheet_directory() . '/languages');
-    load_child_theme_textdomain( 'Storefront', get_stylesheet_directory() . '/languages');
-    var_dump(load_theme_textdomain( 'Storefront', get_stylesheet_directory() . '/languages'));
-    var_dump(load_child_theme_textdomain( 'Storefront', get_stylesheet_directory() . '/languages'));
-  }
-  add_action( 'after_setup_theme', 'storefront_child_theme_setup' );
+/**
+ * Loads the child theme textdomain.
+ */
+function wpdocs_child_theme_setup() {
+  load_child_theme_textdomain( 'storefront', get_stylesheet_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'wpdocs_child_theme_setup' );
 
 // !control order status if vnpay succes pay
 //WPML - Add a floating language switcher

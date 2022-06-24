@@ -33,7 +33,7 @@
 	<?php do_action( 'storefront_after_footer' ); ?>
 
 </div><!-- #page -->
-<?php echo __( 'tungnt', 'storefront' ) ?>
+
 <?php wp_footer(); ?>
 
 </body>

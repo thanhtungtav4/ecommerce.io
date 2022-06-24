@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: node-wp-i18n 1.2.6\n"
 
-#: 404.php:19
-msgid "THEO DÕI TẠI"
+#: wp-content\themes\storefront-child\footer.php:38
+msgid "CUSTOMER SUPPORT"
 msgstr ""
 

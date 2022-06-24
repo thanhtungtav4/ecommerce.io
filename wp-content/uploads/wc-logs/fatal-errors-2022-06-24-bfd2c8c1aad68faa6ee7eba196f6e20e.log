@@ -1,0 +1,36 @@
+2022-06-24T07:47:45+00:00 CRITICAL Uncaught Error: Call to undefined function e_() in D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\footer.php:38
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\template.php(770): require_once()
+#1 D:\Ampps\www\ecommerce.io\wp-includes\template.php(716): load_template()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\general-template.php(92): locate_template()
+#3 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\front-page.php(1235): get_footer()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\template-loader.php(106): include('D:\\Ampps\\www\\ec...')
+#5 D:\Ampps\www\ecommerce.io\wp-blog-header.php(19): require_once('D:\\Ampps\\www\\ec...')
+#6 D:\Ampps\www\ecommerce.io\index.php(17): require('D:\\Ampps\\www\\ec...')
+#7 {main}
+  thrown in D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\footer.php on line 38
+
+2022-06-24T07:57:08+00:00 CRITICAL Uncaught Error: Call to undefined function e_() in D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\footer.php:38
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\template.php(770): require_once()
+#1 D:\Ampps\www\ecommerce.io\wp-includes\template.php(716): load_template()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\general-template.php(92): locate_template()
+#3 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\front-page.php(1235): get_footer()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\template-loader.php(106): include('D:\\Ampps\\www\\ec...')
+#5 D:\Ampps\www\ecommerce.io\wp-blog-header.php(19): require_once('D:\\Ampps\\www\\ec...')
+#6 D:\Ampps\www\ecommerce.io\index.php(17): require('D:\\Ampps\\www\\ec...')
+#7 {main}
+  thrown in D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\footer.php on line 38
+
+2022-06-24T08:25:31+00:00 CRITICAL Uncaught Error: Call to undefined function e_() in D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\footer.php:38
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\template.php(770): require_once()
+#1 D:\Ampps\www\ecommerce.io\wp-includes\template.php(716): load_template()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\general-template.php(92): locate_template()
+#3 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront\page.php(41): get_footer()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\template-loader.php(106): include('D:\\Ampps\\www\\ec...')
+#5 D:\Ampps\www\ecommerce.io\wp-blog-header.php(19): require_once('D:\\Ampps\\www\\ec...')
+#6 D:\Ampps\www\ecommerce.io\index.php(17): require('D:\\Ampps\\www\\ec...')
+#7 {main}
+  thrown in D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\footer.php on line 38
+
