@@ -37,11 +37,11 @@
           <dl>
             <dt><?php _e('CUSTOMER SUPPORT', 'storefront') ?>
               <dl>
-                <dd><a href="#">Chính sách bảo hành</a></dd>
-                <dd><a href="#">Chính sách đổi trả</a></dd>
-                <dd><a href="#">Chính sách giao nhận</a></dd>
-                <dd><a href="#">Hướng dẫn mua hàng</a></dd>
-                <dd><a href="#">Hỏi Đáp</a></dd>
+                <dd><a href="#"><?php _e('Warranty Policy', 'storefront') ?></a></dd>
+                <dd><a href="#"><?php _e('Return Policy', 'storefront') ?></a></dd>
+                <dd><a href="#"><?php _e('Delivery policy', 'storefront') ?></a></dd>
+                <dd><a href="#"><?php _e('Shopping guide', 'storefront') ?></a></dd>
+                <dd><a href="#"><?php _e('FAQs', 'storefront') ?></a></dd>
               </dl>
             </dt>
             <dt>MEDICAL CERTIFICATES

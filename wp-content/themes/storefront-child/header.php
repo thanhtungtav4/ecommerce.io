@@ -37,7 +37,7 @@
         </div>
         <div class="c-header_bottom">
           <div class="l-container c-header_inner">
-            <div class="c-header_logo"><a href="/">
+            <div class="c-header_logo"><a href="<?php apply_filters( 'wpml_permalink', get_home_url(), ICL_LANGUAGE_CODE); ?>">
                 <picture>
                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.webp" type="image/webp">
 									<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.png" alt="logo">

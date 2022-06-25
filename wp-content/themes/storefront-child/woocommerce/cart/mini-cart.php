@@ -49,7 +49,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									'woocommerce_cart_item_remove_link',
 									sprintf(
-										'<a href="%s" class="remove1 remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><svg width="35" height="35" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="35" height="35" rx="5" fill="#EB6A6A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.518 7.81 8.81 6.519 28.482 26.19l-1.292 1.292-2.604-2.603c-.33.467-.87.77-1.485.77a1.83 1.83 0 0 1-1.063-3.318l-1.265-1.265h-6.838a1.839 1.839 0 0 1-1.834-1.834c0-.32.083-.623.23-.88l1.237-2.246-2.026-4.271L7.518 7.81zm7.425 9.589-1.008 1.833h5.005L17.106 17.4h-2.163zm10.908-8.25H14.045l1.833 1.833h8.424l-2.53 4.584h-1.32l1.778 1.778c.495-.128.908-.45 1.146-.89l3.282-5.948c.34-.605-.11-1.357-.807-1.357zm-13.74 14.667c0-1.009.815-1.834 1.824-1.834 1.008 0 1.833.825 1.833 1.834a1.839 1.839 0 0 1-1.833 1.833 1.83 1.83 0 0 1-1.825-1.833z" fill="#fff"/></svg></a>',
+										'<a href="%s"  title="Remove product from cart" class="remove1 remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><svg width="35" height="35" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="35" height="35" rx="5" fill="#EB6A6A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.518 7.81 8.81 6.519 28.482 26.19l-1.292 1.292-2.604-2.603c-.33.467-.87.77-1.485.77a1.83 1.83 0 0 1-1.063-3.318l-1.265-1.265h-6.838a1.839 1.839 0 0 1-1.834-1.834c0-.32.083-.623.23-.88l1.237-2.246-2.026-4.271L7.518 7.81zm7.425 9.589-1.008 1.833h5.005L17.106 17.4h-2.163zm10.908-8.25H14.045l1.833 1.833h8.424l-2.53 4.584h-1.32l1.778 1.778c.495-.128.908-.45 1.146-.89l3.282-5.948c.34-.605-.11-1.357-.807-1.357zm-13.74 14.667c0-1.009.815-1.834 1.824-1.834 1.008 0 1.833.825 1.833 1.834a1.839 1.839 0 0 1-1.833 1.833 1.83 1.83 0 0 1-1.825-1.833z" fill="#fff"/></svg></a>',
 										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 										esc_attr__( 'Remove this item', 'woocommerce' ),
 										esc_attr( $product_id ),
@@ -95,7 +95,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <?php else : ?>
 
-	<p class="woocommerce-mini-cart__empty-message"><?php esc_html_e( 'No products in the cart.', 'woocommerce' ); ?></p>
+	<p class="woocommerce-mini-cart__empty-message"><?php _e( 'No products in the cart.', 'storefront' ); ?></p>
 
 <?php endif; ?>
 

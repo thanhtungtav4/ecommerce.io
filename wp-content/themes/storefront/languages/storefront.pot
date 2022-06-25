@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Storefront 4.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/storefront\n"
-"POT-Creation-Date: 2022-06-24 22:05+0700\n"
+"POT-Creation-Date: 2022-06-25 10:44+0700\n"
 "PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: 404.php:25 inc/woocommerce/storefront-woocommerce-template-functions.php:716
 msgid "Search"
-msgstr ""
+msgstr "Tìm Kiếm"
 
 #: 404.php:39
 msgid "Promoted Products"
@@ -900,3 +900,21 @@ msgstr "Giấy phép nhập khẩu chính ngạch số 17830NK/BYT-TB-CT của B
 
 msgid "Issue of Contact Lens/Medical Equipment Import Permit:"
 msgstr "Giấy phép nhập khẩu Kính áp tròng/ Trang thiết bị y tế:"
+
+msgid "Warranty Policy"
+msgstr "Chính sách bảo hành"
+
+msgid "Return Policy"
+msgstr "Chính sách đổi trả"
+
+msgid "Delivery policy"
+msgstr "Chính sách giao nhận"
+
+msgid "Shopping guide"
+msgstr "Hướng dẫn mua hàng"
+
+msgid "FAQs"
+msgstr "Hỏi Đáp"
+
+msgid "No products in the cart."
+msgstr "Không có sản phẩm nào trong giỏ hàng."
