@@ -5,7 +5,7 @@ namespace WCML\MultiCurrency\ExchangeRateServices;
 /**
  * Class ExchangeRatesApi
  */
-class ExchangeRatesApi extends Service {
+class ExchangeRatesApi extends ApiLayerService {
 
 	/**
 	 * @return string
@@ -31,15 +31,14 @@ class ExchangeRatesApi extends Service {
 	/**
 	 * @return string
 	 */
-	public function getApiUrl() {
-		return 'http://api.exchangeratesapi.io/v1/latest?access_key=%1$s&base=%2$s&symbols=%3$s';
+	protected function getApiLayerUrl() {
+		return 'https://api.apilayer.com/exchangerates_data/latest?base=%2$s&symbols=%3$s&amount=1';
 	}
 
 	/**
-	 * @return bool
+	 * @return string
 	 */
-	public function isKeyRequired() {
-		return true;
+	protected function getApiLegacyUrl() {
+		return 'http://api.exchangeratesapi.io/v1/latest?access_key=%1$s&base=%2$s&symbols=%3$s';
 	}
-
 }

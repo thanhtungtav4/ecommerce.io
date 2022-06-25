@@ -68,9 +68,10 @@ class WCML_Cart_Sync_Warnings {
 		$documentation_link = esc_url( WCML_Tracking_Link::getWcmlClearCartDoc() );
 
 		$reset_cart_strings[] = esc_html_x( 'Because of some elements in your site configuration, when the users switch the currency or the language on the front end, the cart content might not be synchronized correctly.', 'Reset cart option warning 1', 'woocommerce-multilingual' );
+		/* translators: %s is link to "reset cart configuration" */
 		$reset_cart_strings[] = esc_html_x( 'It is recommended that you %s with the option to reset the cart in a situation like this.', 'Reset cart option warning 2', 'woocommerce-multilingual' );
 
-		$reset_cart_configure_link = '<strong><a href="' . $admin_settings_url . '">' . esc_html__( 'configure WooCommerce Multilingual', 'woocommerce-multilingual' ) . '</a></strong>';
+		$reset_cart_configure_link = '<strong><a href="' . $admin_settings_url . '">' . esc_html__( 'configure WooCommerce Multilingual & Multicurrency', 'woocommerce-multilingual' ) . '</a></strong>';
 
 		$reset_cart_message  = $reset_cart_strings[0];
 		$reset_cart_message .= '</p>';

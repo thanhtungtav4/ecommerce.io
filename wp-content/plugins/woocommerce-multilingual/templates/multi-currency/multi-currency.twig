@@ -47,7 +47,7 @@
             <li>
                 <input type="checkbox" name="display_custom_prices" id="display_custom_prices"
                    value="1" {% if form.custom_prices_select.checked %} checked="checked"{% endif %}>
-                <label for="display_custom_prices">{{ form.custom_prices_select.label }}</label>
+                <label for="display_custom_prices">{{ form.custom_prices_select.label|raw }}</label>
                 <i class="otgs-ico-help wcml-tip" data-tip="{{ form.custom_prices_select.tip }}"></i>
             </li>
         </ul>

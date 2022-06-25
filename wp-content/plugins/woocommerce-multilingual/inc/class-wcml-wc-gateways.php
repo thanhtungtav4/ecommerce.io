@@ -1,7 +1,11 @@
 <?php
 
+use WCML\StandAlone\NullSitePress;
+use WCML\Utilities\WcAdminPages;
 use WPML\Collect\Support\Collection;
+use WPML\Core\ISitePress;
 use WPML\FP\Fns;
+use function WCML\functions\isStandAlone;
 
 class WCML_WC_Gateways {
 
@@ -11,16 +15,14 @@ class WCML_WC_Gateways {
 
 	/** @var woocommerce_wpml */
 	private $woocommerce_wpml;
-	/** @var  Sitepress */
+	/** @var Sitepress|NullSitePress */
 	private $sitepress;
 
 	/**
-	 * WCML_WC_Gateways constructor.
-	 *
-	 * @param woocommerce_wpml $woocommerce_wpml
-	 * @param SitePress        $sitepress
+	 * @param woocommerce_wpml        $woocommerce_wpml
+	 * @param Sitepress|NullSitePress $sitepress
 	 */
-	public function __construct( woocommerce_wpml $woocommerce_wpml, SitePress $sitepress ) {
+	public function __construct( woocommerce_wpml $woocommerce_wpml, ISitePress $sitepress ) {
 		$this->sitepress        = $sitepress;
 		$this->woocommerce_wpml = $woocommerce_wpml;
 
@@ -31,22 +33,30 @@ class WCML_WC_Gateways {
 	}
 
 	public function add_hooks() {
-		add_action( 'init', [ $this, 'on_init_hooks' ], 11 );
-		add_filter( 'woocommerce_payment_gateways', Fns::withoutRecursion( Fns::identity(), [ $this, 'loaded_woocommerce_payment_gateways' ] ) );
+		if ( isStandAlone() ) {
+			if ( WcAdminPages::isPaymentSettings() ) {
+				add_action( 'init', [ $this, 'load_bacs_gateway_currency_selector_hooks' ], 11 );
+			}
+		} else {
+			add_action( 'init', [ $this, 'on_init_hooks' ], 11 );
+			add_filter( 'woocommerce_payment_gateways', Fns::withoutRecursion( Fns::identity(), [ $this, 'loaded_woocommerce_payment_gateways' ] ) );
+		}
 	}
 
 	public function on_init_hooks() {
-		global $pagenow;
-
 		add_filter( 'woocommerce_gateway_title', [ $this, 'translate_gateway_title' ], 10, 2 );
 		add_filter( 'woocommerce_gateway_description', [ $this, 'translate_gateway_description' ], 10, 2 );
 
-		if ( is_admin() && 'admin.php' === $pagenow && isset( $_GET['page'] ) && 'wc-settings' === $_GET['page'] && isset( $_GET['tab'] ) && 'checkout' === $_GET['tab'] ) {
+		if ( WcAdminPages::isPaymentSettings() ) {
 			add_action( 'admin_footer', [ $this, 'show_language_links_for_gateways' ] );
-			if ( isset( $_GET['section'] ) && 'bacs' === $_GET['section'] && wcml_is_multi_currency_on() ) {
-				$this->set_bacs_gateway_currency();
-				add_action( 'admin_footer', [ $this, 'append_currency_selector_to_bacs_account_settings' ] );
-			}
+			$this->load_bacs_gateway_currency_selector_hooks();
+		}
+	}
+
+	public function load_bacs_gateway_currency_selector_hooks() {
+		if ( WcAdminPages::isSection( WcAdminPages::SECTION_BACS ) && wcml_is_multi_currency_on() ) {
+			$this->set_bacs_gateway_currency();
+			add_action( 'admin_footer', [ $this, 'append_currency_selector_to_bacs_account_settings' ] );
 		}
 	}
 
@@ -54,7 +64,15 @@ class WCML_WC_Gateways {
 
 		foreach ( $load_gateways as $key => $gateway ) {
 
-			$load_gateway = is_string( $gateway ) ? new $gateway() : $gateway;
+			$load_gateway = $gateway;
+
+			if ( is_string( $gateway ) ) {
+				if ( class_exists( $gateway ) ) {
+					$load_gateway = new $gateway();
+				} else {
+					continue;
+				}
+			}
 
 			$this->register_gateway_settings_strings( $load_gateway->id, $load_gateway->settings );
 			$this->payment_gateways_filters( $load_gateway );

@@ -2,7 +2,9 @@
 
 namespace WCML\MultiCurrency;
 
-class GeolocationFrontendHooks implements \IWPML_Frontend_Action {
+use WCML\StandAlone\IStandAloneAction;
+
+class GeolocationFrontendHooks implements \IWPML_Frontend_Action, IStandAloneAction {
 
 	const KEY_CLIENT_COUNTRY = 'wcml_client_country';
 

@@ -4,7 +4,7 @@
  * Handles data being passed between different domains using WPML xDomain logic
  * https://wpml.org/?page_id=693147
  */
-class WCML_xDomain_Data {
+class WCML_xDomain_Data implements \IWPML_Backend_Action, \IWPML_Frontend_Action, \IWPML_DIC_Action {
 
 	/**
 	 * @var WPML_Cookie

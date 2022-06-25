@@ -4,7 +4,7 @@ namespace WCML\Block\Convert;
 
 use IWPML_DIC_Action;
 use IWPML_Frontend_Action;
-use SitePress;
+use WPML\Core\ISitePress;
 use WCML\Rest\Frontend\Language;
 use WPML\FP\Just;
 use WPML\FP\Str;
@@ -17,7 +17,7 @@ class Hooks implements IWPML_Frontend_Action, IWPML_DIC_Action {
 	/** @var Language $frontendRestLang */
 	private $frontendRestLang;
 
-	public function __construct( SitePress $sitepress, Language $frontendRestLang ) {
+	public function __construct( ISitePress $sitepress, Language $frontendRestLang ) {
 		$this->sitepress        = $sitepress;
 		$this->frontendRestLang = $frontendRestLang;
 	}

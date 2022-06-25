@@ -13,7 +13,7 @@ class WCML_Switch_Lang_Request {
 	/** @var Sitepress */
 	private $sitepress;
 
-	public function __construct( WPML_Cookie $cookie, WPML_WP_API $wp_api, Sitepress $sitepress ) {
+	public function __construct( WPML_Cookie $cookie, WPML_WP_API $wp_api, \WPML\Core\ISitePress $sitepress ) {
 
 		if ( ! is_admin() ) {
 			$this->cookie           = $cookie;

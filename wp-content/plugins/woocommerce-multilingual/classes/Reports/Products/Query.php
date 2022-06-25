@@ -15,6 +15,8 @@ class Query implements \IWPML_REST_Action {
 		if ( Functions::isAnalyticsRestRequest() ) {
 			add_filter( 'woocommerce_analytics_products_select_query', [ $this, 'joinProductTranslations' ] );
 			add_filter( 'woocommerce_analytics_products_select_query', [ $this, 'translateProductTitles' ] );
+			add_filter( 'woocommerce_analytics_variations_select_query', [ $this, 'joinProductTranslations' ] );
+			add_filter( 'woocommerce_analytics_variations_select_query', [ $this, 'translateProductTitles' ] );
 		}
 	}
 
@@ -177,10 +179,12 @@ class Query implements \IWPML_REST_Action {
 					if ( $product ) {
 						$row['extended_info']['name'] = $product->get_title();
 					}
-					$row['extended_info']['category_ids'] = wpml_collect( $row['extended_info']['category_ids'] )
-						->map( function( $id ) {
-							return apply_filters( 'wpml_object_id', $id, 'product_cat', true );
-						} )->toArray();
+					if ( isset( $row['extended_info']['category_ids'] ) ) {
+						$row['extended_info']['category_ids'] = wpml_collect( $row['extended_info']['category_ids'] )
+							->map( function( $id ) {
+								return apply_filters( 'wpml_object_id', $id, 'product_cat', true );
+							} )->toArray();
+					}
 				}
 				return $row;
 			} )->toArray();

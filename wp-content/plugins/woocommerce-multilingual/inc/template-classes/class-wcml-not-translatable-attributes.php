@@ -29,7 +29,7 @@ class WCML_Not_Translatable_Attributes extends WCML_Templates_Factory {
 			'edit_mode' => $this->attr_id ? true : false,
 			'strings'   => [
 				'label'       => __( 'Translatable?', 'woocommerce-multilingual' ),
-				'description' => __( 'Enable this if you want to translate attribute values with Woocommerce Multilingual', 'woocommerce-multilingual' ),
+				'description' => __( 'Enable this if you want to translate attribute values with WooCommerce Multilingual & Multicurrency', 'woocommerce-multilingual' ),
 				'notice'      => __( 'Existing translations and variations associated will be deleted.', 'woocommerce-multilingual' ),
 			],
 		];

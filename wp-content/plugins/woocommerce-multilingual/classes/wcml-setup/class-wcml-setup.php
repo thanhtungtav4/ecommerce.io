@@ -28,7 +28,7 @@ class WCML_Setup {
 	 * @param woocommerce_wpml    $woocommerce_wpml
 	 * @param SitePress           $sitepress
 	 */
-	public function __construct( WCML_Setup_UI $ui, WCML_Setup_Handlers $handlers, woocommerce_wpml $woocommerce_wpml, SitePress $sitepress ) {
+	public function __construct( WCML_Setup_UI $ui, WCML_Setup_Handlers $handlers, woocommerce_wpml $woocommerce_wpml, \WPML\Core\ISitePress $sitepress ) {
 
 		$this->ui               = $ui;
 		$this->handlers         = $handlers;
@@ -153,7 +153,7 @@ class WCML_Setup {
 
 		$this->step = isset( $_GET['step'] ) ? sanitize_key( $_GET['step'] ) : current( array_keys( $this->steps ) );
 
-		wp_enqueue_style( 'otgs-ico', ICL_PLUGIN_URL . '/res/css/otgs-ico.css', null, ICL_SITEPRESS_VERSION );
+		wp_enqueue_style( 'otgs-ico', \WCML\functions\assetLink( '/res/css/otgs-ico.css' ), null, ICL_SITEPRESS_VERSION );
 		wp_enqueue_style(
 			'wcml-setup',
 			WCML_PLUGIN_URL . '/res/css/wcml-setup.css',
@@ -204,7 +204,7 @@ class WCML_Setup {
 			}
 
 			if ( ! current_user_can( 'manage_options' ) ) {
-				wp_die( esc_html__( "Cheatin' huh?", 'woocommerce' ) );
+				wp_die( esc_html__( "Cheatin' huh?", 'woocommerce-multilingual' ) );
 			}
 
 			$this->complete_setup();

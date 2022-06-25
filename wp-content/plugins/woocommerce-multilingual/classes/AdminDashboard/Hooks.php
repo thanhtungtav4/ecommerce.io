@@ -2,7 +2,7 @@
 
 namespace WCML\AdminDashboard;
 
-use SitePress;
+use WPML\Core\ISitePress;
 use wpdb;
 use IWPML_DIC_Action;
 use IWPML_Backend_Action;
@@ -15,7 +15,7 @@ class Hooks implements IWPML_Backend_Action, IWPML_DIC_Action {
 	/** @var wpdb $wpdb */
 	private $wpdb;
 
-	public function __construct( SitePress $sitepress, wpdb $wpdb ) {
+	public function __construct( ISitePress $sitepress, wpdb $wpdb ) {
 		$this->sitepress = $sitepress;
 		$this->wpdb      = $wpdb;
 	}

@@ -2,14 +2,15 @@
 
 namespace WCML\AdminNotices;
 
+use WCML\StandAlone\IStandAloneAction;
 use WPML_Notices;
 use IWPML_Backend_Action;
 use IWPML_Frontend_Action;
 use IWPML_DIC_Action;
 use wpdb;
-use SitePress;
+use WPML\Core\ISitePress;
 
-class Review implements IWPML_Backend_Action, IWPML_Frontend_Action, IWPML_DIC_Action {
+class Review implements IWPML_Backend_Action, IWPML_Frontend_Action, IWPML_DIC_Action, IStandAloneAction {
 
 	const OPTION_NAME = 'wcml-rate-notice';
 
@@ -29,7 +30,7 @@ class Review implements IWPML_Backend_Action, IWPML_Frontend_Action, IWPML_DIC_A
 	 * @param wpdb $wpdb
 	 * @param SitePress $sitepress
 	 */
-	public function __construct( WPML_Notices $wpmlNotices, wpdb $wpdb, SitePress $sitepress ) {
+	public function __construct( WPML_Notices $wpmlNotices, wpdb $wpdb, ISitePress $sitepress ) {
 		$this->wpmlNotices = $wpmlNotices;
 		$this->wpdb        = $wpdb;
 		$this->sitepress   = $sitepress;
@@ -60,7 +61,7 @@ class Review implements IWPML_Backend_Action, IWPML_Frontend_Action, IWPML_DIC_A
 			$notice->set_dismissible( true );
 
 			$reviewLink   = 'https://wordpress.org/support/plugin/woocommerce-multilingual/reviews/?filter=5#new-post';
-			$reviewButton = $this->wpmlNotices->get_new_notice_action( __( 'Review WooCommerce Multilingual', 'woocommerce-multilingual' ), $reviewLink, false, false, true );
+			$reviewButton = $this->wpmlNotices->get_new_notice_action( __( 'Review WooCommerce Multilingual & Multicurrency', 'woocommerce-multilingual' ), $reviewLink, false, false, true );
 			$notice->add_action( $reviewButton );
 
 			$notice->set_restrict_to_screen_ids( RestrictedScreens::get() );
@@ -76,7 +77,7 @@ class Review implements IWPML_Backend_Action, IWPML_Frontend_Action, IWPML_DIC_A
 	 */
 	private function getNoticeText() {
 		$text = '<h2>';
-		$text .= __( 'Congrats! You\'ve just earned some money using WooCommerce Multilingual.', 'woocommerce-multilingual' );
+		$text .= __( 'Congrats! You\'ve just earned some money using WooCommerce Multilingual & Multicurrency.', 'woocommerce-multilingual' );
 		$text .= '</h2>';
 
 		$text .= '<p>';

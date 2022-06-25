@@ -35,16 +35,19 @@ class WCML_Sync_Taxonomy extends WCML_Templates_Factory {
 			'attribute_taxonomies' => isset( $attribute_taxonomies_arr ) && in_array( $this->taxonomy, $attribute_taxonomies_arr ),
 			'display_attr'         => isset( $wcml_settings['sync_variations'] ) && $wcml_settings['sync_variations'] ? '' : 'display: none',
 			'display_tax'          => ( isset( $wcml_settings[ 'sync_' . $this->taxonomy ] ) && $wcml_settings[ 'sync_' . $this->taxonomy ] ) ? '' : 'display: none',
-			'loader_url'           => ICL_PLUGIN_URL . '/res/img/ajax-loader.gif',
+			'loader_url'           => \WCML\functions\assetLink( '/res/img/ajax-loader.gif' ),
 			'vars_to_create'       => isset( $wcml_settings['variations_needed'][ $this->taxonomy ] ) ? $wcml_settings['variations_needed'][ $this->taxonomy ] : false,
 			'tax_name'             => $this->taxonomy_obj->labels->name,
 			'tax_singular_name'    => '<i>' . $this->taxonomy_obj->labels->singular_name . '</i>',
 			'strings'              => [
 				'sync_update'       => __( 'Synchronize attributes and update product variations', 'woocommerce-multilingual' ),
 				'auto_generate'     => __( 'This will automatically generate variations for translated products corresponding to recently translated attributes.', 'woocommerce-multilingual' ),
+				/* translators: %s is a number of product variations */
 				'vars_to_create'    => __( 'Currently, there are %s variations that need to be created.', 'woocommerce-multilingual' ),
+				/* translators: %s is a taxonomy name */
 				'sync_in_cont'      => __( 'Synchronize %s assignment in content', 'woocommerce-multilingual' ),
-				'auto_apply'        => __( 'This action lets you automatically apply the %s taxonomy to your content in different  languages. It will scan the original content and apply the same taxonomy to translated content.', 'woocommerce-multilingual' ),
+				/* translators: %s is a taxonomy name */
+				'auto_apply'        => __( 'This action lets you automatically apply the %s taxonomy to your content in different languages. It will scan the original content and apply the same taxonomy to translated content.', 'woocommerce-multilingual' ),
 				'untranslated_warn' => __( 'You have untranslated terms!', 'woocommerce-multilingual' ),
 			],
 			'nonces'               => [

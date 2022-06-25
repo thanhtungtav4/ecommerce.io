@@ -20,7 +20,7 @@ class WCML_Locale {
 		add_filter( 'locale', [ $this, 'update_product_action_locale_check' ] );
 	}
 
-	public function load_locale() {
+	public static function load_locale() {
 		return load_plugin_textdomain( 'woocommerce-multilingual', false, WCML_PLUGIN_FOLDER . '/locale' );
 	}
 

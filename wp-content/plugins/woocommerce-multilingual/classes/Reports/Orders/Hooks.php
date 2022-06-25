@@ -4,10 +4,8 @@ namespace WCML\Reports\Orders;
 
 use WCML\Utilities\Resources;
 use WCML\Rest\Functions;
-use WPML\FP\Obj;
-use WPML\FP\Fns;
 
-class Hooks implements \IWPML_Action {
+class Hooks implements \IWPML_Backend_Action, \IWPML_REST_Action, \IWPML_DIC_Action {
 
 	/** @var \wpdb $wpdb */
 	private $wpdb;

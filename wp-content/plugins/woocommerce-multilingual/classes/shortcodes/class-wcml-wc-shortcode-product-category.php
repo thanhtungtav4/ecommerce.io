@@ -19,7 +19,7 @@ class WCML_WC_Shortcode_Product_Category {
 	 *
 	 * @param SitePress $sitepress
 	 */
-	public function __construct( SitePress $sitepress ) {
+	public function __construct( \WPML\Core\ISitePress $sitepress ) {
 		$this->sitepress = $sitepress;
 	}
 

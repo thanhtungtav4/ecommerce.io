@@ -22,14 +22,18 @@
 
             <p>
                 <input type="button" id="update-rates-manually" class="button-secondary"
-                       value="{{ exchange_rates.strings.update }}" />
-                <i class="otgs-ico-help wcml-tip" data-tip="{{ exchange_rates.strings.update_tip }}" style="display: none"></i>
+                       value="{{ exchange_rates.strings.update }}"
+                       {% if not exchange_rates.has_actionable_service %}disabled="disabled"{% endif %}
+                />
+                <i class="otgs-ico-help wcml-tip" data-tip="{{ exchange_rates.strings.update_tip }}"
+                   {% if exchange_rates.has_actionable_service %}style="display: none"{% endif %}
+                ></i>
                 <span id="update-rates-spinner" class="spinner" style="float:none;"></span>
                 <input type="hidden" id="update-exchange-rates-nonce" value="{{ exchange_rates.strings.nonce }}"/>
             </p>
 
             <p class="notice inline notice-success" id="exchange-rates-success"
-               style="display:none">{{ exchange_rates.strings.updated_success }}</p>
+               style="{% if not exchange_rates_manually_updated %}display:none{% endif %}">{{ exchange_rates.strings.updated_success }}</p>
             <p class="notice inline notice-error" id="exchange-rates-error" style="display:none"></p>
         </div>
 
@@ -57,7 +61,7 @@
                                        size="40" />
                             {% endif %}
 
-                            <p class="notice inline notice-error" {% if 'fixerio' != id %}style="display:none"{% endif %}>
+                            <p class="notice inline notice-warning" {% if 'fixerio' != id %}style="display:none"{% endif %}>
                                 {{ exchange_rates.strings.fixerio_warning }}
                             </p>
                             <p class="notice inline notice-error" id="service-error-{{ id }}" {% if service.last_error == false %}style="display:none"{% endif %}>

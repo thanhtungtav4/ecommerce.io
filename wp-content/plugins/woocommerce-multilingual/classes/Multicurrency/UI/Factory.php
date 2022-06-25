@@ -2,9 +2,12 @@
 
 namespace WCML\Multicurrency\UI;
 
+use WCML\StandAlone\IStandAloneAction;
+
+use WCML\Utilities\AdminPages;
 use function WPML\Container\make;
 
-class Factory implements \IWPML_Backend_Action_Loader, \IWPML_Deferred_Action_Loader {
+class Factory implements \IWPML_Backend_Action_Loader, \IWPML_Deferred_Action_Loader, IStandAloneAction {
 
 	public function get_load_action() {
 		return 'init';
@@ -17,7 +20,7 @@ class Factory implements \IWPML_Backend_Action_Loader, \IWPML_Deferred_Action_Lo
 		/** @var \woocommerce_wpml $woocommerce_wpml */
 		global $woocommerce_wpml;
 
-		if ( self::isMultiCurrencySettings() ) {
+		if ( AdminPages::isMultiCurrency() && make( \WCML_Dependencies::class )->check() ) {
 			return make(
 				Hooks::class,
 				[
@@ -27,14 +30,5 @@ class Factory implements \IWPML_Backend_Action_Loader, \IWPML_Deferred_Action_Lo
 		}
 
 		return null;
-	}
-
-	/**
-	 * @return bool
-	 */
-	public static function isMultiCurrencySettings() {
-		return isset( $_GET['page'], $_GET['tab'] )
-			&& 'wpml-wcml' === $_GET['page']
-			&& 'multi-currency' === $_GET['tab'];
 	}
 }

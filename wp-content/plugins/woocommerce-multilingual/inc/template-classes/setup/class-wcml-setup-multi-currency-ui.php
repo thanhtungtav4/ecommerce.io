@@ -26,7 +26,7 @@ class WCML_Setup_Multi_Currency_UI extends WCML_Templates_Factory {
 				'step_id'     => 'currency_step',
 				'heading'     => __( 'Enable Multiple Currencies', 'woocommerce-multilingual' ),
 				'description' => __( 'This will allow you to set prices for products in different currencies. The prices can be determined based on a given exchange rate or set explicitly for specific products.', 'woocommerce-multilingual' ),
-				'label_mco'   => __( 'Enable the multi-currency mode', 'woocommerce-multilingual' ),
+				'label_mco'   => __( 'Enable the multicurrency mode', 'woocommerce-multilingual' ),
 				'continue'    => __( 'Continue', 'woocommerce-multilingual' ),
 				'later'       => __( 'Later', 'woocommerce-multilingual' ),
 			],

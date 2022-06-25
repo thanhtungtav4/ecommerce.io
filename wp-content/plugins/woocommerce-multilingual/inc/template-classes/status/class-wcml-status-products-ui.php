@@ -31,11 +31,14 @@ class WCML_Status_Products_UI extends WCML_Templates_Factory {
 			'trnsl_link'            => admin_url( 'admin.php?page=wpml-wcml' ),
 			'strings'               => [
 				'products_missing' => __( 'Products Missing Translations', 'woocommerce-multilingual' ),
+				/* translators: %1$s is a number of products and %2$s is a product name */
 				'miss_trnsl_one'   => __( '%1$d %2$s translation missing.', 'woocommerce-multilingual' ),
+				/* translators: %1$s is a number of products and %2$s is a product name */
 				'miss_trnsl_more'  => __( '%1$d %2$s translations missing.', 'woocommerce-multilingual' ),
 				'transl'           => __( 'Translate Products', 'woocommerce-multilingual' ),
 				'not_to_trnsl'     => __( 'Right now, there are no products needing translation.', 'woocommerce-multilingual' ),
 				'auto_trnsl_prod'  => sprintf(
+						/* translators: %s is a link to Translate Everything mode */
 						esc_html__( '%s is currently translating all your products automatically.', 'woocommerce-multilingual' ),
 						'<a href="' . WCML_Tracking_Link::getWpmlAutoTranslationDoc() . '" class="wpml-external-link" rel="noopener" target="_blank">'
 						. __( 'Translate Everything mode', 'woocommerce-multilingual' )

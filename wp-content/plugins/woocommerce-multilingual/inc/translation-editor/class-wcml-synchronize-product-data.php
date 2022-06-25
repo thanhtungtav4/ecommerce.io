@@ -1,5 +1,7 @@
 <?php
 
+use WPML\FP\Fns;
+
 class WCML_Synchronize_Product_Data {
 
 	const CUSTOM_FIELD_KEY_SEPARATOR = ':::';
@@ -24,7 +26,7 @@ class WCML_Synchronize_Product_Data {
 	 * @param WPML_Post_Translation $post_translations
 	 * @param wpdb                  $wpdb
 	 */
-	public function __construct( woocommerce_wpml $woocommerce_wpml, SitePress $sitepress, WPML_Post_Translation $post_translations, wpdb $wpdb ) {
+	public function __construct( woocommerce_wpml $woocommerce_wpml, \WPML\Core\ISitePress $sitepress, WPML_Post_Translation $post_translations, wpdb $wpdb ) {
 		$this->woocommerce_wpml  = $woocommerce_wpml;
 		$this->sitepress         = $sitepress;
 		$this->post_translations = $post_translations;
@@ -184,6 +186,8 @@ class WCML_Synchronize_Product_Data {
 	}
 
 	public function sync_product_taxonomies( $original_product_id, $tr_product_id, $lang ) {
+		$returnTrue = Fns::always( true );
+		add_filter( 'wpml_disable_term_adjust_id', $returnTrue );
 
 		$taxonomies          = get_object_taxonomies( 'product' );
 		$taxonomy_exceptions = [ 'product_type', 'product_visibility' ];
@@ -233,6 +237,7 @@ class WCML_Synchronize_Product_Data {
 			}
 		}
 
+		remove_filter( 'wpml_disable_term_adjust_id', $returnTrue );
 		add_filter( 'terms_clauses', [ $this->sitepress, 'terms_clauses' ], 10, 3 );
 	}
 

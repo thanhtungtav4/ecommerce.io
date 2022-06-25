@@ -59,7 +59,8 @@ class ShippingClasses {
 	protected static function askToSwitchLanguage( $field, $shippingClass, $classSourceLanguageCode ) {
 		$field[ 'wcml_ask_to_switch_language_' . $shippingClass->term_id ] = [
 			'title' => '',
-			'description' => sprintf( __( 'Your shipping class %s has been created in %s language. Please switch your language if you want to provide shipping costs in different currencies for this class.', 'woocommerce-multilingual' ),
+			/* translators: %1$s is a shipping class name and %2$s is a language code */
+			'description' => sprintf( __( 'Your shipping class %1$s has been created in %2$s language. Please switch your language if you want to provide shipping costs in different currencies for this class.', 'woocommerce-multilingual' ),
 								$shippingClass->name,
 								$classSourceLanguageCode),
 			'type' => 'title'
@@ -69,7 +70,8 @@ class ShippingClasses {
 
 	protected static function addShippingClassField( $field, $shippingClass, $currencyCode ) {
 		$field[ 'class_cost_' . $shippingClass->term_id . '_' . $currencyCode ] = [
-			'title'             => sprintf( __( '"%s" shipping class cost in %s', 'woocommerce-multilingual' ), esc_html( $shippingClass->name ), esc_html( $currencyCode ) ),
+			/* translators: %1$s is a shipping class name and %2$s is a currency code */
+			'title'             => sprintf( __( '"%1$s" shipping class cost in %2$s', 'woocommerce-multilingual' ), esc_html( $shippingClass->name ), esc_html( $currencyCode ) ),
 			'type'              => 'text',
 			'placeholder'       => __( 'N/A', 'woocommerce-multilingual' ),
 			'class' => 'wcml-shipping-cost-currency'
@@ -79,6 +81,7 @@ class ShippingClasses {
 
 	protected static function addNoShippingClassField( $field, $currencyCode ) {
 		$field[ 'no_class_cost_' . $currencyCode ] = [
+			/* translators: %s is a currency code */
 			'title'             => sprintf( __( 'No shipping class cost in %s', 'woocommerce-multilingual' ), esc_html( $currencyCode ) ),
 			'type'              => 'text',
 			'placeholder'       => __( 'N/A', 'woocommerce-multilingual' ),

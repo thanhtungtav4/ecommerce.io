@@ -50,9 +50,11 @@ class WCML_Products_UI extends WCML_Templates_Factory {
 				'private'     => __( 'Private', 'woocommerce-multilingual' ),
 				'pending'     => __( 'Pending', 'woocommerce-multilingual' ),
 				'future'      => __( 'Scheduled', 'woocommerce-multilingual' ),
+				/* translators: %s is a product name */
 				'parent'      => __( 'Parent product: %s', 'woocommerce-multilingual' ),
 				'edit_item'   => __( 'Edit this item', 'woocommerce-multilingual' ),
 				'edit'        => __( 'Edit', 'woocommerce-multilingual' ),
+				/* translators: %s is a product name */
 				'view_link'   => __( 'View "%s"', 'woocommerce-multilingual' ),
 				'view'        => __( 'View', 'woocommerce-multilingual' ),
 				'published'   => __( 'Published', 'woocommerce-multilingual' ),
@@ -109,6 +111,7 @@ class WCML_Products_UI extends WCML_Templates_Factory {
 				'pagination_last'  => $pagination_url . $last,
 				'show'             => ! isset( $_GET['prid'] ) && isset( $last ) && $last > 1 ? true : false,
 				'strings'          => [
+					/* translators: %d is a number of items */
 					'items'    => __( '%d items', 'woocommerce-multilingual' ),
 					'first'    => __( 'Go to the first page', 'woocommerce-multilingual' ),
 					'previous' => __( 'Go to the previous page', 'woocommerce-multilingual' ),

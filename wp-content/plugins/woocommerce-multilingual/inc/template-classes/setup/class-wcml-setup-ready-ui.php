@@ -36,7 +36,9 @@ class WCML_Setup_Ready_UI extends WCML_Templates_Factory {
 			'strings'      => [
 				'step_id'      => 'ready_step',
 				'heading'      => __( 'Setup Complete', 'woocommerce-multilingual' ),
-				'description1' => __( 'Your multilingual shop is almost ready. Next, you should go to the different tabs in %1$sWooCommerce &raquo; WooCommerce Multilingual%2$s admin and do the final setup.', 'woocommerce-multilingual' ),
+				/* translators: %1$s and %2$s are opening and closing HTML strong tags */
+				'description1' => __( 'Your multilingual shop is almost ready. Next, you should go to the different tabs in %1$sWooCommerce &raquo; WooCommerce Multilingual & Multicurrency%2$s admin and do the final setup.', 'woocommerce-multilingual' ),
+				/* translators: %1$s and %2$s are opening and closing HTML strong tags */
 				'description2' => __( "For your convenience, we've marked items that require your attention with a notice icon. You can see a list of everything that you should complete in the %1\$sStatus%2\$s tab.", 'woocommerce-multilingual' ),
 				'continue'     => __( 'Close setup', 'woocommerce-multilingual' ),
 			],

@@ -55,6 +55,7 @@ class WCML_Custom_Prices_UI extends WCML_Templates_Factory {
 				'wcml_custom_prices_strings',
 				[
 					'not_set'        => sprintf(
+						/* translators: %1$s and %2$s are opening and closing HTML link tags */
 						__(
 							'Multi-currency is enabled, but no secondary currencies have been set. %1$sAdd secondary currency%2$s.',
 							'woocommerce-multilingual'

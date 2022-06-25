@@ -10,6 +10,8 @@ class FreeShipping implements ShippingMode {
 		if ( ! is_string( $currencyCode ) ) {
 			$currencyCode = '';
 		}
+
+		/* translators: %s is the currency code */
 		return sprintf( esc_html_x( 'Minimal order amount in %s',
 			'The label for the field with minimal order amount in additional currency. The currency symbol will be added in place of %s specifier.',
 			'woocommerce-multilingual' ), $currencyCode );
@@ -19,6 +21,8 @@ class FreeShipping implements ShippingMode {
 		if ( ! is_string( $currencyCode ) ) {
 			$currencyCode = '';
 		}
+
+		/* translators: %s is the currency code */
 		return sprintf( esc_html_x( 'The minimal order amount if customer choose %s as a purchase currency.',
 			'The description for the field with minimal order amount in additional currency. The currency symbol will be added in place of %s specifier.',
 			'woocommerce-multilingual' ), $currencyCode );

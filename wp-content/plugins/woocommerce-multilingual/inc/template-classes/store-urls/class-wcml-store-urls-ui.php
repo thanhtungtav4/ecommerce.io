@@ -59,13 +59,14 @@ class WCML_Store_URLs_UI extends WCML_Templates_Factory {
 			'strings'         => [
 				'notice'           => __( 'This page allows you to translate all strings that are being used by WooCommerce in building different type of urls. Translating them enables you to have fully localized urls that match the language of the pages.', 'woocommerce-multilingual' ),
 				'notice_defaults'  => sprintf(
+					/* translators: %1$s/%2$s and %3$s/%4$s are opening and closing HTML link tags */
 					__(
-						'You can enter or edit your default values on the %1$sPermalinks settings%2$s page or, for the endpoints, on the WooCommerce %3$sAccount settings%4$s page.',
+						'You can enter or edit your default values on the %1$sPermalinks settings%2$s page or, for the endpoints, on the WooCommerce %3$sAdvanced settings%4$s page.',
 						'woocommerce-multilingual'
 					),
 					'<a href="' . admin_url( 'options-permalink.php' ) . '">',
 					'</a>',
-					'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=account' ) . '">',
+					'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=advanced' ) . '">',
 					'</a>'
 				),
 				'perm_settings'    => '<a href="' . admin_url( 'options-permalink.php' ) . '" >' . __( 'permalinks settings', 'woocommerce-multilingual' ) . '</a>',
@@ -77,7 +78,9 @@ class WCML_Store_URLs_UI extends WCML_Templates_Factory {
 				'category'         => __( 'Product category base', 'woocommerce-multilingual' ),
 				'tag'              => __( 'Product tag base', 'woocommerce-multilingual' ),
 				'attr'             => __( 'Product attribute base', 'woocommerce-multilingual' ),
+				/* translators: %s is a slug */
 				'endpoint'         => __( 'Endpoint: %s', 'woocommerce-multilingual' ),
+				/* translators: %s is a slug */
 				'attribute_slug'   => __( 'Attribute slug: %s', 'woocommerce-multilingual' ),
 			],
 			'nonces'          => [

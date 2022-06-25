@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'b45b351e6b6f7487d819961fef2fda77' => $vendorDir . '/jakeasmith/http_build_url/src/http_build_url.php',
-    'e933291de8e260f0db7e94698c34196f' => $baseDir . '/inc/functions.php',
+    '8795757013aa65eeef54eb9cf7c285d4' => $baseDir . '/inc/functions-pure.php',
 );

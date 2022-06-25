@@ -24,6 +24,14 @@ jQuery( function($){
                     var action = e.detail.action;
                     var currency = e.detail.currency;
                     var currencyData = e.detail.currencyData;
+                    var isAddingFirstSecondaryCurrency = function() {
+                        return wcmlMultiCurrency && wcmlMultiCurrency.activeCurrencies && wcmlMultiCurrency.activeCurrencies.length < 2;
+                    };
+
+                    if (isAddingFirstSecondaryCurrency()) {
+                        $('#wcml_mc_options_submit').click();
+                        return;
+                    }
 
                     if ('add' === action) {
                         $('#wcml_currencies_order').append('<li class="wcml_currencies_order_'+currency.code+' ui-sortable-handle" cur="'+currency.code+'">'+ currencyData.label + ' (' + currencyData.symbol + ')</li>');

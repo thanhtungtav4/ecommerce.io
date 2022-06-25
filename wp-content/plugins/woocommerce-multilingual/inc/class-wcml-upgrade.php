@@ -1,5 +1,10 @@
 <?php
 
+use WCML\MultiCurrency\Settings as McSettings;
+use Automattic\WooCommerce\Internal\ProductAttributesLookup\DataRegenerator;
+use Automattic\WooCommerce\Internal\ProductAttributesLookup\LookupDataStore;
+use WCML\Attributes\LookupTableFactory;
+
 class WCML_Upgrade {
 
 	/** @var array */
@@ -36,6 +41,7 @@ class WCML_Upgrade {
 		'4.10.0',
 		'4.11.0',
 		'4.12.0',
+		'5.0.0',
 	];
 
 	public function __construct() {
@@ -55,7 +61,7 @@ class WCML_Upgrade {
 			$wcml_settings['notifications'][ $n ] =
 				[
 					'show' => 1,
-					'text' => __( 'Looks like you are upgrading from a previous version of WooCommerce Multilingual. Would you like to automatically create translated variations and images?', 'woocommerce-multilingual' ) .
+					'text' => __( 'Looks like you are upgrading from a previous version of WooCommerce Multilingual & Multicurrency. Would you like to automatically create translated variations and images?', 'woocommerce-multilingual' ) .
 								'<br /><strong>' .
 								' <a href="' . admin_url( 'admin.php?page=wpml-wcml&tab=troubleshooting' ) . '">' . __( 'Yes, go to the troubleshooting page', 'woocommerce-multilingual' ) . '</a> |' .
 								' <a href="#" onclick="jQuery.ajax({type:\'POST\',url: ajaxurl,data:\'action=wcml_hide_notice&notice=' . $n . '\',success:function(){jQuery(\'#' . $n . '\').fadeOut()}});return false;">' . __( 'No - dismiss', 'woocommerce-multilingual' ) . '</a>' .
@@ -681,7 +687,7 @@ class WCML_Upgrade {
 			$announcement_link  = '<a href="' . $announcement_url . '" target="_blank">' . __( 'important change about this service', 'woocommerce-multilingual' ) . '</a>';
 			$fixer_api_key_link = '<a href="' . $api_key_url . '" target="_blank">' . __( 'Fixer.io API key', 'woocommerce-multilingual' ) . '</a>';
 			$fixerio_name       = '<strong>Fixer.io</strong>';
-			$mc_settings_link   = '<a href="' . admin_url( 'admin.php?page=wpml-wcml&tab=multi-currency' ) . '">' . __( 'multi-currency settings page', 'woocommerce-multilingual' ) . '</a>';
+			$mc_settings_link   = '<a href="' . admin_url( 'admin.php?page=wpml-wcml&tab=multi-currency' ) . '">' . __( 'multicurrency settings page', 'woocommerce-multilingual' ) . '</a>';
 
 			// translators: 1: Fixer.io, 2: Announcement link.
 			$message = sprintf( __( 'Your site uses %1$s to automatically calculate prices in the secondary currency. There is an %2$s effective June 1st, 2018.', 'woocommerce-multilingual' ), $fixerio_name, $announcement_link );
@@ -834,8 +840,7 @@ class WCML_Upgrade {
 	private function upgrade_4_10_0() {
 		$wcml_settings = get_option( '_wcml_settings' );
 		if ( WCML_MULTI_CURRENCIES_INDEPENDENT === $wcml_settings['enable_multi_currency'] ) {
-			$wcml_settings['currency_mode'] = 'by_language';
-			update_option( '_wcml_settings', $wcml_settings );
+			McSettings::setMode( McSettings::MODE_BY_LANGUAGE );
 		}
 	}
 
@@ -847,6 +852,17 @@ class WCML_Upgrade {
 
 	private function upgrade_4_12_0() {
 		wp_schedule_single_event( time() + 10, 'generate_category_lookup_table' );
+	}
+
+	private function upgrade_5_0_0() {
+		if (
+			LookupTableFactory::hasFeature() &&
+			! wc_get_container()->get( LookupDataStore::class )->regeneration_is_in_progress()
+		) {
+			wc_get_container()->get( DataRegenerator::class )->initiate_regeneration();
+		}
+
+		delete_transient( WCML_Payment_Gateway_PayPal_V2::BEARER_TOKEN_TRANSIENT );
 	}
 
 }

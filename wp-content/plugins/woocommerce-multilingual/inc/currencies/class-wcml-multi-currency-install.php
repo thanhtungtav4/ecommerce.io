@@ -1,5 +1,7 @@
 <?php
 
+use function WCML\functions\getSitePress;
+
 class WCML_Multi_Currency_Install {
 
 	/**
@@ -43,10 +45,8 @@ class WCML_Multi_Currency_Install {
 	 * @param bool|string $new_value The new value of the option.
 	 */
 	public function set_default_currencies_languages( $old_value = false, $new_value = false ) {
-		global $sitepress;
-
 		$settings         = $this->woocommerce_wpml->get_settings();
-		$active_languages = $sitepress->get_active_languages();
+		$active_languages = getSitePress()->get_active_languages();
 		$wc_currency      = $new_value ? $new_value : wcml_get_woocommerce_currency_option();
 
 		if ( $old_value !== $new_value ) {

@@ -2,7 +2,9 @@
 
 namespace WCML\Multicurrency\Shipping;
 
-class ShippingHooksFactory implements \IWPML_Deferred_Action_Loader, \IWPML_Backend_Action_Loader, \IWPML_Frontend_Action_Loader {
+use WCML\StandAlone\IStandAloneAction;
+
+class ShippingHooksFactory implements \IWPML_Deferred_Action_Loader, \IWPML_Backend_Action_Loader, \IWPML_Frontend_Action_Loader, IStandAloneAction {
 
 	public function get_load_action() {
 		return 'init';

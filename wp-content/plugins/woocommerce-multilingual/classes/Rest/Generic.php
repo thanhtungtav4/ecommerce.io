@@ -2,6 +2,8 @@
 
 namespace WCML\Rest;
 
+use WPML\FP\Fns;
+
 class Generic {
 
 	/**
@@ -19,7 +21,7 @@ class Generic {
 	}
 
 	/**
-	 * @param WP_Query $wp_query
+	 * @param \WP_Query $wp_query
 	 */
 	public static function autoAdjustIncludedIds( \WP_Query $wp_query ) {
 		$lang    = $wp_query->get( 'lang' );
@@ -31,6 +33,24 @@ class Generic {
 			}
 			$wp_query->set( 'post__in', $filtered_include );
 		}
+	}
+
+	/**
+	 * We need an unfiltered 'home_url' so that the REST signature matches.
+	 *
+	 * Note that WPML already does this, but fails to recognize a REST
+	 * request when we get a 'relative' home_url.
+	 */
+	public static function removeHomeUrlFilterOnRestAuthentication() {
+		$returnTrue = Fns::always( true );
+
+		add_filter( 'determine_current_user', Fns::tap( function() use ( $returnTrue ) {
+			add_filter( 'wpml_skip_convert_url_string', $returnTrue );
+		} ), 10 );
+
+		add_filter( 'determine_current_user', Fns::tap( function() use ( $returnTrue ) {
+			remove_filter( 'wpml_skip_convert_url_string', $returnTrue );
+		} ), 20 );
 	}
 
 }

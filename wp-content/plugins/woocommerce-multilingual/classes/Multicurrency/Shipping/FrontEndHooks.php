@@ -3,8 +3,9 @@
 namespace WCML\Multicurrency\Shipping;
 
 use IWPML_Action;
+use WCML\StandAlone\IStandAloneAction;
 
-class FrontEndHooks implements IWPML_Action {
+class FrontEndHooks implements IWPML_Action, IStandAloneAction {
 
 	private $multiCurrency;
 

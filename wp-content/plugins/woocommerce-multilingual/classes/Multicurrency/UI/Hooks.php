@@ -2,14 +2,16 @@
 
 namespace WCML\Multicurrency\UI;
 
-use WCML\MultiCurrency\Geolocation;
+use WCML\MultiCurrency\Settings;
+use WCML\StandAlone\IStandAloneAction;
 use WCML\Utilities\Resources;
 use WPML\Collect\Support\Collection;
 use WPML\FP\Fns;
 use WPML\FP\Obj;
+use function WCML\functions\isStandAlone;
 use function WPML\FP\curryN;
 
-class Hooks implements \IWPML_Action {
+class Hooks implements \IWPML_Action, IStandAloneAction {
 
 	const HANDLE = 'wcml-multicurrency-options';
 
@@ -28,7 +30,7 @@ class Hooks implements \IWPML_Action {
 	public function __construct(
 		\WCML_Multi_Currency $multiCurrency,
 		\WCML_Currencies_Payment_Gateways $currenciesPaymentGateways,
-		\SitePress $sitepress,
+		\WPML\Core\ISitePress $sitepress,
 		array $wcmlSettings
 	) {
 		$this->multiCurrency             = $multiCurrency;
@@ -48,15 +50,17 @@ class Hooks implements \IWPML_Action {
 		$enqueue( [
 			'name' => 'wcmlMultiCurrency',
 			'data' => [
-				'endpoint'         => self::HANDLE,
-				'activeCurrencies' => $this->getActiveCurrencies( $gateways ),
-				'allCurrencies'    => $this->getAllCurrencies(),
-				'allCountries'     => $this->getAllCountries(),
-				'languages'        => $this->getLanguages(),
-				'gateways'         => $gateways->toArray(),
-				'strings'          => $this->getStrings(),
-				'mode'             => $this->getMode(),
-				'maxMindKeyExist'  => $this->checkMaxMindKeyExist(),
+				'endpoint'          => self::HANDLE,
+				'activeCurrencies'  => $this->getActiveCurrencies( $gateways ),
+				'allCurrencies'     => $this->getAllCurrencies(),
+				'allCountries'      => $this->getAllCountries(),
+				'languages'         => $this->getLanguages(),
+				'gateways'          => $gateways->toArray(),
+				'strings'           => $this->getStrings(),
+				'mode'              => Settings::getMode(),
+				'maxMindKeyExist'   => $this->checkMaxMindKeyExist(),
+				'isStandalone'      => isStandAlone(),
+				'isAutoRateEnabled' => Settings::isAutomaticRateEnabled(),
 			],
 		] );
 	}
@@ -181,14 +185,18 @@ class Hooks implements \IWPML_Action {
 			'labelKeep'                      => __( 'Keep', 'woocommerce-multilingual' ),
 			'labelDelete'                    => __( 'Delete', 'woocommerce-multilingual' ),
 			'labelCurrenciesToDisplay'       => __( 'Currencies to display for each language', 'woocommerce-multilingual' ),
+			/* translators: %1$s is for language name and %2$s for currency name */
 			'placeholderEnableFor'           => __( 'Enable %1$s for %2$s', 'woocommerce-multilingual' ),
+			/* translators: %1$s is for language name and %2$s for currency name */
 			'placeholderDisableFor'          => __( 'Disable %1$s for %2$s', 'woocommerce-multilingual' ),
 			'labelSettings'                  => __( 'Settings', 'woocommerce-multilingual' ),
 			'labelAddNewCurrency'            => __( 'Add new currency', 'woocommerce-multilingual' ),
+			/* translators: %s for currency label */
 			'placeholderCurrencySettingsFor' => __( 'Currency settings for %s', 'woocommerce-multilingual' ),
 			'labelSelectCurrency'            => __( 'Select currency', 'woocommerce-multilingual' ),
 			'labelExchangeRate'              => __( 'Exchange Rate', 'woocommerce-multilingual' ),
 			'labelOnlyNumeric'               => __( 'Only numeric', 'woocommerce-multilingual' ),
+			/* translators: %s for currency exchange rate value */
 			'placeholderPreviousRate'        => __( '(previous value: %s)', 'woocommerce-multilingual' ),
 			'labelCurrencyPreview'           => __( 'Currency Preview', 'woocommerce-multilingual' ),
 			'labelPosition'                  => __( 'Currency Position', 'woocommerce-multilingual' ),
@@ -206,15 +214,18 @@ class Hooks implements \IWPML_Action {
 			'optionDown'                     => __( 'Down', 'woocommerce-multilingual' ),
 			'optionNearest'                  => __( 'Nearest', 'woocommerce-multilingual' ),
 			'labelIncrement'                 => __( 'Increment for nearest integer', 'woocommerce-multilingual' ),
+			/* translators: %s is an HTML break line */
 			'tooltipIncrement'               => sprintf( __( 'The resulting price will be an increment of this value after initial rounding.%se.g.:', 'woocommerce-multilingual' ), '<br>' ) . '<br />' .
 			                                    __( '1454.07 &raquo; 1454 when set to 1', 'woocommerce-multilingual' ) . '<br />' .
 			                                    __( '1454.07 &raquo; 1450 when set to 10', 'woocommerce-multilingual' ) . '<br />' .
 			                                    __( '1454.07 &raquo; 1500 when set to 100', 'woocommerce-multilingual' ) . '<br />',
+			/* translators: %s is an HTML break line */
 			'tooltipRounding'                => sprintf( __( 'Round the converted price to the closest integer. %se.g. 15.78 becomes 16.00', 'woocommerce-multilingual' ), '<br />' ),
 			'tooltipAutosubtract'            => __( 'The value to be subtracted from the amount obtained previously.', 'woocommerce-multilingual' ) . '<br /><br />' .
 			                                    __( 'For 1454.07, when the increment for the nearest integer is 100 and the auto-subtract amount is 1, the resulting amount is 1499.', 'woocommerce-multilingual' ),
 			'labelAutosubtract'              => __( 'Autosubtract amount', 'woocommerce-multilingual' ),
 			'labelPaymentGateways'           => __( 'Payment Gateways', 'woocommerce-multilingual' ),
+			/* translators: %s is a currency code */
 			'placeholderCustomSettings'      => __( 'Custom settings for %s', 'woocommerce-multilingual' ),
 			'linkUrlLearn'                   => $trackingLink->getWcmlMultiCurrencyDoc( '#payment-gateways-settings' ),
 			'linkLabelLearn'                 => __( 'Learn more', 'woocommerce-multilingual' ),
@@ -227,19 +238,20 @@ class Hooks implements \IWPML_Action {
 			'labelAllCountriesExceptDots'    => __( 'All countries except...', 'woocommerce-multilingual' ),
 			'labelSpecificCountries'         => __( 'Specific countries', 'woocommerce-multilingual' ),
 			'labelModeSelect'                => __( 'Show currencies based on', 'woocommerce-multilingual' ),
-			'labelChooseOption'              => __( 'Choose Option', 'woocommerce-multilingual' ),
+			'labelSiteLanguageTooltip'       => esc_html__( "You need the WPML plugin to make your store multilingual and display currencies based on site language. Don't have it yet?", 'woocommerce-multilingual' ) . '<br />' .
+			                                    '<a href="' . \WCML_Tracking_Link::getWpmlPurchase( true ) . '" class="wpml-external-link" target="_blank">' . esc_html__( 'Purchase WPML now', 'woocommerce-multilingual' ) . '</a>',
 			'labelSiteLanguage'              => __( 'Site Language', 'woocommerce-multilingual' ),
 			'labelClientLocation'            => __( 'Client Location', 'woocommerce-multilingual' ),
 			'labelLocationBased'             => __( 'Location based', 'woocommerce-multilingual' ),
-			'maxMindDescription'             => __( 'WooCommerce uses integration with MaxMind Geolocation in order to determine the correct location for the customer. You need to generate a free MaxMind Geolocation licence key.', 'woocommerce-multilingual' ),
+			'maxMindDescription'             => __( 'WooCommerce integrates with MaxMind Geolocation to reliably determine the location of your customers.', 'woocommerce-multilingual' ),
 			'maxMindSuccess'                 => __( 'Great! Now you can use Geolocation to determine default currency for chosen languages. You can edit that key in ', 'woocommerce-multilingual' ),
 			'maxMindSettingLink'             => admin_url( 'admin.php?page=wc-settings&tab=integration' ),
 			'maxMindSettingLinkText'         => __( 'WooCommerce settings page.', 'woocommerce-multilingual' ),
 			'maxMindLabel'                   => __( 'MaxMind Licence Key', 'woocommerce-multilingual' ),
 			'apply'                          => __( 'Apply', 'woocommerce-multilingual' ),
-			'maxMindDoc'                     => __( 'You can read how to generate one in ', 'woocommerce-multilingual' ),
+			'maxMindNote'                    => __( 'Please note: without a free MaxMind key, your geolocation calls will be limited and your site performance may be impacted.', 'woocommerce-multilingual' ),
 			'maxMindDocLink'                 => 'https://docs.woocommerce.com/document/maxmind-geolocation-integration/',
-			'maxMindDocLinkText'             => __( 'MaxMind Geolocation Integration documentation.', 'woocommerce-multilingual' ),
+			'maxMindDocLinkText'             => __( 'Learn how to generate a free license key', 'woocommerce-multilingual' ),
 		];
 	}
 
@@ -259,13 +271,6 @@ class Hooks implements \IWPML_Action {
 	}
 
 	/**
-	 * @return string
-	 */
-	private function getMode(){
-		return isset( $this->wcmlSettings['currency_mode'] ) ? $this->wcmlSettings['currency_mode'] : '';
-	}
-
-	/**
 	 * @return bool
 	 */
 	private function checkMaxMindKeyExist(){
@@ -282,6 +287,7 @@ class Hooks implements \IWPML_Action {
 	public static function formatLastRateUpdate( $lastRateUpdate ) {
 		return $lastRateUpdate
 			? sprintf(
+				/* translators: %s is a date */
 				__( 'Set on %s', 'woocommerce-multilingual' ),
 				date( 'F j, Y g:i a', strtotime( $lastRateUpdate ) )
 			)

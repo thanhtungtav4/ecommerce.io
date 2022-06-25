@@ -1,5 +1,7 @@
 <?php
 
+use WCML\Utilities\AdminPages;
+
 class WCML_Currency_Switcher_Templates {
 	const CONFIG_FILE = 'config.json';
 	const OPTION_NAME = 'wcml_currency_switcher_template_objects';
@@ -164,9 +166,7 @@ class WCML_Currency_Switcher_Templates {
 	}
 
 	private function init_available_templates() {
-		$is_admin_ui_page = isset( $_GET['page'] ) && 'wpml-wcml' === $_GET['page'] && isset( $_GET['tab'] ) && 'multi-currency' === $_GET['tab'];
-
-		if ( ! $is_admin_ui_page ) {
+		if ( ! AdminPages::isMultiCurrency() ) {
 			$this->templates = $this->get_templates_from_transient();
 		}
 
@@ -443,7 +443,7 @@ class WCML_Currency_Switcher_Templates {
 	}
 
 	public function admin_enqueue_template_resources() {
-		if ( isset( $_GET['page'] ) && 'wpml-wcml' === $_GET['page'] && isset( $_GET['tab'] ) && 'multi-currency' === $_GET['tab'] ) {
+		if ( AdminPages::isMultiCurrency() ) {
 			$this->enqueue_template_resources( $this->templates );
 		}
 	}

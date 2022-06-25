@@ -20,7 +20,7 @@ class WCML_Store_Pages {
 	/** @var WP_Post|null $shop_page */
 	private $shop_page;
 
-	public function __construct( woocommerce_wpml $woocommerce_wpml, SitePress $sitepress ) {
+	public function __construct( woocommerce_wpml $woocommerce_wpml, \WPML\Core\ISitePress $sitepress ) {
 
 		$this->woocommerce_wpml = $woocommerce_wpml;
 		$this->sitepress        = $sitepress;
@@ -33,7 +33,7 @@ class WCML_Store_Pages {
 		add_action( 'init', [ $this, 'init' ] );
 		add_filter( 'woocommerce_create_pages', [ $this, 'switch_pages_language' ], 9 );
 		add_filter( 'woocommerce_create_pages', [ $this, 'install_pages_action' ], 11 );
-		// update wc pages ids after change default language or create new if not exists
+		// update wc pages ids after change default language or create new if not exists.
 		add_action( 'icl_after_set_default_language', [ $this, 'after_set_default_language' ], 10, 2 );
 
 		add_filter( 'template_include', [ $this, 'template_loader' ], 100 );
@@ -66,8 +66,6 @@ class WCML_Store_Pages {
 			add_filter( 'pre_get_posts', [ $this, 'shop_page_query' ], 9 );
 			add_filter( 'icl_ls_languages', [ $this, 'translate_ls_shop_url' ] );
 		}
-
-		add_filter( 'woocommerce_create_page_id', [ $this, 'check_store_page_id' ], 10, 3 );
 
 		$nonce = filter_input( INPUT_POST, 'wcml_nonce', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 		if ( isset( $_POST['create_pages'] ) && wp_verify_nonce( $nonce, 'create_pages' ) ) {
@@ -652,6 +650,7 @@ class WCML_Store_Pages {
 
 				if ( ! $is_translated ) {
 					$text = sprintf(
+						/* translators: %1$s and %2$s are opening and closing HTML link tags */
 						__( 'To quickly translate this and other WooCommerce store pages, please run the %1$ssetup wizard%2$s.', 'woocommerce-multilingual' ),
 						'<a href="' . admin_url( 'admin.php?page=wcml-setup' ) . '">',
 						'</a>'

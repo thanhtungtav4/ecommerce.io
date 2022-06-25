@@ -7,7 +7,7 @@ class Hooks implements \IWPML_Backend_Action, \IWPML_Frontend_Action, \IWPML_DIC
 	/** @var \SitePress $sitepress */
 	private $sitepress;
 
-	public function __construct( \SitePress $sitepress ) {
+	public function __construct( \WPML\Core\ISitePress $sitepress ) {
 		$this->sitepress = $sitepress;
 	}
 

@@ -7,13 +7,9 @@ class WCML_Exchange_Rates_UI extends WCML_Templates_Factory {
 	 */
 	private $woocommerce_wpml;
 	/**
-	 * @var array
+	 * @var \WCML_Exchange_Rates $exchange_rates_services
 	 */
-	private $services;
-	/**
-	 * @var array
-	 */
-	private $settings;
+	private $exchange_rates_services;
 
 	/**
 	 * WCML_Exchange_Rates_UI constructor.
@@ -24,26 +20,16 @@ class WCML_Exchange_Rates_UI extends WCML_Templates_Factory {
 		// @todo Cover by tests, required for wcml-3037.
 		parent::__construct();
 
-		$this->woocommerce_wpml = $woocommerce_wpml;
-		$services               = $this->woocommerce_wpml->multi_currency->exchange_rate_services->get_services();
-		$this->settings         = $this->woocommerce_wpml->multi_currency->exchange_rate_services->get_settings();
-
-		foreach ( $services as $id => $service ) {
-			$this->services[ $id ] = [
-				'name'         => $service->getName(),
-				'url'          => $service->getUrl(),
-				'requires_key' => $service->isKeyRequired(),
-				'api_key'      => $service->getSetting( 'api-key' ),
-				'last_error'   => $service->getLastError(),
-			];
-		}
+		$this->woocommerce_wpml        = $woocommerce_wpml;
+		$this->exchange_rates_services = $this->woocommerce_wpml->multi_currency->exchange_rate_services;
 	}
 
 	public function get_model() {
+		$settings = $this->exchange_rates_services->get_settings();
 
-		$last_updated = empty( $this->settings['last_updated'] ) ?
+		$last_updated = empty( $settings['last_updated'] ) ?
 							'<i>' . __( 'never', 'woocommerce-multilingual' ) . '</i>' :
-							date_i18n( 'F j, Y g:i a', $this->settings['last_updated'] );
+							date_i18n( 'F j, Y g:i a', $settings['last_updated'] );
 
 		$model = [
 			'strings'              => [
@@ -54,6 +40,7 @@ class WCML_Exchange_Rates_UI extends WCML_Templates_Factory {
 				'services_label'   => __( 'Exchange rates source', 'woocommerce-multilingual' ),
 				'lifting_label'    => __( 'Lifting charge', 'woocommerce-multilingual' ),
 				'lifting_details1' => __( 'The lifting charge adjusts the exchange rate provided by the selected service before it is saved. The exchange rates displayed in the table above include the lifting charge.', 'woocommerce-multilingual' ),
+				/* translators: %s is an exchange rates service */
 				'lifting_details2' => __( 'Exchange rate = %s exchange rate x (1 + lifting charge / 100)', 'woocommerce-multilingual' ),
 				'services_api'     => __( 'API key (required)', 'woocommerce-multilingual' ),
 				'frequency'        => __( 'Update frequency', 'woocommerce-multilingual' ),
@@ -70,6 +57,7 @@ class WCML_Exchange_Rates_UI extends WCML_Templates_Factory {
 				'daily_warning'    => __( 'Updating the exchange rates on an hourly basis generates around 744 API calls a month. Please check that your exchange rates source can accommodate this higher usage.', 'woocommerce-multilingual' ),
 				'nonce'            => wp_create_nonce( 'update-exchange-rates' ),
 				'updated_time'     => sprintf(
+					/* translators: %s is a date and time */
 					__( 'Last updated: %s', 'woocommerce-multilingual' ),
 					'<span class="time">' . $last_updated . '</span>'
 				),
@@ -78,14 +66,35 @@ class WCML_Exchange_Rates_UI extends WCML_Templates_Factory {
 
 			],
 
-			'services'             => $this->services,
-			'settings'             => $this->settings,
+			'services'             => $this->get_services_model(),
+			'settings'             => $settings,
 
 			'secondary_currencies' => $this->woocommerce_wpml->multi_currency->get_currencies(),
 
+			'exchange_rates_manually_updated' => (bool) wp_cache_get( WCML_Exchange_Rates::KEY_RATES_UPDATED_FLAG ),
+			'has_actionable_service'          => $this->exchange_rates_services->is_current_service_actionable(),
 		];
 
 		return $model;
+	}
+
+	/**
+	 * @return array
+	 */
+	private function get_services_model() {
+		$services = [];
+
+		foreach ( $this->exchange_rates_services->get_services() as $id => $service ) {
+			$services[ $id ] = [
+				'name'         => $service->getName(),
+				'url'          => $service->getUrl(),
+				'requires_key' => $service->isKeyRequired(),
+				'api_key'      => $service->getSetting( 'api-key' ),
+				'last_error'   => $service->getLastError(),
+			];
+		}
+
+		return $services;
 	}
 
 	protected function init_template_base_dir() {

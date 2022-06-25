@@ -9,7 +9,7 @@ class WCML_Translation_Editor {
 	/** @var  wpdb */
 	private $wpdb;
 
-	public function __construct( woocommerce_wpml $woocommerce_wpml, SitePress $sitepress, wpdb $wpdb ) {
+	public function __construct( woocommerce_wpml $woocommerce_wpml, \WPML\Core\ISitePress $sitepress, wpdb $wpdb ) {
 		$this->woocommerce_wpml = $woocommerce_wpml;
 		$this->sitepress        = $sitepress;
 		$this->wpdb             = $wpdb;
@@ -41,8 +41,6 @@ class WCML_Translation_Editor {
 		}
 
 		add_action( 'wp_ajax_wcml_editor_auto_slug', [ $this, 'auto_generate_slug' ] );
-
-		add_action( 'wpml_doc_translation_method_below', [ $this, 'wpml_translation_editor_override_notice' ] );
 
 		add_filter( 'wpml_tm_show_page_builders_translation_editor_warning', [ $this, 'show_page_builders_translation_editor_warning' ], 10, 2 );
 	}
@@ -394,30 +392,6 @@ class WCML_Translation_Editor {
 
 		echo json_encode( [ 'slug' => $slug ] );
 		exit;
-
-	}
-
-	/**
-	 * Shows a note on the WPML Multilingual Setup screen explaining that WCML overrides those settings for products
-	 */
-	public function wpml_translation_editor_override_notice() {
-
-		?>
-		<p class="icl-admin-message" style="margin-top: 0">
-			<?php
-			printf(
-				__(
-					'To configure how the %1$sWooCommerce products%2$s are translated, visit the WooCommerce Multilingual %3$ssettings%4$s page.',
-					'woocommerce-multilingual'
-				),
-				'<strong>',
-				'</strong>',
-				'<a href="' . admin_url( 'admin.php?page=wpml-wcml&tab=settings' ) . '">',
-				'</a>'
-			);
-			?>
-		</p>
-		<?php
 
 	}
 

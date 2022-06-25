@@ -19,6 +19,7 @@ jQuery( function($){
 
             if($(this).prop('checked')){
                 $('#exchange-rates-online-wrap').fadeIn();
+                WCML_Tooltip && WCML_Tooltip.init(); // Re-init tooltips for the previously invisible ones.
             }else{
                 $('#exchange-rates-online-wrap').fadeOut();
             }

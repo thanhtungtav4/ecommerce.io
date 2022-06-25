@@ -14,7 +14,7 @@ class ProductsCount extends Handler {
 	private $wpdb;
 
 	public function __construct(
-		\SitePress $sitepress,
+		\WPML\Core\ISitePress $sitepress,
 		\wpdb $wpdb
 	) {
 		$this->sitepress = $sitepress;

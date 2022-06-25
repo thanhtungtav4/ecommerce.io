@@ -22,7 +22,7 @@ class Products extends Handler {
 	private $productSaveActions;
 
 	public function __construct(
-		\Sitepress $sitepress,
+		\WPML\Core\ISitePress $sitepress,
 		\WPML_Post_Translation $wpmlPostTranslations,
 		\WPML_Query_Filter $wpmlQueryFilter,
 		ProductSaveActions $productSaveActions

@@ -8,7 +8,7 @@ class WCML_Ajax_Setup {
 	 */
 	private $sitepress;
 
-	public function __construct( SitePress $sitepress ) {
+	public function __construct( \WPML\Core\ISitePress $sitepress ) {
 
 		$this->sitepress = $sitepress;
 	}

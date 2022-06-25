@@ -12,6 +12,7 @@ class InvalidTerm extends WC_REST_Exception {
 	public function __construct( $term_id ) {
 		parent::__construct(
 			422,
+			/* translators: $s is a term ID */
 			sprintf( __( 'Term not found: %d', 'woocommerce-multilingual' ),
 				$term_id ),
 			422

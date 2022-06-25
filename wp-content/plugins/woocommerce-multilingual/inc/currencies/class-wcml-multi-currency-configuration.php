@@ -1,8 +1,10 @@
 <?php
 
+use WCML\MultiCurrency\Settings;
 use WCML\Multicurrency\UI\Hooks;
-use WCML\MultiCurrency\Geolocation;
 use WPML\FP\Obj;
+use function WCML\functions\getSitePress;
+use function WPML\Container\make;
 
 class WCML_Multi_Currency_Configuration {
 
@@ -42,6 +44,7 @@ class WCML_Multi_Currency_Configuration {
 			add_action( 'wp_ajax_wcml_update_default_currency', [ __CLASS__, 'update_default_currency_ajax' ] );
 			add_action( 'wp_ajax_wcml_set_currency_mode', [ __CLASS__, 'set_currency_mode' ] );
 			add_action( 'wp_ajax_wcml_set_max_mind_key', [ __CLASS__, 'set_max_mind_key' ] );
+			add_action( 'wp_ajax_wcml_get_auto_exchange_rate', [ __CLASS__, 'get_auto_exchange_rate' ] );
 		}
 	}
 
@@ -53,7 +56,6 @@ class WCML_Multi_Currency_Configuration {
 
 			$wcml_settings['enable_multi_currency'] = isset( $_POST['multi_currency'] ) ? intval( $_POST['multi_currency'] ) : 0;
 			$wcml_settings['display_custom_prices'] = isset( $_POST['display_custom_prices'] ) ? intval( $_POST['display_custom_prices'] ) : 0;
-			$wcml_settings['currency_mode'] = filter_input( INPUT_POST, 'currency_mode', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 
 			// update default currency settings
 			if ( $wcml_settings['enable_multi_currency'] == WCML_MULTI_CURRENCIES_INDEPENDENT ) {
@@ -83,6 +85,7 @@ class WCML_Multi_Currency_Configuration {
 				$wcml_settings['currencies_order'] = self::$multi_currency->currency_codes;
 			}
 
+			Settings::setMode( filter_input( INPUT_POST, 'currency_mode', FILTER_SANITIZE_FULL_SPECIAL_CHARS ) );
 			self::$woocommerce_wpml->update_settings( $wcml_settings );
 
 			do_action( 'wcml_saved_mc_options', $_POST );
@@ -98,20 +101,18 @@ class WCML_Multi_Currency_Configuration {
 			];
 			ICL_AdminNotifier::add_message( $message );
 
-			$wpml_admin_notices = wpml_get_admin_notices();
-			$wpml_admin_notices->remove_notice( 'wcml-save-multi-currency-options', 'wcml-fixerio-api-key-required' );
+			if ( ! \WCML\functions\isStandAlone() )  {
+				$wpml_admin_notices = wpml_get_admin_notices();
+				$wpml_admin_notices->remove_notice( 'wcml-save-multi-currency-options', 'wcml-fixerio-api-key-required' );
+			}
 		}
 
 	}
 
 	public static function add_currency( $currency_code ) {
-		global $sitepress;
-
 		$settings = self::$woocommerce_wpml->get_settings();
 
-		$active_languages    = $sitepress->get_active_languages();
-		$return['languages'] = '';
-		foreach ( $active_languages as $language ) {
+		foreach ( getSitePress()->get_active_languages() as $language ) {
 			if ( ! isset( $settings['currency_options'][ $currency_code ]['languages'][ $language['code'] ] ) ) {
 				$settings['currency_options'][ $currency_code ]['languages'][ $language['code'] ] = 1;
 			}
@@ -255,6 +256,7 @@ class WCML_Multi_Currency_Configuration {
 		$message_args = [
 			'id'           => $message_id,
 			'text'         => sprintf(
+				/* translators: %1$s and %2$s are opening and closing HTML link tags */
 				__(
 					'The default currency was changed. In order to show accurate prices in all currencies, you need to update the exchange rates under the %1$sMulti-currency%2$s configuration.',
 					'woocommerce-multilingual'
@@ -303,8 +305,9 @@ class WCML_Multi_Currency_Configuration {
 	}
 
 	public static function set_prices_config() {
-		global $iclTranslationManagement, $sitepress_settings, $sitepress;
+		global $iclTranslationManagement, $sitepress_settings;
 
+		$sitepress     = getSitePress();
 		$wpml_settings = $sitepress->get_settings();
 
 		if ( ! isset( $wpml_settings['translation-management'] ) ||
@@ -360,8 +363,7 @@ class WCML_Multi_Currency_Configuration {
 		self::verify_nonce();
 		$data = self::get_data();
 
-		self::$woocommerce_wpml->settings['currency_mode'] = $data['mode'];
-		self::$woocommerce_wpml->update_settings();
+		Settings::setMode( $data['mode'] );
 
 		wp_send_json_success();
 	}
@@ -385,4 +387,20 @@ class WCML_Multi_Currency_Configuration {
 		}
 	}
 
+	public static function get_auto_exchange_rate() {
+		self::verify_nonce();
+
+		try {
+			$currency = sanitize_text_field( Obj::prop( 'currency', self::get_data() ) );
+			$rate     = Obj::prop( $currency, make( \WCML_Exchange_Rates::class )->fetch_exchange_rates_from_active_service( [ $currency ] ) );
+
+			if ( null === $rate ) {
+				throw new \Exception();
+			}
+
+			wp_send_json_success( $rate );
+		} catch ( \Exception $e ) {
+			wp_send_json_error();
+		}
+	}
 }

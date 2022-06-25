@@ -1,5 +1,7 @@
 <?php
 
+use function WCML\functions\isStandAlone;
+
 class WCML_Install {
 
 	const CHUNK_SIZE = 1000;
@@ -9,107 +11,138 @@ class WCML_Install {
 	 * @param SitePress        $sitepress
 	 */
 	public static function initialize( $woocommerce_wpml, $sitepress ) {
-		// @todo Cover by tests, required for wcml-3037.
 		if ( is_admin() ) {
 
-			// Install routine.
-			if ( empty( $woocommerce_wpml->settings['set_up'] ) ) { // from 3.2.
-
-				if ( $woocommerce_wpml->settings['is_term_order_synced'] !== 'yes' ) {
-					// global term ordering resync when moving to >= 3.3.x.
-					add_action( 'init', [ $woocommerce_wpml->terms, 'sync_term_order_globally' ], 20 );
-				}
-
-				if ( ! isset( $woocommerce_wpml->settings['wc_admin_options_saved'] ) ) {
-					self::handle_admin_texts();
-					$woocommerce_wpml->settings['wc_admin_options_saved'] = 1;
-				}
-
-				if ( $woocommerce_wpml->is_wpml_prior_4_2() ) {
-					if ( ! isset( $woocommerce_wpml->settings['trnsl_interface'] ) ) {
-						$woocommerce_wpml->settings['trnsl_interface'] = 1;
-					}
-				} else {
-					global $iclTranslationManagement;
-					$iclTranslationManagement->settings[ WPML_TM_Post_Edit_TM_Editor_Mode::TM_KEY_FOR_POST_TYPE_USE_NATIVE ]['product'] = false;
-					$iclTranslationManagement->save_settings();
-				}
-
-				if ( ! isset( $woocommerce_wpml->settings['products_sync_date'] ) ) {
-					$woocommerce_wpml->settings['products_sync_date'] = 1;
-				}
-
-				if ( ! isset( $woocommerce_wpml->settings['products_sync_order'] ) ) {
-					$woocommerce_wpml->settings['products_sync_order'] = 1;
-				}
-
-				if ( ! isset( $woocommerce_wpml->settings['display_custom_prices'] ) ) {
-					$woocommerce_wpml->settings['display_custom_prices'] = 0;
-				}
-
-				if ( ! isset( $woocommerce_wpml->settings['sync_taxonomies_checked'] ) ) {
-					$woocommerce_wpml->terms->check_if_sync_terms_needed();
-					$woocommerce_wpml->settings['sync_taxonomies_checked'] = 1;
-				}
-
-				WCML_Capabilities::set_up_capabilities();
-
-				self::set_language_information( $sitepress );
-				self::check_product_type_terms();
-
-				set_transient( '_wcml_activation_redirect', 1, 30 );
-
-				// Before the setup wizard redirects from plugins.php, allow WPML to scan the wpml-config.xml file.
-				WPML_Config::load_config_run();
-
-				add_action( 'init', [ __CLASS__, 'insert_default_categories' ] );
-
-				self::set_language_to_existing_orders( $sitepress->get_default_language() );
-
-				wp_schedule_single_event( time() + 10, 'generate_category_lookup_table' );
-
-				$woocommerce_wpml->settings['set_up'] = 1;
-				$woocommerce_wpml->update_settings();
-			}
-
-			if ( empty( $woocommerce_wpml->settings['downloaded_translations_for_wc'] ) ) { // from 3.3.3.
-				$woocommerce_wpml->languages_upgrader->download_woocommerce_translations_for_active_languages();
-				$woocommerce_wpml->settings['downloaded_translations_for_wc'] = 1;
-				$woocommerce_wpml->update_settings();
-			}
-
-			if ( empty( $woocommerce_wpml->settings['rewrite_rules_flashed'] ) ) {
-				flush_rewrite_rules();
-				$woocommerce_wpml->settings['rewrite_rules_flashed'] = 1;
-			}
-
-			add_filter(
-				'wpml_tm_dashboard_translatable_types',
-				[
-					__CLASS__,
-					'hide_variation_type_on_tm_dashboard',
-				]
-			);
-
-			$WCML_Setup_UI = new WCML_Setup_UI( $woocommerce_wpml );
-			$WCML_Setup_UI->add_hooks();
-			$WCML_Setup_Handlers = new WCML_Setup_Handlers( $woocommerce_wpml );
-			$WCML_Setup          = new WCML_Setup( $WCML_Setup_UI, $WCML_Setup_Handlers, $woocommerce_wpml, $sitepress );
-			$WCML_Setup->setup_redirect();
-			$WCML_Setup->add_hooks();
-
-			if ( ! empty( $woocommerce_wpml->settings['set_up_wizard_run'] ) ) {
-				add_action( 'admin_notices', [ __CLASS__, 'admin_notice_after_install' ] );
-			}
-
-			$translated_product_type_terms = self::translated_product_type_terms();
-			if ( ! empty( $translated_product_type_terms ) ) {
-				add_action( 'admin_notices', [ __CLASS__, 'admin_translated_product_type_terms_notice' ] );
-			} elseif ( $sitepress->is_translated_taxonomy( 'product_type' ) ) {
-				add_action( 'admin_notices', [ __CLASS__, 'admin_translated_product_type_notice' ] );
+			if ( isStandAlone() ) {
+				self::initialize_standalone( $woocommerce_wpml );
+			} else {
+				self::initialize_full( $woocommerce_wpml, $sitepress );
 			}
 		}
+	}
 
+	/**
+	 * @param woocommerce_wpml $woocommerce_wpml
+	 * @param SitePress        $sitepress
+	 */
+	private static function initialize_full( $woocommerce_wpml, $sitepress ) {
+		// Install routine.
+		if ( empty( $woocommerce_wpml->settings['set_up'] ) ) { // from 3.2.
+
+			if ( $woocommerce_wpml->settings['is_term_order_synced'] !== 'yes' ) {
+				// global term ordering resync when moving to >= 3.3.x.
+				add_action( 'init', [ $woocommerce_wpml->terms, 'sync_term_order_globally' ], 20 );
+			}
+
+			if ( ! isset( $woocommerce_wpml->settings['wc_admin_options_saved'] ) ) {
+				self::handle_admin_texts();
+				$woocommerce_wpml->settings['wc_admin_options_saved'] = 1;
+			}
+
+			if ( $woocommerce_wpml->is_wpml_prior_4_2() ) {
+				if ( ! isset( $woocommerce_wpml->settings['trnsl_interface'] ) ) {
+					$woocommerce_wpml->settings['trnsl_interface'] = 1;
+				}
+			} else {
+				global $iclTranslationManagement;
+				$iclTranslationManagement->settings[ WPML_TM_Post_Edit_TM_Editor_Mode::TM_KEY_FOR_POST_TYPE_USE_NATIVE ]['product'] = false;
+				$iclTranslationManagement->save_settings();
+			}
+
+			if ( ! isset( $woocommerce_wpml->settings['products_sync_date'] ) ) {
+				$woocommerce_wpml->settings['products_sync_date'] = 1;
+			}
+
+			if ( ! isset( $woocommerce_wpml->settings['products_sync_order'] ) ) {
+				$woocommerce_wpml->settings['products_sync_order'] = 1;
+			}
+
+			if ( ! isset( $woocommerce_wpml->settings['display_custom_prices'] ) ) {
+				$woocommerce_wpml->settings['display_custom_prices'] = 0;
+			}
+
+			if ( ! isset( $woocommerce_wpml->settings['sync_taxonomies_checked'] ) ) {
+				$woocommerce_wpml->terms->check_if_sync_terms_needed();
+				$woocommerce_wpml->settings['sync_taxonomies_checked'] = 1;
+			}
+
+			WCML_Capabilities::set_up_capabilities();
+
+			self::set_language_information( $sitepress );
+			self::check_product_type_terms();
+
+			set_transient( '_wcml_activation_redirect', 1, 30 );
+
+			// Before the setup wizard redirects from plugins.php, allow WPML to scan the wpml-config.xml file.
+			WPML_Config::load_config_run();
+
+			add_action( 'init', [ __CLASS__, 'insert_default_categories' ] );
+
+			self::set_language_to_existing_orders( $sitepress->get_default_language() );
+
+			wp_schedule_single_event( time() + 10, 'generate_category_lookup_table' );
+
+			$woocommerce_wpml->settings['set_up'] = 1;
+			$woocommerce_wpml->update_settings();
+		}
+
+		if ( empty( $woocommerce_wpml->settings['downloaded_translations_for_wc'] ) ) { // from 3.3.3.
+			$woocommerce_wpml->languages_upgrader->download_woocommerce_translations_for_active_languages();
+			$woocommerce_wpml->settings['downloaded_translations_for_wc'] = 1;
+			$woocommerce_wpml->update_settings();
+		}
+
+		if ( empty( $woocommerce_wpml->settings['rewrite_rules_flashed'] ) ) {
+			flush_rewrite_rules();
+			$woocommerce_wpml->settings['rewrite_rules_flashed'] = 1;
+		}
+
+		add_filter(
+			'wpml_tm_dashboard_translatable_types',
+			[
+				__CLASS__,
+				'hide_variation_type_on_tm_dashboard',
+			]
+		);
+
+		$WCML_Setup_UI = new WCML_Setup_UI( $woocommerce_wpml );
+		$WCML_Setup_UI->add_hooks();
+		$WCML_Setup = new WCML_Setup( $WCML_Setup_UI, new WCML_Setup_Handlers( $woocommerce_wpml ), $woocommerce_wpml, $sitepress );
+		$WCML_Setup->setup_redirect();
+		$WCML_Setup->add_hooks();
+
+		if ( ! empty( $woocommerce_wpml->settings['set_up_wizard_run'] ) ) {
+			add_action( 'admin_notices', [ __CLASS__, 'admin_notice_after_install' ] );
+		}
+
+		$translated_product_type_terms = self::translated_product_type_terms();
+		if ( ! empty( $translated_product_type_terms ) ) {
+			add_action( 'admin_notices', [ __CLASS__, 'admin_translated_product_type_terms_notice' ] );
+		} elseif ( $sitepress->is_translated_taxonomy( 'product_type' ) ) {
+			add_action( 'admin_notices', [ __CLASS__, 'admin_translated_product_type_notice' ] );
+		}
+	}
+
+	/**
+	 * This is minimal version of full initialization.
+	 * It has a different flag, so the full initialization
+	 * might run later.
+	 *
+	 * @param woocommerce_wpml $woocommerce_wpml
+	 */
+	private static function initialize_standalone( $woocommerce_wpml ) {
+		if ( empty( $woocommerce_wpml->settings['set_up_standalone'] ) ) { //
+			if ( ! isset( $woocommerce_wpml->settings['display_custom_prices'] ) ) {
+				$woocommerce_wpml->settings['display_custom_prices'] = 0;
+			}
+
+			WCML_Capabilities::set_up_capabilities();
+
+			set_transient( '_wcml_activation_redirect', 1, 30 );
+
+			$woocommerce_wpml->settings['set_up_standalone'] = 1;
+			$woocommerce_wpml->update_settings();
+		}
 	}
 
 	/**
@@ -252,7 +285,8 @@ class WCML_Install {
 				<p>
 					<?php
 					printf(
-						esc_html__( "You've successfully installed %1\$sWooCommerce Multilingual%2\$s. Would you like to see a quick overview?", 'woocommerce-multilingual' ),
+					    /* translators: %1$s and %2$s are opening and closing HTML strong tags */
+						esc_html__( "You've successfully installed %1\$sWooCommerce Multilingual & Multicurrency%2\$s. Would you like to see a quick overview?", 'woocommerce-multilingual' ),
 						'<strong>',
 						'</strong>'
 					);
@@ -278,7 +312,10 @@ class WCML_Install {
 
 		<div id="message" class="updated error">
 			<p>
-				<?php printf( __( 'We detected a problem in your WPML configuration: the %1$sproduct_type%2$s taxonomy is set as translatable and this would cause problems with translated products. You can fix this in the %3$sMultilingual Content Setup page%4$s.', 'woocommerce-multilingual' ), '<i>', '</i>', '<a href="' . admin_url( 'admin.php?page=' . WPML_TM_FOLDER . '/menu/main.php&sm=mcsetup#ml-content-setup-sec-8' ) . '">', '</a>' ); ?>
+				<?php
+				/* translators: %1$s and %2$s are opening and closing HTML italic tags and %3$s and %4$s are opening and closing HTML link tags */
+                printf( __( 'We detected a problem in your WPML configuration: the %1$sproduct_type%2$s taxonomy is set as translatable and this would cause problems with translated products. You can fix this in the %3$sMultilingual Content Setup page%4$s.', 'woocommerce-multilingual' ), '<i>', '</i>', '<a href="' . admin_url( 'admin.php?page=' . WPML_TM_FOLDER . '/menu/main.php&sm=mcsetup#ml-content-setup-sec-8' ) . '">', '</a>' );
+                ?>
 			</p>
 		</div>
 
@@ -290,7 +327,10 @@ class WCML_Install {
 
 		<div id="message" class="updated error">
 			<p>
-				<?php printf( __( 'We detected that the %1$sproduct_type%2$s field was set incorrectly for some product translations. This happened because the product_type taxonomy was translated. You can fix this in the WooCommerce Multilingual %3$stroubleshooting page%4$s.', 'woocommerce-multilingual' ), '<i>', '</i>', '<a href="' . admin_url( 'admin.php?page=wpml-wcml&tab=troubleshooting' ) . '">', '</a>' ); ?>
+				<?php
+				/* translators: %1$s and %2$s are opening and closing HTML italic tags and %3$s and %4$s are opening and closing HTML link tags */
+                printf( __( 'We detected that the %1$sproduct_type%2$s field was set incorrectly for some product translations. This happened because the product_type taxonomy was translated. You can fix this in the WooCommerce Multilingual & Multicurrency %3$stroubleshooting page%4$s.', 'woocommerce-multilingual' ), '<i>', '</i>', '<a href="' . admin_url( 'admin.php?page=wpml-wcml&tab=troubleshooting' ) . '">', '</a>' );
+                ?>
 			</p>
 		</div>
 

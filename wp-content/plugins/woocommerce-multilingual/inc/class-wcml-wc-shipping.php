@@ -16,7 +16,7 @@ class WCML_WC_Shipping {
 	 * @param SitePress       $sitepress
 	 * @param WCML_WC_Strings $wcmlStrings
 	 */
-	public function __construct( SitePress $sitepress, WCML_WC_Strings $wcmlStrings ) {
+	public function __construct( \WPML\Core\ISitePress $sitepress, WCML_WC_Strings $wcmlStrings ) {
 
 		$this->sitepress   = $sitepress;
 		$this->wcmlStrings = $wcmlStrings;

@@ -13,6 +13,7 @@ trait VariableCost {
 	 * return string
 	 */
 	public function getFieldTitle( $currencyCode ) {
+		/* translators: %s is a currency code */
 		return sprintf( esc_html_x( 'Cost in %s',
 			'The label for the field with shipping cost in additional currency. The currency symbol will be added in place of %s specifier.',
 			'woocommerce-multilingual' ), $currencyCode );
@@ -26,6 +27,7 @@ trait VariableCost {
 	 * @return string
 	 */
 	public function getFieldDescription( $currencyCode ) {
+		/* translators: %s is a currency code */
 		return sprintf( esc_html_x( 'The shipping cost if customer choose %s as a purchase currency.',
 			'The description for the field with shipping cost in additional currency. The currency symbol will be added in place of %s specifier.',
 			'woocommerce-multilingual' ), $currencyCode );

@@ -1,5 +1,6 @@
 <?php
 
+use WCML\MultiCurrency\Settings;
 use WPML\FP\Obj;
 use WCML\MultiCurrency\Geolocation;
 
@@ -14,10 +15,8 @@ class WCML_Currency_Switcher {
 	private $woocommerce_wpml;
 	/** @var Sitepress */
 	private $sitepress;
-	/** @var boolean */
-	private $is_touch_screen;
 
-	public function __construct( woocommerce_wpml $woocommerce_wpml, Sitepress $sitepress ) {
+	public function __construct( woocommerce_wpml $woocommerce_wpml, \WPML\Core\ISitePress $sitepress ) {
 
 		$this->woocommerce_wpml = $woocommerce_wpml;
 		$this->sitepress        = $sitepress;
@@ -69,7 +68,6 @@ class WCML_Currency_Switcher {
 		}
 
 		$wcml_settings              = $this->woocommerce_wpml->get_settings();
-		$multi_currency_object      = $this->woocommerce_wpml->multi_currency;
 		$currency_switcher_settings = [];
 
 		if ( isset( $wcml_settings['currency_switchers'][ $args['switcher_id'] ] ) ) {
@@ -123,28 +121,13 @@ class WCML_Currency_Switcher {
 
 		if ( $show_currency_switcher ) {
 
-			$currencies = isset( $wcml_settings['currencies_order'] ) ?
-				$wcml_settings['currencies_order'] :
-				$multi_currency_object->get_currency_codes();
+			$currencies = Settings::getOrderedCurrencyCodes();
 
 			if ( ! is_admin() ) {
-				$currencies = $this->filter_currencies_list_by_settings( $currencies, $wcml_settings );
+				$currencies = $this->filter_allowed_currencies_on_frontend( $currencies );
 			}
 
 			if ( count( $currencies ) > 1 ) {
-				if ( ! is_admin() ) {
-					foreach ( $currencies as $k => $currency ) {
-						if (
-							Obj::path(
-								[ 'currency_options', $currency, 'languages', $this->sitepress->get_current_language() ],
-								$wcml_settings
-							) != 1
-						) {
-							unset( $currencies[ $k ] );
-						}
-					}
-				}
-
 				$template = $this->woocommerce_wpml->cs_templates->get_template( $args['switcher_style'] );
 
 				if ( $template ) {
@@ -152,13 +135,8 @@ class WCML_Currency_Switcher {
 					$template->set_model( $this->get_model_data( $args, $currencies ) );
 					$preview = $template->get_view();
 				}
-			} else {
-
-				if ( is_admin() ) {
-					$preview = '<i>' . esc_html__( "You haven't added any secondary currencies.", 'woocommerce-multilingual' ) . '</i>';
-				} else {
-					$preview = '';
-				}
+			} elseif ( is_admin() ) {
+				$preview = '<i>' . esc_html__( "You haven't added any secondary currencies.", 'woocommerce-multilingual' ) . '</i>';
 			}
 		}
 
@@ -171,25 +149,20 @@ class WCML_Currency_Switcher {
 
 	/**
 	 * @param array $currencies
-	 * @param array $wcml_settings
 	 *
 	 * @return array
 	 */
-	private function filter_currencies_list_by_settings( $currencies, $wcml_settings ){
-		$currency_mode = $this->woocommerce_wpml->get_setting('currency_mode');
-
-		$ifDisallowedByLanguage = function( $currency ) use ( $currency_mode, $wcml_settings ) {
-			return Geolocation::MODE_BY_LANGUAGE === $currency_mode
-			       && Obj::path( [ 'currency_options', $currency, 'languages', $this->sitepress->get_current_language() ], $wcml_settings ) != 1;
+	private function filter_allowed_currencies_on_frontend( $currencies ){
+		$ifDisallowedByLanguage = function( $currency ) {
+			return ! Settings::isValidCurrencyForLang( $currency, $this->sitepress->get_current_language() );
 		};
 
-		$ifDisallowedByLocation = function( $currency ) use ( $currency_mode, $wcml_settings ) {
-			return Geolocation::MODE_BY_LOCATION === $currency_mode && !Geolocation::isCurrencyAvailableForCountry( $wcml_settings['currency_options'][ $currency ] );
+		$ifDisallowedByLocation = function( $currency ) {
+			return ! Settings::isValidCurrencyByCountry( $currency, Geolocation::getUserCountry() );
 		};
 
 		return wpml_collect( $currencies )
-			->reject( $ifDisallowedByLanguage )
-			->reject( $ifDisallowedByLocation )
+			->reject( Settings::isModeByLanguage() ? $ifDisallowedByLanguage : $ifDisallowedByLocation )
 			->toArray();
 	}
 
@@ -222,16 +195,8 @@ class WCML_Currency_Switcher {
 	}
 
 	public function add_user_agent_touch_device_classes( $classes ) {
-
-		if ( is_null( $this->is_touch_screen ) ) {
-			if ( ! class_exists( 'WPML_Mobile_Detect' ) ) {
-				require_once WPML_PLUGIN_PATH . '/lib/mobile-detect.php';
-			}
-			$mobile_detect         = new WPML_Mobile_Detect();
-			$this->is_touch_screen = $mobile_detect->isMobile() || $mobile_detect->isTablet();
-		}
-
-		if ( $this->is_touch_screen ) {
+		
+		if ( wp_is_mobile() ) {
 			$classes[] = 'wcml-cs-touch-device';
 		}
 

@@ -1,5 +1,7 @@
 <?php
 
+use function WCML\functions\isStandAlone;
+
 class WCML_Cart {
 	/** @var woocommerce_wpml */
 	private $woocommerce_wpml;
@@ -15,7 +17,7 @@ class WCML_Cart {
 	 * @param SitePress        $sitepress
 	 * @param WooCommerce      $woocommerce
 	 */
-	public function __construct( woocommerce_wpml $woocommerce_wpml, SitePress $sitepress, WooCommerce $woocommerce ) {
+	public function __construct( woocommerce_wpml $woocommerce_wpml, \WPML\Core\ISitePress $sitepress, WooCommerce $woocommerce ) {
 		$this->woocommerce_wpml = $woocommerce_wpml;
 		$this->sitepress        = $sitepress;
 		$this->woocommerce      = $woocommerce;
@@ -64,29 +66,28 @@ class WCML_Cart {
 			add_action( 'wp_ajax_nopriv_woocommerce_add_to_cart', [ $this, 'wcml_refresh_fragments' ], 0 );
 
 			// cart
-			add_action( 'woocommerce_before_calculate_totals', [ $this, 'woocommerce_calculate_totals' ], 100 );
 			add_action( 'woocommerce_before_checkout_process', [ $this, 'wcml_refresh_cart_total' ] );
-			add_filter( 'woocommerce_cart_item_data_to_validate', [ $this, 'validate_cart_item_data' ], 10, 2 );
-			add_filter( 'woocommerce_cart_item_product', [ $this, 'adjust_cart_item_product_name' ] );
 
-			add_filter( 'woocommerce_cart_item_permalink', [ $this, 'cart_item_permalink' ], 10, 2 );
-			add_filter( 'woocommerce_paypal_args', [ $this, 'filter_paypal_args' ] );
-			add_filter(
-				'woocommerce_add_to_cart_sold_individually_found_in_cart',
-				[
-					$this,
-					'add_to_cart_sold_individually_exception',
-				],
-				10,
-				4
-			);
-
-			add_filter( 'woocommerce_cart_hash_key', [ $this, 'add_language_to_cart_hash_key' ] );
-			add_filter('woocommerce_cart_crosssell_ids', [ $this, 'convert_crosssell_ids' ] );
-
-			$this->localize_flat_rates_shipping_classes();
+			if ( ! isStandAlone() ) {
+			    add_action( 'woocommerce_before_calculate_totals', [ $this, 'woocommerce_calculate_totals' ], 100 );
+			    add_filter( 'woocommerce_cart_item_data_to_validate', [ $this, 'validate_cart_item_data' ], 10, 2 );
+			    add_filter( 'woocommerce_cart_item_product', [ $this, 'adjust_cart_item_product_name' ] );
+			    add_filter( 'woocommerce_cart_item_permalink', [ $this, 'cart_item_permalink' ], 10, 2 );
+			    add_filter( 'woocommerce_paypal_args', [ $this, 'filter_paypal_args' ] );
+			    add_filter(
+			        'woocommerce_add_to_cart_sold_individually_found_in_cart',
+			        [
+			            $this,
+			            'add_to_cart_sold_individually_exception',
+			        ],
+			        10,
+			        4
+			    );
+			    add_filter( 'woocommerce_cart_hash_key', [ $this, 'add_language_to_cart_hash_key' ] );
+			    add_filter('woocommerce_cart_crosssell_ids', [ $this, 'convert_crosssell_ids' ] );
+			    $this->localize_flat_rates_shipping_classes();
+			}
 		}
-
 	}
 
 	public function is_clean_cart_enabled() {
@@ -193,7 +194,8 @@ class WCML_Cart {
 
 		$dialog_title         = __( 'Switching currency?', 'woocommerce-multilingual' );
 		$confirmation_message = __( 'Your cart is not empty! After you switched the currency, all items from the cart will be removed and you have to add them again.', 'woocommerce-multilingual' );
-		$stay_in              = sprintf( __( 'Keep using %s', 'woocommerce-multilingual' ), $current_currency );
+		/* translators: %s is a currency */
+        $stay_in              = sprintf( __( 'Keep using %s', 'woocommerce-multilingual' ), $current_currency );
 		$switch_to            = __( 'Proceed', 'woocommerce-multilingual' );
 
 		ob_start();

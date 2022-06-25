@@ -4,7 +4,7 @@ namespace WCML\Email\Settings;
 
 use IWPML_Backend_Action;
 use IWPML_DIC_Action;
-use SitePress;
+use WPML\Core\ISitePress;
 use WCML_WC_Strings;
 use WPML_Simple_Language_Selector;
 
@@ -18,7 +18,7 @@ class Hooks implements IWPML_Backend_Action, IWPML_DIC_Action {
 	/** @var WCML_WC_Strings */
 	private $wcmlStrings;
 
-	public function __construct( SitePress $sitepress, WCML_WC_Strings $wcmlStrings ) {
+	public function __construct( ISitePress $sitepress, WCML_WC_Strings $wcmlStrings ) {
 		$this->sitepress   = $sitepress;
 		$this->wcmlStrings = $wcmlStrings;
 	}

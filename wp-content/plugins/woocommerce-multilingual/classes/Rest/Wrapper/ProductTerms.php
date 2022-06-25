@@ -18,7 +18,7 @@ class ProductTerms extends Handler {
 	private $wcmlTerms;
 
 	public function __construct(
-		\SitePress $sitepress,
+		\WPML\Core\ISitePress $sitepress,
 		\WPML_Term_Translation $wpmlTermTranslations,
 		\WCML_Terms $wcmlTerms
 	) {

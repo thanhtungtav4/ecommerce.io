@@ -2,15 +2,17 @@
 
 namespace WCML\MultiCurrency;
 
+use WPML\FP\Fns;
 use WPML\FP\Obj;
 use WPML\FP\Relation;
 use WPML\FP\Logic;
 
 class Geolocation {
 
-	const DEFAULT_COUNTRY_CURRENCY_CONFIG = 'country-currency.json';
-	const MODE_BY_LANGUAGE = 'by_language';
-	const MODE_BY_LOCATION = 'by_location';
+	const DEFAULT_COUNTRY_CURRENCY_CONFIG = '/res/geolocation/country-currency.json';
+
+	const MODE_BY_LANGUAGE = Settings::MODE_BY_LANGUAGE;
+	const MODE_BY_LOCATION = Settings::MODE_BY_LOCATION;
 
 	/**
 	 * @return bool
@@ -19,17 +21,13 @@ class Geolocation {
 		/** @var \woocommerce_wpml $woocommerce_wpml */
 		global $woocommerce_wpml;
 
-		$isByLocationMode = function() use ( $woocommerce_wpml ) {
-			return Geolocation::MODE_BY_LOCATION === $woocommerce_wpml->get_setting( 'currency_mode' );
-		};
-
 		$useDefaultCurrencyByLocation = function() use ( $woocommerce_wpml ) {
 			return (bool) wpml_collect( $woocommerce_wpml->get_setting( 'default_currencies', [] ) )
 				->first( Relation::equals( 'location' ) );
 		};
 
 		return wcml_is_multi_currency_on()
-		       && ( $isByLocationMode() || $useDefaultCurrencyByLocation() );
+		       && ( Settings::isModeByLocation() || $useDefaultCurrencyByLocation() );
 	}
 
 	/**
@@ -63,7 +61,7 @@ class Geolocation {
 	 */
 	private static function parseConfigFile() {
 		$config             = [];
-		$configuration_file = WCML_PLUGIN_PATH . '/res/geolocation/' . self::DEFAULT_COUNTRY_CURRENCY_CONFIG;
+		$configuration_file = WCML_PLUGIN_PATH . self::DEFAULT_COUNTRY_CURRENCY_CONFIG;
 
 		if ( file_exists( $configuration_file ) ) {
 			$json_content = file_get_contents( $configuration_file );
@@ -74,48 +72,18 @@ class Geolocation {
 	}
 
 	/**
-	 * Get currency code by user country
+	 * @param string
 	 *
-	 * @return string|bool
+	 * @return string|null
 	 */
-	public static function getCurrencyCodeByUserCountry() {
-
-		$country = self::getUserCountry();
-
-		if ( $country ) {
-			$config = self::parseConfigFile();
-
-			return isset( $config[ $country ] ) ? $config[ $country ] : false;
-		}
-
-		return false;
-	}
-
-	/**
-	 * Get first available country currency from settings if default country currency not active
-	 *
-	 * @param array $currenciesSettings
-	 *
-	 * @return string|bool
-	 */
-	public static function getFirstAvailableCountryCurrencyFromSettings( $currenciesSettings ) {
-
-		$currency = false;
-
-		wpml_collect( $currenciesSettings )->each( function ( $settings, $code ) use ( &$currency ) {
-			if ( self::isCurrencyAvailableForCountry( $settings ) ) {
-				$currency = $code;
-			}
-		} );
-
-		return $currency;
+	public static function getOfficialCurrencyCodeByCountry( $country ) {
+		return Obj::prop( $country, self::parseConfigFile() );
 	}
 
 	/**
 	 * @return string
 	 */
 	public static function getUserCountry(){
-
 		if ( defined( 'WCML_GEOLOCATED_COUNTRY' ) ) {
 			return WCML_GEOLOCATED_COUNTRY;
 		}
@@ -125,7 +93,8 @@ class Geolocation {
 			'shipping'    => self::getUserCountryByAddress( 'shipping' ),
 			'geolocation' => self::getCountryByUserIp()
 		];
-		$userCountry      = $allUserCountries['billing'] ?: $allUserCountries['geolocation'];
+
+		$userCountry = $allUserCountries['billing'] ?: $allUserCountries['geolocation'];
 
 		/**
 		 * This filter allows to override the address country declared by the user.
@@ -152,8 +121,8 @@ class Geolocation {
 	 * @return string
 	 */
 	private static function getUserCountryByAddress( $addressType ){
-
 		$orderCountry = self::getUserCountryFromOrder( $addressType );
+
 		if( $orderCountry ){
 			return $orderCountry;
 		}
@@ -161,7 +130,7 @@ class Geolocation {
 		$current_user_id = get_current_user_id();
 
 		if ( $current_user_id ) {
-			$customer = new \WC_Customer( $current_user_id, WC()->session ? true : false );
+			$customer = new \WC_Customer( $current_user_id, (bool) WC()->session );
 
 			return 'shipping' === $addressType ? $customer->get_shipping_country() : $customer->get_billing_country();
 		}
@@ -177,42 +146,15 @@ class Geolocation {
 	 * @return string
 	 */
 	private static function getUserCountryFromOrder( $addressType ) {
-
 		$country = '';
-		$wcAjax  = Obj::prop( 'wc-ajax', $_GET );
+		$isWcAjax  = Relation::propEq( 'wc-ajax', Fns::__, $_GET );
 
-		if ( 'update_order_review' === $wcAjax && isset( $_POST['country'] ) ) {
+		if ( $isWcAjax( 'update_order_review' ) && isset( $_POST['country'] ) ) {
 			$country = $_POST['country'];
-		} elseif ( 'checkout' === $wcAjax && isset( $_POST[ $addressType . '_country' ] ) ) {
+		} elseif ( $isWcAjax( 'checkout' ) && isset( $_POST[ $addressType . '_country' ] ) ) {
 			$country = $_POST[ $addressType . '_country' ];
 		}
 
 		return wc_clean( wp_unslash( $country ) );
-	}
-
-	/**
-	 * @param array $currencySettings
-	 *
-	 * @return bool
-	 */
-	public static function isCurrencyAvailableForCountry( $currencySettings ) {
-
-		if ( isset( $currencySettings['location_mode'] ) ) {
-
-			if ( 'all' === $currencySettings['location_mode'] ) {
-				return true;
-			}
-
-			if ( 'include' === $currencySettings['location_mode'] && in_array( self::getUserCountry(), $currencySettings['countries'] ) ) {
-				return true;
-			}
-
-			if ( 'exclude' === $currencySettings['location_mode'] && ! in_array( self::getUserCountry(), $currencySettings['countries'] ) ) {
-				return true;
-			}
-
-		}
-
-		return false;
 	}
 }

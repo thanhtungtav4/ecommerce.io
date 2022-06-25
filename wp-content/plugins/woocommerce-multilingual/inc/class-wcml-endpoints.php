@@ -21,7 +21,7 @@ class WCML_Endpoints {
 	 */
 	const STRING_CONTEXT = 'WP Endpoints';
 
-	public function __construct( woocommerce_wpml $woocommerce_wpml, SitePress $sitepress, wpdb $wpdb ) {
+	public function __construct( woocommerce_wpml $woocommerce_wpml, \WPML\Core\ISitePress $sitepress, wpdb $wpdb ) {
 		$this->woocommerce_wpml = $woocommerce_wpml;
 		$this->sitepress        = $sitepress;
 		$this->wpdb             = $wpdb;
@@ -202,7 +202,9 @@ class WCML_Endpoints {
 
 	private function get_translated_edit_address_slug( $slug, $language = false ) {
 
-		$strings_language = $this->woocommerce_wpml->strings->get_string_language( $slug, 'woocommerce', 'edit-address-slug: ' . $slug );
+		/** @var WCML_WC_Strings $strings */
+		$strings = $this->woocommerce_wpml->strings;
+		$strings_language = $strings->get_string_language( $slug, 'woocommerce', 'edit-address-slug: ' . $slug );
 		if ( $strings_language == $language ) {
 			return $slug;
 		}
@@ -210,7 +212,7 @@ class WCML_Endpoints {
 		$translated_slug = apply_filters( 'wpml_translate_single_string', $slug, 'woocommerce', 'edit-address-slug: ' . $slug, $language );
 		if ( $translated_slug == $slug ) {
 			if ( $language ) {
-				$translated_slug = $this->woocommerce_wpml->strings->get_translation_from_woocommerce_mo_file( 'edit-address-slug' . chr( 4 ) . $slug, $language );
+				$translated_slug = $strings->get_translation_from_woocommerce_mo_file( $strings->get_msgid_for_mo( $slug, 'edit-address-slug' ), $language );
 			} else {
 				$translated_slug = _x( $slug, 'edit-address-slug', 'woocommerce' );
 			}

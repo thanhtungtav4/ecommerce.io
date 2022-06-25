@@ -1,7 +1,9 @@
 <?php
 
+use WPML\FP\Logic;
 use WPML\FP\Obj;
 use WPML\FP\Str;
+use function WCML\functions\getSitePress;
 use function WPML\FP\pipe;
 
 class WCML_Multi_Currency_Prices {
@@ -183,7 +185,7 @@ class WCML_Multi_Currency_Prices {
 		} else {
 
 			$product = wc_get_product( $product_id );
-			$price   = $this->raw_price_filter( $product->get_price(), $currency );
+			$price   = $this->raw_price_filter( wc_get_price_including_tax( $product ), $currency );
 
 		}
 
@@ -201,57 +203,69 @@ class WCML_Multi_Currency_Prices {
 
 	}
 
+	/**
+	 * @param mixed|null $null
+	 * @param int        $object_id
+	 * @param string     $meta_key
+	 * @param bool       $single
+	 *
+	 * @return mixed
+	 */
 	public function product_price_filter( $null, $object_id, $meta_key, $single ) {
-		global $sitepress;
+		static $unlocked = true;
 
-		static $no_filter = false;
+		if (
+			$unlocked
+			&& in_array( get_post_type( $object_id ), [ 'product', 'product_variation' ] )
+			&& in_array( $meta_key, wcml_price_custom_fields( $object_id ) )
+			&& $this->is_multi_currency_filters_loaded()
+		) {
+			$unlocked = false;
+			$currency  = $this->multi_currency->get_client_currency();
 
-		if ( empty( $no_filter ) && in_array( get_post_type( $object_id ), [ 'product', 'product_variation' ] ) ) {
-
-			$price_keys = wcml_price_custom_fields( $object_id );
-
-			if ( is_array( $price_keys ) && in_array( $meta_key, $price_keys ) && $this->is_multi_currency_filters_loaded() ) {
-				$no_filter = true;
-
+			// $get_price_by_legacy_ccr :: void -> float|void
+			$get_price_by_legacy_ccr = function() use ( $object_id, $meta_key, $single, $currency ) {
 				// exception for products migrated from before WCML 3.1 with independent prices.
 				// legacy prior 3.1.
-				$original_object_id = apply_filters( 'translate_object_id', $object_id, get_post_type( $object_id ), false, $sitepress->get_default_language() );
-				$ccr                = get_post_meta( $original_object_id, '_custom_conversion_rate', true );
+				$original_object_id = apply_filters( 'translate_object_id', $object_id, get_post_type( $object_id ), false, getSitePress()->get_default_language() );
+				$ccr_rate           = Obj::path( [ $meta_key, $currency ], (array) get_post_meta( $original_object_id, '_custom_conversion_rate', true ) );
 
-				if ( in_array(
-					$meta_key,
-					[
-						'_price',
-						'_regular_price',
-						'_sale_price',
-					]
-				) && ! empty( $ccr ) && isset( $ccr[ $meta_key ][ $this->multi_currency->get_client_currency() ] )
+				if (
+					$ccr_rate
+					&& in_array( $meta_key, [ '_price', '_regular_price', '_sale_price'] )
 				) {
 					$price_original = get_post_meta( $original_object_id, $meta_key, $single );
-					if( is_numeric( $price_original ) ){
-						$price = $price_original * $ccr[ $meta_key ][ $this->multi_currency->get_client_currency() ];
-					}
-				} else {
-
-					// normal filtering.
-					// 1. manual prices.
-					$manual_prices = $this->multi_currency->custom_prices->get_product_custom_prices( $object_id, $this->multi_currency->get_client_currency() );
-
-					if ( $manual_prices && isset( $manual_prices[ $meta_key ] ) ) {
-
-						$price = $manual_prices[ $meta_key ];
-
-					} else {
-						// 2. automatic conversion
-						$price_original = get_post_meta( $object_id, $meta_key, $single );
-						if( is_numeric( $price_original ) ){
-							$price = apply_filters( 'wcml_raw_price_amount', $price_original );
-						}
+					if ( is_numeric( $price_original ) ) {
+						return $price_original * $ccr_rate;
 					}
 				}
+			};
 
-				$no_filter = false;
-			}
+			// $get_manual_price :: void -> float|void
+			$get_manual_price = function() use ( $object_id, $meta_key, $currency ) {
+				return Obj::prop( $meta_key, (array) $this->multi_currency->custom_prices->get_product_custom_prices( $object_id, $currency ) );
+			};
+
+			// $get_price_by_auto_conversion :: void -> float|void
+			$get_price_by_auto_conversion = function() use ( $object_id, $meta_key, $single ) {
+				$price_original = get_post_meta( $object_id, $meta_key, $single );
+				if( is_numeric( $price_original ) ){
+					return apply_filters( 'wcml_raw_price_amount', $price_original );
+				}
+			};
+
+			$get_price = Logic::firstSatisfying(
+				Logic::isNotNull(),
+				[
+					$get_price_by_legacy_ccr,
+					$get_manual_price,
+					$get_price_by_auto_conversion,
+				]
+			);
+
+			$price = $get_price( null );
+
+			$unlocked = true;
 		}
 
 		return isset( $price ) ? $price : $null;

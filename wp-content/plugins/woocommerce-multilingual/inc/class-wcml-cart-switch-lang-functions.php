@@ -1,5 +1,7 @@
 <?php
 
+use function WPML\Container\make;
+
 class WCML_Cart_Switch_Lang_Functions {
 
 	private $lang_from;
@@ -45,9 +47,7 @@ class WCML_Cart_Switch_Lang_Functions {
 	public function wcml_language_switch_dialog() {
 		global $woocommerce_wpml, $sitepress, $wp, $post;
 
-		$dependencies = new WCML_Dependencies();
-
-		if ( $dependencies->check() ) {
+		if ( make( WCML_Dependencies::class )->check() ) {
 
 			$current_url = home_url( add_query_arg( [], $wp->request ) );
 
@@ -75,13 +75,16 @@ class WCML_Cart_Switch_Lang_Functions {
 				$dialog_title     = __( 'Switching language?', 'woocommerce-multilingual' );
 
 				$confirmation_message = sprintf(
+					/* translators: %s is a language name */
 					__(
 						"You've switched the language and there are items in the cart. If you keep the %s language, the cart will be emptied and you will have to add the items again to the cart.",
 						'woocommerce-multilingual'
 					),
 					$active_languages[ $this->lang_to ]['translated_name']
 				);
+				/* translators: %s is a language name */
 				$stay_in              = sprintf( __( 'Keep %s', 'woocommerce-multilingual' ), $active_languages[ $this->lang_to ]['translated_name'] );
+				/* translators: %s is a language name */
 				$switch_to            = sprintf( __( 'Switch back to %s', 'woocommerce-multilingual' ), $active_languages[ $this->lang_from ]['translated_name'] );
 
 				$woocommerce_wpml->cart->cart_alert( $dialog_title, $confirmation_message, $stay_in, $switch_to, $force_cart_url, $request_url, true );

@@ -5,7 +5,7 @@ namespace WCML\MultiCurrency\ExchangeRateServices;
 /**
  * Class Fixerio
  */
-class Fixerio extends Service {
+class Fixerio extends ApiLayerService {
 
 	/**
 	 * @return string
@@ -31,15 +31,14 @@ class Fixerio extends Service {
 	/**
 	 * @return string
 	 */
-	public function getApiUrl() {
-		return 'http://data.fixer.io/api/latest?access_key=%1$s&base=%2$s&symbols=%3$s';
+	protected function getApiLayerUrl() {
+		return 'https://api.apilayer.com/fixer/latest?base=%2$s&symbols=%3$s';
 	}
 
 	/**
-	 * @return bool
+	 * @return string
 	 */
-	public function isKeyRequired() {
-		return true;
+	protected function getApiLegacyUrl() {
+		return 'http://data.fixer.io/api/latest?access_key=%1$s&base=%2$s&symbols=%3$s';
 	}
-
 }

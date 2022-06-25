@@ -1,6 +1,7 @@
 <?php
 
 use WPML\FP\Obj;
+use function WCML\functions\isStandAlone;
 
 class WCML_Custom_Prices {
 
@@ -19,7 +20,14 @@ class WCML_Custom_Prices {
 	}
 
 	public function custom_prices_init() {
+
 		if ( is_admin() ) {
+			if ( isStandAlone() ) {
+				// In the full mode, this is done in the product sync logic.
+				add_action( 'save_post_product', [ $this, 'save_custom_prices' ] );
+				add_action( 'save_post_product_variation', [ $this, 'sync_product_variations_custom_prices' ] );
+			}
+
 			add_action( 'woocommerce_variation_options', [ $this, 'add_individual_variation_nonce' ], 10, 3 );
 
 			// custom prices for different currencies for products/variations [BACKEND].
@@ -35,6 +43,7 @@ class WCML_Custom_Prices {
 		add_filter( 'loop_shop_post_in', [ $this, 'filter_products_with_custom_prices' ], 100 );
 		add_filter( 'woocommerce_is_purchasable', [ $this, 'check_product_with_custom_prices' ], 10, 2 );
 
+		add_action( 'wc_after_products_starting_sales', [ $this, 'maybe_set_sale_prices' ] );
 		add_action( 'wc_after_products_ending_sales', [ $this, 'maybe_remove_sale_prices' ] );
 	}
 
@@ -575,6 +584,22 @@ class WCML_Custom_Prices {
 	 */
 	private function is_custom_prices_set_for_product( $product_id ){
 		return get_post_meta( $product_id, '_wcml_custom_prices_status', true );
+	}
+	
+	/**
+	 * WC when starts the sale copies price from _sale_price into _price field
+	 * we should do the same for _sale_price_{currency} and _price_{currency}
+	 *
+	 * @param array $product_ids
+	 */
+	public function maybe_set_sale_prices( $product_ids ) {
+		foreach ( $product_ids as $product_id ) {
+			if ( $this->is_custom_prices_set_for_product( $product_id ) ) {
+				foreach ( $this->woocommerce_wpml->multi_currency->get_currencies() as $code => $currency ) {
+					update_post_meta( $product_id, '_price_' . $code, get_post_meta( $product_id, '_sale_price_' . $code, true ) );
+				}
+			}
+		}
 	}
 
 	/**

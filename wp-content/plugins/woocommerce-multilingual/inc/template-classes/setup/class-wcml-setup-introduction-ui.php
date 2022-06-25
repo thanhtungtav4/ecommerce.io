@@ -19,7 +19,7 @@ class WCML_Setup_Introduction_UI extends WCML_Templates_Factory {
 			'strings'      => [
 				'step_id'      => 'introduction_step',
 				'heading'      => __( "Let's turn your WooCommerce shop multilingual", 'woocommerce-multilingual' ),
-				'description1' => __( 'Thank you for choosing WooCommerce Multilingual. We need to do a few upgrades to your site, so that it has everything needed to run multilingual.', 'woocommerce-multilingual' ),
+				'description1' => __( 'Thank you for choosing WooCommerce Multilingual & Multicurrency. We need to do a few upgrades to your site, so that it has everything needed to run multilingual.', 'woocommerce-multilingual' ),
 				'description2' => [
 
 					'title' => __( "We'll help you:", 'woocommerce-multilingual' ),
@@ -28,7 +28,8 @@ class WCML_Setup_Introduction_UI extends WCML_Templates_Factory {
 					'step3' => __( 'Choose if you need multiple currencies', 'woocommerce-multilingual' ),
 
 				],
-				'description3' => sprintf( __( 'You can make these updates now, or later from the %1$sWooCommerce &raquo; WooCommerce Multilingual%2$s menu.', 'woocommerce-multilingual' ), '<strong>', '</strong>' ),
+				/* translators: %1$s and %2$s are opening and closing HTML strong tags */
+				'description3' => sprintf( __( 'You can make these updates now, or later from the %1$sWooCommerce &raquo; WooCommerce Multilingual & Multicurrency%2$s menu.', 'woocommerce-multilingual' ), '<strong>', '</strong>' ),
 				'continue'     => __( "Let's continue", 'woocommerce-multilingual' ),
 				'later'        => __( "I'll do the setup later", 'woocommerce-multilingual' ),
 			],

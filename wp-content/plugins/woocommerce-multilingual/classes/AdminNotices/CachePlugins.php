@@ -30,8 +30,8 @@ class CachePlugins implements \IWPML_Backend_Action, \IWPML_DIC_Action {
 	}
 
 	public function addNotice() {
-		$text = '<h2>' . __( 'WooCommerce Multilingual detected an active cache plugin on your site.', 'woocommerce-multilingual' ) . '</h2>';
-		$text .= '<p>' . __( 'Caching may cause currency display issues for your customers if you are using the multi-currency feature.', 'woocommerce-multilingual' ) . '</p>';
+		$text = '<h2>' . __( 'WooCommerce Multilingual & Multicurrency detected an active cache plugin on your site.', 'woocommerce-multilingual' ) . '</h2>';
+		$text .= '<p>' . __( 'Caching may cause currency display issues for your customers if you are using the multicurrency feature.', 'woocommerce-multilingual' ) . '</p>';
 		$text .= '<p>' . __( 'To avoid this, set your cache plugin to not cache pages for visitors that have a cookie set in their browser.', 'woocommerce-multilingual' ) . '</p>';
 
 		$notice = $this->notices->create_notice( self::NOTICE_ID, $text );
@@ -46,6 +46,10 @@ class CachePlugins implements \IWPML_Backend_Action, \IWPML_DIC_Action {
 	 * @return bool
 	 */
 	private static function hasActiveCachePlugin() {
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		}
+
 		// $isActive :: ( array, string ) -> bool
 		$isActive = pipe(
 			Fns::nthArg( 1 ), // array index

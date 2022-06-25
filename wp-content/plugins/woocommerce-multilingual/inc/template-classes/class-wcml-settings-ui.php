@@ -15,7 +15,7 @@ class WCML_Settings_UI extends WCML_Templates_Factory {
 	 * @param woocommerce_wpml $woocommerce_wpml
 	 * @param SitePress        $sitepress
 	 */
-	public function __construct( woocommerce_wpml $woocommerce_wpml, Sitepress $sitepress ) {
+	public function __construct( woocommerce_wpml $woocommerce_wpml, \WPML\Core\ISitePress $sitepress ) {
 
 		$functions = [
 			new Twig_SimpleFunction( 'wp_do_action', [ $this, 'wp_do_action' ] ),
@@ -97,14 +97,16 @@ class WCML_Settings_UI extends WCML_Templates_Factory {
 					],
 					'wpml_cookie_enabled'        => $this->sitepress->get_setting( WPML_Cookie_Setting::COOKIE_SETTING_FIELD ),
 					'cookie_not_enabled_message' => sprintf(
+						/* translators: %1$s and %2$s are opening and closing HTML link tags */
 						__(
 							'This feature was disabled. Please enable %1$sWPML cookies%2$s to continue.',
 							'woocommerce-multilingual'
 						),
-						'<a href="' . admin_url( '?page=' . WPML_PLUGIN_FOLDER . '/menu/languages.php#cookie' ) . '" target="_blank">',
+						'<a href="' . admin_url( 'admin.php?page=' . WPML_PLUGIN_FOLDER . '/menu/languages.php#cookie' ) . '" target="_blank">',
 						'</a>'
 					),
 					'doc_link'                   => sprintf(
+						/* translators: %1$s and %2$s are opening and closing HTML link tags */
 						__(
 							'Not sure which option to choose? Read about %1$spotential issues when switching languages and currencies while the cart has items%2$s.',
 							'woocommerce-multilingual'

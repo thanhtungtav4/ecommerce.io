@@ -38,6 +38,13 @@ abstract class Service {
 	abstract public function isKeyRequired();
 
 	/**
+	 * @return void
+	 */
+	public function resetConnectionCache() {
+
+	}
+
+	/**
 	 * @param string $from Base currency.
 	 * @param array  $tos  Target currencies.
 	 *
@@ -47,41 +54,118 @@ abstract class Service {
 	public function getRates( $from, $tos ) {
 		$this->clearLastError();
 
-		$rates = [];
+		$response = $this->makeRequest( $from, $tos );
 
-		if ( $this->isKeyRequired() ) {
-			$url = sprintf( $this->getApiUrl(), $this->getSetting( 'api-key' ), $from, implode( ',', $tos ) );
-		} else {
-			$url = sprintf( $this->getApiUrl(), $from, implode( ',', $tos ) );
-		}
-
-		$data = wp_safe_remote_get( $url );
-
-		if ( is_wp_error( $data ) ) {
-
-			$http_error = implode( "\n", $data->get_error_messages() );
+		if ( is_wp_error( $response ) ) {
+			$http_error = implode( "\n", $response->get_error_messages() );
 			$this->saveLastError( $http_error );
 			throw new \Exception( $http_error );
-
 		}
 
-		$json = json_decode( $data['body'] );
+		$data = json_decode( $response['body'] );
 
-		if ( empty( $json->rates ) ) {
-			if ( isset( $json->error->info ) ) {
-				$error = $json->error->info;
-			} else {
-				$error = __( 'Cannot get exchange rates. Connection failed.', 'woocommerce-multilingual' );
-			}
+		if ( $this->isInvalidResponse( $data ) ) {
+			$error = self::get_formatted_error( $data );
 			$this->saveLastError( $error );
 			throw new \Exception( $error );
 		}
 
-		foreach ( $json->rates as $to => $rate ) {
+		return $this->extractRates( $data, $from, $tos );
+	}
+
+	/**
+	 * @param string $from The base currency code.
+	 * @param array  $tos  The target currency codes.
+	 *
+	 * @return array|\WP_Error
+	 */
+	protected function makeRequest( $from, $tos ) {
+		if ( $this->isKeyRequired() ) {
+			$url = sprintf( $this->getApiUrl(), $this->getApiKey(), $from, implode( ',', $tos ) );
+		} else {
+			$url = sprintf( $this->getApiUrl(), $from, implode( ',', $tos ) );
+		}
+
+		return wp_safe_remote_get( $url, [ 'headers' => $this->getRequestHeaders() ] );
+	}
+
+	/**
+	 * @return array
+	 */
+	protected function getRequestHeaders() {
+		return [];
+	}
+
+	/**
+	 * @param object $decodedData
+	 *
+	 * @return bool
+	 */
+	protected function isInvalidResponse( $decodedData ) {
+		return empty( $decodedData->rates );
+	}
+
+	/**
+	 * @param object $validData
+	 * @param string $from
+	 * @param array  $tos
+	 *
+	 * @return array
+	 */
+	protected function extractRates( $validData, $from, $tos ) {
+		$rates = [];
+
+		foreach ( $validData->rates as $to => $rate ) {
 			$rates[ $to ] = round( $rate, \WCML_Exchange_Rates::DIGITS_AFTER_DECIMAL_POINT );
 		}
 
 		return $rates;
+	}
+
+	/**
+	 * Each service has its own response signature,
+	 * and I also noticed that it does not always
+	 * respect their own doc.
+	 *
+	 * So the idea is to just catch all possible information
+	 * and return it as raw output.
+	 *
+	 * Example: "error_code: 104 - error_message: ..."
+	 *
+	 * @param array|\stdClass $response
+	 *
+	 * @return string
+	 */
+	public static function get_formatted_error( $response ) {
+		// $getFromPath :: array -> string|null
+		$getFromPath = function( $path ) use ( $response ) {
+			try {
+				$value = Obj::path( $path, $response );
+				return is_string( $value ) || is_int( $value ) ? $value : null;
+			} catch ( \Exception $e ) {
+				return null;
+			}
+		};
+
+		$formattedError = wpml_collect( [
+			// Codes or types
+			'error'         => $getFromPath( [ 'error' ] ),
+			'error_code'    => $getFromPath( [ 'error', 'code' ] ),
+			'error_type'    => $getFromPath( [ 'error', 'type' ] ),
+			// Descriptions or messages
+			'error_info'    => $getFromPath( [ 'error', 'info' ] ),
+			'error_message' => $getFromPath( [ 'error', 'message' ] ),
+			'message'       => $getFromPath( [ 'message' ] ),
+			'description'   => $getFromPath( [ 'description' ] ),
+		] )->filter()
+		   ->map( function( $value, $key ) {
+			   return "$key: $value";
+		   } )
+		   ->implode( ' - ' );
+
+		return $formattedError
+			? strip_tags( $formattedError )
+			: esc_html__( 'Cannot get exchange rates. Connection failed.', 'woocommerce-multilingual' );
 	}
 
 	/**
@@ -142,4 +226,10 @@ abstract class Service {
 		return $this->getSetting( 'last_error' );
 	}
 
+	/**
+	 * @return string|null
+	 */
+	protected function getApiKey() {
+		return $this->getSetting( 'api-key' );
+	}
 }

@@ -22,7 +22,7 @@ class WCML_Multi_Currency_Reports {
 	 * @param wpdb $wpdb
 	 * @param WPML_WP_Cache $wpml_cache
 	 */
-	public function __construct( woocommerce_wpml $woocommerce_wpml, Sitepress $sitepress, wpdb $wpdb, $wpml_cache = null ) {
+	public function __construct( woocommerce_wpml $woocommerce_wpml, \WPML\Core\ISitePress $sitepress, wpdb $wpdb, $wpml_cache = null ) {
 
 		$this->woocommerce_wpml = $woocommerce_wpml;
 		$this->sitepress        = $sitepress;
@@ -73,9 +73,6 @@ class WCML_Multi_Currency_Reports {
 				$this,
 				'filter_dashboard_status_widget_sales_query'
 			) ); // woocommerce 2.6
-
-			// Temporary fix for dashboard widget (see wcml-3598).
-			add_filter( 'woocommerce_admin_disabled', '__return_true' );
 		}
 
 	}

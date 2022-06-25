@@ -18,6 +18,7 @@ class WCML_Languages_Upgrade_Notice extends WCML_Templates_Factory {
 			'strings'      => [
 				'update_trnsl'    => __( 'Update Translation', 'woocommerce-multilingual' ),
 				'hide'            => __( 'Hide This Message', 'woocommerce-multilingual' ),
+				/* translators: %1$s is a list of notice items and %2$s is a version number */
 				'trnsl_available' => sprintf( __( '<strong>WooCommerce Translation Available</strong> &#8211; Install or update your <code>%1$s</code> translations to version <code>%2$s</code>.', 'woocommerce-multilingual' ), implode( ', ', $this->notices ), WC_VERSION ),
 			],
 			'nonces'       => [

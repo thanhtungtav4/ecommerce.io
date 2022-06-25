@@ -43,8 +43,8 @@ class MultiCurrencyMissing implements \IWPML_Backend_Action, \IWPML_DIC_Action {
 	 */
 	public function addNotice() {
 		$text  = '<h2>' . __( "You haven't added any secondary currencies", 'woocommerce-multilingual' ) . '</h2>';
-		$text .= '<p>' . __( "Please add another currency to fully utilize multi-currency mode. If you do not need multiple currencies, you can disable this setting to improve your site's performance.", 'woocommerce-multilingual' ) . '</p>';
-		$text .= '<a href="' . admin_url( 'admin.php?page=wpml-wcml&tab=multi-currency' ) . '">' . __( 'Configure multi-currency mode', 'woocommerce-multilingual' ) . '</a>';
+		$text .= '<p>' . __( "Please add another currency to fully utilize multicurrency mode. If you do not need multiple currencies, you can disable this setting to improve your site's performance.", 'woocommerce-multilingual' ) . '</p>';
+		$text .= '<a href="' . admin_url( 'admin.php?page=wpml-wcml&tab=multi-currency' ) . '">' . __( 'Configure multicurrency mode', 'woocommerce-multilingual' ) . '</a>';
 
 		$notice = $this->notices->create_notice( self::NOTICE_ID, $text );
 		$notice->set_css_class_types( 'notice-warning' );

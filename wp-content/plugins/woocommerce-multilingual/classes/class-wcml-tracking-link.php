@@ -4,6 +4,7 @@ class WCML_Tracking_Link {
 
 	// WPML general links
 	const WPML_HOME = 'https://wpml.org/';
+	const WPML_PURCHASE = 'https://wpml.org/purchase/';
 	const WPML_SUPPORT = 'https://wpml.org/forums/forum/english-support/';
 	const WPML_ACCOUNT = 'https://wpml.org/shop/account/';
 	const WPML_AUTO_TRANSLATION_DOC = 'https://wpml.org/documentation/automatic-translation/';
@@ -28,12 +29,12 @@ class WCML_Tracking_Link {
 	 *
 	 * @return string
 	 */
-	public static function generate( $link, $id = false ) {
-		$params = [
+	public static function generate( $link, $id = false, $params = [] ) {
+		$params = array_merge( [
 			'utm_source'   => 'plugin',
 			'utm_medium'   => 'gui',
 			'utm_campaign' => 'wcml',
-		];
+		], $params );
 
 		$link = add_query_arg( $params, $link );
 
@@ -45,10 +46,30 @@ class WCML_Tracking_Link {
 	}
 
 	/**
+	 * @param bool $isStandalone
+	 *
+	 * @return array
+	 */
+	private static function getStandaloneParams( $isStandalone ) {
+		return $isStandalone ? [ 'utm_campaign' => 'wcml-standalone' ] : [];
+	}
+
+	/**
+	 * @param bool $isStandalone
+	 *
 	 * @return string
 	 */
-	public static function getWpmlHome() {
-		return self::generate( self::WPML_HOME );
+	public static function getWpmlHome( $isStandalone = false ) {
+		return self::generate( self::WPML_HOME, false, self::getStandaloneParams( $isStandalone ) );
+	}
+
+	/**
+	 * @param bool $isStandalone
+	 *
+	 * @return string
+	 */
+	public static function getWpmlPurchase( $isStandalone = false ) {
+		return self::generate( self::WPML_PURCHASE, false, self::getStandaloneParams( $isStandalone ) );
 	}
 
 	/**

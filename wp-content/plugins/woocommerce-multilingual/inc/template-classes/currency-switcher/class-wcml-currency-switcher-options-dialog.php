@@ -57,6 +57,7 @@ class WCML_Currency_Switcher_Options_Dialog extends WCML_Templates_Factory {
 				'template'            => [
 					'label'           => __( 'Template for currency switcher', 'woocommerce-multilingual' ),
 					'parameters'      => __( 'Available parameters', 'woocommerce-multilingual' ),
+					/* translators: unidentified placeholders... */
 					'template_tip'    => __( 'Default: %name% (%1$symbol%) - %2$code%', 'woocommerce-multilingual' ),
 					'parameters_list' => '%code%, %symbol%, %name%',
 				],

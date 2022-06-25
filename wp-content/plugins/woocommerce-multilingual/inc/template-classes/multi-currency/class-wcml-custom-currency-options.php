@@ -122,6 +122,7 @@ class WCML_Custom_Currency_Options extends WCML_Templates_Factory {
 			],
 
 			'automatic_rates'          => $exchange_rates_automatic,
+			/* translators: %s is an exchange rates service */
 			'automatic_rates_tip'      => sprintf( __( 'Exchange rate updated automatically from %s', 'woocommerce-multilingual' ), $exchange_rates_service ),
 			'current_currency'         => $current_currency,
 			'active_currencies'        => $this->woocommerce_wpml->multi_currency->get_currencies( true ),

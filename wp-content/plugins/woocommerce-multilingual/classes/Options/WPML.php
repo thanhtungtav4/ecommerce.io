@@ -22,4 +22,12 @@ class WPML {
 			Automatic::set( $postType, $state );
 		}
 	}
+
+	/**
+	 * @return bool
+	 */
+	public static function useAte() {
+		return method_exists( \WPML_TM_ATE_Status::class, 'is_enabled_and_activated' )
+			&& \WPML_TM_ATE_Status::is_enabled_and_activated();
+	}
 }

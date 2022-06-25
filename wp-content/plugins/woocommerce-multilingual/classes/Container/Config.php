@@ -14,8 +14,32 @@ class Config {
 
 	public static function getSharedClasses() {
 		return [
-			\WCML_Multi_Currency::class,
 			\WCML_Currencies_Payment_Gateways::class,
+			\WCML_Dependencies::class,
+			\WCML_Exchange_Rates::class,
+			\WCML_Multi_Currency::class,
+		];
+	}
+
+	/**
+	 * Replaces global $sitepress with null object.
+	 *
+	 * @return array
+	 */
+	public static function getAliases() {
+		return [
+			\WPML\Core\ISitePress::class => \WCML\functions\isStandAlone()
+						? \WCML\StandAlone\NullSitePress::class
+						: \SitePress::class,
+		];
+	}
+
+	/**
+	 * @return array
+	 */
+	public static function getDelegated() {
+		return [
+			\WCML_Exchange_Rates::class => [ \WCML_Exchange_Rates::class, 'create' ],
 		];
 	}
 }

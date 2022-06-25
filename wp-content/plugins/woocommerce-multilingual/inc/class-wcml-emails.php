@@ -22,7 +22,7 @@ class WCML_Emails {
 	/** @var wpdb */
 	private $wpdb;
 
-	public function __construct( WCML_WC_Strings $wcmlStrings, SitePress $sitepress, woocommerce $woocommerce, wpdb $wpdb ) {
+	public function __construct( WCML_WC_Strings $wcmlStrings, \WPML\Core\ISitePress $sitepress, woocommerce $woocommerce, wpdb $wpdb ) {
 		$this->wcmlStrings = $wcmlStrings;
 		$this->sitepress   = $sitepress;
 		$this->woocommerce = $woocommerce;
@@ -231,6 +231,24 @@ class WCML_Emails {
 		if ( ! empty( $language ) ) {
 			$this->change_email_language( $language );
 		}
+
+		$this->force_translating_admin_options_in_backend();
+	}
+
+	/**
+	 * Run before preparing the email to get admin options in the correct language.
+	 */
+	private function force_translating_admin_options_in_backend() {
+
+		do_action( 'wpml_st_force_translate_admin_options', [
+			'woocommerce_checkout_privacy_policy_text',
+			'woocommerce_email_footer_text',
+			'woocommerce_email_from_address',
+			'woocommerce_email_from_name',
+			'woocommerce_price_decimal_sep',
+			'woocommerce_price_thousand_sep',
+			'woocommerce_registration_privacy_policy_text',
+		] );
 	}
 
 	/**

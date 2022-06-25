@@ -84,14 +84,14 @@ class WCML_Orders {
 		$translateComment = Obj::over( Obj::lensProp( 'comment_content' ), $translateInWoocommerce );
 
 		return Maybe::of( $comments )
-		            ->filter( $ifIdentifiedUser )
-		            ->map( Fns::map( $translateComment ) )
-		            ->getOrElse( $comments );
+			->filter( $ifIdentifiedUser )
+			->map( Fns::map( $translateComment ) )
+			->getOrElse( $comments );
 	}
 
 	/**
 	 * @param WC_Order_Item[] $items
-	 * @param WC_Order $order
+	 * @param WC_Order        $order
 	 *
 	 * @return WC_Order_Item[]
 	 */
@@ -103,9 +103,9 @@ class WCML_Orders {
 		 *
 		 * @since 4.11.0
 		 *
-		 * @param bool True if we should to translate order items.
-		 * @param $items WC_Order_Item[] Order items.
-		 * @param $order WC_Order WC Order.
+		 * @param bool            $translate_order_items True if we should to translate order items.
+		 * @param WC_Order_Item[] $items                 Order items.
+		 * @param WC_Order        $order                 WC Order.
 		 */
 		$translate_order_items = apply_filters( 'wcml_should_translate_order_items', $translate_order_items, $items, $order );
 
@@ -136,9 +136,9 @@ class WCML_Orders {
 			 *
 			 * @since 4.11.0
 			 *
-			 * @param bool True if we should save adjusted order item.
-			 * @param $item WC_Order_Item
-			 * @param $language_to_filter string Language to filter.
+			 * @param bool          true                True if we should save adjusted order item.
+			 * @param WC_Order_Item $item
+			 * @param string        $language_to_filter Language to filter.
 			 */
 			$save_adjusted_item = apply_filters( 'wcml_should_save_adjusted_order_item_in_language', true, $item, $language_to_filter );
 
@@ -172,7 +172,6 @@ class WCML_Orders {
 					}
 				}
 			}
-
 		}
 	}
 
@@ -236,8 +235,8 @@ class WCML_Orders {
 		 *
 		 * @since 4.11.0
 		 *
-		 * @param $language string Order item language to filter.
-		 * @param $order WC_Order
+		 * @param string   $language Order item language to filter.
+		 * @param WC_Order $order
 		 */
 		return apply_filters( 'wcml_get_order_items_language', $language, $order );
 	}
@@ -353,7 +352,7 @@ class WCML_Orders {
 		) {
 			$order->add_meta_data( self::KEY_LANGUAGE, $this->sitepress->get_current_language(), true );
 		}
-    }
+	}
 
 	public function append_query_parameters( $parameters ) {
 
@@ -511,13 +510,13 @@ class WCML_Orders {
 		return $downloads;
 	}
 
-    /**
-     * Curried function to get the order language.
-     *
-     * @param int|null $orderId
-     *
-     * @return callable|string|false
-     */
+	/**
+	 * Curried function to get the order language.
+	 *
+	 * @param int|null $orderId
+	 *
+	 * @return callable|string|false
+	 */
 	public static function getLanguage( $orderId = null ) {
 		return call_user_func_array( curryN( 1, partialRight( 'get_post_meta', self::KEY_LANGUAGE, true ) ), func_get_args() );
 	}

@@ -1,10 +1,10 @@
 <?php
 
+use WCML\Utilities\AdminPages;
+use WPML\FP\Relation;
+
 class WCML_Resources {
 
-	private static $page;
-	private static $tab;
-	private static $is_wpml_wcml_page;
 	private static $pagenow;
 
 	private static $woocommerce_wpml;
@@ -24,11 +24,7 @@ class WCML_Resources {
 
 		self::$woocommerce_wpml = $woocommerce_wpml;
 		self::$sitepress        = $sitepress;
-
-		self::$page              = isset( $_GET['page'] ) ? $_GET['page'] : null;
-		self::$tab               = isset( $_GET['tab'] ) ? $_GET['tab'] : null;
-		self::$is_wpml_wcml_page = self::$page == 'wpml-wcml';
-		self::$pagenow           = $pagenow;
+		self::$pagenow          = $pagenow;
 
 		self::load_css();
 
@@ -59,11 +55,11 @@ class WCML_Resources {
 
 	private static function load_css() {
 
-		if ( self::$is_wpml_wcml_page || self::$page == WPML_TM_FOLDER . '/menu/translations-queue.php' ) {
+		if ( AdminPages::isWcmlSettings() || AdminPages::isTranslationQueue() ) {
 
 			self::load_management_css();
 
-			if ( in_array( self::$tab, [ 'multi-currency', 'slugs' ] ) ) {
+			if ( AdminPages::isMultiCurrency() || AdminPages::isTab( 'slugs' ) ) {
 				wp_register_style( 'wcml-dialogs', WCML_PLUGIN_URL . '/res/css/dialogs.css', [ 'wpml-dialog' ], WCML_VERSION );
 				wp_enqueue_style( 'wcml-dialogs' );
 			}
@@ -94,7 +90,7 @@ class WCML_Resources {
 
 	public static function admin_scripts() {
 
-		if ( self::$is_wpml_wcml_page ) {
+		if ( AdminPages::isWcmlSettings() ) {
 
 			wp_register_script( 'wcml-scripts', WCML_PLUGIN_URL . '/res/js/scripts' . WCML_JS_MIN . '.js', [ 'jquery', 'jquery-ui-core', 'jquery-ui-resizable' ], WCML_VERSION, true );
 
@@ -124,7 +120,7 @@ class WCML_Resources {
 			self::load_tooltip_resources();
 		}
 
-		if ( self::$page == WPML_TM_FOLDER . '/menu/main.php' ) {
+		if ( AdminPages::isTranslationsDashboard() ) {
 			wp_register_script( 'wpml_tm', WCML_PLUGIN_URL . '/res/js/wpml_tm' . WCML_JS_MIN . '.js', [ 'jquery' ], WCML_VERSION, true );
 			wp_enqueue_script( 'wpml_tm' );
 		}
@@ -134,7 +130,7 @@ class WCML_Resources {
 			wp_enqueue_script( 'wcml_widgets' );
 		}
 
-		if ( self::$page == 'wpml-wcml' && self::$tab == 'multi-currency' ) {
+		if ( AdminPages::isMultiCurrency() ) {
 			wp_register_script( 'multi-currency', WCML_PLUGIN_URL . '/res/js/multi-currency' . WCML_JS_MIN . '.js', [ 'jquery', 'jquery-ui-sortable' ], WCML_VERSION, true );
 			wp_enqueue_script( 'multi-currency' );
 
@@ -152,12 +148,12 @@ class WCML_Resources {
 			wp_enqueue_script( 'exchange-rates' );
 		}
 
-		if ( self::$page == 'wpml-wcml' && self::$tab == 'product-attributes' ) {
+		if ( AdminPages::isWcmlSettings() && AdminPages::isTab( 'product-attributes' ) ) {
 			wp_register_script( 'product-attributes', WCML_PLUGIN_URL . '/res/js/product-attributes' . WCML_JS_MIN . '.js', [ 'jquery' ], WCML_VERSION, true );
 			wp_enqueue_script( 'product-attributes' );
 		}
 
-		if ( self::$page == 'wpml-wcml' && self::$tab == 'custom-taxonomies' ) {
+		if ( AdminPages::isWcmlSettings() && AdminPages::isTab( 'custom-taxonomies' ) ) {
 			wp_register_script( 'custom-taxonomies', WCML_PLUGIN_URL . '/res/js/product-custom-taxonomies' . WCML_JS_MIN . '.js', [ 'jquery' ], WCML_VERSION, true );
 			wp_enqueue_script( 'custom-taxonomies' );
 		}
@@ -173,14 +169,14 @@ class WCML_Resources {
 		wp_register_script( 'wcml-messages', WCML_PLUGIN_URL . '/res/js/wcml-messages' . WCML_JS_MIN . '.js', [ 'jquery' ], WCML_VERSION, true );
 		wp_enqueue_script( 'wcml-messages' );
 
-		$is_attr_page = apply_filters( 'wcml_is_attributes_page', self::$page == 'product_attributes' && isset( $_GET['post_type'] ) && $_GET['post_type'] == 'product' );
+		$is_attr_page = apply_filters( 'wcml_is_attributes_page', AdminPages::isPage( 'product_attributes' ) && Relation::propEq( 'post_type', 'product', $_GET ) );
 
 		if ( $is_attr_page ) {
 			wp_register_script( 'wcml-attributes', WCML_PLUGIN_URL . '/res/js/wcml-attributes' . WCML_JS_MIN . '.js', [ 'jquery' ], WCML_VERSION, true );
 			wp_enqueue_script( 'wcml-attributes' );
 		}
 
-		if ( self::$page == WPML_TM_FOLDER . '/menu/translations-queue.php' ) {
+		if ( AdminPages::isTranslationQueue() ) {
 
 			self::load_tooltip_resources();
 			wp_enqueue_media();
@@ -324,13 +320,14 @@ class WCML_Resources {
 
 		echo '<h3 class="wcml_prod_hidden_notice">' .
 			sprintf(
+				/* translators: %1$s and %2$s are HTML links pointing to post edit screen and translation edit screen */
 				__(
 					"This is a translation of %1\$s. Some of the fields are not editable. It's recommended to use the %2\$s for translating products.",
 					'woocommerce-multilingual'
 				),
 				'<a href="' . get_edit_post_link( $original_id ) . '" >' . get_the_title( $original_id ) . '</a>',
 				'<a href="' . self::linkToTranslation( $original_id, $language ) . '" >' .
-				__( 'WooCommerce Multilingual products translator', 'woocommerce-multilingual' ) . '</a>'
+				__( 'WooCommerce Multilingual & Multicurrency products translator', 'woocommerce-multilingual' ) . '</a>'
 			) . '</h3>';
 	}
 }

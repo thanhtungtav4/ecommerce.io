@@ -3,6 +3,8 @@
 use \WCML\Multicurrency\Shipping\ShippingModeProvider as ManualCost;
 
 class WCML_Multi_Currency_Shipping {
+	
+	const CACHE_PERSISTENT_GROUP = 'converted_shipping_cost' ;
 
 	/** @var WCML_Multi_Currency */
 	private $multi_currency;
@@ -11,11 +13,12 @@ class WCML_Multi_Currency_Shipping {
 	/** @var wpdb */
 	private $wpdb;
 
-	public function __construct( WCML_Multi_Currency $multi_currency, Sitepress $sitepress, wpdb $wpdb ) {
+	public function __construct( WCML_Multi_Currency $multi_currency, \WPML\Core\ISitePress $sitepress, wpdb $wpdb ) {
 
 		$this->multi_currency = $multi_currency;
 		$this->sitepress      = $sitepress;
 		$this->wpdb           = $wpdb;
+		wp_cache_add_non_persistent_groups( self::CACHE_PERSISTENT_GROUP );
 	}
 
 	public function add_hooks() {
@@ -40,13 +43,11 @@ class WCML_Multi_Currency_Shipping {
 
 	public function convert_shipping_costs_in_package_rates( $rates ) {
 
-		$cache_group = 'converted_shipping_cost';
-
 		$client_currency = $this->multi_currency->get_client_currency();
 		foreach ( $rates as $rate_id => $rate ) {
 
 			$cache_key                      = $rate_id;
-			$cached_converted_shipping_cost = wp_cache_get( $cache_key, $cache_group );
+			$cached_converted_shipping_cost = wp_cache_get( $cache_key, self::CACHE_PERSISTENT_GROUP );
 
 			if ( $cached_converted_shipping_cost ) {
 				$rate->cost = $cached_converted_shipping_cost;
@@ -54,7 +55,7 @@ class WCML_Multi_Currency_Shipping {
 				if (  ! ManualCost::get( $rate->method_id )->isManualPricingEnabled( $rate ) ) {
 					$rate->cost = $this->multi_currency->prices->raw_price_filter( $rate->cost, $client_currency );
 				}
-				wp_cache_set( $cache_key, $rate->cost, $cache_group );
+				wp_cache_set( $cache_key, $rate->cost, self::CACHE_PERSISTENT_GROUP );
 			}
 		}
 

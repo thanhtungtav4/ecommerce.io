@@ -71,11 +71,4 @@ class Functions {
 		return ( false !== stripos( $_SERVER['REQUEST_URI'], $rest_prefix . $endpoint ) );
 	}
 
-	/**
-	 * Use url without the language parameter. Needed for the signature match.
-	 */
-	public static function removeWpmlGlobalUrlFilters() {
-		global $wpml_url_filters;
-		remove_filter( 'home_url', [ $wpml_url_filters, 'home_url_filter' ], - 10 );
-	}
 }

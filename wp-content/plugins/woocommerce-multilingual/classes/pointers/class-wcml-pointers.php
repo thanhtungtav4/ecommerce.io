@@ -1,5 +1,7 @@
 <?php
 
+use function WCML\functions\isStandAlone;
+
 class WCML_Pointers{
 
 	public function add_hooks() {
@@ -8,24 +10,29 @@ class WCML_Pointers{
 
 	public function setup() {
 		$current_screen = get_current_screen();
-
+		
 		if ( empty( $current_screen ) ) {
 			return;
 		}
+		
+		if ( ! WCML_Capabilities::canManageWcml() ) {
+			return;
+		}
 
-		$tab     = isset( $_GET['tab'] ) ? $_GET['tab'] : '';
-		$section = isset( $_GET['section'] ) ? $_GET['section'] : '';
+		$tab        = isset( $_GET['tab'] ) ? $_GET['tab'] : '';
+		$section    = isset( $_GET['section'] ) ? $_GET['section'] : '';
+		$isFullMode = ! isStandAlone();
 		wp_register_style( 'wcml-pointers', WCML_PLUGIN_URL . '/res/css/wcml-pointers.css' );
 
-		if ( 'edit-product' === $current_screen->id ) {
+		if ( $isFullMode && 'edit-product' === $current_screen->id ) {
 			add_action( 'admin_footer', array( $this, 'add_products_translation_link' ), 100 );
 		} elseif ( 'woocommerce_page_wc-settings' === $current_screen->id ) {
-			if ( 'shipping' === $tab && 'classes' === $section ) {
+			if ( $isFullMode && 'shipping' === $tab && 'classes' === $section ) {
 				add_action( 'admin_footer', array( $this, 'add_shipping_classes_translation_link' ) );
 			} elseif ( ! $tab || 'general' === $tab ) {
 				add_filter( 'woocommerce_general_settings', array( $this, 'add_multi_currency_link' ) );
-			} elseif ( 'account' === $tab ) {
-				add_filter( 'woocommerce_account_settings', array( $this, 'add_endpoints_translation_link' ) );
+			} elseif ( $isFullMode && 'advanced' === $tab ) {
+				add_filter( 'woocommerce_settings_pages', array( $this, 'add_endpoints_translation_link' ) );
 			}
 		}
 	}
@@ -53,7 +60,7 @@ class WCML_Pointers{
 	 */
 	public function add_multi_currency_link( array $settings ) {
 		$link = admin_url( 'admin.php?page=wpml-wcml&tab=multi-currency' );
-		$name = __( 'Configure multi-currency for multilingual sites', 'woocommerce-multilingual' );
+		$name = __( 'Configure multicurrency for multilingual sites', 'woocommerce-multilingual' );
 
 		$anchor = '<a class="button button-small button-wpml wcml-pointer-multi_currency" href="{{ url }}">{{ text }}</a>';
 
@@ -71,7 +78,7 @@ class WCML_Pointers{
 
 		$anchor = '<a class="button button-small button-wpml wcml-pointer-endpoints_translation" href="{{ url }}">{{ text }}</a>';
 
-		return $this->add_link_with_settings( $link, $name, 'account_endpoint_options', $settings, $anchor );
+		return $this->add_link_with_settings( $link, $name, 'checkout_endpoint_options', $settings, $anchor );
 	}
 
 	/**

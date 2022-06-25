@@ -27,7 +27,7 @@ class WCML_Multi_Currency_Resources {
 
 		wp_register_script( 'wcml-mc-scripts', WCML_PLUGIN_URL . '/res/js/wcml-multi-currency' . WCML_JS_MIN . '.js', [ 'jquery' ], WCML_VERSION, true );
 
-		$script_vars['wcml_spinner']     = ICL_PLUGIN_URL . '/res/img/ajax-loader.gif';
+		$script_vars['wcml_spinner']     = \WCML\functions\assetLink( '/res/img/ajax-loader.gif' );
 		$script_vars['current_currency'] = [
 			'code'   => self::$multi_currency->get_client_currency(),
 			'symbol' => get_woocommerce_currency_symbol( self::$multi_currency->get_client_currency() ),

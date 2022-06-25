@@ -257,6 +257,7 @@ class WCML_Editor_UI_Product_Job extends WPML_Editor_UI_Job {
 				if ( ( $custom_product_sync && $custom_product_sync === 'self' ) || ( ! $custom_product_sync && ! $this->woocommerce_wpml->settings['file_path_sync'] ) ) {
 
 					if ( $is_variable ) {
+						/* translators: %s is a product ID */
 						$files_section = new WPML_Editor_UI_Field_Section( sprintf( __( 'Download Files for Variation #%s', 'woocommerce-multilingual' ), $post_id ) );
 					} else {
 						$files_section = new WPML_Editor_UI_Field_Section( __( 'Download Files', 'woocommerce-multilingual' ) );

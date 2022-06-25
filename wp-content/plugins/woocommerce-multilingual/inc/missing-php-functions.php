@@ -1,7 +1,13 @@
 <?php
+
+use function WCML\functions\isStandAlone;
+
 add_action( 'plugins_loaded', 'wcml_check_wpml_functions' );
 
 function wcml_check_wpml_functions() {
+	if ( isStandAlone() ) {
+		return;
+	}
 
 	if ( ! has_filter( 'translate_object_id' ) ) {
 		add_filter( 'translate_object_id', 'icl_object_id', 10, 4 );

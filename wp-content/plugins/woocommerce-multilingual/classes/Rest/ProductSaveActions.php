@@ -22,7 +22,7 @@ class ProductSaveActions extends \WPML_Post_Translation {
 	public function __construct(
 		array $settings,
 		\wpdb $wpdb,
-		\SitePress $sitepress,
+		\WPML\Core\ISitePress $sitepress,
 		\WCML_Synchronize_Product_Data $productDataSync
 	) {
 		parent::__construct( $settings, $wpdb );

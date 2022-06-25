@@ -4,10 +4,12 @@ namespace WCML\Multicurrency\Analytics;
 
 use WCML\Utilities\Resources;
 use WCML\Rest\Functions;
+use WCML\StandAlone\IStandAloneAction;
 use WPML\FP\Obj;
 use WPML\FP\Fns;
+use WCML\Utilities\WpAdminPages;
 
-class Hooks implements \IWPML_Action {
+class Hooks implements \IWPML_Action, IStandAloneAction {
 
 	/** @var \woocommerce_wpml $woocommerce_wpml */
 	private $woocommerce_wpml;
@@ -181,11 +183,13 @@ class Hooks implements \IWPML_Action {
 	}
 
 	private function getCurrency() {
-		// phpcs:disable WordPress.Security.NonceVerification.Recommended
-		return isset( $_GET['currency'] )
-			? sanitize_text_field( wp_unslash( $_GET['currency'] ) )
+		$rawCurrency = WpAdminPages::isDashboard()
+			? Obj::prop( '_wcml_dashboard_currency', $_COOKIE )
+			: Obj::prop( 'currency', $_GET );
+
+		return $rawCurrency
+			? sanitize_text_field( wp_unslash( $rawCurrency ) )
 			: wcml_get_woocommerce_currency_option();
-		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 	}
 
 }
