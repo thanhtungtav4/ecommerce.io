@@ -790,7 +790,7 @@ msgstr ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:732
 msgid "Cart"
-msgstr ""
+msgstr "Giỏ hàng"
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:746
 msgid "My Account"
@@ -918,3 +918,7 @@ msgstr "Hỏi Đáp"
 
 msgid "No products in the cart."
 msgstr "Không có sản phẩm nào trong giỏ hàng."
+
+
+msgid "Home"
+msgstr "Trang chủ"

@@ -48,7 +48,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
                         <div class="cart_content">
                           <div class="cart_content_top">
 							<a href="<?php echo $product_permalink ?>">
-								<strong><?php echo $product_name?></strong>
+							  <strong><?php echo $product_name?></strong>
                               <p>8h/ngày | 3 tháng</p>
                               <p>Độ cận: 0.5</p></a>
                             <div class="btn_area1">
