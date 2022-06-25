@@ -38,10 +38,17 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 				$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 				?>
 				<li class="woocommerce-mini-cart-item <?php echo esc_attr( apply_filters( 'woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key ) ); ?>">
-						<a class="cart_img" href="<?php echo WC()->cart->get_cart_url(); ?>">
-												<img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-cart.jpg" alt="Logo" loading="lazy" width="80" height="80"></a>
+						<?php if ( empty( $product_permalink ) ) : ?>
+						<?php echo $thumbnail; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php else : ?>
+							<a class="cart_img" href="<?php echo esc_url( $product_permalink ); ?>">
+								<?php echo $thumbnail;; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							</a>
+						<?php endif; ?>
                         <div class="cart_content">
-                          <div class="cart_content_top"><a href="#"><strong>LAVIER BROWN</strong>
+                          <div class="cart_content_top">
+							<a href="<?php echo $product_permalink ?>">
+								<strong><?php echo $product_name?></strong>
                               <p>8h/ngày | 3 tháng</p>
                               <p>Độ cận: 0.5</p></a>
                             <div class="btn_area1">
@@ -63,8 +70,8 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 							</div>
                           </div>
                           <div class="cart_content_bottom">
-                            <p>x 1</p>
-                            <p>400.000VND</p>
+                            <p>x <?php echo $cart_item['quantity'] ?></p>
+                            <p><?php echo $product_price ?></p>
                           </div>
                         </div>
 				</li>
