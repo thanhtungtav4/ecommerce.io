@@ -37,30 +37,81 @@ get_header(); ?>
                         ?>
                           <li <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>>
                             <div class="img">
-                              <picture>
-                                <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                                <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
-                              </picture>
+                            <?php
+                              $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+
+                              if ( ! $product_permalink ) {
+                                echo $thumbnail; // PHPCS: XSS ok.
+                              } else {
+                                printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+                              }
+                              ?>
                             </div>
                             <div class="info">
                               <div class="content">
-                                <div class="name"><a href="#">DUNG DỊCH BẢO QUẢN VÀ VỆ SINH CONTACT LENS 360ML (SINGAPORE)     </a>
+                                <div class="name">
+                                <?php
+                                    if ( ! $product_permalink ) {
+                                      echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
+                                    } else {
+                                      echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+                                    }
+
+                                    do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
+
+                                    // Meta data.
+                                    echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
+
+                                    // Backorder notification.
+                                    if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
+                                      echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
+                                    }
+                                ?>
                                   <p>8h/ngày | 3 tháng</p>
                                   <p><strong>Độ cận: </strong>0.5 </p>
-                                  <p class="only-sp" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>"
-
-                                  >
+                                  <p class="only-sp" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
                                     <?php
                                       echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
                                     ?>
                                   </p>
                                 </div>
                                 <div class="m-control">
-                                  <div class="number-input">
-                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
+                                  <div class="number-input product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
+                                    <?php
+                                      if ( $_product->is_sold_individually() ) {
+                                        $product_quantity = sprintf( '1 <input type="hidden" class="quantity" name="cart[%s][qty]" value="1" />', $cart_item_key );
+                                      } else {
+                                        $product_quantity = woocommerce_quantity_input(
+                                          array(
+                                            'input_name'   => "cart[{$cart_item_key}][qty]",
+                                            'input_value'  => $cart_item['quantity'],
+                                            'max_value'    => $_product->get_max_purchase_quantity(),
+                                            'min_value'    => '0',
+                                            'product_name' => $_product->get_name(),
+                                          ),
+                                          $_product,
+                                          false
+                                        );
+                                      }
+                                      echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
+                                    ?>
+                                    <!-- <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
                                     <input class="quantity" min="0" name="quantity" value="1" type="number">
-                                    <button class="plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
-                                  </div><a class="btn_remove" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/remove_shopping_cart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/remove_shopping_cart.svg" alt="remove product item" loading="lazy" width="22" height="22"></a>
+                                    <button class="plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button> -->
+                                  </div>
+                                  <?php
+                                  echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                                    'woocommerce_cart_item_remove_link',
+                                    sprintf(
+                                      '<a href="%s" class="btn_remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><svg width="35" height="35" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="35" height="35" rx="5" fill="#EB6A6A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.518 7.81 8.81 6.519 28.482 26.19l-1.292 1.292-2.604-2.603c-.33.467-.87.77-1.485.77a1.83 1.83 0 0 1-1.063-3.318l-1.265-1.265h-6.838a1.839 1.839 0 0 1-1.834-1.834c0-.32.083-.623.23-.88l1.237-2.246-2.026-4.271L7.518 7.81zm7.425 9.589-1.008 1.833h5.005L17.106 17.4h-2.163zm10.908-8.25H14.045l1.833 1.833h8.424l-2.53 4.584h-1.32l1.778 1.778c.495-.128.908-.45 1.146-.89l3.282-5.948c.34-.605-.11-1.357-.807-1.357zm-13.74 14.667c0-1.009.815-1.834 1.824-1.834 1.008 0 1.833.825 1.833 1.834a1.839 1.839 0 0 1-1.833 1.833 1.83 1.83 0 0 1-1.825-1.833z" fill="#fff"/></svg></a>',
+                                      esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+                                      esc_html__( 'Remove this item', 'woocommerce' ),
+                                      esc_attr( $product_id ),
+                                      esc_attr( $_product->get_sku() )
+                                    ),
+                                    $cart_item_key
+                                  );
+                                ?>
                                 </div>
                               </div>
                               <div class="price only-pc" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
@@ -71,12 +122,13 @@ get_header(); ?>
                             </div>
                           </li>
                     <?php
-				}
-			}
-			?>
+                      }
+                    }
+                    ?>
                     <li>
                        Bạn đã sở hữu nước nhỏ mắt chuyên dụng hay ngâm lens chưa?
                     </li>
+                    <?php do_action( 'woocommerce_after_cart_contents' ); ?>
                     <li>
                       <div class="img">
                         <picture>
@@ -107,14 +159,29 @@ get_header(); ?>
                   </ul>
                   <div class="c-sidebar">
                     <div class="c-sidebar_item">
-                      <h4>TỔNG TIỀN</h4>
-                      <div class="coupon">
-                        <input class="input-text" type="text" name="coupon_code" id="coupon_code" value="" placeholder="Mã ưu đãi">
-                        <button class="button" type="submit" name="apply_coupon" value="NHẬP">NHẬP</button>
-                      </div>
-                      <p class="price"><span>Tạm tính:</span><span>1.100.000VND</span></p>
-                      <p class="price big"><span>Thành tiền:</span><span>1.100.000VND</span></p>
-                      <p class="vat">(Giá đã bao gồm VAT) </p><a class="m-btn add-cart" href=""> ĐẶT HÀNG </a>
+                      <h4><?php esc_html_e( 'Cart totals', 'woocommerce' ); ?></h4>
+                      <?php if ( wc_coupons_enabled() ) { ?>
+                        <div class="coupon">
+                          <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
+                          <button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?></button>
+                          <?php do_action( 'woocommerce_cart_coupon' ); ?>
+                        </div>
+					            <?php } ?>
+
+                      <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+
+                      <?php do_action( 'woocommerce_cart_actions' ); ?>
+
+                      <?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+                      <?php
+                        /**
+                         * Cart collaterals hook.
+                         *
+                         * @hooked woocommerce_cross_sell_display
+                         * @hooked woocommerce_cart_totals - 10
+                         */
+                        do_action( 'woocommerce_cart_collaterals' );
+                      ?>
                     </div>
                     <div class="c-sidebar_item">
                       <p class="how">Bảo vệ mắt sáng khỏe cùng nước nhỏ mắt chuyên dụng thay vì sử dụng loại nước nhỏ mắt thông thường. Bởi vì:</p>
@@ -142,7 +209,11 @@ get_header(); ?>
                       </div>
                     </div>
                   </div>
+                  <?php do_action( 'woocommerce_after_cart_table' ); ?>
                 </form>
+                <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
+                <?php do_action( 'woocommerce_after_cart' ); ?>
+
               </div>
             </div>
           </div>

@@ -939,3 +939,15 @@ msgstr "Thanh toán <strong>quẹt thẻ tận nơi </strong>(áp dụng nội t
 
 msgid "Protection mode <strong>gold for </strong>case of tear, scratch"
 msgstr "Chế độ bảo <strong>hành vàng cho </strong>trường hợp rách, xước, đồ cộm"
+
+msgid "Proceed to checkout"
+msgstr "Đặt hàng"
+
+msgid "Subtotal"
+msgstr "Tạm tính"
+
+msgid "Coupon"
+msgstr "Mã giảm giá"
+
+msgid "Total"
+msgstr "Thành tiền"

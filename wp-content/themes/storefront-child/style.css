@@ -14,3 +14,6 @@ Domain Path: /languages
 /*
  * Add your own custom css below this text.
  */
+ .m-cart li .info .content {
+  flex-direction: column;
+}
