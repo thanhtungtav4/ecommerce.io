@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header( 'shop' ); ?>
+get_header(); ?>
 
 	<?php
 		/**
@@ -53,10 +53,24 @@ get_header( 'shop' ); ?>
 		 *
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
-		do_action( 'woocommerce_sidebar' );
+	//	do_action( 'woocommerce_sidebar' );
 	?>
-
+<script>
+function openTab(evt, TabName) {
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("c-tab_item");
+	for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+	document.getElementById(TabName).style.display = "block";
+	evt.currentTarget.className += " active";
+}
+</script>
 <?php
-get_footer( 'shop' );
+get_footer();
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
