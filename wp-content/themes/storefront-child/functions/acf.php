@@ -1,5 +1,17 @@
-<?php			
+<?php
 if( function_exists('acf_add_local_field_group') ):
+
+    // Check function exists.
+    if( function_exists('acf_add_options_page') ) {
+			// Add parent.
+			$option_page = acf_add_options_page(array(
+				'page_title'    => __('Theme General Settings'),
+				'menu_title'    => __('Theme Settings'),
+				'menu_slug'     => 'theme-general-settings',
+				'capability'    => 'edit_posts',
+				'redirect'      => false
+		));
+		}
 
 	acf_add_local_field_group(array(
 		'key' => 'group_62a6ef8cb1bec',
