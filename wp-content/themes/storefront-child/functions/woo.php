@@ -13,3 +13,8 @@ function refresh_cart_count( $fragments ){
     return $fragments;
 }
 //auto update cart number item by ajax
+
+//Move of Cross-Sells in page cart
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+add_action( 'woocommerce_after_cart_contents', 'woocommerce_cross_sell_display' );
+//Move of Cross-Sells in page cart

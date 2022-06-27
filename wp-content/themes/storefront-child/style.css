@@ -17,3 +17,21 @@ Domain Path: /languages
  .m-cart li .info .content {
   flex-direction: column;
 }
+.btn_addCard{
+  border-radius: 5px;
+  margin: 0 0 0 1rem !important;
+  padding: 8px 15px;
+  background-color: rgb(235, 106, 106);
+  color: white !important;
+}
+@media screen and (max-width: 767px) {
+  .btn_addCard{
+    font-size: 1.2rem !important;
+  }
+}
+.m-cart li .info .content {
+  width: 320px;
+}
+.ul.products li.product .price{
+  text-align: right !important;
+}

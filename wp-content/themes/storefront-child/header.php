@@ -16,7 +16,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<title>Top</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
@@ -37,7 +36,7 @@
         </div>
         <div class="c-header_bottom">
           <div class="l-container c-header_inner">
-            <div class="c-header_logo"><a href="<?php apply_filters( 'wpml_permalink', get_site_url(), ICL_LANGUAGE_CODE); ?>">
+            <div class="c-header_logo"><a href="<?php echo get_site_url().'/'.ICL_LANGUAGE_CODE ?>">
                 <picture>
                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.webp" type="image/webp">
 									<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.png" alt="logo">

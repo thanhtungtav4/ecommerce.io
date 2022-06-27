@@ -13,7 +13,7 @@
 get_header(); ?>
     <div class="l-container">
         <ul class="c-breadcrumb">
-            <li><a href="<?php apply_filters( 'wpml_permalink', get_home_url(), ICL_LANGUAGE_CODE); ?>"><?php _e('Home', 'storefront') ?></a></li>
+            <li><a href="<?php echo get_site_url().'/'.ICL_LANGUAGE_CODE ?>"><?php _e('Home', 'storefront') ?></a></li>
             <li><?php _e('Cart', 'storefront') ?></li>
         </ul>
         <?php require_once( get_stylesheet_directory() . '/module/list_promotion.php' ); ?>
@@ -67,8 +67,6 @@ get_header(); ?>
                                       echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
                                     }
                                 ?>
-                                  <p>8h/ngày | 3 tháng</p>
-                                  <p><strong>Độ cận: </strong>0.5 </p>
                                   <p class="only-sp" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
                                     <?php
                                       echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
@@ -77,23 +75,24 @@ get_header(); ?>
                                 </div>
                                 <div class="m-control">
                                   <div class="number-input product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
-                                    <?php
-                                      if ( $_product->is_sold_individually() ) {
-                                        $product_quantity = sprintf( '1 <input type="hidden" class="quantity" name="cart[%s][qty]" value="1" />', $cart_item_key );
-                                      } else {
-                                        $product_quantity = woocommerce_quantity_input(
-                                          array(
-                                            'input_name'   => "cart[{$cart_item_key}][qty]",
-                                            'input_value'  => $cart_item['quantity'],
-                                            'max_value'    => $_product->get_max_purchase_quantity(),
-                                            'min_value'    => '0',
-                                            'product_name' => $_product->get_name(),
-                                          ),
-                                          $_product,
-                                          false
-                                        );
-                                      }
-                                      echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
+                                  <?php
+                                    if ( $_product->is_sold_individually() ) {
+                                      $product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
+                                    } else {
+                                      $product_quantity = woocommerce_quantity_input(
+                                        array(
+                                          'input_name'   => "cart[{$cart_item_key}][qty]",
+                                          'input_value'  => $cart_item['quantity'],
+                                          'max_value'    => $_product->get_max_purchase_quantity(),
+                                          'min_value'    => '0',
+                                          'product_name' => $_product->get_name(),
+                                        ),
+                                        $_product,
+                                        false
+                                      );
+                                    }
+
+                                    echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
                                     ?>
                                     <!-- <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
                                     <input class="quantity" min="0" name="quantity" value="1" type="number">
@@ -125,37 +124,8 @@ get_header(); ?>
                       }
                     }
                     ?>
-                    <li>
-                       Bạn đã sở hữu nước nhỏ mắt chuyên dụng hay ngâm lens chưa?
-                    </li>
                     <?php do_action( 'woocommerce_after_cart_contents' ); ?>
-                    <li>
-                      <div class="img">
-                        <picture>
-                          <source srcset="assets/images/product_item.avif" type="image/avif">
-                          <source srcset="assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="assets/images/product_item.jpg" data-src="assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
-                        </picture>
-                      </div>
-                      <div class="info">
-                        <div class="content">
-                          <div class="name"><a href="#">DUNG DỊCH BẢO QUẢN VÀ VỆ SINH CONTACT LENS 360ML (SINGAPORE)     </a>
-                            <p>8h/ngày | 3 tháng</p>
-                            <p><strong>Độ cận: </strong>0.5 </p>
-                          </div>
-                          <div class="m-control">
-                            <div class="number-input">
-                              <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
-                              <?php echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key);  ?>
-                              <!-- <input class="quantity" min="0" name="quantity" value="1" type="number"> -->
-                              <button class="plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
-                            </div><a class="btn_remove" href="#"><img class="lazyload" src="assets/images/remove_shopping_cart.svg" data-src="assets/images/remove_shopping_cart.svg" alt="Logo" loading="lazy" width="22" height="22"></a>
-                          </div>
-                        </div>
-                        <div class="price">
-                          <p>7.000.000VND   </p>
-                        </div>
-                      </div>
-                    </li>
+
                   </ul>
                   <div class="c-sidebar">
                     <div class="c-sidebar_item">
@@ -168,7 +138,9 @@ get_header(); ?>
                         </div>
 					            <?php } ?>
 
-                      <button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+                      <!-- <button type="submit" class="button" name="update_cart" value="<?php //esc_attr_e( 'Update cart', 'woocommerce' ); ?>">
+                      <?php //esc_html_e( 'Update cart', 'woocommerce' ); ?>
+                      </button> -->
 
                       <?php do_action( 'woocommerce_cart_actions' ); ?>
 
