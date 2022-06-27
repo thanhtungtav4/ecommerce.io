@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Storefront 4.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/storefront\n"
-"POT-Creation-Date: 2022-06-25 10:44+0700\n"
+"POT-Creation-Date: 2022-06-25 21:44+0700\n"
 "PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -910,6 +910,12 @@ msgstr "Chính sách đổi trả"
 msgid "Delivery policy"
 msgstr "Chính sách giao nhận"
 
+msgid "Delivery"
+msgstr "Giao hàng"
+
+msgid "Completed"
+msgstr "Hoàn Tất"
+
 msgid "Shopping guide"
 msgstr "Hướng dẫn mua hàng"
 
@@ -919,6 +925,17 @@ msgstr "Hỏi Đáp"
 msgid "No products in the cart."
 msgstr "Không có sản phẩm nào trong giỏ hàng."
 
-
 msgid "Home"
 msgstr "Trang chủ"
+
+msgid "Freeship within the city for orders <strong>from 250,000 VND</strong>– Province <strong>from 400.000 VND</strong>"
+msgstr "Freeship nội thành cho đơn <strong>từ 250.000đ</strong>– Tỉnh <strong>từ 400.000đ</strong>"
+
+msgid "Vision test and consultation <strong>free </strong>(book in advance)"
+msgstr "Khám thị lực và tư vấn <strong>miễn phí </strong>(đặt lịch trước)"
+
+msgid "Pay <strong>swipe the card on the spot </strong>(applied within Hanoi and HCMC)"
+msgstr "Thanh toán <strong>quẹt thẻ tận nơi </strong>(áp dụng nội thành HN, TP.HCM)"
+
+msgid "Protection mode <strong>gold for </strong>case of tear, scratch"
+msgstr "Chế độ bảo <strong>hành vàng cho </strong>trường hợp rách, xước, đồ cộm"
