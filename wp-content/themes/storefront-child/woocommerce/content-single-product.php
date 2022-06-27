@@ -31,6 +31,16 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+
+<div class="l-container">
+          <ul class="c-breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li> <a href="/contact-lens">Sản phẩm</a></li>
+            <li><?php echo $product->get_categories(); ?></li>
+            <li><?php echo the_title(); ?></li>
+            
+          </ul>
+
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
 	<?php
@@ -40,7 +50,7 @@ if ( post_password_required() ) {
 	 * @hooked woocommerce_show_product_sale_flash - 10
 	 * @hooked woocommerce_show_product_images - 20
 	 */
-	//do_action( 'woocommerce_before_single_product_summary' );
+	do_action( 'woocommerce_before_single_product_summary' );
 	?>
 
 	<div class="summary entry-summary">
@@ -57,7 +67,7 @@ if ( post_password_required() ) {
 		 * @hooked woocommerce_template_single_sharing - 50
 		 * @hooked WC_Structured_Data::generate_product_data() - 60
 		 */
-		//do_action( 'woocommerce_single_product_summary' );
+		do_action( 'woocommerce_single_product_summary' );
 		?>
 	</div>
 
@@ -69,16 +79,9 @@ if ( post_password_required() ) {
 	 * @hooked woocommerce_upsell_display - 15
 	 * @hooked woocommerce_output_related_products - 20
 	 */
-//	do_action( 'woocommerce_after_single_product_summary' );
+	//do_action( 'woocommerce_after_single_product_summary' );
 	?>
 </div>
-<div class="l-container">
-          <ul class="c-breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li> <a href="#">Sản phẩm   </a></li>
-            <li> <a href="#">Kính áp tròng nữ</a></li>
-            <li>Russian Smoky Brown</li>
-          </ul>
           <?php require_once( get_stylesheet_directory() . '/module/list_promotion.php' ); ?>
           <div class="c-tab">
             <div class="c-tab_top">
@@ -90,7 +93,7 @@ if ( post_password_required() ) {
             <div class="c-tab_content">
               <div class="c-tab_item" id="description" style="display: block;">
                 <h2>Lavier Choco – Bí mật của đôi mắt nâu trầm ấm</h2>
-                <p>𝑳𝑨𝑽𝑰𝑬𝑹 𝑪𝑯𝑶𝑪𝑶 (𝑺𝟎𝟕𝑪), “món trang sức” dành cho đôi mắt với màu nâu gỗ trầm ấm và vô cùng tự nhiên, trong trẻo. Sự hòa quyện nhẹ nhàng với để không che lấp đi đôi mắt vốn đã tuyệt vời của nàng.</p><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/image_2.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/image_2.jpg" alt="Logo" loading="lazy" width="1200" height="800">
+                <p>𝑳𝑨𝑽𝑰𝑬𝑹 𝑪𝑯𝑶𝑪𝑶 (𝑺𝟎𝟕𝑪), “món trang sức” dành cho đôi mắt với màu nâu gỗ trầm ấm và vô cùng tự nhiên, trong trẻo. Sự hòa quyện nhẹ nhàng với để không che lấp đi đôi mắt vốn đã tuyệt vời của nàng.</p><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/image_2.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/image_2.jpg" alt="Logo" loading="lazy" width="1200" height="800">
                 <p>Đặc biệt, Lens Choco là dòng kính cao cấp với chất liệu mềm và ẩm gấp hai lần. Do đó Lavier Choco là loại kính áp tròng nữ dành cho  nàng có cơ địa mắt khô và yếu. Nàng cũng có thể đeo lens để đi học, đi làm với tần suất sử dụng lên đến 14h/ngày.</p>
                 <p>Hiểu được nhu cầu sử dụng thường xuyên của tín đồ đeo lens, Caras đã có cải tiến dòng lens Caras với thời gian sử dụng được cải tiến từ 12h nâng lên 14h/ ngày. Bạn có thể yên tâm gạt đi nỗi lo khô cộm mắt sau khi sử dụng cả ngày dài rồi nhé!</p>
               </div>
@@ -175,8 +178,8 @@ if ( post_password_required() ) {
                     <li><a href>
                         <div class="m-product__img"></div>
                         <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
                         </picture></a>
                       <div class="m-product__content">
                         <div class="m-product__content-top"><a href>
@@ -185,15 +188,15 @@ if ( post_password_required() ) {
                         </div>
                         <div class="m-product__content-bottom">
                           <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
+                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
                         </div>
                       </div>
                     </li>
                     <li><a href>
                         <div class="m-product__img"></div>
                         <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
                         </picture></a>
                       <div class="m-product__content">
                         <div class="m-product__content-top"><a href>
@@ -202,15 +205,15 @@ if ( post_password_required() ) {
                         </div>
                         <div class="m-product__content-bottom">
                           <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
+                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
                         </div>
                       </div>
                     </li>
                     <li><a href>
                         <div class="m-product__img"></div>
                         <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
                         </picture></a>
                       <div class="m-product__content">
                         <div class="m-product__content-top"><a href>
@@ -219,15 +222,15 @@ if ( post_password_required() ) {
                         </div>
                         <div class="m-product__content-bottom">
                           <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
+                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
                         </div>
                       </div>
                     </li>
                     <li><a href>
                         <div class="m-product__img"></div>
                         <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
                         </picture></a>
                       <div class="m-product__content">
                         <div class="m-product__content-top"><a href>
@@ -236,7 +239,7 @@ if ( post_password_required() ) {
                         </div>
                         <div class="m-product__content-bottom">
                           <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
+                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
                         </div>
                       </div>
                     </li>
@@ -247,8 +250,8 @@ if ( post_password_required() ) {
                     <li><a href>
                         <div class="m-product__img"></div>
                         <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
                         </picture></a>
                       <div class="m-product__content">
                         <div class="m-product__content-top"><a href>
@@ -257,15 +260,15 @@ if ( post_password_required() ) {
                         </div>
                         <div class="m-product__content-bottom">
                           <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
+                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
                         </div>
                       </div>
                     </li>
                     <li><a href>
                         <div class="m-product__img"></div>
                         <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
                         </picture></a>
                       <div class="m-product__content">
                         <div class="m-product__content-top"><a href>
@@ -274,15 +277,15 @@ if ( post_password_required() ) {
                         </div>
                         <div class="m-product__content-bottom">
                           <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
+                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
                         </div>
                       </div>
                     </li>
                     <li><a href>
                         <div class="m-product__img"></div>
                         <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
                         </picture></a>
                       <div class="m-product__content">
                         <div class="m-product__content-top"><a href>
@@ -291,15 +294,15 @@ if ( post_password_required() ) {
                         </div>
                         <div class="m-product__content-bottom">
                           <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
+                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
                         </div>
                       </div>
                     </li>
                     <li><a href>
                         <div class="m-product__img"></div>
                         <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
                         </picture></a>
                       <div class="m-product__content">
                         <div class="m-product__content-top"><a href>
@@ -308,7 +311,7 @@ if ( post_password_required() ) {
                         </div>
                         <div class="m-product__content-bottom">
                           <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
+                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
                         </div>
                       </div>
                     </li>
@@ -323,26 +326,26 @@ if ( post_password_required() ) {
               <ul>
                 <li> <a href="#">
                     <picture>
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/info.avif" type="image/avif">
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/info.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/info.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/info.jpg" alt="info" loading="lazy" width="667" height="132">
+                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info.avif" type="image/avif">
+                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info.jpg" alt="info" loading="lazy" width="667" height="132">
                     </picture></a></li>
                 <li> <a href="#">
                     <picture>
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/info02.avif" type="image/avif">
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/info02.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/info02.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/info02.jpg" alt="info" loading="lazy" width="667" height="132">
+                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info02.avif" type="image/avif">
+                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info02.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info02.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info02.jpg" alt="info" loading="lazy" width="667" height="132">
                     </picture></a></li>
                 <li> <a href="#">
                     <picture>
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/info03.avif" type="image/avif">
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/info03.webp" type="image/webp">
-                    </picture><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/info03.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/info03.jpg" alt="info" loading="lazy" width="667" height="132"></a></li>
+                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info03.avif" type="image/avif">
+                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info03.webp" type="image/webp">
+                    </picture><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info03.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/info03.jpg" alt="info" loading="lazy" width="667" height="132"></a></li>
               </ul>
             </div>
             <div class="video">
               <h4>KÍNH Y TẾ CHUYÊN DỤNG</h4><a href="#">
                 <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/youtubeItem.avif" type="image/avif">
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/images/youtubeItem.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/images/youtubeItem.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/images/youtubeItem.jpg" alt="info" loading="lazy" width="664" height="421">
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtubeItem.avif" type="image/avif">
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtubeItem.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtubeItem.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtubeItem.jpg" alt="info" loading="lazy" width="664" height="421">
                 </picture></a>
             </div>
           </div>
