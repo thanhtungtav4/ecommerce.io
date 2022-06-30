@@ -36,9 +36,8 @@ if ( post_password_required() ) {
           <ul class="c-breadcrumb">
             <li><a href="#">Home</a></li>
             <li> <a href="/contact-lens">Sản phẩm</a></li>
-            <li><?php echo $product->get_categories(); ?></li>
+            <li><?php echo wc_get_product_category_list($product->get_id()); ?></li>
             <li><?php echo the_title(); ?></li>
-            
           </ul>
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
