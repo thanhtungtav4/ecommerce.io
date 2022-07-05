@@ -33,12 +33,12 @@ if ( post_password_required() ) {
 ?>
 
 <div class="l-container">
-          <ul class="c-breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li> <a href="/contact-lens">Sản phẩm</a></li>
-            <li><?php echo wc_get_product_category_list($product->get_id()); ?></li>
-            <li><?php echo the_title(); ?></li>
-          </ul>
+  <ul class="c-breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li> <a href="#">Sản phẩm</a></li>
+    <li><?php echo wc_get_product_category_list($product->get_id()); ?></li>
+    <li><?php echo the_title(); ?></li>
+  </ul>
 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
@@ -91,58 +91,18 @@ if ( post_password_required() ) {
             </div>
             <div class="c-tab_content">
               <div class="c-tab_item" id="description" style="display: block;">
-                <h2>Lavier Choco – Bí mật của đôi mắt nâu trầm ấm</h2>
-                <p>𝑳𝑨𝑽𝑰𝑬𝑹 𝑪𝑯𝑶𝑪𝑶 (𝑺𝟎𝟕𝑪), “món trang sức” dành cho đôi mắt với màu nâu gỗ trầm ấm và vô cùng tự nhiên, trong trẻo. Sự hòa quyện nhẹ nhàng với để không che lấp đi đôi mắt vốn đã tuyệt vời của nàng.</p><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/image_2.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/image_2.jpg" alt="Logo" loading="lazy" width="1200" height="800">
-                <p>Đặc biệt, Lens Choco là dòng kính cao cấp với chất liệu mềm và ẩm gấp hai lần. Do đó Lavier Choco là loại kính áp tròng nữ dành cho  nàng có cơ địa mắt khô và yếu. Nàng cũng có thể đeo lens để đi học, đi làm với tần suất sử dụng lên đến 14h/ngày.</p>
-                <p>Hiểu được nhu cầu sử dụng thường xuyên của tín đồ đeo lens, Caras đã có cải tiến dòng lens Caras với thời gian sử dụng được cải tiến từ 12h nâng lên 14h/ ngày. Bạn có thể yên tâm gạt đi nỗi lo khô cộm mắt sau khi sử dụng cả ngày dài rồi nhé!</p>
+              <?php
+              /**
+               * Hook: tungnt custome position view data_tabs
+               *
+               * @hooked woocommerce_output_product_data_tabs - 10
+               */
+              do_action( 'tungnt_woocommerce_output_product_data_tabs' );
+              ?>
+
               </div>
               <div class="c-tab_item" id="parameter" style="display: none;">
-                <table>
-                  <tbody>
-                    <tr></tr>
-                    <td><span>D&atilde;y &dstrok;&#x1ED9;</span></td>
-                    <td><span>0 &ndash; 10 &dstrok;&#x1ED9;</span></td>
-                    <tr></tr>
-                    <td><span>GDia</span></td>
-                    <td><span>13.6 mm</span></td>
-                    <tr></tr>
-                    <td><span>&Dstrok;&#x1ED9; cong c&#x1EE7;a lens (B.C)</span></td>
-                    <td>8.7</td>
-                    <tr></tr>
-                    <td><span>H&agrave;m l&#x1B0;&#x1EE3;ng n&#x1B0;&#x1EDB;c</span></td>
-                    <td>33%</td>
-                    <tr></tr>
-                    <td><span>H&#x1EA1;n s&#x1EED; d&#x1EE5;ng</span></td>
-                    <td><span>3 Th&aacute;ng</span></td>
-                    <tr></tr>
-                    <td><span>Size&nbsp;</span></td>
-                    <td><span>Medium</span></td>
-                    <tr></tr>
-                    <td><span>Style</span></td>
-                    <td><span>Nh&#x1EB9; nh&agrave;ng, t&#x1EF1; nhi&ecirc;n</span></td>
-                    <tr></tr>
-                    <td><span>Recommend t&#x1EEB; Caras Lens</span></td>
-                    <td><span>Tone m&#x1EAF;t &dstrok;en&nbsp;</span></td>
-                    <tr></tr>
-                    <td><span>C&ocirc;ng ngh&#x1EC7; c&#x1EE7;a Lens</span></td>
-                    <td>
-                      <ul></ul>
-                      <li><span></span>RealcoT: T&abreve;ng c&#x1B0;&#x1EDD;ng l&#x1EDB;p m&agrave;ng b&oacute;ng gi&uacute;p t&#x1EA1;o chi&#x1EC1;u s&acirc;u, &dstrok;&ocirc;i m&#x1EAF;t tr&#x1EDF; n&ecirc;n long lanh h&#x1A1;n.</li>
-                      <li><span></span>Anti UV: Ng&abreve;n ch&#x1EB7;n tia c&#x1EF1;c t&iacute;m t&#x1EEB; &aacute;nh n&#x1EAF;ng M&#x1EB7;t Tr&#x1EDD;i c&utilde;ng nh&#x1B0; t&#x1EEB; m&aacute;y t&iacute;nh, thi&#x1EBF;t b&#x1ECB; &dstrok;i&#x1EC7;n t&#x1EED;.</li>
-                      <li><span></span>Nano Oxy-Hydrogen: T&abreve;ng c&#x1B0;&#x1EDD;ng &dstrok;&#x1ED9; &#x1EA9;m v&agrave; th&#x1EA9;m th&#x1EA5;u kh&iacute;, mang l&#x1EA1;i s&#x1EF1; kh&#x1ECF;e kho&#x1EAF;n v&agrave; tho&#x1EA3;i m&aacute;i khi d&ugrave;ng.</li>
-                      <li><span></span>Nano AntiX: C&aacute;c ph&acirc;n t&#x1EED; nano kh&aacute;ng khu&#x1EA9;n, l&#x1EDB;p b&#x1EA3;o v&#x1EC7; m&#x1EAF;t tr&#x1B0;&#x1EDB;c m&ocirc;i tr&#x1B0;&#x1EDD;ng b&#x1EE5;i b&#x1EA9;n.</li>
-                      <li><span></span>Etafilcon A: Gi&uacute;p t&abreve;ng c&#x1B0;&#x1EDD;ng th&#x1ECB; l&#x1EF1;c &dstrok;&#x1EC3; mang l&#x1EA1;i &aacute;nh nh&igrave;n trong s&aacute;ng v&agrave; tinh kh&ocirc;i .</li>
-                    </td>
-                    <tr></tr>
-                    <td><span>Packed</span></td>
-                    <td><span>1 C&#x1EB7;p lens (2 lens tr&aacute;i ph&#x1EA3;i)</span></td>
-                    <tr></tr>
-                    <td><span>Th&#x1B0;&#x1A1;ng hi&#x1EC7;u&nbsp;</span></td>
-                    <td><span>Caras Lens</span></td>
-                    <tr></tr>
-                    <td colspan="2"><img class="alignnone size-full wp-image-8086 lazyloaded" alt="" width="260" height="90" data-src="https://caraslens.com/wp-content/uploads/2020/04/ft2.png" src="https://caraslens.com/wp-content/uploads/2020/04/ft2.png" loading="lazy"><img class="alignnone size-full wp-image-5917 lazyloaded" alt="" width="97" height="103" data-src="https://caraslens.com/wp-content/uploads/2020/03/logo.png" src="https://caraslens.com/wp-content/uploads/2020/03/logo.png" loading="lazy"></td>
-                  </tbody>
-                </table>
+
               </div>
               <div class="c-tab_item" id="insurane" style="display: none;">
                 <h3>GIỎ HÀNG</h3>

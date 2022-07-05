@@ -425,7 +425,7 @@ body.js-active {
             left: 0; }
         .c-header_icon > li.lang .c-menu_sub ol li:hover a::before {
           background-image: url(../../assets/images/radiobutton.svg); }
-        .c-header_icon > li.lang .c-menu_sub ol li.is_active a::before {
+        .c-header_icon > li.lang .c-menu_sub ol li.wpml-ls-current-language a::before {
           background-image: url(../../assets/images/radiobutton.svg); }
   .c-header_bottom {
     display: flex;
@@ -831,16 +831,6 @@ body.js-active {
   font-size: 1.2; }
   .m-date i {
     margin-right: 7px; }
-
-.widget_shopping_cart_content .woocommerce-mini-cart__total {
-  margin-top: 2rem; }
-
-.widget_shopping_cart_content .woocommerce-mini-cart__buttons.buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem; }
-  .widget_shopping_cart_content .woocommerce-mini-cart__buttons.buttons .button {
-    padding: 10px 15px; }
 
 /*------------------------------------------------------------
 	Button
