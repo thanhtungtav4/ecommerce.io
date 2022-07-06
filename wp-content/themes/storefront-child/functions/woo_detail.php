@@ -6,3 +6,9 @@ function nt_woocommerce_output_product_data_tabs(){
   woocommerce_output_product_data_tabs();
 }
 //Data Tab
+//Move rating
+// add_action('woocommerce_rating_custome', 'single_rating_display');
+// function single_rating_display(){
+//   woocommerce_template_single_rating();
+// }
+//Move rating

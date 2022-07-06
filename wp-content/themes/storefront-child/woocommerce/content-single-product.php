@@ -39,7 +39,7 @@ if ( post_password_required() ) {
     <li><?php echo wc_get_product_category_list($product->get_id()); ?></li>
     <li><?php echo the_title(); ?></li>
   </ul>
-
+<?php  do_action('woocommerce_rating_custome')?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
 	<?php

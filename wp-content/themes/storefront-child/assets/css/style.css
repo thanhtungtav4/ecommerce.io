@@ -832,6 +832,18 @@ body.js-active {
   .m-date i {
     margin-right: 7px; }
 
+.woocommerce-mini-cart__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem; }
+  .woocommerce-mini-cart__buttons .wc-forward {
+    padding: 8px 18px;
+    border-radius: 3px;
+    font-weight: 700; }
+
+.widget_shopping_cart_content .woocommerce-mini-cart__total {
+  text-align: end; }
+
 /*------------------------------------------------------------
 	Button
 ------------------------------------------------------------*/

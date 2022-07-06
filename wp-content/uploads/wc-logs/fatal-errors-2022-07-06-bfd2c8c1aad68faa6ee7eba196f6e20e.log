@@ -1,0 +1,54 @@
+2022-07-06T08:14:24+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function remove_action(), 1 passed in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo_detail.php on line 14 and at least 2 expected in D:\xampp\htdocs\ecommerce\wp-includes\plugin.php:571
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo_detail.php(14): remove_action('woocommerce_sin...')
+#1 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions.php(13): require_once('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\ecommerce\wp-settings.php(566): include('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\ecommerce\wp-config.php(96): require_once('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\ecommerce\wp-load.php(50): require_once('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\ecommerce\wp-blog-header.php(13): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\ecommerce\index.php(17): require('D:\\xampp\\htdocs...')
+#7 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-includes\plugin.php on line 571
+
+2022-07-06T08:14:24+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function remove_action(), 1 passed in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo_detail.php on line 14 and at least 2 expected in D:\xampp\htdocs\ecommerce\wp-includes\plugin.php:571
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo_detail.php(14): remove_action('woocommerce_sin...')
+#1 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions.php(13): require_once('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\ecommerce\wp-settings.php(566): include('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\ecommerce\wp-config.php(96): require_once('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\ecommerce\wp-load.php(50): require_once('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\ecommerce\wp-blog-header.php(13): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\ecommerce\index.php(17): require('D:\\xampp\\htdocs...')
+#7 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-includes\plugin.php on line 571
+
+2022-07-06T08:14:40+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function remove_action(), 1 passed in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo_detail.php on line 14 and at least 2 expected in D:\xampp\htdocs\ecommerce\wp-includes\plugin.php:571
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo_detail.php(14): remove_action('woocommerce_sin...')
+#1 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions.php(13): require_once('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\ecommerce\wp-settings.php(566): include('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\ecommerce\wp-config.php(96): require_once('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\ecommerce\wp-load.php(50): require_once('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\ecommerce\wp-blog-header.php(13): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\ecommerce\index.php(17): require('D:\\xampp\\htdocs...')
+#7 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-includes\plugin.php on line 571
+
+2022-07-06T08:14:40+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function remove_action(), 1 passed in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo_detail.php on line 14 and at least 2 expected in D:\xampp\htdocs\ecommerce\wp-includes\plugin.php:571
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo_detail.php(14): remove_action('woocommerce_sin...')
+#1 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions.php(13): require_once('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\ecommerce\wp-settings.php(566): include('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\ecommerce\wp-config.php(96): require_once('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\ecommerce\wp-load.php(50): require_once('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\ecommerce\wp-blog-header.php(13): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\ecommerce\index.php(17): require('D:\\xampp\\htdocs...')
+#7 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-includes\plugin.php on line 571
+
+2022-07-06T09:22:10+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:22:10+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:22:12+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+

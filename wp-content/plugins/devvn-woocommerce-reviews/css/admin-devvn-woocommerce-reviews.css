@@ -1,0 +1,30 @@
+span.mess {
+    line-height: 28px;
+    margin-left: 10px;
+}
+.review_img{
+    width: 50px;
+    display: inline-block;
+    margin: 5px 5px 5px 0;
+}
+.review_img img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.review_position_action{
+    display: none;
+}
+.review_position_action.active{
+    display: inline-block;
+}
+#review_position_select{
+    max-width: 200px;
+}
+.devvn_reviews_wrap td p{
+    margin-bottom: 10px;
+}
+.devvn_reviews_wrap input[type="text"] {
+    width: 100%;
+    max-width: 580px;
+}

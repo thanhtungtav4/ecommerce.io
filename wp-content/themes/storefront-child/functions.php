@@ -8,10 +8,9 @@ require_once( get_stylesheet_directory() . '/functions/auth.php' );
 require_once( get_stylesheet_directory() . '/functions/url.php' );
 require_once( get_stylesheet_directory() . '/functions/breadcrumbs.php' );
 require_once( get_stylesheet_directory() . '/functions/smtp.php' );
+require_once( get_stylesheet_directory() . '/functions/style.php' );
 //only load product detail
 require_once( get_stylesheet_directory() . '/functions/woo_detail.php');
-
-
 // control order status if vnpay succes pay
 add_action( 'woocommerce_thankyou', 'bbloomer_thankyou_change_order_status' );
 function bbloomer_thankyou_change_order_status( $order_id ){
