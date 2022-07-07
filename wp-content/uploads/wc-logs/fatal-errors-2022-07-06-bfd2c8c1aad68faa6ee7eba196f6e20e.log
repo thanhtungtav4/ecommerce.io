@@ -52,3 +52,27 @@ Stack trace:
 
 2022-07-06T09:22:12+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
 
+2022-07-06T09:24:58+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:24:58+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:25:01+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:25:23+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:25:23+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:25:24+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:25:25+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:25:26+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:25:26+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:25:27+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:25:28+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
+2022-07-06T09:25:45+00:00 CRITICAL require(): Failed opening required 'D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer/../wpml/fp/core/functions.php' (include_path='D:\xampp\php\PEAR') in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\addons\vendor\composer\autoload_real.php on line 69
+
