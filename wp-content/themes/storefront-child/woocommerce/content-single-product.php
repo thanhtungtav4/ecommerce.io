@@ -40,7 +40,7 @@ if ( post_password_required() ) {
       $primary_term_id = yoast_get_primary_term_id('product_cat');
       $postTerm = get_term( $primary_term_id );
       if ( $postTerm && ! is_wp_error( $postTerm ) ) {
-        echo '<li><a href="' .  esc_url( get_term_link( $postTerm->term_id ) ) . $postTerm->slug . '">';
+        echo '<li><a href="' .  esc_url($postTerm->slug) .'">';
         echo $postTerm->name;
         echo '</a></li>';
       }
