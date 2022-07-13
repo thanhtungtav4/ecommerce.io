@@ -39,8 +39,9 @@ if ( post_password_required() ) {
     <?php
       $primary_term_id = yoast_get_primary_term_id('product_cat');
       $postTerm = get_term( $primary_term_id );
+      $is_lang = ICL_LANGUAGE_CODE == 'en' ? 'en/' : '';
       if ( $postTerm && ! is_wp_error( $postTerm ) ) {
-        echo '<li><a href="' .  esc_url($postTerm->slug) .'">';
+        echo '<li><a href="' .  esc_url(get_site_url().'/'. $is_lang . $postTerm->slug) .'">';
         echo $postTerm->name;
         echo '</a></li>';
       }

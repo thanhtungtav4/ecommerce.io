@@ -58,9 +58,12 @@ get_header(); ?>
                 </a>
               </div>
               <ul class="m-product__slick">
+              <!-- <li>
+                  <ul> -->
               <?php
                 $current_lang = $sitepress->get_current_language();
                 $cate_id = apply_filters( 'wpml_object_id', 142 , 'product_cat', TRUE  );
+                $count = 0;
                 // change category id here
                 $args = array(
                   'post_type' => 'product',
@@ -78,10 +81,37 @@ get_header(); ?>
                 );
                 $loop = new WP_Query( $args );
                 if ( $loop->have_posts() ) {
-                  while ( $loop->have_posts() ) : $loop->the_post();
-
-                    the_title();
+                  var_dump($loop->post_count);
+                  echo '<li>';
+                  echo '<ul>';
+                  while ( $loop->have_posts() ) : $loop->the_post(); $count++ ?>
+                  <?php if($count >=0 && $count <=4) :?>
+                    <li>
+                      <a href>
+                        <div class="m-product__img"></div>
+                        <picture>
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
+                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                        </picture>
+                      </a>
+                      <div class="m-product__content">
+                        <div class="m-product__content-top"><a href>
+                            <h3 class="strong"><?php the_title() ?></h3></a>
+                          <p>400.000VND</p>
+                        </div>
+                        <div class="m-product__content-bottom">
+                          <p>8h/ngày | 3 tháng </p>
+                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
+                        </div>
+                      </div>
+                    </li>
+                    
+                  <?php endif; ?>
+                   
+                  <?php  
                   endwhile;
+                  echo '<li>';
+                  echo '<ul>';
                 }
               ?>
                 <li>
