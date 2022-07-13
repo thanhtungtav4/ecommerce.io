@@ -36,7 +36,16 @@ if ( post_password_required() ) {
   <ul class="c-breadcrumb">
     <li><a href="#">Home</a></li>
     <li> <a href="#">Sản phẩm</a></li>
-    <li><?php echo wc_get_product_category_list($product->get_id()); ?></li>
+    <?php
+      $primary_term_id = yoast_get_primary_term_id('product_cat');
+      $postTerm = get_term( $primary_term_id );
+      if ( $postTerm && ! is_wp_error( $postTerm ) ) {
+        echo '<li><a href="' .  esc_url( get_term_link( $postTerm->term_id ) ) . $postTerm->slug . '">';
+        echo $postTerm->name;
+        echo '</a></li>';
+      }
+    ?>
+    <li></li>
     <li><?php echo the_title(); ?></li>
   </ul>
 <?php  do_action('woocommerce_rating_custome')?>

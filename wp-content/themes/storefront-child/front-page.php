@@ -49,20 +49,51 @@ get_header(); ?>
               </div>
             </div>
             <div class="m-product__inner">
-              <div class="m-product__gallery">       <a href="#">
+              <div class="m-product__gallery">
+                 <a href="#">
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="Logo" loading="lazy" width="666" height="912">
-                  </picture></a></div>
+                  </picture>
+                </a>
+              </div>
               <ul class="m-product__slick">
+              <?php
+                $current_lang = $sitepress->get_current_language();
+                $cate_id = apply_filters( 'wpml_object_id', 142 , 'product_cat', TRUE  );
+                // change category id here
+                $args = array(
+                  'post_type' => 'product',
+                  'post_status' => 'publish',
+                  'posts_per_page' => 8,
+                  'orderby' => 'date',
+                  'suppress_filters' => 1,
+                  'tax_query' => array(
+                    array(
+                       'taxonomy' => 'product_cat',
+                       'terms' => $cate_id,
+                       'operator' => 'IN',
+                    ),
+                 ),
+                );
+                $loop = new WP_Query( $args );
+                if ( $loop->have_posts() ) {
+                  while ( $loop->have_posts() ) : $loop->the_post();
+
+                    the_title();
+                  endwhile;
+                }
+              ?>
                 <li>
                   <ul>
-                    <li><a href>
+                    <li>
+                      <a href>
                         <div class="m-product__img"></div>
                         <picture>
                           <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
                           <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
-                        </picture></a>
+                        </picture>
+                      </a>
                       <div class="m-product__content">
                         <div class="m-product__content-top"><a href>
                             <h3 class="strong">XANIA BROWN</h3></a>
@@ -74,112 +105,11 @@ get_header(); ?>
                         </div>
                       </div>
                     </li>
-                    <li><a href>
-                        <div class="m-product__img"></div>
-                        <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
-                        </picture></a>
-                      <div class="m-product__content">
-                        <div class="m-product__content-top"><a href>
-                            <h3 class="strong">XANIA BROWN</h3></a>
-                          <p>400.000VND</p>
-                        </div>
-                        <div class="m-product__content-bottom">
-                          <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li><a href>
-                        <div class="m-product__img"></div>
-                        <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
-                        </picture></a>
-                      <div class="m-product__content">
-                        <div class="m-product__content-top"><a href>
-                            <h3 class="strong">XANIA BROWN</h3></a>
-                          <p>400.000VND</p>
-                        </div>
-                        <div class="m-product__content-bottom">
-                          <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li><a href>
-                        <div class="m-product__img"></div>
-                        <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
-                        </picture></a>
-                      <div class="m-product__content">
-                        <div class="m-product__content-top"><a href>
-                            <h3 class="strong">XANIA BROWN</h3></a>
-                          <p>400.000VND</p>
-                        </div>
-                        <div class="m-product__content-bottom">
-                          <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
-                        </div>
-                      </div>
-                    </li>
+
                   </ul>
                 </li>
                 <li>
                   <ul>
-                    <li><a href>
-                        <div class="m-product__img"></div>
-                        <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
-                        </picture></a>
-                      <div class="m-product__content">
-                        <div class="m-product__content-top"><a href>
-                            <h3 class="strong">XANIA BROWN</h3></a>
-                          <p>400.000VND</p>
-                        </div>
-                        <div class="m-product__content-bottom">
-                          <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li><a href>
-                        <div class="m-product__img"></div>
-                        <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
-                        </picture></a>
-                      <div class="m-product__content">
-                        <div class="m-product__content-top"><a href>
-                            <h3 class="strong">XANIA BROWN</h3></a>
-                          <p>400.000VND</p>
-                        </div>
-                        <div class="m-product__content-bottom">
-                          <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
-                        </div>
-                      </div>
-                    </li>
-                    <li><a href>
-                        <div class="m-product__img"></div>
-                        <picture>
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                          <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
-                        </picture></a>
-                      <div class="m-product__content">
-                        <div class="m-product__content-top"><a href>
-                            <h3 class="strong">XANIA BROWN</h3></a>
-                          <p>400.000VND</p>
-                        </div>
-                        <div class="m-product__content-bottom">
-                          <p>8h/ngày | 3 tháng</p>
-                          <div class="btn_area"><a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a><a class="btn_area__del" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22"></a></div>
-                        </div>
-                      </div>
-                    </li>
                     <li><a href>
                         <div class="m-product__img"></div>
                         <picture>
