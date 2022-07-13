@@ -102,7 +102,6 @@
                 return apply_filters( 'woo_variation_swatches_dual_color_gradient_angle', '-45deg' );
             }
             
-            
             public function is_color_attribute( $attribute ) {
                 if ( ! is_object( $attribute ) ) {
                     return false;
@@ -162,7 +161,6 @@
                 
                 return get_term_meta( $term_id, 'product_attribute_image', true );
             }
-            
             
             public function get_product_children( $product ) {
                 

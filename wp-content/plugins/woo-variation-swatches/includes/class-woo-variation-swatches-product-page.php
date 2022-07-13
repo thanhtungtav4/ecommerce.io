@@ -135,12 +135,23 @@
                 
                 $this->add_inline_style();
                 
-                wp_register_script( 'woo-variation-swatches', woo_variation_swatches()->assets_url( "/js/frontend{$suffix}.js" ), array( 'jquery', 'wp-util' ), woo_variation_swatches()->assets_version( "/js/frontend{$suffix}.js" ), true );
+                wp_register_script( 'woo-variation-swatches', woo_variation_swatches()->assets_url( "/js/frontend{$suffix}.js" ), array( 'jquery', 'wp-util', 'underscore', 'jquery-blockui' ), woo_variation_swatches()->assets_version( "/js/frontend{$suffix}.js" ), true );
                 
                 wp_localize_script( 'woo-variation-swatches', 'woo_variation_swatches_options', $this->js_options() );
                 
                 // @TODO: we need to load swatches script based on 'wc-add-to-cart-variation' script
                 wp_enqueue_script( 'woo-variation-swatches' );
+            }
+            
+            public function inline_svg_encode( $string ) {
+                $entities     = array( '<', '>', '#', '"' );
+                $replacements = array( '%3C', '%3E', "%23", "'" );
+                
+                return str_replace( $entities, $replacements, $string );
+            }
+            
+            public function inline_svg( $string ) {
+                return sprintf( 'url("data:image/svg+xml;utf8,%s")', $this->inline_svg_encode( $string ) );
             }
             
             public function implode_css_property_value( $raw_properties ) {
@@ -173,7 +184,14 @@
                     return;
                 }
                 
-                $style = $this->implode_css_property_value( $this->inline_style_declaration() );
+                $tick_color = sanitize_hex_color( woo_variation_swatches()->get_option( 'tick_color', '#ffffff' ) );
+                $cross_color = sanitize_hex_color( woo_variation_swatches()->get_option( 'cross_color', '#ff0000' ) );
+                
+                $style = "";
+                $style .= sprintf( "\n--wvs-tick:%s;\n", $this->inline_svg( sprintf( '<svg filter="drop-shadow(0px 0px 2px rgb(0 0 0 / .8))" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30"><path fill="none" stroke="%s" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M4 16L11 23 27 7"/></svg>', $tick_color ) ) );
+                $style .= sprintf( "\n--wvs-cross:%s;\n", $this->inline_svg( sprintf( '<svg filter="drop-shadow(0px 0px 5px rgb(255 255 255 / .6))" xmlns="http://www.w3.org/2000/svg" width="72px" height="72px" viewBox="0 0 24 24"><path fill="none" stroke="%s" stroke-linecap="round" stroke-width="0.6" d="M5 5L19 19M19 5L5 19"/></svg>', $cross_color ) ) );
+                
+                $style .= $this->implode_css_property_value( $this->inline_style_declaration() );
                 
                 $style = sprintf( ":root {%s}", $style );
                 

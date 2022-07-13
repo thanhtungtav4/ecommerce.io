@@ -492,7 +492,7 @@ We provide exclusive technical support to our customers. Our plugin has plenty o
 <li><a target="_blank" href="https://wordpress.org/plugins/woo-cart-redirect-to-checkout-page">Add to Cart Redirect for WooCommerce</a></li>
 </ul>
 <ul>
-<li><a target="_blank" href="https://wordpress.org/plugins/woo-2checkout">Payment Gateway – 2Checkout for WooCommerce</a></li>
+<li><a target="_blank" href="https://wordpress.org/plugins/leo-product-recommendations">WooCommerce Related Product Popup</a></li>
 </ul>
 </blockquote>
 
@@ -616,6 +616,12 @@ And your are ready to go.
 12. Global Variation Color Swatches Attribute List Preview
 
 == Changelog ==
+
+= 2.0.4 - 08-07-2022 =
+
+* Fix: Composite Product Selecting Issue
+* Add: Option to change tick and cross icon color
+* Add: Option to enable/disable preloader
 
 = 2.0.3 - 26-06-2022 =
 

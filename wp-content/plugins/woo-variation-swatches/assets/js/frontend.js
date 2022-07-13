@@ -2,7 +2,7 @@
  * Variation Swatches for WooCommerce 
  * 
  * Author: Emran Ahmed ( emran.bd.08@gmail.com ) 
- * Date: 6/26/2022, 5:23:57 PM
+ * Date: 7/8/2022, 11:04:45 PM
  * Released under the GPLv3 license.
  */
 /******/ (function(modules) { // webpackBootstrap
@@ -122,23 +122,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 // ================================================================
 // WooCommerce Variation Swatches
+// ================================================================
 
 /*global _, wc_add_to_cart_variation_params, woo_variation_swatches_options */
-// ================================================================
 (function (window) {
   'use strict';
 
   var Plugin = function ($) {
     return /*#__PURE__*/function () {
-      function _class2(element, options) {
+      function _class2(element, options, name) {
         _classCallCheck(this, _class2);
 
         _defineProperty(this, "defaults", {});
 
         // Assign
-        this._element = element;
+        this.name = name;
+        this.element = element;
         this.$element = $(element);
-        this._config = $.extend(true, {}, this.defaults, options);
+        this.settings = $.extend(true, {}, this.defaults, options);
         this.product_variations = this.$element.data('product_variations') || [];
         this.is_ajax_variation = this.product_variations.length < 1;
         this.product_id = this.$element.data('product_id');
@@ -566,6 +567,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
           return match;
         }
+      }, {
+        key: "destroy",
+        value: function destroy() {
+          this.$element.removeClass('wvs-loaded');
+          this.$element.removeData(this.name);
+        }
       }]);
 
       return _class2;
@@ -587,7 +594,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           var data = $element.data(PluginName);
 
           if (!data) {
-            data = new ClassName($element, $.extend({}, options));
+            data = new ClassName($element, $.extend({}, options), PluginName);
             $element.data(PluginName, data);
           }
 
@@ -652,12 +659,20 @@ jQuery(function ($) {
 
   $(document).on('wc_variation_form.wvs', function (event) {
     $(document).trigger('woo_variation_swatches_init');
+  }); // Try to cover global ajax data complete
+
+  $(document).ajaxComplete(function (event, request, settings) {
+    _.delay(function () {
+      $('.variations_form:not(.wvs-loaded)').each(function () {
+        $(this).wc_variation_form();
+      });
+    }, 100);
   }); // Composite Product Load
   // JS API: https://docs.woocommerce.com/document/composite-products/composite-products-js-api-reference/
 
   $(document.body).on('wc-composite-initializing', '.composite_data', function (event, composite) {
     composite.actions.add_action('component_options_state_changed', function (self) {
-      $(self.$component_content).find('.variations_form').removeClass('wvs-loaded wvs-pro-loaded');
+      $(self.$component_content).find('.variations_form').WooVariationSwatches('destroy');
     });
     /* composite.actions.add_action('active_scenarios_updated', (self) => {
        console.log('active_scenarios_updated')

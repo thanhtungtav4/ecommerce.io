@@ -460,6 +460,43 @@
             protected function get_settings_for_style_section() {
                 
                 $settings = array(
+    
+                    // Start swatches tick and cross coloring
+                    array(
+                        'id'    => 'style_icons_options',
+                        'type'  => 'title',
+                        'title' => esc_html__( 'Swatches indicator', 'woo-variation-swatches' ),
+                        'desc'  => esc_html__( 'Change swatches indicator color', 'woo-variation-swatches' ),
+                    ),
+
+                    array(
+                        'id'                => 'tick_color',
+                        'type'              => 'color',
+                        'title'             => esc_html__( 'Tick Color', 'woo-variation-swatches' ),
+                        'desc'              => esc_html__( 'Swatches Selected tick color. Default is: #ffffff', 'woo-variation-swatches' ),
+                        'css'               => 'width: 6em;',
+                        'default'           => '#ffffff',
+                        'is_new'  => true,
+                        'custom_attributes' => array(//    'data-alpha-enabled' => 'true'
+                        )
+                    ),
+
+                    array(
+                        'id'                => 'cross_color',
+                        'type'              => 'color',
+                        'title'             => esc_html__( 'Cross Color', 'woo-variation-swatches' ),
+                        'desc'              => esc_html__( 'Swatches cross color. Default is: #ff0000', 'woo-variation-swatches' ),
+                        'css'               => 'width: 6em;',
+                        'default'           => '#ff0000',
+                        'is_new'  => true,
+                        'custom_attributes' => array(//    'data-alpha-enabled' => 'true'
+                        )
+                    ),
+
+                    array(
+                        'type' => 'sectionend',
+                        'id'   => 'style_icons_options',
+                    ),
                     
                     // Start single page swatches style
                     array(
@@ -555,6 +592,15 @@
                     ),
                     
                     array(
+                        'id'      => 'enable_single_preloader',
+                        'type'    => 'checkbox',
+                        'title'   => esc_html__( 'Enable Preloader', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Enable single product page swatches preloader', 'woo-variation-swatches' ),
+                        'default' => 'yes',
+                        'is_pro'  => true,
+                    ),
+                    
+                    array(
                         'id'      => 'enable_linkable_variation_url',
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Generate variation url', 'woo-variation-swatches' ),
@@ -609,6 +655,15 @@
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Enable Swatches', 'woo-variation-swatches' ),
                         'desc'    => esc_html__( 'Show swatches on archive / shop page.', 'woo-variation-swatches' ),
+                        'default' => 'yes',
+                        'is_pro'  => true,
+                    ),
+                    
+                    array(
+                        'id'      => 'enable_archive_preloader',
+                        'type'    => 'checkbox',
+                        'title'   => esc_html__( 'Enable Preloader', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Enable archive page swatches preloader', 'woo-variation-swatches' ),
                         'default' => 'yes',
                         'is_pro'  => true,
                     ),
@@ -679,8 +734,6 @@
                         'type' => 'sectionend',
                         'id'   => 'archive_options',
                     ),
-                
-                
                 );
                 
                 return $settings;

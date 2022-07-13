@@ -1,53 +1,33 @@
-2022-06-30T02:59:42+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::wc_get_product_category_list() in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-single-product.php:39
+2022-06-30T02:58:04+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::wc_get_product_category_list() in /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront-child/woocommerce/content-single-product.php:39
 Stack trace:
-#0 D:\xampp\htdocs\ecommerce\wp-includes\template.php(772): require()
-#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('D:\\xampp\\htdocs...', false)
-#2 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\single-product.php(37): wc_get_template_part('content', 'single-product')
-#3 D:\xampp\htdocs\ecommerce\wp-includes\template-loader.php(106): include('D:\\xampp\\htdocs...')
-#4 D:\xampp\htdocs\ecommerce\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
-#5 D:\xampp\htdocs\ecommerce\index.php(17): require('D:\\xampp\\htdocs...')
+#0 /home/admin/domains/dev.caraslens.com/public_html/wp-includes/template.php(772): require()
+#1 /home/admin/domains/dev.caraslens.com/public_html/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template()
+#2 /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront-child/woocommerce/single-product.php(37): wc_get_template_part()
+#3 /home/admin/domains/dev.caraslens.com/public_html/wp-includes/template-loader.php(106): include('/home/admin/dom...')
+#4 /home/admin/domains/dev.caraslens.com/public_html/wp-blog-header.php(19): require_once('/home/admin/dom...')
+#5 /home/admin/domains/dev.caraslens.com/public_html/index.php(17): require('/home/admin/dom...')
 #6 {main}
-  thrown in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-single-product.php on line 39
+  thrown in /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront-child/woocommerce/content-single-product.php on line 39
 
-2022-06-30T02:59:58+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::wc_get_product_category_list() in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-single-product.php:39
+2022-06-30T03:12:27+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::wc_get_product_category_list() in /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront-child/woocommerce/content-single-product.php:39
 Stack trace:
-#0 D:\xampp\htdocs\ecommerce\wp-includes\template.php(772): require()
-#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('D:\\xampp\\htdocs...', false)
-#2 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\single-product.php(37): wc_get_template_part('content', 'single-product')
-#3 D:\xampp\htdocs\ecommerce\wp-includes\template-loader.php(106): include('D:\\xampp\\htdocs...')
-#4 D:\xampp\htdocs\ecommerce\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
-#5 D:\xampp\htdocs\ecommerce\index.php(17): require('D:\\xampp\\htdocs...')
+#0 /home/admin/domains/dev.caraslens.com/public_html/wp-includes/template.php(772): require()
+#1 /home/admin/domains/dev.caraslens.com/public_html/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template()
+#2 /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront-child/woocommerce/single-product.php(37): wc_get_template_part()
+#3 /home/admin/domains/dev.caraslens.com/public_html/wp-includes/template-loader.php(106): include('/home/admin/dom...')
+#4 /home/admin/domains/dev.caraslens.com/public_html/wp-blog-header.php(19): require_once('/home/admin/dom...')
+#5 /home/admin/domains/dev.caraslens.com/public_html/index.php(17): require('/home/admin/dom...')
 #6 {main}
-  thrown in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-single-product.php on line 39
+  thrown in /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront-child/woocommerce/content-single-product.php on line 39
 
-2022-06-30T03:00:26+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function wc_get_product_category_list(), 0 passed in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-single-product.php on line 39 and at least 1 expected in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-product-functions.php:1149
+2022-06-30T03:13:25+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::wc_get_product_category_list() in /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront-child/woocommerce/content-single-product.php:39
 Stack trace:
-#0 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-single-product.php(39): wc_get_product_category_list()
-#1 D:\xampp\htdocs\ecommerce\wp-includes\template.php(772): require('D:\\xampp\\htdocs...')
-#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('D:\\xampp\\htdocs...', false)
-#3 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\single-product.php(37): wc_get_template_part('content', 'single-product')
-#4 D:\xampp\htdocs\ecommerce\wp-includes\template-loader.php(106): include('D:\\xampp\\htdocs...')
-#5 D:\xampp\htdocs\ecommerce\wp-blog-header.php(19): in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-product-functions.php on line 1149
-
-2022-06-30T03:15:29+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::ID() in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-single-product.php:40
-Stack trace:
-#0 D:\xampp\htdocs\ecommerce\wp-includes\template.php(772): require()
-#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('D:\\xampp\\htdocs...', false)
-#2 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\single-product.php(37): wc_get_template_part('content', 'single-product')
-#3 D:\xampp\htdocs\ecommerce\wp-includes\template-loader.php(106): include('D:\\xampp\\htdocs...')
-#4 D:\xampp\htdocs\ecommerce\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
-#5 D:\xampp\htdocs\ecommerce\index.php(17): require('D:\\xampp\\htdocs...')
+#0 /home/admin/domains/dev.caraslens.com/public_html/wp-includes/template.php(772): require()
+#1 /home/admin/domains/dev.caraslens.com/public_html/wp-content/plugins/woocommerce/includes/wc-core-functions.php(284): load_template()
+#2 /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront-child/woocommerce/single-product.php(37): wc_get_template_part()
+#3 /home/admin/domains/dev.caraslens.com/public_html/wp-includes/template-loader.php(106): include('/home/admin/dom...')
+#4 /home/admin/domains/dev.caraslens.com/public_html/wp-blog-header.php(19): require_once('/home/admin/dom...')
+#5 /home/admin/domains/dev.caraslens.com/public_html/index.php(17): require('/home/admin/dom...')
 #6 {main}
-  thrown in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-single-product.php on line 40
-
-2022-06-30T03:17:38+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::id() in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-single-product.php:40
-Stack trace:
-#0 D:\xampp\htdocs\ecommerce\wp-includes\template.php(772): require()
-#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('D:\\xampp\\htdocs...', false)
-#2 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\single-product.php(37): wc_get_template_part('content', 'single-product')
-#3 D:\xampp\htdocs\ecommerce\wp-includes\template-loader.php(106): include('D:\\xampp\\htdocs...')
-#4 D:\xampp\htdocs\ecommerce\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
-#5 D:\xampp\htdocs\ecommerce\index.php(17): require('D:\\xampp\\htdocs...')
-#6 {main}
-  thrown in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-single-product.php on line 40
+  thrown in /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront-child/woocommerce/content-single-product.php on line 39
 
