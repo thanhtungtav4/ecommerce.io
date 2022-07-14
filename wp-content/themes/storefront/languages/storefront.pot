@@ -951,3 +951,21 @@ msgstr "Mã giảm giá"
 
 msgid "Total"
 msgstr "Thành tiền"
+
+msgid "BEST SELLER"
+msgstr "BEST SELLER - BÁN CHẠY NHẤT"
+
+msgid "SCHOOL-TO-WORK CONTACT LENSES"
+msgstr "TỰ NHIÊN - ĐI HỌC ĐI LÀM"
+
+msgid "LIGHT COLOR - HANG OUT, TAKE A PHOTO"
+msgstr "SÁNG MÀU - ĐI CHƠI, CHỤP ẢNH"
+
+msgid "FOR MEN"
+msgstr "DÀNH CHO NAM GIỚI"
+
+msgid "SPECIALIZED MEDICAL CONTACT LENSES"
+msgstr "KÍNH Y TẾ CHUYÊN DỤNG"
+
+msgid "CONTACT LENS ACCESSORIES"
+msgstr "PHỤ KIỆN"

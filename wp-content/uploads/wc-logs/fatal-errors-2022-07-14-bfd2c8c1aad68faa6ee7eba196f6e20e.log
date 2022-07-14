@@ -1,0 +1,10 @@
+2022-07-14T02:34:56+00:00 CRITICAL Uncaught Error: Call to undefined function get_price() in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\front-page.php:99
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\template-loader.php(106): include()
+#1 D:\xampp\htdocs\ecommerce\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\ecommerce\index.php(17): require('D:\\xampp\\htdocs...')
+#3 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\front-page.php on line 99
+
+2022-07-14T06:20:47+00:00 CRITICAL syntax error, unexpected 'sắc' (T_STRING) in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\front-page.php on line 104
+
