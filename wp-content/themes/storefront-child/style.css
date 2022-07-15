@@ -35,3 +35,6 @@ Domain Path: /languages
 .ul.products li.product .price{
   text-align: right !important;
 }
+.btn_area .add_to_cart_button{
+  background-color: rgb(235, 106, 106);
+}

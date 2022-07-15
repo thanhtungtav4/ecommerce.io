@@ -69,7 +69,7 @@ get_header(); ?>
                       $args = array(
                         'post_type' => 'product',
                         'post_status' => 'publish',
-                        'posts_per_page' => 4,
+                        'posts_per_page' => 8,
                         'orderby' => 'date',
                         'suppress_filters' => 1,
                         'tax_query' => array(

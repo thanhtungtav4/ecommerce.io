@@ -27,3 +27,5 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
  }
  return $currency_symbol;
 }
+
+// custome add to cart btn
