@@ -15,6 +15,12 @@
 }
 .woo-variation-swatches select#pa_day-do{
   display: inline !important;
+  width: 100%;
+  max-width: 100%;
+  height: 50px;
+  padding: 0 36px;
+  font-weight: 300;
+  font-size: 1.5rem;
 }
 .woo-variation-swatches  [data-attribute_name="attribute_pa_day-do"] {
   display: none;
@@ -38,4 +44,13 @@
   font-weight: 400;
   border-radius: 5px;
   text-transform: uppercase;
+}
+.reset_variations{
+  display: none !important;
+}
+.single-product div.product table.variations{
+  width: 100%;
+}
+.quantity {
+  margin-bottom: 2.5rem;
 }
