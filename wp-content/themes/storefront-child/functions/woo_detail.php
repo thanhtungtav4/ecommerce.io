@@ -31,3 +31,17 @@ function add_quantity_field_before_variations_form() {
 //   woocommerce_template_single_rating();
 // }
 //Move rating
+add_action( 'woocommerce_after_add_to_cart_quantity', 'ts_quantity_plus_sign' );
+
+function ts_quantity_plus_sign() {
+   echo '<button type="button" class="plus" >+</button>';
+}
+
+add_action( 'woocommerce_before_add_to_cart_quantity', 'ts_quantity_minus_sign' );
+function ts_quantity_minus_sign() {
+   echo '<button type="button" class="minus" >-</button>';
+}
+
+add_action( 'wp_footer', 'ts_quantity_plus_minus' );
+
+// https://stackoverflow.com/questions/62676244/how-can-i-change-the-position-of-quantity-field

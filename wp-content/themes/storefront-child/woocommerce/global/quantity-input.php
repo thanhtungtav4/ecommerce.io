@@ -30,7 +30,6 @@ if ( $max_value && $min_value === $max_value ) {
 	<div class="quantity number-input">
 		<?php do_action( 'woocommerce_before_quantity_input_field' ); ?>
 		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php echo esc_attr( $label ); ?></label>
-		<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button>
 		<input
 			type="number"
 			id="<?php echo esc_attr( $input_id ); ?>"
@@ -46,7 +45,6 @@ if ( $max_value && $min_value === $max_value ) {
 			inputmode="<?php echo esc_attr( $inputmode ); ?>"
 			autocomplete="<?php echo esc_attr( isset( $autocomplete ) ? $autocomplete : 'on' ); ?>"
 		/>
-		<button class="plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
 		<?php do_action( 'woocommerce_after_quantity_input_field' ); ?>
 	</div>
 	<?php
