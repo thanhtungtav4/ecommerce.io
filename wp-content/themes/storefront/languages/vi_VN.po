@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Storefront 4.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/storefront\n"
 "POT-Creation-Date: 2022-06-25 21:44+0700\n"
-"PO-Revision-Date: 2022-07-13 10:42+0700\n"
+"PO-Revision-Date: 2022-07-18 16:09+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi_VN\n"
@@ -1023,3 +1023,24 @@ msgstr "Mã giảm giá"
 
 msgid "Total"
 msgstr "Thành tiền"
+
+msgid "BEST SELLER"
+msgstr "BEST SELLER - BÁN CHẠY NHẤT"
+
+msgid "SCHOOL-TO-WORK CONTACT LENSES"
+msgstr "TỰ NHIÊN - ĐI HỌC ĐI LÀM"
+
+msgid "LIGHT COLOR - HANG OUT, TAKE A PHOTO"
+msgstr "SÁNG MÀU - ĐI CHƠI, CHỤP ẢNH"
+
+msgid "FOR MEN"
+msgstr "DÀNH CHO NAM GIỚI"
+
+msgid "SPECIALIZED MEDICAL CONTACT LENSES"
+msgstr "KÍNH Y TẾ CHUYÊN DỤNG"
+
+msgid "CONTACT LENS ACCESSORIES"
+msgstr "PHỤ KIỆN"
+
+msgid "Add to cart"
+msgstr "THÊM VÀO GIỎ HÀNG"

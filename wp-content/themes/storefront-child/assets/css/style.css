@@ -2158,6 +2158,27 @@ body.js-active {
         color: #1E1C1C;
         font-weight: 500;
         font-size: 1.6rem; }
+        .m-product__slick .slick-list .slick-track li:nth-of-type(odd) ul li:nth-of-type(1){
+          display: none;
+        }
+        .m-product__slick .slick-list .slick-track li:nth-of-type(odd) ul li:nth-of-type(2){
+          display: none;
+        }
+        .m-product__slick .slick-list .slick-track li:nth-of-type(odd) ul li:nth-of-type(3){
+          display: none;
+        }
+        .m-product__slick .slick-list .slick-track li:nth-of-type(odd) ul li:nth-of-type(4){
+          display: none;
+        }
+        .m-product__slick .slick-list .slick-track li:nth-of-type(even) ul li:nth-of-type(5){
+          display: none;
+        }
+        .m-product__slick .slick-list .slick-track li:nth-of-type(even) ul li:nth-of-type(6){
+          display: none;
+        }
+        .m-product__slick .slick-list .slick-track li:nth-of-type(even) ul li:nth-of-type(7){
+          display: none;
+        }
         .m-product__slick .slick-list .slick-track li:nth-of-type(even) ul li:nth-of-type(8){
           display: none;
         }

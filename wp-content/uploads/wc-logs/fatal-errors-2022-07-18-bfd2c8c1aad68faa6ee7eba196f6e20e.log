@@ -1,0 +1,10 @@
+2022-07-18T09:10:50+00:00 CRITICAL Uncaught Error: Call to undefined function __e() in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\global\quantity-input.php:32
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1814): wc_get_template('global/quantity...', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\templates\single-product\add-to-cart\variation-add-to-cart-button.php(24): woocommerce_quantity_input(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-template-functions.php(3058): wc_get_template('single-product/...')
+#5 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(307): woocommerce_single_variation_add_to_cart_button('')
+#6 D:\xampp\htdocs\ecommerce\wp-includes\class-w in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\global\quantity-input.php on line 32
+

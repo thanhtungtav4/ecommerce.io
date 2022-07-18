@@ -29,3 +29,33 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
 }
 
 // custome add to cart btn
+// Dynamically Update Variable Product Price With Current Variation Price
+add_action( 'woocommerce_variable_add_to_cart', 'bbloomer_update_price_with_variation_price' );
+
+function bbloomer_update_price_with_variation_price() {
+   global $product;
+   $price = $product->get_price_html();
+   wc_enqueue_js( "
+      $(document).on('found_variation', 'form.cart', function( event, variation ) {
+         if(variation.price_html) $('.summary > p.price').html(variation.price_html);
+         $('.woocommerce-variation-price').hide();
+      });
+      $(document).on('hide_variation', 'form.cart', function( event, variation ) {
+         $('.summary > p.price').html('" . $price . "');
+      });
+   " );
+}
+// !Dynamically Update Variable Product Price With Current Variation Price
+//Luôn hiển thị giá biến thể đơn
+add_filter( 'woocommerce_show_variation_price', '__return_true' );
+//!Luôn hiển thị giá biến thể đơn
+
+//Auto select first available options from a variation on WooCommerce variable products
+add_filter('woocommerce_dropdown_variation_attribute_options_args','fun_select_default_option',10,1);
+function fun_select_default_option( $args)
+{
+    if(count($args['options']) > 0) //Check the count of available options in dropdown
+        $args['selected'] = $args['options'][0];
+    return $args;
+}
+//!Auto select first available options from a variation on WooCommerce variable products

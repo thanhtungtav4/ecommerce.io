@@ -969,3 +969,6 @@ msgstr "KÍNH Y TẾ CHUYÊN DỤNG"
 
 msgid "CONTACT LENS ACCESSORIES"
 msgstr "PHỤ KIỆN"
+
+msgid "Add to cart"
+msgstr "THÊM VÀO GIỎ HÀNG"
