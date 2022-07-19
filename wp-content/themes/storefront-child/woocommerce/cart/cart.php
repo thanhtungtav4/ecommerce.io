@@ -206,7 +206,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<!-- viewer product-->
 		<div class="m-product">
             <div class="m-product_top">
-              <h4>KÍNH Y TẾ CHUYÊN DỤNG</h4>
+              <h4>ĐÃ XEM</h4>
               <div class="m-product__nav">
                 <button class="m-product__prev">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -226,15 +226,35 @@ do_action( 'woocommerce_before_cart' ); ?>
               <ul class="m-product__slick m-product__slick02 w-100">
                 <li>
                   <ul>
-
+				  <?php
+							if ( !empty( $_COOKIE['woocommerce_recently_viewed'] ) ) : ?>
+								<?php 
+								 $viewed_products = wp_parse_id_list( (array) explode( '|', wp_unslash( $_COOKIE['woocommerce_recently_viewed'] ) ) );	
+								 var_dump(array_values($viewed_products));
+								 $args = array(
+								   'post_type' => 'product',
+								   'post_status' => 'publish',
+								   'posts_per_page' => 8,
+								   'suppress_filters' => 1,
+								   'post__in' => array($viewed_products),
+								 );
+								 $loop = new WP_Query( $args );
+								 if ( $loop->have_posts() ) {
+								   $firstLoop = true;
+								   while ( $loop->have_posts() ) : $loop->the_post(); ?>
+										1
+								<?php
+                        			endwhile;
+									}
+									?>
+								
+							<?php endif ;?>
                   </ul>
                 </li>
               </ul>
             </div>
           </div>
-					<?php
-											echo do_shortcode( 'recently_viewed_products' );
-										?>
+				
 		<!-- ! viewer product -->
-		<?php do_action( 'woocommerce_after_cart') ?>
+		<?php //do_action( 'woocommerce_after_cart') ?>
 <div>

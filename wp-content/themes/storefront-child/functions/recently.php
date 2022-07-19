@@ -54,7 +54,6 @@ function dorzki_wc_display_products_viewed() {
 
 	$products = array_slice( $viewed_products, 0, 8 );
 	$ids = implode( ',', $products );
-  var_dump($ids);
 	echo do_shortcode( "[products ids='{$ids}']" );
 
 }
