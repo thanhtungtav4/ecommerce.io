@@ -1,0 +1,10 @@
+2022-07-19T07:23:20+00:00 CRITICAL Uncaught Error: Call to a member function is_sold_individually() on null in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-product-crosssell.php:39
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\template.php(772): require()
+#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(284): load_template('D:\\xampp\\htdocs...', false)
+#2 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\cart\cross-sells.php(39): wc_get_template_part('content', 'product-crossse...')
+#3 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2174): wc_get_template('cart/cross-sell...', Array)
+#5 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\cart\cart.php(145): woocommerce_cross_sell_display()
+#6 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocomme in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\content-product-crosssell.php on line 39
+

@@ -24,7 +24,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
+<li class="woocommerce-cart-form__cart-item cart_item cross-sells" ?>
 <div class="img">
     <?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
   </div>
@@ -35,9 +35,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
       </div>
       <div class="m-control">
         <div class="number-input">
-          <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"></button> <?php echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key);  ?>
           <input class="quantity" min="0" name="quantity" value="1" type="number">
-          <button class="plus" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"></button>
         </div>
 				<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
       </div>

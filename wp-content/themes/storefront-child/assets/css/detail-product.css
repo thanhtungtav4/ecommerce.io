@@ -34,10 +34,10 @@
   border: 1px solid #1E1C1C;
   box-shadow: none;
 }
-.entry-summary .single_variation_wrap .single_add_to_cart_button{
+.entry-summary .single_add_to_cart_button{
   width: 100%;
   margin: 5rem 0 2rem;
-  background-color: #EB5757;
+  background-color: #EB5757 !important;
   border: #EB5757;
   padding: 15px 0;
   font-size: 2rem;

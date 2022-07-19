@@ -46,3 +46,17 @@ a.remove{
   width: 35px !important;
   height: 35px !important;
 }
+.cross-sells .add_to_cart_button{
+  display: flex;
+  width: 35px !important;
+  height: 35px !important;
+  background-color: #EB6A6A !important;
+  border-radius: 5px;
+  margin-left: 17px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.mini_cart_item img{
+  max-width: 80px;
+}
