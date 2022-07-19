@@ -139,10 +139,7 @@ get_header(); ?>
                                     </span>
                                   </p>
                                   <div class="btn_area">
-                                    <a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a>
-                                    <!-- <a class="btn_area__del" href="#">
-                                      <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="add to cart" loading="lazy" width="22" height="22">
-                                    </a> -->
+                                    <a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="thêm vào mục yêu thích" loading="lazy" width="16" height="20"></a>
                                     <?php woocommerce_template_loop_add_to_cart();?>
                                     </div>
                                   </div>
@@ -270,9 +267,6 @@ get_header(); ?>
                                   </p>
                                   <div class="btn_area">
                                     <a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a>
-                                    <!-- <a class="btn_area__del" href="#">
-                                      <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="add to cart" loading="lazy" width="22" height="22">
-                                    </a> -->
                                     <?php woocommerce_template_loop_add_to_cart();?>
                                     </div>
                                   </div>
@@ -400,9 +394,6 @@ get_header(); ?>
                                   </p>
                                   <div class="btn_area">
                                     <a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a>
-                                    <!-- <a class="btn_area__del" href="#">
-                                      <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="add to cart" loading="lazy" width="22" height="22">
-                                    </a> -->
                                     <?php woocommerce_template_loop_add_to_cart();?>
                                     </div>
                                   </div>
@@ -530,9 +521,6 @@ get_header(); ?>
                                   </p>
                                   <div class="btn_area">
                                     <a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a>
-                                    <!-- <a class="btn_area__del" href="#">
-                                      <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="add to cart" loading="lazy" width="22" height="22">
-                                    </a> -->
                                     <?php woocommerce_template_loop_add_to_cart();?>
                                     </div>
                                   </div>
@@ -660,9 +648,6 @@ get_header(); ?>
                                   </p>
                                   <div class="btn_area">
                                     <a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a>
-                                    <!-- <a class="btn_area__del" href="#">
-                                      <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="add to cart" loading="lazy" width="22" height="22">
-                                    </a> -->
                                     <?php woocommerce_template_loop_add_to_cart();?>
                                     </div>
                                   </div>
@@ -790,9 +775,6 @@ get_header(); ?>
                                   </p>
                                   <div class="btn_area">
                                     <a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a>
-                                    <!-- <a class="btn_area__del" href="#">
-                                      <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="add to cart" loading="lazy" width="22" height="22">
-                                    </a> -->
                                     <?php woocommerce_template_loop_add_to_cart();?>
                                     </div>
                                   </div>

@@ -38,3 +38,11 @@ Domain Path: /languages
 .btn_area .add_to_cart_button{
   background-color: rgb(235, 106, 106);
 }
+a.remove::before{
+  content: unset !important;
+}
+a.remove{
+  display:flex;
+  width: 35px !important;
+  height: 35px !important;
+}

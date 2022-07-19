@@ -92,36 +92,14 @@ if ( post_password_required() ) {
 	?>
 </div>
           <?php require_once( get_stylesheet_directory() . '/module/list_promotion.php' ); ?>
-          <div class="c-tab">
-            <div class="c-tab_top">
-              <button class="button tablinks active" onclick="openTab(event, 'description')">Mô tả</button>
-              <button class="button tablinks" onclick="openTab(event, 'parameter')">THÔNG SỐ</button>
-              <button class="button tablinks" onclick="openTab(event, 'insurane')">BẢO HÀNH</button>
-              <button class="button tablinks" onclick="openTab(event, 'review')">REVIEW (24)</button>
-            </div>
-            <div class="c-tab_content">
-              <div class="c-tab_item" id="description" style="display: block;">
-              <?php
-              /**
-               * Hook: tungnt custome position view data_tabs
-               *
-               * @hooked woocommerce_output_product_data_tabs - 10
-               */
-              do_action( 'tungnt_woocommerce_output_product_data_tabs' );
-              ?>
-
-              </div>
-              <div class="c-tab_item" id="parameter" style="display: none;">
-
-              </div>
-              <div class="c-tab_item" id="insurane" style="display: none;">
-                <h3>GIỎ HÀNG</h3>
-              </div>
-              <div class="c-tab_item" id="review" style="display: none;">
-                <h3>GIỎ HÀNG</h3>
-              </div>
-            </div>
-          </div>
+          <?php
+            /**
+             * Hook: tungnt custome position view data_tabs
+             *
+             * @hooked woocommerce_output_product_data_tabs - 10
+             */
+            do_action( 'tungnt_woocommerce_output_product_data_tabs' );
+          ?>
           <div class="m-product">
             <div class="m-product_top">
               <h4>KÍNH Y TẾ CHUYÊN DỤNG</h4>

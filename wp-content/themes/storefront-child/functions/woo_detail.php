@@ -1,12 +1,5 @@
 <?php
 //Data Tab
-remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
-add_action('tungnt_woocommerce_output_product_data_tabs', 'nt_woocommerce_output_product_data_tabs');
-function nt_woocommerce_output_product_data_tabs(){
-  woocommerce_output_product_data_tabs();
-}
-//Data Tab
-//Data Tab
 add_action( 'woocommerce_before_variations_form', 'add_quantity_field_before_variations_form', 10 );
 function add_quantity_field_before_variations_form() {
     global $product;
@@ -21,27 +14,10 @@ function add_quantity_field_before_variations_form() {
     );
     do_action( 'woocommerce_after_add_to_cart_quantity' );
 }
-// add_action('tungnt_woocommerce_output_product_data_tabs', 'nt_woocommerce_output_product_data_tabs');
-// function nt_woocommerce_output_product_data_tabs(){
-//   woocommerce_output_product_data_tabs();
-// }
-//Move rating
-// add_action('woocommerce_rating_custome', 'single_rating_display');
-// function single_rating_display(){
-//   woocommerce_template_single_rating();
-// }
-//Move rating
-add_action( 'woocommerce_after_add_to_cart_quantity', 'ts_quantity_plus_sign' );
-
-function ts_quantity_plus_sign() {
-   echo '<button type="button" class="plus" >+</button>';
+//Data Tab
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+add_action('tungnt_woocommerce_output_product_data_tabs', 'nt_woocommerce_output_product_data_tabs');
+function nt_woocommerce_output_product_data_tabs(){
+  woocommerce_output_product_data_tabs();
 }
-
-add_action( 'woocommerce_before_add_to_cart_quantity', 'ts_quantity_minus_sign' );
-function ts_quantity_minus_sign() {
-   echo '<button type="button" class="minus" >-</button>';
-}
-
-add_action( 'wp_footer', 'ts_quantity_plus_minus' );
-
-// https://stackoverflow.com/questions/62676244/how-can-i-change-the-position-of-quantity-field
+//Data Tab
