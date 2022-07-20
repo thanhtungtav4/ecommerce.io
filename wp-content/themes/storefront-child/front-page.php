@@ -53,7 +53,8 @@ get_header(); ?>
                  <a href="#">
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="Logo" loading="lazy" width="666" height="912">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="Logo" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
@@ -90,7 +91,8 @@ get_header(); ?>
                                 <div class="m-product__img"></div>
                                 <picture>
                                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp">
+                                  <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="<?php the_title() ?>" loading="lazy" width="323" height="323">
                                 </picture>
                               </a>
                               <div class="m-product__content">
@@ -217,7 +219,8 @@ get_header(); ?>
                                 <div class="m-product__img"></div>
                                 <picture>
                                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp">
+                                  <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="<?php the_title() ?>" loading="lazy" width="323" height="323">
                                 </picture>
                               </a>
                               <div class="m-product__content">
@@ -307,7 +310,8 @@ get_header(); ?>
                  <a href="#">
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="Logo" loading="lazy" width="666" height="912">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
@@ -434,7 +438,8 @@ get_header(); ?>
                  <a href="#">
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="Logo" loading="lazy" width="666" height="912">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
@@ -471,7 +476,8 @@ get_header(); ?>
                                 <div class="m-product__img"></div>
                                 <picture>
                                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp">
+                                  <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="<?php the_title() ?>" loading="lazy" width="323" height="323">
                                 </picture>
                               </a>
                               <div class="m-product__content">
@@ -561,7 +567,8 @@ get_header(); ?>
                  <a href="#">
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="Logo" loading="lazy" width="666" height="912">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
@@ -598,7 +605,8 @@ get_header(); ?>
                                 <div class="m-product__img"></div>
                                 <picture>
                                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp">
+                                  <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="<?php the_title() ?>" loading="lazy" width="323" height="323">
                                 </picture>
                               </a>
                               <div class="m-product__content">
@@ -688,7 +696,8 @@ get_header(); ?>
                  <a href="#">
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="Logo" loading="lazy" width="666" height="912">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
@@ -725,7 +734,8 @@ get_header(); ?>
                                 <div class="m-product__img"></div>
                                 <picture>
                                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp">
+                                  <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="<?php the_title() ?>" loading="lazy" width="323" height="323">
                                 </picture>
                               </a>
                               <div class="m-product__content">
@@ -827,21 +837,21 @@ get_header(); ?>
                 </picture>
               </div>
               <div class="c-shopservice__item">
-                <h5 class="ttl">PHƯƠNG CHÂM BÁN HÀNG</h5>
+                <h5 class="ttl">SẢN PHẨM VÀ DỊCH VỤ</h5>
                 <picture>
                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.avif" type="image/avif">
                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" alt="service01" loading="lazy" width="323" height="520">
                 </picture>
               </div>
               <div class="c-shopservice__item">
-                <h5 class="ttl">PHƯƠNG CHÂM BÁN HÀNG</h5>
+                <h5 class="ttl">CHĂM SÓC KHÁCH HÀNG</h5>
                 <picture>
                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.avif" type="image/avif">
                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" alt="service01" loading="lazy" width="323" height="520">
                 </picture>
               </div>
               <div class="c-shopservice__item">
-                <h5 class="ttl">PHƯƠNG CHÂM BÁN HÀNG</h5>
+                <h5 class="ttl">GIAO HÀNG, ĐỔI TRẢ VÀ BẢO HÀNH</h5>
                 <picture>
                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.avif" type="image/avif">
                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" alt="service01" loading="lazy" width="323" height="520">

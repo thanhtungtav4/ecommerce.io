@@ -226,35 +226,52 @@ do_action( 'woocommerce_before_cart' ); ?>
               <ul class="m-product__slick m-product__slick02 w-100">
                 <li>
                   <ul>
-				  <?php
-							if ( !empty( $_COOKIE['woocommerce_recently_viewed'] ) ) : ?>
-								<?php 
-								 $viewed_products = wp_parse_id_list( (array) explode( '|', wp_unslash( $_COOKIE['woocommerce_recently_viewed'] ) ) );	
-								 var_dump(array_values($viewed_products));
-								 $args = array(
-								   'post_type' => 'product',
-								   'post_status' => 'publish',
-								   'posts_per_page' => 8,
-								   'suppress_filters' => 1,
-								   'post__in' => array($viewed_products),
-								 );
-								 $loop = new WP_Query( $args );
-								 if ( $loop->have_posts() ) {
-								   $firstLoop = true;
-								   while ( $loop->have_posts() ) : $loop->the_post(); ?>
-										1
-								<?php
-                        			endwhile;
-									}
-									?>
-								
-							<?php endif ;?>
+									<?php
+										if ( !empty( $_COOKIE['woocommerce_recently_viewed'] ) ) : ?>
+											<?php
+											$viewed_products = wp_parse_id_list( (array) explode( '|', wp_unslash( $_COOKIE['woocommerce_recently_viewed'] ) ) );
+											$args = array(
+												'post_type' => 'product',
+												'post_status' => 'publish',
+												'posts_per_page' => 4,
+												'suppress_filters' => 1,
+												'post__in' => $viewed_products,
+											);
+											$loop = new WP_Query( $args );
+											if ( $loop->have_posts() ) {
+												while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                     <li>
+                              <a href="<?php echo get_permalink(get_the_ID()); ?>">
+                                <div class="m-product__img"></div>
+                                <picture>
+                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
+                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp">
+																	<img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
+                                </picture>
+                              </a>
+                              <div class="m-product__content">
+                                <div class="m-product__content-top">
+                                  <a href="<?php echo get_permalink(get_the_ID()); ?>">
+                                    <h3 class="strong"><?php the_title() ?></h3></a>
+                                  <p>
+                                    <?php echo wc_get_product( get_the_ID() )->get_price_html(); ?></p>
+                                </div>
+                                <div class="m-product__content-bottom">
+                                  <div class="btn_area">
+                                    <a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a>
+                                    <?php woocommerce_template_loop_add_to_cart();?>
+                                    </div>
+                                  </div>
+                              </div>
+                            </li>
+											<?php
+											endwhile;
+										} ?>
+								<?php endif ;?>
                   </ul>
                 </li>
               </ul>
             </div>
           </div>
-				
-		<!-- ! viewer product -->
 		<?php //do_action( 'woocommerce_after_cart') ?>
 <div>
