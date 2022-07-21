@@ -308,7 +308,7 @@ const GWPAdminHelper = (($) => {
 
         try {
             $(document.body).on('init_form_field_dependency', function () {
-                $('[data-dependency]').GWPFormFieldDependency()
+                $('[data-gwp_dependency]').GWPFormFieldDependency()
             }).trigger('init_form_field_dependency')
 
         } catch (err) {

@@ -57,7 +57,7 @@
                 }
                 
                 if ( woo_variation_swatches()->is_pro() && wc_string_to_bool( woo_variation_swatches()->get_option( 'show_variation_stock_info', 'no' ) ) ) {
-                    $variation_data[ 'variation_stock_left' ] = $variation->managing_stock() ? sprintf( esc_html__( '%s left', 'woo-variation-swatches-pro' ), $variation->get_stock_quantity() ) : '';
+                    $variation_data[ 'variation_stock_left' ] = $variation->managing_stock() ? sprintf( esc_html__( '%s left', 'woo-variation-swatches' ), $variation->get_stock_quantity() ) : '';
                 }
                 
                 return $variation_data;
@@ -184,7 +184,7 @@
                     return;
                 }
                 
-                $tick_color = sanitize_hex_color( woo_variation_swatches()->get_option( 'tick_color', '#ffffff' ) );
+                $tick_color  = sanitize_hex_color( woo_variation_swatches()->get_option( 'tick_color', '#ffffff' ) );
                 $cross_color = sanitize_hex_color( woo_variation_swatches()->get_option( 'cross_color', '#ff0000' ) );
                 
                 $style = "";
@@ -761,7 +761,7 @@
                 // End Swatches
                 $html .= $wrapper . $item . $wrapper_end;
                 
-                return $html;
+                return apply_filters( 'woo_variation_swatches_html', $html, $args, $swatches_data, $this );
             }
         }
     }

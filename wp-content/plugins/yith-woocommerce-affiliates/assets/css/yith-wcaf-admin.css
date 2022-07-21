@@ -1,0 +1,2910 @@
+@charset "UTF-8";
+/**
+ * Admin CSS
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * === TABLE OF CONTENTS ===
+ *
+ * 1. VARIABLES
+ * 2. IMPORTS
+ * 3. AFFILIATES TAB
+ * 4. COMMISSIONS TAB
+ * 5. PAYMENTS TAB
+ * 6. CLICKS TAB
+ * 7. SETTINGS TAB
+ * 8. DASHBOARD
+ */
+/**
+ * === 1. VARIABLES ===
+ */
+/**
+ * General variables
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * == GENERAL ===
+ */
+/**
+ * === STATUS COLORS ===
+ */
+/**
+ * === ADMIN ===
+ */
+/**
+ * === DASHBOARD ===
+ */
+/**
+ * === 2. IMPORTS ===
+ */
+/**
+ * General mixins
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * Admin Icons CSS
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+.yith-icon-green-check-mark {
+  background: url(../images/tick.svg) no-repeat center center transparent;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.yith-icon-affiliates {
+  background: url(../images/affiliates.svg) no-repeat center center transparent;
+  display: inline-block;
+}
+
+.yith-icon-clicks {
+  background: url(../images/clicks.svg) no-repeat center center transparent;
+  display: inline-block;
+}
+
+.yith-icon-commissions {
+  background: url(../images/commissions.svg) no-repeat center center transparent;
+  display: inline-block;
+}
+
+.yith-icon-payments {
+  background: url(../images/payments.svg) no-repeat center center transparent;
+  display: inline-block;
+}
+
+.yith-icon-rules {
+  background: url(../images/rules.svg) no-repeat center center transparent;
+  display: inline-block;
+}
+
+/**
+ * Admin Tables CSS
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * General variables
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * == GENERAL ===
+ */
+/**
+ * === STATUS COLORS ===
+ */
+/**
+ * === ADMIN ===
+ */
+/**
+ * === DASHBOARD ===
+ */
+.yith-plugin-ui #plugin-fw-wc .list-table-title + .subsubsub {
+  margin-bottom: 15px;
+}
+.yith-plugin-ui #plugin-fw-wc .tablenav > * {
+  vertical-align: middle;
+}
+.yith-plugin-ui #plugin-fw-wc .tablenav .bulkactions > select,
+.yith-plugin-ui #plugin-fw-wc .tablenav .select2-container {
+  max-width: 200px;
+  min-width: 150px !important;
+  margin-right: 15px;
+}
+.yith-plugin-ui #plugin-fw-wc .tablenav .date-picker {
+  max-width: 150px;
+}
+.yith-plugin-ui #plugin-fw-wc .tablenav #post-query-submit,
+.yith-plugin-ui #plugin-fw-wc .tablenav .reset-button {
+  margin-right: 15px;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat thead th,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat thead td,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tbody th,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tbody td {
+  padding: 15px;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr.new, .yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr.reserved {
+  background-color: #fbf3f0;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr.new:hover, .yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr.reserved:hover {
+  background-color: #ffefeb;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr th.sortable a,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr th.sorted a {
+  padding-right: 0;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr th.sortable a span,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr th.sorted a span {
+  float: none;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr th.sortable a span.sorting-indicator,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr th.sorted a span.sorting-indicator {
+  display: inline-block;
+  position: absolute;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr td .row-actions {
+  display: none;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr:hover td .row-actions {
+  display: block;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-date {
+  width: 10%;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-affiliate,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-product {
+  width: 20%;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-affiliate img,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-product img {
+  border-radius: 4px;
+  float: left;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-affiliate .affiliate-details,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-affiliate .product-details,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-product .affiliate-details,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-product .product-details {
+  margin-left: 80px;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-balance .amount:after {
+  content: "";
+  display: block;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-balance a.button-pay-now {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 25px;
+  margin-top: 10px;
+  min-height: 25px;
+  text-transform: uppercase;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-product {
+  width: 15%;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-id {
+  width: 50px;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-order {
+  width: 10%;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-token {
+  width: 80px;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-amount {
+  width: 5%;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-rate,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-line_item_total,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-click {
+  width: 5%;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-conv_rate {
+  width: 7%;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status {
+  width: 10%;
+  padding-right: 10px;
+  /**
+   * Badges CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge {
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  line-height: 2.1em;
+  min-width: 140px;
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.pending, .yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.not-converted {
+  background-color: #cf8300;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.enabled {
+  background-color: #afb000;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.paid, .yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.completed, .yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.converted {
+  background-color: #afb000;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.cancelled, .yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.banned {
+  background-color: #cd1927;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.disabled, .yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.on-hold, .yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.not-confirmed {
+  background-color: #748c9c;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.pending-payment {
+  background-color: #999d84;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.refunded {
+  background-color: #730000;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.trash {
+  background-color: #c73878;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-status mark.status-badge.small {
+  padding: 0 5px;
+  min-width: 20px;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-actions {
+  width: 100px;
+  padding: 0;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-actions .delete a i {
+  color: #ba3e3e;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-actions .drag a i {
+  color: #A0A0A0;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-enabled .disabled .yith-plugin-fw-onoff {
+  cursor: no-drop;
+  opacity: 0.3;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-rate,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-earnings,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-balance,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-refunds,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-paid,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-line_item_total {
+  text-align: center;
+}
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-conv_rate,
+.yith-plugin-ui #plugin-fw-wc table.wp-list-table.widefat tr .column-amount {
+  text-align: right;
+  padding-right: 40px;
+}
+.yith-plugin-ui #plugin-fw-wc p.no-items-found {
+  padding: 120px 0;
+  margin: 0;
+  text-align: center;
+}
+.yith-plugin-ui #plugin-fw-wc p.no-items-found span.no-items-message {
+  display: block;
+  margin-bottom: 20px;
+}
+.yith-plugin-ui #plugin-fw-wc p.no-items-found i {
+  background-size: 100%;
+  display: block;
+  height: 80px;
+  margin: 0 auto 20px;
+  width: 80px;
+}
+.yith-plugin-ui #plugin-fw-wc p.view-all-items {
+  margin-top: 30px;
+  text-align: center;
+}
+.yith-plugin-ui #plugin-fw-wc p.view-all-items a {
+  color: var(--yith-primary);
+  text-decoration: none;
+}
+
+/**
+ * Admin Modals CSS
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+.yith-wcaf-modal {
+  /**
+   * Admin Tabs CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+  /**
+   * Admin Fields CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+}
+.yith-wcaf-modal .tabbed-content ul.tab-anchors {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.yith-wcaf-modal .tabbed-content ul.tab-anchors.tab-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+.yith-wcaf-modal .tabbed-content ul.tab-anchors.tab-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.yith-wcaf-modal .tabbed-content ul.tab-anchors.tab-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.yith-wcaf-modal .tabbed-content ul.tab-anchors.tab-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.yith-wcaf-modal .tabbed-content ul.tab-anchors.tab-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+.yith-wcaf-modal .tabbed-content ul.tab-anchors.tab-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+.yith-wcaf-modal .tabbed-content ul.tab-anchors li {
+  margin: 0;
+}
+.yith-wcaf-modal .tabbed-content ul.tab-anchors li a.tab-anchor {
+  border-bottom: 2px solid #EDEDED;
+  color: #A0A0A0;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+.yith-wcaf-modal .tabbed-content ul.tab-anchors li a.tab-anchor.active, .yith-wcaf-modal .tabbed-content ul.tab-anchors li a.tab-anchor:hover {
+  border-color: var(--yith-primary);
+  color: var(--yith-primary);
+  font-weight: 600;
+}
+.yith-wcaf-modal .tabbed-content div.tabs .tab {
+  display: none;
+  padding: 25px 0 10px;
+}
+.yith-wcaf-modal .tabbed-content div.tabs .tab.active {
+  display: block;
+}
+.yith-wcaf-modal .form-row {
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.yith-wcaf-modal .form-row label {
+  font-weight: 600;
+}
+.yith-wcaf-modal .form-row label.inline {
+  font-weight: 400;
+  margin: 30px 0;
+}
+.yith-wcaf-modal .form-row.form-row-wide {
+  clear: left;
+}
+.yith-wcaf-modal .form-row.form-row-wide label {
+  margin-bottom: 10px;
+}
+.yith-wcaf-modal .form-row.form-row-wide label {
+  display: block;
+  width: 100%;
+}
+.yith-wcaf-modal .form-row.form-row-wide input[type=text],
+.yith-wcaf-modal .form-row.form-row-wide input[type=url],
+.yith-wcaf-modal .form-row.form-row-wide input[type=email],
+.yith-wcaf-modal .form-row.form-row-wide input[type=password],
+.yith-wcaf-modal .form-row.form-row-wide input[type=submit],
+.yith-wcaf-modal .form-row.form-row-wide select {
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+}
+.yith-wcaf-modal .form-row.form-row-wide input[type=text]:active, .yith-wcaf-modal .form-row.form-row-wide input[type=text]:focus,
+.yith-wcaf-modal .form-row.form-row-wide input[type=url]:active,
+.yith-wcaf-modal .form-row.form-row-wide input[type=url]:focus,
+.yith-wcaf-modal .form-row.form-row-wide input[type=email]:active,
+.yith-wcaf-modal .form-row.form-row-wide input[type=email]:focus,
+.yith-wcaf-modal .form-row.form-row-wide input[type=password]:active,
+.yith-wcaf-modal .form-row.form-row-wide input[type=password]:focus,
+.yith-wcaf-modal .form-row.form-row-wide input[type=submit]:active,
+.yith-wcaf-modal .form-row.form-row-wide input[type=submit]:focus,
+.yith-wcaf-modal .form-row.form-row-wide select:active,
+.yith-wcaf-modal .form-row.form-row-wide select:focus {
+  border-color: #a7d9ec;
+  box-shadow: none;
+}
+.yith-wcaf-modal .form-row.form-row-wide input[type=number] {
+  width: 90px;
+}
+.yith-wcaf-modal .form-row.form-row-wide .select2.select2-container .select2-search__field {
+  border: none !important;
+}
+.yith-wcaf-modal .form-row.form-row-inline {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+}
+.yith-wcaf-modal .form-row.form-row-inline .select2.select2-container {
+  width: 100% !important;
+}
+.yith-wcaf-modal .form-row button.button-primary {
+  padding: 5px 15px !important;
+  width: 100%;
+}
+.yith-wcaf-modal .form-row.woocommerce-invalid label {
+  color: #ba3e3e;
+}
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=text],
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=url],
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=email],
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=password],
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=number],
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=submit],
+.yith-wcaf-modal .form-row.woocommerce-invalid textarea,
+.yith-wcaf-modal .form-row.woocommerce-invalid select,
+.yith-wcaf-modal .form-row.woocommerce-invalid .select2.select2-container.select2-container--default,
+.yith-wcaf-modal .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__rendered,
+.yith-wcaf-modal .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__placeholder {
+  border-color: #ba3e3e !important;
+  color: #ba3e3e !important;
+}
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=text]:focus, .yith-wcaf-modal .form-row.woocommerce-invalid input[type=text]:hover,
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=url]:focus,
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=url]:hover,
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=email]:focus,
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=email]:hover,
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=password]:focus,
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=password]:hover,
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=number]:focus,
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=number]:hover,
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=submit]:focus,
+.yith-wcaf-modal .form-row.woocommerce-invalid input[type=submit]:hover,
+.yith-wcaf-modal .form-row.woocommerce-invalid textarea:focus,
+.yith-wcaf-modal .form-row.woocommerce-invalid textarea:hover,
+.yith-wcaf-modal .form-row.woocommerce-invalid select:focus,
+.yith-wcaf-modal .form-row.woocommerce-invalid select:hover,
+.yith-wcaf-modal .form-row.woocommerce-invalid .select2.select2-container.select2-container--default:focus,
+.yith-wcaf-modal .form-row.woocommerce-invalid .select2.select2-container.select2-container--default:hover,
+.yith-wcaf-modal .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__rendered:focus,
+.yith-wcaf-modal .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__rendered:hover,
+.yith-wcaf-modal .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__placeholder:focus,
+.yith-wcaf-modal .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__placeholder:hover {
+  border-color: #ba3e3e;
+  color: #ba3e3e;
+}
+.yith-wcaf-modal .form-row.inline-button input[type=text],
+.yith-wcaf-modal .form-row.inline-button input[type=url],
+.yith-wcaf-modal .form-row.inline-button input[type=email],
+.yith-wcaf-modal .form-row.inline-button input[type=password],
+.yith-wcaf-modal .form-row.inline-button input[type=submit],
+.yith-wcaf-modal .form-row.inline-button textarea,
+.yith-wcaf-modal .form-row.inline-button select {
+  display: inline-block;
+  margin-right: 15px;
+  width: 80%;
+}
+.yith-wcaf-modal .form-row.submit {
+  padding-bottom: 0;
+}
+.yith-wcaf-modal .form-row .wp-pwd {
+  display: none;
+}
+.yith-wcaf-modal .form-row .wp-pwd.is-open {
+  display: block;
+}
+.yith-wcaf-modal .form-row .wp-pwd .password-input-wrapper {
+  display: block;
+  margin-bottom: 15px;
+}
+.yith-wcaf-modal .form-row .wp-pwd .wp-toggle-pw span.dashicons {
+  position: relative;
+  top: 0.25rem;
+}
+.yith-wcaf-modal .form-row .description {
+  display: block;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+.yith-wcaf-modal .form-row .inline-description {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-left: 10px;
+}
+.yith-wcaf-modal .form-row .inline-table {
+  overflow: hidden;
+}
+.yith-wcaf-modal .form-row .inline-table table.form-table {
+  border: none;
+  table-layout: fixed;
+}
+.yith-wcaf-modal .form-row .inline-table table.form-table th {
+  vertical-align: bottom;
+}
+.yith-wcaf-modal .form-row .inline-table table.form-table th,
+.yith-wcaf-modal .form-row .inline-table table.form-table td {
+  min-width: 150px;
+  padding: 5px;
+  width: auto;
+}
+.yith-wcaf-modal .form-row .inline-table table.form-table th:first-child,
+.yith-wcaf-modal .form-row .inline-table table.form-table td:first-child {
+  padding-left: 0;
+}
+.yith-wcaf-modal .form-row .inline-table table.form-table th:last-child,
+.yith-wcaf-modal .form-row .inline-table table.form-table td:last-child {
+  padding-right: 0;
+}
+.yith-wcaf-modal .form-row .inline-table table.form-table th.column-actions .yith-icon,
+.yith-wcaf-modal .form-row .inline-table table.form-table td.column-actions .yith-icon {
+  font-size: 1em;
+  text-decoration: none;
+}
+.yith-wcaf-modal .form-row .inline-table table.form-table th.column-actions .drag,
+.yith-wcaf-modal .form-row .inline-table table.form-table td.column-actions .drag {
+  cursor: grab;
+}
+.yith-wcaf-modal .form-row .inline-table table.form-table th.column-actions .delete,
+.yith-wcaf-modal .form-row .inline-table table.form-table td.column-actions .delete {
+  color: #ba3e3e;
+}
+.yith-wcaf-modal .form-row .inline-table table.form-table th input,
+.yith-wcaf-modal .form-row .inline-table table.form-table td input {
+  max-width: 100%;
+}
+.yith-wcaf-modal .form-row:last-child {
+  margin-bottom: 0;
+}
+.yith-wcaf-modal #options_table td.form-row {
+  display: table-cell;
+}
+.yith-wcaf-modal #options_table .column-label,
+.yith-wcaf-modal #options_table .column-value {
+  width: 45%;
+}
+.yith-wcaf-modal #options_table .column-actions {
+  width: 10%;
+}
+.yith-wcaf-modal .yith-plugin-fw__modal__content {
+  overflow-x: hidden;
+}
+
+/**
+ * Metabox CSS
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * General mixins
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+#yith_wcaf_order_referral_commissions .referral-user {
+  margin-top: 15px;
+}
+#yith_wcaf_order_referral_commissions .referral-user:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#yith_wcaf_order_referral_commissions .referral-user .delete-affiliate {
+  color: #ccc;
+  cursor: pointer;
+  display: none;
+  line-height: 16px;
+  margin: 0 0 0 12px;
+  overflow: hidden;
+  padding: 0 0 0.5em;
+  position: absolute;
+  right: 10px;
+  text-decoration: none;
+  top: 0;
+  vertical-align: middle;
+  width: 16px;
+}
+#yith_wcaf_order_referral_commissions .referral-user .delete-affiliate:hover {
+  color: #a00;
+}
+#yith_wcaf_order_referral_commissions .referral-user .delete-affiliate:before {
+  -webkit-font-smoothing: antialiased;
+  content: "";
+  font-family: Dashicons;
+  font-variant: normal;
+  font-weight: 400;
+  height: 100%;
+  left: 0;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  speak: none;
+  text-align: center;
+  text-indent: 0;
+  text-transform: none;
+  top: 0;
+  width: 100%;
+}
+#yith_wcaf_order_referral_commissions .referral-user .referral-avatar {
+  float: left;
+}
+#yith_wcaf_order_referral_commissions .referral-user .referral-avatar img {
+  border: 4px solid #e3e3e3;
+  border-radius: 50%;
+}
+#yith_wcaf_order_referral_commissions .referral-user .referral-info {
+  margin-left: 80px;
+  overflow: hidden;
+}
+#yith_wcaf_order_referral_commissions .referral-user .referral-info h3 {
+  margin: 15px 0 0;
+  padding: 0;
+}
+#yith_wcaf_order_referral_commissions .referral-user .no-referral-message {
+  font-size: 110%;
+  font-style: italic;
+  padding-bottom: 15px;
+  text-align: center;
+}
+#yith_wcaf_order_referral_commissions .referral-user .no-referral-message:before, #yith_wcaf_order_referral_commissions .referral-user .no-referral-message:after {
+  content: "-";
+  display: inline-block;
+  margin: 0 4px;
+}
+#yith_wcaf_order_referral_commissions .referral-user .set-referral {
+  padding-top: 15px;
+  position: relative;
+}
+#yith_wcaf_order_referral_commissions .referral-user .set-referral:before {
+  border-bottom: 1px solid #cdcdcd;
+  content: "";
+  display: block;
+  left: -12px;
+  position: absolute;
+  right: -12px;
+  top: 0;
+}
+#yith_wcaf_order_referral_commissions .referral-user .set-referral .calculate-commission-button {
+  float: right;
+  height: 26px;
+  text-indent: -9999px;
+  width: 26px;
+}
+#yith_wcaf_order_referral_commissions .referral-user.without-avatar .referral-info {
+  margin-left: 0;
+}
+#yith_wcaf_order_referral_commissions:hover .referral-user .delete-affiliate {
+  display: inline-block;
+}
+#yith_wcaf_order_referral_commissions table {
+  border: none;
+  border-spacing: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+#yith_wcaf_order_referral_commissions table tr {
+  background: #fff;
+}
+#yith_wcaf_order_referral_commissions table tr th {
+  background: #F3F3F3;
+  color: #999;
+  padding: 15px;
+  font-weight: 400;
+  text-align: left;
+}
+#yith_wcaf_order_referral_commissions table tr th a {
+  color: #999;
+  pointer-events: none;
+}
+#yith_wcaf_order_referral_commissions table tr th a .sorting-indicator {
+  display: none;
+}
+#yith_wcaf_order_referral_commissions table tr td {
+  border-bottom: 1px solid #EDEDED;
+  padding: 10px 15px;
+}
+#yith_wcaf_order_referral_commissions table tr:last-child td {
+  border-bottom: 1px solid #dfdfdf;
+}
+#yith_wcaf_order_referral_commissions table tr .column-id,
+#yith_wcaf_order_referral_commissions table tr .column-amount,
+#yith_wcaf_order_referral_commissions table tr .column-rate,
+#yith_wcaf_order_referral_commissions table tr .column-status {
+  width: 7%;
+}
+#yith_wcaf_order_referral_commissions table tr .column-created_at {
+  width: 20%;
+}
+#yith_wcaf_order_referral_commissions table tr .column-amount,
+#yith_wcaf_order_referral_commissions table tr .item_cost {
+  text-align: right;
+}
+#yith_wcaf_order_referral_commissions table tr small.refunded {
+  display: block;
+  color: #ba3e3e;
+  white-space: nowrap;
+  margin-top: 0.5em;
+}
+#yith_wcaf_order_referral_commissions table tfoot.totals tr:first-child td {
+  padding-top: 15px;
+}
+#yith_wcaf_order_referral_commissions table tfoot.totals tr:last-child td {
+  padding-bottom: 15px;
+}
+#yith_wcaf_order_referral_commissions table tfoot.totals td {
+  background: #F3F3F3;
+  border: none;
+  padding: 5px 15px;
+  text-align: right;
+}
+#yith_wcaf_order_referral_commissions table tfoot.totals td.total {
+  font-weight: 700;
+}
+#yith_wcaf_order_referral_commissions table td.check-column,
+#yith_wcaf_order_referral_commissions table th.check-column {
+  display: none;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions {
+  margin: 15px -12px -12px -12px;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions {
+  /**
+   * Badges CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+  table-layout: fixed;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge {
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  line-height: 2.1em;
+  min-width: 140px;
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.pending, #yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.not-converted {
+  background-color: #cf8300;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.enabled {
+  background-color: #afb000;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.paid, #yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.completed, #yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.converted {
+  background-color: #afb000;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.cancelled, #yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.banned {
+  background-color: #cd1927;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.disabled, #yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.on-hold, #yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.not-confirmed {
+  background-color: #748c9c;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.pending-payment {
+  background-color: #999d84;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.refunded {
+  background-color: #730000;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.trash {
+  background-color: #c73878;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions mark.status-badge.small {
+  padding: 0 5px;
+  min-width: 20px;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions tfoot {
+  display: none;
+}
+#yith_wcaf_order_referral_commissions .referral-commissions table.commissions-totals tr:first-child td {
+  border-top: 1px solid #c3c4c7;
+}
+
+#yith_wcaf_order_referral_history .history-section {
+  margin-top: 15px;
+}
+#yith_wcaf_order_referral_history .referral-history-item {
+  background: #428bca;
+  color: #fff;
+  display: inline-block;
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+#yith_wcaf_order_referral_history .referral-history-item span {
+  display: inline-block;
+  padding: 5px;
+  vertical-align: middle;
+}
+#yith_wcaf_order_referral_history .referral-history-item:before, #yith_wcaf_order_referral_history .referral-history-item:after {
+  display: inline-block;
+  border-bottom: 13px solid transparent;
+  border-top: 13px solid transparent;
+  content: "";
+  height: 0;
+  position: relative;
+  vertical-align: middle;
+  width: 0;
+}
+#yith_wcaf_order_referral_history .referral-history-item:before {
+  border-left: 10px solid #fff;
+  z-index: 1;
+}
+#yith_wcaf_order_referral_history .referral-history-item:after {
+  border-left: 10px solid #428bca;
+  margin-right: -10px;
+  z-index: 2;
+}
+
+/**
+ * Admin Notes CSS
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * General variables
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * == GENERAL ===
+ */
+/**
+ * === STATUS COLORS ===
+ */
+/**
+ * === ADMIN ===
+ */
+/**
+ * === DASHBOARD ===
+ */
+.order_notes li {
+  margin-bottom: 15px;
+}
+.order_notes li .note_content {
+  border-radius: 4px;
+}
+
+.add_note {
+  /**
+   * Admin Fields CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+}
+.add_note .form-row {
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.add_note .form-row label {
+  font-weight: 600;
+}
+.add_note .form-row label.inline {
+  font-weight: 400;
+  margin: 30px 0;
+}
+.add_note .form-row.form-row-wide {
+  clear: left;
+}
+.add_note .form-row.form-row-wide label {
+  margin-bottom: 10px;
+}
+.add_note .form-row.form-row-wide label {
+  display: block;
+  width: 100%;
+}
+.add_note .form-row.form-row-wide input[type=text],
+.add_note .form-row.form-row-wide input[type=url],
+.add_note .form-row.form-row-wide input[type=email],
+.add_note .form-row.form-row-wide input[type=password],
+.add_note .form-row.form-row-wide input[type=submit],
+.add_note .form-row.form-row-wide select {
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+}
+.add_note .form-row.form-row-wide input[type=text]:active, .add_note .form-row.form-row-wide input[type=text]:focus,
+.add_note .form-row.form-row-wide input[type=url]:active,
+.add_note .form-row.form-row-wide input[type=url]:focus,
+.add_note .form-row.form-row-wide input[type=email]:active,
+.add_note .form-row.form-row-wide input[type=email]:focus,
+.add_note .form-row.form-row-wide input[type=password]:active,
+.add_note .form-row.form-row-wide input[type=password]:focus,
+.add_note .form-row.form-row-wide input[type=submit]:active,
+.add_note .form-row.form-row-wide input[type=submit]:focus,
+.add_note .form-row.form-row-wide select:active,
+.add_note .form-row.form-row-wide select:focus {
+  border-color: #a7d9ec;
+  box-shadow: none;
+}
+.add_note .form-row.form-row-wide input[type=number] {
+  width: 90px;
+}
+.add_note .form-row.form-row-wide .select2.select2-container .select2-search__field {
+  border: none !important;
+}
+.add_note .form-row.form-row-inline {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+}
+.add_note .form-row.form-row-inline .select2.select2-container {
+  width: 100% !important;
+}
+.add_note .form-row button.button-primary {
+  padding: 5px 15px !important;
+  width: 100%;
+}
+.add_note .form-row.woocommerce-invalid label {
+  color: #ba3e3e;
+}
+.add_note .form-row.woocommerce-invalid input[type=text],
+.add_note .form-row.woocommerce-invalid input[type=url],
+.add_note .form-row.woocommerce-invalid input[type=email],
+.add_note .form-row.woocommerce-invalid input[type=password],
+.add_note .form-row.woocommerce-invalid input[type=number],
+.add_note .form-row.woocommerce-invalid input[type=submit],
+.add_note .form-row.woocommerce-invalid textarea,
+.add_note .form-row.woocommerce-invalid select,
+.add_note .form-row.woocommerce-invalid .select2.select2-container.select2-container--default,
+.add_note .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__rendered,
+.add_note .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__placeholder {
+  border-color: #ba3e3e !important;
+  color: #ba3e3e !important;
+}
+.add_note .form-row.woocommerce-invalid input[type=text]:focus, .add_note .form-row.woocommerce-invalid input[type=text]:hover,
+.add_note .form-row.woocommerce-invalid input[type=url]:focus,
+.add_note .form-row.woocommerce-invalid input[type=url]:hover,
+.add_note .form-row.woocommerce-invalid input[type=email]:focus,
+.add_note .form-row.woocommerce-invalid input[type=email]:hover,
+.add_note .form-row.woocommerce-invalid input[type=password]:focus,
+.add_note .form-row.woocommerce-invalid input[type=password]:hover,
+.add_note .form-row.woocommerce-invalid input[type=number]:focus,
+.add_note .form-row.woocommerce-invalid input[type=number]:hover,
+.add_note .form-row.woocommerce-invalid input[type=submit]:focus,
+.add_note .form-row.woocommerce-invalid input[type=submit]:hover,
+.add_note .form-row.woocommerce-invalid textarea:focus,
+.add_note .form-row.woocommerce-invalid textarea:hover,
+.add_note .form-row.woocommerce-invalid select:focus,
+.add_note .form-row.woocommerce-invalid select:hover,
+.add_note .form-row.woocommerce-invalid .select2.select2-container.select2-container--default:focus,
+.add_note .form-row.woocommerce-invalid .select2.select2-container.select2-container--default:hover,
+.add_note .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__rendered:focus,
+.add_note .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__rendered:hover,
+.add_note .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__placeholder:focus,
+.add_note .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__placeholder:hover {
+  border-color: #ba3e3e;
+  color: #ba3e3e;
+}
+.add_note .form-row.inline-button input[type=text],
+.add_note .form-row.inline-button input[type=url],
+.add_note .form-row.inline-button input[type=email],
+.add_note .form-row.inline-button input[type=password],
+.add_note .form-row.inline-button input[type=submit],
+.add_note .form-row.inline-button textarea,
+.add_note .form-row.inline-button select {
+  display: inline-block;
+  margin-right: 15px;
+  width: 80%;
+}
+.add_note .form-row.submit {
+  padding-bottom: 0;
+}
+.add_note .form-row .wp-pwd {
+  display: none;
+}
+.add_note .form-row .wp-pwd.is-open {
+  display: block;
+}
+.add_note .form-row .wp-pwd .password-input-wrapper {
+  display: block;
+  margin-bottom: 15px;
+}
+.add_note .form-row .wp-pwd .wp-toggle-pw span.dashicons {
+  position: relative;
+  top: 0.25rem;
+}
+.add_note .form-row .description {
+  display: block;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+.add_note .form-row .inline-description {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-left: 10px;
+}
+.add_note .form-row .inline-table {
+  overflow: hidden;
+}
+.add_note .form-row .inline-table table.form-table {
+  border: none;
+  table-layout: fixed;
+}
+.add_note .form-row .inline-table table.form-table th {
+  vertical-align: bottom;
+}
+.add_note .form-row .inline-table table.form-table th,
+.add_note .form-row .inline-table table.form-table td {
+  min-width: 150px;
+  padding: 5px;
+  width: auto;
+}
+.add_note .form-row .inline-table table.form-table th:first-child,
+.add_note .form-row .inline-table table.form-table td:first-child {
+  padding-left: 0;
+}
+.add_note .form-row .inline-table table.form-table th:last-child,
+.add_note .form-row .inline-table table.form-table td:last-child {
+  padding-right: 0;
+}
+.add_note .form-row .inline-table table.form-table th.column-actions .yith-icon,
+.add_note .form-row .inline-table table.form-table td.column-actions .yith-icon {
+  font-size: 1em;
+  text-decoration: none;
+}
+.add_note .form-row .inline-table table.form-table th.column-actions .drag,
+.add_note .form-row .inline-table table.form-table td.column-actions .drag {
+  cursor: grab;
+}
+.add_note .form-row .inline-table table.form-table th.column-actions .delete,
+.add_note .form-row .inline-table table.form-table td.column-actions .delete {
+  color: #ba3e3e;
+}
+.add_note .form-row .inline-table table.form-table th input,
+.add_note .form-row .inline-table table.form-table td input {
+  max-width: 100%;
+}
+.add_note .form-row:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * === 3. AFFILIATES TAB ===
+ */
+#yith_wcaf_panel_affiliates-list .form-table + .submit,
+#yith_wcaf_panel_affiliates-list #yith-plugin-fw-float-save-button,
+#yith_wcaf_panel_affiliates-list #plugin-fw-wc-reset {
+  display: none;
+}
+
+#yith_wcaf_panel_affiliates-rates .form-table + .submit,
+#yith_wcaf_panel_affiliates-rates #yith-plugin-fw-float-save-button,
+#yith_wcaf_panel_affiliates-rates #plugin-fw-wc-reset {
+  display: none;
+}
+#yith_wcaf_panel_affiliates-rates #yith_wcaf_rate_rules .tablenav.top {
+  display: none;
+}
+#yith_wcaf_panel_affiliates-rates #yith_wcaf_rate_rules table.rules .column-actions {
+  width: 250px;
+}
+#yith_wcaf_panel_affiliates-rates #yith_wcaf_rate_rules table.rules .column-enabled {
+  width: 100px;
+}
+
+#yith_wcaf_panel_affiliate_details #plugin-fw-wc {
+  border: 1px solid #d8d8d8;
+  border-top: none;
+  padding: 30px 20px !important;
+}
+#yith_wcaf_panel_affiliate_details .grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block {
+  border: 1px solid #EDEDED;
+  border-radius: 10px;
+  margin-top: 30px;
+  overflow: hidden;
+  padding: 30px;
+  padding-bottom: 50px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user {
+  margin-top: 15px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .delete-affiliate {
+  color: #ccc;
+  cursor: pointer;
+  display: none;
+  line-height: 16px;
+  margin: 0 0 0 12px;
+  overflow: hidden;
+  padding: 0 0 0.5em;
+  position: absolute;
+  right: 10px;
+  text-decoration: none;
+  top: 0;
+  vertical-align: middle;
+  width: 16px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .delete-affiliate:hover {
+  color: #a00;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .delete-affiliate:before {
+  -webkit-font-smoothing: antialiased;
+  content: "";
+  font-family: Dashicons;
+  font-variant: normal;
+  font-weight: 400;
+  height: 100%;
+  left: 0;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  speak: none;
+  text-align: center;
+  text-indent: 0;
+  text-transform: none;
+  top: 0;
+  width: 100%;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .referral-avatar {
+  float: left;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .referral-avatar img {
+  border: 4px solid #e3e3e3;
+  border-radius: 50%;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .referral-info {
+  margin-left: 80px;
+  overflow: hidden;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .referral-info h3 {
+  margin: 15px 0 0;
+  padding: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .no-referral-message {
+  font-size: 110%;
+  font-style: italic;
+  padding-bottom: 15px;
+  text-align: center;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .no-referral-message:before, #yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .no-referral-message:after {
+  content: "-";
+  display: inline-block;
+  margin: 0 4px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .set-referral {
+  padding-top: 15px;
+  position: relative;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .set-referral:before {
+  border-bottom: 1px solid #cdcdcd;
+  content: "";
+  display: block;
+  left: -12px;
+  position: absolute;
+  right: -12px;
+  top: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user .set-referral .calculate-commission-button {
+  float: right;
+  height: 26px;
+  text-indent: -9999px;
+  width: 26px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .referral-user.without-avatar .referral-info {
+  margin-left: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block:hover .referral-user .delete-affiliate {
+  display: inline-block;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block h2 {
+  background: none;
+  border: none;
+  color: #000000;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 30px;
+  padding: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block h2 b {
+  font-weight: 700;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block h3 {
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block h3:not(:first-of-type) {
+  margin-top: 30px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block p {
+  font-size: 14px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block strong {
+  display: block;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .editable:after {
+  content: "";
+  cursor: pointer;
+  display: inline-block;
+  font-family: Dashicons;
+  margin-left: 5px;
+  padding: 5px;
+  vertical-align: middle;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .edit {
+  display: none;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block.no-border {
+  border: none;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block.highlight {
+  background-color: #F3F3F3;
+}
+#yith_wcaf_panel_affiliate_details #items_details {
+  padding: 0;
+}
+#yith_wcaf_panel_affiliate_details #items_details table {
+  border: none;
+  border-spacing: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tr {
+  background: #fff;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tr th {
+  background: #F3F3F3;
+  color: #999;
+  padding: 15px;
+  font-weight: 400;
+  text-align: left;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tr th a {
+  color: #999;
+  pointer-events: none;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tr th a .sorting-indicator {
+  display: none;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tr td {
+  border-bottom: 1px solid #EDEDED;
+  padding: 10px 15px;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tr:last-child td {
+  border-bottom: 1px solid #dfdfdf;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tr .column-id,
+#yith_wcaf_panel_affiliate_details #items_details table tr .column-amount,
+#yith_wcaf_panel_affiliate_details #items_details table tr .column-rate,
+#yith_wcaf_panel_affiliate_details #items_details table tr .column-status {
+  width: 7%;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tr .column-created_at {
+  width: 20%;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tr .column-amount,
+#yith_wcaf_panel_affiliate_details #items_details table tr .item_cost {
+  text-align: right;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tr small.refunded {
+  display: block;
+  color: #ba3e3e;
+  white-space: nowrap;
+  margin-top: 0.5em;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tfoot.totals tr:first-child td {
+  padding-top: 15px;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tfoot.totals tr:last-child td {
+  padding-bottom: 15px;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tfoot.totals td {
+  background: #F3F3F3;
+  border: none;
+  padding: 5px 15px;
+  text-align: right;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tfoot.totals td.total {
+  font-weight: 700;
+}
+#yith_wcaf_panel_affiliate_details #items_details table tfoot tr:last-child td {
+  border: none;
+}
+#yith_wcaf_panel_affiliate_details #items_details table td.thumb {
+  width: 60px;
+}
+#yith_wcaf_panel_affiliate_details #items_details table td.thumb img {
+  border-radius: 4px;
+  height: auto;
+  width: 50px;
+}
+#yith_wcaf_panel_affiliate_details #item_actions {
+  padding-bottom: 30px;
+}
+#yith_wcaf_panel_affiliate_details #item_actions select,
+#yith_wcaf_panel_affiliate_details #item_actions .select2 {
+  width: 100% !important;
+}
+#yith_wcaf_panel_affiliate_details #item_actions p.submit {
+  text-align: right;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block {
+  /**
+   * Admin Tabs CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+  /**
+   * Admin Fields CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content ul.tab-anchors {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 0;
+  margin-top: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content ul.tab-anchors.tab-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content ul.tab-anchors.tab-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content ul.tab-anchors.tab-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content ul.tab-anchors.tab-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content ul.tab-anchors.tab-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content ul.tab-anchors.tab-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content ul.tab-anchors li {
+  margin: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content ul.tab-anchors li a.tab-anchor {
+  border-bottom: 2px solid #EDEDED;
+  color: #A0A0A0;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content ul.tab-anchors li a.tab-anchor.active, #yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content ul.tab-anchors li a.tab-anchor:hover {
+  border-color: var(--yith-primary);
+  color: var(--yith-primary);
+  font-weight: 600;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content div.tabs .tab {
+  display: none;
+  padding: 25px 0 10px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .tabbed-content div.tabs .tab.active {
+  display: block;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row {
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row label {
+  font-weight: 600;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row label.inline {
+  font-weight: 400;
+  margin: 30px 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide {
+  clear: left;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide label {
+  margin-bottom: 10px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide label {
+  display: block;
+  width: 100%;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=text],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=url],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=email],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=password],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=submit],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide select {
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=text]:active, #yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=text]:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=url]:active,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=url]:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=email]:active,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=email]:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=password]:active,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=password]:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=submit]:active,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=submit]:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide select:active,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide select:focus {
+  border-color: #a7d9ec;
+  box-shadow: none;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide input[type=number] {
+  width: 90px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-wide .select2.select2-container .select2-search__field {
+  border: none !important;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-inline {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.form-row-inline .select2.select2-container {
+  width: 100% !important;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row button.button-primary {
+  padding: 5px 15px !important;
+  width: 100%;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid label {
+  color: #ba3e3e;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=text],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=url],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=email],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=password],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=number],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=submit],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid textarea,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid select,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid .select2.select2-container.select2-container--default,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__rendered,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__placeholder {
+  border-color: #ba3e3e !important;
+  color: #ba3e3e !important;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=text]:focus, #yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=text]:hover,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=url]:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=url]:hover,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=email]:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=email]:hover,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=password]:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=password]:hover,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=number]:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=number]:hover,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=submit]:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid input[type=submit]:hover,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid textarea:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid textarea:hover,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid select:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid select:hover,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid .select2.select2-container.select2-container--default:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid .select2.select2-container.select2-container--default:hover,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__rendered:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__rendered:hover,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__placeholder:focus,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.woocommerce-invalid .select2.select2-container.select2-container--default .select2-selection__placeholder:hover {
+  border-color: #ba3e3e;
+  color: #ba3e3e;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.inline-button input[type=text],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.inline-button input[type=url],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.inline-button input[type=email],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.inline-button input[type=password],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.inline-button input[type=submit],
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.inline-button textarea,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.inline-button select {
+  display: inline-block;
+  margin-right: 15px;
+  width: 80%;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row.submit {
+  padding-bottom: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .wp-pwd {
+  display: none;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .wp-pwd.is-open {
+  display: block;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .wp-pwd .password-input-wrapper {
+  display: block;
+  margin-bottom: 15px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .wp-pwd .wp-toggle-pw span.dashicons {
+  position: relative;
+  top: 0.25rem;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .description {
+  display: block;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-description {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-left: 10px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table {
+  overflow: hidden;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table {
+  border: none;
+  table-layout: fixed;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table th {
+  vertical-align: bottom;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table th,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table td {
+  min-width: 150px;
+  padding: 5px;
+  width: auto;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table th:first-child,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table td:first-child {
+  padding-left: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table th:last-child,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table td:last-child {
+  padding-right: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table th.column-actions .yith-icon,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table td.column-actions .yith-icon {
+  font-size: 1em;
+  text-decoration: none;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table th.column-actions .drag,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table td.column-actions .drag {
+  cursor: grab;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table th.column-actions .delete,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table td.column-actions .delete {
+  color: #ba3e3e;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table th input,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row .inline-table table.form-table td input {
+  max-width: 100%;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-row:last-child {
+  margin-bottom: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_related_items {
+  padding-bottom: 15px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_related_items table td.check-column,
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_related_items table th.check-column {
+  display: none;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_related_items table .column-product {
+  width: 25%;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_related_items table .column-rate,
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_related_items table .column-amount {
+  width: 10%;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_related_items table .column-status {
+  width: auto;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_settings_1 table tr:first-child {
+  display: none;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_settings_2 h3.editable:after {
+  float: right;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_settings_2 .editable-section {
+  border-top: 1px solid #EDEDED;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_settings_2 .editable-section .form-table {
+  margin-top: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_settings_2 .editable-section .form-row .label,
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_settings_2 .editable-section .form-row .value {
+  display: block;
+  margin-bottom: 5px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_settings_2 .editable-section .form-row .value {
+  color: #A0A0A0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_settings_2 .editable-section .form-row.accepted-condition .value {
+  color: #afb000;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_settings_2 .editable-section .form-row.rejected-condition .value {
+  color: #ba3e3e;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_url p.form-row:first-of-type {
+  margin-top: 30px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_url .copy-field-wrapper {
+  display: block;
+  position: relative;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_url .copy-field-wrapper input.copy-target {
+  border-style: dashed;
+  color: #999;
+  padding-right: 110px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_url .copy-field-wrapper .copy-trigger {
+  cursor: pointer;
+  color: #434343;
+  font-weight: 600;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_url .copy-field-wrapper .copy-trigger:before {
+  background: url(../images/copy.svg);
+  content: "";
+  display: inline-block;
+  height: 15px;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 15px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block#affiliate_url .copy-field-wrapper .copy-confirmation {
+  background: #434343;
+  border-radius: 5px;
+  color: #fff;
+  display: none;
+  font-size: 0.8em;
+  font-weight: 400;
+  left: calc(-100% - 50px);
+  padding: 3px 10px;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .application-date {
+  margin-top: 30px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-table {
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-table th {
+  padding-left: 0;
+  width: 150px;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-table td {
+  padding-right: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-table td input,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-table td select,
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-table td textarea {
+  max-width: 100%;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-table .select2 {
+  max-width: 100%;
+  min-width: 200px !important;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-table .rate-field {
+  width: 70px;
+  min-width: 70px !important;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .form-table .yith-plugin-fw-datepicker + .yith-icon--right-overlay {
+  position: absolute;
+  right: 33px;
+  left: auto;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .stats-container {
+  background: none;
+  border: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  padding: 0;
+  position: relative;
+  margin: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .stats-container .stat {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px 20px 20px;
+  text-align: center;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .stats-container .stat h3 {
+  color: #A0A0A0;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .stats-container .stat .stat-content {
+  background: none;
+  color: #000000;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 15px 0;
+  padding: 0;
+  width: 100%;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .stats-container .stat .stat-content.empty {
+  color: #A0A0A0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .stats-container .stat .stat-content:before {
+  display: none;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .stats-container .stat a.button-pay-now {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .affiliate-users-list {
+  column-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container .block .affiliate-users-list li {
+  margin: 0;
+}
+#yith_wcaf_panel_affiliate_details .grid-container #save_profile {
+  width: 100%;
+}
+
+/**
+ * === 4. COMMISSIONS TAB ===
+ */
+#yith_wcaf_panel_commissions-list .form-table + .submit,
+#yith_wcaf_panel_commissions-list #yith-plugin-fw-float-save-button,
+#yith_wcaf_panel_commissions-list #plugin-fw-wc-reset {
+  display: none;
+}
+
+#yith_wcaf_panel_commission_details {
+  /**
+   * Badges CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+}
+#yith_wcaf_panel_commission_details mark.status-badge {
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  line-height: 2.1em;
+  min-width: 140px;
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+#yith_wcaf_panel_commission_details mark.status-badge.pending, #yith_wcaf_panel_commission_details mark.status-badge.not-converted {
+  background-color: #cf8300;
+}
+#yith_wcaf_panel_commission_details mark.status-badge.enabled {
+  background-color: #afb000;
+}
+#yith_wcaf_panel_commission_details mark.status-badge.paid, #yith_wcaf_panel_commission_details mark.status-badge.completed, #yith_wcaf_panel_commission_details mark.status-badge.converted {
+  background-color: #afb000;
+}
+#yith_wcaf_panel_commission_details mark.status-badge.cancelled, #yith_wcaf_panel_commission_details mark.status-badge.banned {
+  background-color: #cd1927;
+}
+#yith_wcaf_panel_commission_details mark.status-badge.disabled, #yith_wcaf_panel_commission_details mark.status-badge.on-hold, #yith_wcaf_panel_commission_details mark.status-badge.not-confirmed {
+  background-color: #748c9c;
+}
+#yith_wcaf_panel_commission_details mark.status-badge.pending-payment {
+  background-color: #999d84;
+}
+#yith_wcaf_panel_commission_details mark.status-badge.refunded {
+  background-color: #730000;
+}
+#yith_wcaf_panel_commission_details mark.status-badge.trash {
+  background-color: #c73878;
+}
+#yith_wcaf_panel_commission_details mark.status-badge.small {
+  padding: 0 5px;
+  min-width: 20px;
+}
+#yith_wcaf_panel_commission_details #plugin-fw-wc {
+  border: 1px solid #d8d8d8;
+  border-top: none;
+  padding: 30px 20px !important;
+}
+#yith_wcaf_panel_commission_details .grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+}
+#yith_wcaf_panel_commission_details .grid-container .block {
+  border: 1px solid #EDEDED;
+  border-radius: 10px;
+  margin-top: 30px;
+  overflow: hidden;
+  padding: 30px;
+  padding-bottom: 50px;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user {
+  margin-top: 15px;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .delete-affiliate {
+  color: #ccc;
+  cursor: pointer;
+  display: none;
+  line-height: 16px;
+  margin: 0 0 0 12px;
+  overflow: hidden;
+  padding: 0 0 0.5em;
+  position: absolute;
+  right: 10px;
+  text-decoration: none;
+  top: 0;
+  vertical-align: middle;
+  width: 16px;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .delete-affiliate:hover {
+  color: #a00;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .delete-affiliate:before {
+  -webkit-font-smoothing: antialiased;
+  content: "";
+  font-family: Dashicons;
+  font-variant: normal;
+  font-weight: 400;
+  height: 100%;
+  left: 0;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  speak: none;
+  text-align: center;
+  text-indent: 0;
+  text-transform: none;
+  top: 0;
+  width: 100%;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .referral-avatar {
+  float: left;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .referral-avatar img {
+  border: 4px solid #e3e3e3;
+  border-radius: 50%;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .referral-info {
+  margin-left: 80px;
+  overflow: hidden;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .referral-info h3 {
+  margin: 15px 0 0;
+  padding: 0;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .no-referral-message {
+  font-size: 110%;
+  font-style: italic;
+  padding-bottom: 15px;
+  text-align: center;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .no-referral-message:before, #yith_wcaf_panel_commission_details .grid-container .block .referral-user .no-referral-message:after {
+  content: "-";
+  display: inline-block;
+  margin: 0 4px;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .set-referral {
+  padding-top: 15px;
+  position: relative;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .set-referral:before {
+  border-bottom: 1px solid #cdcdcd;
+  content: "";
+  display: block;
+  left: -12px;
+  position: absolute;
+  right: -12px;
+  top: 0;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user .set-referral .calculate-commission-button {
+  float: right;
+  height: 26px;
+  text-indent: -9999px;
+  width: 26px;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .referral-user.without-avatar .referral-info {
+  margin-left: 0;
+}
+#yith_wcaf_panel_commission_details .grid-container .block:hover .referral-user .delete-affiliate {
+  display: inline-block;
+}
+#yith_wcaf_panel_commission_details .grid-container .block h2 {
+  background: none;
+  border: none;
+  color: #000000;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 30px;
+  padding: 0;
+}
+#yith_wcaf_panel_commission_details .grid-container .block h2 b {
+  font-weight: 700;
+}
+#yith_wcaf_panel_commission_details .grid-container .block h3 {
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding: 0;
+}
+#yith_wcaf_panel_commission_details .grid-container .block h3:not(:first-of-type) {
+  margin-top: 30px;
+}
+#yith_wcaf_panel_commission_details .grid-container .block p {
+  font-size: 14px;
+}
+#yith_wcaf_panel_commission_details .grid-container .block strong {
+  display: block;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .editable:after {
+  content: "";
+  cursor: pointer;
+  display: inline-block;
+  font-family: Dashicons;
+  margin-left: 5px;
+  padding: 5px;
+  vertical-align: middle;
+}
+#yith_wcaf_panel_commission_details .grid-container .block .edit {
+  display: none;
+}
+#yith_wcaf_panel_commission_details .grid-container .block.no-border {
+  border: none;
+}
+#yith_wcaf_panel_commission_details .grid-container .block.highlight {
+  background-color: #F3F3F3;
+}
+#yith_wcaf_panel_commission_details #items_details {
+  padding: 0;
+}
+#yith_wcaf_panel_commission_details #items_details table {
+  border: none;
+  border-spacing: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+#yith_wcaf_panel_commission_details #items_details table tr {
+  background: #fff;
+}
+#yith_wcaf_panel_commission_details #items_details table tr th {
+  background: #F3F3F3;
+  color: #999;
+  padding: 15px;
+  font-weight: 400;
+  text-align: left;
+}
+#yith_wcaf_panel_commission_details #items_details table tr th a {
+  color: #999;
+  pointer-events: none;
+}
+#yith_wcaf_panel_commission_details #items_details table tr th a .sorting-indicator {
+  display: none;
+}
+#yith_wcaf_panel_commission_details #items_details table tr td {
+  border-bottom: 1px solid #EDEDED;
+  padding: 10px 15px;
+}
+#yith_wcaf_panel_commission_details #items_details table tr:last-child td {
+  border-bottom: 1px solid #dfdfdf;
+}
+#yith_wcaf_panel_commission_details #items_details table tr .column-id,
+#yith_wcaf_panel_commission_details #items_details table tr .column-amount,
+#yith_wcaf_panel_commission_details #items_details table tr .column-rate,
+#yith_wcaf_panel_commission_details #items_details table tr .column-status {
+  width: 7%;
+}
+#yith_wcaf_panel_commission_details #items_details table tr .column-created_at {
+  width: 20%;
+}
+#yith_wcaf_panel_commission_details #items_details table tr .column-amount,
+#yith_wcaf_panel_commission_details #items_details table tr .item_cost {
+  text-align: right;
+}
+#yith_wcaf_panel_commission_details #items_details table tr small.refunded {
+  display: block;
+  color: #ba3e3e;
+  white-space: nowrap;
+  margin-top: 0.5em;
+}
+#yith_wcaf_panel_commission_details #items_details table tfoot.totals tr:first-child td {
+  padding-top: 15px;
+}
+#yith_wcaf_panel_commission_details #items_details table tfoot.totals tr:last-child td {
+  padding-bottom: 15px;
+}
+#yith_wcaf_panel_commission_details #items_details table tfoot.totals td {
+  background: #F3F3F3;
+  border: none;
+  padding: 5px 15px;
+  text-align: right;
+}
+#yith_wcaf_panel_commission_details #items_details table tfoot.totals td.total {
+  font-weight: 700;
+}
+#yith_wcaf_panel_commission_details #items_details table tfoot tr:last-child td {
+  border: none;
+}
+#yith_wcaf_panel_commission_details #items_details table td.thumb {
+  width: 60px;
+}
+#yith_wcaf_panel_commission_details #items_details table td.thumb img {
+  border-radius: 4px;
+  height: auto;
+  width: 50px;
+}
+#yith_wcaf_panel_commission_details #item_actions {
+  padding-bottom: 30px;
+}
+#yith_wcaf_panel_commission_details #item_actions select,
+#yith_wcaf_panel_commission_details #item_actions .select2 {
+  width: 100% !important;
+}
+#yith_wcaf_panel_commission_details #item_actions p.submit {
+  text-align: right;
+}
+#yith_wcaf_panel_commission_details .grid-container {
+  grid-template-columns: 3fr 1fr !important;
+}
+#yith_wcaf_panel_commission_details #commission_details .commission-status mark {
+  margin-right: 15px;
+}
+#yith_wcaf_panel_commission_details #commission_details .commission-details-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+#yith_wcaf_panel_commission_details #commission_payments table {
+  border: none;
+  border-spacing: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tr {
+  background: #fff;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tr th {
+  background: #F3F3F3;
+  color: #999;
+  padding: 15px;
+  font-weight: 400;
+  text-align: left;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tr th a {
+  color: #999;
+  pointer-events: none;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tr th a .sorting-indicator {
+  display: none;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tr td {
+  border-bottom: 1px solid #EDEDED;
+  padding: 10px 15px;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tr:last-child td {
+  border-bottom: 1px solid #dfdfdf;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tr .column-id,
+#yith_wcaf_panel_commission_details #commission_payments table tr .column-amount,
+#yith_wcaf_panel_commission_details #commission_payments table tr .column-rate,
+#yith_wcaf_panel_commission_details #commission_payments table tr .column-status {
+  width: 7%;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tr .column-created_at {
+  width: 20%;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tr .column-amount,
+#yith_wcaf_panel_commission_details #commission_payments table tr .item_cost {
+  text-align: right;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tr small.refunded {
+  display: block;
+  color: #ba3e3e;
+  white-space: nowrap;
+  margin-top: 0.5em;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tfoot.totals tr:first-child td {
+  padding-top: 15px;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tfoot.totals tr:last-child td {
+  padding-bottom: 15px;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tfoot.totals td {
+  background: #F3F3F3;
+  border: none;
+  padding: 5px 15px;
+  text-align: right;
+}
+#yith_wcaf_panel_commission_details #commission_payments table tfoot.totals td.total {
+  font-weight: 700;
+}
+#yith_wcaf_panel_commission_details #commission_payments table td.check-column,
+#yith_wcaf_panel_commission_details #commission_payments table th.check-column {
+  display: none;
+}
+#yith_wcaf_panel_commission_details #commission_payments .table-container {
+  margin: 0 -30px -50px;
+}
+
+/**
+ * === 5. PAYMENTS TAB ===
+ */
+#yith_wcaf_panel_commissions-payments .form-table + .submit,
+#yith_wcaf_panel_commissions-payments #yith-plugin-fw-float-save-button,
+#yith_wcaf_panel_commissions-payments #plugin-fw-wc-reset {
+  display: none;
+}
+
+#yith_wcaf_panel_payment_details {
+  /**
+   * Badges CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+}
+#yith_wcaf_panel_payment_details mark.status-badge {
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  line-height: 2.1em;
+  min-width: 140px;
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+#yith_wcaf_panel_payment_details mark.status-badge.pending, #yith_wcaf_panel_payment_details mark.status-badge.not-converted {
+  background-color: #cf8300;
+}
+#yith_wcaf_panel_payment_details mark.status-badge.enabled {
+  background-color: #afb000;
+}
+#yith_wcaf_panel_payment_details mark.status-badge.paid, #yith_wcaf_panel_payment_details mark.status-badge.completed, #yith_wcaf_panel_payment_details mark.status-badge.converted {
+  background-color: #afb000;
+}
+#yith_wcaf_panel_payment_details mark.status-badge.cancelled, #yith_wcaf_panel_payment_details mark.status-badge.banned {
+  background-color: #cd1927;
+}
+#yith_wcaf_panel_payment_details mark.status-badge.disabled, #yith_wcaf_panel_payment_details mark.status-badge.on-hold, #yith_wcaf_panel_payment_details mark.status-badge.not-confirmed {
+  background-color: #748c9c;
+}
+#yith_wcaf_panel_payment_details mark.status-badge.pending-payment {
+  background-color: #999d84;
+}
+#yith_wcaf_panel_payment_details mark.status-badge.refunded {
+  background-color: #730000;
+}
+#yith_wcaf_panel_payment_details mark.status-badge.trash {
+  background-color: #c73878;
+}
+#yith_wcaf_panel_payment_details mark.status-badge.small {
+  padding: 0 5px;
+  min-width: 20px;
+}
+#yith_wcaf_panel_payment_details #plugin-fw-wc {
+  border: 1px solid #d8d8d8;
+  border-top: none;
+  padding: 30px 20px !important;
+}
+#yith_wcaf_panel_payment_details .grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
+}
+#yith_wcaf_panel_payment_details .grid-container .block {
+  border: 1px solid #EDEDED;
+  border-radius: 10px;
+  margin-top: 30px;
+  overflow: hidden;
+  padding: 30px;
+  padding-bottom: 50px;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user {
+  margin-top: 15px;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .delete-affiliate {
+  color: #ccc;
+  cursor: pointer;
+  display: none;
+  line-height: 16px;
+  margin: 0 0 0 12px;
+  overflow: hidden;
+  padding: 0 0 0.5em;
+  position: absolute;
+  right: 10px;
+  text-decoration: none;
+  top: 0;
+  vertical-align: middle;
+  width: 16px;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .delete-affiliate:hover {
+  color: #a00;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .delete-affiliate:before {
+  -webkit-font-smoothing: antialiased;
+  content: "";
+  font-family: Dashicons;
+  font-variant: normal;
+  font-weight: 400;
+  height: 100%;
+  left: 0;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  speak: none;
+  text-align: center;
+  text-indent: 0;
+  text-transform: none;
+  top: 0;
+  width: 100%;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .referral-avatar {
+  float: left;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .referral-avatar img {
+  border: 4px solid #e3e3e3;
+  border-radius: 50%;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .referral-info {
+  margin-left: 80px;
+  overflow: hidden;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .referral-info h3 {
+  margin: 15px 0 0;
+  padding: 0;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .no-referral-message {
+  font-size: 110%;
+  font-style: italic;
+  padding-bottom: 15px;
+  text-align: center;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .no-referral-message:before, #yith_wcaf_panel_payment_details .grid-container .block .referral-user .no-referral-message:after {
+  content: "-";
+  display: inline-block;
+  margin: 0 4px;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .set-referral {
+  padding-top: 15px;
+  position: relative;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .set-referral:before {
+  border-bottom: 1px solid #cdcdcd;
+  content: "";
+  display: block;
+  left: -12px;
+  position: absolute;
+  right: -12px;
+  top: 0;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user .set-referral .calculate-commission-button {
+  float: right;
+  height: 26px;
+  text-indent: -9999px;
+  width: 26px;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .referral-user.without-avatar .referral-info {
+  margin-left: 0;
+}
+#yith_wcaf_panel_payment_details .grid-container .block:hover .referral-user .delete-affiliate {
+  display: inline-block;
+}
+#yith_wcaf_panel_payment_details .grid-container .block h2 {
+  background: none;
+  border: none;
+  color: #000000;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 30px;
+  padding: 0;
+}
+#yith_wcaf_panel_payment_details .grid-container .block h2 b {
+  font-weight: 700;
+}
+#yith_wcaf_panel_payment_details .grid-container .block h3 {
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding: 0;
+}
+#yith_wcaf_panel_payment_details .grid-container .block h3:not(:first-of-type) {
+  margin-top: 30px;
+}
+#yith_wcaf_panel_payment_details .grid-container .block p {
+  font-size: 14px;
+}
+#yith_wcaf_panel_payment_details .grid-container .block strong {
+  display: block;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .editable:after {
+  content: "";
+  cursor: pointer;
+  display: inline-block;
+  font-family: Dashicons;
+  margin-left: 5px;
+  padding: 5px;
+  vertical-align: middle;
+}
+#yith_wcaf_panel_payment_details .grid-container .block .edit {
+  display: none;
+}
+#yith_wcaf_panel_payment_details .grid-container .block.no-border {
+  border: none;
+}
+#yith_wcaf_panel_payment_details .grid-container .block.highlight {
+  background-color: #F3F3F3;
+}
+#yith_wcaf_panel_payment_details #items_details {
+  padding: 0;
+}
+#yith_wcaf_panel_payment_details #items_details table {
+  border: none;
+  border-spacing: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+#yith_wcaf_panel_payment_details #items_details table tr {
+  background: #fff;
+}
+#yith_wcaf_panel_payment_details #items_details table tr th {
+  background: #F3F3F3;
+  color: #999;
+  padding: 15px;
+  font-weight: 400;
+  text-align: left;
+}
+#yith_wcaf_panel_payment_details #items_details table tr th a {
+  color: #999;
+  pointer-events: none;
+}
+#yith_wcaf_panel_payment_details #items_details table tr th a .sorting-indicator {
+  display: none;
+}
+#yith_wcaf_panel_payment_details #items_details table tr td {
+  border-bottom: 1px solid #EDEDED;
+  padding: 10px 15px;
+}
+#yith_wcaf_panel_payment_details #items_details table tr:last-child td {
+  border-bottom: 1px solid #dfdfdf;
+}
+#yith_wcaf_panel_payment_details #items_details table tr .column-id,
+#yith_wcaf_panel_payment_details #items_details table tr .column-amount,
+#yith_wcaf_panel_payment_details #items_details table tr .column-rate,
+#yith_wcaf_panel_payment_details #items_details table tr .column-status {
+  width: 7%;
+}
+#yith_wcaf_panel_payment_details #items_details table tr .column-created_at {
+  width: 20%;
+}
+#yith_wcaf_panel_payment_details #items_details table tr .column-amount,
+#yith_wcaf_panel_payment_details #items_details table tr .item_cost {
+  text-align: right;
+}
+#yith_wcaf_panel_payment_details #items_details table tr small.refunded {
+  display: block;
+  color: #ba3e3e;
+  white-space: nowrap;
+  margin-top: 0.5em;
+}
+#yith_wcaf_panel_payment_details #items_details table tfoot.totals tr:first-child td {
+  padding-top: 15px;
+}
+#yith_wcaf_panel_payment_details #items_details table tfoot.totals tr:last-child td {
+  padding-bottom: 15px;
+}
+#yith_wcaf_panel_payment_details #items_details table tfoot.totals td {
+  background: #F3F3F3;
+  border: none;
+  padding: 5px 15px;
+  text-align: right;
+}
+#yith_wcaf_panel_payment_details #items_details table tfoot.totals td.total {
+  font-weight: 700;
+}
+#yith_wcaf_panel_payment_details #items_details table tfoot tr:last-child td {
+  border: none;
+}
+#yith_wcaf_panel_payment_details #items_details table td.thumb {
+  width: 60px;
+}
+#yith_wcaf_panel_payment_details #items_details table td.thumb img {
+  border-radius: 4px;
+  height: auto;
+  width: 50px;
+}
+#yith_wcaf_panel_payment_details #item_actions {
+  padding-bottom: 30px;
+}
+#yith_wcaf_panel_payment_details #item_actions select,
+#yith_wcaf_panel_payment_details #item_actions .select2 {
+  width: 100% !important;
+}
+#yith_wcaf_panel_payment_details #item_actions p.submit {
+  text-align: right;
+}
+#yith_wcaf_panel_payment_details .grid-container {
+  grid-template-columns: 3fr 1fr !important;
+}
+#yith_wcaf_panel_payment_details #payment_details .payment-status mark {
+  margin-right: 15px;
+}
+#yith_wcaf_panel_payment_details #payment_details .payment-details-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+#yith_wcaf_panel_payment_details #payment_details .payment-details-container .accordion-option {
+  margin-bottom: 10px;
+}
+#yith_wcaf_panel_payment_details #payment_details .payment-details-container .select2 {
+  width: 100% !important;
+}
+#yith_wcaf_panel_payment_details #payment_details .payment-details-container .inline-actions {
+  margin-right: 10px;
+}
+#yith_wcaf_panel_payment_details #payment_details .payment-details-container #invoice_file {
+  display: none;
+}
+#yith_wcaf_panel_payment_details #payment_details .payment-details-container label.radio {
+  margin-right: 10px;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table {
+  border: none;
+  border-spacing: 0;
+  vertical-align: middle;
+  width: 100%;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tr {
+  background: #fff;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tr th {
+  background: #F3F3F3;
+  color: #999;
+  padding: 15px;
+  font-weight: 400;
+  text-align: left;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tr th a {
+  color: #999;
+  pointer-events: none;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tr th a .sorting-indicator {
+  display: none;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tr td {
+  border-bottom: 1px solid #EDEDED;
+  padding: 10px 15px;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tr:last-child td {
+  border-bottom: 1px solid #dfdfdf;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tr .column-id,
+#yith_wcaf_panel_payment_details #payment_affiliate table tr .column-amount,
+#yith_wcaf_panel_payment_details #payment_affiliate table tr .column-rate,
+#yith_wcaf_panel_payment_details #payment_affiliate table tr .column-status {
+  width: 7%;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tr .column-created_at {
+  width: 20%;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tr .column-amount,
+#yith_wcaf_panel_payment_details #payment_affiliate table tr .item_cost {
+  text-align: right;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tr small.refunded {
+  display: block;
+  color: #ba3e3e;
+  white-space: nowrap;
+  margin-top: 0.5em;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tfoot.totals tr:first-child td {
+  padding-top: 15px;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tfoot.totals tr:last-child td {
+  padding-bottom: 15px;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tfoot.totals td {
+  background: #F3F3F3;
+  border: none;
+  padding: 5px 15px;
+  text-align: right;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate table tfoot.totals td.total {
+  font-weight: 700;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate .referral-stats {
+  margin: 30px -30px -50px;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate .referral-stats table tr td {
+  background-color: #F3F3F3;
+  border: none;
+  padding: 5px 30px;
+  line-height: 1;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate .referral-stats table tr td.label {
+  font-weight: 600;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate .referral-stats table tr td.total {
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: right;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate .referral-stats table tr:first-child td {
+  padding-top: 25px;
+}
+#yith_wcaf_panel_payment_details #payment_affiliate .referral-stats table tr:last-child td {
+  padding-bottom: 30px;
+}
+
+/**
+ * === 6. CLICKS TAB ===
+ */
+#yith_wcaf_panel_affiliates-clicks .form-table + .submit,
+#yith_wcaf_panel_affiliates-clicks #yith-plugin-fw-float-save-button,
+#yith_wcaf_panel_affiliates-clicks #plugin-fw-wc-reset {
+  display: none;
+}
+
+/**
+ * === 7. SETTINGS TAB ===
+ */
+#yith_wcaf_panel_settings-affiliates-registration table.form-table {
+  border-bottom: none;
+}
+#yith_wcaf_panel_settings-affiliates-registration form > h2:first-child {
+  display: none;
+}
+#yith_wcaf_panel_settings-affiliates-registration table.form-table + h2,
+#yith_wcaf_panel_settings-affiliates-registration table.form-table + table.form-table {
+  border-top: none;
+  margin-top: -41px;
+  position: relative;
+}
+#yith_wcaf_panel_settings-affiliates-registration table.affiliate-fields tr .column-required {
+  text-align: center;
+  width: 100px;
+}
+#yith_wcaf_panel_settings-affiliates-registration table.affiliate-fields tr .column-actions {
+  width: 250px !important;
+}
+#yith_wcaf_panel_settings-affiliates-registration table.affiliate-fields tr .column-enabled {
+  width: 100px;
+}
+
+#yith_wcaf_panel_settings-commissions-payments #yith_wcaf_gateways .list-table-title,
+#yith_wcaf_panel_settings-commissions-payments #yith_wcaf_gateways .tablenav.top {
+  display: none;
+}
+#yith_wcaf_panel_settings-commissions-payments #yith_wcaf_gateways table.gateways .column-name {
+  width: 400px;
+}
+#yith_wcaf_panel_settings-commissions-payments #yith_wcaf_gateways table.gateways .column-enabled {
+  width: 100px;
+}
+#yith_wcaf_panel_settings-commissions-payments #yith_wcaf_gateways table.gateways .column-enabled .disabled .yith-plugin-fw-onoff {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.yith-plugin-fw.yit-admin-panel-container .yith-wcaf-enhanced-template .button {
+  float: right;
+  margin-left: 10px;
+  margin-top: -4px;
+}
+.yith-plugin-fw.yit-admin-panel-container .yith-wcaf-enhanced-template .editor {
+  margin-top: 15px;
+}
+.yith-plugin-fw.yit-admin-panel-container .yith-wcaf-enhanced-template .editor textarea {
+  width: 100%;
+}
+.yith-plugin-fw.yit-admin-panel-container .woocommerce-invalid label,
+.yith-plugin-fw.yit-admin-panel-container .woocommerce-invalid input,
+.yith-plugin-fw.yit-admin-panel-container .woocommerce-invalid select,
+.yith-plugin-fw.yit-admin-panel-container .woocommerce-invalid .description,
+.yith-plugin-fw.yit-admin-panel-container .woocommerce-invalid .select2.select2-container.select2-container--default {
+  color: #ba3e3e;
+  border-color: #ba3e3e !important;
+}
+
+/**
+ * === 8. DASHBOARD ===
+ */
+#yith_wcaf_panel_dashboard #yith_wcaf_dashboard_root {
+  background: #fff;
+  border: 1px solid #EDEDED;
+  border-top: none;
+  box-sizing: border-box;
+  margin-right: 15px;
+  padding: 10px 20px 0;
+}
+#yith_wcaf_panel_dashboard #yith_wcaf_dashboard_root * {
+  box-sizing: border-box;
+}
+#yith_wcaf_panel_dashboard #yith_wcaf_dashboard_root .leaderboard-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 24px;
+}
+#yith_wcaf_panel_dashboard #yith_wcaf_dashboard_root .leaderboard-group table img {
+  border-radius: 4px;
+  float: left;
+}
+#yith_wcaf_panel_dashboard #yith_wcaf_dashboard_root .leaderboard-group table .affiliate-details,
+#yith_wcaf_panel_dashboard #yith_wcaf_dashboard_root .leaderboard-group table .product-details {
+  margin-left: 80px;
+}
+#yith_wcaf_panel_dashboard #yith_wcaf_dashboard_root .leaderboard-group table small.meta {
+  display: block;
+  font-size: 1em;
+  margin: 5px 0;
+}
+#yith_wcaf_panel_dashboard #yith_wcaf_dashboard_root .leaderboard-group table small.meta a {
+  color: #434343;
+  text-decoration: none;
+}
+
+.woocommerce-page #wpwrap #wpcontent {
+  padding-left: 20px;
+}
+.woocommerce-page #wpwrap #wpbody {
+  margin-top: 0;
+}
+.woocommerce-page #wpwrap .wrap {
+  margin: 10px 20px 0 2px;
+}
+
+/*# sourceMappingURL=yith-wcaf-admin.css.map */

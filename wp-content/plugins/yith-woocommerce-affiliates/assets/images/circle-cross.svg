@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 20 20" preserveAspectRatio="xMinYMin" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <rect id="path-1" x="0" y="0" width="24" height="24"/>
+  </defs>
+  <title>basic / circle_checked</title>
+  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="matrix(1, 0, 0, 1, -2, -2)">
+    <g id="basic-/-circle_checked">
+      <mask id="mask-2" fill="white">
+        <rect x="0" y="0" width="24" height="24" transform="matrix(1, 0, 0, 1, 0, 0)"/>
+      </mask>
+      <g id="basic-/-circle_checked-(Background/Mask)"/>
+      <path d="M 2 12 C 2 17.523 6.477 22 12 22 C 17.523 22 22 17.523 22 12 C 22 6.477 17.523 2 12 2 C 6.477 2 2 6.477 2 12 C 2 15.682 2 15.682 2 12 Z M 20.182 12 C 20.182 16.519 16.519 20.182 12 20.182 C 7.481 20.182 3.818 16.519 3.818 12 C 3.818 7.481 7.481 3.818 12 3.818 C 16.519 3.818 20.182 7.481 20.182 12 C 20.182 15.012 20.182 15.012 20.182 12 Z" mask="url(#mask-2)" style="fill: rgb(244, 67, 54);"/>
+    </g>
+  </g>
+  <path d="M 11.464 10 L 15 13.5 L 13.5 15 L 10 11.5 L 6.5 15 L 5 13.5 L 8.5 10 L 5 6.5 L 6.5 5 L 10 8.5 L 13.5 5 L 15 6.5 L 11.5 10 L 11.464 10 Z" style="fill: rgb(244, 67, 54);" bx:origin="0.5 0.5"/>
+  <path d="M 11.517 10 L 15.707 14.189 L 14.19 15.707 L 10 11.518 L 5.81 15.706 L 4.293 14.189 L 8.483 10 L 4.293 5.811 L 5.81 4.294 L 10 8.483 L 14.19 4.293 L 15.707 5.81 Z M 10.103 10 L 14.293 5.81 L 14.19 5.707 L 10 9.897 L 5.81 5.708 L 5.707 5.811 L 9.897 10 L 5.707 14.189 L 5.81 14.292 L 10 10.104 L 14.19 14.293 L 14.293 14.189 Z" style="fill: none;"/>
+</svg>

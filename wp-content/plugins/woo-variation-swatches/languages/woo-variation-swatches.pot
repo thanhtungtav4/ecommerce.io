@@ -7,6 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: Emran Ahmed <emran.bd.08@gmail.com>\n"
+"POT-Creation-Date: 2022-07-20 13:03+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -64,6 +65,14 @@ msgstr ""
 
 #: ../includes/class-woo-variation-swatches-backend.php:162
 msgid "Add Media"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-backend.php:166
+msgid "Are you sure you want to reset it to default setting?"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-backend.php:167
+msgid "Please save changed first."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-backend.php:175, ../includes/class-woo-variation-swatches-backend.php:235
@@ -156,6 +165,10 @@ msgstr ""
 
 #: ../includes/class-woo-variation-swatches-deactivate-feedback.php:95
 msgid "Please share the reason"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-product-page.php:60
+msgid "%s left"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:25
@@ -550,6 +563,14 @@ msgstr ""
 msgid "Show Product availability stock info"
 msgstr ""
 
+#: ../includes/class-woo-variation-swatches-settings.php:686
+msgid "Show default selected"
+msgstr ""
+
+#: ../includes/class-woo-variation-swatches-settings.php:687
+msgid "Show default selected attribute swatches on archive / shop page."
+msgstr ""
+
 #: ../includes/class-woo-variation-swatches-settings.php:696
 msgid "Display position"
 msgstr ""
@@ -650,7 +671,7 @@ msgstr ""
 msgid "Remove image"
 msgstr ""
 
-#: ../includes/class-woo-variation-swatches.php:206
+#: ../includes/class-woo-variation-swatches.php:215
 msgid "\"Variation Swatches for WooCommerce\" Plugin try to load \"%s\" but template \"%s\" was not found."
 msgstr ""
 

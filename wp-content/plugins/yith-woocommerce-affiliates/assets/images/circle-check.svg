@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>basic / circle_checked</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="basic-/-circle_checked">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="basic-/-circle_checked-(Background/Mask)"></g>
+            <path d="M2,12 C2,17.5228481 6.47715235,22 12,22 C17.5228481,22 22,17.5228481 22,12 C22,6.47715235 17.5228481,2 12,2 C6.47715235,2 2,6.47715235 2,12 C2,15.6818988 2,15.6818988 2,12 Z M20.181818,12 C20.181818,16.518693 16.518693,20.181818 12,20.181818 C7.48130655,20.181818 3.81818187,16.518693 3.81818187,12 C3.81818187,7.48130655 7.48130655,3.81818187 12,3.81818187 C16.518693,3.81818187 20.181818,7.48130655 20.181818,12 C20.181818,15.012462 20.181818,15.012462 20.181818,12 Z M10.5,13.232233 L15.7928934,7.93933964 L17.2071066,9.3535533 L10.5,16.0606604 L6.79289341,12.3535538 L8.20710707,10.9393396 L10.5,13.232233 L10.5,13.232233 Z" fill="#A1C746" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

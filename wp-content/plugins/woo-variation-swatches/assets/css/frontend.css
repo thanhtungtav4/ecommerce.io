@@ -1,8 +1,8 @@
 /*!
- * Variation Swatches for WooCommerce 
- * 
- * Author: Emran Ahmed ( emran.bd.08@gmail.com ) 
- * Date: 7/8/2022, 11:04:45 PM
+ * Variation Swatches for WooCommerce
+ *
+ * Author: Emran Ahmed ( emran.bd.08@gmail.com )
+ * Date: 7/20/2022, 7:03:48 PM
  * Released under the GPLv3 license.
  */
 .woo-variation-swatches.wvs-tooltip .radio-variable-item[data-wvstooltip] {
@@ -659,12 +659,9 @@
   display: none !important;
 }
 .woo-variation-swatches .variable-items-wrapper .variable-item img {
-  margin: 0;
-  /** Storefront FIX */
-  padding: 0;
-  /** ShopIsle Fix */
-  width: 100%;
-  /** TheGem Fix */
+  margin: 0; /** Storefront FIX */
+  padding: 0; /** ShopIsle Fix */
+  width: 100%; /** TheGem Fix */
   height: 100%;
   pointer-events: none;
 }
@@ -803,9 +800,9 @@
   color: #fff;
   padding: 2px;
   border-radius: 2px !important;
-  text-shadow: 0 1px #00000040;
-  -webkit-box-shadow: 0 0 2px #00000061;
-          box-shadow: 0 0 2px #00000061;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.2509803922);
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3803921569);
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.3803921569);
 }
 .woo-variation-swatches .variable-items-wrapper .variable-item.wvs-show-stock-left-info:not(.disabled).radio-variable-item .wvs-stock-left-info::after {
   margin-left: 5px;

@@ -1,4 +1,4 @@
-[data-dependency]:not(.dependency-show) {
+[data-gwp_dependency]:not(.dependency-show) {
     display : none !important;
     }
 

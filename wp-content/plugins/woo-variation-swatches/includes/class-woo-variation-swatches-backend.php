@@ -163,8 +163,8 @@
                     'ajaxurl'       => esc_url( admin_url( 'admin-ajax.php', 'relative' ) ),
                     'wc_ajax_url'   => WC_AJAX::get_endpoint( '%%endpoint%%' ),
                     'nonce'         => wp_create_nonce( 'woo_variation_swatches_admin' ),
-                    'reset_notice'  => esc_html__( 'Are you sure you want to reset it to default setting?', 'woo-variation-swatches-pro' ),
-                    'nav_warning'   => esc_html__( 'Please save changed first.', 'woo-variation-swatches-pro' ),
+                    'reset_notice'  => esc_html__( 'Are you sure you want to reset it to default setting?', 'woo-variation-swatches' ),
+                    'nav_warning'   => esc_html__( 'Please save changed first.', 'woo-variation-swatches' ),
                 ) );
             }
             
@@ -182,7 +182,7 @@
             public function extended_attribute_types() {
                 $attribute_types = $this->attribute_types();
                 
-                // $attribute_types[ 'custom' ] = esc_html__( 'Custom', 'woo-variation-swatches-pro' );
+                // $attribute_types[ 'custom' ] = esc_html__( 'Custom', 'woo-variation-swatches' );
                 $attribute_types[ 'mixed' ] = esc_html__( 'Mixed', 'woo-variation-swatches' );
                 
                 return $attribute_types;

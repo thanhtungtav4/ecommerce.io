@@ -353,7 +353,7 @@
                     array( '#show_tooltip' => array( 'type' => 'equal', 'value' => 'yes' ) )
                 )*/
                 
-                $depends = empty( $field[ 'dependency' ] ) ? '' : "data-dependency='" . wc_esc_json( wp_json_encode( $field[ 'dependency' ] ) ) . "'";
+                $depends = empty( $field[ 'dependency' ] ) ? '' : "data-gwp_dependency='" . wc_esc_json( wp_json_encode( $field[ 'dependency' ] ) ) . "'";
                 
                 ob_start();
                 if ( ! $term ) {

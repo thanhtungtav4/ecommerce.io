@@ -460,7 +460,7 @@
             protected function get_settings_for_style_section() {
                 
                 $settings = array(
-    
+                    
                     // Start swatches tick and cross coloring
                     array(
                         'id'    => 'style_icons_options',
@@ -468,7 +468,7 @@
                         'title' => esc_html__( 'Swatches indicator', 'woo-variation-swatches' ),
                         'desc'  => esc_html__( 'Change swatches indicator color', 'woo-variation-swatches' ),
                     ),
-
+                    
                     array(
                         'id'                => 'tick_color',
                         'type'              => 'color',
@@ -476,11 +476,11 @@
                         'desc'              => esc_html__( 'Swatches Selected tick color. Default is: #ffffff', 'woo-variation-swatches' ),
                         'css'               => 'width: 6em;',
                         'default'           => '#ffffff',
-                        'is_new'  => true,
+                        'is_new'            => true,
                         'custom_attributes' => array(//    'data-alpha-enabled' => 'true'
                         )
                     ),
-
+                    
                     array(
                         'id'                => 'cross_color',
                         'type'              => 'color',
@@ -488,11 +488,11 @@
                         'desc'              => esc_html__( 'Swatches cross color. Default is: #ff0000', 'woo-variation-swatches' ),
                         'css'               => 'width: 6em;',
                         'default'           => '#ff0000',
-                        'is_new'  => true,
+                        'is_new'            => true,
                         'custom_attributes' => array(//    'data-alpha-enabled' => 'true'
                         )
                     ),
-
+                    
                     array(
                         'type' => 'sectionend',
                         'id'   => 'style_icons_options',
@@ -683,8 +683,8 @@
                         //'is_pro' => true,
                         //'is_new' => true,
                         //'help_preview' => true,
-                        'title'   => esc_html__( 'Show default selected', 'woo-variation-swatches-pro' ),
-                        'desc'    => esc_html__( 'Show default selected attribute swatches on archive / shop page.', 'woo-variation-swatches-pro' ),
+                        'title'   => esc_html__( 'Show default selected', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Show default selected attribute swatches on archive / shop page.', 'woo-variation-swatches' ),
                         'default' => 'yes',
                         'is_pro'  => true
                     ),

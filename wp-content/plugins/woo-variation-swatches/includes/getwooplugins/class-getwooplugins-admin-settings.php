@@ -277,7 +277,7 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Settings', false ) ) :
 				$tooltip_html      = $field_description['tooltip_html'];
                 
                 // Dependent field
-                $require = isset( $value['require'] ) ? "data-dependency='" . wc_esc_json(wp_json_encode( $value['require'] )) . "'" : '';
+                $require = isset( $value['require'] ) ? "data-gwp_dependency='" . wc_esc_json(wp_json_encode( $value['require'] )) . "'" : '';
 
                 $classes = array();
                 

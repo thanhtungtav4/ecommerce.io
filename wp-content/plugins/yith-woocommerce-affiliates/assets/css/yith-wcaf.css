@@ -1,0 +1,1477 @@
+@charset "UTF-8";
+/**
+ * Main CSS
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * === TABLE OF CONTENTS ===
+ *
+ * 1. VARIABLES
+ * 2. IMPORTS
+ * 3. NOTICE
+ * 4. DASHBOARD
+ * 5. LINK GENERATOR
+ * 6. CURRENT AFFILIATE
+ * 7. LOGIN/REGISTER FORM
+ * 8. RESPONSIVE
+ */
+/**
+ * === 1. VARIABLES ===
+ */
+/**
+ * General variables
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * == GENERAL ===
+ */
+/**
+ * === STATUS COLORS ===
+ */
+/**
+ * === ADMIN ===
+ */
+/**
+ * === DASHBOARD ===
+ */
+/**
+ * === 2. IMPORTS ===
+ */
+/**
+ * General mixins
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * Frontend Modals CSS
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * General variables
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * == GENERAL ===
+ */
+/**
+ * === STATUS COLORS ===
+ */
+/**
+ * === ADMIN ===
+ */
+/**
+ * === DASHBOARD ===
+ */
+.yith-wcaf-modal {
+  background: #fff;
+  border-radius: 10px;
+  display: none;
+  left: 50%;
+  max-height: 90vh;
+  max-width: 600px;
+  padding: 40px 20px;
+  position: fixed;
+  top: 5vh;
+  transform: translate(-50%, 0);
+  width: 90vw;
+  z-index: 10010;
+}
+.yith-wcaf-modal .main-close-button {
+  display: block;
+  font-size: 1.5em;
+  padding: 5px;
+  line-height: 1;
+  position: absolute;
+  right: 10px;
+  text-decoration: none;
+  top: 5px;
+}
+.yith-wcaf-modal .title {
+  padding: 0 20px;
+}
+.yith-wcaf-modal .title h3 {
+  margin-top: 0;
+}
+.yith-wcaf-modal .centered {
+  text-align: center;
+}
+.yith-wcaf-modal .content {
+  max-height: calc(80vh - 80px);
+  overflow-y: auto;
+  padding: 0 20px;
+}
+.yith-wcaf-modal .content > div {
+  display: block !important;
+}
+.yith-wcaf-modal .content::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+.yith-wcaf-modal .content::-webkit-scrollbar-thumb {
+  background-color: var(--proteo-main_color_shade, #448a85);
+  border-radius: 10px;
+}
+.yith-wcaf-modal .errors {
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+.yith-wcaf-open-modal:before {
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  content: "";
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10005;
+}
+
+/**
+ * Badges CSS
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * General variables
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * == GENERAL ===
+ */
+/**
+ * === STATUS COLORS ===
+ */
+/**
+ * === ADMIN ===
+ */
+/**
+ * === DASHBOARD ===
+ */
+.yith-wcaf-datepicker.ui-datepicker {
+  background-color: #fff;
+  max-width: 300px;
+  font-size: 0.85em;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+.yith-wcaf-datepicker.ui-datepicker .ui-datepicker-header {
+  margin-bottom: 10px;
+}
+.yith-wcaf-datepicker.ui-datepicker .ui-datepicker-header a.ui-datepicker-prev {
+  float: left;
+  cursor: pointer;
+}
+.yith-wcaf-datepicker.ui-datepicker .ui-datepicker-header a.ui-datepicker-next {
+  float: right;
+  cursor: pointer;
+}
+.yith-wcaf-datepicker.ui-datepicker .ui-datepicker-header .ui-datepicker-title {
+  text-align: center;
+  font-weight: 700;
+}
+.yith-wcaf-datepicker.ui-datepicker table {
+  border: none;
+  border-spacing: 5px;
+}
+.yith-wcaf-datepicker.ui-datepicker table td,
+.yith-wcaf-datepicker.ui-datepicker table th {
+  border: none;
+  text-align: right;
+  margin-bottom: 10px !important;
+}
+.yith-wcaf-datepicker.ui-datepicker table th {
+  padding: 0 5px;
+}
+.yith-wcaf-datepicker.ui-datepicker table td {
+  padding: 0;
+}
+.yith-wcaf-datepicker.ui-datepicker table td:not(.ui-datepicker-other-month) {
+  background-color: #f7f7f7;
+  border: 1px solid transparent;
+}
+.yith-wcaf-datepicker.ui-datepicker table td:hover, .yith-wcaf-datepicker.ui-datepicker table td.ui-datepicker-current-day {
+  color: #fff;
+  border-color: var(--proteo-main_color_shade, #448a85);
+  background-color: var(--proteo-main_color_shade, #448a85);
+}
+.yith-wcaf-datepicker.ui-datepicker table td a {
+  padding: 0 5px;
+  display: block;
+  color: #707070;
+}
+.yith-wcaf-datepicker.ui-datepicker .ui-datepicker-buttonpane {
+  padding-top: 10px;
+  border-top: 1px solid #cdcdcd;
+}
+.yith-wcaf-datepicker.ui-datepicker .ui-datepicker-buttonpane:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.yith-wcaf-datepicker.ui-datepicker .ui-datepicker-buttonpane button {
+  font-size: 0.85em;
+  padding: 10px 15px;
+}
+.yith-wcaf-datepicker.ui-datepicker .ui-datepicker-buttonpane button:first-child {
+  float: left;
+}
+.yith-wcaf-datepicker.ui-datepicker .ui-datepicker-buttonpane button:last-child {
+  float: right;
+}
+
+/**
+ * === 3. NOTICE ===
+ */
+.yith-wcaf-notice-message {
+  background-color: #F0F5FA;
+  border-radius: 4px;
+  font-style: italic;
+  padding: 15px 20px;
+}
+
+/**
+ * === 4. DASHBOARD ===
+ */
+.yith-wcaf-dashboard {
+  /**
+   * Tooltip CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+  /**
+   * Toggles CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+  /**
+   * Dashboard Tables CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+}
+.yith-wcaf-dashboard .dashboard-title {
+  margin-bottom: 20px;
+}
+.yith-wcaf-dashboard .dashboard-title h3,
+.yith-wcaf-dashboard .dashboard-title span.view-all {
+  display: inline-block;
+  margin: 0 5px 0 0;
+  vertical-align: baseline;
+}
+.yith-wcaf-dashboard ul.yith-wcaf-dashboard-navigation {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 45px;
+  padding: 0;
+  position: relative;
+}
+.yith-wcaf-dashboard ul.yith-wcaf-dashboard-navigation:after {
+  bottom: 0;
+  border-bottom: 1px solid #ccc;
+  content: "";
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.yith-wcaf-dashboard ul.yith-wcaf-dashboard-navigation li {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+.yith-wcaf-dashboard ul.yith-wcaf-dashboard-navigation li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: var(--proteo-base_font_color, #404040);
+}
+.yith-wcaf-dashboard ul.yith-wcaf-dashboard-navigation li a:hover {
+  color: var(--proteo-main_color_shade, #448a85);
+}
+.yith-wcaf-dashboard ul.yith-wcaf-dashboard-navigation li.is-active {
+  border-bottom: 2px solid var(--proteo-main_color_shade, #448a85);
+}
+.yith-wcaf-dashboard ul.yith-wcaf-dashboard-navigation li.is-active a {
+  color: var(--proteo-main_color_shade, #448a85);
+}
+.yith-wcaf-dashboard .yith-wcaf-table-top-bar {
+  margin: 30px 0;
+}
+.yith-wcaf-dashboard .yith-wcaf-table-top-bar input,
+.yith-wcaf-dashboard .yith-wcaf-table-top-bar select,
+.yith-wcaf-dashboard .yith-wcaf-table-top-bar .select2 {
+  display: inline-block;
+  margin-left: 5px;
+  max-width: 170px;
+  min-width: 0;
+}
+.yith-wcaf-dashboard .yith-wcaf-table-top-bar .table-filters,
+.yith-wcaf-dashboard .yith-wcaf-table-top-bar .table-options {
+  display: inline-block;
+}
+.yith-wcaf-dashboard .yith-wcaf-table-top-bar .pull-right {
+  float: right;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 60px;
+  margin-bottom: 45px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-box .stat-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 30px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-box .stat-item:last-child {
+  border-bottom: none;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-box .stat-item.large {
+  padding: 30px;
+  text-align: center;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-box .stat-item.large .stat-label {
+  display: block;
+  margin-bottom: 10px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-box .stat-item.large .stat-value {
+  display: block;
+  float: none;
+  font-size: 2.5em;
+  text-align: center;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-box .stat-item .stat-label {
+  color: var(--proteo-main_color_shade, #448a85);
+  font-weight: 700;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-box .stat-item .stat-value {
+  float: right;
+  font-weight: 700;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-coupons table.yith-wcaf-table .copy-field-wrapper {
+  display: block;
+  position: relative;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-coupons table.yith-wcaf-table .copy-field-wrapper input.copy-target {
+  border-style: dashed;
+  color: #999;
+  padding-right: 110px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-coupons table.yith-wcaf-table .copy-field-wrapper .copy-trigger {
+  cursor: pointer;
+  color: #434343;
+  font-weight: 600;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-coupons table.yith-wcaf-table .copy-field-wrapper .copy-trigger:before {
+  background: url(../images/copy.svg);
+  content: "";
+  display: inline-block;
+  height: 15px;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 15px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-coupons table.yith-wcaf-table .copy-field-wrapper .copy-confirmation {
+  background: #434343;
+  border-radius: 5px;
+  color: #fff;
+  display: none;
+  font-size: 0.8em;
+  font-weight: 400;
+  left: calc(-100% - 50px);
+  padding: 3px 10px;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-coupons table.yith-wcaf-table .copy-field-wrapper input {
+  position: absolute;
+  left: -9999px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-coupons table.yith-wcaf-table .copy-field-wrapper .copy-trigger {
+  border: 1px dashed #ccc;
+  border-radius: 2px;
+  cursor: pointer;
+  display: block;
+  font-weight: 700;
+  padding: 10px;
+  position: static;
+  text-decoration: none;
+  transform: none;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-coupons table.yith-wcaf-table .copy-field-wrapper .copy-confirmation {
+  left: auto;
+  right: 10px;
+  transform: translateY(-50%);
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal_opener {
+  margin-left: 5px;
+  margin-right: 0;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal {
+  display: none;
+  /**
+   * Fields CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal h4 {
+  margin: 15px 0;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal small {
+  display: block;
+  margin: 15px 0;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .formatted-address {
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #5B5B5B;
+  font-size: 12px;
+  display: block;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  padding: 15px;
+  text-decoration: none;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .missing-address {
+  color: #f44336;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .balance-recap {
+  background: url(../images/money.svg);
+  background-repeat: no-repeat;
+  background-size: auto 50%;
+  background-position: 30px;
+  border: 1px solid var(--proteo-main_color_shade, #448a85);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 15px 10px;
+  padding-left: 120px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .balance-recap h4 {
+  margin: 0;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .balance-recap .affiliate-balance {
+  font-size: 30px;
+  font-weight: 700;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .balance-recap .affiliate-balance .woocommerce-Price-currencySymbol {
+  margin-right: 10px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .withdraw-notes {
+  display: block;
+  margin-bottom: 15px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .withdraw-amount {
+  margin-bottom: 15px;
+  white-space: nowrap;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .withdraw-amount .woocommerce-Price-currencySymbol {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 1;
+  vertical-align: middle;
+  width: 25px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .withdraw-amount input {
+  padding: 15px 10px;
+  width: calc(100% - 30px);
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes {
+  padding: 0;
+  list-style: none;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes label {
+  cursor: pointer;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes .invoice-mode-content {
+  margin-bottom: 15px;
+  padding-left: 30px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes:not(.both) .invoice-mode > label {
+  display: none;
+  padding: 0;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes:not(.both) .invoice-mode .invoice-mode-content {
+  padding-left: 0;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes .yith-wcaf-attach-file:before {
+  background: url(../images/clip.svg);
+  background-size: 100% auto;
+  content: "";
+  display: inline-block;
+  height: 23px;
+  width: 23px;
+  vertical-align: middle;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes #invoice_file {
+  display: none;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes #invoice_type_field {
+  margin-bottom: 15px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes #invoice_type_field > span {
+  column-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes #invoice_type_field > span .col1,
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes #invoice_type_field > span .col2 {
+  border: 1px solid #ccc;
+  cursor: pointer;
+  position: relative;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes #invoice_type_field > span .col1 > input, .yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes #invoice_type_field > span .col1 > .radiobutton,
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes #invoice_type_field > span .col2 > input,
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes #invoice_type_field > span .col2 > .radiobutton {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes #invoice_type_field > span .col1 label,
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes #invoice_type_field > span .col2 label {
+  cursor: pointer;
+  display: block;
+  line-height: 1;
+  margin: 0;
+  padding: 15px 15px 15px 45px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes .files-list {
+  color: #666;
+  display: inline-block;
+  font-style: italic;
+  margin: 0 5px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes .files-list:before {
+  content: "( ";
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .invoice-modes .files-list:after {
+  content: " )";
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal .submit {
+  display: block;
+  margin-bottom: 0;
+  padding: 15px 25px;
+  width: 100%;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal p.form-row {
+  position: relative;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal p.form-row .password-wrapper {
+  display: block;
+  position: relative;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal p.form-row .password-wrapper input[type=password] {
+  padding-right: 40px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal p.form-row .password-wrapper .toggle-button {
+  font-size: 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal p.form-row .password-wrapper .toggle-button.click-to-show svg path {
+  fill: #A0A0A0;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal p.form-row .password-wrapper .toggle-button.click-to-hide svg path {
+  fill: var(--proteo-main_color_shade, #448a85);
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal p.form-row .terms-label,
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal p.form-row .woocommerce-privacy-policy-text {
+  font-size: 0.9em;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal p.form-row span.optional {
+  display: none;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal p.form-row textarea {
+  height: 140px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-payments #withdraw_modal p.form-row .error-msg {
+  bottom: -25px;
+  color: #f44336;
+  font-size: 0.75em;
+  left: 15px;
+  position: absolute;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings {
+  /**
+   * Fields CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box {
+  display: grid;
+  margin-bottom: 30px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box.double-column {
+  grid-template-columns: calc(60% - 15px) calc(40% - 15px);
+  column-gap: 30px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box.double-column .additional-info .settings-box {
+  margin: 0;
+  border-radius: 0;
+  border-top: none;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box.double-column .additional-info .settings-box:first-child {
+  border-top: 1px solid #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box.double-column .additional-info .settings-box:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box .settings-box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 30px;
+  margin-bottom: 30px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box .settings-box small {
+  display: block;
+  margin: 15px 0;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box .settings-box .toggle-right {
+  padding-right: 75px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box .settings-box .toggle-right .toggle {
+  float: right;
+  margin-right: -75px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box #invoice_type_field {
+  margin-bottom: 15px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box #invoice_type_field > span {
+  column-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box #invoice_type_field > span .col1,
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box #invoice_type_field > span .col2 {
+  border: 1px solid #ccc;
+  cursor: pointer;
+  position: relative;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box #invoice_type_field > span .col1 > input, .yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box #invoice_type_field > span .col1 > .radiobutton,
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box #invoice_type_field > span .col2 > input,
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box #invoice_type_field > span .col2 > .radiobutton {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box #invoice_type_field > span .col1 label,
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box #invoice_type_field > span .col2 label {
+  cursor: pointer;
+  display: block;
+  line-height: 1;
+  margin: 0;
+  padding: 15px 15px 15px 45px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings form:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings input[type=submit] {
+  float: right;
+  margin: 0;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings p.form-row {
+  position: relative;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings p.form-row .password-wrapper {
+  display: block;
+  position: relative;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings p.form-row .password-wrapper input[type=password] {
+  padding-right: 40px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings p.form-row .password-wrapper .toggle-button {
+  font-size: 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings p.form-row .password-wrapper .toggle-button.click-to-show svg path {
+  fill: #A0A0A0;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings p.form-row .password-wrapper .toggle-button.click-to-hide svg path {
+  fill: var(--proteo-main_color_shade, #448a85);
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings p.form-row .terms-label,
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings p.form-row .woocommerce-privacy-policy-text {
+  font-size: 0.9em;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings p.form-row span.optional {
+  display: none;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings p.form-row textarea {
+  height: 140px;
+}
+.yith-wcaf-dashboard .yith-wcaf-dashboard-settings p.form-row .error-msg {
+  bottom: -25px;
+  color: #f44336;
+  font-size: 0.75em;
+  left: 15px;
+  position: absolute;
+}
+.yith-wcaf-dashboard [data-tip] {
+  position: relative;
+}
+.yith-wcaf-dashboard [data-tip] .tooltip {
+  background: #434343;
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  font-size: 0.8em;
+  font-weight: 400;
+  left: calc(50% - 100px);
+  padding: 5px 10px;
+  position: absolute;
+  text-align: center;
+  top: calc(100% + 10px);
+  width: 200px;
+  z-index: 10;
+}
+.yith-wcaf-dashboard [data-tip] .tooltip:before {
+  border: 5px solid transparent;
+  border-bottom-color: #434343;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  margin-left: -5px;
+  position: absolute;
+  top: -10px;
+  width: 1px;
+}
+.yith-wcaf-dashboard .yith-wcaf-toggle {
+  display: none;
+}
+.yith-wcaf-dashboard .yith-wcaf-toggle + .toggle {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7em;
+  padding: 4px 15px;
+  position: relative;
+  text-align: right;
+  width: 75px;
+}
+.yith-wcaf-dashboard .yith-wcaf-toggle + .toggle:before {
+  content: attr(data-text-off);
+}
+.yith-wcaf-dashboard .yith-wcaf-toggle + .toggle:after {
+  background-color: #ccc;
+  border-radius: 100%;
+  content: "";
+  display: block;
+  height: 20px;
+  left: 5px;
+  position: absolute;
+  top: 4px;
+  transition: all 0.3s ease;
+  width: 20px;
+}
+.yith-wcaf-dashboard .yith-wcaf-toggle:checked + .toggle {
+  border: 1px solid var(--proteo-main_color_shade, #448a85);
+  background-color: var(--proteo-main_color_shade, #448a85);
+  color: #fff;
+  text-align: left;
+}
+.yith-wcaf-dashboard .yith-wcaf-toggle:checked + .toggle:before {
+  content: attr(data-text-on);
+}
+.yith-wcaf-dashboard .yith-wcaf-toggle:checked + .toggle:after {
+  background-color: #fff;
+  left: 49px;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table {
+  border-collapse: separate;
+  border-spacing: 0 25px;
+  max-width: 100%;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr {
+  background: none;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr.empty-table td {
+  text-align: center;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr th {
+  text-align: left;
+  padding: 0 30px;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr td {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 25px;
+  text-align: left;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr td:first-child {
+  border-left: 1px solid #ccc;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr td:last-child {
+  border-right: 1px solid #ccc;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-amount {
+  text-align: center;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-status {
+  text-align: right;
+  /**
+   * Badges CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge {
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  line-height: 2.1em;
+  min-width: 140px;
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.pending, .yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.not-converted {
+  background-color: #cf8300;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.enabled {
+  background-color: #afb000;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.paid, .yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.completed, .yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.converted {
+  background-color: #afb000;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.cancelled, .yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.banned {
+  background-color: #cd1927;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.disabled, .yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.on-hold, .yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.not-confirmed {
+  background-color: #748c9c;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.pending-payment {
+  background-color: #999d84;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.refunded {
+  background-color: #730000;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.trash {
+  background-color: #c73878;
+}
+.yith-wcaf-dashboard table.yith-wcaf-table tr .column-status mark.status-badge.small {
+  padding: 0 5px;
+  min-width: 20px;
+}
+
+/**
+ * === 5. LINK GENERATOR ===
+ */
+.yith-wcaf-link-generator .link-generator-box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 30px;
+  margin-bottom: 30px;
+  display: grid;
+  padding: 0;
+}
+.yith-wcaf-link-generator .link-generator-box small {
+  display: block;
+  margin: 15px 0;
+}
+.yith-wcaf-link-generator .link-generator-box.double-column {
+  grid-template-columns: 45% 55%;
+}
+.yith-wcaf-link-generator .link-generator-box.double-column .link-generator {
+  background-color: #fafafa;
+  border-left: 1px solid #ccc;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.yith-wcaf-link-generator .link-generator-box.single-column {
+  grid-template-columns: 1fr;
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info,
+.yith-wcaf-link-generator .link-generator-box .link-generator {
+  box-sizing: border-box;
+  padding: 30px;
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info .regular-text,
+.yith-wcaf-link-generator .link-generator-box .link-generator .regular-text {
+  font-weight: 400;
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info .bold-text,
+.yith-wcaf-link-generator .link-generator-box .link-generator .bold-text {
+  font-weight: 700;
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info p .copy-field-wrapper,
+.yith-wcaf-link-generator .link-generator-box .link-generator p .copy-field-wrapper {
+  display: block;
+  position: relative;
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info p .copy-field-wrapper input.copy-target,
+.yith-wcaf-link-generator .link-generator-box .link-generator p .copy-field-wrapper input.copy-target {
+  border-style: dashed;
+  color: #999;
+  padding-right: 110px;
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info p .copy-field-wrapper .copy-trigger,
+.yith-wcaf-link-generator .link-generator-box .link-generator p .copy-field-wrapper .copy-trigger {
+  cursor: pointer;
+  color: #434343;
+  font-weight: 600;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info p .copy-field-wrapper .copy-trigger:before,
+.yith-wcaf-link-generator .link-generator-box .link-generator p .copy-field-wrapper .copy-trigger:before {
+  background: url(../images/copy.svg);
+  content: "";
+  display: inline-block;
+  height: 15px;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 15px;
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info p .copy-field-wrapper .copy-confirmation,
+.yith-wcaf-link-generator .link-generator-box .link-generator p .copy-field-wrapper .copy-confirmation {
+  background: #434343;
+  border-radius: 5px;
+  color: #fff;
+  display: none;
+  font-size: 0.8em;
+  font-weight: 400;
+  left: calc(-100% - 50px);
+  padding: 3px 10px;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info p .copy-field-wrapper .copy-trigger,
+.yith-wcaf-link-generator .link-generator-box .link-generator p .copy-field-wrapper .copy-trigger {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-left: 5px;
+  text-decoration: none;
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info p .copy-field-wrapper .copy-confirmation,
+.yith-wcaf-link-generator .link-generator-box .link-generator p .copy-field-wrapper .copy-confirmation {
+  left: calc(-100% - 10px);
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info p:first-child,
+.yith-wcaf-link-generator .link-generator-box .link-generator p:first-child {
+  margin-top: 0;
+}
+.yith-wcaf-link-generator .link-generator-box .affiliate-info p:last-child,
+.yith-wcaf-link-generator .link-generator-box .link-generator p:last-child {
+  margin-bottom: 0;
+}
+.yith-wcaf-link-generator .yith-wcaf-share {
+  margin-top: 40px;
+}
+.yith-wcaf-link-generator .yith-wcaf-share h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.yith-wcaf-link-generator .yith-wcaf-share ul {
+  padding: 0;
+}
+
+/**
+ * === 6. CURRENT AFFILIATE ===
+ */
+.yith-wcaf-current-affiliate .referral-user {
+  margin-top: 15px;
+}
+.yith-wcaf-current-affiliate .referral-user:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.yith-wcaf-current-affiliate .referral-user .delete-affiliate {
+  color: #ccc;
+  cursor: pointer;
+  display: none;
+  line-height: 16px;
+  margin: 0 0 0 12px;
+  overflow: hidden;
+  padding: 0 0 0.5em;
+  position: absolute;
+  right: 10px;
+  text-decoration: none;
+  top: 0;
+  vertical-align: middle;
+  width: 16px;
+}
+.yith-wcaf-current-affiliate .referral-user .delete-affiliate:hover {
+  color: #a00;
+}
+.yith-wcaf-current-affiliate .referral-user .delete-affiliate:before {
+  -webkit-font-smoothing: antialiased;
+  content: "";
+  font-family: Dashicons;
+  font-variant: normal;
+  font-weight: 400;
+  height: 100%;
+  left: 0;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  speak: none;
+  text-align: center;
+  text-indent: 0;
+  text-transform: none;
+  top: 0;
+  width: 100%;
+}
+.yith-wcaf-current-affiliate .referral-user .referral-avatar {
+  float: left;
+}
+.yith-wcaf-current-affiliate .referral-user .referral-avatar img {
+  border: 4px solid #e3e3e3;
+  border-radius: 50%;
+}
+.yith-wcaf-current-affiliate .referral-user .referral-info {
+  margin-left: 80px;
+  overflow: hidden;
+}
+.yith-wcaf-current-affiliate .referral-user .referral-info h3 {
+  margin: 15px 0 0;
+  padding: 0;
+}
+.yith-wcaf-current-affiliate .referral-user .no-referral-message {
+  font-size: 110%;
+  font-style: italic;
+  padding-bottom: 15px;
+  text-align: center;
+}
+.yith-wcaf-current-affiliate .referral-user .no-referral-message:before, .yith-wcaf-current-affiliate .referral-user .no-referral-message:after {
+  content: "-";
+  display: inline-block;
+  margin: 0 4px;
+}
+.yith-wcaf-current-affiliate .referral-user .set-referral {
+  padding-top: 15px;
+  position: relative;
+}
+.yith-wcaf-current-affiliate .referral-user .set-referral:before {
+  border-bottom: 1px solid #cdcdcd;
+  content: "";
+  display: block;
+  left: -12px;
+  position: absolute;
+  right: -12px;
+  top: 0;
+}
+.yith-wcaf-current-affiliate .referral-user .set-referral .calculate-commission-button {
+  float: right;
+  height: 26px;
+  text-indent: -9999px;
+  width: 26px;
+}
+.yith-wcaf-current-affiliate .referral-user.without-avatar .referral-info {
+  margin-left: 0;
+}
+.yith-wcaf-current-affiliate:hover .referral-user .delete-affiliate {
+  display: inline-block;
+}
+
+/**
+ * === 7. LOGIN/REGISTER FORM ===
+ */
+.yith-wcaf-registration-form .forms-container:not(.col2-set) {
+  margin: 0 auto;
+  max-width: 600px;
+}
+.yith-wcaf-registration-form .login-form,
+.yith-wcaf-registration-form .register-form {
+  border-radius: 10px;
+  padding: 40px 80px;
+  /**
+   * Fields CSS
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * General variables
+   *
+   * @author  YITH
+   * @package YITH\Affiliates\Styles
+   * @version 2.0.0
+   */
+  /**
+   * == GENERAL ===
+   */
+  /**
+   * === STATUS COLORS ===
+   */
+  /**
+   * === ADMIN ===
+   */
+  /**
+   * === DASHBOARD ===
+   */
+}
+.yith-wcaf-registration-form .login-form p.form-row,
+.yith-wcaf-registration-form .register-form p.form-row {
+  position: relative;
+}
+.yith-wcaf-registration-form .login-form p.form-row .password-wrapper,
+.yith-wcaf-registration-form .register-form p.form-row .password-wrapper {
+  display: block;
+  position: relative;
+}
+.yith-wcaf-registration-form .login-form p.form-row .password-wrapper input[type=password],
+.yith-wcaf-registration-form .register-form p.form-row .password-wrapper input[type=password] {
+  padding-right: 40px;
+}
+.yith-wcaf-registration-form .login-form p.form-row .password-wrapper .toggle-button,
+.yith-wcaf-registration-form .register-form p.form-row .password-wrapper .toggle-button {
+  font-size: 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.yith-wcaf-registration-form .login-form p.form-row .password-wrapper .toggle-button.click-to-show svg path,
+.yith-wcaf-registration-form .register-form p.form-row .password-wrapper .toggle-button.click-to-show svg path {
+  fill: #A0A0A0;
+}
+.yith-wcaf-registration-form .login-form p.form-row .password-wrapper .toggle-button.click-to-hide svg path,
+.yith-wcaf-registration-form .register-form p.form-row .password-wrapper .toggle-button.click-to-hide svg path {
+  fill: var(--proteo-main_color_shade, #448a85);
+}
+.yith-wcaf-registration-form .login-form p.form-row .terms-label,
+.yith-wcaf-registration-form .login-form p.form-row .woocommerce-privacy-policy-text,
+.yith-wcaf-registration-form .register-form p.form-row .terms-label,
+.yith-wcaf-registration-form .register-form p.form-row .woocommerce-privacy-policy-text {
+  font-size: 0.9em;
+}
+.yith-wcaf-registration-form .login-form p.form-row span.optional,
+.yith-wcaf-registration-form .register-form p.form-row span.optional {
+  display: none;
+}
+.yith-wcaf-registration-form .login-form p.form-row textarea,
+.yith-wcaf-registration-form .register-form p.form-row textarea {
+  height: 140px;
+}
+.yith-wcaf-registration-form .login-form p.form-row .error-msg,
+.yith-wcaf-registration-form .register-form p.form-row .error-msg {
+  bottom: -25px;
+  color: #f44336;
+  font-size: 0.75em;
+  left: 15px;
+  position: absolute;
+}
+.yith-wcaf-registration-form .login-form {
+  border: 1px solid #EDEDED;
+}
+.yith-wcaf-registration-form .register-form {
+  background-color: #F3F3F3;
+}
+.yith-wcaf-registration-form .become-an-affiliate-form,
+.yith-wcaf-registration-form .already-an-affiliate-wrapper,
+.yith-wcaf-registration-form .pending-request-wrapper,
+.yith-wcaf-registration-form .rejected-request-wrapper {
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 40px 80px;
+  text-align: center;
+}
+.yith-wcaf-registration-form h3.thank-you,
+.yith-wcaf-registration-form h3.we-are-sorry {
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.yith-wcaf-registration-form h3.thank-you:before,
+.yith-wcaf-registration-form h3.we-are-sorry:before {
+  background-size: 100% auto;
+  content: "";
+  display: block;
+  height: 40px;
+  margin: 0 auto 15px;
+  width: 40px;
+}
+.yith-wcaf-registration-form h3.thank-you:before {
+  background-image: url(../images/circle-check.svg);
+}
+.yith-wcaf-registration-form h3.we-are-sorry:before {
+  background-image: url(../images/circle-cross.svg);
+}
+.yith-wcaf-registration-form form {
+  text-align: left;
+}
+.yith-wcaf-registration-form input[type=submit],
+.yith-wcaf-registration-form a.button,
+.yith-wcaf-registration-form button {
+  padding: 25px;
+  width: 100%;
+}
+.yith-wcaf-registration-form .go-to-dashboard {
+  margin-top: 50px;
+}
+
+/**
+ * === 8. RESPONSIVE ===
+ */
+/**
+ * Responsive CSS
+ *
+ * @author  YITH
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * === 1. SMALL DEVICES ===
+ */
+@media (max-width: 600px) {
+  .yith-wcaf-dashboard table.yith-wcaf-table.shop_table_responsive tr td {
+    line-height: 1.5;
+    padding: 15px 5px;
+    text-align: right;
+  }
+  .yith-wcaf-dashboard table.yith-wcaf-table.shop_table_responsive tr td:before {
+    display: inline-block;
+  }
+  .yith-wcaf-dashboard table.yith-wcaf-table.shop_table_responsive tr td.column-status {
+    text-align: left;
+  }
+}
+/**
+ * === 2. TABLET DEVICES ===
+ */
+@media (max-width: 768px) {
+  .yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats {
+    grid-template-columns: 100%;
+    row-gap: 30px;
+  }
+  .yith-wcaf-dashboard table.yith-wcaf-table.shop_table_responsive {
+    border-spacing: 0;
+  }
+  .yith-wcaf-dashboard table.yith-wcaf-table.shop_table_responsive tr td,
+.yith-wcaf-dashboard table.yith-wcaf-table.shop_table_responsive tr th {
+    padding: 20px 5px;
+  }
+
+  .yith-wcaf-link-generator .link-generator-box.double-column {
+    grid-template-columns: 100%;
+  }
+  .yith-wcaf-link-generator .link-generator-box.double-column .affiliate-info {
+    border-bottom: 1px solid #ccc;
+  }
+  .yith-wcaf-link-generator .link-generator-box.double-column .link-generator {
+    border-left: none;
+  }
+}
+/**
+ * === 3. SMALL DESKTOPS ===
+ */
+@media (max-width: 991px) {
+  .woocommerce-account .yith-wcaf-dashboard-navigation {
+    display: none;
+  }
+
+  .yith-wcaf-dashboard .yith-wcaf-table-top-bar {
+    display: none;
+  }
+  .yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats {
+    column-gap: 30px;
+  }
+  .yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-label,
+.yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-value {
+    display: block;
+    float: none !important;
+    text-align: center;
+  }
+  .yith-wcaf-dashboard .yith-wcaf-dashboard-settings .affiliate-settings-box.double-column {
+    grid-template-columns: 100%;
+  }
+}
+/**
+ * === 4. DESKTOPS ===
+ */
+@media (max-width: 1200px) {
+  .yith-wcaf-dashboard .yith-wcaf-table-top-bar .table-options {
+    float: none;
+  }
+}
+
+/*# sourceMappingURL=yith-wcaf.css.map */

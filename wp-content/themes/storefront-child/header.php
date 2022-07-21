@@ -318,16 +318,20 @@
                   </div>
                 </div>
               </li>
-              <li class="user c-menu_dropdown"><a class="icon_inner" href="#">
+              <li class="user c-menu_dropdown"><a class="icon_inner" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
                   <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M19 6.33325C15.5008 6.33325 12.6666 9.16742 12.6666 12.6666C12.6666 16.1658 15.5008 18.9999 19 18.9999C22.4991 18.9999 25.3333 16.1658 25.3333 12.6666C25.3333 9.16742 22.4991 6.33325 19 6.33325ZM22.1666 12.6666C22.1666 10.9249 20.7416 9.49992 19 9.49992C17.2583 9.49992 15.8333 10.9249 15.8333 12.6666C15.8333 14.4083 17.2583 15.8333 19 15.8333C20.7416 15.8333 22.1666 14.4083 22.1666 12.6666ZM28.5 26.9166C28.1833 25.7924 23.275 23.7499 19 23.7499C14.725 23.7499 9.81665 25.7924 9.49998 26.9324V28.4999H28.5V26.9166ZM6.33331 26.9166C6.33331 22.7049 14.7725 20.5833 19 20.5833C23.2275 20.5833 31.6666 22.7049 31.6666 26.9166V31.6666H6.33331V26.9166Z"></path>
                   </svg></a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <ol>
-                      <li><a href="http://"><strong><?php _e('Login', 'storefront') ?></strong></a></li>
-                      <li><a href="http://"><strong><?php _e('Create an account', 'storefront') ?></strong></a></li>
-                      <li><a href="http://"><strong><?php _e('Tracking order', 'storefront') ?></strong></a></li>
+                      <?php if(is_user_logged_in()) : ?>
+                          <li><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><strong><?php echo wp_get_current_user()->user_login; ?></strong></a></li>
+                          <li><a href="http://"><strong><?php _e('Tracking order', 'storefront') ?></strong></a></li>
+                        <?php elseif(!is_user_logged_in()) :?>
+                          <li><a href="http://"><strong><?php _e('Login', 'storefront') ?></strong></a></li>
+                          <li><a href="http://"><strong><?php _e('Create an account', 'storefront') ?></strong></a></li>
+                        <?php endif ;?>
                     </ol>
                   </div>
                 </div>
