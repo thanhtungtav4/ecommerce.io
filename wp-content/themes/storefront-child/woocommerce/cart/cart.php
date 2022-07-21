@@ -240,30 +240,31 @@ do_action( 'woocommerce_before_cart' ); ?>
 											$loop = new WP_Query( $args );
 											if ( $loop->have_posts() ) {
 												while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                     <li>
-                              <a href="<?php echo get_permalink(get_the_ID()); ?>">
-                                <div class="m-product__img"></div>
-                                <picture>
-                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-                                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp">
-																	<img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
-                                </picture>
-                              </a>
-                              <div class="m-product__content">
-                                <div class="m-product__content-top">
-                                  <a href="<?php echo get_permalink(get_the_ID()); ?>">
-                                    <h3 class="strong"><?php the_title() ?></h3></a>
-                                  <p>
-                                    <?php echo wc_get_product( get_the_ID() )->get_price_html(); ?></p>
-                                </div>
-                                <div class="m-product__content-bottom">
-                                  <div class="btn_area">
-                                    <a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a>
-                                    <?php woocommerce_template_loop_add_to_cart();?>
-                                    </div>
-                                  </div>
-                              </div>
-                            </li>
+												<?php
+                          $image = get_the_post_thumbnail_url(get_the_ID(), array(307, 307), array( 'class' => 'lazyload' ));
+                        ?>
+                     		<li>
+													<a href="<?php echo get_permalink(get_the_ID()); ?>">
+														<div class="m-product__img"></div>
+														<picture>
+															<img class="lazyload" src="<?php !empty($image) ? print $image : print Placeholder; ?>" data-src="<?php !empty($image) ?  print $image : print Placeholder; ?>" alt="<?php the_title() ?>" loading="lazy" width="323" height="323">
+														</picture>
+													</a>
+													<div class="m-product__content">
+														<div class="m-product__content-top">
+															<a href="<?php echo get_permalink(get_the_ID()); ?>">
+																<h3 class="strong"><?php the_title() ?></h3></a>
+															<p>
+																<?php echo wc_get_product( get_the_ID() )->get_price_html(); ?></p>
+														</div>
+														<div class="m-product__content-bottom">
+															<div class="btn_area">
+																<a class="btn_area__add" href="#"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20"></a>
+																<?php woocommerce_template_loop_add_to_cart();?>
+																</div>
+															</div>
+													</div>
+												</li>
 											<?php
 											endwhile;
 										} ?>

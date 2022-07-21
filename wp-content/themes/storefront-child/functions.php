@@ -1,4 +1,5 @@
 <?php
+require_once( get_stylesheet_directory() . '/functions/global.php' );
 require_once( get_stylesheet_directory() . '/functions/lang.php' );
 require_once( get_stylesheet_directory() . '/functions/optimize.php' );
 require_once( get_stylesheet_directory() . '/functions/taxonomy.php' );

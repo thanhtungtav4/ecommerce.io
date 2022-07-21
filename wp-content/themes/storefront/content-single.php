@@ -26,7 +26,7 @@
 	 * @hooked storefront_post_nav         - 10
 	 * @hooked storefront_display_comments - 20
 	 */
-	//do_action( 'storefront_single_post_bottom' );
+	do_action( 'storefront_single_post_bottom' );
 	?>
 
 </article><!-- #post-## -->
