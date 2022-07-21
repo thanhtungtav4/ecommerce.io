@@ -83,11 +83,10 @@ get_header(); ?>
                       );
                       $loop = new WP_Query( $args );
                       if ( $loop->have_posts() ) {
-                        $firstLoop = true;
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <?php
-                             $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' );
-                              var_dump($image)
+                             $image = get_the_post_thumbnail(get_the_ID()); 
+                              var_dump($image);
                             ?>
                             <li>
                               <a href="<?php echo get_permalink(get_the_ID()); ?>">
