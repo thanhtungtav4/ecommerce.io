@@ -331,7 +331,7 @@
                           <li><a href="<?php echo wc_logout_url() ?>"><strong><?php _e('Logout', 'storefront') ?></strong></a></li>
                           <?php elseif(!is_user_logged_in()) :?>
                           <li><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><strong><?php _e('Login', 'storefront') ?></strong></a></li>
-                          <li><a href="<?php echo apply_filters( 'wpml_permalink', home_url('/'). 'dang-ky', 'en' );  ?>"><strong><?php _e('Create an account', 'storefront') ?></strong></a></li>
+                          <li><a href="<?php echo apply_filters( 'wpml_permalink', home_url('/'). 'dang-ky', apply_filters( 'wpml_current_language', NULL ) );  ?>"><strong><?php _e('Create an account', 'storefront') ?></strong></a></li>
                         <?php endif ;?>
                     </ol>
                   </div>

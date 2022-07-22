@@ -70,6 +70,12 @@ input#rememberme{
   font-style: italic;
   text-decoration: none;
 }
+.lost_reset_password .form-row-first{
+  width: 100%;
+}
+.show-password-input{
+  top: 5px !important;
+}
 @media screen and (max-width: 767px) {
   .c-login form{
     padding: 15px;

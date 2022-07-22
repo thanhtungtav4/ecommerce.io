@@ -863,7 +863,10 @@ body.js-active {
 ------------------------------------------------------------*/
 .btn_area {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: end;
+  width: 100px;
+  min-width: 100px; }
   .btn_area a {
     border-radius: 5px;
     text-align: center;

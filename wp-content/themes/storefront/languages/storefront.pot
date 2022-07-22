@@ -981,3 +981,9 @@ msgstr "Ghi nhớ tài khoản"
 
 msgid "Lost your password?"
 msgstr "Quên mật khẩu?"
+
+msgid "Logout"
+msgstr "Đăng xuất"
+
+msgid "Already have an account?"
+msgstr "Đã có tài khoản?"
