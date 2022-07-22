@@ -11,13 +11,18 @@
  */
 get_header(); ?>
 	<div id="primary" class="content-area">
-		<?php 
+		<?php
 		if(is_page('dang-ky')){
 			$is_page = "c-login";
 		}
+		elseif(!is_user_logged_in()){
+			if(is_page( 'tai-khoan' ) || is_page( 'my-account' )){
+				$is_page = "c-login";
+			}
+		}
 		?>
 		<main id="main" class="site-main <?php echo $is_page ?>" role="main">
-			
+
 			<div class="l-container">
 				<?php while ( have_posts() ) :
 					the_post();

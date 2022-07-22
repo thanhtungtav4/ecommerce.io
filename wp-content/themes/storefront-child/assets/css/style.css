@@ -1539,7 +1539,7 @@ body.js-active {
 
 .c-login {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-image: url(../../assets/images/login.jpg);
   background-repeat: no-repeat;
   background-size: cover;

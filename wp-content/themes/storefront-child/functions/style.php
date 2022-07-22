@@ -14,4 +14,14 @@ function conditionally_enqueue_styles_scripts() {
     if(is_cart()){
         wp_enqueue_script( 'script_cart', get_stylesheet_directory_uri().'/assets/js/cart.js' );
     }
+    if(is_page('dang-ky')){
+        wp_register_style( 'style_login', get_stylesheet_directory_uri().'/assets/css/login.css' );
+        wp_enqueue_style('style_login');
+    }
+    if(!is_user_logged_in()){
+       if(is_page('tai-khoan')){
+        wp_register_style( 'style_login', get_stylesheet_directory_uri().'/assets/css/login.css' );
+        wp_enqueue_style('style_login');
+       }
+    }
 }

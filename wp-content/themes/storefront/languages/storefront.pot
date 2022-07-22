@@ -972,3 +972,12 @@ msgstr "PHỤ KIỆN"
 
 msgid "Add to cart"
 msgstr "THÊM VÀO GIỎ HÀNG"
+
+msgid "Register"
+msgstr "ĐĂNG KÝ"
+
+msgid "Remember me"
+msgstr "Ghi nhớ tài khoản"
+
+msgid "Lost your password?"
+msgstr "Quên mật khẩu?"

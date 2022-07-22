@@ -328,9 +328,10 @@
                       <?php if(is_user_logged_in()) : ?>
                           <li><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><strong><?php echo wp_get_current_user()->user_login; ?></strong></a></li>
                           <li><a href="http://"><strong><?php _e('Tracking order', 'storefront') ?></strong></a></li>
-                        <?php elseif(!is_user_logged_in()) :?>
-                          <li><a href="http://"><strong><?php _e('Login', 'storefront') ?></strong></a></li>
-                          <li><a href="http://"><strong><?php _e('Create an account', 'storefront') ?></strong></a></li>
+                          <li><a href="<?php echo wc_logout_url() ?>"><strong><?php _e('Logout', 'storefront') ?></strong></a></li>
+                          <?php elseif(!is_user_logged_in()) :?>
+                          <li><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><strong><?php _e('Login', 'storefront') ?></strong></a></li>
+                          <li><a href="<?php echo apply_filters( 'wpml_permalink', home_url('/'). 'dang-ky', 'en' );  ?>"><strong><?php _e('Create an account', 'storefront') ?></strong></a></li>
                         <?php endif ;?>
                     </ol>
                   </div>
