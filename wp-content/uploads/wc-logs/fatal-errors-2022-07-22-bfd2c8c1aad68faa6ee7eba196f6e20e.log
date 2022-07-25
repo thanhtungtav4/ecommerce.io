@@ -1,0 +1,154 @@
+2022-07-22T14:59:09+00:00 CRITICAL Uncaught Error: Class 'Widgets Category' not found in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php:61
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(115): WP_Widget_Factory->register()
+#1 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\functions\widgets.php(5): register_widget()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wpdocs_register_widgets()
+#3 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#5 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(1854): do_action()
+#6 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wp_widgets_init()
+#7 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#8 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#9 D:\Ampps\www\ecommerce.io\wp-settings.php(598): do_action()
+#10 D:\Ampps\www\ecommerce.io\wp-config.php( in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php on line 61
+
+2022-07-22T14:59:12+00:00 CRITICAL Uncaught Error: Class 'Widgets Category' not found in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php:61
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(115): WP_Widget_Factory->register()
+#1 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\functions\widgets.php(5): register_widget()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wpdocs_register_widgets()
+#3 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#5 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(1854): do_action()
+#6 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wp_widgets_init()
+#7 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#8 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#9 D:\Ampps\www\ecommerce.io\wp-settings.php(598): do_action()
+#10 D:\Ampps\www\ecommerce.io\wp-config.php( in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php on line 61
+
+2022-07-22T14:59:27+00:00 CRITICAL Uncaught Error: Class 'Widgets_Category' not found in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php:61
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(115): WP_Widget_Factory->register()
+#1 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\functions\widgets.php(5): register_widget()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wpdocs_register_widgets()
+#3 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#5 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(1854): do_action()
+#6 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wp_widgets_init()
+#7 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#8 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#9 D:\Ampps\www\ecommerce.io\wp-settings.php(598): do_action()
+#10 D:\Ampps\www\ecommerce.io\wp-config.php( in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php on line 61
+
+2022-07-22T14:59:30+00:00 CRITICAL Uncaught Error: Class 'Widgets_Category' not found in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php:61
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(115): WP_Widget_Factory->register()
+#1 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\functions\widgets.php(5): register_widget()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wpdocs_register_widgets()
+#3 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#5 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(1854): do_action()
+#6 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wp_widgets_init()
+#7 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#8 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#9 D:\Ampps\www\ecommerce.io\wp-settings.php(598): do_action()
+#10 D:\Ampps\www\ecommerce.io\wp-config.php( in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php on line 61
+
+2022-07-22T14:59:48+00:00 CRITICAL Uncaught Error: Class 'My_Widget' not found in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php:61
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(115): WP_Widget_Factory->register()
+#1 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\functions\widgets.php(5): register_widget()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wpdocs_register_widgets()
+#3 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#5 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(1854): do_action()
+#6 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wp_widgets_init()
+#7 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#8 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#9 D:\Ampps\www\ecommerce.io\wp-settings.php(598): do_action()
+#10 D:\Ampps\www\ecommerce.io\wp-config.php(96): re in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php on line 61
+
+2022-07-22T14:59:51+00:00 CRITICAL Uncaught Error: Class 'My_Widget' not found in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php:61
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(115): WP_Widget_Factory->register()
+#1 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\functions\widgets.php(5): register_widget()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wpdocs_register_widgets()
+#3 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#5 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(1854): do_action()
+#6 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wp_widgets_init()
+#7 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#8 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#9 D:\Ampps\www\ecommerce.io\wp-settings.php(598): do_action()
+#10 D:\Ampps\www\ecommerce.io\wp-config.php(96): re in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php on line 61
+
+2022-07-22T14:59:56+00:00 CRITICAL Uncaught Error: Class 'My_Widget' not found in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php:61
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(115): WP_Widget_Factory->register()
+#1 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\functions\widgets.php(5): register_widget()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wpdocs_register_widgets()
+#3 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#5 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(1854): do_action()
+#6 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wp_widgets_init()
+#7 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#8 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#9 D:\Ampps\www\ecommerce.io\wp-settings.php(598): do_action()
+#10 D:\Ampps\www\ecommerce.io\wp-config.php(96): re in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php on line 61
+
+2022-07-22T14:59:56+00:00 CRITICAL Uncaught Error: Class 'My_Widget' not found in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php:61
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(115): WP_Widget_Factory->register()
+#1 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\functions\widgets.php(5): register_widget()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wpdocs_register_widgets()
+#3 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#5 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(1854): do_action()
+#6 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wp_widgets_init()
+#7 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#8 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#9 D:\Ampps\www\ecommerce.io\wp-settings.php(598): do_action()
+#10 D:\Ampps\www\ecommerce.io\wp-config.php(96): re in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php on line 61
+
+2022-07-22T14:59:56+00:00 CRITICAL Uncaught Error: Class 'My_Widget' not found in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php:61
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(115): WP_Widget_Factory->register()
+#1 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\functions\widgets.php(5): register_widget()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wpdocs_register_widgets()
+#3 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#5 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(1854): do_action()
+#6 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wp_widgets_init()
+#7 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#8 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#9 D:\Ampps\www\ecommerce.io\wp-settings.php(598): do_action()
+#10 D:\Ampps\www\ecommerce.io\wp-config.php(96): re in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php on line 61
+
+2022-07-22T15:00:00+00:00 CRITICAL Uncaught Error: Class 'My_Widget' not found in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php:61
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(115): WP_Widget_Factory->register()
+#1 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\functions\widgets.php(5): register_widget()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wpdocs_register_widgets()
+#3 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#5 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(1854): do_action()
+#6 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wp_widgets_init()
+#7 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#8 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#9 D:\Ampps\www\ecommerce.io\wp-settings.php(598): do_action()
+#10 D:\Ampps\www\ecommerce.io\wp-config.php(96): re in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php on line 61
+
+2022-07-22T15:00:03+00:00 CRITICAL Uncaught Error: Class 'My_Widget' not found in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php:61
+Stack trace:
+#0 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(115): WP_Widget_Factory->register()
+#1 D:\Ampps\www\ecommerce.io\wp-content\themes\storefront-child\functions\widgets.php(5): register_widget()
+#2 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wpdocs_register_widgets()
+#3 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#4 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#5 D:\Ampps\www\ecommerce.io\wp-includes\widgets.php(1854): do_action()
+#6 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(307): wp_widgets_init()
+#7 D:\Ampps\www\ecommerce.io\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#8 D:\Ampps\www\ecommerce.io\wp-includes\plugin.php(476): WP_Hook->do_action()
+#9 D:\Ampps\www\ecommerce.io\wp-settings.php(598): do_action()
+#10 D:\Ampps\www\ecommerce.io\wp-config.php(96): re in D:\Ampps\www\ecommerce.io\wp-includes\class-wp-widget-factory.php on line 61
+
