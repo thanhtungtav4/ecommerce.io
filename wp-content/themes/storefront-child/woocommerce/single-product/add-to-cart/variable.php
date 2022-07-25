@@ -35,7 +35,15 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 			<tbody>
 				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 					<tr>
-						<th class="label"><label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label></th>
+						<th class="label">
+							<?php if( wc_attribute_label( $attribute_name ) == 'Màu Sắc') : ?>
+								<?php _e("Contact lens' patterns", 'storefront') ?>
+							<?php elseif(wc_attribute_label( $attribute_name ) == 'Combo') : ?>
+
+							<?php else : ?>
+								<?php echo wc_attribute_label( $attribute_name );  ?>
+							<?php endif ; ?>
+						</th>
 						<td class="value">
 							<?php
 								wc_dropdown_variation_attribute_options(

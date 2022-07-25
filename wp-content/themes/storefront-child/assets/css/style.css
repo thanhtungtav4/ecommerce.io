@@ -73,6 +73,9 @@ video {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif; }
 
+.star-rating span {
+  font-family: "Font Awesome 5 Free" !important; }
+
 article,
 aside,
 details,
@@ -209,6 +212,10 @@ form label {
   @media screen and (max-width: 767px) {
     .only-sp {
       display: block; } }
+
+@media (max-width: 576px) {
+  .l-container {
+    width: 576px; } }
 
 @media (min-width: 576px) {
   .l-container {

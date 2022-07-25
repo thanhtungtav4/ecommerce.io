@@ -987,3 +987,9 @@ msgstr "Đăng xuất"
 
 msgid "Already have an account?"
 msgstr "Đã có tài khoản?"
+
+msgid "Contact lens' patterns"
+msgstr "Màu vân kính áp tròng"
+
+msgid "PRODUCT INFORMATION"
+msgstr "THÔNG TIN SẢN PHẨM"

@@ -24,4 +24,10 @@ function conditionally_enqueue_styles_scripts() {
         wp_enqueue_style('style_login');
        }
     }
+    if(is_user_logged_in()){
+        if(is_page('tai-khoan') || is_page('my-account')){
+         wp_register_style( 'style_acc', get_stylesheet_directory_uri().'/assets/css/acc.css' );
+         wp_enqueue_style('style_acc');
+        }
+     }
 }

@@ -70,3 +70,18 @@ main{
 .woocommerce-MyAccount-navigation-link a:hover{
   color: #EB6A6A;
 }
+.summary .star-rating span:before,
+.summary .star-rating::before,
+.summary p.stars a:hover:after,
+.summary p.stars a:after {
+    color: #333 !important;
+}
+#description{
+  text-align: justify;
+}
+#description img , #description figure{
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 100% !important;
+
+}

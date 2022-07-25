@@ -21,3 +21,5 @@ function nt_woocommerce_output_product_data_tabs(){
   woocommerce_output_product_data_tabs();
 }
 //Data Tab
+//REMOVE PRODUCT META
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );

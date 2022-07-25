@@ -22,10 +22,19 @@ add_action( 'woocommerce_after_cart_contents', 'woocommerce_cross_sell_display' 
 add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
 
 function change_existing_currency_symbol( $currency_symbol, $currency ) {
- switch( $currency ) {
- case 'VND': $currency_symbol = 'VNĐ'; break;
- }
- return $currency_symbol;
+   global $post, $product;
+   if ( has_term( 'phu-kien-lens', 'product_cat' ) ) {
+      switch( $currency ) {
+         case 'VND': $currency_symbol = 'VNĐ'; break;
+         }
+   }
+   else{
+      switch( $currency ) {
+         case 'VND': $currency_symbol = 'VNĐ/cặp'; break;
+         }
+   }
+
+   return $currency_symbol;
 }
 
 // custome add to cart btn
