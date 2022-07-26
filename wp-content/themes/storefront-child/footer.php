@@ -214,6 +214,36 @@
             }
           ]
         });
+        $('.m-item__prev').click(function(e){
+          $('.m-item').slick('slickPrev');
+        } );
+        $('.m-item__next').click(function(e){
+          $('.m-item').slick('slickNext');
+        } );
+        $('.m-item').not('.slick-initialized').slick({
+          infinite: true,
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          dots: false,
+          arrows: false,
+          lazyLoad: 'progressive',
+          responsive: [
+             {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            }
+          ]
+        });
       });
     </script>
 		<?php wp_footer(); ?>

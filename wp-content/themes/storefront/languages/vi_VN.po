@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Storefront 4.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/storefront\n"
 "POT-Creation-Date: 2022-06-25 21:44+0700\n"
-"PO-Revision-Date: 2022-07-25 13:51+0700\n"
+"PO-Revision-Date: 2022-07-26 23:49+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi_VN\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.1\n"
 
 #: 404.php:19
 msgid "Oops! That page can&rsquo;t be found."
@@ -1018,11 +1018,23 @@ msgstr "Đặt hàng"
 msgid "Subtotal"
 msgstr "Tạm tính"
 
-msgid "Coupon"
-msgstr "Mã giảm giá"
-
 msgid "Total"
 msgstr "Thành tiền"
+
+msgid "Apply"
+msgstr "NHẬP"
+
+msgid "Coupon code"
+msgstr "Mã khuyến mãi"
+
+msgid "Coupon"
+msgstr "TỔNG TIỀN"
+
+msgid "TOTAL CASH"
+msgstr "Thành tiền"
+
+msgid "Prices include VAT"
+msgstr "Giá đã bao gồm VAT"
 
 msgid "BEST SELLER"
 msgstr "BEST SELLER - BÁN CHẠY NHẤT"

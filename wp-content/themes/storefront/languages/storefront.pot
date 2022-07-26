@@ -943,14 +943,32 @@ msgstr "Chế độ bảo <strong>hành vàng cho </strong>trường hợp rách
 msgid "Proceed to checkout"
 msgstr "Đặt hàng"
 
+msgid "You may be interested in&hellip;"
+msgstr "Bạn đã sở hữu nước nhỏ mắt chuyên dụng hay ngâm lens chưa?"
+
 msgid "Subtotal"
 msgstr "Tạm tính"
 
-msgid "Coupon"
-msgstr "Mã giảm giá"
-
 msgid "Total"
 msgstr "Thành tiền"
+
+msgid "Apply"
+msgstr "NHẬP"
+
+msgid "Coupon code"
+msgstr "Mã khuyến mãi"
+
+msgid "Update cart"
+msgstr "Cập nhật giỏ hàng"
+
+msgid "Coupon"
+msgstr "TỔNG TIỀN"
+
+msgid "TOTAL CASH"
+msgstr "Thành tiền"
+
+msgid "Prices include VAT"
+msgstr "Giá đã bao gồm VAT"
 
 msgid "BEST SELLER"
 msgstr "BEST SELLER - BÁN CHẠY NHẤT"

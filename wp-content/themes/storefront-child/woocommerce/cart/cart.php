@@ -133,17 +133,21 @@ do_action( 'woocommerce_before_cart' ); ?>
 								}
 							}
 							?>
-
-				<?php do_action( 'woocommerce_cart_contents' ); ?>
-				<button type="submit" class="button update_cart"  name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+							<!-- Show cross-sells -->
+							<?php
+								woocommerce_cross_sell_display();
+							?>
+							<!-- ! Show cross-sells -->
+							<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+				<button type="submit" class="button update_cart"  name="update_cart" value="<?php esc_attr_e( 'Update cart', 'storefront' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 				</ul>
 				<div class="c-sidebar">
 								<div class="c-sidebar_item">
 									<h4><?php esc_html_e( 'TOTAL CASH', 'storefront' ); ?></h4>
 									<?php if ( wc_coupons_enabled() ) { ?>
 										<div class="coupon">
-											<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
-											<button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?></button>
+											<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'storefront' ); ?>" />
+											<button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'storefront' ); ?>"><?php esc_attr_e( 'Apply', 'storefront' ); ?></button>
 											<?php do_action( 'woocommerce_cart_coupon' ); ?>
 										</div>
 									<?php } ?>
@@ -191,27 +195,16 @@ do_action( 'woocommerce_before_cart' ); ?>
 								</div>
 									</div>
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
-				<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
-				<?php do_action( 'woocommerce_after_cart_contents' ); ?>
+			
+				<?php //do_action( 'woocommerce_after_cart_contents' ); ?>
 
 			</tbody>
 		</table>
-		<?php do_action( 'woocommerce_after_cart_table' ); ?>
+		<?php //do_action( 'woocommerce_after_cart_table' ); ?>
 	</form>
 
 <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 
-<div class="cart-collaterals">
-	<?php
-		/**
-		 * Cart collaterals hook.
-		 *
-		 * @hooked woocommerce_cross_sell_display
-		 * @hooked woocommerce_cart_totals - 10
-		 */
-		//do_action( 'woocommerce_cart_collaterals' );
-	?>
-</div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
 </div>

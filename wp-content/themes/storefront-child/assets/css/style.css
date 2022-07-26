@@ -833,6 +833,9 @@ body.js-active {
   flex-wrap: wrap;
   flex-direction: column;
   text-align: right; }
+  @media screen and (max-width: 767px) {
+    .m-discount {
+      text-align: left; } }
   .m-discount span {
     color: #EB6A6A;
     font-weight: 400;
@@ -1170,6 +1173,21 @@ body.js-active {
 .home .m-product__slick .slick-list .slick-track li:nth-of-type(even) ul li:nth-of-type(8) {
   display: none; }
 
+.m-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: -10px; }
+  @media screen and (max-width: 767px) {
+    .m-item {
+      margin: 0 auto; } }
+  .m-item li {
+    width: 262px;
+    margin: 10px; }
+    @media screen and (max-width: 767px) {
+      .m-item li {
+        width: 100%; } }
+
 .c-experience h4 {
   font-weight: 300;
   font-size: 3.6rem;
@@ -1341,8 +1359,8 @@ body.js-active {
     .c-tabCart_inner {
       flex-wrap: wrap; } }
   .c-tabCart_inner .m-cart {
-    width: calc(60% - 50px);
-    margin-right: 50px; }
+    width: calc(60% - 35px);
+    margin-right: 35px; }
     @media screen and (max-width: 767px) {
       .c-tabCart_inner .m-cart {
         width: 100%;
@@ -1535,7 +1553,8 @@ body.js-active {
       justify-content: center;
       flex-wrap: wrap;
       font-size: 2.4rem;
-      font-weight: 400; }
+      font-weight: 400;
+      flex-direction: column; }
     .m-cart li .info .content {
       display: flex;
       flex-wrap: wrap;
