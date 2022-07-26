@@ -135,10 +135,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 							?>
 
 				<?php do_action( 'woocommerce_cart_contents' ); ?>
+				<button type="submit" class="button update_cart"  name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 				</ul>
 				<div class="c-sidebar">
 								<div class="c-sidebar_item">
-									<h4>TỔNG TIỀN</h4>
+									<h4><?php esc_html_e( 'TOTAL CASH', 'storefront' ); ?></h4>
 									<?php if ( wc_coupons_enabled() ) { ?>
 										<div class="coupon">
 											<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" />
@@ -146,16 +147,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 											<?php do_action( 'woocommerce_cart_coupon' ); ?>
 										</div>
 									<?php } ?>
-									<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 									<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 									<p class="price" ><span><?php esc_html_e( 'Subtotal', 'storefront' ); ?> :</span><span><?php wc_cart_totals_subtotal_html(); ?></span></p>
 									<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
 										<p class="price" ><span><?php esc_html_e( 'Coupon', 'storefront' ); ?> :</span><span><?php wc_cart_totals_coupon_html( $coupon ); ?></span></p>
 									<?php endforeach; ?>
 									<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
-									<p class="price big"><span><?php esc_html_e( 'Total', 'woocommerce' ); ?> :</span><span><?php wc_cart_totals_order_total_html(); ?></span></p>
+									<p class="price big"><span><?php esc_html_e( 'Total', 'storefront' ); ?> :</span><span><?php wc_cart_totals_order_total_html(); ?></span></p>
 									<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
-									<p class="vat">(Giá đã bao gồm VAT) </p>
+									<p class="vat">(<?php esc_html_e('Prices include VAT' , 'storefront') ?> </p>
 									<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="m-btn add-cart checkout-button button wc-forward">
 										<?php esc_html_e( 'Proceed to checkout', 'storefront' ); ?>
 									</a>
@@ -190,7 +190,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 							</div>
 								</div>
 									</div>
-
+				<?php do_action( 'woocommerce_cart_actions' ); ?>
+				<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
 				<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 
 			</tbody>
