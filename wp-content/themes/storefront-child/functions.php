@@ -2,6 +2,8 @@
 require_once( get_stylesheet_directory() . '/functions/global.php' );
 require_once( get_stylesheet_directory() . '/functions/lang.php' );
 require_once( get_stylesheet_directory() . '/functions/optimize.php' );
+require_once( get_stylesheet_directory() . '/functions/resource.php' );
+//control load js css
 require_once( get_stylesheet_directory() . '/functions/taxonomy.php' );
 require_once( get_stylesheet_directory() . '/functions/acf.php' );
 require_once( get_stylesheet_directory() . '/functions/woo.php' );

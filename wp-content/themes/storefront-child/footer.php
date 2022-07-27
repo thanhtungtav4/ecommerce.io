@@ -220,6 +220,7 @@
         $('.m-item__next').click(function(e){
           $('.m-item').slick('slickNext');
         } );
+        //in cart page
         $('.m-item').not('.slick-initialized').slick({
           infinite: true,
           slidesToShow: 4,
