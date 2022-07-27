@@ -83,5 +83,7 @@ main{
   text-align: center;
   margin: 2rem auto;
   max-width: 100% !important;
-
+}
+.slick-track {
+  margin-left:0;
 }
