@@ -1,3 +1,6 @@
+/*------------------------------------------------------------
+	Reset
+------------------------------------------------------------*/
 html,
 body,
 div,
@@ -1359,7 +1362,7 @@ body.js-active {
     .c-tabCart_inner {
       flex-wrap: wrap; } }
   .c-tabCart_inner .m-cart {
-    width: calc(60% - 35px);
+    width: calc(70% - 35px);
     margin-right: 35px; }
     @media screen and (max-width: 767px) {
       .c-tabCart_inner .m-cart {
@@ -1370,7 +1373,7 @@ body.js-active {
 
 .c-sidebar {
   text-align: left;
-  width: 40%; }
+  width: 30%; }
   @media screen and (max-width: 767px) {
     .c-sidebar {
       width: 100%; } }
