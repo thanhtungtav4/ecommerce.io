@@ -38,8 +38,8 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 					foreach ( $attributes as $attribute_name => $options ) :
 				?>
 					<?php
-						 	if( wc_attribute_label( $attribute_name ) == 'Left eye' ||
-									wc_attribute_label( $attribute_name ) == 'Right eye'||
+						 	if( wc_attribute_label( $attribute_name ) == 'Left Eye' ||
+									wc_attribute_label( $attribute_name ) == 'Right Eye'||
 									wc_attribute_label( $attribute_name ) == 'Mắt Trái' ||
 									wc_attribute_label( $attribute_name ) == 'Mắt Phải'  ) : $i++;?>
 										<?php if($i == 1) : ?>
