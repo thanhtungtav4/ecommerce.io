@@ -32,6 +32,7 @@
         <div class="c-header_top">
           <div class="l-container">
             <p>Freeship nội thành cho đơn&nbsp;<span>từ 250.000đ</span> – Tỉnh&nbsp;<span>từ 400.000đ</span></p>
+            <?php echo do_shortcode('[currency_switcher]'); ?>
           </div>
         </div>
         <div class="c-header_bottom">

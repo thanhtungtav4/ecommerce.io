@@ -1011,3 +1011,6 @@ msgstr "Màu vân kính áp tròng"
 
 msgid "PRODUCT INFORMATION"
 msgstr "THÔNG TIN SẢN PHẨM"
+
+msgid "Power"
+msgstr "Chọn độ cận"

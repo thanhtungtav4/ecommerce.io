@@ -6,10 +6,8 @@ function wpgis_enqueue_scripts() {
 			wp_enqueue_script('wpgis-fancybox-js', get_stylesheet_directory_uri().'/functions/gallery-slider/assets/js/jquery.fancybox.js', NULL, NULL, true);
 			wp_enqueue_script('wpgis-zoom-js', get_stylesheet_directory_uri().'/functions/gallery-slider/assets/js/jquery.zoom.min.js', NULL, NULL, true);
 			wp_enqueue_style('wpgis-fancybox-css', get_stylesheet_directory_uri().'/functions/gallery-slider/assets/css/fancybox.css');
-			//wp_enqueue_style('wpgis-fontawesome-css', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 			wp_enqueue_style('wpgis-front-css', get_stylesheet_directory_uri().'/functions/gallery-slider/assets/css/wpgis-front.css');
 			wp_enqueue_script('wpgis-front-js', get_stylesheet_directory_uri().'/functions/gallery-slider/assets/js/wpgis.front.js', NULL, NULL, true);
-			//wp_enqueue_style( 'dashicons');
 			$translation_array = array(
 				'wpgis_slider_layout'   => 'horizontal',
 				'wpgis_slidetoshow'  => '1',
@@ -18,7 +16,7 @@ function wpgis_enqueue_scripts() {
 				'wpgis_arrowdisable'=> '0',
 				'wpgis_arrowinfinite'=> '0',
 				'wpgis_arrowcolor'=> '#ffffff',
-				'wpgis_arrowbgcolor'=> '#000000',
+				'wpgis_arrowbgcolor'=> 'transparent',
 				'wpgis_show_lightbox'=> '1',
 				'wpgis_show_zoom'=> '1',
 			);

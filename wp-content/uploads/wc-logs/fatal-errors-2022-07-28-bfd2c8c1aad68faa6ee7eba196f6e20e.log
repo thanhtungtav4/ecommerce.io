@@ -22,3 +22,5 @@ Stack trace:
 #7 D:\xampp\htdocs\ecommerce\wp-includes\general-template.php(3042): do_action('wp_head')
 #8 D:\xampp\htdocs\ecommerce\wp-content\themes\s in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\gallery-slider\woo-product-gallery-image-slider.php on line 8
 
+2022-07-28T08:03:32+00:00 CRITICAL syntax error, unexpected 'else' (T_ELSE) in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\single-product\add-to-cart\variable.php on line 64
+

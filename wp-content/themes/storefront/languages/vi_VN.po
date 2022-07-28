@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Storefront 4.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/storefront\n"
 "POT-Creation-Date: 2022-06-25 21:44+0700\n"
-"PO-Revision-Date: 2022-07-26 23:49+0700\n"
+"PO-Revision-Date: 2022-07-28 17:25+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi_VN\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: 404.php:19
 msgid "Oops! That page can&rsquo;t be found."
@@ -1015,6 +1015,9 @@ msgstr ""
 msgid "Proceed to checkout"
 msgstr "Đặt hàng"
 
+msgid "You may be interested in&hellip;"
+msgstr "Bạn đã sở hữu nước nhỏ mắt chuyên dụng hay ngâm lens chưa?"
+
 msgid "Subtotal"
 msgstr "Tạm tính"
 
@@ -1026,6 +1029,9 @@ msgstr "NHẬP"
 
 msgid "Coupon code"
 msgstr "Mã khuyến mãi"
+
+msgid "Update cart"
+msgstr "Cập nhật giỏ hàng"
 
 msgid "Coupon"
 msgstr "TỔNG TIỀN"
@@ -1077,3 +1083,6 @@ msgstr "Màu vân kính áp tròng"
 
 msgid "PRODUCT INFORMATION"
 msgstr "THÔNG TIN SẢN PHẨM"
+
+msgid "Power"
+msgstr "Chọn độ cận"

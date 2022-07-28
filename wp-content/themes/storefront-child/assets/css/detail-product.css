@@ -151,3 +151,6 @@ margin-left: 10px;
 font-size: 20px;
 font-weight: bold;
 }
+.is_pa_combo{
+  display: none !important;
+}

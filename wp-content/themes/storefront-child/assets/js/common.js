@@ -12,7 +12,6 @@ if ('loading' in HTMLImageElement.prototype) {
 };
 window.onscroll = function(e) {
   if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
-      console.log(121);
   }
 };
 function toggleMenu(){
@@ -89,3 +88,23 @@ jQuery(window).scroll(function(){
   }
   positionBf = positionAf;
 });
+
+// only product detail
+function toggleVariations(){
+  const is_true = document.getElementsByClassName("js_hide");
+  const is_toggle = document.getElementsByClassName("fold");
+  if(is_true.length == 2){
+    document.getElementsByClassName('js_down')[0].classList.add('d-none');
+    document.getElementsByClassName('js_up')[0].classList.remove('d-none');
+    for (const item of is_toggle){
+        item.classList.remove("js_hide");
+    }
+  }
+  else{
+    document.getElementsByClassName('js_up')[0].classList.add('d-none');
+    document.getElementsByClassName('js_down')[0].classList.remove('d-none');
+    for (const item of is_toggle){
+      item.classList.add("js_hide");
+    }
+  }
+}
