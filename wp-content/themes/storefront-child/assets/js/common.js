@@ -93,7 +93,7 @@ jQuery(window).scroll(function(){
 function toggleVariations(){
   const is_true = document.getElementsByClassName("js_hide");
   const is_toggle = document.getElementsByClassName("fold");
-  if(is_true.length == 2){
+  if(is_true.length >= 1){
     document.getElementsByClassName('js_down')[0].classList.add('d-none');
     document.getElementsByClassName('js_up')[0].classList.remove('d-none');
     for (const item of is_toggle){
