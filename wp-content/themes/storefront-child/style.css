@@ -87,18 +87,3 @@ main{
 .slick-track {
   margin-left:0;
 }
-.js_hide{
-  display: none;
-}
-.d-none{
-  display: none;
-}
-.is_toggle{
-  font-weight: 700;
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
-  display: flex !important;
-  justify-content: space-between;
-  border-bottom: 1px solid #e1e1e1;
-  padding-bottom: 1rem !important;
-}
