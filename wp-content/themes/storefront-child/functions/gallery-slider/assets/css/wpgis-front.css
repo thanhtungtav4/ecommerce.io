@@ -1,7 +1,7 @@
 .slick-prev:before,
 .slick-next:before,
 a.wpgis-popup{
-	transition: all 0.3s linear 0s; 
+	transition: all 0.3s linear 0s;
 	-webkit-transition: all 0.3s linear 0s;
 	-moz-transition: all 0.3s linear 0s;
 	-o-transition: all 0.3s linear 0s;
@@ -113,7 +113,7 @@ a.wpgis-popup{
 }
 
 /* Arrows */
-.slick-prev, 
+.slick-prev,
 .slick-next,
 .slick-prev:hover,
 .slick-next:hover {
@@ -315,7 +315,7 @@ a.wpgis-popup:hover{
 @media (max-width:500px){
 	.wpgis-slider-for .slick-prev, .wpgis-slider-for .slick-next{
 		display:none!important;
-	}	
+	}
 }
 .wpgis-slider-for .btn-prev, .wpgis-slider-for .btn-next {
     position: absolute;

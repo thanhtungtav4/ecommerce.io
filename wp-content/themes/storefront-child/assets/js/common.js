@@ -76,9 +76,9 @@ jQuery.event.special.mousewheel = {
   }
 };
 
-let positionBf = $(window).scrollTop();
-$(window).scroll(function(){
-  let positionAf = $(this).scrollTop();
+let positionBf = jQuery(window).scrollTop();
+jQuery(window).scroll(function(){
+  let positionAf = jQuery(this).scrollTop();
   if( positionAf <= 150){
       document.getElementsByClassName("c-header")[0].classList.remove("js_scroll");
   }
