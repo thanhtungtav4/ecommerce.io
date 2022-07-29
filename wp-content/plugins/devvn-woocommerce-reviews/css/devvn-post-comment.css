@@ -1,0 +1,304 @@
+.devvn-comments-area, .devvn-comments-area *{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#comments-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+.devvn-comments-area form#commentform textarea, .devvn-comments-area form#commentform input[type=text], .devvn-comments-area form#commentform input[type=email], .devvn-comments-area form#commentform input[type=url], .devvn-comments-area form#commentform input[type=password], .devvn-comments-area form#commentform input[type=search], .devvn-comments-area form#commentform input[type=tel], .devvn-comments-area form#commentform input[type=number], .devvn-comments-area form#commentform select {
+    color: #666;
+    background-color: #fff;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 2px 10px;
+    height: 32px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    width: 100%;
+    margin: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.devvn-comments-area form#commentform textarea {
+    height: 130px;
+    border-color: #ddd;
+    border-radius: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #fafafa;
+    padding: 10px;
+    box-shadow: none;
+}
+.devvn_row_post_comment {
+    -js-display: flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100% !important;
+    padding: 10px 5px !important;
+    border: 1px solid #ddd;
+    border-top: unset;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #fff;
+}
+.devvn-comments-area p.comment-form-comment {
+    margin-bottom: 0;
+}
+.devvn-comments-area p.comment-form-comment textarea {
+    display: block;
+}
+.devvn-comments-area #commentform p {
+    margin: 0;
+    padding: 0;
+}
+.devvn-comments-area #commentform p.form-submit {
+    margin-left: auto;
+}
+.devvn-comments-area #commentform p.logged-in-as {
+    margin-bottom: 10px;
+}
+.devvn_row_post_comment > p {
+    padding: 0 5px !important;
+}
+.devvn-comments-area .form-submit input#submit {
+    color: #fff;
+    background-color: var(--primary-color, #092143);
+    border: 0;
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-size: 14px !important;
+    margin: 0;
+    min-height: auto;
+
+}
+.devvn-comments-area form#commentform {
+    margin: 0 0 20px;
+}
+.devvn-comments-area ol.commentlist, .devvn-comments-area ol.commentlist ul {
+    list-style: none;
+}
+.devvn-comments-area .comment-author.vcard img {
+    box-shadow: none;
+    border-radius: 0;
+    width: 25px;
+    height: 25px;
+    margin: 0 7px 0 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+.devvn-comments-area .comment-author.vcard .fn, .devvn-comments-area .comment-author.vcard a {
+    color: #333;
+    font-size: 14px;
+}
+.devvn-comments-area .comment-author.vcard .fn {
+    vertical-align: middle;
+}
+.devvn-comments-area footer.comment-meta {
+    overflow: hidden;
+}
+.devvn-comments-area .comment-content {
+    margin: 0 0 5px 35px;
+    display: block;
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 22px;
+}
+.devvn-comments-area .comment-content p:last-child {
+    margin-bottom: 0;
+}
+.devvn-comments-area .comment-tool {
+    font-size: 12px;
+}
+.devvn-comments-area .comment-tool a {
+    color: #4a90e2;
+}
+.devvn-comments-area b.dot {
+    display: inline;
+    font-size: 8px;
+    vertical-align: middle;
+    margin: 2px 5px;
+    color: #babbb8;
+    float: left;
+}
+.devvn-comments-area .comment-tool > div, .devvn-comments-area .comment-tool > b, .devvn-comments-area .comment-tool > a {
+    display: inline-block;
+    float: left;
+}
+.devvn-comments-area .comment-tool {
+    margin-left: 35px;
+}
+.devvn-comments-area .comment-awaiting-moderation {
+    margin-left: 35px;
+    color: red;
+    font-style: normal;
+}
+.devvn-comments-area article.comment-body {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.devvn-comments-area ol.commentlist > li > ul.children {
+    margin: 0 0 10px 35px;
+    position: relative;
+    background: #f1f1f1;
+    border: 1px solid #e7e7e7;
+    padding: 15px 10px 5px 10px;
+    font-size: 14px;
+    color: #333;
+}
+.devvn-comments-area ol.commentlist > li > ul.children:after, .devvn-comments-area ol.commentlist > li > ul.children:before {
+    bottom: 100%;
+    left: 20px;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.devvn-comments-area ol.commentlist > li > ul.children:after {
+    border-color: rgba(241, 241, 241, 0);
+    border-bottom-color: #f1f1f1;
+    border-width: 10px;
+    margin-left: -10px;
+}
+.devvn-comments-area ol.commentlist > li > ul.children:before {
+    border-color: rgba(231, 231, 231, 0);
+    border-bottom-color: #e7e7e7;
+    border-width: 11px;
+    margin-left: -11px;
+}
+
+.devvn-comments-area nav.woocommerce-pagination ul
+{
+    display: block;
+    border: 0;
+    white-space: inherit;
+    margin: 0;
+    list-style: none;
+}
+.devvn-comments-area nav.woocommerce-pagination ul li a, .devvn-comments-area nav.woocommerce-pagination ul li span {
+    float: left;
+    padding: 7px 10px;
+    background: #eee;
+    border-radius: 3px;
+    text-align: center;
+    color: #333;
+    margin-right: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    display: block;
+    line-height: 1;
+    border: 0;
+    min-width: auto;
+}
+.devvn-comments-area .woocommerce-pagination ul.page-numbers li, .devvn-comments-area .woocommerce-pagination ul.page-numbers li {
+    border: 0;
+}
+.devvn-comments-area nav.woocommerce-pagination ul li span.current {
+    background: #ccc;
+}
+.devvn-comments-area nav.woocommerce-pagination {
+    margin: 10px 0 30px;
+}
+.devvn-comments-area .commentlist span#reply-title {
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    display: inline-block;
+    font-size: 14px;
+}
+.devvn-comments-area .commentlist div#respond {
+    border: 1px solid #e4e1e3;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    position: relative;
+}
+.devvn-comments-area span#reply-title a#cancel-comment-reply-link {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-weight: 400;
+    background: red;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 17px;
+    font-size: 14px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    overflow: hidden;
+}
+.devvn-comments-area form#commentform div.error {
+    font-size: 12px;
+    color: red;
+    margin: 2px 0 0 0;
+}
+.devvn-comments-area form#commentform .comment-form-comment {
+    position: relative;
+}
+.devvn-comments-area form#commentform .comment-form-comment #comment-error {
+    position: absolute;
+    bottom: 3px;
+    left: 5px;
+}
+.comment-author.vcard span.review_qtv {
+    vertical-align: middle;
+    text-transform: uppercase;
+    margin: 0 10px;
+    color: #000;
+    font-weight: normal;
+    font-size: 10px;
+    background: #eebc49;
+    padding: 2px 6px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    line-height: 18px;
+    height: 18px;
+}
+
+#comments .devvn-comments-area .comment-respond {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.devvn-comments-area ol.commentlist li {
+    padding-top: 0;
+    border: 0;
+    margin: 0;
+}
+#comments .devvn-comments-area > .comment-respond > span#reply-title {
+    display: none !important;
+}
+
+@media (max-width: 767px){
+    .devvn_row_post_comment {
+        display: block;
+    }
+    .devvn_row_post_comment p {
+        margin-bottom: 5px !important;
+    }
+}

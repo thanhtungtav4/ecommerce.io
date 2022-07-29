@@ -24,6 +24,9 @@ global $devvn_review_settings;
 ?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 	<div id="comment-<?php comment_ID(); ?>" class="comment_container devvn_review_box">
+        <?php if($devvn_review_settings['show_avatar_review'] == 1):?>
+            <div class="devvn_review_avatar"><?php echo get_avatar($comment->comment_author_email, 50);?></div>
+        <?php endif;?>
 		<div class="comment-text">
             <div class="devvn_review_top">
                 <?php
@@ -66,7 +69,7 @@ global $devvn_review_settings;
                             'max_depth' => $args['max_depth'],
                             'before'    => '<div class="reply">',
                             'after'     => '</div>',
-                            'reply_text'    =>  'Thảo luận'
+                            'reply_text'    =>  __('Reply','devvn-reviews')
                         )
                     )
                 );
@@ -76,7 +79,7 @@ global $devvn_review_settings;
                 <span> • </span>
                 <time class="woocommerce-review__published-date" datetime="<?php echo esc_attr( get_comment_date( 'c' ) ); ?>"><?php echo esc_html( get_comment_date( wc_date_format() ) ); ?></time>
                 <?php endif;?>
+                <?php edit_comment_link('<span> • '.__('Edit', 'devvn-reviews').'</span> ');?>
             </div>
-
 		</div>
 	</div>

@@ -69,6 +69,9 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 												?>
 											</td>
 										</tr>
+										<?php if($i++ > 1) : ?>
+											<th class="label"><a href="#">Hướng dẫn tính độ cận – loạn</a> </th>
+										<?php endif;  ?>
 					<?php else : ?>
 						<tr>
 							<th class="label <?php echo 'is_'.$attribute_name ?>">

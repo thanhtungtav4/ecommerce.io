@@ -26,35 +26,38 @@ $label_review = $devvn_review_settings['label_review'];
 if ( '0' === $comment->comment_approved ) { ?>
 
 	<p class="meta">
-        <strong class="woocommerce-review__author"><?php comment_author(); ?> </strong>
+        <strong class="woocommerce-review__author"><?php echo apply_filters('devvn_cmt_author', get_comment_author(), $comment->comment_ID);?></strong>
 		<em class="woocommerce-review__awaiting-approval">
 			<?php esc_html_e( 'Your review is awaiting approval', 'woocommerce' ); ?>
 		</em>
 	</p>
 
-<?php } else { ?>
+<?php } else {
+    $user_roles = array();
+    $user_id = $comment->user_id;
+    $qtv = '';
+    if($user_id) {
+        $user = get_userdata($user_id);
+        if($user){
+            $user_roles = $user->roles;
+            $qtv = devv_check_reviews_admin($user_roles);
+        }
+    }
+    ?>
 
 	<p class="meta">
-		<strong class="woocommerce-review__author"><?php comment_author(); ?> </strong>
+		<strong class="woocommerce-review__author"><?php echo apply_filters('devvn_cmt_author', get_comment_author(), $comment->comment_ID);?></strong>
 		<?php
-		if ( 'yes' === get_option( 'woocommerce_review_rating_verification_label' ) && $verified ) {
+		if ( 'yes' === get_option( 'woocommerce_review_rating_verification_label' ) && $verified && !$qtv) {
 		    if($label_review){
                 echo '<em class="woocommerce-review__verified verified">' . $label_review . '</em> ';
             }else {
-                echo '<em class="woocommerce-review__verified verified">' . sprintf(esc_attr__('Đã mua tại %s', 'devvn'), $_SERVER['SERVER_NAME']) . '</em> ';
+                echo '<em class="woocommerce-review__verified verified">' . sprintf(esc_attr__('Bought at %s', 'devvn-reviews'), $_SERVER['SERVER_NAME']) . '</em> ';
             }
 		}
-		$user_roles = array();
-        $user_id = $comment->user_id;
-        if($user_id) {
-            $user = get_userdata($user_id);
-            $user_roles = $user->roles;
-            $qtv = devv_check_reviews_admin($user_roles);
-            if ( $qtv && $comment->comment_parent != 0) {?>
-            <span class="review_qtv"><?php _e('Quản trị viên','devvn-reviews')?></span>
-            <?php }
-        }
-		?>
+        if ( $user_id && $qtv && $comment->comment_parent != 0) {?>
+            <span class="review_qtv"><?php _e('Administrator','devvn-reviews')?></span>
+        <?php }?>
 	</p>
 
 <?php

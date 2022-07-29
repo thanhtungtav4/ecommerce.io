@@ -79,11 +79,12 @@ main{
 #description{
   text-align: justify;
 }
-#description img , #description figure{
+#description img , #description figure,#description iframe{
   text-align: center;
   margin: 2rem auto;
   max-width: 100% !important;
 }
+
 .slick-track {
   margin-left:0;
 }
