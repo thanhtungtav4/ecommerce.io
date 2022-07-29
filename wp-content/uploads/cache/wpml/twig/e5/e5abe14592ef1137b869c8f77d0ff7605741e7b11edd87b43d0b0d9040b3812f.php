@@ -149,7 +149,7 @@ class __TwigTemplate_0394a5c6f274fc2479d5f1d9b22427733153f3881d6998fb6f55bff0ece
             echo ">
                 <label for=\"display_custom_prices\">";
             // line 50
-            echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["form"] ?? null), "custom_prices_select", []), "label", []), "html", null, true);
+            echo $this->getAttribute($this->getAttribute(($context["form"] ?? null), "custom_prices_select", []), "label", []);
             echo "</label>
                 <i class=\"otgs-ico-help wcml-tip\" data-tip=\"";
             // line 51

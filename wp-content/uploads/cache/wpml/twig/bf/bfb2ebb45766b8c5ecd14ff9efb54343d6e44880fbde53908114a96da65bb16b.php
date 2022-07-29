@@ -92,21 +92,39 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
                        value=\"";
         // line 25
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "update", []), "html", null, true);
-        echo "\" />
-                <i class=\"otgs-ico-help wcml-tip\" data-tip=\"";
+        echo "\"
+                       ";
         // line 26
+        if ( !$this->getAttribute(($context["exchange_rates"] ?? null), "has_actionable_service", [])) {
+            echo "disabled=\"disabled\"";
+        }
+        // line 27
+        echo "                />
+                <i class=\"otgs-ico-help wcml-tip\" data-tip=\"";
+        // line 28
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "update_tip", []), "html", null, true);
-        echo "\" style=\"display: none\"></i>
+        echo "\"
+                   ";
+        // line 29
+        if ($this->getAttribute(($context["exchange_rates"] ?? null), "has_actionable_service", [])) {
+            echo "style=\"display: none\"";
+        }
+        // line 30
+        echo "                ></i>
                 <span id=\"update-rates-spinner\" class=\"spinner\" style=\"float:none;\"></span>
                 <input type=\"hidden\" id=\"update-exchange-rates-nonce\" value=\"";
-        // line 28
+        // line 32
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "nonce", []), "html", null, true);
         echo "\"/>
             </p>
 
             <p class=\"notice inline notice-success\" id=\"exchange-rates-success\"
-               style=\"display:none\">";
-        // line 32
+               style=\"";
+        // line 36
+        if ( !($context["exchange_rates_manually_updated"] ?? null)) {
+            echo "display:none";
+        }
+        echo "\">";
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "updated_success", []), "html", null, true);
         echo "</p>
             <p class=\"notice inline notice-error\" id=\"exchange-rates-error\" style=\"display:none\"></p>
@@ -114,41 +132,41 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
 
         <div class=\"wcml-section-content-inner\">
             <h4>";
-        // line 37
+        // line 41
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "services_label", []), "html", null, true);
         echo "</h4>
             <ul class=\"exchange-rates-sources\">
 
                 ";
-        // line 40
+        // line 44
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["exchange_rates"] ?? null), "services", []));
         foreach ($context['_seq'] as $context["id"] => $context["service"]) {
-            // line 41
+            // line 45
             echo "                    <li>
                         <input type=\"radio\" id=\"service-";
-            // line 42
+            // line 46
             echo \WPML\Core\twig_escape_filter($this->env, $context["id"], "html", null, true);
             echo "\" name=\"exchange-rates-service\" value=\"";
             echo \WPML\Core\twig_escape_filter($this->env, $context["id"], "html", null, true);
             echo "\"
                                ";
-            // line 43
+            // line 47
             if (($this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "settings", []), "service", []) == $context["id"])) {
                 echo "checked=\"checked\"";
             }
             echo " />
                         <label for=\"service-";
-            // line 44
+            // line 48
             echo \WPML\Core\twig_escape_filter($this->env, $context["id"], "html", null, true);
             echo "\">
                             ";
-            // line 45
+            // line 49
             echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($context["service"], "name", []), "html", null, true);
             echo "
                         </label>
                         <a href=\"";
-            // line 47
+            // line 51
             echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($context["service"], "url", []), "html", null, true);
             echo "\" title=\"";
             echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "visit_website", []), "html", null, true);
@@ -156,49 +174,49 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
                             <span class=\"dashicons dashicons-external\"></span>
                         </a>
                         <div class=\"service-details-wrap\" ";
-            // line 50
+            // line 54
             if (($this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "settings", []), "service", []) != $context["id"])) {
                 echo " style=\"display: none;\"";
             }
             echo " >
 
                             ";
-            // line 52
+            // line 56
             if ($this->getAttribute($context["service"], "requires_key", [])) {
-                // line 53
+                // line 57
                 echo "                                ";
                 echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "key_required", []), "html", null, true);
                 echo "
                                 <input type=\"text\" name=\"services[";
-                // line 54
+                // line 58
                 echo \WPML\Core\twig_escape_filter($this->env, $context["id"], "html", null, true);
                 echo "][api-key]\"
                                        value=\"";
-                // line 55
+                // line 59
                 echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($context["service"], "api_key", []), "html", null, true);
                 echo "\"
                                        placeholder=\"";
-                // line 56
+                // line 60
                 echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "key_placeholder", []), "html", null, true);
                 echo "\"
                                        size=\"40\" />
                             ";
             }
-            // line 59
+            // line 63
             echo "
-                            <p class=\"notice inline notice-error\" ";
-            // line 60
+                            <p class=\"notice inline notice-warning\" ";
+            // line 64
             if (("fixerio" != $context["id"])) {
                 echo "style=\"display:none\"";
             }
             echo ">
                                 ";
-            // line 61
+            // line 65
             echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "fixerio_warning", []), "html", null, true);
             echo "
                             </p>
                             <p class=\"notice inline notice-error\" id=\"service-error-";
-            // line 63
+            // line 67
             echo \WPML\Core\twig_escape_filter($this->env, $context["id"], "html", null, true);
             echo "\" ";
             if (($this->getAttribute($context["service"], "last_error", []) == false)) {
@@ -206,9 +224,9 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
             }
             echo ">
                             ";
-            // line 64
+            // line 68
             if ($this->getAttribute($context["service"], "last_error", [])) {
-                // line 65
+                // line 69
                 echo "                                ";
                 echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["service"], "last_error", []), "text", []), "html", null, true);
                 echo " <i>(";
@@ -216,7 +234,7 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
                 echo ")</i>
                             ";
             }
-            // line 67
+            // line 71
             echo "                            </p>
 
                         </div>
@@ -226,25 +244,25 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['id'], $context['service'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 72
+        // line 76
         echo "            </ul>
         </div>
 
         <div class=\"wcml-section-content-inner\">
             <h4>";
-        // line 76
+        // line 80
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "lifting_label", []), "html", null, true);
         echo "</h4>
             <p>";
-        // line 77
+        // line 81
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "lifting_details1", []), "html", null, true);
         echo "</p>
             <input type=\"number\" name=\"lifting_charge\" value=\"";
-        // line 78
+        // line 82
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute(($context["settings"] ?? null), "lifting_charge", []), "html", null, true);
         echo "\" step=\"any\" style=\"width:64px\" /> %
             <p><i>";
-        // line 79
+        // line 83
         echo \WPML\Core\twig_escape_filter($this->env, sprintf($this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "lifting_details2", []), $this->getAttribute($this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "services", []), $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "settings", []), "service", []), [], "array"), "name", [])), "html", null, true);
         echo "</i></p>
         </div>
@@ -252,7 +270,7 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
         <div class=\"wcml-section-content-inner\">
 
             <h4>";
-        // line 84
+        // line 88
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "frequency", []), "html", null, true);
         echo "</h4>
 
@@ -260,13 +278,13 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
                 <li>
                     <input type=\"radio\" id=\"update-frequency-daily\" name=\"update-schedule\" value=\"daily\"
                            ";
-        // line 89
+        // line 93
         if (($this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "settings", []), "schedule", []) == "daily")) {
             echo "checked=\"checked\"";
         }
         echo "/>
                     <label for=\"update-frequency-daily\">";
-        // line 90
+        // line 94
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "daily", []), "html", null, true);
         echo "</label>
                 </li>
@@ -274,23 +292,23 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
                 <li>
                     <input type=\"radio\" id=\"update-frequency-hourly\" name=\"update-schedule\" value=\"hourly\"
                            ";
-        // line 95
+        // line 99
         if (($this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "settings", []), "schedule", []) == "hourly")) {
             echo "checked=\"checked\"";
         }
         echo "/>
                     <label for=\"update-frequency-hourly\">";
-        // line 96
+        // line 100
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "hourly", []), "html", null, true);
         echo "</label>
                     <p class=\"notice inline notice-warning\" ";
-        // line 97
+        // line 101
         if (("hourly" == $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "settings", []), "schedule", []))) {
             echo "style=\"display:none\"";
         }
         echo ">
                         ";
-        // line 98
+        // line 102
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "daily_warning", []), "html", null, true);
         echo "
                     </p>
@@ -299,28 +317,28 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
                 <li>
                     <input type=\"radio\" id=\"update-frequency-weekly\" name=\"update-schedule\" value=\"weekly\"
                            ";
-        // line 104
+        // line 108
         if (($this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "settings", []), "schedule", []) == "weekly")) {
             echo "checked=\"checked\"";
         }
         echo " />
                     <label for=\"update-frequency-weekly\">";
-        // line 105
+        // line 109
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "weekly", []), "html", null, true);
         echo "</label>
                     <select name=\"update-weekly-day\"
                             ";
-        // line 107
+        // line 111
         if (($this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "settings", []), "schedule", []) != "weekly")) {
             echo "disabled";
         }
         echo ">
                         ";
-        // line 108
+        // line 112
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(range(0, 6));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 109
+            // line 113
             echo "                            <option value=\"";
             echo \WPML\Core\twig_escape_filter($this->env, $context["i"], "html", null, true);
             echo "\"";
@@ -335,35 +353,35 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 111
+        // line 115
         echo "                    </select>
                 </li>
 
                 <li>
                     <input type=\"radio\" id=\"update-frequency-monthly\" name=\"update-schedule\" value=\"monthly\"
                            ";
-        // line 116
+        // line 120
         if (($this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "settings", []), "schedule", []) == "monthly")) {
             echo "checked=\"checked\"";
         }
         echo " />
                     <label for=\"update-frequency-monthly\">";
-        // line 117
+        // line 121
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "monthly", []), "html", null, true);
         echo "</label>
                     <select name=\"update-monthly-day\"
                             ";
-        // line 119
+        // line 123
         if (($this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "settings", []), "schedule", []) != "monthly")) {
             echo "disabled";
         }
         echo ">
                         ";
-        // line 120
+        // line 124
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(range(1, 31));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-            // line 121
+            // line 125
             echo "                            <option value=\"";
             echo \WPML\Core\twig_escape_filter($this->env, $context["i"], "html", null, true);
             echo "\"";
@@ -387,20 +405,20 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 123
+        // line 127
         echo "                    </select>
                 </li>
 
                 <li>
                     <input type=\"radio\" id=\"update-frequency-manual\" name=\"update-schedule\" value=\"manual\"
                            ";
-        // line 128
+        // line 132
         if (($this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "settings", []), "schedule", []) == "manual")) {
             echo "checked=\"checked\"";
         }
         echo " />
                     <label for=\"update-frequency-manual\">";
-        // line 129
+        // line 133
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["exchange_rates"] ?? null), "strings", []), "manually", []), "html", null, true);
         echo "</label>
                 </li>
@@ -423,7 +441,7 @@ class __TwigTemplate_7ba36aec208c5a4ef2daaeaad4846c6ebe5d9de092b74499c7ffe4d220f
 
     public function getDebugInfo()
     {
-        return array (  404 => 129,  398 => 128,  391 => 123,  367 => 121,  363 => 120,  357 => 119,  352 => 117,  346 => 116,  339 => 111,  324 => 109,  320 => 108,  314 => 107,  309 => 105,  303 => 104,  294 => 98,  288 => 97,  284 => 96,  278 => 95,  270 => 90,  264 => 89,  256 => 84,  248 => 79,  244 => 78,  240 => 77,  236 => 76,  230 => 72,  220 => 67,  212 => 65,  210 => 64,  202 => 63,  197 => 61,  191 => 60,  188 => 59,  182 => 56,  178 => 55,  174 => 54,  169 => 53,  167 => 52,  160 => 50,  152 => 47,  147 => 45,  143 => 44,  137 => 43,  131 => 42,  128 => 41,  124 => 40,  118 => 37,  110 => 32,  103 => 28,  98 => 26,  94 => 25,  87 => 21,  79 => 18,  72 => 14,  66 => 13,  58 => 10,  53 => 8,  47 => 7,  41 => 4,  32 => 1,);
+        return array (  422 => 133,  416 => 132,  409 => 127,  385 => 125,  381 => 124,  375 => 123,  370 => 121,  364 => 120,  357 => 115,  342 => 113,  338 => 112,  332 => 111,  327 => 109,  321 => 108,  312 => 102,  306 => 101,  302 => 100,  296 => 99,  288 => 94,  282 => 93,  274 => 88,  266 => 83,  262 => 82,  258 => 81,  254 => 80,  248 => 76,  238 => 71,  230 => 69,  228 => 68,  220 => 67,  215 => 65,  209 => 64,  206 => 63,  200 => 60,  196 => 59,  192 => 58,  187 => 57,  185 => 56,  178 => 54,  170 => 51,  165 => 49,  161 => 48,  155 => 47,  149 => 46,  146 => 45,  142 => 44,  136 => 41,  124 => 36,  117 => 32,  113 => 30,  109 => 29,  105 => 28,  102 => 27,  98 => 26,  94 => 25,  87 => 21,  79 => 18,  72 => 14,  66 => 13,  58 => 10,  53 => 8,  47 => 7,  41 => 4,  32 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

@@ -113,7 +113,7 @@ class __TwigTemplate_f0cd66eef9c79d83a705a74df31679d87dc27753701726ccb4da9dae4d2
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["currency_switcher"] ?? null), "headers", []), "widget", []), "html", null, true);
         echo "</h3>
     </div>
-    <div class=\"wcml-section-content\">
+    <div class=\"wcml-section-content wcml-section-content__widget\">
         <div class=\"wcml-section-content-inner\">
             <table class=\"wcml-cs-list\" ";
         // line 36
@@ -238,26 +238,34 @@ class __TwigTemplate_f0cd66eef9c79d83a705a74df31679d87dc27753701726ccb4da9dae4d2
                 </tbody>
             </table>
             <div class=\"tablenav top clearfix\">
-                <button type=\"button\" class=\"button button-secondary alignright wcml_add_cs_sidebar js-wcml-cs-dialog-trigger\"
+                ";
+        // line 97
+        if ( !twig_test_empty($this->getAttribute(($context["currency_switcher"] ?? null), "available_sidebars", []))) {
+            // line 98
+            echo "                <button type=\"button\" class=\"button button-secondary alignright wcml_add_cs_sidebar js-wcml-cs-dialog-trigger\"
                         data-switcher=\"new_widget\"
                         data-dialog=\"wcml_currency_switcher_options_new_widget\"
                         data-content=\"wcml_currency_switcher_options_new_widget\"
                         data-height=\"800\" data-width=\"700\"
-                        ";
-        // line 102
-        if (twig_test_empty($this->getAttribute(($context["currency_switcher"] ?? null), "available_sidebars", []))) {
-            echo "style=\"display:none\"";
-        }
-        echo ">
+                >
                     <i class=\"otgs-ico-add otgs-ico-sm\"></i>
                     ";
-        // line 104
-        echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["currency_switcher"] ?? null), "headers", []), "add_widget", []), "html", null, true);
-        echo "
+            // line 105
+            echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["currency_switcher"] ?? null), "headers", []), "add_widget", []), "html", null, true);
+            echo "
                 </button>
-            </div>
+                ";
+        } else {
+            // line 108
+            echo "                    ";
+            echo $this->getAttribute($this->getAttribute(($context["currency_switcher"] ?? null), "headers", []), "no_sidebar", []);
+            echo "
+                ";
+        }
+        // line 110
+        echo "            </div>
             <input type=\"hidden\" id=\"wcml_delete_currency_switcher_nonce\" value=\"";
-        // line 107
+        // line 111
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute(($context["currency_switcher"] ?? null), "delete_nonce", []), "html", null, true);
         echo "\"/>
         </div>
@@ -265,14 +273,14 @@ class __TwigTemplate_f0cd66eef9c79d83a705a74df31679d87dc27753701726ccb4da9dae4d2
 </div>
 
 <div class=\"wcml-section\" id=\"currency-switcher-product\" ";
-        // line 112
+        // line 116
         if (twig_test_empty(($context["multi_currency_on"] ?? null))) {
             echo "style=\"display:none\"";
         }
         echo ">
     <div class=\"wcml-section-header\">
         <h3>";
-        // line 114
+        // line 118
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["currency_switcher"] ?? null), "headers", []), "product_page", []), "html", null, true);
         echo "</h3>
     </div>
@@ -282,13 +290,13 @@ class __TwigTemplate_f0cd66eef9c79d83a705a74df31679d87dc27753701726ccb4da9dae4d2
                 <li>
                     <label>
                         <input type=\"checkbox\" name=\"currency_switcher_product_visibility\" value=\"1\" ";
-        // line 121
+        // line 125
         if ($this->getAttribute(($context["currency_switcher"] ?? null), "visibility_on", [])) {
             echo "checked=\"checked\"";
         }
         echo ">
                         ";
-        // line 122
+        // line 126
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute(($context["currency_switcher"] ?? null), "visibility_label", []), "html", null, true);
         echo "
                     </label>
@@ -296,7 +304,7 @@ class __TwigTemplate_f0cd66eef9c79d83a705a74df31679d87dc27753701726ccb4da9dae4d2
             </ul>
             <div>
                 <table class=\"wcml-cs-list\" ";
-        // line 127
+        // line 131
         if ( !$this->getAttribute(($context["currency_switcher"] ?? null), "visibility_on", [])) {
             echo " style=\"display:none\" ";
         }
@@ -304,11 +312,11 @@ class __TwigTemplate_f0cd66eef9c79d83a705a74df31679d87dc27753701726ccb4da9dae4d2
                     <thead>
                         <tr>
                             <th>";
-        // line 130
+        // line 134
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["currency_switcher"] ?? null), "headers", []), "preview", []), "html", null, true);
         echo "</th>
                             <th>";
-        // line 131
+        // line 135
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["currency_switcher"] ?? null), "headers", []), "action", []), "html", null, true);
         echo "</th>
                         </tr>
@@ -319,7 +327,7 @@ class __TwigTemplate_f0cd66eef9c79d83a705a74df31679d87dc27753701726ccb4da9dae4d2
                                 <div class=\"wcml-currency-preview-wrapper\">
                                     <div id=\"wcml_curr_sel_preview\" class=\"wcml-currency-preview product\">
                                         ";
-        // line 139
+        // line 143
         echo $this->getAttribute($this->getAttribute(($context["currency_switcher"] ?? null), "preview", []), "product", [], "array");
         echo "
                                     </div>
@@ -328,7 +336,7 @@ class __TwigTemplate_f0cd66eef9c79d83a705a74df31679d87dc27753701726ccb4da9dae4d2
 
                             <td class=\"wcml-cs-actions\">
                                 <a title=\"";
-        // line 145
+        // line 149
         echo \WPML\Core\twig_escape_filter($this->env, $this->getAttribute($this->getAttribute(($context["currency_switcher"] ?? null), "headers", []), "edit", []), "html", null, true);
         echo "\"
                                    class=\"edit_currency_switcher js-wcml-cs-dialog-trigger\"
@@ -345,7 +353,8 @@ class __TwigTemplate_f0cd66eef9c79d83a705a74df31679d87dc27753701726ccb4da9dae4d2
             </div>
         </div>
     </div>
-</div>";
+</div>
+";
     }
 
     public function getTemplateName()
@@ -360,7 +369,7 @@ class __TwigTemplate_f0cd66eef9c79d83a705a74df31679d87dc27753701726ccb4da9dae4d2
 
     public function getDebugInfo()
     {
-        return array (  332 => 145,  323 => 139,  312 => 131,  308 => 130,  300 => 127,  292 => 122,  286 => 121,  276 => 114,  269 => 112,  261 => 107,  255 => 104,  248 => 102,  233 => 90,  229 => 89,  218 => 81,  207 => 72,  196 => 67,  190 => 66,  183 => 62,  179 => 61,  175 => 60,  170 => 58,  164 => 55,  156 => 50,  152 => 49,  147 => 46,  143 => 45,  136 => 41,  132 => 40,  128 => 39,  120 => 36,  113 => 32,  106 => 30,  98 => 25,  94 => 24,  87 => 20,  84 => 19,  69 => 17,  65 => 16,  60 => 14,  54 => 11,  44 => 4,  40 => 3,  32 => 1,);
+        return array (  340 => 149,  331 => 143,  320 => 135,  316 => 134,  308 => 131,  300 => 126,  294 => 125,  284 => 118,  277 => 116,  269 => 111,  266 => 110,  260 => 108,  254 => 105,  245 => 98,  243 => 97,  233 => 90,  229 => 89,  218 => 81,  207 => 72,  196 => 67,  190 => 66,  183 => 62,  179 => 61,  175 => 60,  170 => 58,  164 => 55,  156 => 50,  152 => 49,  147 => 46,  143 => 45,  136 => 41,  132 => 40,  128 => 39,  120 => 36,  113 => 32,  106 => 30,  98 => 25,  94 => 24,  87 => 20,  84 => 19,  69 => 17,  65 => 16,  60 => 14,  54 => 11,  44 => 4,  40 => 3,  32 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

@@ -32,7 +32,6 @@
         <div class="c-header_top">
           <div class="l-container">
             <p>Freeship nội thành cho đơn&nbsp;<span>từ 250.000đ</span> – Tỉnh&nbsp;<span>từ 400.000đ</span></p>
-            <?php echo do_shortcode('[currency_switcher]'); ?>
           </div>
         </div>
         <div class="c-header_bottom">
@@ -354,6 +353,11 @@
                     <ol>
                       <li><strong><?php _e('Change Language', 'storefront') ?></strong></li>
                       <?php do_action('wpml_add_language_selector'); ?>
+                      <li><strong><?php _e('Change Price', 'storefront') ?></strong></li>
+                      <?php echo do_action('wcml_currency_switcher', array(
+                              'format' => '%name%',
+                              'switcher_style' => 'wcml-horizontal-list'
+                            )); ?>
                     </ol>
                   </div>
                 </div>
