@@ -29,12 +29,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 $product_tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 if ( ! empty( $product_tabs ) ) : ?>
-	<div class="c-tab">
-		<div class="c-tab_top">
-			<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
-				<button class="button tablinks <?php echo $key == 'description' ? ' active' : '' ?>" onclick="openTab(event, '<?php echo esc_attr( $key ); ?>')"><?php echo wp_kses_post( apply_filters( 'woocommerce_product_' . $key . '_tab_title', $product_tab['title'], $key ) ); ?></button>
-			<?php endforeach; ?>
-		</div>
+		<div class="c-tab">
+			<div class="c-tab_top">
+				<button class="button tablinks active" onclick="openTab(event, 'description')">Mô tả</button>
+				<button class="button tablinks" onclick="openTab(event, 'parameter')">THÔNG SỐ</button>
+				<button class="button tablinks" onclick="openTab(event, 'insurane')">BẢO HÀNH</button>
+				<button class="button tablinks" onclick="openTab(event, 'reviews')">REVIEW (24)</button>
+			</div>
 		<div class="c-tab_content">
 		<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
 			<div class="c-tab_item" id="<?php echo esc_attr( $key ); ?>" style="<?php echo esc_attr( $key );  echo $key == 'description' ? 'display: block' : 'display: none' ?>;">
@@ -45,6 +46,12 @@ if ( ! empty( $product_tabs ) ) : ?>
 					?>
 			</div>
 			<?php endforeach; ?>
+			<div class="c-tab_item" id="parameter">
+					<h1>cccccccccccc</h1>
+			</div>
+			<div class="c-tab_item" id="insurane">
+					<h1>cccccccccxxxxxxxxccc</h1>
+			</div>
 		</div>
 	</div>
 	<?php do_action( 'woocommerce_product_after_tabs' ); ?>

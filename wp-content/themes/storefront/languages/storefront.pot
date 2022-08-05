@@ -1014,3 +1014,12 @@ msgstr "THÔNG TIN SẢN PHẨM"
 
 msgid "Power"
 msgstr "Chọn độ cận"
+
+msgid "PARAMETER"
+msgstr "THÔNG SỐ"
+
+msgid "INSURANCE"
+msgstr "BẢO HÀNH"
+
+msgid "REVIEW"
+msgstr "Đánh giá"
