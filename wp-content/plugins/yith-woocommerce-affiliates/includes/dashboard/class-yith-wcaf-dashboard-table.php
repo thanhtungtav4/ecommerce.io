@@ -79,7 +79,24 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Table' ) ) {
 				)
 			);
 
-			$this->columns    = apply_filters( "yith_wcaf_dashboard_{$this->args['items']}_table_columns", $args['columns'] );
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dashboard_$items_table_columns
+			 *
+			 * Filters the columns of the items table in the dashboard.
+			 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+			 *
+			 * @param array $columns Table columns.
+			 */
+			$this->columns = apply_filters( "yith_wcaf_dashboard_{$this->args['items']}_table_columns", $args['columns'] );
+
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dashboard_$items_table_collection
+			 *
+			 * Filters the objects to show in the table.
+			 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+			 *
+			 * @param YITH_WCAF_Abstract_Objects_Collection $collection Collection of objects to show in table rows.
+			 */
 			$this->collection = apply_filters( "yith_wcaf_dashboard_{$this->args['items']}_table_collection", $collection );
 		}
 
@@ -90,6 +107,16 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Table' ) ) {
 		 * @return bool Whether table contains passed items.
 		 */
 		public function contains( $what ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dashboard_$items_table_contains
+			 *
+			 * Filters whether the table contains a specific type of items.
+			 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+			 *
+			 * @param bool                      $contains        Whether the table contains a specific type of items or not.
+			 * @param string                    $what            Kind of items to check.
+			 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+			 */
 			return apply_filters( "yith_wcaf_dashboard_{$this->args['items']}_table_contains", $what === $this->args['items'], $what, $this );
 		}
 
@@ -117,13 +144,45 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Table' ) ) {
 			<div class="yith-wcaf-table-top-bar">
 				<form method="get">
 					<?php
+					/**
+					 * DO_ACTION: yith_wcaf_before_dashboard_table_topbar
+					 *
+					 * Allows to render some content before the table topbar in the dashboard.
+					 *
+					 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+					 */
 					do_action( 'yith_wcaf_before_dashboard_table_topbar', $this );
+
+					/**
+					 * DO_ACTION: yith_wcaf_before_dashboard_$items_table_topbar
+					 *
+					 * Allows to render some content before the table topbar in the dashboard.
+					 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+					 *
+					 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+					 */
 					do_action( "yith_wcaf_before_dashboard_{$this->args['items']}_table_topbar", $this );
 
 					$this->render_filters();
 					$this->render_table_options();
 
+					/**
+					 * DO_ACTION: yith_wcaf_after_dashboard_$items_table_topbar
+					 *
+					 * Allows to render some content after the table topbar in the dashboard.
+					 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+					 *
+					 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+					 */
 					do_action( "yith_wcaf_after_dashboard_{$this->args['items']}_table_topbar", $this );
+
+					/**
+					 * DO_ACTION: yith_wcaf_after_dashboard_table_topbar
+					 *
+					 * Allows to render some content after the table topbar in the dashboard.
+					 *
+					 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+					 */
 					do_action( 'yith_wcaf_after_dashboard_table_topbar', $this );
 					?>
 					<?php wp_nonce_field( 'filter_items', 'security', false ); ?>
@@ -168,7 +227,23 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Table' ) ) {
 			?>
 			<div class="table-options pull-right">
 				<?php
+				/**
+				 * DO_ACTION: yith_wcaf_before_dashboard_table_options
+				 *
+				 * Allows to render some content before the table options in the dashboard.
+				 *
+				 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+				 */
 				do_action( 'yith_wcaf_before_dashboard_table_options', $this );
+
+				/**
+				 * DO_ACTION: yith_wcaf_before_dashboard_$items_table_options
+				 *
+				 * Allows to render some content before the table options in the dashboard.
+				 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+				 *
+				 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+				 */
 				do_action( "yith_wcaf_before_dashboard_{$this->args['items']}_table_options", $this );
 
 				if ( $this->args['pagination'] ) :
@@ -182,7 +257,23 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Table' ) ) {
 					<?php
 				endif;
 
+				/**
+				 * DO_ACTION: yith_wcaf_after_dashboard_$items_table_options
+				 *
+				 * Allows to render some content after the table options in the dashboard.
+				 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+				 *
+				 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+				 */
 				do_action( "yith_wcaf_after_dashboard_{$this->args['items']}_table_options", $this );
+
+				/**
+				 * DO_ACTION: yith_wcaf_after_dashboard_table_options
+				 *
+				 * Allows to render some content after the table options in the dashboard.
+				 *
+				 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+				 */
 				do_action( 'yith_wcaf_after_dashboard_table_options', $this );
 				?>
 			</div>
@@ -193,7 +284,23 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Table' ) ) {
 		 * Starts table tab
 		 */
 		protected function start_table() {
+			/**
+			 * DO_ACTION: yith_wcaf_before_dashboard_table
+			 *
+			 * Allows to render some content before the table in the dashboard.
+			 *
+			 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+			 */
 			do_action( 'yith_wcaf_before_dashboard_table', $this );
+
+			/**
+			 * DO_ACTION: yith_wcaf_before_dashboard_$items_table
+			 *
+			 * Allows to render some content before the table in the dashboard.
+			 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+			 *
+			 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+			 */
 			do_action( "yith_wcaf_before_dashboard_{$this->args['items']}_table", $this );
 			?>
 			<table id="yith_wcaf_dashboard_<?php echo esc_attr( $this->args['items'] ); ?>_table" class="shop_table shop_table_responsive yith-wcaf-table">
@@ -270,6 +377,16 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Table' ) ) {
 			$renderer = "render_{$field}_column";
 
 			if ( has_action( "yith_wcaf_dashboard_{$this->args['items']}_table_render_{$field}_column" ) ) {
+				/**
+				 * DO_ACTION: yith_wcaf_dashboard_$items_table_render_$field_column
+				 *
+				 * Allows to render some content for the field column in the dashboard table.
+				 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+				 * <code>$field</code> will be replaced with the column key.
+				 *
+				 * @param YITH_WCAF_Abstract_Object $object          Row object.
+				 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+				 */
 				do_action( "yith_wcaf_dashboard_{$this->args['items']}_table_render_{$field}_column", $object, $this );
 			} elseif ( method_exists( $this, $renderer ) ) {
 				$this->$renderer( $object );
@@ -293,6 +410,14 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Table' ) ) {
 		 * @param string  $field  Column key.
 		 */
 		protected function render_empty_cell( $object, $field ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dashboard_$items_table_empty_cell
+			 *
+			 * Filters the content of the empty cell in the dashboard tables.
+			 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+			 *
+			 * @param string $label Label for the empty cell in the table.
+			 */
 			$empty = apply_filters(
 				"yith_wcaf_dashboard_{$this->args['items']}_table_empty_cell",
 				esc_html_x( 'N/A', '[FRONTEND] Default column content for dashboard tables', 'yith-woocommerce-affiliates' ),
@@ -310,7 +435,23 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Table' ) ) {
 			?>
 			</table>
 			<?php
+			/**
+			 * DO_ACTION: yith_wcaf_after_dashboard_$items_table
+			 *
+			 * Allows to render some content after the table in the dashboard.
+			 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+			 *
+			 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+			 */
 			do_action( "yith_wcaf_after_dashboard_{$this->args['items']}_table", $this );
+
+			/**
+			 * DO_ACTION: yith_wcaf_after_dashboard_table
+			 *
+			 * Allows to render some content after the table in the dashboard.
+			 *
+			 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+			 */
 			do_action( 'yith_wcaf_after_dashboard_table', $this );
 		}
 
@@ -321,12 +462,44 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Table' ) ) {
 			?>
 			<div class="yith-wcaf-table-bottom-bar">
 				<?php
+				/**
+				 * DO_ACTION: yith_wcaf_before_dashboard_table_bottmbar
+				 *
+				 * Allows to render some content before the table bottombar in the dashboard.
+				 *
+				 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+				 */
 				do_action( 'yith_wcaf_before_dashboard_table_bottmbar', $this );
+
+				/**
+				 * DO_ACTION: yith_wcaf_before_dashboard_$items_table_bottmbar
+				 *
+				 * Allows to render some content before the table bottombar in the dashboard.
+				 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+				 *
+				 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+				 */
 				do_action( "yith_wcaf_before_dashboard_{$this->args['items']}_table_bottmbar", $this );
 
 				$this->render_pagination();
 
+				/**
+				 * DO_ACTION: yith_wcaf_after_dashboard_$items_table_bottmbar
+				 *
+				 * Allows to render some content after the table bottombar in the dashboard.
+				 * <code>$item</code> will be replaced with the item that is being displayed in the table.
+				 *
+				 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+				 */
 				do_action( "yith_wcaf_after_dashboard_{$this->args['items']}_table_bottmbar", $this );
+
+				/**
+				 * DO_ACTION: yith_wcaf_after_dashboard_table_bottmbar
+				 *
+				 * Allows to render some content after the table bottombar in the dashboard.
+				 *
+				 * @param YITH_WCAF_Dashboard_Table $dashboard_table Dashboard table object.
+				 */
 				do_action( 'yith_wcaf_after_dashboard_table_bottmbar', $this );
 				?>
 			</div>

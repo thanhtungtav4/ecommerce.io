@@ -32,54 +32,67 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'This product is currently out of stock and unavailable.', 'woocommerce' ) ) ); ?></p>
 	<?php else : ?>
 		<table class="variations" cellspacing="0" role="presentation">
-			<tbody>
+			<tbody style="display: flex;flex-direction: column;">
 				<?php
 					$i= 0;
 					foreach ( $attributes as $attribute_name => $options ) :
 				?>
 					<?php
-						 	if( wc_attribute_label( $attribute_name ) == 'Left Eye' ||
-									wc_attribute_label( $attribute_name ) == 'Right Eye'||
-									wc_attribute_label( $attribute_name ) == 'Mắt Trái' ||
-									wc_attribute_label( $attribute_name ) == 'Mắt Phải'  ) : $i++;?>
-										<?php if($i == 1) : ?>
-											<tr class="view" onclick="toggleVariations()">
-												<th class="is_toggle"><span><?php _e('Power', 'storefront') ?></span>
-												<span class="js_up d-none">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.8285 14.8284L16.2427 13.4142L12.0001 9.17161L7.75745 13.4142L9.17166 14.8285L12.0001 12L14.8285 14.8284Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1 19C1 21.2091 2.79086 23 5 23H19C21.2091 23 23 21.2091 23 19V5C23 2.79086 21.2091 1 19 1H5C2.79086 1 1 2.79086 1 5V19ZM5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21Z" fill="currentColor"/></svg>
-												</span >
-												<span class="js_down">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.75739 10.5858L9.1716 9.17154L12 12L14.8284 9.17157L16.2426 10.5858L12 14.8284L7.75739 10.5858Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5C1 2.79086 2.79086 1 5 1H19C21.2091 1 23 2.79086 23 5V19C23 21.2091 21.2091 23 19 23H5C2.79086 23 1 21.2091 1 19V5ZM5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3Z" fill="currentColor"/></svg>
-												</span>
-											</th>
-											</tr>
-										<?php endif;  ?>
-										<tr class="fold js_hide">
-											<th class="label"><label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label></th>
-											<td class="value">
-												<?php
-													wc_dropdown_variation_attribute_options(
-														array(
-															'options'   => $options,
-															'attribute' => $attribute_name,
-															'product'   => $product,
-														)
-													);
-													echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
-												?>
-											</td>
-										</tr>
-										<?php if($i++ > 1) : ?>
-											<th class="label"><a href="#">Hướng dẫn tính độ cận – loạn</a> </th>
-										<?php endif;  ?>
+					if( $attribute_name == 'pa_mat-trai' ||
+						$attribute_name == 'pa_mat-phai' ) : $i++;?>
+								<?php if($i == 1) : ?>
+									<tr class="view" onclick="toggleVariations()">
+										<th class="is_toggle"><span><?php _e('Power', 'storefront') ?></span>
+											<span class="js_up d-none">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.8285 14.8284L16.2427 13.4142L12.0001 9.17161L7.75745 13.4142L9.17166 14.8285L12.0001 12L14.8285 14.8284Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1 19C1 21.2091 2.79086 23 5 23H19C21.2091 23 23 21.2091 23 19V5C23 2.79086 21.2091 1 19 1H5C2.79086 1 1 2.79086 1 5V19ZM5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21Z" fill="currentColor"/></svg>
+											</span >
+											<span class="js_down">
+												<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.75739 10.5858L9.1716 9.17154L12 12L14.8284 9.17157L16.2426 10.5858L12 14.8284L7.75739 10.5858Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M1 5C1 2.79086 2.79086 1 5 1H19C21.2091 1 23 2.79086 23 5V19C23 21.2091 21.2091 23 19 23H5C2.79086 23 1 21.2091 1 19V5ZM5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3Z" fill="currentColor"/></svg>
+											</span>
+										</th>
+									</tr>
+								<?php endif;  ?>
+								<tr class="fold js_hide">
+									<th class="label"><label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label></th>
+									<td class="value">
+										<?php
+											wc_dropdown_variation_attribute_options(
+												array(
+													'options'   => $options,
+													'attribute' => $attribute_name,
+													'product'   => $product,
+												)
+											);
+											echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+										?>
+									</td>
+								</tr>
+								<?php if($i++ > 1) : ?>
+									<th class="label"><a href="#">Hướng dẫn tính độ cận – loạn</a> </th>
+								<?php endif;  ?>
+					
+					<?php elseif($attribute_name == 'pa_mau-sac') : ?>
+						<tr style="order: 3;">
+							<th class="label <?php echo 'is_'.$attribute_name ?>">
+								<?php _e("Contact lens' patterns", 'storefront')  ?>
+							</th>
+							<td class="value">
+								<?php
+									wc_dropdown_variation_attribute_options(
+										array(
+											'options'   => $options,
+											'attribute' => $attribute_name,
+											'product'   => $product,
+										)
+									);
+									echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+								?>
+							</td>
+						</tr>
 					<?php else : ?>
 						<tr>
 							<th class="label <?php echo 'is_'.$attribute_name ?>">
-								<?php if( wc_attribute_label( $attribute_name ) == 'Màu Sắc') : ?>
-									<?php _e("Contact lens' patterns", 'storefront') ?>
-								<?php else : ?>
-									<?php echo wc_attribute_label( $attribute_name );  ?>
-								<?php endif ; ?>
+								<?php echo wc_attribute_label( $attribute_name );  ?>
 							</th>
 							<td class="value">
 								<?php

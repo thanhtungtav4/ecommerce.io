@@ -25,7 +25,7 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 		 * @const string
 		 * @since 2.0.0
 		 */
-		const VERSION = '2.4.0';
+		const VERSION = '2.5.0';
 
 		/**
 		 * Plugin version
@@ -59,6 +59,11 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 		 * @since 1.0.0
 		 */
 		public function __construct() {
+			/**
+			 * DO_ACTION: yith_wcaf_startup
+			 *
+			 * Allows to trigger some action when initializing the plugin.
+			 */
 			do_action( 'yith_wcaf_startup' );
 
 			// start by requiring and initializing dependencies.
@@ -101,6 +106,11 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 			// register plugin script.
 			wp_register_script( 'yith-wcaf-shortcodes', YITH_WCAF_URL . "assets/js/yith-wcaf-shortcodes.bundle{$suffix}.js", array( 'jquery', 'jquery-blockui', 'jquery-ui-datepicker', 'selectWoo', 'wc-country-select' ), self::VERSION, true );
 
+			/**
+			 * DO_ACTION: yith_wcaf_scripts_registered
+			 *
+			 * Allows to trigger some action when the plugin scripts are registered.
+			 */
 			do_action( 'yith_wcaf_scripts_registered' );
 		}
 
@@ -113,6 +123,11 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 		public function enqueue_scripts() {
 			global $wp, $post;
 
+			/**
+			 * DO_ACTION: yith_wcaf_before_style_enqueue
+			 *
+			 * Allows to trigger some actions before enqueueing the plugin styles.
+			 */
 			do_action( 'yith_wcaf_before_style_enqueue' );
 			wp_enqueue_style( 'yith-wcaf' );
 
@@ -121,10 +136,24 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 			 *
 			 * @since 1.6.5
 			 */
+			/**
+			 * APPLY_FILTERS: yith_wcaf_enqueue_fontello_stylesheet
+			 *
+			 * Allow to filter posts where fontello stylesheet should be loaded; by default file will be loaded only on pages containing [yith_wcaf_link_generator] shortcode.
+			 *
+			 * @param bool    $should_include Whether stylesheet should be enqueued.
+			 * @param WP_Post $post           Global post.
+			 * @param WP      $wp             Global wp.
+			 */
 			if ( isset( $wp->query_vars['generate-link'] ) || apply_filters( 'yith_wcaf_enqueue_fontello_stylesheet', ( $post instanceof WP_Post && strpos( $post->post_content, '[yith_wcaf_link_generator' ) !== false ), $post, $wp ) ) {
 				wp_enqueue_style( 'yith-wcaf-fontello' );
 			}
 
+			/**
+			 * DO_ACTION: yith_wcaf_before_script_enqueue
+			 *
+			 * Allows to trigger some actions before enqueueing the plugin scripts.
+			 */
 			do_action( 'yith_wcaf_before_script_enqueue' );
 
 			wp_enqueue_script( 'yith-wcaf-shortcodes' );
@@ -138,6 +167,13 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 		 * @since 2.0.0
 		 */
 		public function get_localize() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_global_localize
+			 *
+			 * Filters the array with the data needed for the main plugin script.
+			 *
+			 * @param array $localize_data Array with data for main script.
+			 */
 			return apply_filters(
 				'yith_wcaf_global_localize',
 				array(
@@ -343,8 +379,17 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 				return false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_get_referral_url
+			 *
+			 * Filters affiliate referral url.
+			 *
+			 * @param string $referral_url Affiliate referral url.
+			 * @param string $ref_name     Name of the parameter used for referral token in url.
+			 * @param string $token        Affiliate token.
+			 * @param string $base_url     Url used as a base for referral url generation.
+			 */
 			return apply_filters( 'yith_wcaf_get_referral_url', esc_url( add_query_arg( $ref_name, $token, $base_url ) ), $ref_name, $token, $base_url );
-
 		}
 
 		/**

@@ -45,6 +45,13 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Profile' ) ) {
 		 * @return array Supported field types
 		 */
 		public static function get_supported_field_types() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliates_profile_supported_field_types
+			 *
+			 * Filters the supported field types.
+			 *
+			 * @param array $field_types Supported field types.
+			 */
 			return apply_filters(
 				'yith_wcaf_affiliates_profile_supported_field_types',
 				array(
@@ -69,6 +76,13 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Profile' ) ) {
 		 * @return array Supported field validations
 		 */
 		public static function get_supported_field_validations() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliates_profile_supported_field_validations
+			 *
+			 * Filters the supported field validations.
+			 *
+			 * @param array $field_validations Supported field validations.
+			 */
 			return apply_filters(
 				'yith_wcaf_affiliates_profile_supported_field_validations',
 				array(
@@ -86,6 +100,13 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Profile' ) ) {
 		 * @return array Supported field locations
 		 */
 		public static function get_supported_show_locations() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliates_profile_supported_show_locations
+			 *
+			 * Filters the supported field locations.
+			 *
+			 * @param array $field_locations Supported field locations.
+			 */
 			return apply_filters(
 				'yith_wcaf_affiliates_profile_supported_show_locations',
 				array(
@@ -129,11 +150,41 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Profile' ) ) {
 			self::maybe_open_form_container();
 
 			foreach ( $fields as $field_key => $field ) {
-				$field_name        = self::get_field_name( $field_key );
-				$field['id']       = self::get_field_id( $field_key );
-				$field_default     = self::get_field_value( $field_key, $affiliate );
-				$field['type']     = apply_filters( "yith_wcaf_{$field_key}_type", $field['type'], $field );
-				$field['label']    = apply_filters( "yith_wcaf_{$field_key}_label", $field['label'], $field );
+				$field_name    = self::get_field_name( $field_key );
+				$field['id']   = self::get_field_id( $field_key );
+				$field_default = self::get_field_value( $field_key, $affiliate );
+
+				/**
+				 * APPLY_FILTERS: yith_wcaf_$field_key_type
+				 *
+				 * Filters the field type.
+				 * <code>$field_key</code> will be replaced with the key for each field.
+				 *
+				 * @param string $field_type Field type.
+				 * @param array  $field      Field.
+				 */
+				$field['type'] = apply_filters( "yith_wcaf_{$field_key}_type", $field['type'], $field );
+
+				/**
+				 * APPLY_FILTERS: yith_wcaf_$field_key_label
+				 *
+				 * Filters the field label.
+				 * <code>$field_key</code> will be replaced with the key for each field.
+				 *
+				 * @param string $field_label Field label.
+				 * @param array  $field       Field.
+				 */
+				$field['label'] = apply_filters( "yith_wcaf_{$field_key}_label", $field['label'], $field );
+
+				/**
+				 * APPLY_FILTERS: yith_wcaf_$field_key_required
+				 *
+				 * Filters whether the field will be required.
+				 * <code>$field_key</code> will be replaced with the key for each field.
+				 *
+				 * @param bool  $is_field_required Whether the field is required or not.
+				 * @param array $field             Field.
+				 */
 				$field['required'] = apply_filters( "yith_wcaf_{$field_key}_required", $field['required'], $field );
 
 				if ( ! empty( $field['error_message'] ) ) {
@@ -243,6 +294,15 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Profile' ) ) {
 				$value = $user ? $user->$field_key : $value;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_$field_key_value
+			 *
+			 * Filters the field value.
+			 * <code>$field_key</code> will be replaced with the key for each field.
+			 *
+			 * @param string              $field_value Field value.
+			 * @param YITH_WCAF_Affiliate $affiliate   Affiliate object.
+			 */
 			return apply_filters( "yith_wcaf_{$field_key}_value", $value, $affiliate );
 		}
 
@@ -340,6 +400,13 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Profile' ) ) {
 				$fields = array_map( array( self::class, 'get_formatted_field' ), $fields );
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_profile_fields
+			 *
+			 * Filters the fields in the affiliate's profile.
+			 *
+			 * @param array $fields Fields.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_profile_fields', $fields );
 		}
 
@@ -362,6 +429,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Profile' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_enabled_profile_fields
+			 *
+			 * Filters the enabled fields in the affiliate's profile.
+			 *
+			 * @param array $fields Enabled fields.
+			 * @param array $args   Array with arguments.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_enabled_profile_fields', $fields, $args );
 		}
 
@@ -386,6 +461,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Profile' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_become_an_affiliate_profile_fields
+			 *
+			 * Filters the fields to show in the form to become an affiliate.
+			 *
+			 * @param array $fields Fields.
+			 * @param array $args   Array with arguments.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_become_an_affiliate_profile_fields', $fields, $args );
 		}
 
@@ -410,6 +493,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Profile' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_settings_profile_fields
+			 *
+			 * Filters the fields to show in the settings form.
+			 *
+			 * @param array $fields Fields.
+			 * @param array $args   Array with arguments.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_settings_profile_fields', $fields, $args );
 		}
 
@@ -664,8 +755,6 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Profile' ) ) {
 				);
 
 				unset( self::$profile_fields[ $field_name ] );
-
-				self::sync_fields();
 			}
 
 			self::sync_fields();
@@ -788,7 +877,13 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Profile' ) ) {
 		 * @return void.
 		 */
 		public static function restore_default_fields() {
-			self::$profile_fields = self::maybe_read_profile_fields( true );
+			self::maybe_read_profile_fields( true );
+
+			// avoid to save defaults if array is empty.
+			if ( empty( self::$profile_fields ) ) {
+				return;
+			}
+
 			self::sync_fields();
 		}
 

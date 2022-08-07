@@ -21,5 +21,18 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 ?>
 
 <div class="dashboard-title">
-	<h3><?php echo esc_html( apply_filters( 'yith_wcaf_dashboard_title', $title, $section, $atts ) ); ?></h3>
+	<h3>
+		<?php
+		/**
+		 * APPLY_FILTERS: yith_wcaf_dashboard_title
+		 *
+		 * Filters the section title in the Affiliate Dashboard.
+		 *
+		 * @param string $title   Title.
+		 * @param string $section Section.
+		 * @param array  $atts    Array with section attributes.
+		 */
+		echo esc_html( apply_filters( 'yith_wcaf_dashboard_title', $title, $section, $atts ) );
+		?>
+	</h3>
 </div>

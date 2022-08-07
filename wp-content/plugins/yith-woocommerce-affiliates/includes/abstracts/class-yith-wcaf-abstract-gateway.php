@@ -113,6 +113,14 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Gateway' ) ) {
 		 * @return string Gateway name.
 		 */
 		public function get_name() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_$id_payment_gateway_name
+			 *
+			 * Filters the name of the payment gateway.
+			 * <code>$id</code> will be replaced with the id of the payment gateway.
+			 *
+			 * @param string $name Name of the payment gateway.
+			 */
 			return apply_filters( "yith_wcaf_{$this->get_id()}_payment_gateway_name", $this->name );
 		}
 
@@ -160,6 +168,17 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Gateway' ) ) {
 		 * @return bool Whether current gateway supports capability.
 		 */
 		public function supports( $capability ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_$id_gateway_supports_$capability
+			 *
+			 * Filters whether the gateway supports a specific capability.
+			 * <code>$id</code> will be replaced with the id of the payment gateway.
+			 * <code>$capability</code> will be replaced with the capability to test.
+			 *
+			 * @param bool                       $suports    Whether the gateway supports a specific capability or not.
+			 * @param YITH_WCAF_Abstract_Gateway $gateway    Gateway object.
+			 * @param string                     $gateway_id Gateway id.
+			 */
 			return apply_filters( "yith_wcaf_{$this->id}_gateway_supports_{$capability}", ! empty( $this->supports[ $capability ] ), $this, $this->id );
 		}
 
@@ -277,6 +296,17 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Gateway' ) ) {
 		 * @return bool Whether affiliate can be paid with this gateway or not.
 		 */
 		public function can_pay_affiliate( $affiliate ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_$id_gateway_can_pay_affiliate
+			 *
+			 * Filters whether the gateway can be used to pay an affiliate.
+			 * <code>$id</code> will be replaced with the id of the payment gateway.
+			 *
+			 * @param bool                       $can_be_used Whether the gateway can be used to pay an affiliate or not.
+			 * @param YITH_WCAF_Affiliate        $affiliate   Affiliate object.
+			 * @param YITH_WCAF_Abstract_Gateway $gateway     Gateway object.
+			 * @param string                     $gateway_id  Gateway id.
+			 */
 			return apply_filters( "yith_wcaf_{$this->id}_gateway_can_pay_affiliate", true, $affiliate, $this, $this->id );
 		}
 
@@ -388,6 +418,16 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Gateway' ) ) {
 				return false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_$id_gateway_fields
+			 *
+			 * Filters the fields defined for the payment gateway.
+			 * <code>$id</code> will be replaced with the id of the payment gateway.
+			 *
+			 * @param array                      $fields     Gateway fields.
+			 * @param YITH_WCAF_Abstract_Gateway $gateway    Gateway object.
+			 * @param string                     $gateway_id Gateway id.
+			 */
 			return apply_filters( "yith_wcaf_{$this->id}_gateway_fields", $this->fields, $this, $this->id );
 		}
 
@@ -404,7 +444,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Gateway' ) ) {
 				return array();
 			}
 
-			return yith_wcaf_parse_settings( $fields, $this->fields );
+			return yith_wcaf_parse_settings( $fields, $this->get_fields() );
 		}
 
 		/* === OPTIONS HANDLING === */
@@ -435,6 +475,17 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Gateway' ) ) {
 				return $default;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_$id_option
+			 *
+			 * Filters the value of a specific option for the gateway.
+			 * <code>$id</code> will be replaced with the id of the payment gateway.
+			 *
+			 * @param string                     $value      Option value.
+			 * @param array                      $option     Option.
+			 * @param YITH_WCAF_Abstract_Gateway $gateway    Gateway object.
+			 * @param string                     $gateway_id Gateway id.
+			 */
 			return apply_filters( "yith_wcaf_{$this->id}_option", $options[ $option ], $option, $this, $this->id );
 		}
 
@@ -478,6 +529,16 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Gateway' ) ) {
 				'enabled' => false,
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_$id_gateway_settings
+			 *
+			 * Filters the gateway settings.
+			 * <code>$id</code> will be replaced with the id of the payment gateway.
+			 *
+			 * @param array                      $options    Array of options.
+			 * @param YITH_WCAF_Abstract_Gateway $gateway    Gateway object.
+			 * @param string                     $gateway_id Gateway id.
+			 */
 			$this->options = apply_filters( $option_name, wp_parse_args( $options, $defaults ), $this, $this->id );
 
 			return $this->options;

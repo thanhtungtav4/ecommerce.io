@@ -85,6 +85,15 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Coupons' ) ) {
 			$coupon->save_meta_data();
 
 			if ( $new_value && (int) $prev_value !== $new_value ) {
+				/**
+				 * DO_ACTION: yith_wcaf_affiliate_coupon_saved
+				 *
+				 * Allows to trigger when saving the affiliate data in the coupon.
+				 *
+				 * @param WC_Coupon $coupon     Coupon object.
+				 * @param int       $new_value  New value to save.
+				 * @param string    $prev_value Previous value saved
+				 */
 				do_action( 'yith_wcaf_affiliate_coupon_saved', $coupon, $new_value, $prev_value );
 			}
 

@@ -117,6 +117,13 @@ if ( ! class_exists( 'YITH_WCAF_Payments_Admin_Panel' ) ) {
 		 * @return string Current tab url.
 		 */
 		public function get_tab_url( $args = array() ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_admin_tab_url
+			 *
+			 * Filters the url for the current tab in the backend.
+			 *
+			 * @param string $url Tab url.
+			 */
 			return apply_filters( 'yith_wcaf_admin_tab_url', add_query_arg( $args, YITH_WCAF_Admin()->get_tab_url( 'commissions', 'commissions-payments', $args ) ) );
 		}
 

@@ -616,6 +616,11 @@ And your are ready to go.
 
 == Changelog ==
 
+= 2.0.6 - 31-07-2022 =
+
+* Fix: dependency script updated for product page settings save issue
+* Update: `is_admin()` check removed for some theme support
+
 = 2.0.5 - 20-07-2022 =
 
 * Add: `woo_variation_swatches_html` filter to modify swatches output

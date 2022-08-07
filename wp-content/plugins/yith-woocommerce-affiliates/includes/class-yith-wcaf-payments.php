@@ -122,6 +122,13 @@ if ( ! class_exists( 'YITH_WCAF_Payments' ) ) {
 		 */
 		public static function get_available_statuses() {
 			if ( empty( self::$available_statuses ) ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_payments_statuses
+				 *
+				 * Filters the available statuses for the payments.
+				 *
+				 * @param array $available_statuses Available statuses.
+				 */
 				self::$available_statuses = apply_filters(
 					'yith_wcaf_payments_statuses',
 					array(
@@ -175,6 +182,14 @@ if ( ! class_exists( 'YITH_WCAF_Payments' ) ) {
 				$label = isset( $statuses[ $status ] ) ? $statuses[ $status ]['name'] : '';
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_payments_status_name
+			 *
+			 * Filters the name of the payment status.
+			 *
+			 * @param string $label  Status name.
+			 * @param string $status Status.
+			 */
 			return apply_filters( 'yith_wcaf_payments_status_name', $label, $status );
 		}
 
@@ -186,6 +201,13 @@ if ( ! class_exists( 'YITH_WCAF_Payments' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function get_inactive_statuses() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_inactive_payment_statuses
+			 *
+			 * Filters the inactive statuses for payments.
+			 *
+			 * @param array $inactive_statuses Array of inactive statuses.
+			 */
 			return apply_filters( 'yith_wcaf_inactive_payment_statuses', self::$inactive_statuses );
 		}
 
@@ -197,6 +219,13 @@ if ( ! class_exists( 'YITH_WCAF_Payments' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function get_active_statuses() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_active_payment_statuses
+			 *
+			 * Filters the active statuses for payments.
+			 *
+			 * @param array $active_statuses Array of active statuses.
+			 */
 			return apply_filters( 'yith_wcaf_active_payment_statuses', self::$active_statuses );
 		}
 
@@ -208,6 +237,13 @@ if ( ! class_exists( 'YITH_WCAF_Payments' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function get_pending_statuses() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_pending_payment_statuses
+			 *
+			 * Filters the pending statuses for payments.
+			 *
+			 * @param array $pending_statuses Array of pending statuses.
+			 */
 			return apply_filters( 'yith_wcaf_pending_payment_statuses', self::$pending_statuses );
 		}
 
@@ -219,7 +255,14 @@ if ( ! class_exists( 'YITH_WCAF_Payments' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function get_completed_statuses() {
-			return apply_filters( 'yith_wcaf_pending_payment_statuses', self::$pending_statuses );
+			/**
+			 * APPLY_FILTERS: yith_wcaf_completed_payment_statuses
+			 *
+			 * Filters the completed statuses for payments.
+			 *
+			 * @param array $completed_statuses Array of completed statuses.
+			 */
+			return apply_filters( 'yith_wcaf_completed_payment_statuses', self::$completed_statuses );
 		}
 
 		/**
@@ -230,6 +273,13 @@ if ( ! class_exists( 'YITH_WCAF_Payments' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function get_payment_statuses() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_paid_payment_statuses
+			 *
+			 * Filters the paid statuses for payments.
+			 *
+			 * @param array $payment_statuses Array of paid statuses.
+			 */
 			return apply_filters( 'yith_wcaf_paid_payment_statuses', self::$payment_statuses );
 		}
 
@@ -242,6 +292,13 @@ if ( ! class_exists( 'YITH_WCAF_Payments' ) ) {
 		 * ]
 		 */
 		public static function get_available_status_changes() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_available_payment_status_changes
+			 *
+			 * Filters the available status changes for payments.
+			 *
+			 * @param array $available_status_changes Array of valid status changes.
+			 */
 			return apply_filters( 'yith_wcaf_available_payment_status_changes', self::$available_status_changes );
 		}
 
@@ -452,6 +509,14 @@ if ( ! class_exists( 'YITH_WCAF_Payments' ) ) {
 				}
 			}
 
+			/**
+			 * DO_ACTION: yith_wcaf_after_register_payment
+			 *
+			 * Allows to trigger some action after the payments has been registered.
+			 *
+			 * @param array  $payments   Array of payments.
+			 * @param string $gateway_id Gateway id to use for payments.
+			 */
 			do_action( 'yith_wcaf_after_register_payment', $payments, $gateway_id );
 
 			return array(

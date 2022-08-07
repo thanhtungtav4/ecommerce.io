@@ -102,6 +102,13 @@ if ( ! class_exists( 'YITH_WCAF_Shortcodes' ) ) {
 		public static function get_shortcodes( $context = 'view' ) {
 			// init shortcodes for the plugin.
 			if ( empty( self::$shortcodes ) ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_shortcodes
+				 *
+				 * Filters the available shortcodes.
+				 *
+				 * @param array $shortcodes Available shortcodes.
+				 */
 				self::$shortcodes = apply_filters(
 					'yith_wcaf_shortcodes',
 					array(

@@ -114,6 +114,15 @@ if ( ! class_exists( 'YITH_WCAF_Show_If_Affiliate_Shortcode' ) ) {
 					$render_content = ! $render_content;
 				}
 
+				/**
+				 * APPLY_FILTERS: yith_wcaf_show_if_affiliate_result
+				 *
+				 * Filters whether to render the content when using <code>yith_wcaf_show_if_affiliate</code> shortcode.
+				 *
+				 * @param bool   $render_content Whether to render content or not.
+				 * @param string $rule           Rule to render content.
+				 * @param bool   $not            Whether to render content or not
+				 */
 				$render_content = apply_filters( 'yith_wcaf_show_if_affiliate_result', $render_content, $rule, $not );
 
 				// if at least one rule matched, break and show content.
@@ -127,6 +136,13 @@ if ( ! class_exists( 'YITH_WCAF_Show_If_Affiliate_Shortcode' ) ) {
 				return '';
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_show_if_affiliate_content_callbacks
+			 *
+			 * Filters the content callback when using <code>yith_wcaf_show_if_affiliate</code> shortcode.
+			 *
+			 * @param array $shortcode_callbacks Shortcode callbacks.
+			 */
 			$callbacks = apply_filters(
 				'yith_wcaf_show_if_affiliate_content_callbacks',
 				array(

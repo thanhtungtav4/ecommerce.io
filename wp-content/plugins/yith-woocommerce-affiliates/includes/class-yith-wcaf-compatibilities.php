@@ -83,6 +83,13 @@ if ( ! class_exists( 'YITH_WCAF_Compatibilities' ) ) {
 				);
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_compatibilities
+			 *
+			 * Filters the available plugin compatibilities.
+			 *
+			 * @param array $compatibilities Available compatibilities.
+			 */
 			return apply_filters( 'yith_wcaf_compatibilities', self::$compatibilities );
 		}
 	}

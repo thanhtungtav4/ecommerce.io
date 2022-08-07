@@ -332,6 +332,13 @@ if ( ! function_exists( 'yith_wcaf_get_promote_methods' ) ) {
 	 * @since 1.2.5
 	 */
 	function yith_wcaf_get_promote_methods() {
+		/**
+		 * APPLY_FILTERS: yith_wcaf_how_promote_methods
+		 *
+		 * Filters the promotional methods options.
+		 *
+		 * @param array $promotional_methods Array of "How to promote" method options.
+		 */
 		return apply_filters(
 			'yith_wcaf_how_promote_methods',
 			array(
@@ -391,8 +398,22 @@ if ( ! function_exists( 'yith_wcaf_number_format' ) ) {
 	 * @since 1.7.9
 	 */
 	function yith_wcaf_number_format( $value, $decimals = 2 ) {
+		/**
+		 * APPLY_FILTERS: yith_wcaf_dec_point
+		 *
+		 * Filters the decimal separator.
+		 *
+		 * @param string $decimal_separator Decimal separator.
+		 */
+		$dec_point = apply_filters( 'yith_wcaf_dec_point', '.' );
 
-		$dec_point     = apply_filters( 'yith_wcaf_dec_point', '.' );
+		/**
+		 * APPLY_FILTERS: yith_wcaf_thousands_sep
+		 *
+		 * Filters the thousands separator.
+		 *
+		 * @param string $thousands_separator Thousands separator.
+		 */
 		$thousands_sep = apply_filters( 'yith_wcaf_thousands_sep', ',' );
 		$decimals      = floor( $value ) !== (float) $value ? $decimals : 0;
 
@@ -412,9 +433,23 @@ if ( ! function_exists( 'yith_wcaf_rate_format' ) ) {
 	 * @since 1.7.9
 	 */
 	function yith_wcaf_rate_format( $rate, $decimals = 2 ) {
+		/**
+		 * APPLY_FILTERS: yith_wcaf_rate_symbol
+		 *
+		 * Filters the rate symbol.
+		 *
+		 * @param string $rate_symbol Rate symbol.
+		 */
 		$symbol = apply_filters( 'yith_wcaf_rate_symbol', '%' );
 		$number = yith_wcaf_number_format( $rate, $decimals );
 
+		/**
+		 * APPLY_FILTERS: yith_wcaf_rate_format
+		 *
+		 * Filters the rate format.
+		 *
+		 * @param string $rate_format Rate format.
+		 */
 		return sprintf( apply_filters( 'yith_wcaf_rate_format', '%1$s%2$s' ), $number, $symbol );
 
 	}

@@ -71,7 +71,25 @@ if ( empty( $share_summary ) ) {
 				</li>
 			<?php endif; ?>
 
-			<?php if ( $share_email_enabled ) : ?>
+			<?php
+			if ( $share_email_enabled ) :
+				/**
+				 * APPLY_FILTERS: yith_wcaf_email_share_subject
+				 *
+				 * Filters the subject of the email to share the referral URL.
+				 *
+				 * @param string $share_link_title Email subject.
+				 */
+
+				/**
+				 * APPLY_FILTERS: yith_wcaf_email_share_body
+				 *
+				 * Filters the body of the email to share the referral URL.
+				 *
+				 * @param string $share_link_url Share URL.
+				 * @param string $share_summary  Share URL.
+				 */
+				?>
 				<li style="list-style-type: none; display: inline-block;">
 					<a
 						class="icon-yith-mail-alt"
@@ -108,4 +126,15 @@ if ( empty( $share_summary ) ) {
 		</ul>
 	</div>
 
-<?php do_action( 'yith_wcaf_after_share_buttons', $share_link_url, $share_title, $share_link_title ); ?>
+<?php
+/**
+ * DO_ACTION: yith_wcaf_after_share_buttons
+ *
+ * Allows to render some content after the buttons to share the affiliate's referral URL in the Affiliate Dashboard.
+ *
+ * @param string $share_link_url   Referral URL to share.
+ * @param string $share_title      Title to share referral URL.
+ * @param string $share_link_title Title in the referral URL.
+ */
+do_action( 'yith_wcaf_after_share_buttons', $share_link_url, $share_title, $share_link_title );
+?>

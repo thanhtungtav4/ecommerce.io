@@ -24,7 +24,6 @@ if ( $attachment_ids )
 {
 	//vertical-thumb-right
 	?>
-
 	<div id="wpgis-gallery" class="slider wpgis-slider-nav"><?php
 
 		foreach ( $attachment_ids as $attachment_id )
@@ -44,7 +43,7 @@ if ( $attachment_ids )
 			echo apply_filters(
 				'woocommerce_single_product_image_thumbnail_html',
 				sprintf(
-					'<li title="%s"><img src="%s">
+					'<li style="width: 109px;height: 109px;" title="%s"><img style="width: 109px;height: 109px;" src="%s">
 					</li>',
 					esc_attr( $props['caption'] ),
 					wp_get_attachment_image_url( $attachment_id, apply_filters( 'single_product_large_thumbnail_size', 'thumbnail' ), 0, $thumbnails_catlog )

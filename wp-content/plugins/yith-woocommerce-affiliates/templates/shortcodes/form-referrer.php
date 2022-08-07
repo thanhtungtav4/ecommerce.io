@@ -22,8 +22,22 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 <div class="yith-wcaf yith-wcaf-set-referrer woocommerce">
 	<div class="set-referrer-wrapper">
 		<?php
+		/**
+		 * APPLY_FILTERS: yith_wcaf_set_referrer_message
+		 *
+		 * Filters the message shown in the section to enter the affiliate's code.
+		 *
+		 * @param string $message Message.
+		 */
 		$info_message = apply_filters( 'yith_wcaf_set_referrer_message', _x( 'Did anyone suggest our site to you?', '[FRONTEND] Set referrer shortcode', 'yith-woocommerce-affiliates' ) . ' <a href="#" class="show-referrer-form">' . _x( 'Click here to enter his/her affiliate code', '[FRONTEND] Set referrer shortcode', 'yith-woocommerce-affiliates' ) . '</a>' );
 
+		/**
+		 * APPLY_FILTERS: yith_wcaf_show_message_wc_print_notice
+		 *
+		 * Filters whether to show the message as a notice.
+		 *
+		 * @param bool $show_message_as_notice Whether to show the message as a notice or not.
+		 */
 		if ( apply_filters( 'yith_wcaf_show_message_wc_print_notice', true ) && function_exists( 'wc_print_notice' ) ) {
 			wc_print_notice( $info_message, 'notice' );
 		} else {

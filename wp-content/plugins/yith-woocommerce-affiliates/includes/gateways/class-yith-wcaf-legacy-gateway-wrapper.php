@@ -68,6 +68,13 @@ if ( ! class_exists( 'YITH_WCAF_Legacy_Gateway_Wrapper' ) ) {
 				throw new Exception( 'Couldn\'t load legacy gateway class' );
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_gateway_inclusion_path
+			 *
+			 * Filters the path to load the gateway classes.
+			 *
+			 * @param string $path Gateway class path.
+			 */
 			require_once apply_filters( 'yith_wcaf_gateway_inclusion_path', $properties['path'] );
 
 			if ( ! function_exists( $properties['class'] ) ) {

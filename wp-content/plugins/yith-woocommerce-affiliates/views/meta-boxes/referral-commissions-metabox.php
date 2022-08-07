@@ -61,7 +61,16 @@ if ( ! empty( $referral ) ) :
 				<td class="total"><?php echo wp_kses_post( wc_price( $order->get_total() - $total ) ); ?></td>
 			</tr>
 
-			<?php do_action( 'yith_wcaf_refeal_totals_table', $order ); ?>
+			<?php
+			/**
+			 * DO_ACTION: yith_wcaf_referral_totals_table
+			 *
+			 * Allows to render some content after the referrals commissions table.
+			 *
+			 * @param WC_Order $order Order object.
+			 */
+			do_action( 'yith_wcaf_referral_totals_table', $order );
+			?>
 			</tfoot>
 		</table>
 	</div>

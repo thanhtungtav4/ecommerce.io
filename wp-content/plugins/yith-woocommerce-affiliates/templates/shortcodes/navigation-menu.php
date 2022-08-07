@@ -29,7 +29,16 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 				<h2><?php esc_html_e( 'Menu', 'yith-woocommerce-affiliates' ); ?></h2>
 			</div>
 			<ul class="dashboard-links">
-				<?php do_action( 'yith_wcaf_before_dashboard_links', $dashboard_links ); ?>
+				<?php
+				/**
+				 * DO_ACTION: yith_wcaf_before_dashboard_links
+				 *
+				 * Allows to render some content before the links in the Affiliate Dashboard.
+				 *
+				 * @param array $dashboard_links Affiliate dashboard links.
+				 */
+				do_action( 'yith_wcaf_before_dashboard_links', $dashboard_links );
+				?>
 
 				<?php if ( ! empty( $dashboard_links ) ) : ?>
 					<?php foreach ( $dashboard_links as $item ) : ?>
@@ -39,7 +48,16 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 					<?php endforeach; ?>
 				<?php endif; ?>
 
-				<?php do_action( 'yith_wcaf_after_dashboard_links', $dashboard_links ); ?>
+				<?php
+				/**
+				 * DO_ACTION: yith_wcaf_after_dashboard_links
+				 *
+				 * Allows to render some content after the links in the Affiliate Dashboard.
+				 *
+				 * @param array $dashboard_links Affiliate dashboard links.
+				 */
+				do_action( 'yith_wcaf_after_dashboard_links', $dashboard_links );
+				?>
 			</ul>
 		<?php endif; ?>
 		</div>

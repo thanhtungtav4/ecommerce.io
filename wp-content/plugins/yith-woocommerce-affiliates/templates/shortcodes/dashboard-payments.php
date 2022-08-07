@@ -24,7 +24,17 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 } // Exit if accessed directly
 ?>
 
-<?php do_action( 'yith_wcaf_before_dashboard_section', 'payments', $atts ); ?>
+<?php
+/**
+ * DO_ACTION: yith_wcaf_before_dashboard_section
+ *
+ * Allows to render some content before the section in the Affiliate Dashboard.
+ *
+ * @param string $section Section.
+ * @param array  $atts    Array with section attributes.
+ */
+do_action( 'yith_wcaf_before_dashboard_section', 'payments', $atts );
+?>
 
 <?php
 $table = new YITH_WCAF_Dashboard_Table(
@@ -62,4 +72,12 @@ $table->render();
 ?>
 
 <?php
+/**
+ * DO_ACTION: yith_wcaf_after_dashboard_section
+ *
+ * Allows to render some content after the section in the Affiliate Dashboard.
+ *
+ * @param string $section Section.
+ * @param array  $atts    Array with section attributes.
+ */
 do_action( 'yith_wcaf_after_dashboard_section', 'payments', $atts );

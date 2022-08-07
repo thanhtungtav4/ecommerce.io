@@ -57,8 +57,17 @@ if ( ! class_exists( 'YITH_WCAF_Checkout' ) ) {
 				return false;
 			}
 
-			$affiliate_user         = $affiliate->get_user();
-			$avoid_auto_commissions = yith_plugin_fw_is_true( get_option( 'yith_wcaf_commission_avoid_auto_referral', 'yes' ) );
+			$affiliate_user = $affiliate->get_user();
+
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_avoid_auto_commission
+			 *
+			 * Filters whether to avoid auto-commissions for the affiliate.
+			 *
+			 * @param bool                $avoid_auto_commission Whether to avoid auto-commissions or not.
+			 * @param YITH_WCAF_Affiliate $affiliate             Affiliate object.
+			 */
+			$avoid_auto_commissions = apply_filters( 'yith_wcaf_affiliate_avoid_auto_commission', yith_plugin_fw_is_true( get_option( 'yith_wcaf_commission_avoid_auto_referral', 'yes' ) ), $affiliate );
 
 			if (
 				$avoid_auto_commissions && (
@@ -101,6 +110,14 @@ if ( ! class_exists( 'YITH_WCAF_Checkout' ) ) {
 			$order_id = $order->get_id();
 
 			if ( $this->should_process_checkout( $order, $token ) ) {
+				/**
+				 * DO_ACTION: yith_wcaf_process_checkout_with_affiliate
+				 *
+				 * Allows to trigger some action when an order is processed with an affiliate associated.
+				 *
+				 * @param WC_Order $order Order object.
+				 * @param string   $token Affiliate token.
+				 */
 				do_action( 'yith_wcaf_process_checkout_with_affiliate', $order, $token );
 
 				// create order commissions.

@@ -98,6 +98,13 @@ if ( ! class_exists( 'YITH_WCAF_Payment_Data_Store' ) ) {
 			$res = $this->save_object( $payment );
 
 			if ( $res ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_payment_correctly_created
+				 *
+				 * Filters the id of the payment created.
+				 *
+				 * @param int $id Payment id.
+				 */
 				$id = apply_filters( 'yith_wcaf_payment_correctly_created', intval( $wpdb->insert_id ) );
 
 				$payment->set_id( $id );
@@ -106,6 +113,14 @@ if ( ! class_exists( 'YITH_WCAF_Payment_Data_Store' ) ) {
 
 				$this->clear_cache( $payment );
 
+				/**
+				 * DO_ACTION: yith_wcaf_new_payment
+				 *
+				 * Allows to trigger some action when a new payment is created.
+				 *
+				 * @param int               $payment_id Payment id.
+				 * @param YITH_WCAF_Payment $payment    Payment object.
+				 */
 				do_action( 'yith_wcaf_new_payment', $payment->get_id(), $payment );
 			}
 		}
@@ -178,6 +193,14 @@ if ( ! class_exists( 'YITH_WCAF_Payment_Data_Store' ) ) {
 
 			$this->clear_cache( $payment );
 
+			/**
+			 * DO_ACTION: yith_wcaf_update_payment
+			 *
+			 * Allows to trigger some action when a payment is updated.
+			 *
+			 * @param int               $payment_id Payment id.
+			 * @param YITH_WCAF_Payment $payment    Payment object.
+			 */
 			do_action( 'yith_wcaf_update_payment', $payment->get_id(), $payment );
 		}
 
@@ -198,6 +221,14 @@ if ( ! class_exists( 'YITH_WCAF_Payment_Data_Store' ) ) {
 				return false;
 			}
 
+			/**
+			 * DO_ACTION: yith_wcaf_before_delete_payment
+			 *
+			 * Allows to trigger some action before deleting a payment.
+			 *
+			 * @param int               $id      Payment id.
+			 * @param YITH_WCAF_Payment $payment Payment object.
+			 */
 			do_action( 'yith_wcaf_before_delete_payment', $id, $payment );
 
 			$this->clear_cache( $payment );
@@ -206,6 +237,14 @@ if ( ! class_exists( 'YITH_WCAF_Payment_Data_Store' ) ) {
 			$res = $wpdb->delete( $wpdb->yith_payments, array( 'ID' => $id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 
 			if ( $res ) {
+				/**
+				 * DO_ACTION: yith_wcaf_delete_payment
+				 *
+				 * Allows to trigger some action when a payment is deleted.
+				 *
+				 * @param int               $id      Payment id.
+				 * @param YITH_WCAF_Payment $payment Payment object.
+				 */
 				do_action( 'yith_wcaf_delete_payment', $id, $payment );
 
 				$payment->delete_commissions();
@@ -214,6 +253,14 @@ if ( ! class_exists( 'YITH_WCAF_Payment_Data_Store' ) ) {
 
 				$this->delete_notes( $payment );
 
+				/**
+				 * DO_ACTION: yith_wcaf_deleted_payment
+				 *
+				 * Allows to trigger some action after deleting a payment.
+				 *
+				 * @param int               $id      Payment id.
+				 * @param YITH_WCAF_Payment $payment Payment object.
+				 */
 				do_action( 'yith_wcaf_deleted_payment', $id, $payment );
 			}
 

@@ -127,6 +127,14 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Dashboard' ) ) {
 				'link-generator',
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_is_dashboard_guest_endpoint
+			 *
+			 * Filters whether the endpont is availabe for guest users.
+			 *
+			 * @param bool   $is_available Whether endpoint is available for guest users or not.
+			 * @param string $endpoint     Endpoint to test.
+			 */
 			return apply_filters( 'yith_wcaf_is_dashboard_guest_endpoint', in_array( $endpoint, $guest_endpoints, true ), $endpoint );
 		}
 
@@ -176,6 +184,14 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Dashboard' ) ) {
 		 * @param array  $atts    Array of attributes for current dashboard page.
 		 */
 		public static function output_navigation( $section = '', $atts = array() ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_show_dashboard_links
+			 *
+			 * Filters whether to show the dashboard links in the Affiliate Dashboard.
+			 *
+			 * @param bool   $show_dashboard_links Whether to show the dashboard links or not.
+			 * @param string $section              Affiliate dashboard section.
+			 */
 			if ( ! apply_filters( 'yith_wcaf_show_dashboard_links', true, $section ) ) {
 				return;
 			}
@@ -220,6 +236,15 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Dashboard' ) ) {
 				$section_shortcode = YITH_WCAF_Shortcodes::get_instance( "yith_wcaf_show_{$section}" );
 				$return            = $section_shortcode ? $section_shortcode->render_section( $atts ) : '';
 			} else {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_custom_dashboard_sections
+				 *
+				 * Filters the custom sections in the Affiliate Dashboard.
+				 *
+				 * @param string $custom_sections Custom sections.
+				 * @param array  $query_vars      Query vars.
+				 * @param array  $atts            Array of attributes.
+				 */
 				$return = apply_filters( 'yith_wcaf_custom_dashboard_sections', '', $wp->query_vars, $atts );
 
 				if ( ! $return ) {
@@ -258,6 +283,13 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Dashboard' ) ) {
 					'max_withdraw'      => round( $affiliate->get_balance(), 2 ),
 					'min_withdraw'      => round( YITH_WCAF_Withdraws()->get_minimum_withdraw(), 2 ),
 					'require_invoice'   => YITH_WCAF_Invoices()->are_invoices_required(),
+					/**
+					 * APPLY_FILTERS: yith_wcaf_withdraw_info_panel_additional_notes
+					 *
+					 * Filters the additional notes in the modal to request a withdraw.
+					 *
+					 * @param string $notes Additional notes.
+					 */
 					'modal_notes'       => apply_filters( 'yith_wcaf_withdraw_info_panel_additional_notes', '' ),
 				),
 				YITH_WCAF_Invoices()->get_options()
@@ -367,7 +399,24 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Dashboard' ) ) {
 				return;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_dashboard_payment_notice
+			 *
+			 * Filters the payment notice in the Affiliate Dashboard page.
+			 *
+			 * @param string $payment_notice Payment notice.
+			 */
 			$message = apply_filters( 'yith_wcaf_affiliate_dashboard_payment_notice', implode( '<br/>', $message_parts ) );
+
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_dashboard_payment_notice_classes
+			 *
+			 * Filters the CSS classes for the payment notice in the Affiliate Dashboard page.
+			 *
+			 * @param array  $classes       CSS classes.
+			 * @param array  $message_parts Array with the parts of the message.
+			 * @param string $message       Message.
+			 */
 			$classes = apply_filters( 'yith_wcaf_affiliate_dashboard_payment_notice_classes', array(), $message_parts, $message );
 
 			$atts = array_merge(
@@ -485,12 +534,29 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Dashboard' ) ) {
 			$permalink = $this->get_dashboard_base_url();
 			$rewrite   = $this->get_endpoint_rewrite( $endpoint );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_use_dashboard_pretty_permalinks
+			 *
+			 * Filters whether to use pretty urls in the affiliate dashboard pages.
+			 *
+			 * @param string $permalink_structure Permalink structure.
+			 */
 			if ( apply_filters( 'yith_wcaf_use_dashboard_pretty_permalinks', get_option( 'permalink_structure' ) ) ) {
 				$url = wc_get_endpoint_url( $rewrite, $value, $permalink );
 			} else {
 				$url = add_query_arg( $endpoint, $value, $permalink );
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_get_endpoint_url
+			 *
+			 * Filters the endpoint url in the affiliate dashboard.
+			 *
+			 * @param string $url       Endpoint url.
+			 * @param string $endpoint  Endpoint key.
+			 * @param string $value     Affiliate dashboard url.
+			 * @param string $permalink Dashboard base url.
+			 */
 			return apply_filters( 'yith_wcaf_get_endpoint_url', $url, $endpoint, $value, $permalink );
 		}
 
@@ -522,6 +588,15 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Dashboard' ) ) {
 				}
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_can_user_see_section
+			 *
+			 * Filters whether the user can see a specific section in the Affiliate Dashboard.
+			 *
+			 * @param bool   $can_see  Whether the user can see a specific section or not.
+			 * @param int    $user_id  User id.
+			 * @param string $endpoint Endpoint.
+			 */
 			return apply_filters( 'yith_wcaf_can_user_see_section', $return, $user_id, $endpoint );
 		}
 
@@ -542,6 +617,13 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Dashboard' ) ) {
 				}
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dashboard_links
+			 *
+			 * Filters the links for the sections in the Affiliate Dashboard.
+			 *
+			 * @param array $dashboard_links Dashboard links.
+			 */
 			return apply_filters( 'yith_wcaf_dashboard_links', $dashboard_links );
 		}
 
@@ -555,6 +637,13 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Dashboard' ) ) {
 			$current_endpoint = $this->get_current_dashboard_endpoint();
 			$navigation_menu  = array();
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_show_dashboard_link_for_navigation_menu
+			 *
+			 * Filters whether to show the link to the dashboard section in the Affiliate Dashboard.
+			 *
+			 * @param bool $show_dashboard_link Whether to show the link to the dashboard section or not.
+			 */
 			if ( apply_filters( 'yith_wcaf_show_dashboard_link_for_navigation_menu', true ) ) {
 				$navigation_menu['summary'] = array(
 					'label'  => __( 'Dashboard', 'yith-woocommerce-affiliates' ),
@@ -577,6 +666,13 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Dashboard' ) ) {
 				}
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dashboard_navigation_menu
+			 *
+			 * Filters the elements of the navigation menu in the Affiliate Dashboard.
+			 *
+			 * @param array $navigation_menu Array with elements in the navigation menu.
+			 */
 			return apply_filters( 'yith_wcaf_dashboard_navigation_menu', $navigation_menu );
 		}
 

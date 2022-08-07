@@ -473,6 +473,15 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 		public function is_valid( $context = 'view' ) {
 			$is_valid = $this->has_status( 'enabled' ) && ! $this->is_banned( $context );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_is_valid
+			 *
+			 * Filters whether affiliates is valid (can receive commissions) or not.
+			 *
+			 * @param bool                $is_valid  Whether affiliate is valid or not.
+			 * @param int                 $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_is_valid', $is_valid, $this->get_id(), $this );
 		}
 
@@ -504,6 +513,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				return false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_get_referral_url
+			 *
+			 * Filters affiliate referral url.
+			 *
+			 * @param string $referral_url Affiliate referral url.
+			 * @param string $ref_name     Name of the parameter used for referral token in url.
+			 * @param string $token        Affiliate token.
+			 * @param string $base_url     Url used as a base for referral url generation.
+			 */
 			return apply_filters( 'yith_wcaf_get_referral_url', YITH_WCAF()->get_referral_url( $token, $base_url ), $ref_name, $token, $base_url );
 		}
 
@@ -587,6 +606,15 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 			);
 			// phpcs:enable WordPress.DB.SlowDBQuery.slow_db_query_meta_key, WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_associated_users
+			 *
+			 * Filters list of users associated with an affiliate.
+			 *
+			 * @param WP_User[]|bool      $users     List of users objects, or false on failure.
+			 * @param int                 $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_associated_users', $users, $this->get_id(), $this );
 		}
 
@@ -603,6 +631,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 
 			$meta_name = "{$gateway_id}_gateway_preferences";
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_$GATEWAY_ID_gateway_preferences
+			 *
+			 * Filters preferences affiliate configured for a specific gateway.
+			 * <code>$GATEWAY_ID</code> will be replaced by the actual id of the gateway.
+			 *
+			 * @param array               $preferences Preferences configured for current gateway.
+			 * @param int                 $id          Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate   Affiliate object.
+			 */
 			return apply_filters( "yith_wcaf_affiliate_{$gateway_id}_gateway_preferences", $this->get_meta( $meta_name ), $this->get_id(), $this );
 		}
 
@@ -656,6 +694,27 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				return '';
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_formatted_affiliate_invoice_profile_format
+			 *
+			 * Filters template used to format affiliate's invoice profile
+			 * Any placeholder is included between a double pair of curly braces; following a list of available fields
+			 * <ul>
+			 * <li>first_name</li>
+			 * <li>last_name</li>
+			 * <li>company</li>
+			 * <li>billing_address_1</li>
+			 * <li>billing_address_2</li>
+			 * <li>billing_city</li>
+			 * <li>billing_postcode</li>
+			 * <li>billing_state</li>
+			 * <li>billing_country</li>
+			 * <li>cif</li>
+			 * <li>vat</li>
+			 * </ul>.
+			 *
+			 * @param string $format invoice profile format template.
+			 */
 			$textual_profile = apply_filters(
 				'yith_wcaf_formatted_affiliate_invoice_profile_format',
 				'{{first_name}} {{last_name}}
@@ -696,6 +755,17 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 			);
 			$formatted_profile  = implode( "\n", array_filter( $profile_components ) );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_formatted_affiliate_invoice_profile
+			 *
+			 * Filters affiliates formatted invoice profile HTML.
+			 *
+			 * @param string              $profile          Affiliate formatted invoice profile.
+			 * @param int                 $user_id          User id.
+			 * @param array               $available_fields Fields available for invoice profile, as configured by admin.
+			 * @param array               $invoice_profile  Affiliate invoice profile info.
+			 * @param YITH_WCAF_Affiliate $affiliate        Affiliate object.
+			 */
 			return apply_filters( 'yith_wcaf_formatted_affiliate_invoice_profile', nl2br( $formatted_profile ), $this->get_user_id(), $available_fields, $invoice_profile, $this );
 		}
 
@@ -781,6 +851,15 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				);
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_admin_actions
+			 *
+			 * Filters the available actions for each affiliate in the affiliates table.
+			 *
+			 * @param array               $actions     Actions.
+			 * @param int                 $id          Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate   Affiliate object.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_admin_actions', parent::get_admin_actions(), $this->get_id(), $this );
 		}
 
@@ -811,8 +890,27 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 			$meta  = "notify_$notification";
 			$value = $this->get_meta( $meta );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_default_notify_user_$NOTIFICATION
+			 *
+			 * Filters default value for notification preference
+			 * <code>$NOTIFICATION</code> will be replaced with specific notification name.
+			 *
+			 * @param string $default  Yes or no, depending on default value we want to assign to current notification.
+			 * @param int    $user_id  User id.
+			 */
 			$value = $value ? $value : apply_filters( "yith_wcaf_default_notify_user_$notification", 'no', $this->get_user_id() );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_notify_user_$NOTIFICATION
+			 *
+			 * Notification preference for current affiliate
+			 * <code>$NOTIFICATION</code> will be replaced with specific notification name.
+			 *
+			 * @param string              $notification Yes or no, depending on actual notification value for current affiliate notification.
+			 * @param int                 $id           Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate    Affiliate object.
+			 */
 			return apply_filters( "yith_wcaf_notify_user_$notification", yith_plugin_fw_is_true( $value ), $this->get_id(), $this );
 		}
 
@@ -843,6 +941,15 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_to_array
+			 *
+			 * Filters data returned when converting an affiliate object to an array.
+			 *
+			 * @param array               $array     Affiliate in array format.
+			 * @param int                 $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_to_array', $return, $this->get_id(), $this );
 		}
 
@@ -865,6 +972,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_commissions
+			 *
+			 * Filters commissions found for current affiliate, for filters passed.
+			 *
+			 * @param YITH_WCAF_Commissions_Collection $commissions  Commissions collection (may be empty).
+			 * @param int                              $id           Affiliate id.
+			 * @param YITH_WCAF_Affiliate              $affiliate    Affiliate object.
+			 * @param array                            $args         Array of filtering criteria used for the query.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_commissions', $commissions, $this->get_id(), $this, $args );
 		}
 
@@ -885,6 +1002,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_commissions_count
+			 *
+			 * Filters count of commissions found for current affiliate, for current filters.
+			 *
+			 * @param int                 $count     Count of commissions found.
+			 * @param int                 $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 * @param array               $args      Array of filtering criteria used for the query.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_commissions_count', $count, $this->get_id(), $this, $args );
 		}
 
@@ -900,6 +1027,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_has_unpaid_commissions
+			 *
+			 * Filters whether affiliates has unpaid commissions (and then can request payment).
+			 *
+			 * @param bool                             $has_unpaid Whether affiliate has unpaid commissions.
+			 * @param int                              $id         Affiliate id.
+			 * @param YITH_WCAF_Affiliate              $affiliate  Affiliate object.
+			 * @param YITH_WCAF_Commissions_Collection $unpaid     Collection of unpaid commissions found.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_has_unpaid_commissions', $unpaid_commissions && ! $unpaid_commissions->is_empty(), $this->get_id(), $this, $unpaid_commissions );
 		}
 
@@ -922,6 +1059,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_payments
+			 *
+			 * Filters commissions found for current affiliate, for filters passed.
+			 *
+			 * @param YITH_WCAF_Payments_Collection $payments  Payments collection (may be empty).
+			 * @param int                           $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate           $affiliate Affiliate object.
+			 * @param array                         $args      Array of filtering criteria used for the query.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_payments', $payments, $this->get_id(), $this, $args );
 		}
 
@@ -942,6 +1089,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_payments_count
+			 *
+			 * Filters count of payments found for current affiliate, for current filters.
+			 *
+			 * @param int                 $count     Count of payments found.
+			 * @param int                 $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 * @param array               $args      Array of filtering criteria used for the query.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_payments_count', $count, $this->get_id(), $this, $args );
 		}
 
@@ -960,6 +1117,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_has_active_payments
+			 *
+			 * Filters whether affiliates has active payments (and then cannot request further payment).
+			 *
+			 * @param bool                          $has_active Whether affiliate has active payments.
+			 * @param int                           $id         Affiliate id.
+			 * @param YITH_WCAF_Affiliate           $affiliate  Affiliate object.
+			 * @param YITH_WCAF_Payments_Collection $active     Collection of active payments found.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_has_active_payments', $active_payments && ! $active_payments->is_empty(), $this->get_id(), $this, $active_payments );
 		}
 
@@ -969,6 +1136,15 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 		 * @return bool Whether affiliate can withdraw or not.
 		 */
 		public function can_withdraw() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_can_affiliate_withdraw
+			 *
+			 * Filters whether affiliates can withdraw (has unpaid commissions and no active payment).
+			 *
+			 * @param bool                             $can_withdraw Whether affiliate can withdraw.
+			 * @param int                              $id          Affiliate id.
+			 * @param YITH_WCAF_Affiliate              $affiliate   Affiliate object.
+			 */
 			return apply_filters( 'yith_wcaf_can_affiliate_withdraw', $this->is_valid() && ! $this->has_active_payments() && $this->has_unpaid_commissions(), $this->get_id(), $this );
 		}
 
@@ -991,6 +1167,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_clicks
+			 *
+			 * Filters clicks found for current affiliate, for filters passed.
+			 *
+			 * @param YITH_WCAF_Clicks_Collection $clicks    Clicks collection (may be empty).
+			 * @param int                         $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate         $affiliate Affiliate object.
+			 * @param array                       $args      Array of filtering criteria used for the query.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_clicks', $clicks, $this->get_id(), $this, $args );
 		}
 
@@ -1016,6 +1202,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_clicks_count
+			 *
+			 * Filters count of clicks found for current affiliate, for current filters.
+			 *
+			 * @param int                 $count     Count of clicks found.
+			 * @param int                 $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 * @param array               $args      Array of filtering criteria used for the query.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_clicks_count', $count, $this->get_id(), $this, $args );
 		}
 
@@ -1042,6 +1238,15 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 		public function count_coupons() {
 			$count = YITH_WCAF_Coupons()->count_affiliate_coupons( $this->get_id() );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_coupons_count
+			 *
+			 * Filters count of coupons found for current affiliate.
+			 *
+			 * @param int                 $count     Count of coupons found.
+			 * @param int                 $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_coupons_count', $count, $this->get_id(), $this );
 		}
 
@@ -1091,6 +1296,13 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 		public function set_rate( $rate ) {
 			$rate = (float) $rate;
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_max_rate_value
+			 *
+			 * Filters the maximum rate value.
+			 *
+			 * @param int $max_rate_value Maximum rate value.
+			 */
 			if ( $rate < 0 || $rate > apply_filters( 'yith_wcaf_max_rate_value', 100 ) ) {
 				return;
 			}
@@ -1325,6 +1537,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 			// triggers action when we're changing status for an already read object.
 			if ( $this->object_read && $new_status !== $old_status ) {
 				$status = 0 < $new_status ? 'enabled' : 'disabled';
+
+				/**
+				 * DO_ACTION: yith_wcaf_affiliate_$status
+				 *
+				 * Allows to trigger some action when the affiliate's status changes.
+				 * <code>$status</code> will be replaced with the affiliate's status.
+				 *
+				 * @param int                 $id        Affiliate id.
+				 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+				 */
 				do_action( "yith_wcaf_affiliate_{$status}", $this->get_id(), $this );
 			}
 
@@ -1467,19 +1689,66 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate' ) ) {
 				$old_status = $old_data['status'];
 				$old_status = isset( $available_statuses[ $old_status ] ) ? $available_statuses[ $old_status ]['slug'] : '';
 
-				do_action( 'yith_wcaf_affiliate_status_' . $new_status, $affiliate_id );
-				do_action( 'yith_wcaf_affiliate_status_' . $old_status . '_to_' . $new_status, $affiliate_id );
+				/**
+				 * DO_ACTION: yith_wcaf_affiliate_status_$new_status
+				 *
+				 * Allows to trigger some action when the affiliate status changes into a new status.
+				 * <code>$new_status</code> will be replaced with the new status for the affiliate.
+				 *
+				 * @param int $affiliate_id Affiliate id.
+				 */
+				do_action( "yith_wcaf_affiliate_status_{$new_status}", $affiliate_id );
+
+				/**
+				 * DO_ACTION: yith_wcaf_affiliate_status_$old_status_to_$new_status
+				 *
+				 * Allows to trigger some action when the affiliate status changes from the old status into the new status.
+				 * <code>$old_status</code> will be replaced with the old affiliate status.
+				 * <code>$new_status</code> will be replaced with the new affiliate status.
+				 *
+				 * @param int $affiliate_id Affiliate id.
+				 */
+				do_action( "yith_wcaf_affiliate_status_{$old_status}_to_{$new_status}", $affiliate_id );
+
+				/**
+				 * DO_ACTION: yith_wcaf_affiliate_status_changed
+				 *
+				 * Allows to trigger some action when the affiliate status has changed.
+				 *
+				 * @param int    $affiliate_id Affiliate id.
+				 * @param string $new_status   New status.
+				 * @param string $old_status   Old status.
+				 */
 				do_action( 'yith_wcaf_affiliate_status_changed', $affiliate_id, $new_status, $old_status );
 			}
 
 			// execute payment email change action (legacy).
 			if ( isset( $changes['payment_email'] ) ) {
+				/**
+				 * DO_ACTION: yith_wcaf_affiliate_payment_email_changed
+				 *
+				 * Allows to trigger some action when the affiliate's payment email has changed.
+				 *
+				 * @param int    $affiliate_id      Affiliate id.
+				 * @param string $payment_email     Affiliate's payment email.
+				 * @param string $old_payment_email Affiliate's old payment email.
+				 */
 				do_action( 'yith_wcaf_affiliate_payment_email_changed', $affiliate_id, $this->get_payment_email(), $old_data['payment_email'] );
 			}
 
 			// execute ban/unban actions.
 			if ( isset( $changes['banned'] ) ) {
 				$ban_status = $changes['banned'] ? 'banned' : 'unbanned';
+
+				/**
+				 * DO_ACTION: yith_wcaf_affiliate_$ban_status
+				 *
+				 * Allows to trigger some action when performing the actions to ban/unban the affiliate.
+				 * <code>$ban_status</code> will be replaced with the ban status for the affiliate.
+				 *
+				 * @param int                 $id        Affiliate id.
+				 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+				 */
 				do_action( "yith_wcaf_affiliate_{$ban_status}", $this->get_id(), $this );
 			}
 

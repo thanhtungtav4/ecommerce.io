@@ -92,6 +92,14 @@ if ( ! class_exists( 'YITH_WCAF_Link_Generator_Shortcode' ) ) {
 						'affiliate_token'   => $affiliate ? $affiliate->get_token() : false,
 						'referral_link'     => $affiliate ? $affiliate->get_referral_url() : false,
 						'username'          => YITH_WCAF_Form_Handler::get_posted_data( 'username' ),
+						/**
+						 * APPLY_FILTERS: yith_wcaf_show_dashboard_links
+						 *
+						 * Filters whether to show the dashboard links in the Affiliate Dashboard.
+						 *
+						 * @param bool   $show_dashboard_links Whether to show the dashboard links or not.
+						 * @param string $section              Affiliate dashboard section.
+						 */
 						'show_right_column' => apply_filters( 'yith_wcaf_show_dashboard_links', false, 'link_generator' ),
 						'dashboard_links'   => YITH_WCAF_Dashboard()->get_dashboard_navigation_menu(),
 					)
@@ -118,8 +126,23 @@ if ( ! class_exists( 'YITH_WCAF_Link_Generator_Shortcode' ) ) {
 			);
 
 			if ( $share_enabled ) {
-				$share_title           = apply_filters( 'yith_wcaf_socials_share_title', __( 'Share your referral URL on:', 'yith-woocommerce-affiliates' ) );
-				$share_link_url        = $generated_url;
+				/**
+				 * APPLY_FILTERS: yith_wcaf_socials_share_title
+				 *
+				 * Filters the title of the socials share section for the referral URL.
+				 *
+				 * @param $socials_share_title Title to share the referral URL.
+				 */
+				$share_title    = apply_filters( 'yith_wcaf_socials_share_title', __( 'Share your referral URL on:', 'yith-woocommerce-affiliates' ) );
+				$share_link_url = $generated_url;
+
+				/**
+				 * APPLY_FILTERS: yith_wcaf_share_title
+				 *
+				 * Filters the title to share the referral URL.
+				 *
+				 * @param $share_title Title to share the referral URL.
+				 */
 				$share_links_title     = apply_filters( 'yith_wcaf_share_title', rawurlencode( get_option( 'yith_wcaf_socials_title' ) ) );
 				$share_twitter_summary = rawurlencode( str_replace( '%referral_url%', '', get_option( 'yith_wcaf_socials_text' ) ) );
 				$share_summary         = rawurlencode( str_replace( '%referral_url%', $share_link_url, get_option( 'yith_wcaf_socials_text' ) ) );

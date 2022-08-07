@@ -56,6 +56,14 @@ if ( ! class_exists( 'YITH_WCAF_Show_Settings_Shortcode' ) ) {
 			$affiliate = YITH_WCAF_Affiliate_Factory::get_current_affiliate();
 			$user      = $affiliate->get_user();
 
+			/**
+			 * APPLY_FILTERS: $tag_shortcode_template_atts
+			 *
+			 * Filters the array with the attritubes needed for the shortcode template.
+			 * <code>$tag</code> will be replaced with the shortcode tag.
+			 *
+			 * @param array $shortcode_atts Attributes for the shortcode template.
+			 */
 			return apply_filters(
 				"{$this->tag}_shortcode_template_atts",
 				array_merge(
@@ -67,6 +75,14 @@ if ( ! class_exists( 'YITH_WCAF_Show_Settings_Shortcode' ) ) {
 						'user'              => $affiliate->get_user(),
 						'affiliate_id'      => $affiliate->get_id(),
 						'payment_email'     => $affiliate->get_payment_email(),
+						/**
+						 * APPLY_FILTERS: yith_wcaf_show_dashboard_links
+						 *
+						 * Filters whether to show the dashboard links in the Affiliate Dashboard.
+						 *
+						 * @param bool   $show_dashboard_links Whether to show the dashboard links or not.
+						 * @param string $section              Affiliate dashboard section.
+						 */
 						'show_right_column' => apply_filters( 'yith_wcaf_show_dashboard_links', 'yes' === $atts['show_dashboard_links'], 'dashboard_clicks' ),
 						'dashboard_links'   => YITH_WCAF_Dashboard()->get_dashboard_navigation_menu(),
 						'affiliate_name'    => $user->first_name,

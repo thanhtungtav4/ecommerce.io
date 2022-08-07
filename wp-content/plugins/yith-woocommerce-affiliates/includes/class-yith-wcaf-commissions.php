@@ -141,6 +141,13 @@ if ( ! class_exists( 'YITH_WCAF_Commissions' ) ) {
 		 */
 		public static function get_available_statuses() {
 			if ( empty( self::$available_statuses ) ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_commissions_statuses
+				 *
+				 * Filters the available statuses for the commissions.
+				 *
+				 * @param array $available_statuses Available statuses.
+				 */
 				self::$available_statuses = apply_filters(
 					'yith_wcaf_commissions_statuses',
 					array(
@@ -195,6 +202,13 @@ if ( ! class_exists( 'YITH_WCAF_Commissions' ) ) {
 		 * ]
 		 */
 		public static function get_available_status_changes() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_available_commission_status_changes
+			 *
+			 * Filters the available status changes for commissions.
+			 *
+			 * @param array $available_status_changes Array of valid status changes.
+			 */
 			return apply_filters( 'yith_wcaf_available_commission_status_changes', self::$available_status_changes );
 		}
 
@@ -221,6 +235,15 @@ if ( ! class_exists( 'YITH_WCAF_Commissions' ) ) {
 				$label = isset( $statuses[ $status ] ) ? $statuses[ $status ]['name'] : '';
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_commission_status_name
+			 *
+			 * Filters the name of the commission status.
+			 *
+			 * @param string $label  Status name.
+			 * @param string $status Status.
+			 * @param int    $count  Count of items.
+			 */
 			return apply_filters( 'yith_wcaf_commission_status_name', $label, $status, $count );
 		}
 
@@ -232,6 +255,13 @@ if ( ! class_exists( 'YITH_WCAF_Commissions' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function get_unassigned_statuses() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_unassigned_commission_statuses
+			 *
+			 * Filters the unassigned statuses for commissions.
+			 *
+			 * @param array $unassigned_statuses Array of unassigned statuses.
+			 */
 			return apply_filters( 'yith_wcaf_unassigned_commission_statuses', self::$unassigned_statuses );
 		}
 
@@ -243,6 +273,13 @@ if ( ! class_exists( 'YITH_WCAF_Commissions' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function get_assigned_statuses() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_assigned_commission_statuses
+			 *
+			 * Filters the assigned statuses for commissions.
+			 *
+			 * @param array $assigned_statuses Array of assigned statuses.
+			 */
 			return apply_filters( 'yith_wcaf_assigned_commission_statuses', self::$assigned_statuses );
 		}
 
@@ -254,6 +291,13 @@ if ( ! class_exists( 'YITH_WCAF_Commissions' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function get_payment_statuses() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_payment_commission_statuses
+			 *
+			 * Filters the payment statuses for commissions.
+			 *
+			 * @param array $payment_statuses Array of payment statuses.
+			 */
 			return apply_filters( 'yith_wcaf_payment_commission_statuses', self::$payment_statuses );
 		}
 
@@ -265,6 +309,13 @@ if ( ! class_exists( 'YITH_WCAF_Commissions' ) ) {
 		 * @since 1.0.0
 		 */
 		public static function get_dead_statuses() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dead_commission_statuses
+			 *
+			 * Filters the dead statuses for commissions.
+			 *
+			 * @param array $dead_statuses Array of dead statuses.
+			 */
 			return apply_filters( 'yith_wcaf_dead_commission_statuses', self::$dead_statuses );
 		}
 

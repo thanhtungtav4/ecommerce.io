@@ -122,6 +122,13 @@ if ( ! class_exists( 'YITH_WCAF_Admin' ) ) {
 				'shop_subscription',
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_screen_ids
+			 *
+			 * Filters the screen ids related to the plugin.
+			 *
+			 * @param array $screen_ids Screen ids.
+			 */
 			return apply_filters( 'yith_wcaf_screen_ids', $screen_ids );
 		}
 
@@ -161,6 +168,13 @@ if ( ! class_exists( 'YITH_WCAF_Admin' ) ) {
 		 * @return string Panel's base url
 		 */
 		public function get_panel_url() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_admin_panel_url
+			 *
+			 * Filters the url of the plugin panel.
+			 *
+			 * @param string $panel_url Plugin panel url.
+			 */
 			return apply_filters( 'yith_wcaf_admin_panel_url', add_query_arg( 'page', $this->page_slug, admin_url( 'admin.php' ) ) );
 		}
 
@@ -173,6 +187,13 @@ if ( ! class_exists( 'YITH_WCAF_Admin' ) ) {
 			$screen_ids = $this->get_screen_ids();
 			$base_id    = is_array( $screen_ids ) ? array_shift( $screen_ids ) : '';
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_admin_panel_screen_id
+			 *
+			 * Filters the screen id of the plugin panel.
+			 *
+			 * @param string $base_id Screen id of the plugin panel.
+			 */
 			return apply_filters( 'yith_wcaf_admin_panel_screen_id', $base_id );
 		}
 
@@ -186,6 +207,13 @@ if ( ! class_exists( 'YITH_WCAF_Admin' ) ) {
 		public function get_available_tabs() {
 			// sets available tab.
 			if ( empty( $this->available_tabs ) ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_available_admin_tabs
+				 *
+				 * Filter the available tabs in the plugin panel.
+				 *
+				 * @param array $tabs Admin tabs.
+				 */
 				$this->available_tabs = apply_filters(
 					'yith_wcaf_available_admin_tabs',
 					array(
@@ -206,6 +234,13 @@ if ( ! class_exists( 'YITH_WCAF_Admin' ) ) {
 		 * @return string Capability, filtered by yith_wcaf_panel_capability filter.
 		 */
 		public function get_panel_capability() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_panel_capability
+			 *
+			 * Filters the minimum capability needed to manage the plugin panel.
+			 *
+			 * @param string $capability Capability.
+			 */
 			return apply_filters( 'yith_wcaf_panel_capability', 'manage_woocommerce' );
 		}
 
@@ -443,6 +478,11 @@ if ( ! class_exists( 'YITH_WCAF_Admin' ) ) {
 			if ( $this->is_own_screen() || in_array( $screen->id, array( 'shop_order', 'shop_coupon', 'user-edit', 'profile' ), true ) ) {
 				wp_register_style( 'yith-wcaf-admin', YITH_WCAF_URL . "assets/css/yith-wcaf-admin{$suffix}.css", array( 'yith-plugin-fw-fields' ), YITH_WCAF::VERSION );
 
+				/**
+				 * DO_ACTION: yith_wcaf_before_admin_style_enqueue
+				 *
+				 * Allows to trigger some action before enqueueing the styles in the backend.
+				 */
 				do_action( 'yith_wcaf_before_admin_style_enqueue' );
 
 				wp_enqueue_style( 'yith-wcaf-admin' );
@@ -452,6 +492,11 @@ if ( ! class_exists( 'YITH_WCAF_Admin' ) ) {
 			if ( in_array( $screen->id, array( 'shop_order', 'shop_coupon', 'user-edit', 'profile' ), true ) ) {
 				wp_register_script( 'yith-wcaf-admin', YITH_WCAF_URL . 'assets/js/admin/yith-wcaf.bundle' . $suffix . '.js', array( 'jquery', 'yith-plugin-fw-fields' ), YITH_WCAF::VERSION, true );
 
+				/**
+				 * DO_ACTION: yith_wcaf_before_admin_script_enqueue
+				 *
+				 * Allows to trigger some action before enqueueing the scripts in the backend.
+				 */
 				do_action( 'yith_wcaf_before_admin_script_enqueue' );
 
 				wp_enqueue_script( 'yith-wcaf-admin' );
@@ -467,6 +512,13 @@ if ( ! class_exists( 'YITH_WCAF_Admin' ) ) {
 		 * @return array Variables to localize in a js object.
 		 */
 		public function get_global_localize( $args = array() ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_admin_global_localize
+			 *
+			 * Filters the array with the variables to localize into the plugin script.
+			 *
+			 * @param array $localize Array with variables to localize.
+			 */
 			return apply_filters(
 				'yith_wcaf_admin_global_localize',
 				array_merge_recursive(

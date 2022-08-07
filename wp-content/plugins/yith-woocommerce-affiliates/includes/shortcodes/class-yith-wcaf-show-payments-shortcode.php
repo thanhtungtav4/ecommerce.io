@@ -86,6 +86,14 @@ if ( ! class_exists( 'YITH_WCAF_Show_Payments_Shortcode' ) ) {
 			$payments = YITH_WCAF_Payment_Factory::get_payments( $query_args );
 			$count    = $payments->get_total_items();
 
+			/**
+			 * APPLY_FILTERS: $tag_shortcode_template_atts
+			 *
+			 * Filters the array with the attritubes needed for the shortcode template.
+			 * <code>$tag</code> will be replaced with the shortcode tag.
+			 *
+			 * @param array $shortcode_atts Attributes for the shortcode template.
+			 */
 			return apply_filters(
 				"{$this->tag}_shortcode_template_atts",
 				array_merge(
@@ -98,6 +106,14 @@ if ( ! class_exists( 'YITH_WCAF_Show_Payments_Shortcode' ) ) {
 						'affiliate_id'            => $affiliate->get_id(),
 						'dashboard_payments_link' => YITH_WCAF_Dashboard()->get_dashboard_url( 'clicks', 1 ),
 						'to_order'                => 'DESC' === $order ? 'ASC' : 'DESC',
+						/**
+						 * APPLY_FILTERS: yith_wcaf_show_dashboard_links
+						 *
+						 * Filters whether to show the dashboard links in the Affiliate Dashboard.
+						 *
+						 * @param bool   $show_dashboard_links Whether to show the dashboard links or not.
+						 * @param string $section              Affiliate dashboard section.
+						 */
 						'show_right_column'       => apply_filters( 'yith_wcaf_show_dashboard_links', yith_plugin_fw_is_true( $atts['show_dashboard_links'] ), 'dashboard_clicks' ),
 						'dashboard_links'         => YITH_WCAF_Dashboard()->get_dashboard_navigation_menu(),
 						'show_invoice'            => get_option( 'yith_wcaf_payment_require_invoice', 'no' ),

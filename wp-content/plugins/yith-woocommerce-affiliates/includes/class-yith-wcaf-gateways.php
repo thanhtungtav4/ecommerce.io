@@ -49,6 +49,13 @@ if ( ! class_exists( 'YITH_WCAF_Gateways' ) ) {
 		 * @return void
 		 */
 		protected static function load_gateways() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_payment_gateways
+			 *
+			 * Filters the payment gateways.
+			 *
+			 * @param array $payment_gateways Payment gateways.
+			 */
 			$gateways = apply_filters(
 				'yith_wcaf_payment_gateways',
 				array(
@@ -89,6 +96,13 @@ if ( ! class_exists( 'YITH_WCAF_Gateways' ) ) {
 		 * @return void
 		 */
 		protected static function load_legacy_gateways() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_available_gateways
+			 *
+			 * Filters the available legacy gateways.
+			 *
+			 * @param array $legacy_gateways Legacy gateways.
+			 */
 			$legacy_gateways = apply_filters( 'yith_wcaf_available_gateways', array() );
 
 			if ( empty( $legacy_gateways ) ) {
@@ -299,9 +313,31 @@ if ( ! class_exists( 'YITH_WCAF_Gateways' ) ) {
 
 				if ( ! empty( $fields ) ) {
 					foreach ( $fields as $field_key => $field ) {
-						$field_name        = self::get_field_name( $gateway, $field_key );
-						$field_default     = isset( $preferences[ $field_key ] ) ? $preferences[ $field_key ] : null;
-						$field['label']    = apply_filters( "yith_wcaf_gateway_{$gateway_id}_{$field_key}_label", isset( $field['label'] ) ? $field['label'] : '', $field );
+						$field_name    = self::get_field_name( $gateway, $field_key );
+						$field_default = isset( $preferences[ $field_key ] ) ? $preferences[ $field_key ] : null;
+
+						/**
+						 * APPLY_FILTERS: yith_wcaf_gateway_$gateway_id_$field_key_label
+						 *
+						 * Filters the label of the payment gateway field.
+						 * <code>$gateway_id</code> will be replaced with the id of the payment gateway.
+						 * <code>$field_key</code> will be replaced with the key of the field.
+						 *
+						 * @param string $field_label Field label.
+						 * @param array  $field       Field.
+						 */
+						$field['label'] = apply_filters( "yith_wcaf_gateway_{$gateway_id}_{$field_key}_label", isset( $field['label'] ) ? $field['label'] : '', $field );
+
+						/**
+						 * APPLY_FILTERS: yith_wcaf_gateway_$gateway_id_$field_key_required
+						 *
+						 * Filters whether the gateway field is required.
+						 * <code>$gateway_id</code> will be replaced with the id of the payment gateway.
+						 * <code>$field_key</code> will be replaced with the key of the field.
+						 *
+						 * @param bool  is_required Whether the field is required or not.
+						 * @param array $field      Field.
+						 */
 						$field['required'] = apply_filters( "yith_wcaf_gateway_{$gateway_id}_{$field_key}_required", isset( $field['required'] ) ? $field['required'] : false, $field );
 						$field['id']       = "gateway_{$gateway_id}_{$field_key}";
 

@@ -2,7 +2,7 @@
  * Variation Swatches for WooCommerce
  *
  * Author: Emran Ahmed ( emran.bd.08@gmail.com )
- * Date: 7/20/2022, 7:03:48 PM
+ * Date: 7/31/2022, 4:31:22 PM
  * Released under the GPLv3 license.
  */
 /******/ (function() { // webpackBootstrap
@@ -120,8 +120,10 @@ var PluginHelper = function ($) {
           $selector.unblock();
         }).done(function (termsMarkup) {
           if (termsMarkup) {
-            $selector.html(termsMarkup);
-            $(document.body).trigger('woo_variation_swatches_product_term_paging_done', $selector); //$('#woocommerce-product-data').trigger('woocommerce_variations_loaded');
+            $selector.html(termsMarkup); //   _.delay(() => {
+
+            $(document.body).trigger('woo_variation_swatches_product_term_paging_done', $selector); //   }, 300)
+            //$('#woocommerce-product-data').trigger('woocommerce_variations_loaded');
           }
         });
       }
@@ -606,6 +608,11 @@ var PluginHelper = function ($) {
         }
       }
     }, {
+      key: "FieldDependencyTrigger",
+      value: function FieldDependencyTrigger() {
+        $(document.body).trigger('init_form_field_dependency');
+      }
+    }, {
       key: "savingDialog",
       value: function savingDialog($wrapper, $dialog, taxonomy) {
         var data = {};
@@ -758,7 +765,7 @@ jQuery(function ($) {
       PluginHelper.InitTooltip();
       PluginHelper.SelectWoo();
       PluginHelper.ColorPicker();
-      PluginHelper.FieldDependency();
+      PluginHelper.FieldDependencyTrigger();
       PluginHelper.SetAttributeTypePaging($selector);
     });
     /*$('#woocommerce-product-data').on('woocommerce_variations_loaded', function () {

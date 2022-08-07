@@ -109,6 +109,15 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Admin_Table' ) ) {
 				return esc_html( $item->$column_name );
 			} else {
 				// Show the whole array for troubleshooting purposes.
+				/**
+				 * APPLY_FILTERS: yith_wcaf_$plural_table_column_default
+				 *
+				 * Filters the content of the default column in the table in the backend.
+				 * <code>$plural</code> will be replaced with the plural form of the item in the table.
+				 *
+				 * @param YITH_WCAF_Abstract_Object $item        Item of the row.
+				 * @param string                    $column_name Column name.
+				 */
 				return apply_filters( "yith_wcaf_{$this->_args['plural']}_table_column_default", print_r( $item, true ), $item, $column_name ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions
 			}
 		}
@@ -235,6 +244,14 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Admin_Table' ) ) {
 
 			$column .= '</div>';
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_admin_table_affiliate_column
+			 *
+			 * Filters the content of the affiliate column in the table in the backend.
+			 *
+			 * @param string                    $column Column content.
+			 * @param YITH_WCAF_Abstract_Object $item   Current item row.
+			 */
 			return apply_filters( 'yith_wcaf_admin_table_affiliate_column', $column, $item );
 		}
 
@@ -255,6 +272,14 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Admin_Table' ) ) {
 
 			$column .= '<strong>' . $item->get_formatted_amount() . '</strong>';
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_payments_table_column_amount
+			 *
+			 * Filters the content of the amount column in the table in the backend.
+			 *
+			 * @param string                    $column Column content.
+			 * @param YITH_WCAF_Abstract_Object $item   Current item row.
+			 */
 			return apply_filters( 'yith_wcaf_payments_table_column_amount', $column, $item );
 		}
 
@@ -604,6 +629,14 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Admin_Table' ) ) {
 				unset( $classes[ $pos ] );
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_admin_table_classes
+			 *
+			 * Filters the list with the CSS clasees for the table in the backend.
+			 *
+			 * @param array                          $classes     List of CSS classes.
+			 * @param YITH_WCAF_Abstract_Admin_Table $admin_table Admin table object.
+			 */
 			return apply_filters( 'yith_wcaf_admin_table_classes', $classes, $this );
 		}
 
@@ -750,6 +783,15 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Admin_Table' ) ) {
 		 * @return string
 		 */
 		public function get_view_label( $view, $count = 0 ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_$plural_table_view_label
+			 *
+			 * Filters the label to be used for a specific view in the table in the backend.
+			 * <code>$plural</code> will be replaced with the plural form of the item in the table.
+			 *
+			 * @param string $view  View slug.
+			 * @param int    $count Count of items in the view (to choose between singular/plural).
+			 */
 			return apply_filters( "yith_wcaf_{$this->_args['plural']}_table_view_label", $view, $count );
 		}
 

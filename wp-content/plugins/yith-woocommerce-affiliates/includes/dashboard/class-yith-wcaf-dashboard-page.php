@@ -47,6 +47,13 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Page' ) ) {
 				return false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dashboard_page_id
+			 *
+			 * Filters the id of the Affiliate Dashboard page.
+			 *
+			 * @param int $dashboard_page_id Affiliate Dashboard page id.
+			 */
 			return apply_filters( 'yith_wcaf_dashboard_page_id', $dashboard_page_id );
 		}
 
@@ -63,6 +70,13 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Page' ) ) {
 				return false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dashboard_base_url
+			 *
+			 * Filters the base url for the Affiliate Dashboard.
+			 *
+			 * @param string $base_url Base url.
+			 */
 			return apply_filters( 'yith_wcaf_dashboard_base_url', get_permalink( $dashboard_page_id ) );
 		}
 
@@ -73,6 +87,13 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Page' ) ) {
 		 * @since 1.2.2
 		 */
 		public function is_dashboard_page() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_is_dashboard_page
+			 *
+			 * Filters whether the current page is the Affiliate Dashboard page.
+			 *
+			 * @param bool $is_affiliate_dashboard Whether the page is the Affiliate Dashboard or not.
+			 */
 			return apply_filters( 'yith_wcaf_is_dashboard_page', is_page( self::get_dashboard_page_id() ) );
 		}
 

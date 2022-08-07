@@ -46,6 +46,13 @@ if ( ! class_exists( 'YITH_WCAF_Crons_Handler' ) ) {
 		public static function get_crons( $context = 'view' ) {
 			// no crons defined for this version; leave space for third party code to add some.
 			if ( 'view' === $context ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_crons
+				 *
+				 * Filters the registered crons.
+				 *
+				 * @param array $crons Registered crons.
+				 */
 				return apply_filters( 'yith_wcaf_crons', self::$crons );
 			}
 

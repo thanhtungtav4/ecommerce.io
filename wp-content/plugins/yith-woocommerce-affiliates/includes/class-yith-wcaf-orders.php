@@ -89,9 +89,25 @@ if ( ! class_exists( 'YITH_WCAF_Orders' ) ) {
 					continue;
 				}
 
+				/**
+				 * APPLY_FILTERS: yith_wcaf_map_commission_status
+				 *
+				 * Filters the commission status.
+				 *
+				 * @param string $commission_status Commission status.
+				 * @param string $order_status      Order status.
+				 */
 				return apply_filters( 'yith_wcaf_map_commission_status', $commission_status, $order_status );
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_default_commission_status
+			 *
+			 * Filters the default commission status.
+			 *
+			 * @param string $default_status Default commission status.
+			 * @param string $order_status   Order status.
+			 */
 			return apply_filters( 'yith_wcaf_default_commission_status', 'pending', $order_status );
 		}
 
@@ -112,6 +128,16 @@ if ( ! class_exists( 'YITH_WCAF_Orders' ) ) {
 			$affiliate = YITH_WCAF_Affiliate_Factory::get_affiliate_by_token( $token );
 
 			// if no order or user, return.
+			/**
+			 * APPLY_FILTERS: yith_wcaf_create_order_commissions
+			 *
+			 * Filters whether to create the order commissions.
+			 *
+			 * @param bool   $create_commissions Whether to create commissions or not.
+			 * @param int    $order_id           Order id.
+			 * @param string $token              Referral token.
+			 * @param string $token_origin       Referral token origin.
+			 */
 			if ( ! $order || ! $affiliate || ! $affiliate->is_valid() || ! apply_filters( 'yith_wcaf_create_order_commissions', true, $order_id, $token, $token_origin ) ) {
 				return;
 			}
@@ -163,9 +189,27 @@ if ( ! class_exists( 'YITH_WCAF_Orders' ) ) {
 						'rate'         => $rate,
 						'amount'       => $commission_amount,
 						'status'       => $commission_status,
+						/**
+						 * APPLY_FILTERS: yith_wcaf_create_order_commission_use_current_date
+						 *
+						 * Filters whether to use the current date for the commission when it is created.
+						 *
+						 * @param bool $use_current_date Whether to use the current date for the commission, use the order created date when false.
+						 */
 						'created_at'   => apply_filters( 'yith_wcaf_create_order_commission_use_current_date', true ) ? current_time( 'mysql' ) : $order->get_date_created()->format( 'Y-m-d H:i:S' ),
 					);
 
+					/**
+					 * APPLY_FILTERS: yith_wcaf_create_item_commission
+					 *
+					 * Filters whether to create the commissions for the order item.
+					 *
+					 * @param bool                  $create_commission Whether to create commission for the order item or not.
+					 * @param WC_Order_Item_Product $item              Order item object.
+					 * @param int                   $item_id           Order item id.
+					 * @param int                   $product_id        Product id.
+					 * @param array                 $commission_args   Array of arguments for the commission generation.
+					 */
 					if ( ! apply_filters( 'yith_wcaf_create_item_commission', true, $item, $item_id, $product_id, $commission_args ) ) {
 						continue;
 					}
@@ -304,6 +348,17 @@ if ( ! class_exists( 'YITH_WCAF_Orders' ) ) {
 			$get_item_amount = $this->exclude_discounts ? 'get_line_total' : 'get_line_subtotal';
 			$item_amount     = (float) $order->$get_item_amount( $line_item, ! $this->exclude_tax, false );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_line_item_commission_total
+			 *
+			 * Filters the item amount used to calculate the commission.
+			 *
+			 * @param float                 $item_amount   Item amount to calculate commission.
+			 * @param WC_Order              $order         Order object.
+			 * @param int                   $order_item_id Order item id.
+			 * @param WC_Order_Item_Product $line_item     Order item object.
+			 * @param float                 $rate          Commission rate.
+			 */
 			return apply_filters( 'yith_wcaf_line_item_commission_total', abs( $item_amount ), $order, $line_item->get_id(), $line_item, $rate );
 		}
 
@@ -331,6 +386,13 @@ if ( ! class_exists( 'YITH_WCAF_Orders' ) ) {
 				return 0;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_use_percentage_rates
+			 *
+			 * Filters whether to use percentage rates in the commissions system.
+			 *
+			 * @param bool $use_percentage_rates Whether to use percentage rates for the commissions, fixed amounts when false.
+			 */
 			$use_percentage_rates = apply_filters( 'yith_wcaf_use_percentage_rates', true, $order, $line_item_id, $line_item );
 
 			// get total amount for commission.
@@ -346,10 +408,29 @@ if ( ! class_exists( 'YITH_WCAF_Orders' ) ) {
 			}
 
 			// if commission result greater than line item total, return line item total.
+			/**
+			 * APPLY_FILTERS: yith_wcaf_line_total_check_amount_total
+			 *
+			 * Filters whether to check if the commission amount is greater than the line item total.
+			 *
+			 * @param bool $check_total_amount Whether to check if the commission amount is greater than the line item total or not.
+			 */
 			if ( $amount >= $line_total && apply_filters( 'yith_wcaf_line_total_check_amount_total', true ) ) {
 				return $line_total;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_line_item_commission
+			 *
+			 * Filters the generated commission amount.
+			 *
+			 * @param float                  $amount               Commission amount.
+			 * @param WC_Order               $order                Order object.
+			 * @param int                    $line_item_id         Order item id.
+			 * @param WC_Order_Item_Product  $line_item            Order item object.
+			 * @param float                  $rate                 Commission rate.
+			 * @param bool                   $use_percentage_rates Whether to use percentage rate to calculate commissions.
+			 */
 			return apply_filters( 'yith_wcaf_line_item_commission', $amount, $order, $line_item_id, $line_item, $rate, $use_percentage_rates );
 		}
 
@@ -364,6 +445,17 @@ if ( ! class_exists( 'YITH_WCAF_Orders' ) ) {
 		 * @return bool Whether to create commission or not.
 		 */
 		protected function should_create_product_commission( $product_id, $order_id = false, $token = false, $token_origin = false ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_create_product_commission
+			 *
+			 * Filters whether create commissions for specific products.
+			 *
+			 * @param bool   $create_product_commission Whether to create commissions for products or not.
+			 * @param int    $product_id                Product id.
+			 * @param int    $order_id                  Order id.
+			 * @param string $token                     Referral token.
+			 * @param string $token_origin              Referral token origin.
+			 */
 			return apply_filters( 'yith_wcaf_create_product_commission', true, $product_id, $order_id, $token, $token_origin );
 		}
 
@@ -422,6 +514,15 @@ if ( ! class_exists( 'YITH_WCAF_Orders' ) ) {
 
 			$action = in_array( $commission_status, YITH_WCAF_Commissions::get_assigned_statuses(), true ) ? 'confirmed' : 'unconfirmed';
 
+			/**
+			 * DO_ACTION: yith_wcaf_order_$action_commissions
+			 *
+			 * Allows to trigger some action when changing the commission status.
+			 * <code>$action</code> will be replaced with the action to apply depending on the commission status.
+			 *
+			 * @param WC_Order $order       Order object.
+			 * @param array    $commissions Commissions.
+			 */
 			do_action( "yith_wcaf_order_{$action}_commissions", $order, $commissions );
 		}
 
@@ -591,6 +692,13 @@ if ( ! class_exists( 'YITH_WCAF_Orders' ) ) {
 		 * @return bool
 		 */
 		public function exclude_tax() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_orders_exclude_tax
+			 *
+			 * Filters whether the commissions will be calculated excluding taxes.
+			 *
+			 * @param bool $exclude_tax Whether to exclude tax or not.
+			 */
 			return apply_filters( 'yith_wcaf_orders_exclude_tax', $this->exclude_tax );
 		}
 
@@ -600,6 +708,13 @@ if ( ! class_exists( 'YITH_WCAF_Orders' ) ) {
 		 * @return bool
 		 */
 		public function exclude_discounts() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_orders_exclude_discounts
+			 *
+			 * Filters whether the commissions will be calculated excluding order discounts.
+			 *
+			 * @param bool $exclude_discounts Whether to exclude discount or not.
+			 */
 			return apply_filters( 'yith_wcaf_orders_exclude_discounts', $this->exclude_discounts );
 		}
 

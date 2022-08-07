@@ -476,7 +476,7 @@
                         'desc'              => esc_html__( 'Swatches Selected tick color. Default is: #ffffff', 'woo-variation-swatches' ),
                         'css'               => 'width: 6em;',
                         'default'           => '#ffffff',
-                        'is_new'            => true,
+                        //'is_new'            => true,
                         'custom_attributes' => array(//    'data-alpha-enabled' => 'true'
                         )
                     ),
@@ -488,7 +488,7 @@
                         'desc'              => esc_html__( 'Swatches cross color. Default is: #ff0000', 'woo-variation-swatches' ),
                         'css'               => 'width: 6em;',
                         'default'           => '#ff0000',
-                        'is_new'            => true,
+                        //'is_new'            => true,
                         'custom_attributes' => array(//    'data-alpha-enabled' => 'true'
                         )
                     ),

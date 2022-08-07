@@ -101,6 +101,13 @@ if ( ! class_exists( 'YITH_WCAF_Click_Data_Store' ) ) {
 			$res = $this->save_object( $click );
 
 			if ( $res ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_click_correctly_created
+				 *
+				 * Filters the id of the click created.
+				 *
+				 * @param int $id Click id.
+				 */
 				$id = apply_filters( 'yith_wcaf_click_correctly_created', intval( $wpdb->insert_id ) );
 
 				$click->set_id( $id );
@@ -108,6 +115,14 @@ if ( ! class_exists( 'YITH_WCAF_Click_Data_Store' ) ) {
 
 				$this->clear_cache( $click );
 
+				/**
+				 * DO_ACTION: yith_wcaf_new_click
+				 *
+				 * Allows to trigger some action when a new click is created.
+				 *
+				 * @param int             $click_id Click id.
+				 * @param YITH_WCAF_Click $click    Click object.
+				 */
 				do_action( 'yith_wcaf_new_click', $click->get_id(), $click );
 			}
 		}
@@ -173,6 +188,14 @@ if ( ! class_exists( 'YITH_WCAF_Click_Data_Store' ) ) {
 
 			$this->clear_cache( $click );
 
+			/**
+			 * DO_ACTION: yith_wcaf_update_click
+			 *
+			 * Allows to trigger some action when a click is updated.
+			 *
+			 * @param int             $click_id Click id.
+			 * @param YITH_WCAF_Click $click    Click object.
+			 */
 			do_action( 'yith_wcaf_update_click', $click->get_id(), $click );
 		}
 
@@ -193,6 +216,14 @@ if ( ! class_exists( 'YITH_WCAF_Click_Data_Store' ) ) {
 				return false;
 			}
 
+			/**
+			 * DO_ACTION: yith_wcaf_before_delete_click
+			 *
+			 * Allows to trigger some action before deleting a click.
+			 *
+			 * @param int             $id    Click id.
+			 * @param YITH_WCAF_Click $click Click object.
+			 */
 			do_action( 'yith_wcaf_before_delete_click', $id, $click );
 
 			$this->clear_cache( $click );
@@ -201,10 +232,26 @@ if ( ! class_exists( 'YITH_WCAF_Click_Data_Store' ) ) {
 			$res = $wpdb->delete( $wpdb->yith_clicks, array( 'ID' => $id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 
 			if ( $res ) {
+				/**
+				 * DO_ACTION: yith_wcaf_delete_click
+				 *
+				 * Allows to trigger some action when a click is deleted.
+				 *
+				 * @param int             $id    Click id.
+				 * @param YITH_WCAF_Click $click Click object.
+				 */
 				do_action( 'yith_wcaf_delete_click', $id, $click );
 
 				$click->set_id( 0 );
 
+				/**
+				 * DO_ACTION: yith_wcaf_deleted_click
+				 *
+				 * Allows to trigger some action after deleting a click.
+				 *
+				 * @param int             $id    Click id.
+				 * @param YITH_WCAF_Click $click Click object.
+				 */
 				do_action( 'yith_wcaf_deleted_click', $id, $click );
 			}
 

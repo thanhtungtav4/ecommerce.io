@@ -102,6 +102,13 @@ if ( ! class_exists( 'YITH_WCAF_Commission_Data_Store' ) ) {
 			$res = $this->save_object( $commission );
 
 			if ( $res ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_commission_correctly_created
+				 *
+				 * Filters the id of the commission created.
+				 *
+				 * @param int $id Commission id.
+				 */
 				$id = apply_filters( 'yith_wcaf_commission_correctly_created', intval( $wpdb->insert_id ) );
 
 				$commission->set_id( $id );
@@ -110,6 +117,14 @@ if ( ! class_exists( 'YITH_WCAF_Commission_Data_Store' ) ) {
 				$this->add_order_item_meta( $commission );
 				$this->clear_cache( $commission );
 
+				/**
+				 * DO_ACTION: yith_wcaf_new_commission
+				 *
+				 * Allows to trigger some action when a new commission is created.
+				 *
+				 * @param int                  $commission_id Commission id.
+				 * @param YITH_WCAF_Commission $commission    Commission object.
+				 */
 				do_action( 'yith_wcaf_new_commission', $commission->get_id(), $commission );
 			}
 		}
@@ -180,6 +195,14 @@ if ( ! class_exists( 'YITH_WCAF_Commission_Data_Store' ) ) {
 			$this->add_order_item_meta( $commission );
 			$this->clear_cache( $commission );
 
+			/**
+			 * DO_ACTION: yith_wcaf_update_commission
+			 *
+			 * Allows to trigger some action when a commission is updated.
+			 *
+			 * @param int                  $commission_id Commission id.
+			 * @param YITH_WCAF_Commission $commission    Commission object.
+			 */
 			do_action( 'yith_wcaf_update_commission', $commission->get_id(), $commission );
 		}
 
@@ -204,6 +227,14 @@ if ( ! class_exists( 'YITH_WCAF_Commission_Data_Store' ) ) {
 				return false;
 			}
 
+			/**
+			 * DO_ACTION: yith_wcaf_before_delete_commission
+			 *
+			 * Allows to trigger some action before deleting a commission.
+			 *
+			 * @param int                  $id         Commission id.
+			 * @param YITH_WCAF_Commission $commission Commission object.
+			 */
 			do_action( 'yith_wcaf_before_delete_commission', $id, $commission );
 
 			$this->delete_order_item_meta( $commission, isset( $args['delete_rates'] ) ? $args['delete_rates'] : false );
@@ -213,12 +244,28 @@ if ( ! class_exists( 'YITH_WCAF_Commission_Data_Store' ) ) {
 			$res = $wpdb->delete( $wpdb->yith_commissions, array( 'ID' => $id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 
 			if ( $res ) {
+				/**
+				 * DO_ACTION: yith_wcaf_delete_commission
+				 *
+				 * Allows to trigger some action when a commission is deleted.
+				 *
+				 * @param int                  $id         Commission id.
+				 * @param YITH_WCAF_Commission $commission Commission object.
+				 */
 				do_action( 'yith_wcaf_delete_commission', $id, $commission );
 
 				$commission->set_id( 0 );
 
 				$this->delete_notes( $payment );
 
+				/**
+				 * DO_ACTION: yith_wcaf_deleted_commission
+				 *
+				 * Allows to trigger some action after deleting a commission.
+				 *
+				 * @param int                  $id         Commission id.
+				 * @param YITH_WCAF_Commission $commission Commission object.
+				 */
 				do_action( 'yith_wcaf_deleted_commission', $id, $commission );
 			}
 

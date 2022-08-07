@@ -223,6 +223,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Dashboard_Shortcode' ) ) {
 				wp_logout_url( wc_get_page_permalink( 'myaccount' ) )
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dashboard_affiliate_message
+			 *
+			 * Filters the message shown in the Affiliate Dashboard.
+			 *
+			 * @param string $message          Message.
+			 * @param string $greeting_message Greeting message.
+			 */
 			$greeting_message .= apply_filters(
 				'yith_wcaf_dashboard_affiliate_message',
 				sprintf(

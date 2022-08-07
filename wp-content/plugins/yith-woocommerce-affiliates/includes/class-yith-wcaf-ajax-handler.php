@@ -120,6 +120,13 @@ if ( ! class_exists( 'YITH_WCAF_Ajax_Handler' ) ) {
 			}
 
 			if ( 'view' === $context ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_ajax_handlers
+				 *
+				 * Filters the AJAX handlers.
+				 *
+				 * @param array $ajax_handlers AJAX handlers.
+				 */
 				return apply_filters( 'yith_wcaf_ajax_handlers', self::$handlers );
 			}
 
@@ -133,6 +140,14 @@ if ( ! class_exists( 'YITH_WCAF_Ajax_Handler' ) ) {
 		 * @return string Action to use for wp_ajax_ hook.
 		 */
 		public static function get_handler_action( $handler ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_ajax_handler_action
+			 *
+			 * Filters the AJAX handler action.
+			 *
+			 * @param string $action  AJAX handler action.
+			 * @param string $handler AJAX handler.
+			 */
 			return apply_filters( 'yith_wcaf_ajax_handler_action', "yith_wcaf_$handler", $handler );
 		}
 
@@ -339,6 +354,14 @@ if ( ! class_exists( 'YITH_WCAF_Ajax_Handler' ) ) {
 
 			check_ajax_referer( 'get_referral_url', 'security' );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_current_user_can_get_referral_url
+			 *
+			 * Filters whether current user can get the referral URL.
+			 *
+			 * @param bool $can_get_referral_url Whether current user can get referral URL or not.
+			 * @param int  $current_user_id      Current user ID.
+			 */
 			if ( ! apply_filters( 'yith_wcaf_current_user_can_get_referral_url', true, get_current_user_id() ) ) {
 				die( - 1 );
 			}

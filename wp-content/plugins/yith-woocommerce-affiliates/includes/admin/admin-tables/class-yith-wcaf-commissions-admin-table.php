@@ -116,6 +116,15 @@ if ( ! class_exists( 'YITH_WCAF_Commissions_Admin_Table' ) ) {
 				$column = implode( ' | ', $column_items );
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_category_column
+			 *
+			 * Filters the output of the category column in the Commissions table.
+			 *
+			 * @param string $column     Column output.
+			 * @param int    $product_id Product id.
+			 * @param string $items      Items to display in the table.
+			 */
 			return apply_filters( 'yith_wcaf_category_column', $column, $product_id, 'commissions' );
 		}
 
@@ -349,7 +358,15 @@ if ( ! class_exists( 'YITH_WCAF_Commissions_Admin_Table' ) ) {
 			// sets pagination arguments.
 			$per_page     = $this->get_items_per_page( 'edit_commissions_per_page' );
 			$current_page = $this->get_pagenum();
-			$commissions  = YITH_WCAF_Commissions()->get_commissions(
+
+			/**
+			 * APPlY_FILTERS: yith_wcaf_prepare_items_commissions
+			 *
+			 * Filters the array with the arguments to get the commissions.
+			 *
+			 * @param array $args Array of arguments.
+			 */
+			$commissions = YITH_WCAF_Commissions()->get_commissions(
 				array_merge(
 					apply_filters(
 						'yith_wcaf_prepare_items_commissions',

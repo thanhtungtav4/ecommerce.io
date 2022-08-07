@@ -145,6 +145,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Legacy' ) ) {
 			$affiliate = YITH_WCAF_Affiliate_Factory::get_affiliate( $affiliate_id );
 			$user      = $affiliate->get_user();
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_add_affiliate_role
+			 *
+			 * Filters whether to add the Affiliate role.
+			 *
+			 * @param bool                $add_role  Whether to add the role or not.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 */
 			if ( ! $user || is_wp_error( $user ) || ! apply_filters( 'yith_wcaf_add_affiliate_role', true, $affiliate ) ) {
 				return;
 			}
@@ -417,6 +425,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Legacy' ) ) {
 
 			$default_token = $user_id;
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_token
+			 *
+			 * Filters the default affiliate token.
+			 *
+			 * @param string $default_token Default token.
+			 * @param int    $user_id       Used id.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_token', $default_token, $user_id );
 		}
 

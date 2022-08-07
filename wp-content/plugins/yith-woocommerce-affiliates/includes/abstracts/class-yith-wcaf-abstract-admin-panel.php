@@ -146,6 +146,13 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Admin_Panel' ) ) {
 		 * @return string Current tab url.
 		 */
 		public function get_tab_url( $args = array() ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_admin_tab_url
+			 *
+			 * Filters the url for the current tab in the backend.
+			 *
+			 * @param string $url Tab url.
+			 */
 			return apply_filters( 'yith_wcaf_admin_tab_url', add_query_arg( $args, YITH_WCAF_Admin()->get_tab_url( $this->tab, '', $args ) ) );
 		}
 
@@ -398,6 +405,15 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Admin_Panel' ) ) {
 		 */
 		public function get_screen_id() {
 			$main_screen_id = YITH_WCAF_Admin()->get_panel_screen_id();
+
+			/**
+			 * APPLY_FILTERS: yith_wcaf_admin_panel_$tab_screen_id
+			 *
+			 * Filters the screen id for the current tab in the plugin panel.
+			 * <code>$tab</code> will be replaced with the current tab in the plugin panel.
+			 *
+			 * @param string $screen_id Screen id for current tab.
+			 */
 			return apply_filters( "yith_wcaf_admin_panel_{$this->tab}_screen_id", "{$main_screen_id}_{$this->tab}" );
 		}
 
@@ -460,6 +476,14 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Admin_Panel' ) ) {
 		 * @return array Array of variables to localize.
 		 */
 		public function get_localize() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_admin_panel_$tab_script_localize
+			 *
+			 * Filters the array with the variables to localize into the plugin script.
+			 * <code>$tab</code> will be replaced with the current tab in the plugin panel.
+			 *
+			 * @param array $localize Array with variables to localize.
+			 */
 			return apply_filters( "yith_wcaf_admin_panel_{$this->tab}_script_localize", array() );
 		}
 

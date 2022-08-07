@@ -11,6 +11,15 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 	exit;
 } // Exit if accessed directly
 
+/**
+ * APPLY_FILTERS: yith_wcaf_payments_settings
+ *
+ * Filters the options available in the Commissions Payments subtab.
+ *
+ * @param array $options Array with options
+ *
+ * @return array
+ */
 return apply_filters(
 	'yith_wcaf_payments_settings',
 	array(

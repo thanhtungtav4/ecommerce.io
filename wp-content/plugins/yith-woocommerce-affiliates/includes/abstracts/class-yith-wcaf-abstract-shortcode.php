@@ -141,6 +141,14 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Shortcode' ) ) {
 				$atts = array();
 			}
 
+			/**
+			 * APPLY_FILTERS: $tag_shortcode_atts
+			 *
+			 * Filters the attributes for the shortcode.
+			 * <code>$tag</code> will be replaced with the shortcode tag.
+			 *
+			 * @param array $atts Shortcode attributes.
+			 */
 			$atts = apply_filters(
 				"{$this->tag}_shortcode_atts",
 				$this->parse_atts(
@@ -224,6 +232,14 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Shortcode' ) ) {
 		 * @return array Array of attributes used for the template.
 		 */
 		protected function get_template_atts( $atts ) {
+			/**
+			 * APPLY_FILTERS: $tag_shortcode_template_atts
+			 *
+			 * Filters the array with the attritubes needed for the shortcode template.
+			 * <code>$tag</code> will be replaced with the shortcode tag.
+			 *
+			 * @param array $shortcode_atts Attributes for the shortcode template.
+			 */
 			return apply_filters( "{$this->tag}_shortcode_template_atts", $atts );
 		}
 
@@ -275,6 +291,15 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Shortcode' ) ) {
 		 * @return array Array containing configuration
 		 */
 		protected function get_builder_config( $builder ) {
+			/**
+			 * APPLY_FILTERS: $tag_shortcode_$builder_config
+			 *
+			 * Filters the shortcode configuration for the integration with the builder.
+			 * <code>$tag</code> will be replaced with the shortcode tag.
+			 * <code>$builder</code> will be replaced with the builder name.
+			 *
+			 * @param array $shortcode_config Shortcode configuration.
+			 */
 			return apply_filters(
 				"{$this->tag}_shortcode_{$builder}_config",
 				array(
@@ -296,6 +321,15 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Shortcode' ) ) {
 		 * @return array Array of attributes
 		 */
 		protected function get_builder_atts( $builder ) {
+			/**
+			 * APPLY_FILTERS: $tag_shortcode_$builder_atts
+			 *
+			 * Filters the shortcode attributes for the integration with the builder.
+			 * <code>$tag</code> will be replaced with the shortcode tag.
+			 * <code>$builder</code> will be replaced with the builder name.
+			 *
+			 * @param array $shortcode_atts Shortcode attributes.
+			 */
 			return apply_filters(
 				"{$this->tag}_shortcode_{$builder}_atts",
 				wp_list_filter( $this->get_atts(), array( $builder => true ) )

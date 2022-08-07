@@ -285,6 +285,15 @@ if ( ! class_exists( 'YITH_WCAF_Payment' ) ) {
 		 * @return bool Whether payment can be processed.
 		 */
 		public function can_be_paid() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_payment_can_be_paid
+			 *
+			 * Filters whether the current payment can be paid.
+			 *
+			 * @param bool              $can_be_paid Whether the payment can be paid or not.
+			 * @param YITH_WCAF_Payment $payment     Payment object.
+			 * @param int               $id          Payment id.
+			 */
 			return apply_filters( 'yith_wcaf_payment_can_be_paid', ! $this->is_paid() && $this->can_change_status( 'pending' ), $this, $this->get_id() );
 		}
 
@@ -536,7 +545,16 @@ if ( ! class_exists( 'YITH_WCAF_Payment' ) ) {
 				}
 			}
 
-			return apply_filters( 'yith_wcaf_commission_admin_actions', parent::get_admin_actions(), $this->get_id(), $this );
+			/**
+			 * APPLY_FILTERS: yith_wcaf_payment_admin_actions
+			 *
+			 * Filters the available actions for each payment in the payments table.
+			 *
+			 * @param array             $actions Actions.
+			 * @param int               $id      Payment id.
+			 * @param YITH_WCAF_Payment $payment Payment object.
+			 */
+			return apply_filters( 'yith_wcaf_payment_admin_actions', parent::get_admin_actions(), $this->get_id(), $this );
 		}
 
 		/**
@@ -956,6 +974,16 @@ if ( ! class_exists( 'YITH_WCAF_Payment' ) ) {
 				$can = user_can( $user_id, YITH_WCAF_Admin()->get_panel_capability() );
 			}
 
+			/**
+			 * APPLY_FILTERS: $object_type_user_can
+			 *
+			 * Filters whether the user can perform operations over current payment.
+			 * <code>$object_type</code> will be replaced with the object type the operation will be performed to.
+			 *
+			 * @param bool   $can        Whether the user can perform operations or not.
+			 * @param int    $user_id    User id.
+			 * @param string $capability Capability to check.
+			 */
 			return apply_filters( "{$object_type}_user_can", $can, $user_id, $capability );
 		}
 
@@ -990,8 +1018,36 @@ if ( ! class_exists( 'YITH_WCAF_Payment' ) ) {
 				$old_status = $old_data['status'];
 				$old_status = isset( $available_statuses[ $old_status ] ) ? $available_statuses[ $old_status ]['slug'] : '';
 
-				do_action( 'yith_wcaf_payment_status_' . $new_status, $payment_id );
-				do_action( 'yith_wcaf_payment_status_' . $old_status . '_to_' . $new_status, $payment_id );
+				/**
+				 * DO_ACTION: yith_wcaf_payment_status_$new_status
+				 *
+				 * Allows to trigger some action when the payment status changes into a new status.
+				 * <code>$new_status</code> will be replaced with the new status for the payment.
+				 *
+				 * @param int $payment_id Payment id.
+				 */
+				do_action( "yith_wcaf_payment_status_{$new_status}", $payment_id );
+
+				/**
+				 * DO_ACTION: yith_wcaf_payment_status_$old_status_to_$new_status
+				 *
+				 * Allows to trigger some action when the payment status changes from the old status into the new status.
+				 * <code>$old_status</code> will be replaced with the old payment status.
+				 * <code>$new_status</code> will be replaced with the new payment status.
+				 *
+				 * @param int $payment_id Payment id.
+				 */
+				do_action( "yith_wcaf_payment_status_{$old_status}_to_{$new_status}", $payment_id );
+
+				/**
+				 * DO_ACTION: yith_wcaf_payment_status_changed
+				 *
+				 * Allows to trigger some action when the payment status has changed.
+				 *
+				 * @param int    $payment_id Payment id.
+				 * @param string $new_status New status.
+				 * @param string $old_status Old status.
+				 */
 				do_action( 'yith_wcaf_payment_status_changed', $payment_id, $new_status, $old_status );
 			}
 
@@ -1054,6 +1110,10 @@ if ( ! class_exists( 'YITH_WCAF_Payment' ) ) {
 			foreach ( $new_commissions as $commission_id ) {
 				$commission = $commissions[ $commission_id ];
 
+				if ( ! $commission || ! $commission instanceof YITH_WCAF_Commission ) {
+					continue;
+				}
+
 				if ( $this->has_status( 'completed' ) ) {
 					$new_status = 'paid';
 				} elseif ( $this->is_pending() ) {
@@ -1081,6 +1141,10 @@ if ( ! class_exists( 'YITH_WCAF_Payment' ) ) {
 
 			foreach ( $old_commissions as $commission_id ) {
 				$commission = $original_commissions[ $commission_id ];
+
+				if ( ! $commission || ! $commission instanceof YITH_WCAF_Commission ) {
+					continue;
+				}
 
 				$order      = $commission->get_order();
 				$new_status = $order ? YITH_WCAF_Orders()->map_commission_status( $order->get_status() ) : 'pending';

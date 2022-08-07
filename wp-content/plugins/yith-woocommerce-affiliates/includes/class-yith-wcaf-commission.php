@@ -680,6 +680,15 @@ if ( ! class_exists( 'YITH_WCAF_Commission' ) ) {
 				}
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_commission_admin_actions
+			 *
+			 * Filters the available actions for each commission in the commissions table.
+			 *
+			 * @param array                $actions    Actions.
+			 * @param int                  $id         Commission id.
+			 * @param YITH_WCAF_Commission $commission Commission object.
+			 */
 			return apply_filters( 'yith_wcaf_commission_admin_actions', parent::get_admin_actions(), $this->get_id(), $this );
 		}
 
@@ -723,6 +732,15 @@ if ( ! class_exists( 'YITH_WCAF_Commission' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_commission_to_array
+			 *
+			 * Filters data returned when converting a commission object to an array.
+			 *
+			 * @param array                $array      Commission in array format.
+			 * @param int                  $id         Commission id.
+			 * @param YITH_WCAF_Commission $commission Commission object.
+			 */
 			return apply_filters( 'yith_wcaf_commission_to_array', $return, $this->get_id(), $this );
 		}
 
@@ -745,6 +763,16 @@ if ( ! class_exists( 'YITH_WCAF_Commission' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_commission_payments
+			 *
+			 * Filters payments found for current commission, for filters passed.
+			 *
+			 * @param YITH_WCAF_Payments_Collection $payments   Payments collection (may be empty).
+			 * @param int                           $id         Commission id.
+			 * @param YITH_WCAF_Commission          $commission Commission object.
+			 * @param array                         $args       Array of filtering criteria used for the query.
+			 */
 			return apply_filters( 'yith_wcaf_commission_payments', $payments, $this->get_id(), $this, $args );
 		}
 
@@ -760,6 +788,15 @@ if ( ! class_exists( 'YITH_WCAF_Commission' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_commission_active_payments
+			 *
+			 * Filters active payments found for current commission.
+			 *
+			 * @param YITH_WCAF_Payments_Collection $payments   Payments collection (may be empty).
+			 * @param int                           $id         Commission id.
+			 * @param YITH_WCAF_Commission          $commission Commission object.
+			 */
 			return apply_filters( 'yith_wcaf_commission_active_payments', $payments, $this->get_id(), $this );
 		}
 
@@ -775,6 +812,15 @@ if ( ! class_exists( 'YITH_WCAF_Commission' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_commission_inactive_payments
+			 *
+			 * Filters inactive payments found for current commission.
+			 *
+			 * @param YITH_WCAF_Payments_Collection $payments   Payments collection (may be empty).
+			 * @param int                           $id         Commission id.
+			 * @param YITH_WCAF_Commission          $commission Commission object.
+			 */
 			return apply_filters( 'yith_wcaf_commission_inactive_payments', $payments, $this->get_id(), $this );
 		}
 
@@ -873,6 +919,13 @@ if ( ! class_exists( 'YITH_WCAF_Commission' ) ) {
 		public function set_rate( $rate ) {
 			$rate = (float) $rate;
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_max_rate_value
+			 *
+			 * Filters the maximum rate value.
+			 *
+			 * @param int $max_rate_value Maximum rate value.
+			 */
 			if ( $rate < 0 || $rate > apply_filters( 'yith_wcaf_max_rate_value', 100 ) ) {
 				return;
 			}
@@ -1077,8 +1130,36 @@ if ( ! class_exists( 'YITH_WCAF_Commission' ) ) {
 				$old_status = $old_data['status'];
 				$old_status = isset( $available_statuses[ $old_status ] ) ? $available_statuses[ $old_status ]['slug'] : '';
 
-				do_action( 'yith_wcaf_commission_status_' . $new_status, $commission_id );
-				do_action( 'yith_wcaf_commission_status_' . $old_status . '_to_' . $new_status, $commission_id );
+				/**
+				 * DO_ACTION: yith_wcaf_commission_status_$new_status
+				 *
+				 * Allows to trigger some action when the commission status changes into a new status.
+				 * <code>$new_status</code> will be replaced with the new status for the commission.
+				 *
+				 * @param int $commission_id Commission id.
+				 */
+				do_action( "yith_wcaf_commission_status_{$new_status}", $commission_id );
+
+				/**
+				 * DO_ACTION: yith_wcaf_commission_status_$old_status_to_$new_status
+				 *
+				 * Allows to trigger some action when the commission status changes from the old status into the new status.
+				 * <code>$old_status</code> will be replaced with the old commission status.
+				 * <code>$new_status</code> will be replaced with the new commission status.
+				 *
+				 * @param int $commission_id Commission id.
+				 */
+				do_action( "yith_wcaf_commission_status_{$old_status}_to_{$new_status}", $commission_id );
+
+				/**
+				 * DO_ACTION: yith_wcaf_commission_status_changed
+				 *
+				 * Allows to trigger some action when the commission status has changed.
+				 *
+				 * @param int    $commission_id Commission id.
+				 * @param string $new_status    New status.
+				 * @param string $old_status    Old status.
+				 */
 				do_action( 'yith_wcaf_commission_status_changed', $commission_id, $new_status, $old_status );
 			}
 

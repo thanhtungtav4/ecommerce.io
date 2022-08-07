@@ -586,6 +586,12 @@ if ( ! class_exists( 'YITH_WCAF_Install' ) ) {
 
 			// allow third party code execute upgrade methods.
 			do_action( 'yith_wcaf_upgrade_' . str_replace( '.', '', YITH_WCAF::VERSION ) ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+
+			/**
+			 * DO_ACTION: yith_wcaf_upgrade
+			 *
+			 * Allows to perform any required upgrade.
+			 */
 			do_action( 'yith_wcaf_upgrade' );
 
 			// finally, store new version.
@@ -764,6 +770,7 @@ if ( ! class_exists( 'YITH_WCAF_Install' ) ) {
 			);
 
 			update_option( 'yith_wcaf_affiliate_profile_fields', $fields_structure );
+			update_option( 'yith_wcaf_affiliate_profile_fields_defaults', $fields_structure );
 		}
 	}
 }

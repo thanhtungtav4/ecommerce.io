@@ -66,6 +66,13 @@ if ( ! class_exists( 'YITH_WCAF_Clicks' ) ) {
 		 */
 		public static function get_available_statuses() {
 			if ( empty( self::$available_statuses ) ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_clicks_statuses
+				 *
+				 * Filters the available statuses for the clicks.
+				 *
+				 * @param array $available_statuses Available statuses.
+				 */
 				self::$available_statuses = apply_filters(
 					'yith_wcaf_clicks_statuses',
 					array(
@@ -87,7 +94,7 @@ if ( ! class_exists( 'YITH_WCAF_Clicks' ) ) {
 		}
 
 		/**
-		 * Return a human friendly version of a affiliate status
+		 * Return a human friendly version of a click status
 		 *
 		 * @param int|string $status Status to convert to human friendly form.
 		 * @param int        $count  Count of items (used to conditionally show plural form).
@@ -110,7 +117,15 @@ if ( ! class_exists( 'YITH_WCAF_Clicks' ) ) {
 				$label = isset( $statuses[ $status ] ) ? $statuses[ $status ]['name'] : '';
 			}
 
-			return apply_filters( 'yith_wcaf_affiliate_status_name', $label, $status );
+			/**
+			 * APPLY_FILTERS: yith_wcaf_click_status_name
+			 *
+			 * Filters the name of the click status.
+			 *
+			 * @param string $label  Status name.
+			 * @param string $status Status.
+			 */
+			return apply_filters( 'yith_wcaf_click_status_name', $label, $status );
 		}
 
 		/* === CLICK/CONVERSION HANDLER === */
@@ -122,6 +137,13 @@ if ( ! class_exists( 'YITH_WCAF_Clicks' ) ) {
 		 * @since 1.0.0
 		 */
 		public function register_hit() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_should_register_hit
+			 *
+			 * Filters whether clicks should be registered.
+			 *
+			 * @param bool $register_hits Whether to register clicks or not.
+			 */
 			if ( ! apply_filters( 'yith_wcaf_should_register_hit', $this->are_hits_registered() ) ) {
 				return;
 			}
@@ -405,6 +427,13 @@ if ( ! class_exists( 'YITH_WCAF_Clicks' ) ) {
 		public function get_requester_ip() {
 			$requester_ip = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : false;
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_requester_ip
+			 *
+			 * Filters the user IP address for the click.
+			 *
+			 * @param string $requester_ip Requester IP address.
+			 */
 			return apply_filters( 'yith_wcaf_requester_ip', $requester_ip );
 		}
 
@@ -418,6 +447,13 @@ if ( ! class_exists( 'YITH_WCAF_Clicks' ) ) {
 
 			$requester_url = add_query_arg( $_GET, home_url( $wp->request ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_requester_link
+			 *
+			 * Filters the URL visited by the current requester.
+			 *
+			 * @param string $requester_url Visited URL.
+			 */
 			return apply_filters( 'yith_wcaf_requester_link', $requester_url );
 		}
 
@@ -429,6 +465,13 @@ if ( ! class_exists( 'YITH_WCAF_Clicks' ) ) {
 		public function get_requester_origin() {
 			$origin = isset( $_SERVER['HTTP_REFERER'] ) ? esc_url( sanitize_text_field( wp_unslash( $_SERVER['HTTP_REFERER'] ) ) ) : false;
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_requester_origin
+			 *
+			 * Filters the origin URL for the current requester.
+			 *
+			 * @param string $origin Origin URL.
+			 */
 			return apply_filters( 'yith_wcaf_requester_origin', $origin );
 		}
 

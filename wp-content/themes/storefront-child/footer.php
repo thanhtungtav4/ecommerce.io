@@ -137,30 +137,30 @@
         arrows: false,
         lazyLoad: 'ondemand',
         });
-        $('.slick-sure').not('.slick-initialized').slick({
-          infinite: true,
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          dots: false,
-          arrows: false,
-          lazyLoad: 'ondemand',
-          responsive: [
-             {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-          ]
-        });
+        // $('.slick-sure').not('.slick-initialized').slick({
+        //   infinite: true,
+        //   slidesToShow: 4,
+        //   slidesToScroll: 1,
+        //   dots: false,
+        //   arrows: false,
+        //   lazyLoad: 'ondemand',
+        //   responsive: [
+        //      {
+        //       breakpoint: 992,
+        //       settings: {
+        //         slidesToShow: 2,
+        //         slidesToScroll: 2
+        //       }
+        //     },
+        //     {
+        //       breakpoint: 768,
+        //       settings: {
+        //         slidesToShow: 1,
+        //         slidesToScroll: 1
+        //       }
+        //     }
+        //   ]
+        // });
         $('.m-product__slick').not('.slick-initialized').slick({
           infinite: true,
           slidesToShow: 1,
@@ -247,6 +247,36 @@
         });
       });
     </script>
+    <?php if(is_front_page()) :  ?>
+      <script>
+      $(document).ready(function(){
+        $('.slick-sure').not('.slick-initialized').slick({
+          infinite: true,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+          lazyLoad: 'ondemand',
+          responsive: [
+             {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+        });
+      });
+      </script>
+    <?php endif; ?>
 		<?php wp_footer(); ?>
   </body>
 </html>

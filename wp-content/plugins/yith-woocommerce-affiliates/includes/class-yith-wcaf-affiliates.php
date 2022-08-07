@@ -44,6 +44,13 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates' ) ) {
 		 */
 		public static function get_available_statuses() {
 			if ( empty( self::$available_statuses ) ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_affiliates_statuses
+				 *
+				 * Filters the available statuses for the affiliates.
+				 *
+				 * @param array $available_statuses Available statuses.
+				 */
 				self::$available_statuses = apply_filters(
 					'yith_wcaf_affiliates_statuses',
 					array(
@@ -93,6 +100,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates' ) ) {
 				$label = isset( $statuses[ $status ] ) ? $statuses[ $status ]['name'] : '';
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_status_name
+			 *
+			 * Filters the name of the affiliate's status.
+			 *
+			 * @param string $label  Status name.
+			 * @param string $status Status.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_status_name', $label, $status );
 		}
 
@@ -268,6 +283,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates' ) ) {
 				return false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_is_valid_token
+			 *
+			 * Filters whether the token is valid.
+			 *
+			 * @param bool   $is_valid_token Whether the token is valid or not.
+			 * @param string $token          Token.
+			 */
 			return apply_filters( 'yith_wcaf_is_valid_token', true, $token );
 		}
 
@@ -290,6 +313,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates' ) ) {
 
 			$affiliate = $this->get_affiliate_by_user_id( $user_id );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_is_user_affiliate
+			 *
+			 * Filters whether the user is an affiliate.
+			 *
+			 * @param bool $is_affiliate Whether the user is an affiliate or not.
+			 * @param int  $user_id      User id.
+			 */
 			return apply_filters( 'yith_wcaf_is_user_affiliate', ! ! $affiliate, $user_id );
 		}
 
@@ -312,6 +343,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates' ) ) {
 
 			$affiliate = $this->get_affiliate_by_user_id( $user_id );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_is_user_enabled_affiliate
+			 *
+			 * Filters whether the user is an enabled affiliate.
+			 *
+			 * @param bool $is_enabled_affiliate Whether the user is an enabled affiliate or not.
+			 * @param int  $user_id              User id.
+			 */
 			return apply_filters( 'yith_wcaf_is_user_enabled_affiliate', ! ! $affiliate && $affiliate->has_status( 'enabled' ), $user_id );
 		}
 
@@ -334,6 +373,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates' ) ) {
 
 			$affiliate = $this->get_affiliate_by_user_id( $user_id );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_is_user_pending_affiliate
+			 *
+			 * Filters whether the user is a pending affiliate.
+			 *
+			 * @param bool $is_pending_affiliate Whether the user is a pending affiliate or not.
+			 * @param int  $user_id              User id.
+			 */
 			return apply_filters( 'yith_wcaf_is_user_pending_affiliate', ! ! $affiliate && $affiliate->has_status( 'new' ), $user_id );
 		}
 
@@ -356,6 +403,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates' ) ) {
 
 			$affiliate = $this->get_affiliate_by_user_id( $user_id );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_is_user_rejected_affiliate
+			 *
+			 * Filters whether the user is a rejected affiliate.
+			 *
+			 * @param bool $is_rejected_affiliate Whether the user is a rejected affiliate or not.
+			 * @param int  $user_id               User id.
+			 */
 			return apply_filters( 'yith_wcaf_is_user_rejected_affiliate', ! ! $affiliate && $affiliate->has_status( 'disabled' ), $user_id );
 		}
 
@@ -378,6 +433,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates' ) ) {
 
 			$affiliate = $this->get_affiliate_by_user_id( $user_id );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_is_user_valid_affiliate
+			 *
+			 * Filters whether the user is a valid affiliate (enabled and not banned).
+			 *
+			 * @param bool $is_valid_affiliate Whether the user is a valid affiliate or not.
+			 * @param int  $user_id            User id.
+			 */
 			return apply_filters( 'yith_wcaf_is_user_valid_affiliate', ! ! $affiliate && $affiliate->is_valid(), $user_id );
 		}
 
@@ -400,6 +463,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates' ) ) {
 
 			$affiliate = $this->get_affiliate_by_user_id( $user_id );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_is_user_banned_affiliate
+			 *
+			 * Filters whether the user is a banned affiliate.
+			 *
+			 * @param bool $is_banned_affiliate Whether the user is a banned affiliate or not.
+			 * @param int  $user_id             User id.
+			 */
 			return apply_filters( 'yith_wcaf_is_user_banned_affiliate', ! ! $affiliate && $affiliate->is_banned(), $user_id );
 		}
 

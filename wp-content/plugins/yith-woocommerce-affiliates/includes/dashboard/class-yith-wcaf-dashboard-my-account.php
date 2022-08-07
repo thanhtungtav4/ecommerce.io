@@ -63,6 +63,13 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_My_Account' ) ) {
 		 * @return string
 		 */
 		public static function get_default_endpoint() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_my_account_default_endpoint
+			 *
+			 * Filters the default endpoint.
+			 *
+			 * @param string $default_endpoint Default endpoint.
+			 */
 			return apply_filters( 'yith_wcaf_my_account_default_endpoint', wc_sanitize_endpoint_slug( self::$default_endpoint ) );
 		}
 
@@ -77,6 +84,14 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_My_Account' ) ) {
 			$default = self::get_default_endpoint();
 			$rewrite = parent::get_endpoint_rewrite( $endpoint );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_my_account_endpoint_rewrite
+			 *
+			 * Filters the rewrite for a given endpoint.
+			 *
+			 * @param string $rewrite Endpoint rewrite.
+			 * @param string $endpoint Endpoint key.
+			 */
 			return apply_filters( 'yith_wcaf_my_account_endpoint_rewrite', "$default/$rewrite", $endpoint );
 		}
 
@@ -94,6 +109,13 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_My_Account' ) ) {
 				return false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dashboard_page_id
+			 *
+			 * Filters the id of the Affiliate Dashboard page.
+			 *
+			 * @param int $dashboard_page_id Affiliate Dashboard page id.
+			 */
 			return apply_filters( 'yith_wcaf_dashboard_page_id', $dashboard_page_id );
 		}
 
@@ -107,6 +129,13 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_My_Account' ) ) {
 		 * @since 1.0.0
 		 */
 		public function get_dashboard_base_url( $endpoint = '', $value = '' ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_dashboard_base_url
+			 *
+			 * Filters the base url for the Affiliate Dashboard.
+			 *
+			 * @param string $base_url Base url.
+			 */
 			return apply_filters( 'yith_wcaf_dashboard_base_url', wc_get_page_permalink( 'myaccount' ) );
 		}
 
@@ -117,6 +146,13 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_My_Account' ) ) {
 		 * @since 1.2.2
 		 */
 		public function is_dashboard_page() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_is_dashboard_page
+			 *
+			 * Filters whether the current page is the Affiliate Dashboard page.
+			 *
+			 * @param bool $is_affiliate_dashboard Whether the page is the Affiliate Dashboard or not.
+			 */
 			return apply_filters( 'yith_wcaf_is_dashboard_page', is_account_page() && ( self::is_default_endpoint() || ! ! self::get_current_dashboard_endpoint() ) );
 		}
 
@@ -203,6 +239,13 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_My_Account' ) ) {
 			$menu_items[ self::$default_endpoint ] = _x( 'Affiliate Dashboard', '[FRONTEND] My Account menu item', 'yith-woocommerce-affiliates' );
 
 			// if we're on affiliate dashboard endpoint, add also subsections.
+			/**
+			 * APPLY_FILTERS: yith_wcaf_myaccount_dashboard_add_extended_items
+			 *
+			 * Filters whether to add subsections in the Affiliate Dashboard endpoint.
+			 *
+			 * @param bool $add_subsections Whether to add subsections in the Affiliate Dashboard endpoint or not.
+			 */
 			if ( ! apply_filters( 'yith_wcaf_myaccount_dashboard_add_extended_items', false ) || ! $this->is_dashboard_page() ) {
 				return $menu_items;
 			}

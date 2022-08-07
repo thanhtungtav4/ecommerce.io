@@ -109,6 +109,13 @@ if ( ! trait_exists( 'YITH_WCAF_Trait_Cacheable' ) ) {
 		protected function get_object_cache() {
 			global $wp_object_cache;
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_cache_object
+			 *
+			 * Filters the object cache.
+			 *
+			 * @param WP_Object_Cache $wp_object_cache Object cache.
+			 */
 			$object_cache = apply_filters( 'yith_wcaf_cache_object', $wp_object_cache );
 
 			// make sure filtered object has minimum requirements.

@@ -55,6 +55,13 @@ if ( ! class_exists( 'YITH_WCAF_Endpoints' ) ) {
 				_doing_it_wrong( 'get_dashboard_endpoints', '\YITH_WCAF_Endpoints::get_dashboard_endpoints should be called after init', '1.6.4' );
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_get_available_endpoints
+			 *
+			 * Filters the available endpoints in the Affiliate Dashboard.
+			 *
+			 * @param array $available_endpoints Available endpoints.
+			 */
 			return apply_filters( 'yith_wcaf_get_available_endpoints', self::maybe_init_available_endpoints() );
 		}
 
@@ -83,6 +90,13 @@ if ( ! class_exists( 'YITH_WCAF_Endpoints' ) ) {
 		 */
 		public static function get_dashboard_endpoints() {
 			// all available endpoints are dashboard endpoints, at least for now.
+			/**
+			 * APPLY_FILTERS: yith_wcaf_get_dashboard_endpoints
+			 *
+			 * Filters the available dashboard endpoints.
+			 *
+			 * @param array $available_endpoints Available endpoints.
+			 */
 			return apply_filters( 'yith_wcaf_get_dashboard_endpoints', self::get_available_endpoints() );
 		}
 
@@ -100,6 +114,13 @@ if ( ! class_exists( 'YITH_WCAF_Endpoints' ) ) {
 				return false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_endpoint_rewrite
+			 *
+			 * Filters the rewrite for a specific endpoint.
+			 *
+			 * @param string $endpoint Endpoint rewrite.
+			 */
 			return wc_sanitize_endpoint_slug( apply_filters( 'yith_wcaf_endpoint_rewrite', $endpoint, $endpoint ) );
 		}
 
@@ -129,6 +150,13 @@ if ( ! class_exists( 'YITH_WCAF_Endpoints' ) ) {
 		public static function maybe_init_available_endpoints() {
 			// if we didn't already, register default endpoints.
 			if ( empty( self::$available_endpoints ) ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_available_endpoints
+				 *
+				 * Filters the available endpoints in the Affiliate Dashboard.
+				 *
+				 * @param array $available_endpoints Available endpoints.
+				 */
 				self::$available_endpoints = apply_filters(
 					'yith_wcaf_available_endpoints',
 					array_merge(

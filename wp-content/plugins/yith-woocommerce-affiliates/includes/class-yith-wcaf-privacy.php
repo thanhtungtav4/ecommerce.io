@@ -74,6 +74,16 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 					break;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_policy_content
+			 *
+			 * Filter the content of the privacy policy.
+			 *
+			 * @param string $content Privacy policy content
+			 * @param string $section Privacy policy section
+			 *
+			 * @return string
+			 */
 			return apply_filters( 'yith_wcaf_privacy_policy_content', $content, $section );
 		}
 
@@ -94,6 +104,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 			);
 
 			// exports affiliate's commissions.
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_export_commissions
+			 *
+			 * Filters whether to register the commissions exporter.
+			 *
+			 * @param bool $register_exporter Whether to register commissions exporter or not.
+			 */
 			if ( apply_filters( 'yith_wcaf_privacy_export_commissions', false ) ) {
 				$exporters['yith_wcaf_commissions'] = array(
 					'exporter_friendly_name' => _x( 'Affiliate Commissions', '[PRIVACY] Exporter name', 'yith-woocommerce-affiliates' ),
@@ -102,6 +119,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 			}
 
 			// exports affiliate's payments.
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_export_payments
+			 *
+			 * Filters whether to register the payments exporter.
+			 *
+			 * @param bool $register_exporter Whether to register payments exporter or not.
+			 */
 			if ( apply_filters( 'yith_wcaf_privacy_export_payments', false ) ) {
 				$exporters['yith_wcaf_payments'] = array(
 					'exporter_friendly_name' => _x( 'Affiliate Payments', '[PRIVACY] Exporter name', 'yith-woocommerce-affiliates' ),
@@ -110,6 +134,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 			}
 
 			// exports affiliate's clicks.
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_export_clicks
+			 *
+			 * Filters whether to register the clicks exporter.
+			 *
+			 * @param bool $register_exporter Whether to register clicks exporter or not.
+			 */
 			if ( apply_filters( 'yith_wcaf_privacy_export_clicks', false ) ) {
 				$exporters['yith_wcaf_clicks'] = array(
 					'exporter_friendly_name' => _x( 'Affiliate Visits', '[PRIVACY] Exporter name', 'yith-woocommerce-affiliates' ),
@@ -136,6 +167,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 			);
 
 			// erases affiliate's payments.
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_erase_payments
+			 *
+			 * Filters whether to register the payments eraser.
+			 *
+			 * @param bool $register_eraser Whether to register payments eraser or not.
+			 */
 			if ( apply_filters( 'yith_wcaf_privacy_erase_payments', false ) ) {
 				$erasers['yith_wcaf_payments'] = array(
 					'eraser_friendly_name' => _x( 'Affiliate Payments', '[PRIVACY] Eraser name', 'yith-woocommerce-affiliates' ),
@@ -144,6 +182,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 			}
 
 			// erases affiliate's clicks.
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_erase_clicks
+			 *
+			 * Filters whether to register the clicks eraser.
+			 *
+			 * @param bool $register_eraser Whether to register clicks eraser or not.
+			 */
 			if ( apply_filters( 'yith_wcaf_privacy_erase_clicks', false ) ) {
 				$erasers['yith_wcaf_clicks'] = array(
 					'eraser_friendly_name' => _x( 'Affiliate Visits', '[PRIVACY] Eraser name', 'yith-woocommerce-affiliates' ),
@@ -179,6 +224,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 				return $response;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_export_affiliate_personal_data_props
+			 *
+			 * Filters the affiliate's personal data props to export.
+			 *
+			 * @param array $data_to_export Personal data to export.
+			 */
 			$props_to_export = apply_filters(
 				'yith_wcaf_privacy_export_affiliate_personal_data_props',
 				array(
@@ -237,6 +289,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_export_commission_props
+			 *
+			 * Filters the commission props to export.
+			 *
+			 * @param array $commission_props Commission props to export.
+			 */
 			$props_to_export = apply_filters(
 				'yith_wcaf_privacy_export_commission_props',
 				array(
@@ -301,6 +360,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_export_payment_props
+			 *
+			 * Filters the payment props to export.
+			 *
+			 * @param array $payment_props Payment props to export.
+			 */
 			$props_to_export = apply_filters(
 				'yith_wcaf_privacy_export_payment_props',
 				array(
@@ -368,6 +434,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_export_click_props
+			 *
+			 * Filters the click props to export.
+			 *
+			 * @param array $click_props Click props to export.
+			 */
 			$props_to_export = apply_filters(
 				'yith_wcaf_privacy_export_click_props',
 				array(
@@ -422,6 +495,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 				return $response;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_remove_affiliate_personal_data_props
+			 *
+			 * Filters the affiliate's personal data props to remove.
+			 *
+			 * @param array $data_to_remove Personal data to remove.
+			 */
 			$props_to_remove = apply_filters(
 				'yith_wcaf_privacy_remove_affiliate_personal_data_props',
 				array(
@@ -481,6 +561,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_remove_payment_personal_data_props
+			 *
+			 * Filters the payment props to remove.
+			 *
+			 * @param array $payment_props Payment props to remove.
+			 */
 			$props_to_remove = apply_filters(
 				'yith_wcaf_privacy_remove_payment_personal_data_props',
 				array(
@@ -549,6 +636,13 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 				)
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_remove_click_personal_data_props
+			 *
+			 * Filters the click props to remove.
+			 *
+			 * @param array $click_props Click props to remove.
+			 */
 			$props_to_remove = apply_filters(
 				'yith_wcaf_privacy_remove_click_personal_data_props',
 				array(
@@ -606,6 +700,15 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 					$value = $object->$getter();
 				}
 
+				/**
+				 * APPLY_FILTERS: yith_wcaf_privacy_export_object_prop
+				 *
+				 * Filters the object prop to export.
+				 *
+				 * @param string $value  Prop value to export.
+				 * @param string $prop   Prop to export.
+				 * @param object $object Object to export.
+				 */
 				$value = apply_filters( 'yith_wcaf_privacy_export_object_prop', $value, $prop, $object );
 
 				if ( $value ) {
@@ -616,6 +719,14 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 				}
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_export_object
+			 *
+			 * Filters the personal data of the object to export.
+			 *
+			 * @param array  $personal_data Personal data to export.
+			 * @param object $object        Object to export.
+			 */
 			$personal_data = apply_filters( 'yith_wcaf_privacy_export_object', $personal_data, $object );
 
 			return $personal_data;
@@ -630,7 +741,22 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 		 * @return bool Status of the operation; true if object was anonymized, false if it was retained unmodified.
 		 */
 		protected function object_eraser( $object, $props_to_remove ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_privacy_erase_object
+			 *
+			 * Filters whether to remove the object data.
+			 *
+			 * @param bool   $erase_object_data Whether to remove the object data or not.
+			 * @param object $object            Object to remove data from.
+			 */
 			if ( apply_filters( 'yith_wcaf_privacy_erase_object', true, $object ) ) {
+				/**
+				 * DO_ACTION: yith_wcaf_privacy_before_remove_object
+				 *
+				 * Allows to trigger some action before anonymizing props from a specific object.
+				 *
+				 * @param object $object Object to anonymize data from.
+				 */
 				do_action( 'yith_wcaf_privacy_before_remove_object', $object );
 
 				foreach ( $props_to_remove as $prop => $data_type ) {
@@ -649,11 +775,29 @@ if ( ! class_exists( 'YITH_WCAF_Privacy' ) ) {
 						$anon_value = '';
 					}
 
+					/**
+					 * APPLY_FILTERS: yith_wcaf_privacy_remove_object_personal_data_prop_value
+					 *
+					 * Filters the object prop to remove.
+					 *
+					 * @param string $anon_value Prop value to remove.
+					 * @param string $prop       Prop to export.
+					 * @param string $value      Value to remove.
+					 * @param string $data_type  Data type.
+					 * @param object $object     Object.
+					 */
 					$object->$setter( apply_filters( 'yith_wcaf_privacy_remove_object_personal_data_prop_value', $anon_value, $prop, $value, $data_type, $object ) );
 				}
 
 				$object->save();
 
+				/**
+				 * DO_ACTION: yith_wcaf_privacy_remove_object
+				 *
+				 * Allows to trigger some action after anonymizing props from a specific object.
+				 *
+				 * @param object $object Object to anonymize data from.
+				 */
 				do_action( 'yith_wcaf_privacy_remove_object', $object );
 
 				return true;

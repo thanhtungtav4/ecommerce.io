@@ -25,9 +25,28 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 
 <div class="yith-wcaf yith-wcaf-link-generator woocommerce">
 
-	<?php do_action( 'yith_wcaf_before_dashboard_section', 'generate-link', $atts ); ?>
+	<?php
+	/**
+	 * DO_ACTION: yith_wcaf_before_dashboard_section
+	 *
+	 * Allows to render some content before the section in the Affiliate Dashboard.
+	 *
+	 * @param string $section Section.
+	 * @param array  $atts    Array with section attributes.
+	 */
+	do_action( 'yith_wcaf_before_dashboard_section', 'generate-link', $atts );
+	?>
 
-	<?php do_action( 'yith_wcaf_before_link_generator', $atts ); ?>
+	<?php
+	/**
+	 * DO_ACTION: yith_wcaf_before_link_generator
+	 *
+	 * Allows to render some content before the referral link generator in the Affiliate Dashboard.
+	 *
+	 * @param array $atts Array with section attributes.
+	 */
+	do_action( 'yith_wcaf_before_link_generator', $atts );
+	?>
 
 	<div class="link-generator-box <?php echo $affiliate ? 'double-column' : 'single-column'; ?>">
 
@@ -41,6 +60,15 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 				<p class="form-row">
 					<label class="bold-text" for="referral_url"><?php echo esc_html_x( 'Your referral URL is:', '[FRONTEND] Link generator', 'yith-woocommerce-affiliates' ); ?></label>
 					<span class="copy-field-wrapper">
+						<?php
+						/**
+						 * APPLY_FILTERS: yith_wcaf_referral_link
+						 *
+						 * Filters the affiliate's referral link.
+						 *
+						 * @param string $affiliate_referral_link Affiliate's referral link.
+						 */
+						?>
 						<input type="url" id="referral_url" class="copy-target" value="<?php echo esc_attr( apply_filters( 'yith_wcaf_referral_link', $affiliate->get_referral_url() ) ); ?>" readonly/>
 						<a class="copy-trigger">
 							<?php echo esc_html_x( 'Copy URL', '[FRONTEND] Link generator', 'yith-woocommerce-affiliates' ); ?>
@@ -49,16 +77,43 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 				</p>
 
 				<small>
-					<?php echo wp_kses_post( apply_filters( 'yith_wcaf_link_generator_text', _x( 'Copy this URL and use it to redirect users to our Home Page with your affiliate ID.', '[FRONTEND] Link generator', 'yith-woocommerce-affiliates' ) ) ); ?>
+					<?php
+					/**
+					 * APPLY_FILTERS: yith_wcaf_link_generator_text
+					 *
+					 * Filters the text in the link generator.
+					 *
+					 * @param string $text Text.
+					 */
+					echo wp_kses_post( apply_filters( 'yith_wcaf_link_generator_text', _x( 'Copy this URL and use it to redirect users to our Home Page with your affiliate ID.', '[FRONTEND] Link generator', 'yith-woocommerce-affiliates' ) ) );
+					?>
 				</small>
 
 				<small>
 					<?php echo wp_kses_post( apply_filters( 'yith_wcaf_link_generator_text', _x( 'If you want to redirect users to a specific page (for example: a product page) use the link generator.', '[FRONTEND] Link generator', 'yith-woocommerce-affiliates' ) ) ); ?>
 				</small>
 
-				<?php do_action( 'yith_wcaf_social_share_template', $atts ); ?>
+				<?php
+				/**
+				 * DO_ACTION: yith_wcaf_social_share_template
+				 *
+				 * Allows to render some content in the section to share the referral URL.
+				 *
+				 * @param array $atts Array with section attributes.
+				 */
+				do_action( 'yith_wcaf_social_share_template', $atts );
+				?>
 
-				<?php do_action( 'yith_wcaf_after_social_share_template', $atts ); ?>
+				<?php
+				/**
+				 * DO_ACTION: yith_wcaf_after_social_share_template
+				 *
+				 * Allows to render some content after the section to share the referral URL.
+				 *
+				 * @param array $atts Array with section attributes.
+				 */
+				do_action( 'yith_wcaf_after_social_share_template', $atts );
+				?>
 			</div>
 		<?php endif; ?>
 
@@ -91,8 +146,27 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 
 	</div>
 
-	<?php do_action( 'yith_wcaf_after_link_generator', $atts ); ?>
+	<?php
+	/**
+	 * DO_ACTION: yith_wcaf_after_link_generator
+	 *
+	 * Allows to render some content after the referral link generator in the Affiliate Dashboard.
+	 *
+	 * @param array $atts Array with section attributes.
+	 */
+	do_action( 'yith_wcaf_after_link_generator', $atts );
+	?>
 
-	<?php do_action( 'yith_wcaf_after_dashboard_section', 'link-generator', $atts ); ?>
+	<?php
+	/**
+	 * DO_ACTION: yith_wcaf_after_dashboard_section
+	 *
+	 * Allows to render some content after the section in the Affiliate Dashboard.
+	 *
+	 * @param string $section Section.
+	 * @param array  $atts    Array with section attributes.
+	 */
+	do_action( 'yith_wcaf_after_dashboard_section', 'link-generator', $atts );
+	?>
 
 </div>

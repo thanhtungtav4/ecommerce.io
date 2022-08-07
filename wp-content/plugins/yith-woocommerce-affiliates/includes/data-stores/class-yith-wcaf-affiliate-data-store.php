@@ -96,12 +96,26 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Data_Store' ) ) {
 			}
 
 			if ( ! $affiliate->get_token() ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_affiliate_default_token_algorithm
+				 *
+				 * Filters the default algorithm method to generate affiliate token.
+				 *
+				 * @param string $algorithm Algorithm to use to generate token.
+				 */
 				$affiliate->set_token( $this->generate_token( $affiliate, apply_filters( 'yith_wcaf_affiliate_default_token_algorithm', 'user_id' ) ) );
 			}
 
 			$res = $this->save_object( $affiliate );
 
 			if ( $res ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_affiliate_correctly_created
+				 *
+				 * Filters the id of the affiliate created.
+				 *
+				 * @param int $id Affiliate id.
+				 */
 				$id = apply_filters( 'yith_wcaf_affiliate_correctly_created', intval( $wpdb->insert_id ) );
 
 				$affiliate->set_id( $id );
@@ -120,6 +134,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Data_Store' ) ) {
 				$this->add_role( $affiliate );
 				$this->clear_cache( $affiliate );
 
+				/**
+				 * DO_ACTION: yith_wcaf_new_affiliate
+				 *
+				 * Allows to trigger some action when a new affiliate is created.
+				 *
+				 * @param int                 $affiliate_id Affiliate id.
+				 * @param YITH_WCAF_Affiliate $affiliate    Affiliate object.
+				 */
 				do_action( 'yith_wcaf_new_affiliate', $affiliate->get_id(), $affiliate );
 			}
 		}
@@ -215,6 +237,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Data_Store' ) ) {
 
 			$this->clear_cache( $affiliate );
 
+			/**
+			 * DO_ACTION: yith_wcaf_update_affiliate
+			 *
+			 * Allows to trigger some action when an affiliate is updated.
+			 *
+			 * @param int                 $affiliate_id Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate    Affiliate object.
+			 */
 			do_action( 'yith_wcaf_update_affiliate', $affiliate->get_id(), $affiliate );
 		}
 
@@ -235,6 +265,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Data_Store' ) ) {
 				return false;
 			}
 
+			/**
+			 * DO_ACTION: yith_wcaf_before_delete_affiliate
+			 *
+			 * Allows to trigger some action before deleting an affiliate.
+			 *
+			 * @param int                 $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 */
 			do_action( 'yith_wcaf_before_delete_affiliate', $id, $affiliate );
 
 			$this->clear_cache( $affiliate );
@@ -243,12 +281,28 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Data_Store' ) ) {
 			$res = $wpdb->delete( $wpdb->yith_affiliates, array( 'ID' => $id ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
 
 			if ( $res ) {
+				/**
+				 * DO_ACTION: yith_wcaf_delete_affiliate
+				 *
+				 * Allows to trigger some action when an affiliate is deleted.
+				 *
+				 * @param int                 $id        Affiliate id.
+				 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+				 */
 				do_action( 'yith_wcaf_delete_affiliate', $id, $affiliate );
 
 				$this->remove_role( $affiliate );
 				$this->delete_all_meta( $affiliate );
 				$affiliate->set_id( 0 );
 
+				/**
+				 * DO_ACTION: yith_wcaf_deleted_affiliate
+				 *
+				 * Allows to trigger some action after deleting an affiliate.
+				 *
+				 * @param int                 $id        Affiliate id.
+				 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+				 */
 				do_action( 'yith_wcaf_deleted_affiliate', $id, $affiliate );
 			}
 
@@ -275,6 +329,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Data_Store' ) ) {
 				}
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_get_token_by_user_id
+			 *
+			 * Filters the affiliate token given the user id.
+			 *
+			 * @param string $token   Affiliate token.
+			 * @param int    $user_id User id.
+			 */
 			return apply_filters( 'yith_wcaf_get_token_by_user_id', $token, $user_id );
 		}
 
@@ -838,6 +900,14 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Data_Store' ) ) {
 		public function add_role( $affiliate ) {
 			$user = $affiliate->get_user();
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_add_affiliate_role
+			 *
+			 * Filters whether to add the Affiliate role.
+			 *
+			 * @param bool                $add_role  Whether to add the role or not.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 */
 			if ( ! $user || is_wp_error( $user ) || ! apply_filters( 'yith_wcaf_add_affiliate_role', true, $affiliate ) ) {
 				return;
 			}
@@ -913,6 +983,15 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Data_Store' ) ) {
 					break;
 				default:
 					// Unknown algorithm.
+					/**
+					 * APPLY_FILTERS: yith_wcaf_generate_token
+					 *
+					 * Filters whether to generate affiliate token.
+					 *
+					 * @param bool                $generate_token Whether to generate affiliate token or not.
+					 * @param YITH_WCAF_Affiliate $affiliate      Affiliate object.
+					 * @param string              $algorithm      Algorithm to use to generate token.
+					 */
 					$token = apply_filters( 'yith_wcaf_generate_token', false, $affiliate, $algorithm );
 			}
 
@@ -920,6 +999,15 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Data_Store' ) ) {
 				return false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_token
+			 *
+			 * Filters the default affiliate token.
+			 *
+			 * @param string              $default_token Default token.
+			 * @param YITH_WCAF_Affiliate $affiliate     Affiliate object.
+			 * @param string              $algorithm     Algorithm to use to generate token.
+			 */
 			return apply_filters( 'yith_wcaf_affiliate_token', $this->ensure_unique_token( $token, $affiliate ), $affiliate, $algorithm );
 		}
 
@@ -986,8 +1074,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Data_Store' ) ) {
 		 */
 		protected function get_random_token() {
 			$dictionary = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-			$nchars     = apply_filters( 'yith_wcaf_random_token_length', 5 );
-			$token      = '';
+
+			/**
+			 * APPLY_FILTERS: yith_wcaf_random_token_length
+			 *
+			 * Filters the length of the random token to be generated.
+			 *
+			 * @param int $length Token lenght.
+			 */
+			$nchars = apply_filters( 'yith_wcaf_random_token_length', 5 );
+			$token  = '';
 
 			for ( $i = 0; $i <= $nchars - 1; $i++ ) {
 				$token .= $dictionary[ wp_rand( 0, strlen( $dictionary ) - 1 ) ];

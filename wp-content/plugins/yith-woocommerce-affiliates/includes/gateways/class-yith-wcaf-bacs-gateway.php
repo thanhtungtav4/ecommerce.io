@@ -26,7 +26,15 @@ if ( ! class_exists( 'YITH_WCAF_BACS_Gateway' ) ) {
 		 */
 		public function __construct() {
 			// init class attributes.
-			$this->id   = 'bacs';
+			$this->id = 'bacs';
+
+			/**
+			 * APPLY_FILTERS: yith_wcaf_direct_bank_transfer_label
+			 *
+			 * Filters the name of the <code>Direct bank/wire transfer</code> gateway.
+			 *
+			 * @param string $gateway_name Gateway name.
+			 */
 			$this->name = apply_filters( 'yith_wcaf_direct_bank_transfer_label', _x( 'Direct bank/wire transfer', '[ADMIN] Gateway name', 'yith-woocommerce-affiliates' ) );
 
 			parent::__construct();
@@ -40,19 +48,40 @@ if ( ! class_exists( 'YITH_WCAF_BACS_Gateway' ) ) {
 		protected function init_fields() {
 			$this->fields = array(
 				'bacs_name'  => array(
+					/**
+					 * APPLY_FILTERS: yith_wcaf_account_name_label
+					 *
+					 * Filters the label of the account name field in the <code>Direct bank/wire transfer</code> gateway.
+					 *
+					 * @param string $label Field label.
+					 */
 					'label'   => apply_filters( 'yith_wcaf_account_name_label', _x( 'Account name', '[ADMIN] PayPal gateway affiliate settings.', 'yith-woocommerce-affiliates' ) ),
 					'type'    => 'text',
 					'desc'    => _x( 'Enter the name for the receiver\'s account.', '[ADMIN] PayPal gateway affiliate settings.', 'yith-woocommerce-affiliates' ),
 					'default' => '',
 				),
 				'bacs_iban'  => array(
+					/**
+					 * APPLY_FILTERS: yith_wcaf_iban_label
+					 *
+					 * Filters the label of the IBAN field in the <code>Direct bank/wire transfer</code> gateway.
+					 *
+					 * @param string $label Field label.
+					 */
 					'label'   => apply_filters( 'yith_wcaf_iban_label', _x( 'IBAN', '[ADMIN] PayPal gateway affiliate settings.', 'yith-woocommerce-affiliates' ) ),
 					'type'    => 'text',
 					'desc'    => _x( 'Enter the IBAN code for the receiver\'s account.', '[ADMIN] PayPal gateway affiliate settings.', 'yith-woocommerce-affiliates' ),
 					'default' => '',
 				),
 				'bacs_swift' => array(
-					'label'   => _x( 'Swift code', '[ADMIN] PayPal gateway affiliate settings.', 'yith-woocommerce-affiliates' ),
+					/**
+					 * APPLY_FILTERS: yith_wcaf_swift_code_label
+					 *
+					 * Filters the label of the swift code field in the <code>Direct bank/wire transfer</code> gateway.
+					 *
+					 * @param string $label Field label.
+					 */
+					'label'   => apply_filters( 'yith_wcaf_swift_code_label', _x( 'Swift code', '[ADMIN] PayPal gateway affiliate settings.', 'yith-woocommerce-affiliates' ) ),
 					'type'    => 'text',
 					'desc'    => _x( 'Enter the Swift code for the receiver\'s account.', '[ADMIN] PayPal gateway affiliate settings.', 'yith-woocommerce-affiliates' ),
 					'default' => '',
@@ -155,6 +184,13 @@ if ( ! class_exists( 'YITH_WCAF_BACS_Gateway' ) ) {
 			);
 			$payment->save();
 
+			/**
+			 * DO_ACTION: yith_wcaf_payment_sent
+			 *
+			 * Allows to trigger some action when the payment is sent.
+			 *
+			 * @param YITH_WCAF_Payment $payment Payment object.
+			 */
 			do_action( 'yith_wcaf_payment_sent', $payment );
 
 			// translators: 1. Payment ID.

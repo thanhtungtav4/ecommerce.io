@@ -90,7 +90,16 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 				<div class="u-column2 col-2">
 			<?php endif; ?>
 
-			<?php if ( apply_filters( 'yith_wcaf_show_register_section', true ) ) : ?>
+			<?php
+			/**
+			 * APPLY_FILTERS: yith_wcaf_show_register_section
+			 *
+			 * Filters whether to show the section to register as an affiliate.
+			 *
+			 * @param bool $show_register_section Whether to show register section or not.
+			 */
+			if ( apply_filters( 'yith_wcaf_show_register_section', true ) ) :
+				?>
 
 				<?php if ( ! empty( $register_title ) ) : ?>
 					<h2 class="register-title">
@@ -102,8 +111,22 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 					<form method="post" class="register">
 
 						<?php do_action( 'woocommerce_register_form_start' ); ?>
-						<?php do_action( 'yith_wcaf_register_form_start' ); ?>
-						<?php do_action( 'yith_wcaf_register_form' ); ?>
+						<?php
+						/**
+						 * DO_ACTION: yith_wcaf_register_form_start
+						 *
+						 * Allows to render some content at the beginning of the registration form for the affiliates.
+						 */
+						do_action( 'yith_wcaf_register_form_start' );
+						?>
+						<?php
+						/**
+						 * DO_ACTION: yith_wcaf_register_form
+						 *
+						 * Allows to render some content in the registration form for the affiliates.
+						 */
+						do_action( 'yith_wcaf_register_form' );
+						?>
 						<?php do_action( 'woocommerce_register_form' ); ?>
 
 						<p class="form-row">
@@ -130,15 +153,40 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 
 		<div class="become-an-affiliate-form">
 			<p>
-				<?php echo wp_kses_post( apply_filters( 'yith_wcaf_registration_form_become_affiliate_text', _x( 'You\'re just one step away from becoming an affiliate!', '[FRONTEND] Become an affiliate form', 'yith-woocommerce-affiliates' ) ) ); ?>
+				<?php
+				/**
+				 * APPLY_FILTERS: yith_wcaf_registration_form_become_affiliate_text
+				 *
+				 * Filters the text displayed in the form to become an affilliate.
+				 *
+				 * @param string $text Text.
+				 */
+				echo wp_kses_post( apply_filters( 'yith_wcaf_registration_form_become_affiliate_text', _x( 'You\'re just one step away from becoming an affiliate!', '[FRONTEND] Become an affiliate form', 'yith-woocommerce-affiliates' ) ) );
+				?>
 			</p>
 			<form method="post" class="become-an-affiliate">
-				<?php do_action( 'yith_wcaf_become_an_affiliate_form' ); ?>
+				<?php
+				/**
+				 * DO_ACTION: yith_wcaf_become_an_affiliate_form
+				 *
+				 * Allows to render some content in the form to "Become an affiliate".
+				 */
+				do_action( 'yith_wcaf_become_an_affiliate_form' );
+				?>
 
 				<p class="form-row">
 					<?php wp_nonce_field( 'yith-wcaf-become-an-affiliate', 'become_an_affiliate', true ); ?>
 
-					<?php $become_an_affiliate_text = apply_filters( 'yith_wcaf_become_affiliate_button_text', _x( 'Become an affiliate', '[FRONTEND] Become an affiliate form', 'yith-woocommerce-affiliates' ) ); ?>
+					<?php
+					/**
+					 * APPLY_FILTERS: yith_wcaf_become_affiliate_button_text
+					 *
+					 * Filters the text of the button to become an affiliate.
+					 *
+					 * @param string $text Text.
+					 */
+					$become_an_affiliate_text = apply_filters( 'yith_wcaf_become_affiliate_button_text', _x( 'Become an affiliate', '[FRONTEND] Become an affiliate form', 'yith-woocommerce-affiliates' ) );
+					?>
 					<button class="btn button"><?php echo esc_html( $become_an_affiliate_text ); ?></button>
 				</p>
 			</form>
@@ -151,7 +199,16 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 				<?php echo esc_html_x( 'Thank you!', '[FRONTEND] Affiliate dashboard message', 'yith-woocommerce-affiliates' ); ?>
 			</h3>
 			<p class="already-an-affiliate">
-				<?php echo wp_kses_post( apply_filters( 'yith_wcaf_registration_form_already_affiliate_text', _x( 'You have joined our affiliate program!<br/>In your dashboard, you will find your referral URL and detailed information to check commissions, visits, earnings, and payments.', '[FRONTEND] Affiliate dashboard message', 'yith-woocommerce-affiliates' ) ) ); ?>
+				<?php
+				/**
+				 * APPLY_FILTERS: yith_wcaf_registration_form_already_affiliate_text
+				 *
+				 * Filters the text displayed when the user is an affiliate.
+				 *
+				 * @param string $text Text.
+				 */
+				echo wp_kses_post( apply_filters( 'yith_wcaf_registration_form_already_affiliate_text', _x( 'You have joined our affiliate program!<br/>In your dashboard, you will find your referral URL and detailed information to check commissions, visits, earnings, and payments.', '[FRONTEND] Affiliate dashboard message', 'yith-woocommerce-affiliates' ) ) );
+				?>
 			</p>
 
 			<a href="<?php echo esc_url( YITH_WCAF_Dashboard()->get_dashboard_url() ); ?>" class="button go-to-dashboard">
@@ -166,7 +223,16 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 				<?php echo esc_html_x( 'Thank you!', '[FRONTEND] Affiliate dashboard message', 'yith-woocommerce-affiliates' ); ?>
 			</h3>
 			<p class="pending-request">
-				<?php echo wp_kses_post( apply_filters( 'yith_wcaf_registration_form_affiliate_pending_text', _x( 'Your request has been registered and it is awaiting the administrators\' approval!<br/>You will get an email soon.', '[FRONTEND] Affiliate dashboard message', 'yith-woocommerce-affiliates' ) ) ); ?>
+				<?php
+				/**
+				 * APPLY_FILTERS: yith_wcaf_registration_form_affiliate_pending_text
+				 *
+				 * Filters the text when the user is pending to be approved as an affiliate.
+				 *
+				 * @param string $text Text.
+				 */
+				echo wp_kses_post( apply_filters( 'yith_wcaf_registration_form_affiliate_pending_text', _x( 'Your request has been registered and it is awaiting the administrators\' approval!<br/>You will get an email soon.', '[FRONTEND] Affiliate dashboard message', 'yith-woocommerce-affiliates' ) ) );
+				?>
 			</p>
 		</div>
 
@@ -184,7 +250,14 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 					$reject_message = _x( 'We regretfully inform you that we can\'t accept your request as it doesn\'t fulfill our requirements.', '[FRONTEND] Affiliate dashboard message', 'yith-woocommerce-affiliates' );
 				}
 
-				echo wp_kses_post( apply_filters( 'yith_wcaf_registration_form_already_affiliate_text', $reject_message ) );
+				/**
+				 * APPLY_FILTERS: yith_wcaf_registration_form_rejected_affiliate_text
+				 *
+				 * Filters the message when the user has been rejected as an affiliate.
+				 *
+				 * @param string $reject_message Reject message.
+				 */
+				echo wp_kses_post( apply_filters( 'yith_wcaf_registration_form_rejected_affiliate_text', $reject_message ) );
 				?>
 			</p>
 		</div>

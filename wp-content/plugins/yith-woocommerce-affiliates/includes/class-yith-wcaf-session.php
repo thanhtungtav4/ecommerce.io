@@ -154,6 +154,13 @@ if ( ! class_exists( 'YITH_WCAF_Session' ) ) {
 		 * @return string Ref name.
 		 */
 		public function get_ref_name() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_ref_name
+			 *
+			 * Filters the parameter used in the url to store the referral token.
+			 *
+			 * @param string $param Parameter to store the referral token.
+			 */
 			return apply_filters( 'yith_wcaf_ref_name', $this->ref_name );
 		}
 
@@ -171,6 +178,13 @@ if ( ! class_exists( 'YITH_WCAF_Session' ) ) {
 				return false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_session_get_query_var
+			 *
+			 * Filters the value stored in the query string for the referral token.
+			 *
+			 * @param string $value Referral token.
+			 */
 			return apply_filters( 'yith_wcaf_session_get_query_var', sanitize_text_field( wp_unslash( $_GET[ $query_var ] ) ) );
 			// phpcs:enable WordPress.Security.NonceVerification
 		}
@@ -231,6 +245,13 @@ if ( ! class_exists( 'YITH_WCAF_Session' ) ) {
 		 * @return string Ref name.
 		 */
 		public function get_cookie_name() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_cookie_name
+			 *
+			 * Filters the referral cookie name.
+			 *
+			 * @param string $referral_cookie_name Referral cookie name.
+			 */
 			return apply_filters( 'yith_wcaf_cookie_name', $this->ref_cookie_name );
 		}
 
@@ -246,6 +267,13 @@ if ( ! class_exists( 'YITH_WCAF_Session' ) ) {
 				return false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_session_get_cookie
+			 *
+			 * Filters the referral cookie value.
+			 *
+			 * @param string $cookie_value Referral cookie value.
+			 */
 			return apply_filters( 'yith_wcaf_session_get_cookie', sanitize_text_field( wp_unslash( $_COOKIE[ $cookie_name ] ) ) );
 		}
 
@@ -255,6 +283,13 @@ if ( ! class_exists( 'YITH_WCAF_Session' ) ) {
 		 * @return bool Whether referral cookie is set.
 		 */
 		public function has_cookie() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_session_has_cookie
+			 *
+			 * Filters whether the referral cookie has been set.
+			 *
+			 * @param bool $has_referral_cookie Whether the referral cookie is set or not.
+			 */
 			return apply_filters( 'yith_wcaf_session_has_cookie', ! empty( $_COOKIE[ $this->get_cookie_name() ] ) );
 		}
 
@@ -286,6 +321,13 @@ if ( ! class_exists( 'YITH_WCAF_Session' ) ) {
 		 * @return bool
 		 */
 		protected function should_set_cookie() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_set_ref_cookie
+			 *
+			 * Filters whether to set the referral cookie.
+			 *
+			 * @param bool $set_referral_cookie Whether to set referral cookie or not.
+			 */
 			return ! $this->has_cookie() || $this->token !== $this->get_cookie() && apply_filters( 'yith_wcaf_set_ref_cookie', true );
 		}
 
@@ -301,6 +343,11 @@ if ( ! class_exists( 'YITH_WCAF_Session' ) ) {
 
 			yith_wcaf_set_cookie( $this->get_cookie_name(), $this->token, (int) $this->ref_cookie_exp );
 
+			/**
+			 * DO_ACTION: yith_wcaf_after_set_cookie
+			 *
+			 * Allows to trigger some action after the referral cookie has been set.
+			 */
 			do_action( 'yith_wcaf_after_set_cookie' );
 		}
 	}

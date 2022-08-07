@@ -29,6 +29,13 @@ if ( ! class_exists( 'YITH_WCAF_Rate_Handler' ) ) {
 		public static function get_default() {
 			$general_rate = get_option( 'yith_wcaf_general_rate' );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_default_rate
+			 *
+			 * Filters the default rate.
+			 *
+			 * @param float $general_rate Default rate.
+			 */
 			return apply_filters( 'yith_wcaf_default_rate', (float) $general_rate );
 		}
 
@@ -58,6 +65,16 @@ if ( ! class_exists( 'YITH_WCAF_Rate_Handler' ) ) {
 			 * Let third party plugin filter rate
 			 *
 			 * @since 1.0.9
+			 */
+			/**
+			 * APPLY_FILTERS: yith_wcaf_affiliate_rate
+			 *
+			 * Filters the affiliate rate.
+			 *
+			 * @param float               $rate      Affiliate rate.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 * @param WC_Product          $product   Product object.
+			 * @param WC_Order            $order     Order object.
 			 */
 			return apply_filters( 'yith_wcaf_affiliate_rate', $rate, $affiliate, $product, $order );
 		}

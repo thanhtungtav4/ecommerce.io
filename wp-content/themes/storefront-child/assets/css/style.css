@@ -1,3 +1,6 @@
+/*------------------------------------------------------------
+	Reset
+------------------------------------------------------------*/
 html,
 body,
 div,
@@ -1375,6 +1378,36 @@ body.js-active {
     .c-tabCart_inner .m-cart > li {
       width: 100%; }
 
+.c-tab table {
+  margin: 0 0 1.5em;
+  width: 100%;
+  border-spacing: 0;
+  border-width: 1px 0 0 1px;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+  .c-tab table th, .c-tab table td {
+    padding: 12px;
+    font-weight: 400;
+    text-align: left; }
+  .c-tab table td {
+    border-width: 0 1px 1px 0;
+    font-weight: 400;
+    text-align: left; }
+    .c-tab table td ul li {
+      line-height: 1.5;
+      list-style-type: circle;
+      margin-left: 2rem; }
+    .c-tab table td .styleimg01 {
+      width: 260px;
+      height: 90px; }
+    .c-tab table td .styleimg02 {
+      width: 90px;
+      height: 90px; }
+    .c-tab table td .styleimg03 {
+      width: 160px;
+      height: 90px; }
+  .c-tab table table, .c-tab table th, .c-tab table td {
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+
 .c-sidebar {
   text-align: left;
   width: 30%; }
@@ -2227,3 +2260,7 @@ body.js-active {
         color: #1E1C1C;
         font-weight: 500;
         font-size: 1.6rem; }
+        #wpgis-gallery img, #wpgis-gallery .slick-slide{
+          width: 109px;
+          height: 109px;
+        }

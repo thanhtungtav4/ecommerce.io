@@ -77,6 +77,13 @@ if ( ! class_exists( 'YITH_WCAF_Form_Handler' ) ) {
 		 */
 		public static function get_handlers( $context = 'view' ) {
 			if ( empty( self::$handlers ) ) {
+				/**
+				 * APPLY_FILTERS: yith_wcaf_form_handlers
+				 *
+				 * Filters the form handlers.
+				 *
+				 * @param array $handlers Form handlers.
+				 */
 				self::$handlers = apply_filters(
 					'yith_wcaf_form_handlers',
 					array(
@@ -150,6 +157,15 @@ if ( ! class_exists( 'YITH_WCAF_Form_Handler' ) ) {
 					self::$last_handler = $handler;
 					self::$posted_data  = self::validate_fields( $fields );
 
+					/**
+					 * DO_ACTION: yith_wcaf_before_$handler
+					 *
+					 * Allows to trigger some action before executing the form handler.
+					 * <code>$handler</code> will be replaced with the form handler.
+					 *
+					 * @param array $posted_data    Posted data.
+					 * @param array $handler_option Handler option.
+					 */
 					do_action( "yith_wcaf_before_{$handler}", self::$posted_data, $handler_option );
 
 					if ( method_exists( 'YITH_WCAF_Form_Handler_Premium', $handler ) ) {
@@ -158,6 +174,16 @@ if ( ! class_exists( 'YITH_WCAF_Form_Handler' ) ) {
 						self::$last_result = self::$handler( self::$posted_data );
 					}
 
+					/**
+					 * DO_ACTION: yith_wcaf_after_$handler
+					 *
+					 * Allows to trigger some action after executing the form handler.
+					 * <code>$handler</code> will be replaced with the form handler.
+					 *
+					 * @param object $last_result    Last result.
+					 * @param array  $posted_data    Posted data.
+					 * @param array  $handler_option Handler option.
+					 */
 					do_action( "yith_wcaf_after_{$handler}", self::$last_result, self::$posted_data, $handler_option );
 				} catch ( Exception $e ) {
 					self::$posted_data = self::sanitize_fields( $fields );
@@ -320,6 +346,14 @@ if ( ! class_exists( 'YITH_WCAF_Form_Handler' ) ) {
 			$id = $affiliate->save();
 
 			// trigger new affiliate action.
+			/**
+			 * DO_ACTION: yith_wcaf_new_affiliate_registration
+			 *
+			 * Allows to trigger some action when registering a customer as a new affiliate.
+			 *
+			 * @param int                 $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 */
 			do_action( 'yith_wcaf_new_affiliate_registration', $id, $affiliate );
 		}
 
@@ -339,6 +373,13 @@ if ( ! class_exists( 'YITH_WCAF_Form_Handler' ) ) {
 				$validation_errors->add( 'invalid_affiliate', $e->getMessage() );
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_check_affiliate_validation_errors
+			 *
+			 * Filters the validation errors when registering a new affiliate.
+			 *
+			 * @param WP_Error $validation_errors Error object.
+			 */
 			return apply_filters( 'yith_wcaf_check_affiliate_validation_errors', $validation_errors );
 		}
 
@@ -350,10 +391,24 @@ if ( ! class_exists( 'YITH_WCAF_Form_Handler' ) ) {
 		public static function redirect_after_affiliate_registration() {
 			$redirect = home_url( wp_get_raw_referer() );
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_redirect_to_dashboard_after_registration
+			 *
+			 * Filters whether to redirect to the Affiliate Dashboard after registration.
+			 *
+			 * @param bool $redirect_to_dashboard Whether to redirect to dashboard after registration or not.
+			 */
 			if ( ! $redirect || apply_filters( 'yith_wcaf_redirect_to_dashboard_after_registration', false ) ) {
 				$redirect = YITH_WCAF_Dashboard()->get_dashboard_url();
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_after_registration_redirect
+			 *
+			 * Filters the URL to redirect after registration.
+			 *
+			 * @param string $redirect URL to redirect.
+			 */
 			return apply_filters( 'yith_wcaf_after_registration_redirect', $redirect );
 		}
 
@@ -388,9 +443,24 @@ if ( ! class_exists( 'YITH_WCAF_Form_Handler' ) ) {
 
 			$id = $affiliate->save();
 
+			/**
+			 * DO_ACTION: yith_wcaf_new_affiliate_application
+			 *
+			 * Allows to trigger some action when a customer sends the application to become an affiliate.
+			 *
+			 * @param int                 $id        Affiliate id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 */
 			do_action( 'yith_wcaf_new_affiliate_application', $id, $affiliate );
 
 			// finally, redirect to affiliate dashboard.
+			/**
+			 * APPLY_FILTERS: yith_wcaf_become_an_affiliate_redirection
+			 *
+			 * Filters the URL to redirect after sending the application to become an affiliate.
+			 *
+			 * @param string $redirect URL to redirect.
+			 */
 			wp_safe_redirect( apply_filters( 'yith_wcaf_become_an_affiliate_redirection', home_url( wp_get_raw_referer() ) ) );
 			die;
 		}
@@ -438,6 +508,13 @@ if ( ! class_exists( 'YITH_WCAF_Form_Handler' ) ) {
 				$base = '';
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_link_generator_generated_url
+			 *
+			 * Filters the generated URL in the link generator.
+			 *
+			 * @param string $referral_url Referral URL.
+			 */
 			return apply_filters( 'yith_wcaf_link_generator_generated_url', YITH_WCAF()->get_referral_url( $affiliate->get_token(), $base ) );
 		}
 
@@ -478,6 +555,14 @@ if ( ! class_exists( 'YITH_WCAF_Form_Handler' ) ) {
 			$affiliate->set_payment_email( $fields['payment_email'] );
 			$affiliate->save();
 
+			/**
+			 * DO_ACTION: yith_wcaf_save_affiliate_settings
+			 *
+			 * Allows to trigger some action when saving affiliate's settings.
+			 *
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 * @param array               $fields    Submitted and sanitized fields.
+			 */
 			do_action( 'yith_wcaf_save_affiliate_settings', $affiliate, $fields );
 
 			// redirect to settings page and show success message.

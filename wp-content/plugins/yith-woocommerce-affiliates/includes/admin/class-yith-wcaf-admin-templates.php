@@ -89,10 +89,11 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Templates' ) ) {
 				copy( $template_file, $theme_file );
 
 				/**
-				 * Action hook fired after copying email template file.
+				 * DO_ACTION: yith_wcaf_copy_template
 				 *
-				 * @param string $template_type The copied template type
-				 * @param string $email         The email object
+				 * Allows to trigger some action after copying email template file.
+				 *
+				 * @param string $template Template to copy.
 				 */
 				do_action( 'yith_wcaf_copy_template', $template );
 
@@ -123,10 +124,11 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Templates' ) ) {
 				unlink( $theme_file ); // phpcs:ignore WordPress.VIP.FileSystemWritesDisallow.file_ops_unlink
 
 				/**
-				 * Action hook fired after deleting template file.
+				 * DO_ACTION: yith_wcaf_delete_template
 				 *
-				 * @param string $template The deleted template type
-				 * @param string $email    The email object
+				 * Allows to trigger some action after deleting template file.
+				 *
+				 * @param string $template Template to delete.
 				 */
 				do_action( 'yith_wcaf_delete_template', $template );
 				?>

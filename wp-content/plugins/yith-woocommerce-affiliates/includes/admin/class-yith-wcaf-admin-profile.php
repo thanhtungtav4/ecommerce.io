@@ -57,6 +57,13 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 		 * @return array Fields to display which are filtered through yith_wcaf_affiliate_meta_fields before being returned
 		 */
 		public static function get_profile_fields() {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_profile_fields
+			 *
+			 * Filters the additional fields in the user profile.
+			 *
+			 * @param array $fields Profile fields.
+			 */
 			$show_fields = apply_filters(
 				'yith_wcaf_profile_fields',
 				array_merge(
@@ -105,6 +112,13 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 									'description'       => _x( 'User-specific rate to apply, if any (general rates will be applied if left empty).', '[ADMIN] User profile.', 'yith-woocommerce-affiliates' ),
 									'step'              => '0.01',
 									'min'               => '0',
+									/**
+									 * APPLY_FILTERS: yith_wcaf_max_rate_value
+									 *
+									 * Filters the maximum rate value.
+									 *
+									 * @param int $max_rate_value Maximum rate value.
+									 */
 									'max'               => apply_filters( 'yith_wcaf_max_rate_value', 100 ),
 									'custom_attributes' => array(
 										'data-postfix' => '%',
@@ -166,6 +180,13 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 				);
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_gateway_profile_fields
+			 *
+			 * Filters the additional gateway fields in the user profile.
+			 *
+			 * @param array $gateway_fields Gateway fields.
+			 */
 			return apply_filters( 'yith_wcaf_gateway_profile_fields', $gateway_fields );
 		}
 
@@ -248,6 +269,14 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 		 * @eturn void
 		 */
 		public static function print_profile_fields( $user, $sets = false, $show_title = true ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_current_user_can_edit_profile_fields
+			 *
+			 * Filters whether the current user can edit profile fields.
+			 *
+			 * @param bool $can_edit Whether the current user can edit profile fields or not.
+			 * @param int  $user_id  User id.
+			 */
 			if ( ! apply_filters( 'yith_wcaf_current_user_can_edit_profile_fields', YITH_WCAF_Admin()->get_panel_capability(), $user->ID ) ) {
 				return;
 			}
@@ -265,6 +294,14 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 		 * @eturn void
 		 */
 		public static function print_profile_details( $user, $sets = false, $show_title = true ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_current_user_can_view_profile_fields
+			 *
+			 * Filters whether the current user can view profile fields.
+			 *
+			 * @param bool $can_view Whether the current user can view profile fields or not.
+			 * @param int  $user_id  User id.
+			 */
 			if ( ! apply_filters( 'yith_wcaf_current_user_can_view_profile_fields', YITH_WCAF_Admin()->get_panel_capability(), $user->ID ) ) {
 				return;
 			}
@@ -472,6 +509,16 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 				$should_print = false;
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_should_print_admin_profile_field
+			 *
+			 * Filters whether a specific field should be printed in the user profile.
+			 *
+			 * @param bool   $should_print Whether a specific field should be printed or not.
+			 * @param string $key          Key of the field.
+			 * @param array  $field        Field to parse.
+			 * @param string $context      Context of the operation.
+			 */
 			return apply_filters( 'yith_wcaf_should_print_admin_profile_field', $should_print, $key, $field, $context );
 		}
 
@@ -489,6 +536,17 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 			$value    = self::get_field_value( $base_key, $field, $context );
 
 			// allow third party code customize field.
+			/**
+			 * APPLY_FILTERS: yith_wcaf_admin_profile_field
+			 *
+			 * Filters the field in the user profile.
+			 *
+			 * @param array               $field     Field to parse.
+			 * @param string              $key       Key of the field.
+			 * @param string              $value     Value of the field.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 * @param WP_User             $user      User object.
+			 */
 			$field = apply_filters( 'yith_wcaf_admin_profile_field', $field, $key, $value, self::$affiliate, self::$user );
 
 			// get field details.
@@ -569,6 +627,15 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 			self::$user      = get_userdata( $user_id );
 			self::$affiliate = $affiliate;
 
+			/**
+			 * DO_ACTION: yith_wcaf_before_save_profile_fields
+			 *
+			 * Allows to trigger some action before saving the fields in the user profile.
+			 *
+			 * @param int                 $user_id   User id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 * @param array               $sets      Array of fieldsets of options to print; leave empty to print all.
+			 */
 			do_action( 'yith_wcaf_before_save_profile_fields', $user_id, $affiliate, $sets );
 
 			// checks if user should be an affiliate.
@@ -610,6 +677,15 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 				self::save_profile_fields_fieldset( $user_id, $fieldset_key );
 			}
 
+			/**
+			 * DO_ACTION: yith_wcaf_after_save_profile_fields
+			 *
+			 * Allows to trigger some action after saving the fields in the user profile.
+			 *
+			 * @param int                 $user_id   User id.
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 * @param array               $sets      Array of fieldsets of options to print; leave empty to print all.
+			 */
 			do_action( 'yith_wcaf_after_save_profile_fields', $user_id, $affiliate, $sets );
 
 			/**

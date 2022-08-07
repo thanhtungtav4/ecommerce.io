@@ -88,10 +88,25 @@ if ( ! class_exists( 'YITH_WCAF_Show_Commissions_Shortcode' ) ) {
 				yith_plugin_fw_is_true( $atts['pagination'] ) ? $this->get_pagination_atts( $atts ) : array()
 			);
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_commissions_dashboard_commissions
+			 *
+			 * Filters the commissions to show in the Affiliate Dashboard.
+			 *
+			 * @param array $commissions Commissions.
+			 */
 			$commissions  = apply_filters( 'yith_wcaf_commissions_dashboard_commissions', YITH_WCAF_Commission_Factory::get_commissions( $query_args ) );
 			$product_name = ! empty( $product_id ) ? sprintf( '#%d – %s', $product_id, get_the_title( $product_id ) ) : '';
 			$count        = $commissions->get_total_items();
 
+			/**
+			 * APPLY_FILTERS: $tag_shortcode_template_atts
+			 *
+			 * Filters the array with the attritubes needed for the shortcode template.
+			 * <code>$tag</code> will be replaced with the shortcode tag.
+			 *
+			 * @param array $shortcode_atts Attributes for the shortcode template.
+			 */
 			return apply_filters(
 				"{$this->tag}_shortcode_template_atts",
 				array_merge(
@@ -104,6 +119,14 @@ if ( ! class_exists( 'YITH_WCAF_Show_Commissions_Shortcode' ) ) {
 						'affiliate_id'               => $affiliate->get_id(),
 						'dashboard_commissions_link' => YITH_WCAF_Dashboard()->get_dashboard_url( 'commissions', 1 ),
 						'to_order'                   => 'DESC' === $order ? 'ASC' : 'DESC',
+						/**
+						 * APPLY_FILTERS: yith_wcaf_show_dashboard_links
+						 *
+						 * Filters whether to show the dashboard links in the Affiliate Dashboard.
+						 *
+						 * @param bool   $show_dashboard_links Whether to show the dashboard links or not.
+						 * @param string $section              Affiliate dashboard section.
+						 */
 						'show_right_column'          => apply_filters( 'yith_wcaf_show_dashboard_links', yith_plugin_fw_is_true( $atts['show_dashboard_links'] ), 'dashboard_clicks' ),
 						'dashboard_links'            => YITH_WCAF_Dashboard()->get_dashboard_navigation_menu(),
 						'filter_set'                 => $filters_set,

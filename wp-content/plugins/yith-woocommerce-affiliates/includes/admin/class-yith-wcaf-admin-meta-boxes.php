@@ -47,6 +47,13 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Meta_Boxes' ) ) {
 				static::init_meta_boxes();
 			}
 
+			/**
+			 * APPLY_FILTERS: yith_wcaf_admin_meta_boxes
+			 *
+			 * Filters the meta boxes registered in the backend.
+			 *
+			 * @param array $meta_boxes Registered meta boxes.
+			 */
 			return apply_filters( 'yith_wcaf_admin_meta_boxes', self::$meta_boxes );
 		}
 

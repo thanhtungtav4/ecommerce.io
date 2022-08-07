@@ -66,91 +66,6 @@
 .quantity {
   margin-bottom: 2.5rem;
 }
-/* .single-product .product .woocommerce-product-gallery .flex-control-nav{
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  transition: all 0.3s linear;
-}
-.woocommerce-product-gallery {
-  display: grid;
-  gap: 10px }
-  @media only screen and (max-width: 35.999em) {
-    .woocommerce-product-gallery {
-      gap: 6px;
-      }
-  }
-  .woocommerce-product-gallery .flex-control-thumbs {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 17%;
-    gap: 1rem;
-    overflow-x: auto !important;
-    overscroll-behavior-inline: contain;
-   }
-   @media screen and (max-width: 47.999em) {
-      .woocommerce-product-gallery .flex-control-thumbs {
-        grid-auto-columns: 12.5%;
-        gap: 6px;
-       }
-   }
-   .woocommerce-product-gallery .flex-control-thumbs li {
-      float: none !important;
-      width: 100% !important;
-      display: grid;
-   }
-   .woocommerce-product-gallery .flex-control-thumbs li img {
-        inline-size: 100%;
-        aspect-ratio: 1/1;
-        -o-object-fit: cover;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-    .woocommerce-product-gallery .flex-control-thumbs li img.flex-active {
-          border: 5px solid #f2f2f2;
-    }
-    @media screen and (max-width: 47.999em) {
-        .woocommerce-product-gallery .flex-control-thumbs li img.flex-active {
-              border: 2px solid #f2f2f2; }
-        }
-  .woocommerce-product-gallery .flex-control-nav {
-    -ms-scroll-snap-type: inline mandatory;
-        scroll-snap-type: inline mandatory;
-    scroll-padding-inline: 10px;
-   }
-   .woocommerce-product-gallery .flex-control-nav > * {
-      scroll-snap-align: start;
-   } */
-   ul.flex-direction-nav {
-    position: absolute;
-    top: 30%;
-    z-index: 99999;
-    width: 100%;
-    left: 0;
-    margin: 0;
-    padding: 0px;
-    list-style: none;}
-
-li.flex-nav-prev {float: left;}
-li.flex-nav-next {float: right;}
-a.flex-next {visibility:hidden;}
-a.flex-prev {visibility:hidden;}
-
-a.flex-next::after {
-	visibility:visible;content: '\f054';
-	font-family: 'Font Awesome 5 Free';
-	margin-right: 10px;
-	font-size: 20px;
-	font-weight: bold;
-}
-a.flex-prev::before {
-  visibility:visible;
-  content: '\f053';
-font-family: 'Font Awesome 5 Free';
-margin-left: 10px;
-font-size: 20px;
-font-weight: bold;
-}
 .is_pa_combo{
   display: none !important;
 }
@@ -171,4 +86,11 @@ font-weight: bold;
 }
 .woocommerce-product-rating{
   margin-top: 0.5rem !important;
+}
+#wpgis-gallery img, #wpgis-gallery .slick-slide{
+  width: 109px;
+  height: 109px;
+}
+#insurane{
+  text-align: left;
 }

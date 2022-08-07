@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
 "affiliates\n"
-"POT-Creation-Date: 2022-05-25T16:25:01+00:00\n"
+"POT-Creation-Date: 2022-08-04T11:49:48+00:00\n"
 "PO-Revision-Date: 2018-12-12 12:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
@@ -29,15 +29,15 @@ msgid ""
 "<strong>YITH</strong></a>"
 msgstr ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:200
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:275
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:209
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:300
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:150
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:244
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-profile-fields-admin-table.php:50
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-profile-fields-admin-table.php:72
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-profile-fields-admin-table.php:90
 #: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:108
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:171
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:180
 #: includes/admin/admin-tables/class-yith-wcaf-gateways-admin-table.php:50
 #: includes/admin/admin-tables/class-yith-wcaf-payments-admin-table.php:91
 #: includes/admin/admin-tables/class-yith-wcaf-payments-admin-table.php:110
@@ -46,113 +46,113 @@ msgctxt "[ADMIN] Empty admin table column"
 msgid "N/A"
 msgstr "N/A"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:229
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:238
 #, fuzzy
 msgctxt "[ADMIN] Label for payment email on admin tables"
 msgid "Payment"
 msgstr "Kifizetés"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:284
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:309
 #, fuzzy
 msgctxt "[ADMIN] Order column on admin tables"
 msgid "Billing information:"
 msgstr "Számlázási információk"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:289
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:314
 msgctxt "[ADMIN] Order column on admin tables"
 msgid "Tel.:"
 msgstr ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:316
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:341
 #, fuzzy
 msgctxt "[ADMIN] Order column on admin tables"
 msgid "Guest"
 msgstr "Vendég"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:325
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:350
 msgctxt "[ADMIN] Commission order column"
 msgid "by"
 msgstr ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:395
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:420
 #, fuzzy
 msgctxt "[ADMIN] Confirmation popup before deleting an item"
 msgid "Confirm delete"
 msgstr "Felhasználó törlése"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:396
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:421
 msgctxt "[ADMIN] Confirmation popup before deleting an item"
 msgid "Are you sure you want to delete this item?"
 msgstr ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:397
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:422
 #, fuzzy
 msgctxt "[ADMIN] Confirmation popup before deleting an item"
 msgid "Delete"
 msgstr "Törlés"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:430
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:455
 #, fuzzy
 msgctxt "[ADMIN] General table column"
 msgid "ID"
 msgstr "Azonosító"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1022
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1064
 #, fuzzy
 msgctxt "[ADMIN] Affiliate filter placeholder"
 msgid "Select an affiliate"
 msgstr "Válassz egy partnert"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1060
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1102
 #, fuzzy
 msgctxt "[ADMIN] Product filter placeholder"
 msgid "Select a product"
 msgstr "Válassz egy terméket"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1085
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1127
 #, fuzzy
 msgctxt "[ADMIN] Tables date pickers"
 msgid "From:"
 msgstr "Dátumtól:"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1087
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1129
 #, fuzzy
 msgctxt "[ADMIN] Tables date pickers"
 msgid "To:"
 msgstr "Dátumig:"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1120
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1162
 #, fuzzy
 msgctxt "[ADMIN] Filter button label"
 msgid "Filter"
 msgstr "Szűrés"
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1144
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1186
 msgctxt "[ADMIN] Export CSV button on admin screens"
 msgid "Export CSV"
 msgstr ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1161
+#: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:1203
 #, fuzzy
 msgctxt "[ADMIN] Reset button label"
 msgid "Reset"
 msgstr "Alaphelyzetbe állítás"
 
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:303
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:335
 msgctxt "[FRONTEND] Message above payment tab"
 msgid ""
 "<b>Note:</b> you'll be able to request your first payment after your "
 "application request has been reviewed and approved."
 msgstr ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:305
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:337
 msgctxt "[FRONTEND] Message above payment tab"
 msgid ""
 "<b>Note:</b> you'll be able to request a payment after your first commission "
 "is generated and confirmed."
 msgstr ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:307
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:339
 msgctxt "[FRONTEND] Message above payment tab"
 msgid ""
 "<b>Note:</b> you'll be able to request a payment after your current pending "
@@ -160,7 +160,7 @@ msgid ""
 msgstr ""
 
 #. translators: 1. Minimum balance for withdraw.
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:310
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:342
 msgctxt "[FRONTEND] Message above payment tab"
 msgid ""
 "<b>Note:</b> you'll be able to request a payment as soon as you collect a "
@@ -168,7 +168,7 @@ msgid ""
 msgstr ""
 
 #. translators: 1. Minimum balance for payment.
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:317
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:349
 msgctxt "[FRONTEND] Message above payment tab"
 msgid ""
 "<b>Note:</b> commissions will be paid automatically by our system as soon as "
@@ -176,7 +176,7 @@ msgid ""
 msgstr ""
 
 #. translators: 1.Day of the month for the payment.
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:324
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:356
 msgctxt "[FRONTEND] Message above payment tab"
 msgid ""
 "<b>Note:</b> commissions will be paid automatically by our system every "
@@ -184,21 +184,21 @@ msgid ""
 msgstr ""
 
 #. translators: 1.Day of the month for the payment. 2. Minimum balance for payment.
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:331
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:363
 msgctxt "[FRONTEND] Message above payment tab"
 msgid ""
 "<b>Note:</b> commissions will be paid automatically by our system every "
 "month on day <b>%1$s</b> if you have collected a minimum of <b>%2$s</b>."
 msgstr ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:337
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:369
 msgctxt "[FRONTEND] Message above payment tab"
 msgid ""
 "<b>Note:</b> commissions will be paid automatically by our system <b>every "
 "day</b>."
 msgstr ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:341
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:373
 msgctxt "[FRONTEND] Message above payment tab"
 msgid ""
 "<b>Note:</b> commissions will be paid by a manager according to our internal "
@@ -206,7 +206,7 @@ msgid ""
 msgstr ""
 
 #. translators: 1. Minimum age required for a commission to be paid (in number of days).
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:349
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:381
 msgctxt "[FRONTEND] Message above payment tab"
 msgid ""
 "Note that our system will only take into account commissions that are older "
@@ -217,7 +217,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:361
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:393
 msgctxt "[FRONTEND] Message above payment tab"
 msgid ""
 "In order to be informed of any new payment issued to your account, make sure "
@@ -225,23 +225,23 @@ msgid ""
 "Settings</b>."
 msgstr ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:560
+#: includes/abstracts/class-yith-wcaf-abstract-dashboard.php:649
 #, fuzzy
 msgid "Dashboard"
 msgstr "Partner oldal"
 
-#: includes/abstracts/class-yith-wcaf-abstract-gateway.php:185
+#: includes/abstracts/class-yith-wcaf-abstract-gateway.php:204
 msgctxt "[ADMIN] Gateways table, not generally visible"
 msgid "Gateway is not available at the moment"
 msgstr ""
 
-#: includes/abstracts/class-yith-wcaf-abstract-gateway.php:259
+#: includes/abstracts/class-yith-wcaf-abstract-gateway.php:278
 #, fuzzy
 msgctxt "[ADMIN] Gateway logs."
 msgid "Empty"
 msgstr "Üres"
 
-#: includes/abstracts/class-yith-wcaf-abstract-gateway.php:299
+#: includes/abstracts/class-yith-wcaf-abstract-gateway.php:329
 msgctxt "[ADMIN] Gateway messages."
 msgid ""
 "The payments could not be processed because the system detected a URL change"
@@ -454,14 +454,14 @@ msgid "Reject affiliate"
 msgstr "Válassz egy partnert"
 
 #: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:304
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:214
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:221
 #, fuzzy
 msgctxt "[ADMIN] Confirm modal"
 msgid "Confirm"
 msgstr "Nem megerősített"
 
 #: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:305
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:215
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:222
 msgctxt "[ADMIN] Confirm modal"
 msgid "This operation cannot be undone. Are you sure you want to proceed?"
 msgstr ""
@@ -642,8 +642,8 @@ msgstr "Jutalék %s nem kifizethető"
 #. translators: 1. Old status. 2. New status. 3. Username.
 #: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:168
 #: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:279
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:155
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:260
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:162
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:267
 msgctxt "[ADMIN] Status change note"
 msgid "Status changed from %1$s to %2$s by %3$s."
 msgstr ""
@@ -798,7 +798,7 @@ msgid "Sorry! There is no affiliate registered yet."
 msgstr "Sajnálom! Még nem történt regisztrálható kattintás!"
 
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:70
-#: plugin-options/affiliates/list-options.php:31
+#: plugin-options/affiliates/list-options.php:40
 #, fuzzy
 msgctxt "[ADMIN] Add new affiliate button, in affiliates tab"
 msgid "Add affiliate"
@@ -978,132 +978,132 @@ msgctxt "[ADMIN] Affiliate empty table message"
 msgid "Sorry! There is no commission registered yet."
 msgstr "Sajnálom! Még nem történt regisztrálható kattintás!"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:194
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:203
 #, fuzzy
 msgctxt "[ADMIN] Commissions table heading"
 msgid "ID"
 msgstr "Azonosító"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:195
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:204
 #, fuzzy
 msgctxt "[ADMIN] Commissions table heading"
 msgid "Date"
 msgstr "Dátum"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:196
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:205
 #, fuzzy
 msgctxt "[ADMIN] Commissions table heading"
 msgid "Affiliate"
 msgstr "Partner"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:197
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:206
 #, fuzzy
 msgctxt "[ADMIN] Commissions table heading"
 msgid "Order"
 msgstr "Rendelés"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:198
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:207
 #, fuzzy
 msgctxt "[ADMIN] Commissions table heading"
 msgid "Product"
 msgstr "Termék"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:199
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:208
 #, fuzzy
 msgctxt "[ADMIN] Commissions table heading"
 msgid "Total"
 msgstr "Összesen"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:200
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:209
 #, fuzzy
 msgctxt "[ADMIN] Commissions table heading"
 msgid "Rate"
 msgstr "Jutalék ráta"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:201
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:210
 #, fuzzy
 msgctxt "[ADMIN] Commissions table heading"
 msgid "Commission"
 msgstr "Jutalékok"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:202
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:211
 msgctxt "[ADMIN] Commissions table heading"
 msgid "Category"
 msgstr ""
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:203
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:212
 #, fuzzy
 msgctxt "[ADMIN] Commissions table heading"
 msgid "Payment"
 msgstr "Kifizetés"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:204
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:213
 #, fuzzy
 msgctxt "[ADMIN] Commissions table heading"
 msgid "Status"
 msgstr "Állapot"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:205
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:214
 #, fuzzy
 msgctxt "[ADMIN] Commissions table heading"
 msgid "Actions"
 msgstr "Műveletek"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:264
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:273
 #, fuzzy
 msgctxt "[ADMIN] Commissions view"
 msgid "All"
 msgstr "Összes"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:280
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:289
 #, fuzzy
 msgctxt "[ADMIN] Commissions bulk actions"
 msgid "Change status to pending"
 msgstr "Visszatérítettre állítás"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:281
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:290
 #, fuzzy
 msgctxt "[ADMIN] Commissions bulk actions"
 msgid "Change status to not confirmed"
 msgstr "Nem megerősítettre állítás"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:282
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:291
 #, fuzzy
 msgctxt "[ADMIN] Commissions bulk actions"
 msgid "Change status to canceled"
 msgstr "Töröltre állítás"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:283
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:292
 #, fuzzy
 msgctxt "[ADMIN] Commissions bulk actions"
 msgid "Change status to refunded"
 msgstr "Visszatérítettre állítás"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:284
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:293
 #, fuzzy
 msgctxt "[ADMIN] Commissions bulk actions"
 msgid "Create a payment manually"
 msgstr "Kifizetés készítése"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:293
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:302
 msgctxt "[ADMIN] Commissions bulk actions"
 msgid "Restore"
 msgstr ""
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:294
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:303
 #, fuzzy
 msgctxt "[ADMIN] Commissions bulk actions"
 msgid "Delete permanently"
 msgstr "Megjegyzés törlése"
 
 #. translators: 1. Payment gateway label.
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:307
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:316
 #, fuzzy
 msgctxt "[ADMIN] Commissions bulk actions"
 msgid "Pay via %s"
 msgstr "Fizetési mód: %s"
 
-#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:312
+#: includes/admin/admin-tables/class-yith-wcaf-commissions-admin-table.php:321
 msgctxt "[ADMIN] Commissions bulk actions"
 msgid "Move to trash"
 msgstr ""
@@ -1228,37 +1228,37 @@ msgctxt "[ADMIN] Name for the affiliates coupon tab"
 msgid "Affiliates"
 msgstr "Partnerek"
 
-#: includes/admin/class-yith-wcaf-admin-meta-boxes.php:91
+#: includes/admin/class-yith-wcaf-admin-meta-boxes.php:98
 #, fuzzy
 msgctxt "[ADMIN] MetaBox title"
 msgid "Referral commissions"
 msgstr "Ajánlói jutalékok"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:65
+#: includes/admin/class-yith-wcaf-admin-profile.php:72
 #, fuzzy
 msgctxt "[ADMIN] User profile."
 msgid "Affiliate Details"
 msgstr "Partner adatai"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:68
+#: includes/admin/class-yith-wcaf-admin-profile.php:75
 #, fuzzy
 msgctxt "[ADMIN] User profile."
 msgid "Affiliate"
 msgstr "Partner"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:70
+#: includes/admin/class-yith-wcaf-admin-profile.php:77
 #, fuzzy
 msgctxt "[ADMIN] User profile."
 msgid "Check if this user is an affiliate."
 msgstr "Jelöld be, ha ez a felhasználó egy partner"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:73
+#: includes/admin/class-yith-wcaf-admin-profile.php:80
 #, fuzzy
 msgctxt "[ADMIN] User profile."
 msgid "Status"
 msgstr "Állapot"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:76
+#: includes/admin/class-yith-wcaf-admin-profile.php:83
 #, fuzzy
 msgctxt "[ADMIN] User profile."
 msgid "If this user is an affiliate, you can choose to enable or disable it."
@@ -1266,49 +1266,49 @@ msgstr ""
 "Ha ez a felhasználó egy partner, akkor választhat, hogy engedélyezi vagy "
 "letiltja azt"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:80
+#: includes/admin/class-yith-wcaf-admin-profile.php:87
 msgctxt "[ADMIN] User profile."
 msgid "Rejection message"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:82
+#: includes/admin/class-yith-wcaf-admin-profile.php:89
 msgctxt "[ADMIN] User profile."
 msgid ""
 "Optionally, you can show the affiliate a message explaining why his/her "
 "account was rejected."
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:89
+#: includes/admin/class-yith-wcaf-admin-profile.php:96
 msgctxt "[ADMIN] User profile."
 msgid "Ban message"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:91
+#: includes/admin/class-yith-wcaf-admin-profile.php:98
 msgctxt "[ADMIN] User profile."
 msgid ""
 "Optionally, you can show the affiliate a message explaining why his/her "
 "account was banned."
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:98
+#: includes/admin/class-yith-wcaf-admin-profile.php:105
 #, fuzzy
 msgctxt "[ADMIN] User profile."
 msgid "Token"
 msgstr "Azonosító token"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:99
+#: includes/admin/class-yith-wcaf-admin-profile.php:106
 #, fuzzy
 msgctxt "[ADMIN] User profile."
 msgid "Token for the user (default to user ID)."
 msgstr "Felhasználó partneri azonosítója (alapesetben a felhasználó ID)"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:102
+#: includes/admin/class-yith-wcaf-admin-profile.php:109
 #, fuzzy
 msgctxt "[ADMIN] User profile."
 msgid "Rate"
 msgstr "Jutalék ráta"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:105
+#: includes/admin/class-yith-wcaf-admin-profile.php:112
 #, fuzzy
 msgctxt "[ADMIN] User profile."
 msgid ""
@@ -1318,19 +1318,19 @@ msgstr ""
 "Felhasználó-specifikus kulcsot kell alkalmazni, ha vannak (általános árak "
 "kerülnek alkalmazásra, ha nem üres)"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:135
+#: includes/admin/class-yith-wcaf-admin-profile.php:149
 #, fuzzy
 msgctxt "[ADMIN] Affiliate profile form"
 msgid "Affiliate payment information"
 msgstr "Partneri oldalak"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:138
+#: includes/admin/class-yith-wcaf-admin-profile.php:152
 #, fuzzy
 msgctxt "[ADMIN] Affiliate profile form"
 msgid "Payment email"
 msgstr "Kifizetési email"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:139
+#: includes/admin/class-yith-wcaf-admin-profile.php:153
 #, fuzzy
 msgctxt "[ADMIN] Affiliate profile form"
 msgid ""
@@ -1339,34 +1339,34 @@ msgid ""
 msgstr "(E-mail cím, ahol meg szeretné kapni a PayPal fizetési jutalékok)"
 
 #. translators: 1. Gateway name.
-#: includes/admin/class-yith-wcaf-admin-profile.php:164
+#: includes/admin/class-yith-wcaf-admin-profile.php:178
 #, fuzzy
 msgctxt "[ADMIN] Affiliate profile form"
 msgid "Affiliate %s information"
 msgstr "Számlázási információk"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:196
+#: includes/admin/class-yith-wcaf-admin-profile.php:217
 msgctxt "[ADMIN] User profile."
 msgid "Banned"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:448
+#: includes/admin/class-yith-wcaf-admin-profile.php:485
 #, fuzzy
 msgctxt "[ADMIN] Profile fields checkbox values"
 msgid "N/A"
 msgstr "N/A"
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:450
+#: includes/admin/class-yith-wcaf-admin-profile.php:487
 msgctxt "[ADMIN] Profile fields checkbox values"
 msgid "Accepted"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:450
+#: includes/admin/class-yith-wcaf-admin-profile.php:487
 msgctxt "[ADMIN] Profile fields checkbox values"
 msgid "Rejected"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin-profile.php:507
+#: includes/admin/class-yith-wcaf-admin-profile.php:565
 msgctxt "[ADMIN] User profile."
 msgid "Select a country / region&hellip;"
 msgstr ""
@@ -1376,67 +1376,67 @@ msgctxt "[ADMIN] Error while copying template to theme directory"
 msgid "Could not write to template file."
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin-templates.php:101
+#: includes/admin/class-yith-wcaf-admin-templates.php:102
 msgctxt "[ADMIN] Success message after copying template to theme directory"
 msgid "Template file copied to the theme."
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin-templates.php:134
+#: includes/admin/class-yith-wcaf-admin-templates.php:136
 msgctxt "[ADMIN] Success message after deleting template from theme directory"
 msgid "Template file deleted from the theme."
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:192
+#: includes/admin/class-yith-wcaf-admin.php:220
 #, fuzzy
 msgctxt "[ADMIN] Panel tabs"
 msgid "Affiliates"
 msgstr "Partnerek"
 
-#: includes/admin/class-yith-wcaf-admin.php:193
+#: includes/admin/class-yith-wcaf-admin.php:221
 #, fuzzy
 msgctxt "[ADMIN] Panel tabs"
 msgid "Commissions"
 msgstr "Jutalékok"
 
-#: includes/admin/class-yith-wcaf-admin.php:194
+#: includes/admin/class-yith-wcaf-admin.php:222
 #, fuzzy
 msgctxt "[ADMIN] Panel tabs"
 msgid "General Options"
 msgstr "Általános adatok"
 
-#: includes/admin/class-yith-wcaf-admin.php:244
+#: includes/admin/class-yith-wcaf-admin.php:279
 msgctxt "[HELP TAB] Video title"
 msgid ""
 "Check this video to learn how to <b>set up an affiliate program for your "
 "online shop:</b>"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:265
+#: includes/admin/class-yith-wcaf-admin.php:300
 msgid ""
 "<b>Get access to advanced reports</b> (hits, commissions, earnings, best "
 "affiliates, popular products, etc.) in the integrated dashboard"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:266
+#: includes/admin/class-yith-wcaf-admin.php:301
 msgid ""
 "Create a <b>custom advanced form for your affiliate’s registration</b> "
 "process: add unlimited fields to the form, such as Website or Blog url, "
 "Links of their social channels, a small bio, etc. "
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:267
+#: includes/admin/class-yith-wcaf-admin.php:302
 msgid ""
 "Override the default commission rate and <b>set a different rate value for "
 "specific users, user roles or products</b>"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:268
+#: includes/admin/class-yith-wcaf-admin.php:303
 msgid ""
 "<b>Exclude specific products, categories, tag, user or user roles</b> from "
 "the affiliation program"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:269
+#: includes/admin/class-yith-wcaf-admin.php:304
 msgid ""
 "<b>Automatic payment of the commissions</b> (with PayPal or Stripe) when the "
 "affiliate reaches a threshold, on a specific month date (ex: each 1st of "
@@ -1444,163 +1444,163 @@ msgid ""
 "schedule a daily payment. "
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:270
+#: includes/admin/class-yith-wcaf-admin.php:305
 msgid ""
 "<b>Let affiliates to ask their commissions withdrawal</b> (and upload or "
 "generate invoices for their requests)"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:271
+#: includes/admin/class-yith-wcaf-admin.php:306
 msgid ""
 "<b>Get access to the report of clicks</b> generated from referrers in a "
 "summarising table with main information and their conversion status"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:272
+#: includes/admin/class-yith-wcaf-admin.php:307
 msgid ""
 "<b>Access to the affiliate’s detail page</b> from the affiliates table, to "
 "check the affiliate’s personal info, commissions, statistics, etc."
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:273
+#: includes/admin/class-yith-wcaf-admin.php:308
 msgid "Regular updates, translations and premium support"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliate.php:731
+#: includes/class-yith-wcaf-affiliate.php:801
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Enable affiliate"
 msgstr "Új partner"
 
-#: includes/class-yith-wcaf-affiliate.php:732
+#: includes/class-yith-wcaf-affiliate.php:802
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Change status to accepted"
 msgstr "Töröltre állítás"
 
-#: includes/class-yith-wcaf-affiliate.php:744
+#: includes/class-yith-wcaf-affiliate.php:814
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Reject affiliate"
 msgstr "Válassz egy partnert"
 
-#: includes/class-yith-wcaf-affiliate.php:745
+#: includes/class-yith-wcaf-affiliate.php:815
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Change status to rejected"
 msgstr "Visszatérítettre állítás"
 
-#: includes/class-yith-wcaf-affiliate.php:757
-#: includes/class-yith-wcaf-affiliate.php:758
+#: includes/class-yith-wcaf-affiliate.php:827
+#: includes/class-yith-wcaf-affiliate.php:828
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Ban affiliate"
 msgstr "Partner"
 
-#: includes/class-yith-wcaf-affiliate.php:770
-#: includes/class-yith-wcaf-affiliate.php:771
+#: includes/class-yith-wcaf-affiliate.php:840
+#: includes/class-yith-wcaf-affiliate.php:841
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Unban affiliate"
 msgstr "Partner"
 
-#: includes/class-yith-wcaf-affiliates-profile.php:51
+#: includes/class-yith-wcaf-affiliates-profile.php:58
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Text"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates-profile.php:52
-#: includes/class-yith-wcaf-affiliates-profile.php:76
+#: includes/class-yith-wcaf-affiliates-profile.php:59
+#: includes/class-yith-wcaf-affiliates-profile.php:90
 #, fuzzy
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Email"
 msgstr "E-mail cím"
 
-#: includes/class-yith-wcaf-affiliates-profile.php:53
+#: includes/class-yith-wcaf-affiliates-profile.php:60
 #, fuzzy
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Password"
 msgstr "Jelszó"
 
-#: includes/class-yith-wcaf-affiliates-profile.php:54
-#: includes/class-yith-wcaf-affiliates-profile.php:77
+#: includes/class-yith-wcaf-affiliates-profile.php:61
+#: includes/class-yith-wcaf-affiliates-profile.php:91
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Phone"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates-profile.php:55
+#: includes/class-yith-wcaf-affiliates-profile.php:62
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Textarea"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates-profile.php:56
+#: includes/class-yith-wcaf-affiliates-profile.php:63
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Radio button"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates-profile.php:57
+#: includes/class-yith-wcaf-affiliates-profile.php:64
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Checkbox"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates-profile.php:58
+#: includes/class-yith-wcaf-affiliates-profile.php:65
 #, fuzzy
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Select"
 msgstr "Válassz felhasználót"
 
-#: includes/class-yith-wcaf-affiliates-profile.php:59
+#: includes/class-yith-wcaf-affiliates-profile.php:66
 #, fuzzy
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Country"
 msgstr "Összeg"
 
-#: includes/class-yith-wcaf-affiliates-profile.php:60
+#: includes/class-yith-wcaf-affiliates-profile.php:67
 #, fuzzy
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "State"
 msgstr "Statisztikák"
 
-#: includes/class-yith-wcaf-affiliates-profile.php:61
+#: includes/class-yith-wcaf-affiliates-profile.php:68
 #, fuzzy
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Date"
 msgstr "Dátum"
 
-#: includes/class-yith-wcaf-affiliates-profile.php:75
+#: includes/class-yith-wcaf-affiliates-profile.php:89
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Plain text"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates-profile.php:78
+#: includes/class-yith-wcaf-affiliates-profile.php:92
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "URL"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates-profile.php:92
+#: includes/class-yith-wcaf-affiliates-profile.php:113
 #, fuzzy
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Show also in the Affiliate Dashboard"
 msgstr "Partner oldal"
 
-#: includes/class-yith-wcaf-affiliates-profile.php:93
+#: includes/class-yith-wcaf-affiliates-profile.php:114
 #, fuzzy
 msgctxt "[ADMIN] Add Affiliate field modal"
 msgid "Show also in the Become an Affiliate form"
 msgstr "Legyél a partnerünk"
 
-#: includes/class-yith-wcaf-affiliates-profile.php:258
+#: includes/class-yith-wcaf-affiliates-profile.php:318
 msgctxt "[FRONTEND] Billing fields form"
 msgid "Profile info"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates-profile.php:527
+#: includes/class-yith-wcaf-affiliates-profile.php:618
 msgctxt ""
 "[ADMIN] Generic error thrown while adding a new Affiliate's form field"
 msgid "Empty field name: you must specify a name for the field"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates-profile.php:529
+#: includes/class-yith-wcaf-affiliates-profile.php:620
 msgctxt ""
 "[ADMIN] Generic error thrown while adding a new Affiliate's form field"
 msgid ""
@@ -1608,20 +1608,20 @@ msgid ""
 "name."
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates-profile.php:626
+#: includes/class-yith-wcaf-affiliates-profile.php:717
 msgctxt ""
 "[ADMIN] Generic error thrown while adding a new Affiliate's form field"
 msgid "Empty field name: you must specify a name for the field."
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates-profile.php:628
+#: includes/class-yith-wcaf-affiliates-profile.php:719
 #, fuzzy
 msgctxt ""
 "[ADMIN] Generic error thrown while adding a new Affiliate's form field"
 msgid "No field found for the specified name."
 msgstr "Nem találtam átjárót ezzel az ID-vel"
 
-#: includes/class-yith-wcaf-affiliates-profile.php:630
+#: includes/class-yith-wcaf-affiliates-profile.php:721
 msgctxt ""
 "[ADMIN] Generic error thrown while adding a new Affiliate's form field"
 msgid ""
@@ -1629,47 +1629,47 @@ msgid ""
 "name."
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates.php:52
-#: includes/class-yith-wcaf-affiliates.php:53
+#: includes/class-yith-wcaf-affiliates.php:59
+#: includes/class-yith-wcaf-affiliates.php:60
 msgctxt "[ADMIN] Affiliate status"
 msgid "Rejected"
 msgid_plural "Rejected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-yith-wcaf-affiliates.php:57
+#: includes/class-yith-wcaf-affiliates.php:64
 msgctxt "[ADMIN] Affiliate status"
 msgid "New request"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates.php:58
+#: includes/class-yith-wcaf-affiliates.php:65
 msgctxt "[ADMIN] Affiliate status"
 msgid "New"
 msgid_plural "New"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-yith-wcaf-affiliates.php:62
+#: includes/class-yith-wcaf-affiliates.php:69
 msgctxt "[ADMIN] Affiliate status"
 msgid "Accepted and enabled"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliates.php:63
+#: includes/class-yith-wcaf-affiliates.php:70
 msgctxt "[ADMIN] Affiliate status"
 msgid "Accepted"
 msgid_plural "Accepted"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-yith-wcaf-ajax-handler.php:386
+#: includes/class-yith-wcaf-ajax-handler.php:409
 #, fuzzy
 msgctxt "[ADMIN] General error message"
 msgid ""
 "An error occurred while creating the affiliate; please, try again later."
 msgstr "Hiba történt a partner létrehozása közben; próbáld később."
 
-#: includes/class-yith-wcaf-clicks.php:74
-#: includes/class-yith-wcaf-clicks.php:75
+#: includes/class-yith-wcaf-clicks.php:81
+#: includes/class-yith-wcaf-clicks.php:82
 #, fuzzy
 msgctxt "[ADMIN] Click status"
 msgid "Not converted"
@@ -1677,8 +1677,8 @@ msgid_plural "Not converted"
 msgstr[0] "Nem konvertált"
 msgstr[1] "Nem konvertált"
 
-#: includes/class-yith-wcaf-clicks.php:79
-#: includes/class-yith-wcaf-clicks.php:80
+#: includes/class-yith-wcaf-clicks.php:86
+#: includes/class-yith-wcaf-clicks.php:87
 #, fuzzy
 msgctxt "[ADMIN] Click status"
 msgid "Converted"
@@ -1706,8 +1706,8 @@ msgctxt "[ADMIN] Single commission actions"
 msgid "Pay via %s"
 msgstr "Fizetési mód: %s"
 
-#: includes/class-yith-wcaf-commissions.php:149
-#: includes/class-yith-wcaf-commissions.php:150
+#: includes/class-yith-wcaf-commissions.php:156
+#: includes/class-yith-wcaf-commissions.php:157
 #, fuzzy
 msgctxt "[ADMIN] Commission status"
 msgid "Pending"
@@ -1715,8 +1715,8 @@ msgid_plural "Pending"
 msgstr[0] "Függőben"
 msgstr[1] "Függőben"
 
-#: includes/class-yith-wcaf-commissions.php:154
-#: includes/class-yith-wcaf-commissions.php:155
+#: includes/class-yith-wcaf-commissions.php:161
+#: includes/class-yith-wcaf-commissions.php:162
 #, fuzzy
 msgctxt "[ADMIN] Commission status"
 msgid "Pending Payment"
@@ -1724,8 +1724,8 @@ msgid_plural "Pending Payment"
 msgstr[0] "Fizetésre vár"
 msgstr[1] "Fizetésre vár"
 
-#: includes/class-yith-wcaf-commissions.php:159
-#: includes/class-yith-wcaf-commissions.php:160
+#: includes/class-yith-wcaf-commissions.php:166
+#: includes/class-yith-wcaf-commissions.php:167
 #, fuzzy
 msgctxt "[ADMIN] Commission status"
 msgid "Paid"
@@ -1733,8 +1733,8 @@ msgid_plural "Paid"
 msgstr[0] "Kifizetve"
 msgstr[1] "Kifizetve"
 
-#: includes/class-yith-wcaf-commissions.php:164
-#: includes/class-yith-wcaf-commissions.php:165
+#: includes/class-yith-wcaf-commissions.php:171
+#: includes/class-yith-wcaf-commissions.php:172
 #, fuzzy
 msgctxt "[ADMIN] Commission status"
 msgid "Not confirmed"
@@ -1742,8 +1742,8 @@ msgid_plural "Not confirmed"
 msgstr[0] "Nem megerősített"
 msgstr[1] "Nem megerősített"
 
-#: includes/class-yith-wcaf-commissions.php:169
-#: includes/class-yith-wcaf-commissions.php:170
+#: includes/class-yith-wcaf-commissions.php:176
+#: includes/class-yith-wcaf-commissions.php:177
 #, fuzzy
 msgctxt "[ADMIN] Commission status"
 msgid "Canceled"
@@ -1751,8 +1751,8 @@ msgid_plural "Canceled"
 msgstr[0] "Törölve"
 msgstr[1] "Törölve"
 
-#: includes/class-yith-wcaf-commissions.php:174
-#: includes/class-yith-wcaf-commissions.php:175
+#: includes/class-yith-wcaf-commissions.php:181
+#: includes/class-yith-wcaf-commissions.php:182
 #, fuzzy
 msgctxt "[ADMIN] Commission status"
 msgid "Refunded"
@@ -1760,86 +1760,86 @@ msgid_plural "Refunded"
 msgstr[0] "Visszatérítve"
 msgstr[1] "Visszatérítve"
 
-#: includes/class-yith-wcaf-commissions.php:179
-#: includes/class-yith-wcaf-commissions.php:180
+#: includes/class-yith-wcaf-commissions.php:186
+#: includes/class-yith-wcaf-commissions.php:187
 msgctxt "[ADMIN] Commission status"
 msgid "In trash"
 msgid_plural "In trash"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-yith-wcaf-crons-handler.php:121
+#: includes/class-yith-wcaf-crons-handler.php:128
 #, fuzzy
 msgctxt "[ADMIN] Cron schedule (not visible)"
 msgid "Once a month"
 msgstr "Havi egyszer"
 
-#: includes/class-yith-wcaf-endpoints.php:136
+#: includes/class-yith-wcaf-endpoints.php:164
 #, fuzzy
 msgctxt "[GLOBAL] Endpoint title"
 msgid "Commissions"
 msgstr "Jutalékok"
 
-#: includes/class-yith-wcaf-endpoints.php:139
+#: includes/class-yith-wcaf-endpoints.php:167
 #, fuzzy
 msgctxt "[GLOBAL] Endpoint title"
 msgid "Visits"
 msgstr "Látogatások"
 
-#: includes/class-yith-wcaf-endpoints.php:142
+#: includes/class-yith-wcaf-endpoints.php:170
 #, fuzzy
 msgctxt "[GLOBAL] Endpoint title"
 msgid "Coupons"
 msgstr "Felhasznált kupon(ok)"
 
-#: includes/class-yith-wcaf-endpoints.php:145
+#: includes/class-yith-wcaf-endpoints.php:173
 #, fuzzy
 msgctxt "[GLOBAL] Endpoint title"
 msgid "Payments"
 msgstr "Kifizietések"
 
-#: includes/class-yith-wcaf-endpoints.php:146
+#: includes/class-yith-wcaf-endpoints.php:174
 msgctxt "[GLOBAL] Endpoint title"
 msgid "Link generator"
 msgstr ""
 
-#: includes/class-yith-wcaf-endpoints.php:147
+#: includes/class-yith-wcaf-endpoints.php:175
 #, fuzzy
 msgctxt "[GLOBAL] Endpoint title"
 msgid "Settings"
 msgstr "Beállítások"
 
 #. translators: 1. Error message.
-#: includes/class-yith-wcaf-form-handler.php:166
+#: includes/class-yith-wcaf-form-handler.php:192
 msgctxt "[FRONTEND] General form error message"
 msgid "<b>Error:</b> %s"
 msgstr ""
 
-#: includes/class-yith-wcaf-form-handler.php:373
+#: includes/class-yith-wcaf-form-handler.php:428
 #, fuzzy
 msgctxt "[FRONTEND] Become an affiliate error message"
 msgid "You have already subscribed to our affiliate program. Thank you!"
 msgstr "Most már a partnerünk vagy! Köszönjük!"
 
-#: includes/class-yith-wcaf-form-handler.php:411
-#: includes/class-yith-wcaf-form-handler.php:429
+#: includes/class-yith-wcaf-form-handler.php:481
+#: includes/class-yith-wcaf-form-handler.php:499
 msgctxt "[FRONTEND] Link generators error message"
 msgid "Couldn't find an affiliate to generate the referral URL."
 msgstr ""
 
-#: includes/class-yith-wcaf-form-handler.php:420
+#: includes/class-yith-wcaf-form-handler.php:490
 msgctxt "[FRONTEND] Link generators error message"
 msgid ""
 "You must submit a valid affiliate username to generate the referral URL."
 msgstr ""
 
-#: includes/class-yith-wcaf-form-handler.php:455
-#: includes/class-yith-wcaf-form-handler.php:461
+#: includes/class-yith-wcaf-form-handler.php:532
+#: includes/class-yith-wcaf-form-handler.php:538
 msgctxt "[FRONTEND] Affiliate settings error message"
 msgid "Sorry, you're not allowed to process this action."
 msgstr ""
 
-#: includes/class-yith-wcaf-form-handler.php:484
+#: includes/class-yith-wcaf-form-handler.php:569
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate settings success message"
 msgid "Settings saved successfully!"
@@ -1857,14 +1857,14 @@ msgctxt "User role"
 msgid "Affiliate"
 msgstr "Partner"
 
-#: includes/class-yith-wcaf-install.php:701
+#: includes/class-yith-wcaf-install.php:707
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate field label"
 msgid "Username"
 msgstr "Felhasználónév"
 
-#: includes/class-yith-wcaf-install.php:702
-#: includes/class-yith-wcaf-install.php:737
+#: includes/class-yith-wcaf-install.php:708
+#: includes/class-yith-wcaf-install.php:743
 msgctxt "[ADMIN] Affiliates profile fields table"
 msgid ""
 "This field is protected as it is required for the registration form to work "
@@ -1872,38 +1872,38 @@ msgid ""
 "Settings > Accounts & Privacy."
 msgstr ""
 
-#: includes/class-yith-wcaf-install.php:710
+#: includes/class-yith-wcaf-install.php:716
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate field label"
 msgid "First name"
 msgstr "Vezetéknév"
 
-#: includes/class-yith-wcaf-install.php:718
+#: includes/class-yith-wcaf-install.php:724
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate field label"
 msgid "Last name"
 msgstr "Keresztnév"
 
-#: includes/class-yith-wcaf-install.php:726
+#: includes/class-yith-wcaf-install.php:732
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate field label"
 msgid "Email address"
 msgstr "E-mail cím"
 
-#: includes/class-yith-wcaf-install.php:727
+#: includes/class-yith-wcaf-install.php:733
 msgctxt "[ADMIN] Affiliates profile fields table"
 msgid ""
 "This field is protected as it is required for the registration form to work "
 "correctly."
 msgstr ""
 
-#: includes/class-yith-wcaf-install.php:736
+#: includes/class-yith-wcaf-install.php:742
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate field label"
 msgid "Password"
 msgstr "Jelszó"
 
-#: includes/class-yith-wcaf-install.php:746
+#: includes/class-yith-wcaf-install.php:752
 msgctxt "[ADMIN] Affiliates profile fields table"
 msgid ""
 "You can change content of this paragraph from WP Dashboard > WooCommerce > "
@@ -1911,18 +1911,18 @@ msgid ""
 "Privacy Policy Page in WP Dashboard > Settings > Privacy."
 msgstr ""
 
-#: includes/class-yith-wcaf-install.php:756
+#: includes/class-yith-wcaf-install.php:762
 msgctxt "[FRONTEND] Affiliate field label"
 msgid "Terms accepted?"
 msgstr ""
 
 #. translators: 1. Refunded amount. 2. Refund id.
-#: includes/class-yith-wcaf-orders.php:527
+#: includes/class-yith-wcaf-orders.php:628
 msgid "Refunded %1$s due to refund #%2$s creation"
 msgstr ""
 
 #. translators: 1. Restored amount. 2. Refund id.
-#: includes/class-yith-wcaf-orders.php:577
+#: includes/class-yith-wcaf-orders.php:678
 msgid "Restored %1$s due to refund #%2$s deletion"
 msgstr ""
 
@@ -1932,29 +1932,29 @@ msgctxt "[ADMIN] Placeholder gateway"
 msgid "Manual payment"
 msgstr "Manuális"
 
-#: includes/class-yith-wcaf-payment.php:477
+#: includes/class-yith-wcaf-payment.php:486
 #, fuzzy
 msgctxt "[ADMIN] General empty field"
 msgid "N/A"
 msgstr "N/A"
 
 #. translators: 1. Status name.
-#: includes/class-yith-wcaf-payment.php:504
+#: includes/class-yith-wcaf-payment.php:513
 #, fuzzy
 msgctxt "[ADMIN] Single payment actions"
 msgid "Change status to %s"
 msgstr "Visszatérítettre állítás"
 
 #. translators: 1. Payment gateway label.
-#: includes/class-yith-wcaf-payment.php:524
+#: includes/class-yith-wcaf-payment.php:533
 #, fuzzy
 msgctxt "[ADMIN] Single payment actions"
 msgid "Pay via %s"
 msgstr "Fizetési mód: %s"
 
 #. translators: 1. Old status. 2. New status. 3. Payment id.
-#: includes/class-yith-wcaf-payment.php:1069
-#: includes/class-yith-wcaf-payment.php:1090
+#: includes/class-yith-wcaf-payment.php:1129
+#: includes/class-yith-wcaf-payment.php:1154
 msgctxt ""
 "[ADMIN] Note added to commission when status changes because of related "
 "payment operation"
@@ -1963,8 +1963,8 @@ msgid ""
 "payment #%3$s."
 msgstr ""
 
-#: includes/class-yith-wcaf-payments.php:130
-#: includes/class-yith-wcaf-payments.php:131
+#: includes/class-yith-wcaf-payments.php:137
+#: includes/class-yith-wcaf-payments.php:138
 #, fuzzy
 msgctxt "[ADMIN] Payment status"
 msgid "Pending"
@@ -1972,8 +1972,8 @@ msgid_plural "Pending"
 msgstr[0] "Függőben"
 msgstr[1] "Függőben"
 
-#: includes/class-yith-wcaf-payments.php:135
-#: includes/class-yith-wcaf-payments.php:136
+#: includes/class-yith-wcaf-payments.php:142
+#: includes/class-yith-wcaf-payments.php:143
 #, fuzzy
 msgctxt "[ADMIN] Payment status"
 msgid "Completed"
@@ -1981,8 +1981,8 @@ msgid_plural "Completed"
 msgstr[0] "Teljesítve"
 msgstr[1] "Teljesítve"
 
-#: includes/class-yith-wcaf-payments.php:140
-#: includes/class-yith-wcaf-payments.php:141
+#: includes/class-yith-wcaf-payments.php:147
+#: includes/class-yith-wcaf-payments.php:148
 #, fuzzy
 msgctxt "[ADMIN] Payment status"
 msgid "Canceled"
@@ -1990,19 +1990,19 @@ msgid_plural "Canceled"
 msgstr[0] "Törölve"
 msgstr[1] "Törölve"
 
-#: includes/class-yith-wcaf-payments.php:145
-#: includes/class-yith-wcaf-payments.php:146
+#: includes/class-yith-wcaf-payments.php:152
+#: includes/class-yith-wcaf-payments.php:153
 msgctxt "[ADMIN] Payment status"
 msgid "On hold"
 msgid_plural "On hold"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/class-yith-wcaf-payments.php:352
+#: includes/class-yith-wcaf-payments.php:409
 msgid "You have to select at least one commission"
 msgstr "Ki kell választani legalább egy jutalékot"
 
-#: includes/class-yith-wcaf-payments.php:459
+#: includes/class-yith-wcaf-payments.php:524
 msgid "Payment correctly registered"
 msgstr "Kifizetés regisztrálva"
 
@@ -2092,274 +2092,274 @@ msgid ""
 "full\">PayPal Privacy Policy</a> for more details."
 msgstr ""
 
-#: includes/class-yith-wcaf-privacy.php:92
+#: includes/class-yith-wcaf-privacy.php:102
 #, fuzzy
 msgctxt "[PRIVACY] Exporter name"
 msgid "Affiliate Data"
 msgstr "Jutalék ráta"
 
-#: includes/class-yith-wcaf-privacy.php:99
+#: includes/class-yith-wcaf-privacy.php:116
 #, fuzzy
 msgctxt "[PRIVACY] Exporter name"
 msgid "Affiliate Commissions"
 msgstr "Partneri bejelentkezés"
 
-#: includes/class-yith-wcaf-privacy.php:107
+#: includes/class-yith-wcaf-privacy.php:131
 #, fuzzy
 msgctxt "[PRIVACY] Exporter name"
 msgid "Affiliate Payments"
 msgstr "Partneri oldalak"
 
-#: includes/class-yith-wcaf-privacy.php:115
+#: includes/class-yith-wcaf-privacy.php:146
 #, fuzzy
 msgctxt "[PRIVACY] Exporter name"
 msgid "Affiliate Visits"
 msgstr "Partner"
 
-#: includes/class-yith-wcaf-privacy.php:134
+#: includes/class-yith-wcaf-privacy.php:165
 #, fuzzy
 msgctxt "[PRIVACY] Eraser name"
 msgid "Affiliate Data"
 msgstr "Jutalék ráta"
 
-#: includes/class-yith-wcaf-privacy.php:141
+#: includes/class-yith-wcaf-privacy.php:179
 #, fuzzy
 msgctxt "[PRIVACY] Eraser name"
 msgid "Affiliate Payments"
 msgstr "Partneri oldalak"
 
-#: includes/class-yith-wcaf-privacy.php:149
+#: includes/class-yith-wcaf-privacy.php:194
 #, fuzzy
 msgctxt "[PRIVACY] Eraser name"
 msgid "Affiliate Visits"
 msgstr "Partner"
 
-#: includes/class-yith-wcaf-privacy.php:185
+#: includes/class-yith-wcaf-privacy.php:237
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Referral link"
 msgstr "Hivatkozó URL"
 
-#: includes/class-yith-wcaf-privacy.php:186
+#: includes/class-yith-wcaf-privacy.php:238
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Token"
 msgstr "Azonosító token"
 
-#: includes/class-yith-wcaf-privacy.php:187
+#: includes/class-yith-wcaf-privacy.php:239
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Commissions earned"
 msgstr "Jutalék dátuma"
 
-#: includes/class-yith-wcaf-privacy.php:188
+#: includes/class-yith-wcaf-privacy.php:240
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Total paid"
 msgstr "Összes kifizetés"
 
-#: includes/class-yith-wcaf-privacy.php:189
+#: includes/class-yith-wcaf-privacy.php:241
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Total visits"
 msgstr "Összes jutalékok"
 
-#: includes/class-yith-wcaf-privacy.php:190
+#: includes/class-yith-wcaf-privacy.php:242
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Total conversions"
 msgstr "Összes jutalékok"
 
-#: includes/class-yith-wcaf-privacy.php:191
+#: includes/class-yith-wcaf-privacy.php:243
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Additional info"
 msgstr "Mutassa a név mezőt"
 
-#: includes/class-yith-wcaf-privacy.php:197
+#: includes/class-yith-wcaf-privacy.php:249
 #, fuzzy
 msgctxt "[PRIVACY] Exporter label"
 msgid "Affiliate Data"
 msgstr "Jutalék ráta"
 
-#: includes/class-yith-wcaf-privacy.php:243
-#: includes/class-yith-wcaf-privacy.php:307
-#: includes/class-yith-wcaf-privacy.php:374
+#: includes/class-yith-wcaf-privacy.php:302
+#: includes/class-yith-wcaf-privacy.php:373
+#: includes/class-yith-wcaf-privacy.php:447
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "ID"
 msgstr "Azonosító"
 
-#: includes/class-yith-wcaf-privacy.php:244
-#: includes/class-yith-wcaf-privacy.php:308
+#: includes/class-yith-wcaf-privacy.php:303
+#: includes/class-yith-wcaf-privacy.php:374
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Status"
 msgstr "Állapot"
 
-#: includes/class-yith-wcaf-privacy.php:245
+#: includes/class-yith-wcaf-privacy.php:304
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Order id"
 msgstr "Rendelés"
 
-#: includes/class-yith-wcaf-privacy.php:246
+#: includes/class-yith-wcaf-privacy.php:305
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Product"
 msgstr "Termék"
 
-#: includes/class-yith-wcaf-privacy.php:247
-#: includes/class-yith-wcaf-privacy.php:310
+#: includes/class-yith-wcaf-privacy.php:306
+#: includes/class-yith-wcaf-privacy.php:376
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Created on"
 msgstr "Létrehozva"
 
-#: includes/class-yith-wcaf-privacy.php:248
-#: includes/class-yith-wcaf-privacy.php:312
+#: includes/class-yith-wcaf-privacy.php:307
+#: includes/class-yith-wcaf-privacy.php:378
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Amount"
 msgstr "Összeg"
 
-#: includes/class-yith-wcaf-privacy.php:256
+#: includes/class-yith-wcaf-privacy.php:315
 #, fuzzy
 msgctxt "[PRIVACY] Exporter label"
 msgid "Affiliate Commissions"
 msgstr "Partneri bejelentkezés"
 
-#: includes/class-yith-wcaf-privacy.php:309
+#: includes/class-yith-wcaf-privacy.php:375
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Payment email"
 msgstr "Kifizetési email"
 
-#: includes/class-yith-wcaf-privacy.php:311
+#: includes/class-yith-wcaf-privacy.php:377
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Completed on"
 msgstr "Teljesítve"
 
-#: includes/class-yith-wcaf-privacy.php:313
+#: includes/class-yith-wcaf-privacy.php:379
 msgctxt "[PRIVACY] Exporter property"
 msgid "Gateway"
 msgstr ""
 
-#: includes/class-yith-wcaf-privacy.php:314
+#: includes/class-yith-wcaf-privacy.php:380
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Gateway details"
 msgstr "Általános adatok"
 
-#: includes/class-yith-wcaf-privacy.php:323
+#: includes/class-yith-wcaf-privacy.php:389
 #, fuzzy
 msgctxt "[PRIVACY] Exporter label"
 msgid "Affiliate Payments"
 msgstr "Partneri oldalak"
 
-#: includes/class-yith-wcaf-privacy.php:375
+#: includes/class-yith-wcaf-privacy.php:448
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Link"
 msgstr "Link"
 
-#: includes/class-yith-wcaf-privacy.php:376
+#: includes/class-yith-wcaf-privacy.php:449
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Origin"
 msgstr "Eredeti"
 
-#: includes/class-yith-wcaf-privacy.php:377
+#: includes/class-yith-wcaf-privacy.php:450
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Date"
 msgstr "Dátum"
 
-#: includes/class-yith-wcaf-privacy.php:378
+#: includes/class-yith-wcaf-privacy.php:451
 #, fuzzy
 msgctxt "[PRIVACY] Exporter property"
 msgid "Converted on"
 msgstr "Konvertált"
 
-#: includes/class-yith-wcaf-privacy.php:386
+#: includes/class-yith-wcaf-privacy.php:459
 #, fuzzy
 msgctxt "[PRIVACY] Exporter label"
 msgid "Affiliate views"
 msgstr "Partner"
 
 #. translators: 1. Affiliate ID.
-#: includes/class-yith-wcaf-privacy.php:439
+#: includes/class-yith-wcaf-privacy.php:519
 #, fuzzy
 msgctxt "[PRIVACY] Eraser message"
 msgid "Anonymized affiliate %s."
 msgstr "Partneri jelentkezés automatikus engedélyezése"
 
 #. Translators: 1. Payment id.
-#: includes/class-yith-wcaf-privacy.php:498
+#: includes/class-yith-wcaf-privacy.php:585
 #, fuzzy
 msgctxt "[PRIVACY] Eraser message"
 msgid "Anonymized payment %s."
 msgstr "Nincsenek aktív kifizetések"
 
 #. Translators: 1. Payment id.
-#: includes/class-yith-wcaf-privacy.php:502
+#: includes/class-yith-wcaf-privacy.php:589
 #, fuzzy
 msgctxt "[PRIVACY] Eraser message"
 msgid "Payment %s has been retained."
 msgstr "Kifizetés %s részletei"
 
 #. Translators: 1. Click ID.
-#: includes/class-yith-wcaf-privacy.php:568
+#: includes/class-yith-wcaf-privacy.php:662
 #, fuzzy
 msgctxt "[PRIVACY] Eraser message"
 msgid "Anonymized hit %s."
 msgstr "Partneri jelentkezés automatikus engedélyezése"
 
 #. Translators: 1. Click ID.
-#: includes/class-yith-wcaf-privacy.php:572
+#: includes/class-yith-wcaf-privacy.php:666
 #, fuzzy
 msgctxt "[PRIVACY] Eraser message"
 msgid "Visit %s has been retained."
 msgstr "Jutalékok %s részletei"
 
-#: includes/class-yith-wcaf.php:145
+#: includes/class-yith-wcaf.php:181
 msgctxt "[GLOBAL] After copy message"
 msgid "URL copied"
 msgstr ""
 
-#: includes/class-yith-wcaf.php:146
+#: includes/class-yith-wcaf.php:182
 msgctxt "[FRONTEND] Toggle fields text"
 msgid "ON"
 msgstr ""
 
-#: includes/class-yith-wcaf.php:147
+#: includes/class-yith-wcaf.php:183
 msgctxt "[FRONTEND] Toggle fields text"
 msgid "OFF"
 msgstr ""
 
-#: includes/class-yith-wcaf.php:148
+#: includes/class-yith-wcaf.php:184
 msgctxt "[FRONTEND] Withdraw modal"
 msgid "Request withdrawal"
 msgstr ""
 
-#: includes/class-yith-wcaf.php:150
+#: includes/class-yith-wcaf.php:186
 msgctxt "[GLOBAL] Form validation error"
 msgid "Please, accept this condition"
 msgstr ""
 
-#: includes/class-yith-wcaf.php:151
+#: includes/class-yith-wcaf.php:187
 msgctxt "[GLOBAL] Form validation error"
 msgid "Please, complete this field"
 msgstr ""
 
-#: includes/dashboard/class-yith-wcaf-dashboard-my-account.php:160
+#: includes/dashboard/class-yith-wcaf-dashboard-my-account.php:196
 #, fuzzy
 msgctxt "[FRONTEND] My account page title for Affiliate Dashboard"
 msgid "Affiliate Dashboard"
 msgstr "Partner oldal"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-my-account.php:203
+#: includes/dashboard/class-yith-wcaf-dashboard-my-account.php:239
 #, fuzzy
 msgctxt "[FRONTEND] My Account menu item"
 msgid "Affiliate Dashboard"
@@ -2371,49 +2371,49 @@ msgctxt "[FRONTEND] Generic message for empty tables on dashboard"
 msgid "Sorry! No item found."
 msgstr "Nem található."
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:154
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:213
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Filter"
 msgstr "Szűrés"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:157
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:216
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Reset"
 msgstr "Alaphelyzetbe állítás"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:179
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:254
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Items per page:"
 msgstr "Oldalankénti tételek:"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:298
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:423
 #, fuzzy
 msgctxt "[FRONTEND] Default column content for dashboard tables"
 msgid "N/A"
 msgstr "N/A"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:480
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:653
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table filters"
 msgid "All status"
 msgstr "Teljes startisztikák"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:514
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:687
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "All products"
 msgstr "Válassz egy terméket"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:534
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:707
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "From:"
 msgstr "Dátumtól:"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:544
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:717
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "To:"
@@ -2424,8 +2424,8 @@ msgctxt "[DEV] Debug message triggered when unable to create filter session."
 msgid "Unable to create affiliate. Missing required params."
 msgstr ""
 
-#: includes/data-stores/class-yith-wcaf-affiliate-data-store.php:142
-#: includes/data-stores/class-yith-wcaf-affiliate-data-store.php:173
+#: includes/data-stores/class-yith-wcaf-affiliate-data-store.php:164
+#: includes/data-stores/class-yith-wcaf-affiliate-data-store.php:195
 #, fuzzy
 msgctxt "[DEV] Debug message triggered when unable to find affiliate."
 msgid "Invalid affiliate."
@@ -2436,13 +2436,13 @@ msgctxt "[DEV] Debug message triggered when unable to create click record."
 msgid "Unable to register visit. Missing required params."
 msgstr ""
 
-#: includes/data-stores/class-yith-wcaf-click-data-store.php:129
+#: includes/data-stores/class-yith-wcaf-click-data-store.php:144
 #, fuzzy
 msgctxt "[DEV] Debug message triggered when unable to find click record."
 msgid "Invalid visit."
 msgstr "Érvénytelen állapot"
 
-#: includes/data-stores/class-yith-wcaf-click-data-store.php:147
+#: includes/data-stores/class-yith-wcaf-click-data-store.php:162
 msgctxt "[DEV] Debug message triggered when unable to find click record."
 msgid "Invalid click."
 msgstr ""
@@ -2452,8 +2452,8 @@ msgctxt "[DEV] Debug message triggered when unable to create commission."
 msgid "Unable to create commission. Missing required params."
 msgstr ""
 
-#: includes/data-stores/class-yith-wcaf-commission-data-store.php:131
-#: includes/data-stores/class-yith-wcaf-commission-data-store.php:149
+#: includes/data-stores/class-yith-wcaf-commission-data-store.php:146
+#: includes/data-stores/class-yith-wcaf-commission-data-store.php:164
 #, fuzzy
 msgctxt "[DEV] Debug message triggered when unable to find commission."
 msgid "Invalid commission."
@@ -2464,42 +2464,42 @@ msgctxt "[DEV] Debug message triggered when unable to create payment."
 msgid "Unable to create payment. Missing required params."
 msgstr ""
 
-#: includes/data-stores/class-yith-wcaf-payment-data-store.php:127
-#: includes/data-stores/class-yith-wcaf-payment-data-store.php:145
+#: includes/data-stores/class-yith-wcaf-payment-data-store.php:142
+#: includes/data-stores/class-yith-wcaf-payment-data-store.php:160
 #, fuzzy
 msgctxt "[DEV] Debug message triggered when unable to find payment."
 msgid "Invalid payment."
 msgstr "Érvénytelen állapot"
 
-#: includes/functions-yith-wcaf.php:338
+#: includes/functions-yith-wcaf.php:345
 msgctxt "[FRONTEND] Promotional methods"
 msgid "Website / Blog"
 msgstr ""
 
-#: includes/functions-yith-wcaf.php:339
+#: includes/functions-yith-wcaf.php:346
 msgctxt "[FRONTEND] Promotional methods"
 msgid "Newsletter / Email Marketing"
 msgstr ""
 
-#: includes/functions-yith-wcaf.php:340
+#: includes/functions-yith-wcaf.php:347
 msgctxt "[FRONTEND] Promotional methods"
 msgid "Social media"
 msgstr ""
 
-#: includes/functions-yith-wcaf.php:341
+#: includes/functions-yith-wcaf.php:348
 msgctxt "[FRONTEND] Promotional methods"
 msgid "Others"
 msgstr ""
 
 #. translators: 1. Label of the required field missing.
-#: includes/functions-yith-wcaf.php:631
+#: includes/functions-yith-wcaf.php:666
 #, fuzzy
 msgctxt "[GLOBAL] Error message thrown when settings validation fails"
 msgid "Please, choose a valid option for %s"
 msgstr "Kérlek, írj be egy érvényes vezetéknevet."
 
 #. translators: 1. Label of the required field missing.
-#: includes/functions-yith-wcaf.php:638
+#: includes/functions-yith-wcaf.php:673
 #, fuzzy
 msgctxt "[GLOBAL] Error message thrown when settings validation fails"
 msgid "Please, provide a valid email address for %s"
@@ -2508,132 +2508,132 @@ msgstr ""
 "küldhetjük"
 
 #. translators: 1. Label of the required field missing.
-#: includes/functions-yith-wcaf.php:645
+#: includes/functions-yith-wcaf.php:680
 #, fuzzy
 msgctxt "[GLOBAL] Error message thrown when settings validation fails"
 msgid "Please, provide a valid value for %s"
 msgstr "Kérlek, írj be egy érvényes vezetéknevet."
 
 #. translators: 1. Label of the required field missing.
-#: includes/functions-yith-wcaf.php:664
+#: includes/functions-yith-wcaf.php:699
 #, fuzzy
 msgctxt "[GLOBAL] Error message thrown when settings validation fails"
 msgid "Please, make sure to enter a valid email address for %s"
 msgstr "Kérlek, írj be egy érvényes keresztnevet."
 
 #. translators: 1. Label of the required field missing.
-#: includes/functions-yith-wcaf.php:670
+#: includes/functions-yith-wcaf.php:705
 #, fuzzy
 msgctxt "[GLOBAL] Error message thrown when settings validation fails"
 msgid "Please, make sure to enter a valid phone number for %s"
 msgstr "Kérlek, írj be egy érvényes keresztnevet."
 
 #. translators: 1. Label of the required field missing.
-#: includes/functions-yith-wcaf.php:678
+#: includes/functions-yith-wcaf.php:713
 msgctxt "[GLOBAL] Error message thrown when settings validation fails"
 msgid "Please, make sure to enter a valid URL address for %s"
 msgstr ""
 
 #. translators: 1. Label of the required field missing.
-#: includes/functions-yith-wcaf.php:692
+#: includes/functions-yith-wcaf.php:727
 msgctxt "[GLOBAL] Error message thrown when settings validation fails"
 msgid "%s is a required field"
 msgstr ""
 
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:30
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:38
 msgctxt "[ADMIN] Gateway name"
 msgid "Direct bank/wire transfer"
 msgstr ""
 
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:43
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:58
 msgctxt "[ADMIN] PayPal gateway affiliate settings."
 msgid "Account name"
 msgstr ""
 
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:45
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:60
 msgctxt "[ADMIN] PayPal gateway affiliate settings."
 msgid "Enter the name for the receiver's account."
 msgstr ""
 
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:49
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:71
 msgctxt "[ADMIN] PayPal gateway affiliate settings."
 msgid "IBAN"
 msgstr ""
 
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:51
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:73
 msgctxt "[ADMIN] PayPal gateway affiliate settings."
 msgid "Enter the IBAN code for the receiver's account."
 msgstr ""
 
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:55
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:84
 msgctxt "[ADMIN] PayPal gateway affiliate settings."
 msgid "Swift code"
 msgstr ""
 
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:57
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:86
 msgctxt "[ADMIN] PayPal gateway affiliate settings."
 msgid "Enter the Swift code for the receiver's account."
 msgstr ""
 
 #. translators: 1. Payment ID.
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:82
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:111
 msgctxt "[ADMIN] Gateway logs."
 msgid "Trying to pay %s with BACS"
 msgstr ""
 
 #. translators: 1. Payment ID.
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:89
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:118
 msgctxt "[ADMIN] Gateway logs."
 msgid "Unable to find payment object (#%s)"
 msgstr ""
 
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:93
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:108
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:121
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:122
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:137
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:150
 #, fuzzy
 msgctxt "[ADMIN] Gateway messages."
 msgid "Payments failed"
 msgstr "Kifizetési email"
 
 #. translators: 1. Payment ID.
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:101
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:130
 #, fuzzy
 msgctxt "[ADMIN] Gateway logs."
 msgid "Unable to find affiliate for payment (#%s)"
 msgstr "Partneri oldalak"
 
 #. translators: 1. Affiliate ID.
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:114
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:143
 msgctxt "[ADMIN] Gateway logs."
 msgid "Cannot pay affiliate #%s with this gateway"
 msgstr ""
 
 #. translators: 1. Payment ID. 2. Account name. 2. IBAN. 3. Swift code.
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:136
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:165
 msgctxt "[ADMIN] Gateway logs."
 msgid ""
 "Missing required information for payment #%1$s (Name -> %2$s, IBAN -> %3$s, "
 "Swift -> %4$s)"
 msgstr ""
 
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:143
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:172
 msgctxt "[ADMIN] Gateway messages."
 msgid "Missing required payment information"
 msgstr ""
 
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:147
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:176
 msgctxt "[ADMIN] Payment notes."
 msgid "Payment marked as paid via BACS."
 msgstr ""
 
 #. translators: 1. Payment ID.
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:161
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:197
 #, fuzzy
 msgctxt "[ADMIN] Gateway logs."
 msgid "Payment %s processed successfully with BACS"
 msgstr "Kifizetés %s komplett"
 
-#: includes/gateways/class-yith-wcaf-bacs-gateway.php:166
+#: includes/gateways/class-yith-wcaf-bacs-gateway.php:202
 #, fuzzy
 msgctxt "[ADMIN] Gateway messages."
 msgid "Payments sent"
@@ -2700,7 +2700,7 @@ msgstr ""
 "jelentkezz ki!</a>)."
 
 #. translators: 1. Link to affiliate settings page.
-#: includes/shortcodes/class-yith-wcaf-affiliate-dashboard-shortcode.php:230
+#: includes/shortcodes/class-yith-wcaf-affiliate-dashboard-shortcode.php:238
 #, fuzzy
 msgctxt "[FRONTEND] No longer in use"
 msgid ""
@@ -2724,7 +2724,7 @@ msgctxt "[BUILDERS] Shortcode description"
 msgid "Show link generator form to your affiliates"
 msgstr "Partneri regisztrációs és adminisztrációs oldal"
 
-#: includes/shortcodes/class-yith-wcaf-link-generator-shortcode.php:121
+#: includes/shortcodes/class-yith-wcaf-link-generator-shortcode.php:136
 #, fuzzy
 msgid "Share your referral URL on:"
 msgstr "Hivatkozó URL"
@@ -2769,7 +2769,7 @@ msgid "Title to show above register form"
 msgstr ""
 
 #: includes/shortcodes/class-yith-wcaf-registration-form-shortcode.php:76
-#: templates/shortcodes/registration-form.php:113
+#: templates/shortcodes/registration-form.php:136
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate registration form"
 msgid "Register"
@@ -2867,230 +2867,230 @@ msgid ""
 "one."
 msgstr ""
 
-#: plugin-options/affiliates/list-options.php:24
+#: plugin-options/affiliates/list-options.php:33
 #, fuzzy
 msgctxt "[ADMIN] Title for affiliates table, in affiliates tab"
 msgid "Affiliates"
 msgstr "Partnerek"
 
-#: plugin-options/commissions-options.php:22
+#: plugin-options/commissions-options.php:31
 #, fuzzy
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Commissions List"
 msgstr "Jutalékok"
 
-#: plugin-options/commissions-options.php:25
+#: plugin-options/commissions-options.php:34
 #, fuzzy
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Commissions Payments"
 msgstr "Jutalék kifizetések"
 
-#: plugin-options/commissions/list-options.php:24
+#: plugin-options/commissions/list-options.php:33
 msgid "Commissions"
 msgstr "Jutalékok"
 
-#: plugin-options/commissions/payments-options.php:24
+#: plugin-options/commissions/payments-options.php:33
 msgid "Payments"
 msgstr "Kifizietések"
 
-#: plugin-options/settings-options.php:22
+#: plugin-options/settings-options.php:31
 #, fuzzy
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "General Options"
 msgstr "Általános adatok"
 
-#: plugin-options/settings-options.php:25
+#: plugin-options/settings-options.php:34
 #, fuzzy
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Affiliates Registration"
 msgstr "Regisztrációs űrlap"
 
-#: plugin-options/settings-options.php:28
+#: plugin-options/settings-options.php:37
 #, fuzzy
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Affiliate Dashboard"
 msgstr "Partner oldal"
 
-#: plugin-options/settings-options.php:31
+#: plugin-options/settings-options.php:40
 #, fuzzy
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Commissions & Payments"
 msgstr "Jutalék kifizetések"
 
-#: plugin-options/settings/affiliates-dashboard-options.php:20
+#: plugin-options/settings/affiliates-dashboard-options.php:29
 #, fuzzy
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Affiliate Dashboard"
 msgstr "Partner oldal"
 
-#: plugin-options/settings/affiliates-dashboard-options.php:27
+#: plugin-options/settings/affiliates-dashboard-options.php:36
 #, fuzzy
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Where to show the Affiliate Dashboard"
 msgstr "Partner oldal"
 
-#: plugin-options/settings/affiliates-dashboard-options.php:28
+#: plugin-options/settings/affiliates-dashboard-options.php:37
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid ""
 "Choose whether to show the Affiliate Dashboard inside a custom page, or "
 "inside My Account page."
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:34
+#: plugin-options/settings/affiliates-dashboard-options.php:43
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "In a specific page using the shortcode"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:35
+#: plugin-options/settings/affiliates-dashboard-options.php:44
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "In a specific endpoint inside My Account page"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:40
+#: plugin-options/settings/affiliates-dashboard-options.php:49
 #, fuzzy
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Choose the Affiliate Dashboard page"
 msgstr "Partneri regisztrációs és adminisztrációs oldal"
 
-#: plugin-options/settings/affiliates-dashboard-options.php:41
+#: plugin-options/settings/affiliates-dashboard-options.php:50
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid ""
 "Use this shortcode <b>[yith_wcaf_affiliate_dashboard]</b> in the page you "
 "want to use as dashboard."
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:46
+#: plugin-options/settings/affiliates-dashboard-options.php:55
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Search Page"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:56
+#: plugin-options/settings/affiliates-dashboard-options.php:65
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "To guest users in the Affiliate Dashboard show:"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:59
+#: plugin-options/settings/affiliates-dashboard-options.php:68
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid ""
 "Choose what to show to guest users when they try to access the Affiliate "
 "Dashboard."
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:63
+#: plugin-options/settings/affiliates-dashboard-options.php:72
 #, fuzzy
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "The affiliate registration form only"
 msgstr "Regisztrációs űrlap"
 
-#: plugin-options/settings/affiliates-dashboard-options.php:64
+#: plugin-options/settings/affiliates-dashboard-options.php:73
 #, fuzzy
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "The affiliate registration form + the login form"
 msgstr "Regisztrációs űrlap"
 
-#: plugin-options/settings/affiliates-dashboard-options.php:73
+#: plugin-options/settings/affiliates-dashboard-options.php:82
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Show social share"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:74
+#: plugin-options/settings/affiliates-dashboard-options.php:83
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid ""
 "Enable to show social share of referral URL in Affiliate Dashboard > Link "
 "generator section."
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:82
+#: plugin-options/settings/affiliates-dashboard-options.php:91
 #, fuzzy
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Allow affiliates to share on:"
 msgstr "Partneri azonosító:"
 
-#: plugin-options/settings/affiliates-dashboard-options.php:83
+#: plugin-options/settings/affiliates-dashboard-options.php:92
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid ""
 "Choose which social media share button to enable in the Link generator "
 "section."
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:88
+#: plugin-options/settings/affiliates-dashboard-options.php:97
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Facebook"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:89
+#: plugin-options/settings/affiliates-dashboard-options.php:98
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Twitter"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:90
+#: plugin-options/settings/affiliates-dashboard-options.php:99
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Pinterest"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:91
+#: plugin-options/settings/affiliates-dashboard-options.php:100
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Whatsapp"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:92
+#: plugin-options/settings/affiliates-dashboard-options.php:101
 #, fuzzy
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Email"
 msgstr "E-mail cím"
 
-#: plugin-options/settings/affiliates-dashboard-options.php:102
+#: plugin-options/settings/affiliates-dashboard-options.php:111
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Social title"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:103
+#: plugin-options/settings/affiliates-dashboard-options.php:112
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Enter the title to use in Twitter and Pinterest sharing."
 msgstr ""
 
 #. translators: 1. Blog name.
-#: plugin-options/settings/affiliates-dashboard-options.php:109
+#: plugin-options/settings/affiliates-dashboard-options.php:118
 #, fuzzy
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "My Referral URL on %s"
 msgstr "Hivatkozó URL"
 
-#: plugin-options/settings/affiliates-dashboard-options.php:117
+#: plugin-options/settings/affiliates-dashboard-options.php:126
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Social text"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:118
+#: plugin-options/settings/affiliates-dashboard-options.php:127
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid ""
 "Enter the text to use in Twitter, WhatsApp, and Pinterest sharing. Use <b>"
 "%referral_url%</b> where you want to show the URL of your affiliate."
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:131
+#: plugin-options/settings/affiliates-dashboard-options.php:140
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Pinterest image URL"
 msgstr ""
 
-#: plugin-options/settings/affiliates-dashboard-options.php:132
+#: plugin-options/settings/affiliates-dashboard-options.php:141
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid "Enter the URL of the image to use in Pinterest sharing."
 msgstr ""
 
-#: plugin-options/settings/affiliates-registration-options.php:20
+#: plugin-options/settings/affiliates-registration-options.php:29
 #, fuzzy
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid "Affiliate Registration Fields"
 msgstr "Regisztrációs űrlap"
 
-#: plugin-options/settings/affiliates-registration-options.php:26
+#: plugin-options/settings/affiliates-registration-options.php:35
 #, fuzzy
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid "Registration form"
 msgstr "Regisztrációs űrlap"
 
-#: plugin-options/settings/affiliates-registration-options.php:29
+#: plugin-options/settings/affiliates-registration-options.php:38
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "To show this form in a custom page, use the Gutenberg block \"YITH "
@@ -3098,13 +3098,13 @@ msgid ""
 "<b>[yith_wcaf_registration_form]</b>"
 msgstr ""
 
-#: plugin-options/settings/affiliates-registration-options.php:48
+#: plugin-options/settings/affiliates-registration-options.php:57
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "Add the registration form fields to the default WooCommerce registration form"
 msgstr ""
 
-#: plugin-options/settings/affiliates-registration-options.php:51
+#: plugin-options/settings/affiliates-registration-options.php:60
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "Enable to add the registration form fields to WooCommerce default "
@@ -3114,19 +3114,19 @@ msgid ""
 "be registered as affiliates."
 msgstr ""
 
-#: plugin-options/settings/affiliates-registration-options.php:66
+#: plugin-options/settings/affiliates-registration-options.php:75
 #, fuzzy
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid "Registration Options"
 msgstr "Regisztrációs űrlap"
 
-#: plugin-options/settings/affiliates-registration-options.php:72
+#: plugin-options/settings/affiliates-registration-options.php:81
 #, fuzzy
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid "Associate old commissions to new users with the same token"
 msgstr "Partner saját jutalékszerzésének elkerülése"
 
-#: plugin-options/settings/affiliates-registration-options.php:75
+#: plugin-options/settings/affiliates-registration-options.php:84
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "If enabled, when a new affiliate is registered the system will check if "
@@ -3134,31 +3134,31 @@ msgid ""
 "it will be assigned to the user automatically."
 msgstr ""
 
-#: plugin-options/settings/commissions-payments-options.php:20
+#: plugin-options/settings/commissions-payments-options.php:29
 #, fuzzy
 msgctxt "[ADMIN] Commissions/Payments settings page"
 msgid "Commissions Options"
 msgstr "Jutalék műveletek"
 
-#: plugin-options/settings/commissions-payments-options.php:27
+#: plugin-options/settings/commissions-payments-options.php:36
 #, fuzzy
 msgctxt "[ADMIN] Commissions/Payments settings page"
 msgid "Default commission rate"
 msgstr "Vissza a jutaléktáblázathoz"
 
-#: plugin-options/settings/commissions-payments-options.php:31
+#: plugin-options/settings/commissions-payments-options.php:40
 #, fuzzy
 msgctxt "[ADMIN] Commissions/Payments settings page"
 msgid "Enter the default commission rate for all affiliates."
 msgstr "Válasszon kifizetési módot a partneri jutalékok kifizetésére"
 
-#: plugin-options/settings/commissions-payments-options.php:44
+#: plugin-options/settings/commissions-payments-options.php:53
 #, fuzzy
 msgctxt "[ADMIN] Commissions/Payments settings page"
 msgid "Prevent affiliates auto-commissions"
 msgstr "Partneri bejelentkezés"
 
-#: plugin-options/settings/commissions-payments-options.php:47
+#: plugin-options/settings/commissions-payments-options.php:56
 #, fuzzy
 msgctxt "[ADMIN] Commissions/Payments settings page"
 msgid ""
@@ -3167,68 +3167,68 @@ msgid ""
 msgstr ""
 "Akadályozzuk meg, hogy a partner jutalékot szerezzen a saját vásárlásai után"
 
-#: plugin-options/settings/commissions-payments-options.php:53
+#: plugin-options/settings/commissions-payments-options.php:62
 #, fuzzy
 msgctxt "[ADMIN] Commissions/Payments settings page"
 msgid "Exclude taxes from commissions"
 msgstr "Adók kizárása a jutalékból"
 
-#: plugin-options/settings/commissions-payments-options.php:56
+#: plugin-options/settings/commissions-payments-options.php:65
 #, fuzzy
 msgctxt "[ADMIN] Commissions/Payments settings page"
 msgid "Enable to exclude taxes from referral commissions calculation."
 msgstr "Adók kizárása a jutalékszámításból"
 
-#: plugin-options/settings/commissions-payments-options.php:62
+#: plugin-options/settings/commissions-payments-options.php:71
 #, fuzzy
 msgctxt "[ADMIN] Commissions/Payments settings page"
 msgid "Exclude discounts from commissions"
 msgstr "Kedvezmények kizárása a jutalékból"
 
-#: plugin-options/settings/commissions-payments-options.php:65
+#: plugin-options/settings/commissions-payments-options.php:74
 #, fuzzy
 msgctxt "[ADMIN] Commissions/Payments settings page"
 msgid "Enable to exclude discounts from referral commissions calculation."
 msgstr "Kedvezmények kizárása a jutalékszámításból"
 
-#: plugin-options/settings/commissions-payments-options.php:76
-#: plugin-options/settings/commissions-payments-options.php:83
+#: plugin-options/settings/commissions-payments-options.php:85
+#: plugin-options/settings/commissions-payments-options.php:92
 #, fuzzy
 msgctxt "[ADMIN] Title for gateways table, in Commissions/Payments tab"
 msgid "Payment Gateways"
 msgstr "PayPal fizetési átjáró"
 
-#: plugin-options/settings/general-options.php:20
+#: plugin-options/settings/general-options.php:29
 #, fuzzy
 msgctxt "[ADMIN] General settings page"
 msgid "General"
 msgstr "Általános"
 
-#: plugin-options/settings/general-options.php:27
+#: plugin-options/settings/general-options.php:36
 #, fuzzy
 msgctxt "[ADMIN] General settings page"
 msgid "Query var name"
 msgstr "Azonosító \"var\" név"
 
-#: plugin-options/settings/general-options.php:30
+#: plugin-options/settings/general-options.php:39
 #, fuzzy
 msgctxt "[ADMIN] General settings page"
 msgid "Enter the name of the query var used to store referral tokens in URL"
 msgstr "Azonosító \"var\" név módosítása (nem javasolt!)"
 
-#: plugin-options/settings/general-options.php:45
+#: plugin-options/settings/general-options.php:54
 #, fuzzy
 msgctxt "[ADMIN] General settings page"
 msgid "Cookie Options"
 msgstr "Süti"
 
-#: plugin-options/settings/general-options.php:52
+#: plugin-options/settings/general-options.php:61
 #, fuzzy
 msgctxt "[ADMIN] General settings page"
 msgid "Referral cookie name"
 msgstr "Azonosító süti elnevezése"
 
-#: plugin-options/settings/general-options.php:55
+#: plugin-options/settings/general-options.php:64
 #, fuzzy
 msgctxt "[ADMIN] General settings page"
 msgid ""
@@ -3242,38 +3242,38 @@ msgstr ""
 "elkerülje az ütközést más bővítményekkel: Ha módosítja ezt a beállítást, "
 "összes a módosítás előtt eltárolt süti érvényességét veszti."
 
-#: plugin-options/settings/general-options.php:62
+#: plugin-options/settings/general-options.php:71
 #, fuzzy
 msgctxt "[ADMIN] General settings page"
 msgid "Set an expiration for referral cookies"
 msgstr "Hány másodperc után járjon le a partnert azonosító süti?"
 
-#: plugin-options/settings/general-options.php:65
+#: plugin-options/settings/general-options.php:74
 msgctxt "[ADMIN] General settings page"
 msgid ""
 "Enable if you want referral cookies to expire after a specific time frame."
 msgstr ""
 
-#: plugin-options/settings/general-options.php:71
+#: plugin-options/settings/general-options.php:80
 #, fuzzy
 msgctxt "[ADMIN] General settings page"
 msgid "Referral cookies expire after"
 msgstr "Azonosító süti lejárata"
 
-#: plugin-options/settings/general-options.php:87
+#: plugin-options/settings/general-options.php:96
 msgctxt "[ADMIN] General settings page"
 msgid "Set cookies via AJAX"
 msgstr ""
 
-#: plugin-options/settings/general-options.php:90
+#: plugin-options/settings/general-options.php:99
 msgctxt "[ADMIN] General settings page"
 msgid ""
 "Enable to execute an AJAX call to set up an affiliate cookie whenever the "
 "system finds a referral token in the URL"
 msgstr ""
 
-#: templates/shortcodes/dashboard-clicks.php:34
-#: templates/shortcodes/dashboard-commissions.php:35
+#: templates/shortcodes/dashboard-clicks.php:44
+#: templates/shortcodes/dashboard-commissions.php:45
 #: templates/shortcodes/dashboard-summary/affiliate-clicks.php:46
 #: templates/shortcodes/dashboard-summary/affiliate-commissions.php:46
 #, fuzzy
@@ -3281,150 +3281,150 @@ msgctxt "[FRONTEND] Dashboard table"
 msgid "Date"
 msgstr "Dátum"
 
-#: templates/shortcodes/dashboard-clicks.php:35
+#: templates/shortcodes/dashboard-clicks.php:45
 #: templates/shortcodes/dashboard-summary/affiliate-clicks.php:47
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Link"
 msgstr "Link"
 
-#: templates/shortcodes/dashboard-clicks.php:36
+#: templates/shortcodes/dashboard-clicks.php:46
 #: templates/shortcodes/dashboard-summary/affiliate-clicks.php:48
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Origin"
 msgstr "Eredeti"
 
-#: templates/shortcodes/dashboard-clicks.php:45
+#: templates/shortcodes/dashboard-clicks.php:55
 #: templates/shortcodes/dashboard-summary/affiliate-clicks.php:52
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "visit"
 msgstr "Látogatások"
 
-#: templates/shortcodes/dashboard-clicks.php:46
+#: templates/shortcodes/dashboard-clicks.php:56
 #: templates/shortcodes/dashboard-summary/affiliate-clicks.php:53
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "visits"
 msgstr "Látogatások"
 
-#: templates/shortcodes/dashboard-commissions.php:34
+#: templates/shortcodes/dashboard-commissions.php:44
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "ID"
 msgstr "Azonosító"
 
-#: templates/shortcodes/dashboard-commissions.php:36
+#: templates/shortcodes/dashboard-commissions.php:46
 #: templates/shortcodes/dashboard-summary/affiliate-commissions.php:47
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Product"
 msgstr "Termék"
 
-#: templates/shortcodes/dashboard-commissions.php:37
-#: templates/shortcodes/dashboard-coupons.php:36
-#: templates/shortcodes/dashboard-payments.php:36
+#: templates/shortcodes/dashboard-commissions.php:47
+#: templates/shortcodes/dashboard-coupons.php:46
+#: templates/shortcodes/dashboard-payments.php:46
 #: templates/shortcodes/dashboard-summary/affiliate-commissions.php:48
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Amount"
 msgstr "Összeg"
 
-#: templates/shortcodes/dashboard-commissions.php:38
+#: templates/shortcodes/dashboard-commissions.php:48
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Rate"
 msgstr "Jutalék ráta"
 
-#: templates/shortcodes/dashboard-commissions.php:48
+#: templates/shortcodes/dashboard-commissions.php:58
 #: templates/shortcodes/dashboard-summary/affiliate-commissions.php:53
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "commission"
 msgstr "Jutalékok"
 
-#: templates/shortcodes/dashboard-commissions.php:49
+#: templates/shortcodes/dashboard-commissions.php:59
 #: templates/shortcodes/dashboard-summary/affiliate-commissions.php:54
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "commissions"
 msgstr "Jutalékok"
 
-#: templates/shortcodes/dashboard-coupons.php:34
+#: templates/shortcodes/dashboard-coupons.php:44
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Code"
 msgstr ""
 
-#: templates/shortcodes/dashboard-coupons.php:35
+#: templates/shortcodes/dashboard-coupons.php:45
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Type"
 msgstr ""
 
-#: templates/shortcodes/dashboard-coupons.php:37
+#: templates/shortcodes/dashboard-coupons.php:47
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Expire"
 msgstr ""
 
-#: templates/shortcodes/dashboard-coupons.php:42
+#: templates/shortcodes/dashboard-coupons.php:52
 msgctxt "[FRONTEND] Dashboard table"
 msgid "coupon"
 msgstr ""
 
-#: templates/shortcodes/dashboard-coupons.php:43
+#: templates/shortcodes/dashboard-coupons.php:53
 msgctxt "[FRONTEND] Dashboard table"
 msgid "coupons"
 msgstr ""
 
-#: templates/shortcodes/dashboard-payments.php:35
+#: templates/shortcodes/dashboard-payments.php:45
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Requested on"
 msgstr "Létrehozva"
 
-#: templates/shortcodes/dashboard-payments.php:37
+#: templates/shortcodes/dashboard-payments.php:47
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Paid on"
 msgstr "Kifizetve"
 
-#: templates/shortcodes/dashboard-payments.php:40
+#: templates/shortcodes/dashboard-payments.php:50
 msgctxt "[FRONTEND] Dashboard table"
 msgid "Invoice"
 msgstr ""
 
-#: templates/shortcodes/dashboard-payments.php:52
+#: templates/shortcodes/dashboard-payments.php:62
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "payment"
 msgstr "Kifizetés"
 
-#: templates/shortcodes/dashboard-payments.php:53
+#: templates/shortcodes/dashboard-payments.php:63
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "payments"
 msgstr "Kifizietések"
 
-#: templates/shortcodes/dashboard-settings.php:33
+#: templates/shortcodes/dashboard-settings.php:61
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard Settings"
 msgid "Payment info"
 msgstr "Kifizetési feljegyzés"
 
-#: templates/shortcodes/dashboard-settings.php:37
+#: templates/shortcodes/dashboard-settings.php:73
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard Settings"
 msgid "Payment email"
 msgstr "Kifizetési email"
 
-#: templates/shortcodes/dashboard-settings.php:40
+#: templates/shortcodes/dashboard-settings.php:77
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard Settings"
 msgid ""
 "(Email address where you want to receive PayPal payments for commissions)"
 msgstr "(E-mail cím, ahol meg szeretné kapni a PayPal fizetési jutalékok)"
 
-#: templates/shortcodes/dashboard-settings.php:57
+#: templates/shortcodes/dashboard-settings.php:122
 msgctxt "[FRONTEND] Dashboard Settings"
 msgid "Save info"
 msgstr ""
@@ -3496,76 +3496,76 @@ msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Visits today"
 msgstr "Látogatások"
 
-#: templates/shortcodes/form-referrer.php:25
+#: templates/shortcodes/form-referrer.php:32
 #, fuzzy
 msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Did anyone suggest our site to you?"
 msgstr "Valaki ajánlotta Önnek a weboldalunkat?"
 
-#: templates/shortcodes/form-referrer.php:25
+#: templates/shortcodes/form-referrer.php:32
 #, fuzzy
 msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Click here to enter his/her affiliate code"
 msgstr "Kattintson ide és adja meg az ajánló azonosítóját!"
 
-#: templates/shortcodes/form-referrer.php:37
+#: templates/shortcodes/form-referrer.php:51
 #, fuzzy
 msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Affiliate code"
 msgstr "Partner"
 
-#: templates/shortcodes/form-referrer.php:41
+#: templates/shortcodes/form-referrer.php:55
 #, fuzzy
 msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Set affiliate"
 msgstr "Új partner"
 
-#: templates/shortcodes/link-generator.php:37
+#: templates/shortcodes/link-generator.php:56
 #, fuzzy
 msgctxt "[FRONTEND] Link generator"
 msgid "Your affiliate ID is:"
 msgstr "A partneri azonosítód (ID): <strong>%s</strong>."
 
-#: templates/shortcodes/link-generator.php:42
+#: templates/shortcodes/link-generator.php:61
 #, fuzzy
 msgctxt "[FRONTEND] Link generator"
 msgid "Your referral URL is:"
 msgstr "A te partneri ajánló linked: <strong>%s</strong>"
 
-#: templates/shortcodes/link-generator.php:46
-#: templates/shortcodes/link-generator.php:85
+#: templates/shortcodes/link-generator.php:74
+#: templates/shortcodes/link-generator.php:140
 msgctxt "[FRONTEND] Link generator"
 msgid "Copy URL"
 msgstr ""
 
-#: templates/shortcodes/link-generator.php:52
+#: templates/shortcodes/link-generator.php:88
 msgctxt "[FRONTEND] Link generator"
 msgid ""
 "Copy this URL and use it to redirect users to our Home Page with your "
 "affiliate ID."
 msgstr ""
 
-#: templates/shortcodes/link-generator.php:56
+#: templates/shortcodes/link-generator.php:93
 msgctxt "[FRONTEND] Link generator"
 msgid ""
 "If you want to redirect users to a specific page (for example: a product "
 "page) use the link generator."
 msgstr ""
 
-#: templates/shortcodes/link-generator.php:66
+#: templates/shortcodes/link-generator.php:121
 msgctxt "[FRONTEND] Link generator"
 msgid "Generate a custom URL:"
 msgstr ""
 
-#: templates/shortcodes/link-generator.php:70
+#: templates/shortcodes/link-generator.php:125
 msgid "Username"
 msgstr "Felhasználónév"
 
-#: templates/shortcodes/link-generator.php:76
+#: templates/shortcodes/link-generator.php:131
 msgid "Page URL"
 msgstr "Oldal URL"
 
-#: templates/shortcodes/link-generator.php:81
+#: templates/shortcodes/link-generator.php:136
 msgid "Referral URL"
 msgstr "Hivatkozó URL"
 
@@ -3591,18 +3591,18 @@ msgctxt "[FRONTEND] Share button title"
 msgid "Pinterest"
 msgstr ""
 
-#: templates/shortcodes/link-generator/share.php:79
+#: templates/shortcodes/link-generator/share.php:97
 #, fuzzy
 msgctxt "[FRONTEND] Share button title"
 msgid "Email"
 msgstr "E-mail cím"
 
-#: templates/shortcodes/link-generator/share.php:91
+#: templates/shortcodes/link-generator/share.php:109
 msgctxt "[FRONTEND] Share button title"
 msgid "WhatsApp"
 msgstr ""
 
-#: templates/shortcodes/link-generator/share.php:103
+#: templates/shortcodes/link-generator/share.php:121
 msgctxt "[FRONTEND] Share button title"
 msgid "WhatsApp Web"
 msgstr ""
@@ -3635,25 +3635,25 @@ msgctxt "[FRONTEND] Affiliate login form"
 msgid "Lost your password?"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:133
+#: templates/shortcodes/registration-form.php:164
 #, fuzzy
 msgctxt "[FRONTEND] Become an affiliate form"
 msgid "You're just one step away from becoming an affiliate!"
 msgstr "Már csak egy lépésre vagy attól, hogy az ajánló partnerünk legyél!"
 
-#: templates/shortcodes/registration-form.php:141
+#: templates/shortcodes/registration-form.php:188
 #, fuzzy
 msgctxt "[FRONTEND] Become an affiliate form"
 msgid "Become an affiliate"
 msgstr "Legyél a partnerünk"
 
-#: templates/shortcodes/registration-form.php:151
-#: templates/shortcodes/registration-form.php:166
+#: templates/shortcodes/registration-form.php:199
+#: templates/shortcodes/registration-form.php:223
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid "Thank you!"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:154
+#: templates/shortcodes/registration-form.php:210
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid ""
 "You have joined our affiliate program!<br/>In your dashboard, you will find "
@@ -3661,12 +3661,12 @@ msgid ""
 "earnings, and payments."
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:158
+#: templates/shortcodes/registration-form.php:215
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid "Go to your dashboard"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:169
+#: templates/shortcodes/registration-form.php:234
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid ""
@@ -3676,12 +3676,12 @@ msgstr ""
 "A kérelmedet nyilvántartásba vettük, kérlek várj a rendszergazda "
 "jóváhagyására!"
 
-#: templates/shortcodes/registration-form.php:177
+#: templates/shortcodes/registration-form.php:243
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid "We're sorry!"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:184
+#: templates/shortcodes/registration-form.php:250
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid ""
 "We regretfully inform you that we can't accept your request as it doesn't "

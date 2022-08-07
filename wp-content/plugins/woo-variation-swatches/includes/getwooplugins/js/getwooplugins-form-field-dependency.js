@@ -85,7 +85,8 @@
 
                 let values = []
 
-                if (selector) {
+                if (selector && $(selector).length > 0) {
+
                     let inputType = $(selector).prop('type').toLowerCase()
 
                     let currentSelector = selector;
