@@ -982,6 +982,9 @@ msgstr "SÁNG MÀU - ĐI CHƠI, CHỤP ẢNH"
 msgid "FOR MEN"
 msgstr "DÀNH CHO NAM GIỚI"
 
+msgid "ABOUT CARAS LENS"
+msgstr "GIỚI THIỆU CARAS LENS"
+
 msgid "SPECIALIZED MEDICAL CONTACT LENSES"
 msgstr "KÍNH Y TẾ CHUYÊN DỤNG"
 

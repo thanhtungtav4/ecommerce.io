@@ -1,6 +1,6 @@
 <div class="c-info">
   <div class="list">
-    <h4>KÍNH Y TẾ CHUYÊN DỤNG</h4>
+    <h4><?php _e('SPECIALIZED MEDICAL CONTACT LENSES', 'storefront') ?></h4>
     <ul>
       <li>
         <a href="#">
@@ -32,7 +32,7 @@
     </ul>
   </div>
   <div class="video">
-    <h4>KÍNH Y TẾ CHUYÊN DỤNG</h4>
+    <h4><?php _e('ABOUT CARAS LENS', 'storefront') ?></h4>
     <a href="#">
       <picture>
         <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtubeItem.avif" type="image/avif">

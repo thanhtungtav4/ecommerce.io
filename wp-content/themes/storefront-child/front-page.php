@@ -948,7 +948,7 @@ get_header(); ?>
                   </div></a></li>
             </ul>
           </div>
-          <?php  require_once( get_stylesheet_directory() . '/module/footer_info.php' ); ?>
+         
         </div>
       </main>
 <?php

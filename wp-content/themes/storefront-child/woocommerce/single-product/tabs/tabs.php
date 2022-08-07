@@ -46,7 +46,7 @@ if ( ! empty( $product_tabs ) ) : ?>
 					?>
 			</div>
 			<?php endforeach; ?>
-			<div class="c-tab_item" id="parameter">
+			<div class="c-tab_item" id="parameter" style="display: none;">
 				<table>
 					<tbody>
 						<tr>
@@ -120,7 +120,7 @@ if ( ! empty( $product_tabs ) ) : ?>
 					</tbody>
 				</table>
 			</div>
-			<div class="c-tab_item" id="insurane">
+			<div class="c-tab_item" id="insurane" style="display: none;">
 				<h2>CHÍNH SÁCH BẢO HÀNH</h2>
 				<p>Cảm ơn Quý khách đã tin dùng và chọn mua sản phẩm của chúng tôi. Vì lý do nào đó Quý khách không hài lòng với sản phẩm đã chọn mua, hãy liên hệ ngay với chúng tôi khi có bất kỳ thắc mắc cần giải đáp, tư vấn khi cần bảo hành, sửa, đổi sản phẩm.</p>
 				<h2>1. Hình thức bảo hành:</h2>
