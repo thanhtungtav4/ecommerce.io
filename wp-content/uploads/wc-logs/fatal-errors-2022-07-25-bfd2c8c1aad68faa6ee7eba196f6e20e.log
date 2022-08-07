@@ -1,0 +1,10 @@
+2022-07-25T03:57:46+00:00 CRITICAL Uncaught Error: Class 'Storefront_Customizer' not found in /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront/inc/woocommerce/class-storefront-woocommerce-customizer.php:18
+Stack trace:
+#0 /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront/functions.php(42): require()
+#1 /home/admin/domains/dev.caraslens.com/public_html/wp-settings.php(566): include('/home/admin/dom...')
+#2 /home/admin/domains/dev.caraslens.com/public_html/wp-config.php(96): require_once('/home/admin/dom...')
+#3 /home/admin/domains/dev.caraslens.com/public_html/wp-load.php(50): require_once('/home/admin/dom...')
+#4 /home/admin/domains/dev.caraslens.com/public_html/wp-admin/admin-ajax.php(22): require_once('/home/admin/dom...')
+#5 {main}
+  thrown in /home/admin/domains/dev.caraslens.com/public_html/wp-content/themes/storefront/inc/woocommerce/class-storefront-woocommerce-customizer.php on line 18
+

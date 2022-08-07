@@ -42,7 +42,6 @@
                 <dd><a href="#"><?php _e('Delivery policy', 'storefront') ?></a></dd>
                 <dd><a href="#"><?php _e('Shopping guide', 'storefront') ?></a></dd>
                 <dd><a href="#"><?php _e('FAQs', 'storefront') ?></a></dd>
-                <dd><a href="/<?php echo apply_filters( 'wpml_get_translated_slug', 'lien-he', 'page' , ICL_LANGUAGE_CODE);?>"><?php _e('CONTACT US', 'storefront') ?></a></dd>
               </dl>
             </dt>
             <dt>MEDICAL CERTIFICATES

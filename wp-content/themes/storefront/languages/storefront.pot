@@ -985,24 +985,6 @@ msgstr "DÀNH CHO NAM GIỚI"
 msgid "ABOUT CARAS LENS"
 msgstr "GIỚI THIỆU CARAS LENS"
 
-msgid "HEADQUARTERS"
-msgstr "TRỤ SỞ CHÍNH"
-
-msgid "SHOP HANOI"
-msgstr "CỬA HÀNG HÀ NỘI"
-
-msgid "INFORMATION CONTACT"
-msgstr "THÔNG TIN LIÊN HỆ"
-
-msgid "CONTACT US"
-msgstr "LIÊN HỆ VỚI CHÚNG TÔI"
-
-msgid "No. 02 Hue Street - Hoan Kiem - Hanoi"
-msgstr "Số 02 Phố Huế - Hoàn Kiếm - Hà Nội"
-
-msgid "619 Nguyen Dinh Chieu, Ward 2, District 3, City. Ho Chi Minh"
-msgstr "619 Nguyễn Đình Chiểu, Phường 2, Quận 3, TP. Hồ Chí Minh"
-
 msgid "SPECIALIZED MEDICAL CONTACT LENSES"
 msgstr "KÍNH Y TẾ CHUYÊN DỤNG"
 
