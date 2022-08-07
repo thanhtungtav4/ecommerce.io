@@ -2,3 +2,15 @@
 
 2022-08-07T09:56:03+00:00 CRITICAL syntax error, unexpected '<', expecting end of file in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\page-lien-he.php on line 132
 
+2022-08-07T15:00:34+00:00 CRITICAL Uncaught Error: Call to undefined function wpml_current_language() in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\footer.php:45
+Stack trace:
+#0 D:\Ampps\www\ecommerce\wp-includes\template.php(770): require_once()
+#1 D:\Ampps\www\ecommerce\wp-includes\template.php(716): load_template()
+#2 D:\Ampps\www\ecommerce\wp-includes\general-template.php(92): locate_template()
+#3 D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\page-lien-he.php(119): get_footer()
+#4 D:\Ampps\www\ecommerce\wp-includes\template-loader.php(106): include('D:\\Ampps\\www\\ec...')
+#5 D:\Ampps\www\ecommerce\wp-blog-header.php(19): require_once('D:\\Ampps\\www\\ec...')
+#6 D:\Ampps\www\ecommerce\index.php(17): require('D:\\Ampps\\www\\ec...')
+#7 {main}
+  thrown in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\footer.php on line 45
+
