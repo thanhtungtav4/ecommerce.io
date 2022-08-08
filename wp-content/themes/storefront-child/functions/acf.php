@@ -14,7 +14,7 @@ if( function_exists('acf_add_local_field_group') ):
 		acf_add_options_sub_page(array(
 			'page_title' 	=> 'Settings Product Detail',
 			'menu_title'	=> 'Settings Product Detail',
-			'parent_slug'	=> 'settubg-product-detail',
+			'parent_slug'	=> 'theme-general-settings',
 		));
 		}
 

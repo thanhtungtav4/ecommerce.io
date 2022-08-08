@@ -18,6 +18,19 @@
   </div>
   <div class="m-product__inner w-100">
     <ul class="m-item w-100">
+      <?php
+        if(get_field('list_product_suggest')){
+          $args = array(
+            'post_type'   => 'product',
+            'post_status' => 'publish',
+            'post__in' => get_field('list_product_suggest'),
+          );
+        }
+        else{
+
+        }
+
+      ?>
       <li>
         <a href>
           <div class="m-product__img"></div>
