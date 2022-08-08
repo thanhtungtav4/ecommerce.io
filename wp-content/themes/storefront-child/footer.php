@@ -129,14 +129,6 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
       $(document).ready(function(){
-        $('.c-carousel_inner ').not('.slick-initialized').slick({
-        slidesToShow: 1,
-        infinite: true,
-        dots: true,
-        speed: 300,
-        arrows: false,
-        lazyLoad: 'ondemand',
-        });
         // $('.slick-sure').not('.slick-initialized').slick({
         //   infinite: true,
         //   slidesToShow: 4,
@@ -163,6 +155,7 @@
         // });
         $('.m-product__slick').not('.slick-initialized').slick({
           infinite: true,
+          fade: true,
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: false,
@@ -250,6 +243,14 @@
     <?php if(is_front_page()) :  ?>
       <script>
       $(document).ready(function(){
+        $('.c-carousel_inner ').not('.slick-initialized').slick({
+        slidesToShow: 1,
+        infinite: true,
+        dots: true,
+        speed: 300,
+        arrows: false,
+        lazyLoad: 'ondemand',
+        });
         $('.slick-sure').not('.slick-initialized').slick({
           infinite: true,
           slidesToShow: 4,
@@ -275,6 +276,39 @@
           ]
         });
       });
+      </script>
+    <?php endif; ?>
+    <?php if(is_product()) :  ?>
+      <script>
+        $(document).ready(function(){
+          $('.m-product__prev').click(function(e){
+          $('.m-product__inner ul').slick('slickPrev');
+          } );
+          $('.m-product__next').click(function(e){
+            $('.m-product__inner ul').slick('slickNext');
+          } );
+          $('.m-product__inner ul').not('.slick-initialized').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            dots: false,
+            arrows: false,
+            lazyLoad: 'progressive',
+          });
+        });
+        function openTab(evt, TabName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("c-tab_item");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(TabName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
       </script>
     <?php endif; ?>
 		<?php wp_footer(); ?>

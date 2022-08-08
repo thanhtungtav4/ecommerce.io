@@ -64,28 +64,26 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	//do_action( 'woocommerce_after_shop_loop_item' );
 	?>
-
-
-<li><a href="<?php the_permalink();?>">
-						<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
-                       </a>
-                      <div class="m-product__content">
-                        <div class="m-product__content-top"><a href="<?php the_permalink();?>">
-                            <h3><strong><?php the_title();?></strong></h3></a>
-                          <p class="m-discount">
-						  <?php if ( $price_html = $product->get_price_html() ) : ?>
-							<?php echo $price_html; ?>
-							<?php endif; ?>
-						  </p>
-                        </div>
-                        <div class="m-product__content-bottom">
-							<p></p>
-                          <div class="btn_area">
-							<a class="btn_area__add" href="<?php the_permalink();?>" tabindex="0">
-							<img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="add to cart" loading="lazy" width="16" height="20">
-							</a>
-							<?php woocommerce_template_loop_add_to_cart();?>
-					</div>
-                        </div>
-                      </div>
+<li>
+  <a href="<?php the_permalink();?>"> <?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?> </a>
+  <div class="m-product__content">
+    <div class="m-product__content-top">
+      <a href="<?php the_permalink();?>">
+        <h3>
+          <strong> <?php the_title();?> </strong>
+        </h3>
+      </a>
+      <p class="m-discount"> <?php if ( $price_html = $product->get_price_html() ) : ?> <?php echo $price_html; ?> <?php endif; ?> </p>
+    </div>
+    <div class="m-product__content-bottom">
+      <p></p>
+      <div class="btn_area">
+        <a class="btn_area__add" href="
+					<?php the_permalink();?>" tabindex="0">
+          <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="add to cart" loading="lazy" width="16" height="20">
+        </a>
+				<?php woocommerce_template_loop_add_to_cart();?>
+      </div>
+    </div>
+  </div>
 </li>
