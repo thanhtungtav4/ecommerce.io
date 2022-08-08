@@ -11,6 +11,11 @@ if( function_exists('acf_add_local_field_group') ):
 				'capability'    => 'edit_posts',
 				'redirect'      => false
 		));
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Settings Product Detail',
+			'menu_title'	=> 'Settings Product Detail',
+			'parent_slug'	=> 'theme-general-settings',
+		));
 		}
 
 	acf_add_local_field_group(array(
