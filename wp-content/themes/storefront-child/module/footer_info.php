@@ -1,6 +1,6 @@
 <div class="c-info">
   <div class="list">
-    <h4><?php _e('SPECIALIZED MEDICAL CONTACT LENSES', 'storefront') ?></h4>
+    <h4><?php _e('MEDICAL CONTACT LENSES', 'storefront') ?></h4>
     <ul>
       <li>
         <a href="#">
