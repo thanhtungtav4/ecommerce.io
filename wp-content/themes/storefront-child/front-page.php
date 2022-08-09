@@ -524,78 +524,33 @@ get_header(); ?>
               </div>
             </div>
             <ul class="m-new__slick w-100">
-              <li><a href>
-                  <div class="m-new__img">
-                    <picture>
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.avif" type="image/avif">
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278">
-                    </picture>
-                  </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Hướng dẫn các bước skincare từ cơ bản tới nâng cao</h3>
-                    <p class="m-date"><i class="gg-calendar-dates"></i>Tháng Sáu 18, 2021</p>
-                    <p>Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và...</p>
-                  </div></a></li>
-              <li><a href>
-                  <div class="m-new__img">
-                    <picture>
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.avif" type="image/avif">
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278">
-                    </picture>
-                  </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Hướng dẫn các bước skincare từ cơ bản tới nâng cao</h3>
-                    <p class="m-date"><i class="gg-calendar-dates"></i>Tháng Sáu 18, 2021</p>
-                    <p>Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và...</p>
-                  </div></a></li>
-              <li><a href>
-                  <div class="m-new__img">
-                    <picture>
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.avif" type="image/avif">
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278">
-                    </picture>
-                  </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Hướng dẫn các bước skincare từ cơ bản tới nâng cao</h3>
-                    <p class="m-date"><i class="gg-calendar-dates"></i>Tháng Sáu 18, 2021</p>
-                    <p>Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và...</p>
-                  </div></a></li>
-              <li><a href>
-                  <div class="m-new__img">
-                    <picture>
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.avif" type="image/avif">
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278">
-                    </picture>
-                  </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Hướng dẫn các bước skincare từ cơ bản tới nâng cao</h3>
-                    <p class="m-date"><i class="gg-calendar-dates"></i>Tháng Sáu 18, 2021</p>
-                    <p>Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và...</p>
-                  </div></a></li>
-              <li><a href>
-                  <div class="m-new__img">
-                    <picture>
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.avif" type="image/avif">
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278">
-                    </picture>
-                  </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Hướng dẫn các bước skincare từ cơ bản tới nâng cao</h3>
-                    <p class="m-date"><i class="gg-calendar-dates"></i>Tháng Sáu 18, 2021</p>
-                    <p>Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và...</p>
-                  </div></a></li>
-              <li><a href>
-                  <div class="m-new__img">
-                    <picture>
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.avif" type="image/avif">
-                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278">
-                    </picture>
-                  </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Hướng dẫn các bước skincare từ cơ bản tới nâng cao</h3>
-                    <p class="m-date"><i class="gg-calendar-dates"></i>Tháng Sáu 18, 2021</p>
-                    <p>Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và...</p>
-                  </div></a></li>
+            <?php
+                if(get_field('list_news_show', 'option')){
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'post__in' => get_field('list_news_show', 'option'),
+                  );
+                }
+                else{
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 5,
+                  );
+                }
+                $the_query = new WP_Query($args);
+                if($the_query->have_posts()):
+                while ( $the_query->have_posts() ) : $the_query->the_post();
+                $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
+              ?>
+                <?php require( get_stylesheet_directory() . '/module/new_item_loop.php' ); ?>
+              <?php 
+                endwhile;
+                endif;
+                // Reset Post Data
+                wp_reset_postdata();
+              ?> 
             </ul>
           </div>
          

@@ -16,6 +16,11 @@ if( function_exists('acf_add_local_field_group') ):
 			'menu_title'	=> 'Settings Product Detail',
 			'parent_slug'	=> 'theme-general-settings',
 		));
+		acf_add_options_sub_page(array(
+			'page_title' 	=> 'Settings Home Page',
+			'menu_title'	=> 'Settings Home Page',
+			'parent_slug'	=> 'theme-general-settings',
+		));
 		}
 
 	acf_add_local_field_group(array(
@@ -260,5 +265,53 @@ if( function_exists('acf_add_local_field_group') ):
 		'description' => '',
 		'show_in_rest' => 0,
 	));
-
+	acf_add_local_field_group(array(
+		'key' => 'group_62f2935a489d0',
+		'title' => 'Show Post in Homepage',
+		'fields' => array(
+			array(
+				'key' => 'field_62f293839e5a0',
+				'label' => 'List post show',
+				'name' => 'list_news_show',
+				'type' => 'relationship',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'post_type' => '',
+				'taxonomy' => '',
+				'filters' => array(
+					0 => 'search',
+					1 => 'post_type',
+					2 => 'taxonomy',
+				),
+				'elements' => '',
+				'min' => '',
+				'max' => '',
+				'return_format' => 'id',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options-settings-home-page',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	));
 endif;
