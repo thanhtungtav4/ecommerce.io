@@ -27,39 +27,24 @@
           );
         }
         else{
-
+          $args = array(
+            'post_type'   => 'product',
+            'post_status' => 'publish',
+            'posts_per_page' => 5,
+          );
         }
-
+        $the_query = new WP_Query($args);
+        if($the_query->have_posts()):
+        while ( $the_query->have_posts() ) : $the_query->the_post();
+        $image = get_the_post_thumbnail_url(get_the_ID(), array(307, 307), array( 'class' => 'lazyload' ));
       ?>
-      <li>
-        <a href>
-          <div class="m-product__img"></div>
-          <picture>
-            <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.avif" type="image/avif">
-            <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.webp" type="image/webp">
-            <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/product_item.jpg" alt="Logo" loading="lazy" width="323" height="323">
-          </picture>
-        </a>
-        <div class="m-product__content">
-          <div class="m-product__content-top">
-            <a href>
-              <h3 class="strong">XANIA BROWN</h3>
-            </a>
-            <p>400.000VND</p>
-          </div>
-          <div class="m-product__content-bottom">
-            <p>8h/ngày | 3 tháng</p>
-            <div class="btn_area">
-              <a class="btn_area__add" href="#">
-                <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="Logo" loading="lazy" width="16" height="20">
-              </a>
-              <a class="btn_area__del" href="#">
-                <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/addcart.svg" alt="Logo" loading="lazy" width="22" height="22">
-              </a>
-            </div>
-          </div>
-        </div>
-      </li>
+        <?php require( get_stylesheet_directory() . '/module/product_item_loop.php' ); ?>
+      <?php 
+        endwhile;
+        endif;
+        // Reset Post Data
+        wp_reset_postdata();
+      ?> 
     </ul>
   </div>
 </div>
