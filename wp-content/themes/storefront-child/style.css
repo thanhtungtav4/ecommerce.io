@@ -113,3 +113,10 @@ main{
   background-color: #e6e6e6;
   color: #636363;
 }
+#filter_19383_1 .filter-content .filter-items{
+  display: flex;
+  flex-wrap: wrap;
+}
+#filter_19383_1 .filter-content .filter-items li{
+  width: 50%;
+}
