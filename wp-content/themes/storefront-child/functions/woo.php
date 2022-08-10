@@ -68,3 +68,9 @@ function fun_select_default_option( $args)
     return $args;
 }
 //!Auto select first available options from a variation on WooCommerce variable products
+remove_action( 'woocommerce_before_shop_loop', 'storefront_woocommerce_pagination', 30 );
+
+add_action('woocommerce_pagination_tungnt', 'add_woocommerce_pagination');
+function add_woocommerce_pagination(){
+   woocommerce_pagination();
+}
