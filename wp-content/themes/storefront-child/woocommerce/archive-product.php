@@ -48,16 +48,7 @@ do_action( 'woocommerce_before_main_content' );
               <div class="m-pcategory_filter" id="is_filter">
                 <h5 class="title">FILTER</h5>
                 <div class="m-pcategory_filter_inner">
-                  <ul>
-                    <li>Contact List</li>
-                    <li>Contact List</li>
-                    <li>Contact List</li>
-                    <li>Contact List</li>
-                    <li>Contact List</li>
-                    <li>Contact List</li>
-                    <li>Contact List</li>
-                    <li>Contact List</li>
-                  </ul>
+									<?php echo do_shortcode('[yith_wcan_filters slug="default_filter_caterory-2"]')?>
                 </div>
               </div>
               <div class="m-pcategory_list">
@@ -71,14 +62,6 @@ do_action( 'woocommerce_before_main_content' );
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.05547V3.83325H20V6.05547H0ZM0 11.6111H20V9.38883H0V11.6111ZM0 17.1666H20V14.9443H0V17.1666Z" fill="#1E1C1C"></path>
                       </svg></a></div>
                   <div class="right">
-                    <p><strong>Hiển Thị</strong></p>
-                    <form action="/">
-                      <select id="per_page" name="orderby" onchange="this.form.submit">
-                        <option value="">Tất cả</option>
-                        <option value="popularity">Thứ tự theo mức độ phổ biến</option>
-                      </select>
-                      <input type="submit" value="Submit" hidden>
-                    </form>
 										<?php do_action( 'woocommerce_before_shop_loop' ); ?>
                   </div>
                 </div>
