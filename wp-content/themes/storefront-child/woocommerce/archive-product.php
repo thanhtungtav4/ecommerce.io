@@ -48,7 +48,7 @@ do_action( 'woocommerce_before_main_content' );
               <div class="m-pcategory_filter" id="is_filter">
                 <h5 class="title">FILTER</h5>
                 <div class="m-pcategory_filter_inner">
-									<?php echo do_shortcode('[yith_wcan_filters slug="default_filter_caterory-2"]')?>
+									<?php echo do_shortcode('[yith_wcan_filters slug="default_filter_caterory"]')?>
                 </div>
               </div>
               <div class="m-pcategory_list">
