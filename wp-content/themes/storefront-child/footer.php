@@ -312,6 +312,24 @@
         }
       </script>
     <?php endif; ?>
+    <?php if(is_product_category()) :  ?>
+      <script>
+          function opent_filter(){
+            document.getElementById("is_filter").classList.add("js_filter");
+            document.body.classList.add('js_bg');
+        }
+          document.addEventListener("mouseup", function(event) {
+            var obj = document.getElementById("is_filter");
+            var js_filter = document.getElementsByClassName('js_filter');
+            if(js_filter.length > 0){
+              if (!obj.contains(event.target)) {
+                document.getElementById("is_filter").classList.remove("js_filter");
+                document.body.classList.remove('js_bg');
+              }
+            }
+          });
+      </script>
+    <?php endif; ?>
 		<?php wp_footer(); ?>
   </body>
 </html>

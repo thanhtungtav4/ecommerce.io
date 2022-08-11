@@ -727,6 +727,14 @@ body.js-active {
   width: 100%;
   text-align: center;
   position: relative; }
+  .c-carousel_inner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease; }
+    .c-carousel_inner.slick-initialized {
+      visibility: visible;
+      opacity: 1; }
   .c-carousel .slick-dots {
     display: flex;
     align-items: center;
@@ -1964,7 +1972,7 @@ body.js-active {
     @media screen and (max-width: 767px) {
       .m-pcategory_list .tool .left {
         position: absolute;
-        top: 12px; } }
+        top: 28px; } }
     .m-pcategory_list .tool .left a {
       margin-left: 2rem; }
       @media screen and (max-width: 767px) {
@@ -1990,7 +1998,11 @@ body.js-active {
   @media screen and (max-width: 767px) {
     .m-pcategory_list {
       width: 100%;
-      margin-left: 0; } }
+      margin-left: 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: stretch; } }
   .m-pcategory_list_inner, .m-pcategory_list ul.products {
     width: 100%;
     display: flex;
