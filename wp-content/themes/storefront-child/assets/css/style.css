@@ -1971,7 +1971,6 @@ body.js-active {
       align-items: center; }
     @media screen and (max-width: 767px) {
       .m-pcategory_list .tool .left {
-        position: absolute;
         top: 28px; } }
     .m-pcategory_list .tool .left a {
       margin-left: 2rem; }
