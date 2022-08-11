@@ -1,6 +1,3 @@
-/*------------------------------------------------------------
-	Reset
-------------------------------------------------------------*/
 html,
 body,
 div,
@@ -1309,7 +1306,8 @@ body.js-active {
 .c-info {
   display: flex;
   justify-content: space-between;
-  align-items: stretch; }
+  align-items: stretch;
+  flex-wrap: wrap; }
   .c-info .list, .c-info .video {
     width: calc(50% - 20px);
     margin: 10px; }
