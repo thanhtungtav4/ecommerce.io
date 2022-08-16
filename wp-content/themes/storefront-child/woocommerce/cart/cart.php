@@ -24,6 +24,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<li><?php single_post_title(); ?></li>
 	</ul>
 	<?php require_once( get_stylesheet_directory() . '/module/list_promotion.php' ); ?>
+	<div class="c-tab c-tabCart">
+		<div class="c-tab_top">
+			<button class="button tablinks active">GIỎ HÀNG</button>
+			<button class="button tablinks">Giao Hàng</button>
+			<button class="button tablinks">Hoàn Tất</button>
+		</div>
+	</div>
 	<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 		<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
