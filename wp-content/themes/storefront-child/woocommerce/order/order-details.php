@@ -43,15 +43,14 @@ if ( $show_downloads ) {
 	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
 	<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
-
 	<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
 
-		<thead>
+		<!-- <thead>
 			<tr>
 				<th class="woocommerce-table__product-name product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
 				<th class="woocommerce-table__product-table product-total"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
 			</tr>
-		</thead>
+		</thead> -->
 
 		<tbody>
 			<?php
