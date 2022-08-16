@@ -277,7 +277,7 @@ const GWPAdminHelper = (($) => {
 
         $(document.body).on('init_tooltips', function () {
 
-            $('.tips, .help_tip, .woocommerce-help-tip').tipTip({
+            $('.tips, .help_tip, .woocommerce-help-tip, .getwooplugins-help-tip').tipTip({
                 'attribute' : 'data-tip',
                 'fadeIn'    : 50,
                 'fadeOut'   : 50,

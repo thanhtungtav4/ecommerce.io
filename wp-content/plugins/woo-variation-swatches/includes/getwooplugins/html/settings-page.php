@@ -16,7 +16,7 @@
     $current_tab_label = isset( $tabs[ $current_tab ] ) ? $tabs[ $current_tab ][ 'label' ] : '';
     $current_tab_title = isset( $tabs[ $current_tab ] ) ? $tabs[ $current_tab ][ 'title' ] : '';
     
-    // self::add_message( esc_html__( 'Your settings have been saved.', 'woo-variation-gallery' ) );
+    // self::add_message( esc_html__( 'Your settings have been saved.', 'woo-variation-swatches' ) );
     
     if ( empty( $current_section ) ) {
         
@@ -96,8 +96,8 @@
         <?php if ( $save_button_available ) : ?>
             <p class="submit submitbox">
 
-                <button name="save" class="button-primary woocommerce-save-button" type="submit" value="<?php esc_attr_e( 'Save changes', 'woocommerce' ); ?>"><?php esc_html_e( 'Save changes', 'woocommerce' ); ?></button>
-                <a onclick="return confirm('<?php esc_html_e( 'Are you sure to reset?', 'woo-variation-gallery' ) ?>')" class="submitdelete" href="<?php echo esc_url( $reset_url ) ?>"><?php esc_attr_e( 'Reset all', 'woocommerce' ); ?></a>
+                <button name="save" class="button-primary woocommerce-save-button" type="submit" value="<?php esc_attr_e( 'Save changes', 'woo-variation-swatches' ); ?>"><?php esc_html_e( 'Save changes', 'woo-variation-swatches' ); ?></button>
+                <a onclick="return confirm('<?php esc_html_e( 'Are you sure to reset?', 'woo-variation-swatches' ) ?>')" class="submitdelete" href="<?php echo esc_url( $reset_url ) ?>"><?php esc_attr_e( 'Reset all', 'woo-variation-swatches' ); ?></a>
                 
                 <?php wp_nonce_field( 'getwooplugins-settings' ); ?>
             </p>

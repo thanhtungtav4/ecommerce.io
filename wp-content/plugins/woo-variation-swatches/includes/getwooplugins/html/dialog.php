@@ -17,7 +17,7 @@
                 <header class="gwp-backbone-modal-header">
                     <h1><?php echo esc_html( $title ); ?></h1>
                     <button class="modal-close modal-close-link dashicons dashicons-no-alt">
-                        <span class="screen-reader-text"><?php esc_html_e( 'Close modal panel', 'woo-variation-gallery' ); ?></span>
+                        <span class="screen-reader-text"><?php esc_html_e( 'Close modal panel', 'woo-variation-swatches' ); ?></span>
                     </button>
                 </header>
                 <article>
@@ -36,7 +36,7 @@
                         <div class="inner">
                             <?php if ( isset( $links[ 'button_url' ] ) && ! empty( $links[ 'button_url' ] ) ): ?>
                                 <div class="gwp-action-button-group">
-                                    <a target="_blank" href="<?php echo esc_url( $links[ 'button_url' ] ) ?>" class="button button-primary"><?php echo esc_html( $links[ 'button_text' ] ) ?></a>
+                                    <a target="_blank" href="<?php echo esc_url( $links[ 'button_url' ] ) ?>" class="button <?php echo isset( $links[ 'button_class' ] ) ? esc_attr( $links[ 'button_class' ] ) : 'button-primary' ?>"><?php echo esc_html( $links[ 'button_text' ] ) ?></a>
                                 </div>
                             <?php endif; ?>
                             

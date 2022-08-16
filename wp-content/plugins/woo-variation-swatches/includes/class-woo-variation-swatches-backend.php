@@ -31,7 +31,7 @@
                 require_once dirname( __FILE__ ) . '/getwooplugins/class-getwooplugins-admin-menus.php';
                 
                 require_once dirname( __FILE__ ) . '/class-woo-variation-swatches-deactivate-feedback.php';
-                
+                require_once dirname( __FILE__ ) . '/class-woo-variation-swatches-product-edit-panel.php';
             }
             
             protected function hooks() {
@@ -48,13 +48,17 @@
             }
             
             protected function init() {
-                //$this->admin_menu = GetWooPlugins_Admin_Menus::instance();
                 $this->get_admin_menu();
                 $this->get_deactivate_feedback();
                 $this->get_export_import();
+                $this->get_edit_panel();
             }
             
             // Start
+            public function get_edit_panel() {
+                return Woo_Variation_Swatches_Product_Edit_Panel::instance();
+            }
+            
             public function get_admin_menu() {
                 return GetWooPlugins_Admin_Menus::instance();
             }
@@ -106,7 +110,7 @@
                     
                     $name = sprintf( 'attribute_values[%s][]', esc_attr( $i ) );
                     ?>
-                    <select multiple="multiple" data-placeholder="<?php esc_attr_e( 'Select terms', 'woocommerce' ); ?>" class="multiselect attribute_values wc-enhanced-select" name="<?php echo esc_attr( $name ) ?>">
+                    <select multiple="multiple" data-placeholder="<?php esc_attr_e( 'Select terms', 'woo-variation-swatches' ); ?>" class="multiselect attribute_values wc-enhanced-select" name="<?php echo esc_attr( $name ) ?>">
                         <?php
                             $args      = array(
                                 'orderby'    => ! empty( $attribute_taxonomy->attribute_orderby ) ? $attribute_taxonomy->attribute_orderby : 'name',
@@ -122,9 +126,9 @@
                             }
                         ?>
                     </select>
-                    <button class="button plus select_all_attributes"><?php esc_html_e( 'Select all', 'woocommerce' ); ?></button>
-                    <button class="button minus select_no_attributes"><?php esc_html_e( 'Select none', 'woocommerce' ); ?></button>
-                    <button class="button fr plus add_new_attribute"><?php esc_html_e( 'Add new', 'woocommerce' ); ?></button>
+                    <button class="button plus select_all_attributes"><?php esc_html_e( 'Select all', 'woo-variation-swatches' ); ?></button>
+                    <button class="button minus select_no_attributes"><?php esc_html_e( 'Select none', 'woo-variation-swatches' ); ?></button>
+                    <button class="button fr plus add_new_attribute"><?php esc_html_e( 'Add new', 'woo-variation-swatches' ); ?></button>
                     
                     <?php
                 }
@@ -171,7 +175,7 @@
             public function attribute_types() {
                 
                 return array(
-                    'select' => esc_html__( 'Select', 'woocommerce' ),
+                    'select' => esc_html__( 'Select', 'woo-variation-swatches' ),
                     'color'  => esc_html__( 'Color', 'woo-variation-swatches' ),
                     'image'  => esc_html__( 'Image', 'woo-variation-swatches' ),
                     'button' => esc_html__( 'Button', 'woo-variation-swatches' ),
@@ -195,7 +199,6 @@
                 
                 return $attribute_types;
             }
-            
             
             public function load_settings() {
                 include_once dirname( __FILE__ ) . '/class-woo-variation-swatches-settings.php';

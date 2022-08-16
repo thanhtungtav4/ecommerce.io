@@ -103,6 +103,8 @@
                     
                     wp_enqueue_style( 'getwooplugins_settings', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/css/getwooplugins-settings.css', array(), filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'css/getwooplugins-settings.css' ) );
                     
+                    wp_enqueue_script( 'jquery-tiptip', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/js/jquery.tipTip.js', array( 'jquery' ), filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'js/jquery.tipTip.js' ), true );
+                    
                     wp_enqueue_script( 'gwp-form-field-dependency', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/js/getwooplugins-form-field-dependency.js', array( 'jquery' ), filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'js/getwooplugins-form-field-dependency.js' ), true );
                     
                     wp_enqueue_script( 'wp-color-picker-alpha', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/js/wp-color-picker-alpha.js', array(
@@ -110,18 +112,24 @@
                         'wp-color-picker'
                     ),                 filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'js/wp-color-picker-alpha.js' ), true );
                     
-                    wp_enqueue_script( 'getwooplugins_settings', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/js/getwooplugins-settings.js', array(
+                    
+                    $dep = array(
                         'jquery',
                         'underscore',
                         'backbone',
                         'wp-util',
                         'jquery-tiptip',
-                        'iris',
-                        'wc-enhanced-select'
-                    ),                 filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'js/getwooplugins-settings.js' ), true );
+                        'iris'
+                    );
+                    
+                    if ( class_exists( 'WooCommerce' ) ) {
+                        $dep[] = 'wc-enhanced-select';
+                    }
+                    
+                    wp_enqueue_script( 'getwooplugins_settings', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/js/getwooplugins-settings.js', $dep, filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'js/getwooplugins-settings.js' ), true );
                     
                     wp_localize_script( 'getwooplugins_settings', 'getwooplugins_settings_params', array(
-                        'i18n_nav_warning' => esc_html__( 'The changes you made will be lost if you navigate away from this page.', 'woocommerce' ),
+                        'i18n_nav_warning' => esc_html__( 'The changes you made will be lost if you navigate away from this page.', 'woo-variation-swatches' ),
                     ) );
                 }
             }
@@ -149,7 +157,7 @@
                 }
                 
                 
-                add_menu_page( esc_html__( 'GetWooPlugins Settings', 'woo-variation-gallery' ), esc_html__( 'GetWooPlugins', 'woo-variation-gallery' ), 'edit_theme_options', 'getwooplugins', null, 'dashicons-admin-settings', '45.5' );
+                add_menu_page( esc_html__( 'GetWooPlugins Settings', 'woo-variation-swatches' ), esc_html__( 'GetWooPlugins', 'woo-variation-swatches' ), 'edit_theme_options', 'getwooplugins', null, 'dashicons-admin-settings', '45.5' );
                 
             }
             
@@ -178,7 +186,7 @@
                 
                 global $submenu, $menu;
                 
-                $settings_page = add_submenu_page( 'getwooplugins', esc_html__( 'GetWooPlugins Settings', 'woo-variation-gallery' ), esc_html__( 'Home', 'woo-variation-gallery' ), 'manage_options', 'getwooplugins-settings', array(
+                $settings_page = add_submenu_page( 'getwooplugins', esc_html__( 'GetWooPlugins Settings', 'woo-variation-swatches' ), esc_html__( 'Home', 'woo-variation-swatches' ), 'manage_options', 'getwooplugins-settings', array(
                     $this,
                     'settings_page'
                 ) );

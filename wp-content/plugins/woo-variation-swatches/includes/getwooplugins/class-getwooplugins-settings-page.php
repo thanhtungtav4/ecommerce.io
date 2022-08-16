@@ -16,7 +16,6 @@
             
             abstract public function get_id();
             
-            
             abstract public function get_label();
             
             abstract public function get_title();
@@ -153,8 +152,8 @@
                     $url       = admin_url( 'admin.php?page=getwooplugins-settings&tab=' . $this->get_id() . '&section=' . sanitize_title( $id ) );
                     $class     = ( $current_section === $id ? 'current' : '' );
                     $separator = ( end( $array_keys ) === $id ? '' : '|' );
-                    $text      = esc_html( $label );
-                    echo "<li><a href='$url' class='$class'>$text</a> $separator </li>"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    $text      = $label;
+                    echo sprintf( '<li><a href="%s" class="%s">%s</a> %s </li>', esc_url( $url ), esc_attr( $class ), esc_html( $text ), esc_html( $separator ) );
                 }
                 
                 echo '</ul><br class="clear" />';
@@ -279,9 +278,7 @@
             }
             
             /**
-             *
-             *
-             * $links = array('button_url'=>'', 'button_text'=>'', 'link_url'=>'', 'link_text'=>'');
+             * $links = array('button_url'=>'', 'button_text'=>'', 'button_class'=>'', 'link_url'=>'', 'link_text'=>'');
              */
             
             public function modal_template_id( $template_id ) {

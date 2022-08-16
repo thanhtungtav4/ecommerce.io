@@ -2,20 +2,18 @@
  * Variation Swatches for WooCommerce
  *
  * Author: Emran Ahmed ( emran.bd.08@gmail.com )
- * Date: 7/31/2022, 4:31:22 PM
+ * Date: 8/14/2022, 5:27:03 PM
  * Released under the GPLv3 license.
  */
 .button.button-danger {
-  color: #FFFFFF;
-  background-color: #AF2D2B;
-  border-color: #A62D2B;
-  -webkit-box-shadow: 0 1px 0 #A72D2B;
-          box-shadow: 0 1px 0 #A72D2B;
-  vertical-align: top;
+  color: var(--wc-primary-text);
+  background-color: var(--wc-red);
+  border-color: var(--wc-red);
 }
-.button.button-danger:hover, .button.button-danger:focus, .button.button-danger:active, .button.button-danger.active {
-  color: #FFFFFF;
-  background: #C9302C;
+
+.woo_variation_swatches_tab.pro-inactive a {
+  color: var(--wc-primary-text);
+  background-color: var(--wc-blue);
 }
 
 [data-gwp_dependency]:not(.dependency-show) {
@@ -42,7 +40,7 @@
 .wvs-go-pro-action-link > a {
   font-weight: bold;
   text-transform: capitalize;
-  color: #9c27b0;
+  color: var(--wc-primary);
   text-shadow: 1px 1px 1px #eee;
 }
 
@@ -55,11 +53,6 @@
   height: 30px;
   border: rgba(0, 0, 0, 0.2) 1px solid;
   border-radius: 2px;
-}
-
-.woo-variation-swatches-pro_tab.pro-inactive a {
-  background-color: var(--wc-primary);
-  color: var(--wc-content-bg);
 }
 
 #woo-variation-swatches-tutorials-wrapper {
@@ -184,13 +177,13 @@
   border-color: #5D5E61;
 }
 #woo-variation-swatches-tutorials-wrapper .tutorial-description-wrapper .tutorial-buttons .button.button-pro {
-  background-color: #39B54A;
-  color: #FFFFFF;
-  border: 1px solid #39B54A;
+  background-color: var(--wc-blue);
+  color: var(--wc-content-bg);
+  border: 1px solid var(--wc-blue);
 }
 #woo-variation-swatches-tutorials-wrapper .tutorial-description-wrapper .tutorial-buttons .button.button-pro:hover {
-  background: #3FC851;
-  border-color: #3FC851;
+  background: var(--wc-blue);
+  border-color: var(--wc-blue);
 }
 
 .woo-variation-swatches-group-table-list tbody > :nth-child(odd) {

@@ -38,6 +38,8 @@
                 add_filter( 'woocommerce_variation_is_active', array( $this, 'disable_out_of_stock_item' ), 10, 2 );
                 add_filter( 'woocommerce_available_variation', array( $this, 'add_variation_data' ), 10, 3 );
                 // add_action( 'woocommerce_after_variations_form', array( $this, 'enqueue_script' ) );
+                
+                add_filter( 'nocache_headers', array( $this, 'cache_ajax_response' ) );
             }
             
             protected function init() {
@@ -45,6 +47,26 @@
             }
             
             // Start
+            
+            public function cache_ajax_response( $headers ) {
+                global $wp_query;
+                $action   = $wp_query->get( 'wc-ajax' ) ? sanitize_text_field( $wp_query->get( 'wc-ajax' ) ) : false;
+                $requests = array( 'woo_get_variations', 'woo_get_all_variations' );
+                if ( $action && in_array( $action, $requests ) ) {
+                    // ask the browser to cache this response
+                    
+                    $expires       = HOUR_IN_SECONDS;        // 1 hr
+                    $cache_control = sprintf( 'public, max-age=%d', $expires );
+                    
+                    $headers[ 'Pragma' ]                                    = 'public'; // public / cache. backwards compatibility with HTTP/1.0 caches
+                    $headers[ 'Expires' ]                                   = $expires;
+                    $headers[ 'Cache-Control' ]                             = $cache_control;
+                    $headers[ 'X-Variation-Swatches-Ajax-Header-Modified' ] = true;
+                    
+                }
+                
+                return $headers;
+            }
             
             public function add_variation_data( $variation_data, $product, $variation ) {
                 
@@ -634,7 +656,7 @@
                     'name'             => '',
                     'id'               => '',
                     'class'            => '',
-                    'show_option_none' => esc_html__( 'Choose an option', 'woocommerce' ),
+                    'show_option_none' => esc_html__( 'Choose an option', 'woo-variation-swatches' ),
                     'is_archive'       => false
                 ) );
                 
@@ -660,7 +682,7 @@
                 $class            = $args[ 'class' ];
                 $show_option_none = (bool) $args[ 'show_option_none' ];
                 // $show_option_none      = true;
-                $show_option_none_text = $args[ 'show_option_none' ] ? $args[ 'show_option_none' ] : esc_html__( 'Choose an option', 'woocommerce' ); // We'll do our best to hide the placeholder, but we'll need to show something when resetting options.
+                $show_option_none_text = $args[ 'show_option_none' ] ? $args[ 'show_option_none' ] : esc_html__( 'Choose an option', 'woo-variation-swatches' ); // We'll do our best to hide the placeholder, but we'll need to show something when resetting options.
                 
                 if ( empty( $options ) && ! empty( $product ) && ! empty( $attribute ) ) {
                     $attributes = $product->get_variation_attributes();

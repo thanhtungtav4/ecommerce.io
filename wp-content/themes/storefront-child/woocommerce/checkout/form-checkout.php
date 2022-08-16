@@ -27,7 +27,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 		<li><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>"><?php ICL_LANGUAGE_CODE == 'en' ? print 'Home' : print 'Trang chủ'; ?></a></li>
 		<li><?php single_post_title(); ?></li>
 	</ul>
-	<?php 
+	<?php
 		// If checkout registration is disabled and not logged in, the user cannot checkout.
 		if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
 			echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) ) );
@@ -61,11 +61,11 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
 	<?php endif; ?>
-	
-	<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
-	
+
+	<?php //do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
+
 	<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
-	
+
 	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
 	<div id="order_review" class="woocommerce-checkout-review-order">

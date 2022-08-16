@@ -117,7 +117,7 @@
             
             public function default_import_column_name( $columns ) {
                 // potential column name => column slug
-                $columns[ esc_html__( 'Swatches Attributes', 'woo-variation-gallery' ) ] = $this->column_id;
+                $columns[ esc_html__( 'Swatches Attributes', 'woo-variation-swatches' ) ] = $this->column_id;
                 
                 return $columns;
             }
@@ -239,7 +239,7 @@
                     
                     if ( ! wp_attachment_is_image( $id ) ) {
                         /* translators: %s: image URL */
-                        throw new Exception( sprintf( __( 'Not able to attach "%s".', 'woocommerce' ), $url ), 400 );
+                        throw new Exception( sprintf( __( 'Not able to attach "%s".', 'woo-variation-swatches' ), $url ), 400 );
                     }
                     
                     // Save attachment source for future reference.
@@ -248,7 +248,7 @@
                 
                 if ( ! $id ) {
                     /* translators: %s: image URL */
-                    throw new Exception( sprintf( __( 'Unable to use image "%s".', 'woocommerce' ), $url ), 400 );
+                    throw new Exception( sprintf( __( 'Unable to use image "%s".', 'woo-variation-swatches' ), $url ), 400 );
                 }
                 
                 return $id;

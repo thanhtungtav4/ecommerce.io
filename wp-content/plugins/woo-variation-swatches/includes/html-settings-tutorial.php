@@ -3,7 +3,7 @@
 ?>
 
 <h2>
-    <?php esc_html_e( 'How to tutorials', 'woo-variation-gallery' ); ?>
+    <?php esc_html_e( 'How to tutorials', 'woo-variation-swatches' ); ?>
 </h2>
 
 <div id="woo-variation-swatches-tutorials-wrapper">

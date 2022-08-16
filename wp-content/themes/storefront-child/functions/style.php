@@ -30,4 +30,8 @@ function conditionally_enqueue_styles_scripts() {
          wp_enqueue_style('style_acc');
         }
      }
+    if(is_checkout()){
+        wp_register_style( 'style_checkout', get_stylesheet_directory_uri().'/assets/css/checkout.css' );
+        wp_enqueue_style('style_checkout');
+    }
 }
