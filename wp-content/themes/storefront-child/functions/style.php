@@ -30,8 +30,12 @@ function conditionally_enqueue_styles_scripts() {
          wp_enqueue_style('style_acc');
         }
      }
-    if(is_checkout()){
+    if(is_checkout() && empty(is_wc_endpoint_url('order-received'))){
         wp_register_style( 'style_checkout', get_stylesheet_directory_uri().'/assets/css/checkout.css' );
         wp_enqueue_style('style_checkout');
+    }
+    if(is_checkout() && !empty( is_wc_endpoint_url('order-received'))){
+        wp_register_style( 'style_thankyou', get_stylesheet_directory_uri().'/assets/css/thankyou.css' );
+        wp_enqueue_style('style_thankyou');
     }
 }
