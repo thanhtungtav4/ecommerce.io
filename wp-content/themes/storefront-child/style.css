@@ -120,3 +120,15 @@ main{
 #filter_19383_1 .filter-content .filter-items li{
   width: 50%;
 }
+.woocommerce-table__product-name{
+  display: flex;
+  flex-wrap: wrap;
+}
+.woocommerce-table__product-name .image{
+  width: 90px;
+  height: 90px;
+  padding-right: 10px;
+}
+.content strong.product-quantity{
+  display: none;
+}

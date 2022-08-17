@@ -1,0 +1,39 @@
+2022-08-17T03:13:37+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function apply_filters(), 1 passed in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details-item.php on line 47 and exactly 2 expected in D:\xampp\htdocs\ecommerce\wp-includes\plugin.php:165
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details-item.php(47): apply_filters('woocommerce_ord...')
+#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('D:\\xampp\\htdocs...')
+#2 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details.php(61): wc_get_template('order/order-det...', Array)
+#3 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2677): wc_get_template('order/order-det...', Array)
+#5 D:\xampp\htdocs\ecommerce\w in D:\xampp\htdocs\ecommerce\wp-includes\plugin.php on line 165
+
+2022-08-17T04:01:05+00:00 CRITICAL Uncaught Error: Call to undefined method Automattic\WooCommerce\Admin\Overrides\Order::last_name() in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details-customer.php:36
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details.php(103): wc_get_template('order/order-det...', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2677): wc_get_template('order/order-det...', Array)
+#4 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(307): woocommerce_order_details_table(19398)
+#5 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#6 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(476): WP_Ho in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details-customer.php on line 36
+
+2022-08-17T04:01:20+00:00 CRITICAL Uncaught Error: Call to undefined method Automattic\WooCommerce\Admin\Overrides\Order::last_name() in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details-customer.php:36
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details.php(103): wc_get_template('order/order-det...', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2677): wc_get_template('order/order-det...', Array)
+#4 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(307): woocommerce_order_details_table(19398)
+#5 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#6 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(476): WP_Ho in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details-customer.php on line 36
+
+2022-08-17T04:02:33+00:00 CRITICAL Uncaught Error: Cannot use object of type Automattic\WooCommerce\Admin\Overrides\Order as array in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details-customer.php:36
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details.php(103): wc_get_template('order/order-det...', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include('D:\\xampp\\htdocs...')
+#3 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-template-functions.php(2677): wc_get_template('order/order-det...', Array)
+#4 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(307): woocommerce_order_details_table(19398)
+#5 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#6 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(476): WP_Hook- in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\order\order-details-customer.php on line 36
+

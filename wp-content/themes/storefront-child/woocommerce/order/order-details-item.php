@@ -26,30 +26,36 @@ if ( ! apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {
 <tr class="<?php echo esc_attr( apply_filters( 'woocommerce_order_item_class', 'woocommerce-table__line-item order_item', $item, $order ) ); ?>">
 
 	<td class="woocommerce-table__product-name product-name">
-		<?php
-		$is_visible        = $product && $product->is_visible();
-		$product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visible ? $product->get_permalink( $item ) : '', $item, $order );
+		<div class="image">
+				<?php
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $item['product_id'] ), array( 90, 90) );
+				?>
+				<img class="product-img" src="<?php (!empty($image[0])) ? print $image[0] : print Placeholder ?>" data-id="<?php $item['product_id'] ?>" height="90px" width="90px">
+		</div>
+		<div class="content">
+			<?php
+			$is_visible        = $product && $product->is_visible();
+			$product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visible ? $product->get_permalink( $item ) : '', $item, $order );
 
-		echo wp_kses_post( apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a href="%s">%s</a>', $product_permalink, $item->get_name() ) : $item->get_name(), $item, $is_visible ) );
+			echo wp_kses_post( apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a href="%s">%s</a>', $product_permalink, $item->get_name() ) : $item->get_name(), $item, $is_visible ) );
 
-		$qty          = $item->get_quantity();
-		$refunded_qty = $order->get_qty_refunded_for_item( $item_id );
+			$qty          = $item->get_quantity();
+			$refunded_qty = $order->get_qty_refunded_for_item( $item_id );
 
-		
 
-		echo apply_filters( 'woocommerce_order_item_quantity_html', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $qty_display ) . '</strong>', $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-		do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, false );
+			echo apply_filters( 'woocommerce_order_item_quantity_html', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $qty_display ) . '</strong>', $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-		wc_display_item_meta( $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, false );
 
-		do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order, false );
-		?>
+			wc_display_item_meta( $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+			do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order, false );
+			?>
+		</div>
 	</td>
 	<td class="woocommerce-table__product-quantity product-quantity">
-		<?php
-			echo esc_html("x " . $qty );
-		?>
+		<strong><?php echo esc_html("x " . $qty ); ?></strong>
 	</td>
 
 	<td class="woocommerce-table__product-total product-total">
