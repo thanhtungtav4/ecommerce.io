@@ -34,7 +34,7 @@ if ( post_password_required() ) {
 
 <div class="l-container">
   <ul class="c-breadcrumb">
-    <li><a href="#">Home</a></li>
+    <li><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>"><?php _e('Home', 'storefront') ?></a></li>
     <li> <a href="#">Sản phẩm</a></li>
     <?php
       $primary_term_id = yoast_get_primary_term_id('product_cat');

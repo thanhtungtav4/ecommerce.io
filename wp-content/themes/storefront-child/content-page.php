@@ -1,34 +1,12 @@
 <div class="l-container">
   <ul class="c-breadcrumb">
     <li>
-    <a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>"><?php _e('Home', 'storefront') ?></a>
+      <a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>"><?php _e('Home', 'storefront') ?></a>
     </li>
     <li><?php single_post_title(); ?></li>
   </ul>
   <div class="c-page">
-    <div class="c-page_sidebar">
-      <ul>
-        <li>
-          <b>HỖ TRỢ KHÁCH HÀNG</b>
-        </li>
-        <li>
-          <a href="#">Chính Sách Bảo Hành</a>
-        </li>
-        <li>
-          <a href="# ">Chính Sách Đổi Trả</a>
-        </li>
-        <li>
-          <a href="# ">Chính Sách Giao Nhận</a>
-        </li>
-        <li>
-          <a href="# ">Chính Sách Mua Hàng</a>
-        </li>
-        <li>
-          <a href="# ">Hỏi Đáp</a>
-        </li>
-      </ul>
-    </div>
-    <div class="c-page_inner">
+    <div class="c-page_inner" style="width:100%">
       <h1><?php single_post_title(); ?></h1>
       <p class="date">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="16px" viewBox="0 0 16 16" version="1.1">

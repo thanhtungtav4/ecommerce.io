@@ -31,9 +31,8 @@ do_action( 'woocommerce_before_main_content' );
 ?>
 <div class="l-container">
           <ul class="c-breadcrumb">
-            <li><a href="#">Home</a></li>
+            <li><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>"><?php _e('Home', 'storefront') ?></a></li>
             <li> <a href="#">Sản phẩm   </a></li>
-            <li> <a href="#">Kính áp tròng nữ        </a></li>
             <li><?php single_cat_title(); ?></li>
           </ul>
         </div>
