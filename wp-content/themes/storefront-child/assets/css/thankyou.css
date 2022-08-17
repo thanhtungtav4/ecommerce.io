@@ -131,6 +131,23 @@ tr.woocommerce-table__line-item {
 tfoot tr{
   height: 40px;
 }
+.go-home{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  gap: 10px;
+  width: 200px;
+  background: #EB5757;
+  border-radius: 5px;
+  color: #FFFFFF;
+  margin: 3rem auto;
+  text-decoration: none;
+}
+.go-home:hover{
+  background-color: #1E1C1C;
+}
 @media screen and (min-width: 768px){
   .woocommerce_thankyou_detail_inner .woocommerce-order-details{
     width: calc(100% - 343px);
