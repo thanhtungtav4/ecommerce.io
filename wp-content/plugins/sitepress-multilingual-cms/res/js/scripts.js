@@ -90,34 +90,6 @@ jQuery(function ($) {
 
     });
 
-    function click_on_lock() {
-		var radio_name = jQuery( this ).data( 'radio-name' ),
-            radio = jQuery( 'input[name="' + radio_name + '"]' ),
-			unlocked_name = jQuery( this ).data( 'unlocked-name' ),
-            slug = radio.data( 'slug' );
-
-		jQuery( this ).fadeOut();
-		radio.prop( 'disabled', false );
-		jQuery( 'input[name="' + unlocked_name + '"]' ).prop( 'value', '1' );
-        jQuery( 'input[name="automatic_post_type[' + slug + ']"]' ).prop( 'disabled', false );
-
-		return false;
-	}
-
-	function sync_lock_on_custom_fields_and_terms( form_id ) {
-		var locks = jQuery( '#' + form_id ).find( '.js-wpml-sync-lock' );
-		locks.on( 'click', click_on_lock );
-	}
-
-    $(document).on('icl-bind-locks', function (e) {
-        sync_lock_on_custom_fields_and_terms(e.detail);
-    });
-
-    $('#icl_custom_posts_sync_options .js-wpml-sync-lock, #icl_custom_tax_sync_options .js-wpml-sync-lock').on(
-        'click',
-        click_on_lock
-    );
-
     $('.js-custom-post-mode').on('change', function () {
         var radio = $(this),
             slug = radio.data('slug')
@@ -228,6 +200,39 @@ jQuery(function ($) {
 	}
 
 });
+
+(function($){
+	function click_on_lock() {
+		var radio_name = $( this ).data( 'radio-name' ),
+			radio = $( 'input[name="' + radio_name + '"]' ),
+			unlocked_name = $( this ).data( 'unlocked-name' ),
+			slug = radio.data( 'slug' );
+
+		$( this ).fadeOut();
+		radio.prop( 'disabled', false );
+		$( 'input[name="' + unlocked_name + '"]' ).prop( 'value', '1' );
+		$( 'input[name="automatic_post_type[' + slug + ']"]' ).prop( 'disabled', false );
+
+		return false;
+	}
+
+	function sync_lock_on_custom_fields_and_terms( form_id ) {
+		var locks = $( '#' + form_id ).find( '.js-wpml-sync-lock' );
+		locks.on( 'click', click_on_lock );
+	}
+
+	$(document).on('icl-bind-locks', function (e) {
+		sync_lock_on_custom_fields_and_terms(e.detail);
+	});
+
+	$(document).ready( function() {
+		$('#icl_custom_posts_sync_options .js-wpml-sync-lock, #icl_custom_tax_sync_options .js-wpml-sync-lock').on(
+			'click',
+			click_on_lock
+		);
+	});
+
+})(jQuery);
 
 function fadeInAjxResp(spot, msg, err){
     if(err != undefined){

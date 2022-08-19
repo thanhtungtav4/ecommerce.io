@@ -14,13 +14,11 @@ class WPML_Elementor_Register_Strings extends WPML_Page_Builders_Register_String
 			if ( isset( $data['elType'] ) && 'widget' === $data['elType'] ) {
 				$this->register_strings_for_node( $data[ $this->data_settings->get_node_id_field() ], $data, $package );
 			}
-			foreach ( $data[ 'elements' ] as $column ) {
-				foreach ( $column[ 'elements' ] as $element ) {
-					if ( 'widget' === $element['elType'] ) {
-						$this->register_strings_for_node( $element[ $this->data_settings->get_node_id_field() ], $element, $package );
-					} else {
-						$this->register_strings_for_modules( array( $element ), $package );
-					}
+			foreach ( $data['elements'] as $element ) {
+				if ( 'widget' === $element['elType'] ) {
+					$this->register_strings_for_node( $element[ $this->data_settings->get_node_id_field() ], $element, $package );
+				} else {
+					$this->register_strings_for_modules( array( $element ), $package );
 				}
 			}
 		}

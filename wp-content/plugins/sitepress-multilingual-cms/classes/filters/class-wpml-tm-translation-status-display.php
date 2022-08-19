@@ -352,9 +352,12 @@ class WPML_TM_Translation_Status_Display {
 	}
 
 	private static function get_tm_editor_base_url() {
+		$returnUrl = self::get_return_url();
+		$returnUrl = $returnUrl ? rawurlencode( esc_url_raw( stripslashes( $returnUrl ) ) ) : '';
+
 		$args = array(
 			'page'       => WPML_TM_FOLDER . '/menu/translations-queue.php',
-			'return_url' => rawurlencode( esc_url_raw( stripslashes( self::get_return_url() ) ) ),
+			'return_url' => $returnUrl,
 		);
 
 		return add_query_arg( $args, 'admin.php' );

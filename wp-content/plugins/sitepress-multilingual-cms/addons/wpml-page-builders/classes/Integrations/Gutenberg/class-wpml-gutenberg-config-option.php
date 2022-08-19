@@ -97,6 +97,10 @@ class WPML_Gutenberg_Config_Option {
 				$partial_config['label'] = $key_config['attr']['label'];
 			}
 
+			if ( isset( $key_config['attr']['encoding'] ) ) {
+				$partial_config['encoding'] = $key_config['attr']['encoding'];
+			}
+
 			if ( isset( $key_config['key'] ) ) {
 				$partial_config['children'] = $this->get_keys_recursively( $key_config['key'] );
 			}

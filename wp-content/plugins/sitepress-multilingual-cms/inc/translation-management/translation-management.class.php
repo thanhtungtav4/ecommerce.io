@@ -8,6 +8,7 @@ use WPML\FP\Maybe;
 use WPML\FP\Obj;
 use WPML\FP\Relation;
 use WPML\TM\API\Batch;
+use WPML\TM\API\Jobs;
 use WPML\TM\Jobs\Dispatch\BatchBuilder;
 use WPML\TM\Jobs\Dispatch\Posts;
 use WPML\TM\Jobs\Dispatch\Packages;
@@ -1349,7 +1350,7 @@ class TranslationManagement {
 
 					$translator       = $batch->get_translator( $lang );
 					$translation_data = TranslationProxy_Service::get_translator_data_from_wpml( $translator );
-					$translator_id    = $translation_data['translator_id'];
+					$translator_id    = $sendFrom === Jobs::SENT_AUTOMATICALLY ? 0 : $translation_data['translator_id'];
 
 					$translation_service = $translation_data['translation_service'];
 

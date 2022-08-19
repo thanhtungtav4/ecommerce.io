@@ -402,7 +402,7 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Settings', false ) ) :
 									<?php echo esc_html( $value['suffix'] ); ?>
 									</span>
 </div>
-									<?php echo $description; // WPCS: XSS ok. ?>
+									<?php echo wp_kses_post( $description); ?>
 							</td>
 						</tr>
 						<?php
@@ -427,7 +427,7 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Settings', false ) ) :
 									value="<?php echo esc_attr( $option_value ); ?>"
 									class="color-picker-alpha <?php echo esc_attr( $value['class'] ); ?>"
 									placeholder="<?php echo esc_attr( $value['placeholder'] ); ?>"
-									<?php echo implode( ' ', $custom_attributes ); // WPCS: XSS ok. ?>/>&lrm; <?php echo $description; // WPCS: XSS ok. ?></td></tr>
+									<?php echo implode( ' ', $custom_attributes ); // WPCS: XSS ok. ?>/>&lrm; <?php echo wp_kses_post( $description); ?></td></tr>
 						<?php
 						break;
 
@@ -453,7 +453,7 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Settings', false ) ) :
 									<?php echo implode( ' ', $custom_attributes ); // WPCS: XSS ok. ?>
 									><?php echo esc_textarea( $option_value ); // WPCS: XSS ok. ?></textarea>
 									
-									<?php echo $description; // WPCS: XSS ok. ?>
+									<?php echo wp_kses_post($description); ?>
 							</td>
 						</tr>
 						<?php
@@ -490,7 +490,7 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Settings', false ) ) :
 											?>
 										><?php echo esc_html( $val ); ?></option>
 									<?php } ?>
-								</select> <?php echo $description; // WPCS: XSS ok. ?>
+								</select> <?php echo wp_kses_post( $description); // WPCS: XSS ok. ?>
 							</td>
 						</tr>
 						<?php
@@ -528,7 +528,7 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Settings', false ) ) :
 									?>
 									</ul>
 									
-									<?php echo $description; // WPCS: XSS ok. ?>
+									<?php echo wp_kses_post($description); ?>
 								</fieldset>
 							</td>
 						</tr>

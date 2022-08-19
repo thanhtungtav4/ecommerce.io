@@ -19,3 +19,13 @@ function makewp_exclude_page_templates( $post_templates ) {
   return $post_templates;
   }
   add_filter( 'theme_page_templates', 'makewp_exclude_page_templates' );
+/**
+* Remove WPML notices
+**/
+// if( ! function_exists( 'm7_remove_wmpl_notices' ) ) :
+//   function m7_remove_wmpl_notices() {
+//       remove_action('admin_notices', array( WP_Installer(), 'show_site_key_nags' ) );
+//       remove_action( 'admin_notices', array( WP_Installer(), 'setup_plugins_page_notices' ) );
+//   }
+//   endif;
+// add_action( 'init', 'm7_remove_wmpl_notices', 11 );

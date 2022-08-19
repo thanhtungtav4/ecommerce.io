@@ -157,10 +157,10 @@ class OTGS_Installer_Plugins_Page_Notice {
 		$tr_classes     = 'plugin-update-tr';
 		$notice_classes = 'update-message installer-q-icon';
 
-		// if ( version_compare( get_bloginfo( 'version' ), '4.6', '>=' ) ) {
-		// 	$tr_classes     = 'plugin-update-tr installer-plugin-update-tr js-otgs-plugin-tr';
-		// 	$notice_classes = 'update-message notice inline notice-otgs';
-		// }
+		if ( version_compare( get_bloginfo( 'version' ), '4.6', '>=' ) ) {
+			$tr_classes     = 'plugin-update-tr installer-plugin-update-tr js-otgs-plugin-tr';
+			$notice_classes = 'update-message notice inline notice-otgs';
+		}
 
 		return array( $tr_classes, $notice_classes );
 	}

@@ -48,6 +48,18 @@ class Plugins {
 		Option::setTMAllowed( self::isTMAllowed() );
 	}
 
+	public static function updateTMAllowedAndTranslateEverythingOnSubscriptionChange() {
+		if ( function_exists( 'OTGS_Installer' ) ) {
+			$type = OTGS_Installer()->get_subscription( 'wpml' )->get_type();
+			if ( $type ) {
+				Option::setTMAllowed( $type !== self::WPML_SUBSCRIPTION_TYPE_BLOG );
+				if ( self::WPML_SUBSCRIPTION_TYPE_BLOG === $type ) {
+					Option::setTranslateEverything( false );
+				}
+			}
+		}
+	}
+
 	/**
 	 * @param bool $isSetupComplete
 	 */
@@ -59,7 +71,9 @@ class Plugins {
 		if ( ! self::deactivateTm() ) {
 
 			add_action( "after_plugin_row_$tmSlug", [ self::class, 'showEmbeddedTMNotice' ] );
-			add_action( "otgs_installer_clean_plugins_update_cache", [ self::class, 'updateTMAllowedOption' ] );
+			add_action( 'otgs_installer_initialized', [ self::class,
+				'updateTMAllowedAndTranslateEverythingOnSubscriptionChange'
+			] );
 
 			$isTMAllowed = Option::isTMAllowed();
 			if ( $isTMAllowed === null ) {

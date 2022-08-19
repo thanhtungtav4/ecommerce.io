@@ -280,6 +280,13 @@ class SitePress extends WPML_WPDB_User implements
 		$this->api_hooks();
 		add_action( 'wpml_loaded', array( $this, 'load_dependencies' ), 10000 );
 		do_action( 'wpml_after_startup' );
+
+
+        // Load adjust count for terms display as translated.
+        new WPML_Term_Display_As_Translated_Adjust_Count(
+			$this,
+			$this->wpdb
+		);
 	}
 
 	/**
@@ -595,10 +602,11 @@ class SitePress extends WPML_WPDB_User implements
 		// adjust queried categories and tags ids according to the language
 		if ( (bool) $this->get_setting( 'auto_adjust_ids' ) ) {
 			add_action( 'wp_list_pages_excludes', array( $this, 'adjust_wp_list_pages_excludes' ) );
-			if ( ! $this->get_wp_api()
+			if ( (! $this->get_wp_api()
 						->is_admin()
 				 || $this->get_wp_api()
-						 ->constant( 'DOING_AJAX' )
+						 ->constant( 'DOING_AJAX' ))
+				    && ! wpml_is_rest_request()
 			) {
 				add_filter( 'get_term', array( $this, 'get_term_adjust_id' ), 1, 1 );
 				add_action( 'edited_term', array( $this, 'edited_term_action' ) );

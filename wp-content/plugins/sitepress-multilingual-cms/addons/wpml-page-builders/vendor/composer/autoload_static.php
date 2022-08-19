@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit996039725c222e745ed5cc9c4aeae0a1
+class ComposerStaticInit1ab6208a02b4c387cf208b51600a42e0
 {
     public static $files = array (
         'b45b351e6b6f7487d819961fef2fda77' => __DIR__ . '/..' . '/jakeasmith/http_build_url/src/http_build_url.php',
@@ -54,12 +54,19 @@ class ComposerStaticInit996039725c222e745ed5cc9c4aeae0a1
         'WPML\\PB\\Cornerstone\\Modules\\ModuleWithItemsFromConfig' => __DIR__ . '/../..' . '/classes/Integrations/Cornerstone/modules/ModuleWithItemsFromConfig.php',
         'WPML\\PB\\Cornerstone\\Styles\\Hooks' => __DIR__ . '/../..' . '/classes/Integrations/Cornerstone/Styles/Hooks.php',
         'WPML\\PB\\Cornerstone\\Utils' => __DIR__ . '/../..' . '/classes/Integrations/Cornerstone/class-wpml-cornerstone-utils.php',
+        'WPML\\PB\\Elementor\\Config\\DynamicElements\\EssentialAddons\\ContentTimeline' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/EssentialAddons/ContentTimeline.php',
+        'WPML\\PB\\Elementor\\Config\\DynamicElements\\FormPopup' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/FormPopup.php',
+        'WPML\\PB\\Elementor\\Config\\DynamicElements\\Hotspot' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/Hotspot.php',
+        'WPML\\PB\\Elementor\\Config\\DynamicElements\\Popup' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/Popup.php',
+        'WPML\\PB\\Elementor\\Config\\DynamicElements\\Provider' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/Provider.php',
+        'WPML\\PB\\Elementor\\Config\\DynamicElements\\WooProduct' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/DynamicElements/WooProduct.php',
         'WPML\\PB\\Elementor\\Config\\Factory' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Config/Factory.php',
         'WPML\\PB\\Elementor\\DataConvert' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/DataConvert.php',
         'WPML\\PB\\Elementor\\DynamicContent\\Field' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/DynamicContent/Field.php',
         'WPML\\PB\\Elementor\\DynamicContent\\Strings' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/DynamicContent/Strings.php',
         'WPML\\PB\\Elementor\\Hooks\\DynamicElements' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Hooks/DynamicElements.php',
         'WPML\\PB\\Elementor\\Hooks\\Editor' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Hooks/Editor.php',
+        'WPML\\PB\\Elementor\\Hooks\\FormPopup' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Hooks/FormPopup.php',
         'WPML\\PB\\Elementor\\Hooks\\Frontend' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Hooks/Frontend.php',
         'WPML\\PB\\Elementor\\Hooks\\GutenbergCleanup' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Hooks/GutenbergCleanup.php',
         'WPML\\PB\\Elementor\\Hooks\\LandingPages' => __DIR__ . '/../..' . '/classes/Integrations/Elementor/Hooks/LandingPages.php',
@@ -278,7 +285,7 @@ class ComposerStaticInit996039725c222e745ed5cc9c4aeae0a1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit996039725c222e745ed5cc9c4aeae0a1::$classMap;
+            $loader->classMap = ComposerStaticInit1ab6208a02b4c387cf208b51600a42e0::$classMap;
 
         }, null, ClassLoader::class);
     }

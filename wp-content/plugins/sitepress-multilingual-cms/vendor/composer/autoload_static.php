@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf28b76aece0d38fb79d6caadcf375af9
+class ComposerStaticInit5f0e357b80c0c78b992d6782abdcb257
 {
     public static $files = array (
         '5f5b8f7c1db2e892006e8805f0ed573c' => __DIR__ . '/..' . '/wpml/collect/src/Illuminate/Support/helpers.php',
@@ -562,6 +562,11 @@ class ComposerStaticInitf28b76aece0d38fb79d6caadcf375af9
         'WPML\\FP\\Lst' => __DIR__ . '/..' . '/wpml/fp/core/Lst.php',
         'WPML\\FP\\Math' => __DIR__ . '/..' . '/wpml/fp/core/Math.php',
         'WPML\\FP\\Maybe' => __DIR__ . '/..' . '/wpml/fp/core/Maybe.php',
+        'WPML\\FP\\Monoid\\All' => __DIR__ . '/..' . '/wpml/fp/core/monoid/All.php',
+        'WPML\\FP\\Monoid\\Any' => __DIR__ . '/..' . '/wpml/fp/core/monoid/Any.php',
+        'WPML\\FP\\Monoid\\Monoid' => __DIR__ . '/..' . '/wpml/fp/core/monoid/Monoid.php',
+        'WPML\\FP\\Monoid\\Str' => __DIR__ . '/..' . '/wpml/fp/core/monoid/Str.php',
+        'WPML\\FP\\Monoid\\Sum' => __DIR__ . '/..' . '/wpml/fp/core/monoid/Sum.php',
         'WPML\\FP\\Nothing' => __DIR__ . '/..' . '/wpml/fp/core/Maybe.php',
         'WPML\\FP\\Obj' => __DIR__ . '/..' . '/wpml/fp/core/Obj.php',
         'WPML\\FP\\Promise' => __DIR__ . '/..' . '/wpml/fp/core/Promise.php',
@@ -810,12 +815,14 @@ class ComposerStaticInitf28b76aece0d38fb79d6caadcf375af9
         'WPML\\TM\\Upgrade\\Commands\\CreateAteDownloadQueueTable' => __DIR__ . '/../..' . '/classes/upgrade/commands/CreateAteDownloadQueueTable.php',
         'WPML\\TM\\Upgrade\\Commands\\MigrateAteRepository' => __DIR__ . '/../..' . '/classes/upgrade/commands/MigrateAteRepository.php',
         'WPML\\TM\\Upgrade\\Commands\\RefreshTranslationServices' => __DIR__ . '/../..' . '/classes/upgrade/commands/RefreshTranslationServices.php',
+        'WPML\\TM\\Upgrade\\Commands\\ResetTranslatorOfAutomaticJobs' => __DIR__ . '/../..' . '/classes/upgrade/commands/ResetTranslatorOfAutomaticJobs.php',
         'WPML\\TM\\Upgrade\\Commands\\SynchronizeSourceIdOfATEJobs\\Command' => __DIR__ . '/../..' . '/classes/upgrade/commands/SynchronizeSourceIdOfATEJobs/Command.php',
         'WPML\\TM\\Upgrade\\Commands\\SynchronizeSourceIdOfATEJobs\\CommandFactory' => __DIR__ . '/../..' . '/classes/upgrade/commands/SynchronizeSourceIdOfATEJobs/CommandFactory.php',
         'WPML\\TM\\Upgrade\\Commands\\SynchronizeSourceIdOfATEJobs\\Repository' => __DIR__ . '/../..' . '/classes/upgrade/commands/SynchronizeSourceIdOfATEJobs/Repository.php',
         'WPML\\TM\\User\\Hooks' => __DIR__ . '/../..' . '/classes/user/Hooks.php',
         'WPML\\TM\\WP\\App\\Resources' => __DIR__ . '/../..' . '/classes/utils/Resources.php',
         'WPML\\TaxonomyTermTranslation\\AutoSync' => __DIR__ . '/../..' . '/classes/taxonomy-term-translation/AutoSync.php',
+        'WPML\\TaxonomyTermTranslation\\Hooks' => __DIR__ . '/../..' . '/classes/taxonomy-term-translation/Hooks.php',
         'WPML\\Timer' => __DIR__ . '/..' . '/wpml/core-api/core/Timer.php',
         'WPML\\TranslateLinkTargets\\Hooks' => __DIR__ . '/../..' . '/classes/translate_link_targets/Hooks.php',
         'WPML\\TranslationMode\\Endpoint\\SetTranslateEverything' => __DIR__ . '/../..' . '/classes/translation-mode/endpoints/SetTranslateEverything.php',
@@ -1690,6 +1697,7 @@ class ComposerStaticInitf28b76aece0d38fb79d6caadcf375af9
         'WPML_Term_Clauses' => __DIR__ . '/../..' . '/classes/query-filtering/class-wpml-term-clauses.php',
         'WPML_Term_Custom_Field_Setting' => __DIR__ . '/../..' . '/classes/settings/class-wpml-term-custom-field-setting.php',
         'WPML_Term_Custom_Field_Setting_Keys' => __DIR__ . '/../..' . '/classes/settings/class-wpml-term-custom-field-setting-keys.php',
+        'WPML_Term_Display_As_Translated_Adjust_Count' => __DIR__ . '/../..' . '/classes/query-filtering/class-wpml-term-display-as-translated-adjust-count.php',
         'WPML_Term_Element' => __DIR__ . '/../..' . '/classes/translations/class-wpml-term-element.php',
         'WPML_Term_Filters' => __DIR__ . '/../..' . '/inc/taxonomy-term-translation/wpml-term-filters.class.php',
         'WPML_Term_Hierarchy_Duplication' => __DIR__ . '/../..' . '/inc/taxonomy-term-translation/wpml-term-hierarchy-duplication.class.php',
@@ -1902,9 +1910,9 @@ class ComposerStaticInitf28b76aece0d38fb79d6caadcf375af9
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf28b76aece0d38fb79d6caadcf375af9::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf28b76aece0d38fb79d6caadcf375af9::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf28b76aece0d38fb79d6caadcf375af9::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5f0e357b80c0c78b992d6782abdcb257::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5f0e357b80c0c78b992d6782abdcb257::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit5f0e357b80c0c78b992d6782abdcb257::$classMap;
 
         }, null, ClassLoader::class);
     }

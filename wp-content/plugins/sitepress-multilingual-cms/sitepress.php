@@ -2,10 +2,10 @@
 /**
  * Plugin Name: WPML Multilingual CMS
  * Plugin URI: https://wpml.org/
- * Description: WPML Multilingual CMS | <a href="https://wpml.org">Documentation</a> | <a href="https://wpml.org/version/wpml-4-5-5/">WPML 4.5.5 release notes</a>
+ * Description: WPML Multilingual CMS | <a href="https://wpml.org">Documentation</a> | <a href="https://wpml.org/version/wpml-4-5-8/">WPML 4.5.8 release notes</a>
  * Author: OnTheGoSystems
  * Author URI: http://www.onthegosystems.com/
- * Version: 4.5.5
+ * Version: 4.5.8
  * Plugin Slug: sitepress-multilingual-cms
  *
  * @package WPML\Core
@@ -29,7 +29,7 @@ if ( ! \WPML\Requirements\WordPress::checkMinimumRequiredVersion() ) {
 	return;
 }
 
-define( 'ICL_SITEPRESS_VERSION', '4.5.5' );
+define( 'ICL_SITEPRESS_VERSION', '4.5.8' );
 
 // Do not uncomment the following line!
 // If you need to use this constant, use it in the wp-config.php file
@@ -220,6 +220,7 @@ if ( $sitepress->is_setup_complete() ) {
 		\WPML\FullSiteEditing\BlockTemplates::class,
 		\WPML\AdminLanguageSwitcher\DisableWpLanguageSwitcher::class,
 		\WPML\AdminLanguageSwitcher\AdminLanguageSwitcher::class,
+		\WPML\TaxonomyTermTranslation\Hooks::class,
 	];
 	$action_filter_loader->load( $actions );
 
@@ -444,3 +445,4 @@ if ( defined( 'WCML_VERSION') ) {
 add_action( 'plugins_loaded', function() {
 	require_once WPML_PLUGIN_PATH . '/addons/wpml-page-builders/loader.php';
 }, PHP_INT_MAX );
+

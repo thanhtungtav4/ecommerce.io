@@ -1,0 +1,31 @@
+2022-08-19T08:42:50+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in D:\xampp\htdocs\ecommerce\wp-includes\Requests\Transport\cURL.php on line 462
+
+2022-08-19T08:42:57+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in D:\xampp\htdocs\ecommerce\wp-includes\Requests\Transport\cURL.php on line 462
+
+2022-08-19T08:42:57+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in D:\xampp\htdocs\ecommerce\wp-includes\Requests\Transport\cURL.php on line 462
+
+2022-08-19T08:43:49+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in D:\xampp\htdocs\ecommerce\wp-includes\Requests\Transport\cURL.php on line 462
+
+2022-08-19T08:43:53+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in D:\xampp\htdocs\ecommerce\wp-includes\Requests\Transport\cURL.php on line 462
+
+2022-08-19T08:45:00+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in D:\xampp\htdocs\ecommerce\wp-includes\Requests\Transport\cURL.php on line 462
+
+2022-08-19T08:47:02+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in D:\xampp\htdocs\ecommerce\wp-includes\Requests\Transport\cURL.php on line 462
+
+2022-08-19T09:03:39+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in D:\xampp\htdocs\ecommerce\wp-includes\Requests\Transport\cURL.php on line 462
+
+2022-08-19T09:05:41+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in D:\xampp\htdocs\ecommerce\wp-includes\Requests\Transport\cURL.php on line 462
+
+2022-08-19T09:20:43+00:00 CRITICAL Uncaught Error: Call to undefined function WP_Installer() in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\global.php:27
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(307): m7_remove_wmpl_notices('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-settings.php(598): do_action('init')
+#4 D:\xampp\htdocs\ecommerce\wp-config.php(98): require_once('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\ecommerce\wp-load.php(50): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\ecommerce\wp-blog-header.php(13): require_once('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\ecommerce\index.php(17): require('D:\\xampp\\htdocs...')
+#8 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\global.php on line 27
+

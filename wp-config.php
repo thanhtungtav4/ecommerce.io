@@ -37,6 +37,8 @@ define( 'DB_CHARSET', 'utf8' );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+
+//define( 'OTGS_INSTALLER_SITE_KEY_WPML', 'd9tb1dxttk' );
 /**#@+
  * Authentication unique keys and salts.
  *

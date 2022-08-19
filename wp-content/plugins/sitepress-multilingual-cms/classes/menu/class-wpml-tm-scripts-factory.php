@@ -43,14 +43,18 @@ class WPML_TM_Scripts_Factory {
 			wp_enqueue_script( 'wpml-tm-dashboard' );
 		}
 		if (
-			WPML_TM_Page::is_settings()
-			|| WPML_TM_Page::is_tm_translators()
+			WPML_TM_Page::is_tm_translators()
 			|| UIPage::isTroubleshooting( $_GET )
 		) {
 			wp_enqueue_style( 'otgs-notices' );
 			$this->localize_script( 'wpml-tm-settings' );
 			wp_enqueue_script( 'wpml-tm-settings' );
 
+			$this->create_ate()->init_hooks();
+		}
+		if ( WPML_TM_Page::is_settings() ) {
+			wp_enqueue_style( 'otgs-notices' );
+			$this->localize_script( 'wpml-settings-ui' );
 			$this->create_ate()->init_hooks();
 		}
 

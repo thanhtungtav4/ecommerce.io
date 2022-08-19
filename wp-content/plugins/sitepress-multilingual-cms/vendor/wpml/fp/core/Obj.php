@@ -29,9 +29,11 @@ use WPML\FP\Functor\IdentityFunctor;
  * @method static callable pick( ...$props, ...$obj ) - Curried :: array->Collection|array->Collection|array
  * @method static callable pickAll( ...$props, ...$obj ) - Curried :: array->Collection|array->Collection|array
  * @method static callable pickBy( ...$predicate, ...$obj ) - Curried :: ( ( v, k ) → bool ) → Collection|array->Collection|array
+ * @method static callable pickByKey( ...$predicate, ...$obj ) - Curried :: ( ( k ) → bool ) → Collection|array->callable|Collection|array|object
  * @method static callable project( ...$props, ...$target ) - Curried :: array->Collection|array->Collection|array
  * @method static callable where( array $condition ) - Curried :: [string → ( * → bool )] → bool
  * @method static callable|bool has( ...$prop, ...$item ) - Curried :: string → a → bool
+ * @method static callable|bool hasPath( ...$path, ...$item ) - Curried :: array<string> → a → bool
  * @method static callable|mixed evolve( ...$transformations, ...$item ) - Curried :: array → array → array
  *
  * @method static callable|array objOf( ...$key, ...$value ) - Curried :: string->mixed->array
@@ -289,6 +291,26 @@ class Obj {
 			$result = array_filter( self::toArray( $item ), $predicate, ARRAY_FILTER_USE_BOTH );
 
 			return self::matchType( $result, $item );
+		} ) );
+
+		self::macro( 'pickByKey', curryN( 2, function ( callable $predicate, $item ) {
+			return self::pickBy( pipe( Fns::nthArg( 1 ), $predicate ), $item );
+		} ) );
+
+		self::macro( 'hasPath', curryN( 2, function ( $path, $item ) {
+			$undefinedValue = new Undefined();
+			$currentElement = $item;
+
+			foreach ( $path as $pathProp ) {
+				$currentElement = Either::of( $currentElement )
+					->tryCatch( self::propOr( $undefinedValue, $pathProp ) )
+					->getOrElse( $undefinedValue );
+
+				if ( $undefinedValue === $currentElement ) {
+					return false;
+				}
+			}
+			return true;
 		} ) );
 
 		self::macro( 'has', curryN( 2, function ( $prop, $item ) {

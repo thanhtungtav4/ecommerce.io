@@ -88,7 +88,8 @@ class Hooks extends BaseHooks implements \IWPML_Frontend_Action, \IWPML_DIC_Acti
 	 */
 	public function addMenuLinkCssClass( $atts, $item ) {
 		if ( 'wpml_ls_menu_item' === $item->type ) {
-			$atts['class'] .= ' wpml-ls-link';
+			$class         = Obj::prop( 'class', $atts );
+			$atts['class'] = $class ? "$class wpml-ls-link" : "wpml-ls-link";
 		}
 
 		return $atts;
@@ -99,7 +100,7 @@ class Hooks extends BaseHooks implements \IWPML_Frontend_Action, \IWPML_DIC_Acti
 	 * @return array
 	 */
 	public function translateOffCanvasConditionId( $data ) {
-		if ( Obj::prop( 'layout_conditions', $data ) ) {
+		if ( is_array( $data ) && Obj::prop( 'layout_conditions', $data ) ) {
 			$conditions = json_decode( Obj::prop( 'layout_conditions', $data ), true );
 			$result     = [];
 			foreach ( $conditions as $key => $condition ) {

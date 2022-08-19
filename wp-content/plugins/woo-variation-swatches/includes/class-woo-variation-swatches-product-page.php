@@ -50,6 +50,14 @@
             
             public function cache_ajax_response( $headers ) {
                 global $wp_query;
+                if ( ! is_ajax() ) {
+                    return $headers;
+                }
+                
+                if ( ! is_object( $wp_query ) ) {
+                    return $headers;
+                }
+                
                 $action   = $wp_query->get( 'wc-ajax' ) ? sanitize_text_field( $wp_query->get( 'wc-ajax' ) ) : false;
                 $requests = array( 'woo_get_variations', 'woo_get_all_variations' );
                 if ( $action && in_array( $action, $requests ) ) {
@@ -62,7 +70,6 @@
                     $headers[ 'Expires' ]                                   = $expires;
                     $headers[ 'Cache-Control' ]                             = $cache_control;
                     $headers[ 'X-Variation-Swatches-Ajax-Header-Modified' ] = true;
-                    
                 }
                 
                 return $headers;
