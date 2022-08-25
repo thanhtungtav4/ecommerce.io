@@ -283,8 +283,6 @@
           });
       </script>
     <?php endif; ?>
-
-
     <?php if(is_checkout() || is_front_page()) :  ?>
       <script>
         $(document).ready(function(){
@@ -311,6 +309,29 @@
                 }
               }
             ]
+          });
+        });
+      </script>
+    <?php endif; ?>
+    <?php if(is_page('gioi-thieu') || is_page('about-us')) :  ?>
+      <script>
+        $(document).ready(function(){
+          $(".caras-intro__review__list").slick({
+            slidesToShow: 3,
+            infinite: false,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: false,
+            prevArrow: false,
+            nextArrow: false,
+            responsive: [{
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            }, ],
           });
         });
       </script>
