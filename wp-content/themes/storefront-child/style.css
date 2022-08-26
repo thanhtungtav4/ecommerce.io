@@ -132,3 +132,6 @@ main{
 .content strong.product-quantity{
   display: none;
 }
+.mt-2{
+  margin-top: 3rem;
+}

@@ -888,7 +888,7 @@ body.js-active {
   justify-content: flex-start;
   padding-bottom: 0;
 }
-.m-new__slick.job li .m-new__content .m-tag a {
+.m-new__slick.job li .m-new__content .m-tag span {
   font-size: 1.2rem;
   background-color: #EB6A6A;
   color: white;
@@ -2200,6 +2200,9 @@ body.js-active {
     line-height: 1.5;
     font-size: 1rem;
   }
+}
+.m-search_inner ul li a {
+  color: white;
 }
 .m-search_inner ul li a:hover {
   cursor: pointer;

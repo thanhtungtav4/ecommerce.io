@@ -15,18 +15,22 @@ get_header(); ?>
           <div class="l-container">
             <p class="ttl">CƠ HỘI VIỆC LÀM CÙNG <br class="only-pc">  CARAS LENS</p>
             <div class="m-search_inner">
-              <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
-                <input type="text" placeholder="Bạn đang tìm kiếm" id="search">
+              <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="job_filter">
+                <input type="text" name="title" placeholder="Bạn đang tìm kiếm" id="search">
                 <select id="jobname" name="jobname">
+                  <option value="" selected>Chọn Công việc</option>
                   <option value="seo">Seo</option>
+                  <option value="dev">DEV</option>
                   <option value="content-marketing">Content marketing</option>
                   <option value="seo-leader">Seo Leader</option>
                 </select>
                 <select id="location" name="location">
+                  <option value="" selected>Chọn Vị Trí</option>
                   <option value="ho-chi-minh">Hồ Chí Minh</option>
                   <option value="da-nang">Đa nẵng</option>
                   <option value="ha-noi">Hà nội</option>
                 </select>
+                <input type="hidden" name="action" value="filter_job_action">
                 <input class="search-submit" type="submit" value="search">
               </form>
               <ul>
@@ -42,7 +46,12 @@ get_header(); ?>
           </div>
         </div>
         <div class="l-container">
-          <div id="response"></div>
+          <div class="m-product mt-2">
+            <div class="m-product_top">
+            </div>
+            <ul class="m-new__slick job w-100" id="response">
+            </ul>
+          </div>
           <div class="m-job">
             <h2 class="ttl">LÀM VIỆC TẠI CARAS</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam vel quam elementum pulvinar etiam. Massa tincidunt dui ut ornare lectus sit amet est placerat. Egestas purus viverra accumsan in. Arcu cursus vitae congue mauris rhoncus aenean. Non nisi est sit amet facilisis magna etiam. Augue lacus viverra vitae congue eu.</p>
@@ -119,7 +128,8 @@ get_header(); ?>
               <h4>VỊ TRÍ TUYỂN DỤNG</h4>
             </div>
             <ul class="m-new__slick job w-100">
-              <li><a href>
+              <li>
+                <a href>
                   <div class="m-new__img">
                     <picture><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278"></picture>
                   </div>
@@ -131,72 +141,9 @@ get_header(); ?>
                     <p class="info time"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" alt="Time" loading="lazy" width="16" height="16">14:00 - 22:00</p>
                     <p class="info user"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" alt="Local" loading="lazy" width="16" height="18">Nữ | 5 người</p>
                     <p class="info date">Cập nhật: Tháng Sáu 18, 2021</p>
-                  </div></a></li>
-              <li><a href>
-                  <div class="m-new__img">
-                    <picture><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278"></picture>
                   </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Nhân Viên Tư Vấn Bán Hàng</h3>
-                    <div class="m-tag"><a href="#">Hồ Chí Minh</a><a href="#">Full-time</a><a href="#">Hồ Chí Minh</a></div>
-                    <p class="price">6.000.000 - 8.000.000 VND</p>
-                    <p class="info local"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" alt="Local" loading="lazy" width="12" height="16">Nguyễn Đình Chiểu, Quận 3, TP. Hồ Chí Minh</p>
-                    <p class="info time"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" alt="Time" loading="lazy" width="16" height="16">14:00 - 22:00</p>
-                    <p class="info user"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" alt="Local" loading="lazy" width="16" height="18">Nữ | 5 người</p>
-                    <p class="info date">Cập nhật: Tháng Sáu 18, 2021</p>
-                  </div></a></li>
-              <li><a href>
-                  <div class="m-new__img">
-                    <picture><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278"></picture>
-                  </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Nhân Viên Tư Vấn Bán Hàng</h3>
-                    <div class="m-tag"><a href="#">Hồ Chí Minh</a><a href="#">Full-time</a><a href="#">Hồ Chí Minh</a></div>
-                    <p class="price">6.000.000 - 8.000.000 VND</p>
-                    <p class="info local"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" alt="Local" loading="lazy" width="12" height="16">Nguyễn Đình Chiểu, Quận 3, TP. Hồ Chí Minh</p>
-                    <p class="info time"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" alt="Time" loading="lazy" width="16" height="16">14:00 - 22:00</p>
-                    <p class="info user"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" alt="Local" loading="lazy" width="16" height="18">Nữ | 5 người</p>
-                    <p class="info date">Cập nhật: Tháng Sáu 18, 2021</p>
-                  </div></a></li>
-              <li><a href>
-                  <div class="m-new__img">
-                    <picture><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278"></picture>
-                  </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Nhân Viên Tư Vấn Bán Hàng</h3>
-                    <div class="m-tag"><a href="#">Hồ Chí Minh</a><a href="#">Full-time</a><a href="#">Hồ Chí Minh</a></div>
-                    <p class="price">6.000.000 - 8.000.000 VND</p>
-                    <p class="info local"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" alt="Local" loading="lazy" width="12" height="16">Nguyễn Đình Chiểu, Quận 3, TP. Hồ Chí Minh</p>
-                    <p class="info time"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" alt="Time" loading="lazy" width="16" height="16">14:00 - 22:00</p>
-                    <p class="info user"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" alt="Local" loading="lazy" width="16" height="18">Nữ | 5 người</p>
-                    <p class="info date">Cập nhật: Tháng Sáu 18, 2021</p>
-                  </div></a></li>
-              <li><a href>
-                  <div class="m-new__img">
-                    <picture><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278"></picture>
-                  </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Nhân Viên Tư Vấn Bán Hàng</h3>
-                    <div class="m-tag"><a href="#">Hồ Chí Minh</a><a href="#">Full-time</a><a href="#">Hồ Chí Minh</a></div>
-                    <p class="price">6.000.000 - 8.000.000 VND</p>
-                    <p class="info local"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" alt="Local" loading="lazy" width="12" height="16">Nguyễn Đình Chiểu, Quận 3, TP. Hồ Chí Minh</p>
-                    <p class="info time"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" alt="Time" loading="lazy" width="16" height="16">14:00 - 22:00</p>
-                    <p class="info user"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" alt="Local" loading="lazy" width="16" height="18">Nữ | 5 người</p>
-                    <p class="info date">Cập nhật: Tháng Sáu 18, 2021</p>
-                  </div></a></li>
-              <li><a href>
-                  <div class="m-new__img">
-                    <picture><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278"></picture>
-                  </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Nhân Viên Tư Vấn Bán Hàng</h3>
-                    <div class="m-tag"><a href="#">Hồ Chí Minh</a><a href="#">Full-time</a><a href="#">Hồ Chí Minh</a></div>
-                    <p class="price">6.000.000 - 8.000.000 VND</p>
-                    <p class="info local"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" alt="Local" loading="lazy" width="12" height="16">Nguyễn Đình Chiểu, Quận 3, TP. Hồ Chí Minh</p>
-                    <p class="info time"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" alt="Time" loading="lazy" width="16" height="16">14:00 - 22:00</p>
-                    <p class="info user"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" alt="Local" loading="lazy" width="16" height="18">Nữ | 5 người</p>
-                    <p class="info date">Cập nhật: Tháng Sáu 18, 2021</p>
-                  </div></a></li>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -130,6 +130,44 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
       $(document).ready(function(){
+        //in cart page
+        $('.m-item').not('.slick-initialized').slick({
+          infinite: true,
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          dots: false,
+          arrows: false,
+          lazyLoad: 'progressive',
+          responsive: [
+             {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            }
+          ]
+        });
+      });
+    </script>
+    <?php if(is_front_page()) :  ?>
+      <script>
+      $(document).ready(function(){
+        $('.c-carousel_inner ').not('.slick-initialized').slick({
+        slidesToShow: 1,
+        infinite: true,
+        dots: true,
+        speed: 300,
+        arrows: false,
+        lazyLoad: 'ondemand',
+        });
         $('.m-product__slick').not('.slick-initialized').slick({
           infinite: true,
           fade: true,
@@ -190,44 +228,6 @@
         $('.m-item__next').click(function(e){
           $('.m-item').slick('slickNext');
         } );
-        //in cart page
-        $('.m-item').not('.slick-initialized').slick({
-          infinite: true,
-          slidesToShow: 4,
-          slidesToScroll: 4,
-          dots: false,
-          arrows: false,
-          lazyLoad: 'progressive',
-          responsive: [
-             {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-              }
-            }
-          ]
-        });
-      });
-    </script>
-    <?php if(is_front_page()) :  ?>
-      <script>
-      $(document).ready(function(){
-        $('.c-carousel_inner ').not('.slick-initialized').slick({
-        slidesToShow: 1,
-        infinite: true,
-        dots: true,
-        speed: 300,
-        arrows: false,
-        lazyLoad: 'ondemand',
-        });
       });
       </script>
     <?php endif; ?>
