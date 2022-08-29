@@ -99,6 +99,6 @@ class __TwigTemplate_d145b5c1864d8d84b8692bb8f1481690cd6c4afb9044060ad16ebc56147
 
     public function getSourceContext()
     {
-        return new Source("", "flag.twig", "D:\\Ampps\\www\\ecommerce.io\\wp-content\\plugins\\sitepress-multilingual-cms\\templates\\language-switchers\\flag.twig");
+        return new Source("", "flag.twig", "D:\\Ampps\\www\\ecommerce\\wp-content\\plugins\\sitepress-multilingual-cms\\templates\\language-switchers\\flag.twig");
     }
 }

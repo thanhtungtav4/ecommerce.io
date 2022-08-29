@@ -1,0 +1,52 @@
+2022-08-20T06:41:08+00:00 CRITICAL Uncaught Error: Call to undefined function WP_Installer() in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\global.php:27
+Stack trace:
+#0 D:\Ampps\www\ecommerce\wp-includes\class-wp-hook.php(307): m7_remove_wmpl_notices()
+#1 D:\Ampps\www\ecommerce\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#2 D:\Ampps\www\ecommerce\wp-includes\plugin.php(476): WP_Hook->do_action()
+#3 D:\Ampps\www\ecommerce\wp-settings.php(598): do_action()
+#4 D:\Ampps\www\ecommerce\wp-config.php(98): require_once('D:\\Ampps\\www\\ec...')
+#5 D:\Ampps\www\ecommerce\wp-load.php(50): require_once('D:\\Ampps\\www\\ec...')
+#6 D:\Ampps\www\ecommerce\wp-blog-header.php(13): require_once('D:\\Ampps\\www\\ec...')
+#7 D:\Ampps\www\ecommerce\index.php(17): require('D:\\Ampps\\www\\ec...')
+#8 {main}
+  thrown in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\global.php on line 27
+
+2022-08-20T06:41:27+00:00 CRITICAL Uncaught Error: Call to undefined function WP_Installer() in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\global.php:27
+Stack trace:
+#0 D:\Ampps\www\ecommerce\wp-includes\class-wp-hook.php(307): m7_remove_wmpl_notices()
+#1 D:\Ampps\www\ecommerce\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#2 D:\Ampps\www\ecommerce\wp-includes\plugin.php(476): WP_Hook->do_action()
+#3 D:\Ampps\www\ecommerce\wp-settings.php(598): do_action()
+#4 D:\Ampps\www\ecommerce\wp-config.php(98): require_once('D:\\Ampps\\www\\ec...')
+#5 D:\Ampps\www\ecommerce\wp-load.php(50): require_once('D:\\Ampps\\www\\ec...')
+#6 D:\Ampps\www\ecommerce\wp-blog-header.php(13): require_once('D:\\Ampps\\www\\ec...')
+#7 D:\Ampps\www\ecommerce\index.php(17): require('D:\\Ampps\\www\\ec...')
+#8 {main}
+  thrown in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\global.php on line 27
+
+2022-08-20T06:42:18+00:00 CRITICAL Uncaught Error: Call to undefined function WP_Installer() in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\global.php:27
+Stack trace:
+#0 D:\Ampps\www\ecommerce\wp-includes\class-wp-hook.php(307): m7_remove_wmpl_notices()
+#1 D:\Ampps\www\ecommerce\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#2 D:\Ampps\www\ecommerce\wp-includes\plugin.php(476): WP_Hook->do_action()
+#3 D:\Ampps\www\ecommerce\wp-settings.php(598): do_action()
+#4 D:\Ampps\www\ecommerce\wp-config.php(98): require_once('D:\\Ampps\\www\\ec...')
+#5 D:\Ampps\www\ecommerce\wp-load.php(50): require_once('D:\\Ampps\\www\\ec...')
+#6 D:\Ampps\www\ecommerce\wp-blog-header.php(13): require_once('D:\\Ampps\\www\\ec...')
+#7 D:\Ampps\www\ecommerce\index.php(17): require('D:\\Ampps\\www\\ec...')
+#8 {main}
+  thrown in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\global.php on line 27
+
+2022-08-20T06:42:20+00:00 CRITICAL Uncaught Error: Call to undefined function WP_Installer() in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\global.php:27
+Stack trace:
+#0 D:\Ampps\www\ecommerce\wp-includes\class-wp-hook.php(307): m7_remove_wmpl_notices()
+#1 D:\Ampps\www\ecommerce\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters()
+#2 D:\Ampps\www\ecommerce\wp-includes\plugin.php(476): WP_Hook->do_action()
+#3 D:\Ampps\www\ecommerce\wp-settings.php(598): do_action()
+#4 D:\Ampps\www\ecommerce\wp-config.php(98): require_once('D:\\Ampps\\www\\ec...')
+#5 D:\Ampps\www\ecommerce\wp-load.php(50): require_once('D:\\Ampps\\www\\ec...')
+#6 D:\Ampps\www\ecommerce\wp-blog-header.php(13): require_once('D:\\Ampps\\www\\ec...')
+#7 D:\Ampps\www\ecommerce\index.php(17): require('D:\\Ampps\\www\\ec...')
+#8 {main}
+  thrown in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\global.php on line 27
+

@@ -12,7 +12,7 @@
 </div>
 <div>
     <h3><span class="dashicons dashicons-editor-help"></span> <?php esc_html_e( 'Facing issue?', 'woo-variation-swatches' ); ?></h3>
-    <p><?php esc_html_e( 'Stuck with something?', 'woo-variation-swatches' ); ?> <a target="_blank" href="https://getwooplugins.com/tickets/"><?php esc_html_e( 'Please open a ticket.', 'woo-variation-swatches' ); ?></a>. <?php esc_html_e( 'For emergency case join our live chat.', 'woo-variation-swatches' ); ?></p>
+    <p><?php esc_html_e( 'Stuck with something?', 'woo-variation-swatches' ); ?> <a target="_blank" href="https://getwooplugins.com/tickets/"><?php esc_html_e( 'Please open a ticket', 'woo-variation-swatches' ); ?></a>. <?php esc_html_e( 'For emergency case join our live chat.', 'woo-variation-swatches' ); ?></p>
 </div>
 <div>
     <h3><span class="dashicons dashicons-star-filled"></span> <?php esc_html_e( 'Love Our Plugin?', 'woo-variation-swatches' ); ?></h3>

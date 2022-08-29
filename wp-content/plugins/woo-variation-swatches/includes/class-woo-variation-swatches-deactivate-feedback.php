@@ -52,17 +52,17 @@
                     'dont_know_about' => array(
                         'title'             => esc_html__( 'I couldn\'t understand how to make it work.', 'woo-variation-swatches' ),
                         'input_placeholder' => '',
-                        'alert'             => __( 'It converts single variation image to multiple variation image gallery. <br><a target="_blank" href="https://demo.getwooplugins.com/woocommerce-variation-swatches/">Please check live demo</a>.', 'woo-variation-swatches' ),
+                        'alert'             => __( 'It converts variation select box to beautiful swatches.<br><a target="_blank" href="https://demo.getwooplugins.com/woocommerce-variation-swatches/">Please check live demo</a>.', 'woo-variation-swatches' ),
                     ),
                     
                     'no_longer_needed' => array(
-                        'title'             => esc_html__( 'I no longer need the plugin', 'woo-variation-swatches' ),
+                        'title'             => esc_html__( 'I no longer need the plugin.', 'woo-variation-swatches' ),
                         'input_placeholder' => '',
                     ),
                     
                     'found_a_better_plugin' => array(
-                        'title'             => esc_html__( 'I found a better plugin', 'woo-variation-swatches' ),
-                        'input_placeholder' => esc_html__( 'Please share which plugin', 'woo-variation-swatches' ),
+                        'title'             => esc_html__( 'I found a better plugin.', 'woo-variation-swatches' ),
+                        'input_placeholder' => esc_html__( 'Please share which plugin.', 'woo-variation-swatches' ),
                     ),
                     
                     'broke_site_layout' => array(

@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: Emran Ahmed <emran.bd.08@gmail.com>\n"
-"POT-Creation-Date: 2022-08-17 10:28+0000\n"
+"POT-Creation-Date: 2022-08-28 10:17+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -128,19 +128,19 @@ msgid "I couldn't understand how to make it work."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-deactivate-feedback.php:55
-msgid "It converts single variation image to multiple variation image gallery. <br><a target=\"_blank\" href=\"https://demo.getwooplugins.com/woocommerce-variation-swatches/\">Please check live demo</a>."
+msgid "It converts variation select box to beautiful swatches.<br><a target=\"_blank\" href=\"https://demo.getwooplugins.com/woocommerce-variation-swatches/\">Please check live demo</a>."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-deactivate-feedback.php:59
-msgid "I no longer need the plugin"
+msgid "I no longer need the plugin."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-deactivate-feedback.php:64
-msgid "I found a better plugin"
+msgid "I found a better plugin."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-deactivate-feedback.php:65
-msgid "Please share which plugin"
+msgid "Please share which plugin."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-deactivate-feedback.php:69
@@ -254,7 +254,7 @@ msgid "Swatches Clickable Out Of Stock"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:147
-msgid "Swatches Show variation stock info"
+msgid "Swatches Show variation stock info."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:153
@@ -358,7 +358,7 @@ msgid "Enable Stylesheet"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:331
-msgid "Enable default stylesheet"
+msgid "Enable default stylesheet."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:338
@@ -410,7 +410,7 @@ msgid "Clear on Reselect"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:403
-msgid "Clear selected attribute on select again"
+msgid "Clear selected attribute on select again."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:411
@@ -418,7 +418,7 @@ msgid "Disable Out of Stock"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:412
-msgid "Disable Out Of Stock item"
+msgid "Disable Out Of Stock item."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:421
@@ -426,7 +426,7 @@ msgid "Clickable Out Of Stock"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:422
-msgid "Clickable Out Of Stock item"
+msgid "Clickable Out Of Stock item."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:431
@@ -458,7 +458,7 @@ msgid "<span style=\"color: red\">Attribute image size can be changed by <code>w
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:447
-msgid "Choose attribute image size. <a target=\"_blank\" href=\"%s\">Media Settings</a> or use <strong>Regenerate Thumbnails</strong> plugin"
+msgid "Choose attribute image size. <a target=\"_blank\" href=\"%s\">Media Settings</a> or use <strong>Regenerate Thumbnails</strong> plugin."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:469
@@ -530,7 +530,7 @@ msgid "Show selected attribute"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:578
-msgid "Show selected attribute variation name beside the title"
+msgid "Show selected attribute variation name beside the title."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:586
@@ -546,7 +546,7 @@ msgid "Enable Preloader"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:599
-msgid "Enable single product page swatches preloader"
+msgid "Enable single product page swatches preloader."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:607
@@ -562,7 +562,7 @@ msgid "Variation stock info"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:617
-msgid "Show variation product stock info"
+msgid "Show variation product stock info."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:626
@@ -590,7 +590,7 @@ msgid "Show swatches on archive / shop page."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:667
-msgid "Enable archive page swatches preloader"
+msgid "Enable archive page swatches preloader."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:675
@@ -598,7 +598,7 @@ msgid "Show Product Availability"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:676
-msgid "Show Product availability stock info"
+msgid "Show Product availability stock info."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:687
@@ -666,7 +666,7 @@ msgid "Show Single Attribute"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:758
-msgid "Show Single Attribute taxonomies on archive page"
+msgid "Show Single Attribute taxonomies on archive page."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:771
@@ -698,7 +698,7 @@ msgid "Show First Attribute In Large Size"
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-settings.php:801
-msgid "Show Attribute taxonomies in large size"
+msgid "Show Attribute taxonomies in large size."
 msgstr ""
 
 #: ../includes/class-woo-variation-swatches-term-meta.php:315
@@ -866,7 +866,7 @@ msgid "Stuck with something?"
 msgstr ""
 
 #: ../includes/html-settings-sidebar.php:15
-msgid "Please open a ticket."
+msgid "Please open a ticket"
 msgstr ""
 
 #: ../includes/html-settings-sidebar.php:15
@@ -905,7 +905,7 @@ msgstr ""
 msgid "PRO"
 msgstr ""
 
-#: ../includes/getwooplugins/class-getwooplugins-admin-menus.php:132, ../includes/getwooplugins/class-getwooplugins-plugin-deactivate-feedback.php:46
+#: ../includes/getwooplugins/class-getwooplugins-admin-menus.php:132, ../includes/getwooplugins/class-getwooplugins-plugin-deactivate-feedback.php:60
 msgid "The changes you made will be lost if you navigate away from this page."
 msgstr ""
 

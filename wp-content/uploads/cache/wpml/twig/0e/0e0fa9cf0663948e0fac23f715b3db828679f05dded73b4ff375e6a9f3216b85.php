@@ -173,6 +173,6 @@ class __TwigTemplate_97b5db6a53f5f103249119cf2b46df9a33cb2ddb8385c4133204140fe0e
 
     public function getSourceContext()
     {
-        return new Source("", "template.twig", "D:\\Ampps\\www\\ecommerce.io\\wp-content\\plugins\\sitepress-multilingual-cms\\templates\\language-switchers\\legacy-list-horizontal\\template.twig");
+        return new Source("", "template.twig", "D:\\Ampps\\www\\ecommerce\\wp-content\\plugins\\sitepress-multilingual-cms\\templates\\language-switchers\\legacy-list-horizontal\\template.twig");
     }
 }

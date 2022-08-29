@@ -144,7 +144,7 @@
             public function template_show_variation_stock_info() {
                 
                 $body = sprintf( '<video preload="auto" autoplay loop muted playsinline src="%s"></video>', esc_url( woo_variation_swatches()->org_assets_url( '/preview-07.webm' ) ) );
-                $this->modal_dialog( 'show_variation_stock_info', esc_html__( 'Swatches Show variation stock info', 'woo-variation-swatches' ), $body, $this->modal_buy_links() );
+                $this->modal_dialog( 'show_variation_stock_info', esc_html__( 'Swatches Show variation stock info.', 'woo-variation-swatches' ), $body, $this->modal_buy_links() );
             }
             
             public function template_display_limit() {
@@ -328,7 +328,7 @@
                         'id'      => 'enable_stylesheet',
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Enable Stylesheet', 'woo-variation-swatches' ),
-                        'desc'    => esc_html__( 'Enable default stylesheet', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Enable default stylesheet.', 'woo-variation-swatches' ),
                         'default' => 'yes'
                     ),
                     
@@ -400,7 +400,7 @@
                         'id'           => 'clear_on_reselect',
                         'type'         => 'checkbox',
                         'title'        => esc_html__( 'Clear on Reselect', 'woo-variation-swatches' ),
-                        'desc'         => esc_html__( 'Clear selected attribute on select again', 'woo-variation-swatches' ),
+                        'desc'         => esc_html__( 'Clear selected attribute on select again.', 'woo-variation-swatches' ),
                         'default'      => 'no',
                         'help_preview' => true,
                     ),
@@ -409,7 +409,7 @@
                         'id'      => 'hide_out_of_stock_variation',
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Disable Out of Stock', 'woo-variation-swatches' ),
-                        'desc'    => esc_html__( 'Disable Out Of Stock item', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Disable Out Of Stock item.', 'woo-variation-swatches' ),
                         'default' => 'yes',
                         // 'help_preview' => true,
                         'is_pro'  => true,
@@ -419,7 +419,7 @@
                         'id'      => 'clickable_out_of_stock_variation',
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Clickable Out Of Stock', 'woo-variation-swatches' ),
-                        'desc'    => esc_html__( 'Clickable Out Of Stock item', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Clickable Out Of Stock item.', 'woo-variation-swatches' ),
                         'default' => 'no',
                         //'require' => $this->normalize_required_attribute( array( 'hide_out_of_stock_variation' => array( 'type' => 'empty' ) ) ),
                         'is_pro'  => true,
@@ -444,7 +444,7 @@
                         'id'      => 'attribute_image_size',
                         'type'    => 'select',
                         'title'   => esc_html__( 'Attribute image size', 'woo-variation-swatches' ),
-                        'desc'    => has_filter( 'woo_variation_swatches_global_product_attribute_image_size' ) ? __( '<span style="color: red">Attribute image size can be changed by <code>woo_variation_swatches_global_product_attribute_image_size</code> filter hook. So this option will not apply any effect.</span>', 'woo-variation-swatches' ) : sprintf( __( 'Choose attribute image size. <a target="_blank" href="%s">Media Settings</a> or use <strong>Regenerate Thumbnails</strong> plugin', 'woo-variation-swatches' ), esc_url( admin_url( 'options-media.php' ) ) ),
+                        'desc'    => has_filter( 'woo_variation_swatches_global_product_attribute_image_size' ) ? __( '<span style="color: red">Attribute image size can be changed by <code>woo_variation_swatches_global_product_attribute_image_size</code> filter hook. So this option will not apply any effect.</span>', 'woo-variation-swatches' ) : sprintf( __( 'Choose attribute image size. <a target="_blank" href="%s">Media Settings</a> or use <strong>Regenerate Thumbnails</strong> plugin.', 'woo-variation-swatches' ), esc_url( admin_url( 'options-media.php' ) ) ),
                         'options' => self::get_all_image_sizes(),
                         'default' => 'variation_swatches_image_size'
                     ),
@@ -575,7 +575,7 @@
                         'id'      => 'show_variation_label',
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Show selected attribute', 'woo-variation-swatches' ),
-                        'desc'    => esc_html__( 'Show selected attribute variation name beside the title', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Show selected attribute variation name beside the title.', 'woo-variation-swatches' ),
                         'default' => 'yes',
                         // 'is_new'  => true,
                     ),
@@ -596,7 +596,7 @@
                         'id'      => 'enable_single_preloader',
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Enable Preloader', 'woo-variation-swatches' ),
-                        'desc'    => esc_html__( 'Enable single product page swatches preloader', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Enable single product page swatches preloader.', 'woo-variation-swatches' ),
                         'default' => 'yes',
                         'is_pro'  => true,
                     ),
@@ -614,7 +614,7 @@
                         'id'      => 'show_variation_stock_info',
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Variation stock info', 'woo-variation-swatches' ),
-                        'desc'    => esc_html__( 'Show variation product stock info', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Show variation product stock info.', 'woo-variation-swatches' ),
                         'default' => 'no',
                         'is_pro'  => true,
                     ),
@@ -664,7 +664,7 @@
                         'id'      => 'enable_archive_preloader',
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Enable Preloader', 'woo-variation-swatches' ),
-                        'desc'    => esc_html__( 'Enable archive page swatches preloader', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Enable archive page swatches preloader.', 'woo-variation-swatches' ),
                         'default' => 'yes',
                         'is_pro'  => true,
                     ),
@@ -673,7 +673,7 @@
                         'id'      => 'archive_show_availability',
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Show Product Availability', 'woo-variation-swatches' ),
-                        'desc'    => esc_html__( 'Show Product availability stock info', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Show Product availability stock info.', 'woo-variation-swatches' ),
                         'default' => 'no',
                         'is_pro'  => true,
                     ),
@@ -755,7 +755,7 @@
                         'id'      => 'enable_catalog_mode',
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Show Single Attribute', 'woo-variation-swatches' ),
-                        'desc'    => esc_html__( 'Show Single Attribute taxonomies on archive page', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Show Single Attribute taxonomies on archive page.', 'woo-variation-swatches' ),
                         'default' => 'no',
                         'is_pro'  => true,
                     ),
@@ -798,7 +798,7 @@
                         'id'      => 'enable_large_size',
                         'type'    => 'checkbox',
                         'title'   => esc_html__( 'Show First Attribute In Large Size', 'woo-variation-swatches' ),
-                        'desc'    => esc_html__( 'Show Attribute taxonomies in large size', 'woo-variation-swatches' ),
+                        'desc'    => esc_html__( 'Show Attribute taxonomies in large size.', 'woo-variation-swatches' ),
                         'default' => 'no',
                         'is_pro'  => true,
                     ),

@@ -145,9 +145,9 @@
 
 .getwooplugins-admin-form-table .getwooplugins-help-tip {
     padding        : 0;
-    margin         : -3px 0 0 5px !important;
+    margin         : 0 0 0 5px !important;
     vertical-align : middle;
-     cursor         : help;
+    cursor         : help;
     line-height    : 1
     }
 
@@ -443,12 +443,12 @@ h2 .getwooplugins-help-tip {
 
 .getwooplugins-admin-form-table .is-pro th .pro-modal::after {
     content : "\f160";
-    cursor: pointer;
+    cursor  : pointer;
     }
 
 .getwooplugins-admin-form-table .help-preview th .help-modal::after {
     content : "\f223";
-    cursor: pointer;
+    cursor  : pointer;
     /*content : "\f504";*/
     }
 
@@ -604,8 +604,9 @@ h2 .getwooplugins-help-tip {
     }
 
 .rtl .gwp-backbone-modal-main .gwp-backbone-modal-header .modal-close-link {
-    right : auto;
-    left  : 0
+    right        : auto;
+    left         : 0;
+    border-right : 1px solid #DDDDDD;
     }
 
 .gwp-backbone-modal-main .gwp-backbone-modal-header .modal-close-link::before {
@@ -712,6 +713,10 @@ h2 .getwooplugins-help-tip {
     line-height : 23px;
     }
 
+.rtl .gwp-backbone-modal-main footer .inner {
+    text-align : left;
+    }
+
 .gwp-backbone-modal-main footer .inner .button {
     margin-bottom : 0;
     }
@@ -719,6 +724,10 @@ h2 .getwooplugins-help-tip {
 .gwp-backbone-modal-main footer .inner .gwp-action-button-group {
     display : inline-block;
     float   : left;
+    }
+
+.rtl .gwp-backbone-modal-main footer .inner .gwp-action-button-group {
+    float : right;
     }
 
 .gwp-backbone-modal-main footer .inner .button.button-large {
@@ -729,8 +738,11 @@ h2 .getwooplugins-help-tip {
     display     : inline-block;
     }
 
-/** FEEDBACK */
+.rtl .gwp-backbone-modal-main footer .inner .button.button-large {
+    margin-right : 10px;
+    }
 
+/** FEEDBACK */
 .gwp-backbone-modal.gwp-deactive-feedback-dialog article {
     padding  : 1.5em;
     overflow : auto;
@@ -755,6 +767,11 @@ h2 .getwooplugins-help-tip {
     box-shadow : none;
     }
 
+.rtl .gwp-backbone-modal .gwp-feedback-dialog-form-body .feedback-dialog-form-body .feedback-dialog-input {
+    float  : right;
+    margin : 0 0 0 10px;
+    }
+
 .gwp-backbone-modal .gwp-feedback-dialog-form-body .feedback-dialog-form-body .feedback-text {
     margin           : 10px 0 0 25px;
     padding          : 5px;
@@ -763,6 +780,10 @@ h2 .getwooplugins-help-tip {
     background-color : #FFFFFF;
     width            : 92%;
     display          : none;
+    }
+
+.rtl .gwp-backbone-modal .gwp-feedback-dialog-form-body .feedback-dialog-form-body .feedback-text {
+    margin : 10px 25px 0 0;
     }
 
 .gwp-backbone-modal .gwp-feedback-dialog-form-body .feedback-dialog-form-body .feedback-alert {
@@ -797,6 +818,10 @@ h2 .getwooplugins-help-tip {
     float            : left;
     }
 
+.rtl .gwp-backbone-modal footer .feedback-dialog-form-button-send {
+    float : right;
+    }
+
 .gwp-backbone-modal footer .feedback-dialog-form-button-send:hover {
     background : #389DB1;
     }
@@ -816,6 +841,10 @@ h2 .getwooplugins-help-tip {
     padding         : 10px 0;
     outline         : 0;
     text-decoration : none;
+    }
+
+.rtl .gwp-backbone-modal footer .feedback-dialog-form-button-skip {
+    float : left;
     }
 
 .gwp-backbone-modal footer .feedback-dialog-form-button-skip:focus {

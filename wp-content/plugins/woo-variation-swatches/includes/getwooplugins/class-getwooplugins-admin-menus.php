@@ -110,7 +110,7 @@
                     wp_enqueue_script( 'wp-color-picker-alpha', untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/js/wp-color-picker-alpha.js', array(
                         'jquery',
                         'wp-color-picker'
-                    ),                 filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'js/wp-color-picker-alpha.js' ), true );
+                    ), filemtime( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'js/wp-color-picker-alpha.js' ), true );
                     
                     
                     $dep = array(
