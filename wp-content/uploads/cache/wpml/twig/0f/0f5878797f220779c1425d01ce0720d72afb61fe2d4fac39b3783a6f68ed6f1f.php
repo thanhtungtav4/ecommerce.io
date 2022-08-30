@@ -86,6 +86,6 @@ class __TwigTemplate_ab6ad4c6d1c11847deeae9a3b884c733dc7786e434088c003e541b4232b
 
     public function getSourceContext()
     {
-        return new Source("", "template.twig", "D:\\Ampps\\www\\ecommerce.io\\wp-content\\plugins\\woocommerce-multilingual\\templates\\currency-switchers\\legacy-list-horizontal\\template.twig");
+        return new Source("", "template.twig", "D:\\Ampps\\www\\ecommerce\\wp-content\\plugins\\woocommerce-multilingual\\templates\\currency-switchers\\legacy-list-horizontal\\template.twig");
     }
 }

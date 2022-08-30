@@ -8,7 +8,7 @@ require_once( get_stylesheet_directory() . '/functions/taxonomy.php' );
 require_once( get_stylesheet_directory() . '/functions/acf.php' );
 require_once( get_stylesheet_directory() . '/functions/woo.php' );
 require_once( get_stylesheet_directory() . '/functions/auth.php' );
-//require_once( get_stylesheet_directory() . '/functions/url.php' );
+require_once( get_stylesheet_directory() . '/functions/url.php' );
 require_once( get_stylesheet_directory() . '/functions/breadcrumbs.php' );
 require_once( get_stylesheet_directory() . '/functions/smtp.php' );
 require_once( get_stylesheet_directory() . '/functions/style.php' );
