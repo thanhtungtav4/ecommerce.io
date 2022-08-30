@@ -2959,59 +2959,67 @@ body.js-active {
   font-size: 1.6rem;
 }
 
-.caras-intro {
-  position: relative;
+.caras_banner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.caras_banner .caras_img {
+  width: 55%;
+}
+@media screen and (max-width: 767px) {
+  .caras_banner .caras_img {
+    width: 100%;
+  }
+}
+.caras_banner .caras_content {
+  width: 45%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 170px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
-@media screen and (max-width: 767px) {
-  .caras-intro {
-    display: block;
-  }
+.caras_banner .caras_content__inner {
+  width: 440px;
 }
-.caras-intro__img {
-  min-width: 881px;
-}
-@media screen and (max-width: 767px) {
-  .caras-intro__img {
-    min-width: unset;
-  }
-}
-.caras-intro__content {
-  margin-right: 195px;
-}
-@media screen and (max-width: 767px) {
-  .caras-intro__content {
-    margin-right: unset;
-    padding: 16px;
-  }
-}
-.caras-intro__content h3 {
+.caras_banner .caras_content__inner h3 {
   font-weight: 700;
-  font-size: 48px;
-  line-height: 59px;
-  text-align: justify;
+  font-size: 4rem;
+  line-height: 1.3;
   color: #1E1C1C;
-  margin-bottom: 14px;
+  margin-bottom: 1rem;
 }
 @media screen and (max-width: 767px) {
-  .caras-intro__content h3 {
-    font-size: 3rem;
+  .caras_banner .caras_content__inner h3 {
+    font-size: 2.5rem;
   }
 }
-.caras-intro__content p {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  text-align: justify;
-  color: #1E1C1C;
+.caras_banner .caras_content__inner p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 767px) {
+  .caras_banner .caras_content__inner {
+    width: 100%;
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .caras_banner .caras_content {
+    width: 100%;
+  }
+}
+.caras_promise {
+  margin-top: -50px;
+}
+@media screen and (max-width: 767px) {
+  .caras_promise {
+    margin-top: 0;
+  }
 }
 .caras-intro__promise {
-  position: absolute;
-  bottom: -170px;
-  left: 0;
   width: 100%;
 }
 @media screen and (max-width: 767px) {
@@ -3066,26 +3074,6 @@ body.js-active {
 }
 .caras-intro .l-container {
   position: relative;
-}
-.caras-intro__video {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 90px;
-}
-@media screen and (max-width: 767px) {
-  .caras-intro__video {
-    margin-top: 370px;
-  }
-}
-.caras-intro__video video {
-  width: 100%;
-  height: 687px;
-}
-@media screen and (max-width: 767px) {
-  .caras-intro__video video {
-    height: 300px;
-  }
 }
 .caras-intro__service {
   display: flex;
@@ -3209,6 +3197,28 @@ body.js-active {
 }
 .caras-intro__review__item ul li.active svg {
   filter: unset;
+}
+
+.container_video {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-top: 7rem;
+}
+@media screen and (max-width: 767px) {
+  .container_video {
+    margin-top: 2rem;
+  }
+}
+.container_video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .m-intro {
