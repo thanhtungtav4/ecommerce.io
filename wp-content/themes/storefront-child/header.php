@@ -93,22 +93,21 @@
                   <div class="c-menu_subinner">
                     <div class="l-container col-5">
                       <dl>
-                        <dt>Theo nhu cầu</dt>
-                        <dd><a href="#">Lens nữ</a></dd>
-                        <dd><a href="#">Lens nam</a></dd>
-                        <dd><a href="#">Lens Tự Nhiên - Đi học đi làm</a></dd>
-                        <dd><a href="#">Lens Sáng Màu - Đi chơi chụp hình</a></dd>
-                        <dd><a href="#">Lens Sáng Tây</a></dd>
+                        <dt><?php _e('FOR INDIVIDUAL NEEDS', 'storefront') ?></dt>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lens-for-men/' : print get_site_url().'/lens-nam/');   ?>"><?php _e('Lens Women', 'storefront') ?></a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-women/' : print get_site_url().'/lens-nu/');   ?>"><?php _e('Lens Men', 'storefront') ?></a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-casual-occasions/' : print get_site_url().'/lens-deo-di-hoc-va-di-lam/'); ?>"><?php _e('SCHOOL-TO-WORK CONTACT LENSES', 'storefront') ?></a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-special-occasion/' : print get_site_url().'/lens-deo-chup-anh-va-du-tiec/');   ?>"><?php _e('LIGHT COLOR - HANG OUT, TAKE A PHOTO', 'storefront') ?></a></dd>
                       </dl>
                       <dl>
-                        <dt>Khúc Xạ Mắt</dt>
+                        <dt><?php _e('Eye Refraction', 'storefront') ?></dt>
                         <dd><a href="#">Lens cận</a></dd>
                         <dd><a href="#">Lens loạn</a></dd>
                         <dd><a href="#">Lens cận loạn</a></dd>
                         <dd><a href="#">Lens viễn</a></dd>
                       </dl>
                       <dl>
-                        <dt>Loại Kính</dt>
+                        <dt><?php _e('Glass Type', 'storefront') ?></dt>
                         <dd><a href="#">3 tháng</a></dd>
                         <dd><a href="#">1 ngày</a></dd>
                         <dd></dd>
@@ -117,14 +116,14 @@
                         <dd><a href="#">Giãn nhẹ - 14.0 mm</a></dd>
                       </dl>
                       <dl>
-                        <dt>Màu sắc</dt>
+                        <dt><?php _e('BY COLOR', 'storefront') ?></dt>
                         <dd><a href="#">Nâu</a></dd>
                         <dd><a href="#">Xám</a></dd>
                         <dd><a href="#">Choco</a></dd>
                         <dd><a href="#">Không màu</a></dd>
                       </dl>
                       <dl>
-                        <dt>Thời gian đeo</dt>
+                        <dt><?php _e('BY FREQUENCY', 'storefront') ?></dt>
                         <dd><a href="#">8h</a></dd>
                         <dd><a href="#">10h</a></dd>
                         <dd><a href="#">12h</a></dd>

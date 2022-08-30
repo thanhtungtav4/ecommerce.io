@@ -1026,3 +1026,24 @@ msgstr "BẢO HÀNH"
 
 msgid "REVIEW"
 msgstr "Đánh giá"
+
+msgid "Lens Men"
+msgstr "Lens nam"
+
+msgid "Lens Women"
+msgstr "Lens nữ"
+
+msgid "FOR INDIVIDUAL NEEDS"
+msgstr "Theo nhu cầu"
+
+msgid "Eye Refraction"
+msgstr "Khúc Xạ Mắt"
+
+msgid "Glass Type"
+msgstr "Loại Kính"
+
+msgid "BY COLOR"
+msgstr "Màu sắc"
+
+msgid "BY FREQUENCY"
+msgstr "Thời gian đeo"
