@@ -1,0 +1,16 @@
+2022-08-30T10:39:04+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Term as array in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\page-tuyen-dung.php:31
+Stack trace:
+#0 D:\Ampps\www\ecommerce\wp-includes\template-loader.php(106): include()
+#1 D:\Ampps\www\ecommerce\wp-blog-header.php(19): require_once('D:\\Ampps\\www\\ec...')
+#2 D:\Ampps\www\ecommerce\index.php(17): require('D:\\Ampps\\www\\ec...')
+#3 {main}
+  thrown in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\page-tuyen-dung.php on line 31
+
+2022-08-30T15:22:43+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\page-tuyen-dung.php:150
+Stack trace:
+#0 D:\Ampps\www\ecommerce\wp-includes\template-loader.php(106): include()
+#1 D:\Ampps\www\ecommerce\wp-blog-header.php(19): require_once('D:\\Ampps\\www\\ec...')
+#2 D:\Ampps\www\ecommerce\index.php(17): require('D:\\Ampps\\www\\ec...')
+#3 {main}
+  thrown in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\page-tuyen-dung.php on line 150
+

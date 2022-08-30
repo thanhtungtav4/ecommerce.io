@@ -9,6 +9,22 @@
  *
  * @package storefront
  */
+// Get all term ID's in a given taxonomy
+$taxonomy_terms_location = get_terms( 'location', array(
+    'hide_empty' => 0,
+) );
+$taxonomy_terms_linh_vuc = get_terms( 'linh_vuc', array(
+  'hide_empty' => 0,
+) );
+$args = array(
+  'post_type' => 'tuyen_dung', // we will sort posts by date
+  's' => $_POST['title'],
+  'post_status' => 'publish',
+  'orderby'     => 'title',
+  'order'       => 'ASC',
+  'posts_per_page' => '6',
+  'suppress_filters' => 1,
+);
 get_header(); ?>
       <main class="l-main">
         <div class="m-search job">
@@ -19,16 +35,19 @@ get_header(); ?>
                 <input type="text" name="title" placeholder="Bạn đang tìm kiếm" id="search">
                 <select id="jobname" name="jobname">
                   <option value="" selected>Chọn Công việc</option>
-                  <option value="seo">Seo</option>
-                  <option value="dev">DEV</option>
-                  <option value="content-marketing">Content marketing</option>
-                  <option value="seo-leader">Seo Leader</option>
+                  <?php if($taxonomy_terms_linh_vuc) : ?>
+                    <?php foreach($taxonomy_terms_linh_vuc as $key => $item) :?>
+                      <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
                 </select>
                 <select id="location" name="location">
                   <option value="" selected>Chọn Vị Trí</option>
-                  <option value="ho-chi-minh">Hồ Chí Minh</option>
-                  <option value="da-nang">Đa nẵng</option>
-                  <option value="ha-noi">Hà nội</option>
+                  <?php if($taxonomy_terms_location) : ?>
+                    <?php foreach($taxonomy_terms_location as $key => $item) :?>
+                      <option value="<?php echo $item->slug ?>"><?php echo $item->name ?></option>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
                 </select>
                 <input type="hidden" name="action" value="filter_job_action">
                 <input class="search-submit" type="submit" value="search">
@@ -128,22 +147,19 @@ get_header(); ?>
               <h4>VỊ TRÍ TUYỂN DỤNG</h4>
             </div>
             <ul class="m-new__slick job w-100">
-              <li>
-                <a href>
-                  <div class="m-new__img">
-                    <picture><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278"></picture>
-                  </div>
-                  <div class="m-new__content">
-                    <h3 class="strong">Nhân Viên Tư Vấn Bán Hàng</h3>
-                    <div class="m-tag"><a href="#">Hồ Chí Minh</a><a href="#">Full-time</a><a href="#">Hồ Chí Minh</a></div>
-                    <p class="price">6.000.000 - 8.000.000 VND</p>
-                    <p class="info local"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pin.svg" alt="Local" loading="lazy" width="12" height="16">Nguyễn Đình Chiểu, Quận 3, TP. Hồ Chí Minh</p>
-                    <p class="info time"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/time.svg" alt="Time" loading="lazy" width="16" height="16">14:00 - 22:00</p>
-                    <p class="info user"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/user.svg" alt="Local" loading="lazy" width="16" height="18">Nữ | 5 người</p>
-                    <p class="info date">Cập nhật: Tháng Sáu 18, 2021</p>
-                  </div>
-                </a>
-              </li>
+              <?php 
+                $query = new WP_Query( $args );
+                if( $query->have_posts() ) :
+                  while( $query->have_posts() ): $query->the_post();
+                    //var_dump($query->post);
+                    include( get_stylesheet_directory() . '/module/item_job.php' );
+                  endwhile;
+                  wp_reset_postdata();
+                else :
+                  echo 'No Job found';
+                endif;
+                die();
+              ?>
             </ul>
           </div>
         </div>
