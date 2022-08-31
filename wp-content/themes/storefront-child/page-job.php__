@@ -18,7 +18,6 @@ $taxonomy_terms_linh_vuc = get_terms( 'linh_vuc', array(
 ) );
 $args = array(
   'post_type' => 'tuyen_dung', // we will sort posts by date
-  's' => $_POST['title'],
   'post_status' => 'publish',
   'orderby'     => 'title',
   'order'       => 'ASC',
