@@ -174,7 +174,7 @@ class NextendSocialLoginAdmin {
                     case 'update_oauth_redirect_url':
                         if (check_admin_referer('nextend-social-login_update_oauth_redirect_url')) {
                             foreach (NextendSocialLogin::$enabledProviders as $provider) {
-                                $provider->updateOauthRedirectUrl();
+                                $provider->updateAuthRedirectUrl();
                             }
                         }
 

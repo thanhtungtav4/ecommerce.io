@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nextend-facebook-connect\n"
-"POT-Creation-Date: 2022-06-13 13:55+0200\n"
-"PO-Revision-Date: 2022-06-13 13:55+0200\n"
+"POT-Creation-Date: 2022-08-30 15:56+0200\n"
+"PO-Revision-Date: 2022-08-30 15:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: nextend-facebook-connect\n"
 "Language: ru\n"
@@ -3074,6 +3074,12 @@ msgstr ""
 
 #, php-format
 msgid ""
+"If the URLs don't match, enter the URL of your website into the %1$s field, "
+"probably: %2$s"
+msgstr ""
+
+#, php-format
+msgid ""
 "Enter your domain name into the %1$s field, if it is not added already: %2$s"
 msgstr ""
 
@@ -3081,7 +3087,11 @@ msgstr ""
 msgid "Press the %s button."
 msgstr ""
 
-msgid "Allow some time for these modifications to take effect."
+#, php-format
+msgid ""
+"Submit your App for a review, by pressing the %1$s button on the top right "
+"corner and wait until the %2$s field says %3$s. This can take a couple of "
+"days."
 msgstr ""
 
 #, php-format
@@ -3095,41 +3105,69 @@ msgstr ""
 
 #, php-format
 msgid ""
-"A modal will appear where you need to select an image as %1$s and enter a "
-"name into the %2$s field."
-msgstr ""
-
-#, php-format
-msgid "For %1$s choose the %2$s option."
-msgstr ""
-
-#, php-format
-msgid "Under the %s section you should fill all of the required fields."
+"Find the %1$s section and upload an image as %2$s, then enter an %3$s, a "
+"%4$s and choose a value for %5$s."
 msgstr ""
 
 #, php-format
 msgid ""
-"Under the %1$s section you need to make sure the option %2$s is checked."
+"For %1$s you should enable the %2$s option then enter the URL of your "
+"website into the %3$s field, probably: %4$s"
+msgstr ""
+
+#, php-format
+msgid "Click on the %s button."
 msgstr ""
 
 #, php-format
 msgid ""
-"Into the %1$s field you should write a text, that describes what you are "
-"going to do with the App. In this particular case, you will use it to offer "
-"%2$s login option for your visitors."
+"Click on %1$s on the left hand menu then add the %2$s product, and press the "
+"%3$s button."
+msgstr ""
+
+#, php-format
+msgid "At the left hand menu click on the %1$s option under %2$s."
+msgstr ""
+
+#, php-format
+msgid "Enter your %1$s and %2$s URLs."
+msgstr ""
+
+#, php-format
+msgid "Enter your domain name into the %1$s field, probably: %2$s"
+msgstr ""
+
+#, php-format
+msgid "Scroll up and click on the %s button."
+msgstr ""
+
+#, php-format
+msgid ""
+"Currently your App is in %1$s status, meaning that you don't have access to "
+"the credentials which are necessary for the %2$s integration. In order to "
+"gain access, click on the %3$s on the top right corner."
+msgstr ""
+
+#, php-format
+msgid ""
+"A modal will appear where you should enter a text, that describes what you "
+"are going to do with the App. In this particular case, you will use it to "
+"offer %1$s login option for your visitors."
 msgstr ""
 
 #, php-format
 msgid ""
 "Wait until your App gets approved. This can take a couple of days. If you "
-"scroll up to the top of the page you will be able to find the %s below the "
-"name of your App."
+"scroll up to the top of the page you will be able to inspect the %1$s below "
+"the %2$s section. If you want to learn more about the App review process, "
+"you can find more information in the %3$sofficial documentation%4$s."
 msgstr ""
 
 #, php-format
 msgid ""
-"Once the %1$s says %2$s, the %3$s and %4$s will appear below the %1$s text. "
-"You will need these for the provider configuration."
+"Once the %1$s says %2$s, you will be able to reveal the %3$s and %4$s by "
+"clicking on the eye icon next to these fields. You will need these "
+"credentials for the provider configuration."
 msgstr ""
 
 #, php-format

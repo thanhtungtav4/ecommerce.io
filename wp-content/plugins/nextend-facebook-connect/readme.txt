@@ -3,8 +3,8 @@ Contributors: nextendweb
 Tags: social login, facebook, google, twitter, linkedin, register, login, social, nextend facebook connect, social sign in
 Donate link: https://www.facebook.com/nextendweb
 Requires at least: 4.9
-Tested up to: 6.0
-Stable tag: 3.1.5
+Tested up to: 6.0.2
+Stable tag: 3.1.6
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -125,11 +125,24 @@ Using the Pro Addon you can set where the login buttons should appear on the Reg
 
 == Changelog ==
 
+= 3.1.6 =
+* Fix: Google provider - Google OAuth no longer supports any kind of WebViews, so the Google button will be hidden in all WebView environments.
+* Fix: [User selected language](https://wordpress.org/support/article/users-your-profile-screen/#your-profile-and-personal-options) in the backend didn't load our translations in certain cases.
+* Improvement: We will trigger the "wp_login_failed" action when the login with social login fails, so the login history plugins could track the failed login attempts happened with social login, too.
+* Improvement: The unlinked social media identifier will be now available from the "nsl_unlink_user" action parameters.
+
+* PRO: Fix: Microsoft provider - ErrorInsufficientPermissionsInAccessToken error when using the Personal Audience option.
+* PRO: Fix: Steam provider - Error when pressing the "Got it" button on the "Fix OAuth Redirect URIs" page while the Steam provider was enabled.
+* PRO: Fix: TikTok provider - Invalid request parameters error
+* PRO: Improvement: TikTok provider - [Getting Started Update](https://nextendweb.com/nextend-social-login-docs/provider-tiktok/)
+* PRO: Feature: TikTok provider – [button skin](https://nextendweb.com/nextend-social-login-docs/provider-tiktok/#guidelines) selector added.
+
+
 = 3.1.5 =
-* Fix:  The Jetpack Boost plugin stopped our authentication flow
-* Fix:  The "WP 2FA" plugin could prevent the login with social login even if our "Support login restrictions" feature was disabled
-* Fix:  PHP error when other plugins tried to force WordPress to update the plugin update transients ( update_plugins ) with null parameter
-* Fix:  The "Page Transitions" feature of Elementor Pro opened our links in the opener window, causing a redirect in both the popup and the popup opener window
+* Fix: The Jetpack Boost plugin stopped our authentication flow
+* Fix: The "WP 2FA" plugin could prevent the login with social login even if our "Support login restrictions" feature was disabled
+* Fix: PHP error when other plugins tried to force WordPress to update the plugin update transients ( update_plugins ) with null parameter
+* Fix: The "Page Transitions" feature of Elementor Pro opened our links in the opener window, causing a redirect in both the popup and the popup opener window
 * Improvement: Introducing the "nsl_connect_button_custom_attributes", "nsl_unlink_button_custom_attributes", "nsl_link_button_custom_attributes" filters to add extra attributes on our button links
 * Improvement: Avatar storing - We won't try to copy the avatar into our avatar folder if the same file is already there
 * Improvement: Avatar storing - If the earlier stored avatar file doesn't exist, we will delete the associated attachment data the next time the user logs in

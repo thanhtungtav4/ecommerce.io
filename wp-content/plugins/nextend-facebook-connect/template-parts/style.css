@@ -173,6 +173,11 @@ div.nsl-container .nsl-button-slack[data-skin="light"] {
     box-shadow: inset 0 0 0 1px #DDDDDD;
 }
 
+div.nsl-container .nsl-button-tiktok[data-skin="light"] {
+    color: #161823;
+    box-shadow: 0 0 0 1px rgba(22, 24, 35, 0.12);
+}
+
 .nsl-clear {
     clear: both;
 }

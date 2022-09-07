@@ -511,26 +511,31 @@ class NextendSocialUser {
     protected function login($user_id) {
         /** @var $wpdb WPDB */ global $wpdb;
 
+        $user = new WP_User($user_id);
+
         $loginRestriction = NextendSocialLogin::$settings->get('login_restriction');
         if ($loginRestriction) {
-            $user = new WP_User($user_id);
-            $user = apply_filters('authenticate', $user, $user->get('user_login'), null);
-            if (is_wp_error($user)) {
-                Notices::addError($user);
+            $userOrError = apply_filters('authenticate', $user, $user->get('user_login'), null);
+            if (is_wp_error($userOrError)) {
+                Notices::addError($userOrError);
+                do_action('wp_login_failed', $user->get('user_login'), $userOrError);
+
                 $this->provider->redirectToLoginForm();
 
-                return $user;
+                return $userOrError;
             }
 
             /**
              * Other plugins use this hook to prevent log in
              */
-            $user = apply_filters('wp_authenticate_user', $user, null);
-            if (is_wp_error($user)) {
-                Notices::addError($user);
+            $userOrError = apply_filters('wp_authenticate_user', $user, null);
+            if (is_wp_error($userOrError)) {
+                Notices::addError($userOrError);
+                do_action('wp_login_failed', $user->get('user_login'), $userOrError);
+
                 $this->provider->redirectToLoginForm();
 
-                return $user;
+                return $userOrError;
             }
         }
 
@@ -593,12 +598,13 @@ class NextendSocialUser {
             $this->provider->deleteLoginPersistentData();
             $loginDisabledMessage     = apply_filters('nsl_disabled_login_error_message', '');
             $loginDisabledRedirectURL = apply_filters('nsl_disabled_login_redirect_url', '');
+            $errors                   = new WP_Error();
+            $errors->add('logindisabled', $loginDisabledMessage);
             if (!empty($loginDisabledMessage)) {
                 Notices::clear();
-                $errors = new WP_Error();
-                $errors->add('logindisabled', $loginDisabledMessage);
                 Notices::addError($errors->get_error_message());
             }
+            do_action('wp_login_failed', $user->get('user_login'), $errors);
 
             if (!empty($loginDisabledRedirectURL)) {
                 NextendSocialProvider::redirect(__('Authentication error', 'nextend-facebook-connect'), NextendSocialLogin::enableNoticeForUrl($loginDisabledRedirectURL));

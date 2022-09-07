@@ -20,9 +20,9 @@ require_once(NSL_PATH . '/compat.php');
 
 class NextendSocialLogin {
 
-    public static $version = '3.1.5';
+    public static $version = '3.1.6';
 
-    public static $nslPROMinVersion = '3.1.5';
+    public static $nslPROMinVersion = '3.1.6';
 
     public static $proxyPage = false;
 
@@ -149,6 +149,11 @@ class NextendSocialLogin {
 
         add_action('delete_user', 'NextendSocialLogin::delete_user');
 
+        add_action('itsec_initialized', 'NextendSocialLogin::disable_better_wp_security_block_long_urls', -1);
+    }
+
+    public static function plugins_loaded() {
+
         self::$settings = new NextendSocialLoginSettings('nextend_social_login', array(
             'enabled'                          => array(),
             'register-flow-page'               => '',
@@ -265,11 +270,6 @@ class NextendSocialLogin {
 
             'admin_bar_roles' => array(),
         ));
-
-        add_action('itsec_initialized', 'NextendSocialLogin::disable_better_wp_security_block_long_urls', -1);
-    }
-
-    public static function plugins_loaded() {
 
         NextendSocialLoginAdmin::init();
 

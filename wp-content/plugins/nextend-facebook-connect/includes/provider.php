@@ -500,9 +500,10 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
         if ($unlinkAllowed) {
             $user_info = wp_get_current_user();
             if ($user_info->ID) {
+                $unlinkedIdentifier = $this->getProviderIdentifierByUserID($user_info->ID);
                 $this->removeConnectionByUserID($user_info->ID);
 
-                do_action('nsl_unlink_user', $user_info->ID, $this->getId());
+                do_action('nsl_unlink_user', $user_info->ID, $this->getId(), $unlinkedIdentifier);
 
                 return true;
             }

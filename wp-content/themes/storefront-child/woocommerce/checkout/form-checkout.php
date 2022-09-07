@@ -23,10 +23,6 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 
 ?>
 <div class="l-container">
-	<ul class="c-breadcrumb">
-		<li><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>"><?php ICL_LANGUAGE_CODE == 'en' ? print 'Home' : print 'Trang chủ'; ?></a></li>
-		<li><?php single_post_title(); ?></li>
-	</ul>
 	<?php
 		// If checkout registration is disabled and not logged in, the user cannot checkout.
 		if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {

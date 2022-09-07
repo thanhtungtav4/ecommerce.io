@@ -80,7 +80,9 @@ get_header(); ?>
               </div>
             </div>
           </div>
-          <?php   require_once( get_stylesheet_directory() . '/module/footer_info.php' ); ?>
+          <div class="l-container">
+            <?php   require_once( get_stylesheet_directory() . '/module/footer_info.php' ); ?>
+          </div>
         </div>
     </main>
     <script>

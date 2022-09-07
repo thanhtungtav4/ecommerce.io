@@ -25,21 +25,22 @@ get_header(); ?>
 
 			<div class="l-container">
 			<?php
-			while ( have_posts() ) :
+				while ( have_posts() ) :
 				the_post();
-
 				do_action( 'storefront_page_before' );
-
-				get_template_part( 'content', 'page' );
-
+				if(is_page('tai-khoan') || is_page('my-account') || is_page('gio-hang') || is_page('cart') || is_page('thanh-toan') || is_page('checkout') || is_page('register') || is_page('dang-ky') ) {
+					get_template_part( 'content', 'page-tool' );
+				}
+				else{
+					get_template_part( 'content', 'page' );
+				}
 				/**
 				 * Functions hooked in to storefront_page_after action
 				 *
 				 * @hooked storefront_display_comments - 10
 				 */
 				do_action( 'storefront_page_after' );
-
-			endwhile; // End of the loop.
+				endwhile; // End of the loop.
 			?>
 			</div>
 		</main><!-- #main -->
