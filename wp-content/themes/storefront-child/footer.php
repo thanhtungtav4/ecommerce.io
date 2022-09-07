@@ -336,6 +336,36 @@
         });
       </script>
     <?php endif; ?>
+    <?php if(is_page('lien-he') || is_page('contact')) :  ?>
+      <script>
+       $(document).ready(function(){
+        $('.slick-sure').not('.slick-initialized').slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+          lazyLoad: 'ondemand',
+          responsive: [
+             {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+        });
+      });
+      </script>
+    <?php endif; ?>
 		<?php wp_footer(); ?>
   </body>
 </html>
