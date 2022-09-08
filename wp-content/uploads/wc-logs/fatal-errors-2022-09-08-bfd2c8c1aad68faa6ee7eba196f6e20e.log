@@ -1,0 +1,10 @@
+2022-09-08T08:58:57+00:00 CRITICAL Uncaught Error: Call to undefined function dev_thuong_hieu_rewrite_rules() in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\url.php:42
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(309): new_thuong_hieu_cat_edit_success(357, 357)
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(357, Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-includes\taxonomy.php(2582): do_action('create_term', 357, 357, 'product_cat')
+#4 D:\xampp\htdocs\ecommerce\wp-content\plugins\sitepress-multilingual-cms\inc\taxonomy-term-translation\wpml-update-term-action.class.php(159): wp_insert_term('24h', 'product_cat', Array)
+#5 D:\xampp\htdocs\ecommerce\wp-content\plugins\sitepress-multilingual-cms\inc\taxonomy-term-translation\wpml-term-translations.class.php(222): WPML_Update_Term_Action->execute()
+#6 D:\xampp\htdocs\ecommerce\wp-content\plugins\sitepress-multilingual-cms\inc\t in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\url.php on line 42
+

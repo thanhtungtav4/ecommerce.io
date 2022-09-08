@@ -685,6 +685,48 @@ if (function_exists('acf_add_local_field_group')):
         'description' => '',
         'show_in_rest' => 0,
     ));
-    
+    acf_add_local_field_group(array(
+        'key' => 'group_63199ab99db9b',
+        'title' => 'Color Product attributes',
+        'fields' => array(
+            array(
+                'key' => 'field_63199ab9c1c0d',
+                'label' => 'Màu sắc / Color Product attributes',
+                'name' => 'product_attributes_color',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 'Màu sắc: Brown, Gray, Green',
+                'placeholder' => 'Nhập màu sắc của sản phẩm',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'product',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ));
 endif;
 

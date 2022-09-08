@@ -15,7 +15,9 @@
         <div class="m-product__content-bottom">
         <p>
             <span>
-            <?php $product->get_attribute( 'mau-sac' ) ?  print 'Màu sắc: '. $product->get_attribute( 'mau-sac' ) : ""; ?>
+            <?php
+               echo get_field('product_attributes_color', get_the_ID() )
+            ?>
             <span>
             <br>
             <span class="time">
