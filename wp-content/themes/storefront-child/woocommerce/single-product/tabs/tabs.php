@@ -48,7 +48,7 @@ if ( ! empty( $product_tabs ) ) : ?>
 			<?php endforeach; ?>
 			<div class="c-tab_item" id="parameter" style="display: none;">
 					<?php
-						if(!empty(the_field('thong-so-san-pham'))){
+						if(get_field('thong-so-san-pham')){
 							the_field('thong-so-san-pham');
 						}
 						else{

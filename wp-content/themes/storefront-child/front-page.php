@@ -18,13 +18,15 @@ get_header(); ?>
           <div class="c-carousel_inner">
             <div class="c-carousel_item"><a href="#">
                 <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carousel.avif" type="image/avif">
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carousel.webp" type="image/webp"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carousel.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carousel.jpg" alt="Logo" width="1512" height="600">
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/launching-web.avif" type="image/avif">
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/launching-web.webp" type="image/webp">
+                  <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/launching-web.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/launching-web.jpg" alt="launching-web" width="1512" height="600">
                 </picture></a></div>
             <div class="c-carousel_item"><a href="#">
                 <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carousel.avif" type="image/avif">
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carousel.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carousel.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carousel.jpg" alt="Logo" loading="lazy" width="1512" height="600">
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.avif" type="image/avif">
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.webp" type="image/webp">
+                  <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.jpg" alt="lavier collection homepage" width="1512" height="600">
                 </picture></a></div>
           </div>
         </div>
@@ -52,9 +54,9 @@ get_header(); ?>
               <div class="m-product__gallery">
                  <a href="#">
                   <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="Logo" loading="lazy" width="666" height="912">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.avif" type="image/avif">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.webp" type="image/webp">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.jpg" alt="BEST SELLER - BÁN CHẠY NHẤT" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
@@ -121,8 +123,9 @@ get_header(); ?>
               <div class="m-product__gallery">
                  <a href="#">
                   <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="Logo" loading="lazy" width="666" height="912">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.avif" type="image/avif">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.webp" type="image/webp">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.jpg" alt="TỰ NHIÊN - ĐI HỌC ĐI LÀM" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
@@ -190,9 +193,9 @@ get_header(); ?>
               <div class="m-product__gallery">
                  <a href="#">
                   <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-sang-mau.avif" type="image/avif">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-sang-mau.webp" type="image/webp">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-sang-mau.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-sang-mau.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
@@ -260,9 +263,9 @@ get_header(); ?>
               <div class="m-product__gallery">
                  <a href="#">
                   <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-nam-homepage.avif" type="image/avif">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-nam-homepage.webp" type="image/webp">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-nam-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-nam-homepage.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
@@ -330,9 +333,9 @@ get_header(); ?>
               <div class="m-product__gallery">
                  <a href="#">
                   <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.avif" type="image/avif">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.webp" type="image/webp">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
