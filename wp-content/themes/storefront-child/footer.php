@@ -284,7 +284,7 @@
           });
       </script>
     <?php endif; ?>
-    <?php if(is_checkout() || is_front_page()) :  ?>
+    <?php if(is_checkout() || is_front_page() || is_page('tuyen-dung') || is_page('job')) :  ?>
       <script>
         $(document).ready(function(){
           $('.slick-sure').not('.slick-initialized').slick({
