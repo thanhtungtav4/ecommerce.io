@@ -22,34 +22,8 @@
             <br>
             <span class="time">
             <?php
-                if( has_term( '8h', 'product_cat', $product->get_id() ) ) {
-                echo('8h/ngày');
-                }
-                if( has_term( '10h', 'product_cat', $product->get_id() ) ) {
-                echo('10h/ngày');
-                }
-                if( has_term( '12h', 'product_cat', $product->get_id() ) ) {
-                echo('12h/ngày');
-                }
-                if( has_term( '14h', 'product_cat', $product->get_id() ) ) {
-                echo('14h/ngày');
-                }
-                if( has_term( '24h', 'product_cat', $product->get_id() ) ) {
-                echo('24h/ngày');
-                }
+               echo get_field('time_deo', get_the_ID() )
             ?>
-            <span>
-                <?php
-                if( has_term( 'lens-3-thang', 'product_cat', $product->get_id() ) ) {
-                echo('| 3 tháng');
-                }
-                ?>
-                <?php
-                if( has_term( 'lens-1-ngay', 'product_cat', $product->get_id() ) ) {
-                echo('| Lens 1 ngày');
-                }
-                ?>
-            </span>
             </span>
         </p>
         <div class="btn_area">

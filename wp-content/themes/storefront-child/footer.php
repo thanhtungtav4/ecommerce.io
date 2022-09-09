@@ -14,7 +14,8 @@
           <dl>
             <dd class="c-footer_logo"><a href="#">
                 <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo-footer.webp" type="image/webp"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo-footer.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo-footer.png" alt="Logo" loading="lazy" width="161" height="124">
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.webp" type="image/webp">
+                  <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" alt="caras" loading="lazy" width="161" height="46">
                 </picture></a>
               <dd class="c-footer_copy">© Copyright 2022 CARAS LENS. All rights reserved.</dd>
             </dd>

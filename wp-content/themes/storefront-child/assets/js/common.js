@@ -12,6 +12,7 @@ if ('loading' in HTMLImageElement.prototype) {
 };
 window.onscroll = function(e) {
   if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+      console.log(121);
   }
 };
 function toggleMenu(){
@@ -37,8 +38,8 @@ function toggleMenu(){
     '  />'+
     '</svg>'+
     '              </li>';
-    let html_appent= '<li class="c-menu c-menu__logo"><a href="#"><picture>'+
-    '                  <source srcset="assets/images/logo.webp" type="image/webp"><img src="assets/images/logo.png" data-src="assets/images/logo.png" alt="logo">'+
+    let html_appent= '<li class="c-menu c-menu__logo"><a href="/"><picture>'+
+    '                  <source srcset="/wp-content/themes/storefront-child/assets/images/caras_logo.webp" type="image/webp"><img src="/wp-content/themes/storefront-child/assets/images/caras_logo.png" data-src="/wp-content/themes/storefront-child/assets/images/caras_logo.png" alt="logo caras">'+
     '                </picture></a>'+
     '              </li>';
     let html_appentLang = '<li class="c-menu c-menu__logo"><a href="#">Tiếng Việt</a>'+
@@ -54,6 +55,89 @@ function toggleMenu(){
     }
 
 }
+function toggleChat(){
+  let chat = document.getElementsByClassName("m-chat_inner");
+  chat[0].classList.toggle("js-active");
+}
+///
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  //... and run a function that will display the correct step indicator:
+  //fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    //document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+// function fixStepIndicator(n) {
+//   // This function removes the "active" class of all steps...
+//   var i, x = document.getElementsByClassName("step");
+//   for (i = 0; i < x.length; i++) {
+//     x[i].className = x[i].className.replace(" active", "");
+//   }
+//   //... and adds the "active" class on the current step:
+//   x[n].className += " active";
+// }
+
+$('#regForm').submit(function() {
+  console.log($(this).serialize());
+  return false;
+});
+///
 jQuery.event.special.touchstart = {
   setup: function( _, ns, handle ) {
       this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
@@ -75,9 +159,9 @@ jQuery.event.special.mousewheel = {
   }
 };
 
-let positionBf = jQuery(window).scrollTop();
-jQuery(window).scroll(function(){
-  let positionAf = jQuery(this).scrollTop();
+let positionBf = $(window).scrollTop();
+$(window).scroll(function(){
+  let positionAf = $(this).scrollTop();
   if( positionAf <= 150){
       document.getElementsByClassName("c-header")[0].classList.remove("js_scroll");
   }
@@ -88,23 +172,3 @@ jQuery(window).scroll(function(){
   }
   positionBf = positionAf;
 });
-
-// only product detail
-function toggleVariations(){
-  const is_true = document.getElementsByClassName("js_hide");
-  const is_toggle = document.getElementsByClassName("fold");
-  if(is_true.length >= 1){
-    document.getElementsByClassName('js_down')[0].classList.add('d-none');
-    document.getElementsByClassName('js_up')[0].classList.remove('d-none');
-    for (const item of is_toggle){
-        item.classList.remove("js_hide");
-    }
-  }
-  else{
-    document.getElementsByClassName('js_up')[0].classList.add('d-none');
-    document.getElementsByClassName('js_down')[0].classList.remove('d-none');
-    for (const item of is_toggle){
-      item.classList.add("js_hide");
-    }
-  }
-}

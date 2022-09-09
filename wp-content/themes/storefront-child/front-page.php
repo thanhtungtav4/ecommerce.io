@@ -403,9 +403,9 @@ get_header(); ?>
               <div class="m-product__gallery">
                  <a href="#">
                   <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.avif" type="image/avif">
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.avif" type="image/avif">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.webp" type="image/webp">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.jpg" alt="phu kien lens" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
@@ -456,22 +456,24 @@ get_header(); ?>
             <div class="c-experience__inner">
               <div class="image">
                 <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/experience.avif" type="image/avif">
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/experience.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/experience.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/experience.png" alt="NHỮNG CON SỐ BIẾT NÓI VÀ TRẢI NGHIỆM MUA SẮM" loading="lazy" width="552" height="462">
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dong-lens-carase.avif" type="image/avif">
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dong-lens-carase.webp" type="image/webp">
+                  <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dong-lens-carase.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dong-lens-carase.png" alt="NHỮNG CON SỐ BIẾT NÓI VÀ TRẢI NGHIỆM MUA SẮM" loading="lazy" width="552" height="462">
                 </picture>
               </div>
               <ul>
                 <li>
-                  <h5>Hơn 30.000 khách hàng mỗi năm</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <h5>Hơn 80.000 khách hàng mỗi năm</h5>
+                  <p>CARAS.E - Thương hiệu Kính Áp Tròng được tin dùng bởi chất lượng theo tiêu chuẩn Mỹ, tích hợp công nghệ hiện đại, tiên tiến nhất, mang đến đôi mắt sáng khoẻ cho hơn 80.000 khách hàng.</p>
                 </li>
                 <li>
-                  <h5>7 năm kinh nghiệm</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <h5>8 Năm kinh nghiệm</h5>
+                  <p>CARAS.E với hơn 8 năm hoạt động trên thị trường, tự hào mang đến các giải pháp giúp <br>
+                  khách hàng đẹp hơn, tự tin hơn, và có trải nghiệm mua sắm trên mức mong đợi - Thương hiệu kính áp tròng hàng đầu trong lòng người tiêu dùng.</p>
                 </li>
                 <li>
                   <h5>Hơn 50 mẫu mã lựa chọn</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p>CARAS.E - Nhãn hàng đầu tiên sở hữu kính áp tròng cỡ nhỏ an toàn và chuẩn với mắt của người châu Á. Chúng tôi cung cấp hơn 50 mẫu sản phẩm kính áp tròng đa dạng cho khách hàng thoải mái lựa chọn.</p>
                 </li>
               </ul>
             </div>

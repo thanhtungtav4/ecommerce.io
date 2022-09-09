@@ -38,8 +38,8 @@
           <div class="l-container c-header_inner">
             <div class="c-header_logo"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>">
                 <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.webp" type="image/webp">
-									<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.png" alt="logo">
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo.webp" type="image/webp">
+									<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo.png" alt="caras logo">
                 </picture>
 							</a>
 						</div>
