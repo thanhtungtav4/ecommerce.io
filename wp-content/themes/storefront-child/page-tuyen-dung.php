@@ -11,22 +11,22 @@
  */
 // Get all term ID's in a given taxonomy
 $taxonomy_terms_location = get_terms( 'location', array(
-    'hide_empty' => 0,
-) );
-$taxonomy_terms_linh_vuc = get_terms( 'linh_vuc', array(
   'hide_empty' => 0,
 ) );
+$taxonomy_terms_linh_vuc = get_terms( 'linh_vuc', array(
+'hide_empty' => 0,
+) );
 $args = array(
-  'post_type' => 'tuyen_dung', // we will sort posts by date
-  'post_status' => 'publish',
-  'orderby'     => 'title',
-  'order'       => 'ASC',
-  'posts_per_page' => '6',
-  'suppress_filters' => 1,
+'post_type' => 'tuyen_dung', // we will sort posts by date
+'post_status' => 'publish',
+'orderby'     => 'title',
+'order'       => 'ASC',
+'posts_per_page' => '6',
+'suppress_filters' => 1,
 );
 get_header(); ?>
       <main class="l-main">
-        <div class="m-search job">
+      <div class="m-search job">
           <div class="l-container">
             <p class="ttl">CƠ HỘI VIỆC LÀM CÙNG <br class="only-pc">  CARAS LENS</p>
             <div class="m-search_inner">
@@ -150,14 +150,12 @@ get_header(); ?>
                 $query = new WP_Query( $args );
                 if( $query->have_posts() ) :
                   while( $query->have_posts() ): $query->the_post();
-                    //var_dump($query->post);
-                    include( get_stylesheet_directory() . '/module/item_job.php' );
+                  include( get_stylesheet_directory() . '/module/item_job.php' );
                   endwhile;
                   wp_reset_postdata();
                 else :
                   echo 'No Job found';
                 endif;
-                die();
               ?>
             </ul>
           </div>
