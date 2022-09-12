@@ -1,3 +1,6 @@
+/*------------------------------------------------------------
+	Reset
+------------------------------------------------------------*/
 html,
 body,
 div,
@@ -3522,7 +3525,7 @@ body.js-active {
 }
 .m-chat_inner {
   width: 360px;
-  height: 450px;
+  height: 550px;
   max-width: 100%;
   visibility: hidden;
   transform: translateX(400%);
@@ -3562,10 +3565,17 @@ body.js-active {
 }
 .m-chat_inner .tab {
   display: none;
+  text-align: center;
 }
 .m-chat_inner .tab_ttl {
   font-size: 2rem;
   font-weight: 600;
+}
+.m-chat_inner .tab img {
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
 }
 .m-chat_inner .step.active {
   opacity: 1;
@@ -3603,6 +3613,8 @@ body.js-active {
 .radiobtn {
   position: relative;
   display: block;
+  max-width: 320px;
+  margin: 0 auto;
 }
 .radiobtn label {
   display: block;

@@ -124,6 +124,7 @@
           </dl>
         </div>
       </footer>
+      <?php require( get_stylesheet_directory() . '/module/chat_bot.php' ); ?>
     </div>
     <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
@@ -408,6 +409,42 @@
       });
       </script>
     <?php endif; ?>
+    <?php if(is_single()) ?>
+    <script>
+      $(document).ready(function(){
+        $('.m-new__slick').not('.slick-initialized').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: false,
+            arrows: false,
+            lazyLoad: 'progressive',
+            responsive: [
+                {
+                breakpoint: 992,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+            ]
+            });
+            $('.m-item__prev').click(function(e){
+              $('.m-new__slick').slick('slickPrev');
+            } );
+            $('.m-item__next').click(function(e){
+              $('.m-new__slick').slick('slickNext');
+        });
+      });
+    </script>
+    <?php ?>
 		<?php wp_footer(); ?>
   </body>
 </html>
