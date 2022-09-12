@@ -162,12 +162,12 @@
       <script>
       $(document).ready(function(){
         $('.c-carousel_inner ').not('.slick-initialized').slick({
-        slidesToShow: 1,
-        infinite: true,
-        dots: true,
-        speed: 300,
-        arrows: false,
-        lazyLoad: 'ondemand',
+          slidesToShow: 1,
+          infinite: true,
+          dots: true,
+          speed: 300,
+          arrows: false,
+          lazyLoad: 'ondemand',
         });
         $('.m-product__slick').not('.slick-initialized').slick({
           infinite: true,
@@ -178,13 +178,54 @@
           arrows: true,
           lazyLoad: 'ondemand',
         });
-        $('.m-product__prev').click(function(e){
-          $('.m-product__slick').slick('slickPrev');
+        $('.m-product__prev001').click(function(e){
+          $('.m-product__slick001').slick('slickPrev');
         } );
 
-        $('.m-product__next').click(function(e){
-          $('.m-product__slick').slick('slickNext');
+        $('.m-product__next001').click(function(e){
+          $('.m-product__slick001').slick('slickNext');
         } );
+        // in js for 01
+        $('.m-product__prev002').click(function(e){
+          $('.m-product__slick002').slick('slickPrev');
+        } );
+
+        $('.m-product__next002').click(function(e){
+          $('.m-product__slick002').slick('slickNext');
+        } );
+        // in js for 02
+        $('.m-product__prev003').click(function(e){
+          $('.m-product__slick003').slick('slickPrev');
+        } );
+
+        $('.m-product__next003').click(function(e){
+          $('.m-product__slick003').slick('slickNext');
+        } );
+        // in js for 03
+        $('.m-product__prev004').click(function(e){
+          $('.m-product__slick004').slick('slickPrev');
+        } );
+
+        $('.m-product__next004').click(function(e){
+          $('.m-product__slick004').slick('slickNext');
+        } );
+        // in js for 04
+        $('.m-product__prev005').click(function(e){
+          $('.m-product__slick005').slick('slickPrev');
+        } );
+
+        $('.m-product__next005').click(function(e){
+          $('.m-product__slick005').slick('slickNext');
+        } );
+        // in js for 05
+        $('.m-product__prev006').click(function(e){
+          $('.m-product__slick006').slick('slickPrev');
+        } );
+
+        $('.m-product__next006').click(function(e){
+          $('.m-product__slick006').slick('slickNext');
+        } );
+        // in js for 06
         $('.m-product__slick02').not('.slick-initialized').slick({
           infinite: true,
           slidesToShow: 1,

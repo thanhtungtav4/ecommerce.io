@@ -36,13 +36,13 @@ get_header(); ?>
             <div class="m-product_top">
               <h4><?php _e('BEST SELLER', 'storefront') ?></h4>
               <div class="m-product__nav">
-                <button class="m-product__prev">
+                <button class="m-product__prev m-product__prev001">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M28.835 14.8699L27.065 13.0999L17.165 22.9999L27.065 32.8999L28.835 31.1299L20.705 22.9999L28.835 14.8699H28.835Z"></path>
                   </svg>
                 </button>
-                <button class="m-product__next">
+                <button class="m-product__next m-product__next001">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M18.165 31.1301L19.935 32.9001L29.835 23.0001L19.935 13.1001L18.165 14.8701L26.295 23.0001L18.165 31.1301V31.1301Z" fill="#2B2929"></path>
@@ -60,7 +60,7 @@ get_header(); ?>
                   </picture>
                 </a>
               </div>
-              <ul class="m-product__slick">
+              <ul class="m-product__slick m-product__slick001">
                 <?php for ($i=0; $i < 2; $i++) { ?>
                   <li>
                     <ul>
@@ -105,13 +105,13 @@ get_header(); ?>
             <div class="m-product_top">
               <h4><?php _e('SCHOOL-TO-WORK CONTACT LENSES', 'storefront') ?></h4>
               <div class="m-product__nav">
-                <button class="m-product__prev">
+                <button class="m-product__prev m-product__prev002">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M28.835 14.8699L27.065 13.0999L17.165 22.9999L27.065 32.8999L28.835 31.1299L20.705 22.9999L28.835 14.8699H28.835Z"></path>
                   </svg>
                 </button>
-                <button class="m-product__next">
+                <button class="m-product__next m-product__next002">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M18.165 31.1301L19.935 32.9001L29.835 23.0001L19.935 13.1001L18.165 14.8701L26.295 23.0001L18.165 31.1301V31.1301Z" fill="#2B2929"></path>
@@ -129,7 +129,7 @@ get_header(); ?>
                   </picture>
                 </a>
               </div>
-              <ul class="m-product__slick">
+              <ul class="m-product__slick m-product__slick002">
                 <?php for ($i=0; $i < 2; $i++) { ?>
                   <li>
                     <ul>
@@ -175,13 +175,13 @@ get_header(); ?>
             <div class="m-product_top">
               <h4><?php _e('LIGHT COLOR - HANG OUT, TAKE A PHOTO', 'storefront') ?></h4>
               <div class="m-product__nav">
-                <button class="m-product__prev">
+                <button class="m-product__prev m-product__prev003">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M28.835 14.8699L27.065 13.0999L17.165 22.9999L27.065 32.8999L28.835 31.1299L20.705 22.9999L28.835 14.8699H28.835Z"></path>
                   </svg>
                 </button>
-                <button class="m-product__next">
+                <button class="m-product__next m-product__next003">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M18.165 31.1301L19.935 32.9001L29.835 23.0001L19.935 13.1001L18.165 14.8701L26.295 23.0001L18.165 31.1301V31.1301Z" fill="#2B2929"></path>
@@ -199,7 +199,7 @@ get_header(); ?>
                   </picture>
                 </a>
               </div>
-              <ul class="m-product__slick">
+              <ul class="m-product__slick m-product__slick003">
                 <?php for ($i=0; $i < 2; $i++) { ?>
                   <li>
                     <ul>
@@ -244,14 +244,14 @@ get_header(); ?>
           <div class="m-product">
             <div class="m-product_top">
               <h4><?php _e('FOR MEN', 'storefront') ?></h4>
-              <div class="m-product__nav">
-                <button class="m-product__prev">
+              <div class="m-product__nav m-product__nav004">
+                <button class="m-product__prev m-product__prev004">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M28.835 14.8699L27.065 13.0999L17.165 22.9999L27.065 32.8999L28.835 31.1299L20.705 22.9999L28.835 14.8699H28.835Z"></path>
                   </svg>
                 </button>
-                <button class="m-product__next">
+                <button class="m-product__next m-product__next004">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M18.165 31.1301L19.935 32.9001L29.835 23.0001L19.935 13.1001L18.165 14.8701L26.295 23.0001L18.165 31.1301V31.1301Z" fill="#2B2929"></path>
@@ -269,7 +269,7 @@ get_header(); ?>
                   </picture>
                 </a>
               </div>
-              <ul class="m-product__slick">
+              <ul class="m-product__slick m-product__slick004">
                 <?php for ($i=0; $i < 2; $i++) { ?>
                   <li>
                     <ul>
@@ -315,13 +315,13 @@ get_header(); ?>
             <div class="m-product_top">
               <h4><?php _e('SPECIALIZED MEDICAL CONTACT LENSES', 'storefront') ?></h4>
               <div class="m-product__nav">
-                <button class="m-product__prev">
+                <button class="m-product__prev m-product__prev005">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M28.835 14.8699L27.065 13.0999L17.165 22.9999L27.065 32.8999L28.835 31.1299L20.705 22.9999L28.835 14.8699H28.835Z"></path>
                   </svg>
                 </button>
-                <button class="m-product__next">
+                <button class="m-product__next m-product__next005">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M18.165 31.1301L19.935 32.9001L29.835 23.0001L19.935 13.1001L18.165 14.8701L26.295 23.0001L18.165 31.1301V31.1301Z" fill="#2B2929"></path>
@@ -339,13 +339,13 @@ get_header(); ?>
                   </picture>
                 </a>
               </div>
-              <ul class="m-product__slick">
+              <ul class="m-product__slick m-product__slick005">
                 <?php for ($i=0; $i < 2; $i++) { ?>
                   <li>
                     <ul>
                     <?php
                       $current_lang = $sitepress->get_current_language();
-                      $cate_id = apply_filters( 'wpml_object_id', 68 , 'product_cat', TRUE  );
+                      $cate_id = apply_filters( 'wpml_object_id', 67 , 'product_cat', TRUE  );
                       $count = 0;
                       // change category id here
                       $args = array(
@@ -385,13 +385,13 @@ get_header(); ?>
             <div class="m-product_top">
               <h4><?php _e('CONTACT LENS ACCESSORIES', 'storefront') ?></h4>
               <div class="m-product__nav">
-                <button class="m-product__prev">
+                <button class="m-product__prev m-product__prev006">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M28.835 14.8699L27.065 13.0999L17.165 22.9999L27.065 32.8999L28.835 31.1299L20.705 22.9999L28.835 14.8699H28.835Z"></path>
                   </svg>
                 </button>
-                <button class="m-product__next">
+                <button class="m-product__next m-product__next006">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="23" cy="23" r="22" stroke-width="2"></circle>
                     <path d="M18.165 31.1301L19.935 32.9001L29.835 23.0001L19.935 13.1001L18.165 14.8701L26.295 23.0001L18.165 31.1301V31.1301Z" fill="#2B2929"></path>
@@ -409,7 +409,7 @@ get_header(); ?>
                   </picture>
                 </a>
               </div>
-              <ul class="m-product__slick">
+              <ul class="m-product__slick m-product__slick006">
                 <?php for ($i=0; $i < 2; $i++) { ?>
                   <li>
                     <ul>
