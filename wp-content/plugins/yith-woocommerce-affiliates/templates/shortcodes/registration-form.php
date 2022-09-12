@@ -30,9 +30,18 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 
 	<?php if ( ! is_user_logged_in() ) : ?>
 
-		<div class="forms-container <?php echo 'yes' === $show_login_form ? 'u-columns col2-set' : ''; ?>">
+		<?php
+		/**
+		 * APPLY_FILTERS: yith_wcaf_show_login_section
+		 *
+		 * Filters whether to show the section to login as an affiliate.
+		 *
+		 * @param bool $show_login_section Whether to show login section or not.
+		 */
+		?>
+		<div class="forms-container <?php echo apply_filters( 'yith_wcaf_show_login_section', 'yes' === $show_login_form ) ? 'u-columns col2-set' : ''; ?>">
 
-			<?php if ( 'yes' === $show_login_form ) : ?>
+			<?php if ( apply_filters( 'yith_wcaf_show_login_section', 'yes' === $show_login_form ) ) : ?>
 				<div class="u-column1 col-1">
 
 					<?php if ( ! empty( $login_title ) ) : ?>
@@ -86,7 +95,7 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 				</div>
 			<?php endif; ?>
 
-			<?php if ( 'yes' === $show_login_form ) : ?>
+			<?php if ( apply_filters( 'yith_wcaf_show_login_section', 'yes' === $show_login_form ) ) : ?>
 				<div class="u-column2 col-2">
 			<?php endif; ?>
 
@@ -143,7 +152,7 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 
 			<?php endif; ?>
 
-			<?php if ( 'yes' === $show_login_form ) : ?>
+			<?php if ( apply_filters( 'yith_wcaf_show_login_section', 'yes' === $show_login_form ) ) : ?>
 				</div>
 			<?php endif; ?>
 

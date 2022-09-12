@@ -1543,6 +1543,9 @@ body.js-active {
 .home .m-product__slick .slick-list .slick-track li:nth-of-type(odd) ul li:nth-of-type(4) {
   display: none;
 }
+.home .m-product__slick .slick-list .slick-track li:nth-of-type(odd) ul.item_show li {
+  display: block;
+}
 .home .m-product__slick .slick-list .slick-track li:nth-of-type(even) ul li:nth-of-type(5) {
   display: none;
 }
@@ -1554,6 +1557,9 @@ body.js-active {
 }
 .home .m-product__slick .slick-list .slick-track li:nth-of-type(even) ul li:nth-of-type(8) {
   display: none;
+}
+.home .m-product__slick .slick-list .slick-track li:nth-of-type(even) ul.item_show li {
+  display: block;
 }
 
 .m-item {

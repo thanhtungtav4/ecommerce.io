@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-08-04T12:05:37+00:00\n"
+"POT-Creation-Date: 2022-09-08T11:08:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "poedit: 1\n"
@@ -2355,7 +2355,7 @@ msgid "Title to show above login form"
 msgstr ""
 
 #: includes/shortcodes/class-yith-wcaf-registration-form-shortcode.php:69
-#: templates/shortcodes/registration-form.php:68
+#: templates/shortcodes/registration-form.php:77
 msgctxt "[FRONTEND] Affiliate login form"
 msgid "Login"
 msgstr ""
@@ -2366,7 +2366,7 @@ msgid "Title to show above register form"
 msgstr ""
 
 #: includes/shortcodes/class-yith-wcaf-registration-form-shortcode.php:76
-#: templates/shortcodes/registration-form.php:136
+#: templates/shortcodes/registration-form.php:145
 msgctxt "[FRONTEND] Affiliate registration form"
 msgid "Register"
 msgstr ""
@@ -2896,22 +2896,22 @@ msgctxt "[FRONTEND] Dashboard table"
 msgid "payments"
 msgstr ""
 
-#: templates/shortcodes/dashboard-settings.php:61
+#: templates/shortcodes/dashboard-settings.php:59
 msgctxt "[FRONTEND] Dashboard Settings"
 msgid "Payment info"
 msgstr ""
 
-#: templates/shortcodes/dashboard-settings.php:73
+#: templates/shortcodes/dashboard-settings.php:71
 msgctxt "[FRONTEND] Dashboard Settings"
 msgid "Payment email"
 msgstr ""
 
-#: templates/shortcodes/dashboard-settings.php:77
+#: templates/shortcodes/dashboard-settings.php:75
 msgctxt "[FRONTEND] Dashboard Settings"
 msgid "(Email address where you want to receive PayPal payments for commissions)"
 msgstr ""
 
-#: templates/shortcodes/dashboard-settings.php:122
+#: templates/shortcodes/dashboard-settings.php:120
 msgctxt "[FRONTEND] Dashboard Settings"
 msgid "Save info"
 msgstr ""
@@ -3075,63 +3075,63 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:51
+#: templates/shortcodes/registration-form.php:60
 msgctxt "[FRONTEND] Affiliate login form"
 msgid "Username or email address"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:58
+#: templates/shortcodes/registration-form.php:67
 msgctxt "[FRONTEND] Affiliate login form"
 msgid "Password"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:71
+#: templates/shortcodes/registration-form.php:80
 msgctxt "[FRONTEND] Affiliate login form"
 msgid "Remember me"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:77
+#: templates/shortcodes/registration-form.php:86
 msgctxt "[FRONTEND] Affiliate login form"
 msgid "Lost your password?"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:164
+#: templates/shortcodes/registration-form.php:173
 msgctxt "[FRONTEND] Become an affiliate form"
 msgid "You're just one step away from becoming an affiliate!"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:188
+#: templates/shortcodes/registration-form.php:197
 msgctxt "[FRONTEND] Become an affiliate form"
 msgid "Become an affiliate"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:199
-#: templates/shortcodes/registration-form.php:223
+#: templates/shortcodes/registration-form.php:208
+#: templates/shortcodes/registration-form.php:232
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid "Thank you!"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:210
+#: templates/shortcodes/registration-form.php:219
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid "You have joined our affiliate program!<br/>In your dashboard, you will find your referral URL and detailed information to check commissions, visits, earnings, and payments."
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:215
+#: templates/shortcodes/registration-form.php:224
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid "Go to your dashboard"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:234
+#: templates/shortcodes/registration-form.php:243
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid "Your request has been registered and it is awaiting the administrators' approval!<br/>You will get an email soon."
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:243
+#: templates/shortcodes/registration-form.php:252
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid "We're sorry!"
 msgstr ""
 
-#: templates/shortcodes/registration-form.php:250
+#: templates/shortcodes/registration-form.php:259
 msgctxt "[FRONTEND] Affiliate dashboard message"
 msgid "We regretfully inform you that we can't accept your request as it doesn't fulfill our requirements."
 msgstr ""

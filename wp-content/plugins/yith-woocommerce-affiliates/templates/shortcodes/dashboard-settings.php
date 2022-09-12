@@ -41,10 +41,8 @@ do_action( 'yith_wcaf_before_dashboard_section', 'settings', $atts );
 		 * DO_ACTION: yith_wcaf_settings_form_start
 		 *
 		 * Allows to render some content before the settings section in the Affiliate Dashboard.
-		 *
-		 * @param array $atts Array with section attributes.
 		 */
-		do_action( 'yith_wcaf_settings_form_start', $atts );
+		do_action( 'yith_wcaf_settings_form_start' );
 		?>
 
 		<?php
