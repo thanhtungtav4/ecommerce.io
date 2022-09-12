@@ -216,42 +216,7 @@ get_header(); ?>
          </video>
        </div>
      </section>
-     <div class="c-shopservice">
-       <div class="c-shopservice__inner">
-         <div class="c-shopservice__item">
-           <h5 class="ttl">PHƯƠNG CHÂM BÁN HÀNG</h5>
-           <picture>
-             <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.avif" type="image/avif">
-             <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.webp" type="image/webp">
-             <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" alt="service01" loading="lazy" width="323" height="520">
-           </picture>
-         </div>
-         <div class="c-shopservice__item">
-           <h5 class="ttl">PHƯƠNG CHÂM BÁN HÀNG</h5>
-           <picture>
-             <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.avif" type="image/avif">
-             <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.webp" type="image/webp">
-             <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" alt="service01" loading="lazy" width="323" height="520">
-           </picture>
-         </div>
-         <div class="c-shopservice__item">
-           <h5 class="ttl">PHƯƠNG CHÂM BÁN HÀNG</h5>
-           <picture>
-             <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.avif" type="image/avif">
-             <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.webp" type="image/webp">
-             <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" alt="service01" loading="lazy" width="323" height="520">
-           </picture>
-         </div>
-         <div class="c-shopservice__item">
-           <h5 class="ttl">PHƯƠNG CHÂM BÁN HÀNG</h5>
-           <picture>
-             <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.avif" type="image/avif">
-             <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.webp" type="image/webp">
-             <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" alt="service01" loading="lazy" width="323" height="520">
-           </picture>
-         </div>
-       </div>
-     </div>
+     <?php require( get_stylesheet_directory() . '/module/shopservice.php' ); ?>
      <section>
        <div class="caras-intro__service">
          <div class="caras-intro__service__item">

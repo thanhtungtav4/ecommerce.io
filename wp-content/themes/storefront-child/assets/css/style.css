@@ -1630,7 +1630,7 @@ body.js-active {
 }
 
 .c-shopservice {
-  margin: 6rem auto;
+  margin: 3rem auto;
 }
 @media screen and (max-width: 767px) {
   .c-shopservice {
@@ -1646,6 +1646,7 @@ body.js-active {
 .c-shopservice__item {
   width: calc(25% - 20px);
   margin: 10px;
+  text-align: center;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -1656,25 +1657,47 @@ body.js-active {
     margin: 5px;
   }
 }
+@media screen and (min-width: 768px) {
+  .c-shopservice__item:not(:last-child) {
+    border-right: 1.5px solid rgba(40, 40, 40, 0.443);
+  }
+}
 .c-shopservice__item .image {
   width: 323px;
   height: 520px;
 }
+.c-shopservice__item picture {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .c-shopservice__item picture {
+    height: 120px;
+  }
+}
+.c-shopservice__item img {
+  width: 120px;
+  height: auto;
+}
+@media screen and (max-width: 767px) {
+  .c-shopservice__item img {
+    width: 100px;
+  }
+}
 .c-shopservice__item .ttl {
-  font-size: 3.2rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 500;
   margin-bottom: 1rem;
+  text-align: center;
 }
 @media screen and (max-width: 767px) {
   .c-shopservice__item .ttl {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
-}
-.c-shopservice__item:nth-child(even) .image {
-  order: 1;
-}
-.c-shopservice__item:nth-child(even) .ttl {
-  order: 2;
 }
 
 .c-breadcrumb {
@@ -3413,7 +3436,7 @@ body.js-active {
 }
 
 .m-job {
-  margin: 6rem auto;
+  margin: 3rem auto;
 }
 .m-job h2.ttl {
   text-align: center;
@@ -3643,4 +3666,3 @@ body.js-active {
     background-color: #262626;
   }
 }
-

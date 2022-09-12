@@ -478,38 +478,7 @@ get_header(); ?>
               </ul>
             </div>
           </div>
-          <div class="c-shopservice">
-            <div class="c-shopservice__inner">
-              <div class="c-shopservice__item">
-                <h5 class="ttl">PHƯƠNG CHÂM BÁN HÀNG</h5>
-                <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.avif" type="image/avif">
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" alt="service01" loading="lazy" width="323" height="520">
-                </picture>
-              </div>
-              <div class="c-shopservice__item">
-                <h5 class="ttl">SẢN PHẨM VÀ DỊCH VỤ</h5>
-                <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.avif" type="image/avif">
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" alt="service01" loading="lazy" width="323" height="520">
-                </picture>
-              </div>
-              <div class="c-shopservice__item">
-                <h5 class="ttl">CHĂM SÓC KHÁCH HÀNG</h5>
-                <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.avif" type="image/avif">
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" alt="service01" loading="lazy" width="323" height="520">
-                </picture>
-              </div>
-              <div class="c-shopservice__item">
-                <h5 class="ttl">GIAO HÀNG, ĐỔI TRẢ VÀ BẢO HÀNH</h5>
-                <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.avif" type="image/avif">
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/service01.jpg" alt="service01" loading="lazy" width="323" height="520">
-                </picture>
-              </div>
-            </div>
-          </div>
+          <?php require( get_stylesheet_directory() . '/module/shopservice.php' ); ?>
           <div class="m-product">
             <div class="m-product_top">
               <h4>TIN TỨC</h4>
@@ -550,15 +519,15 @@ get_header(); ?>
                 $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
               ?>
                 <?php require( get_stylesheet_directory() . '/module/new_item_loop.php' ); ?>
-              <?php 
+              <?php
                 endwhile;
                 endif;
                 // Reset Post Data
                 wp_reset_postdata();
-              ?> 
+              ?>
             </ul>
           </div>
-         
+
         </div>
       </main>
 <?php
