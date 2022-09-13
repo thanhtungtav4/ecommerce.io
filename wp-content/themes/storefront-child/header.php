@@ -98,44 +98,45 @@
                         <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lens-for-men/' : print get_site_url().'/lens-nam/');   ?>"><?php _e('Lens Women', 'storefront') ?></a></dd>
                         <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-women/' : print get_site_url().'/lens-nu/');   ?>"><?php _e('Lens Men', 'storefront') ?></a></dd>
                         <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-casual-occasions/' : print get_site_url().'/lens-deo-di-hoc-va-di-lam/'); ?>"><?php _e('SCHOOL-TO-WORK CONTACT LENSES', 'storefront') ?></a></dd>
-                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-special-occasion/' : print get_site_url().'/lens-deo-chup-anh-va-du-tiec/');   ?>"><?php _e('LIGHT COLOR - HANG OUT, TAKE A PHOTO', 'storefront') ?></a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-special-occasion/' : print get_site_url().'/lens-deo-chup-anh-va-du-tiec/'); ?>"><?php _e('LIGHT COLOR - HANG OUT, TAKE A PHOTO', 'storefront') ?></a></dd>
                       </dl>
                       <dl>
                         <dt><?php _e('Eye Refraction', 'storefront') ?></dt>
-                        <dd><a href="#">Lens cận</a></dd>
-                        <dd><a href="#">Lens loạn</a></dd>
-                        <dd><a href="#">Lens cận loạn</a></dd>
-                        <dd><a href="#">Lens viễn</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-can-thi/'); ?>">Lens cận</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-loan-thi/'); ?>">Lens loạn</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-can-loan/'); ?>">Lens cận loạn</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-vien-thi/'); ?>">Lens viễn</a></dd>
                       </dl>
                       <dl>
                         <dt><?php _e('Glass Type', 'storefront') ?></dt>
-                        <dd><a href="#">3 tháng</a></dd>
-                        <dd><a href="#">1 ngày</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-3-thang/'); ?>">3 tháng</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-1-ngay/'); ?>">1 ngày</a></dd>
                         <dd></dd>
                         <dt>Size</dt>
-                        <dd><a href="#">Tự nhiên - 13.8mm</a></dd>
-                        <dd><a href="#">Giãn nhẹ - 14.0 mm</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-13-6mm-13-8mm/'); ?>">Tự nhiên - 13.8mm</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-14mm/'); ?>">Giãn nhẹ - 14.0 mm</a></dd>
                       </dl>
                       <dl>
                         <dt><?php _e('BY COLOR', 'storefront') ?></dt>
-                        <dd><a href="#">Nâu</a></dd>
-                        <dd><a href="#">Xám</a></dd>
-                        <dd><a href="#">Choco</a></dd>
-                        <dd><a href="#">Không màu</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-mau-nau/'); ?>">Nâu</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-mau-xam/'); ?>">Xám</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-mau-choco/'); ?>">Choco</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-trong-suot/'); ?>">Không màu</a></dd>
                       </dl>
                       <dl>
                         <dt><?php _e('BY FREQUENCY', 'storefront') ?></dt>
-                        <dd><a href="#">8h</a></dd>
-                        <dd><a href="#">10h</a></dd>
-                        <dd><a href="#">12h</a></dd>
-                        <dd><a href="#">14h</a></dd>
-                        <dd><a href="#">24h</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/deo-8-tieng/'); ?>">8h</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/deo-10-tieng/'); ?>">10h</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/deo-12-tieng/'); ?>">12h</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/deo-14-tieng/'); ?>">14h</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/deo-24-tieng/'); ?>">24h</a></dd>
                       </dl>
                     </div>
                   </div>
                 </div>
               </li>
-              <li class="c-menu c-menu_dropdown"><a href="#">Phụ Kiện</a>
+              <li class="c-menu c-menu_dropdown">
+                <a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/phu-kien-lens/'); ?>">Phụ Kiện</a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <div class="l-container col-3">
