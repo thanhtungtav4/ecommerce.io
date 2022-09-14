@@ -1,10 +1,10 @@
-.type-product .product_title {
+.product_title {
   font-style: normal;
   font-weight: 300;
-  font-size: 4rem;
-}
-.type-product .woocommerce-Price-amount {
   font-size: 3rem;
+}
+.summary .woocommerce-Price-amount {
+  font-size: 2rem;
   color: #EB5757;
 }
 .single-product div.product p.price {
@@ -93,4 +93,25 @@
 }
 #insurane{
   text-align: left;
+}
+.summary .woo-selected-variation-item-name{
+  display: none !important;
+}
+.c-tab_content{
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+.c-tab_content ul {
+  list-style: inherit;
+}
+.c-tab_content ul li {
+  margin-left: 30px;
+}
+.c-tab_content figure {
+  max-width: 100% !important;
+  width: 100%;
+  height: auto;
+}
+.summary a {
+  color: #ea403f;
 }

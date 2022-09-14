@@ -1,6 +1,6 @@
 <div class="m-product">
   <div class="m-product_top">
-    <h4>KÍNH Y TẾ CHUYÊN DỤNG</h4>
+    <h4>SẢN PHẨM TƯƠNG TỰ</h4>
     <div class="m-product__nav">
       <button class="m-product__prev">
         <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">

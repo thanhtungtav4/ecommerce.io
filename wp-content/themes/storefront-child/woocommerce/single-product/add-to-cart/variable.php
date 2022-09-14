@@ -68,7 +68,8 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 									</td>
 								</tr>
 								<?php if($i++ > 1) : ?>
-									<th class="label"><a href="#">Hướng dẫn tính độ cận – loạn</a> </th>
+									<th class="label">
+										<a data-fancybox href="<?php echo get_stylesheet_directory_uri() ?>/assets/images/huong-dan-chon-do-can-caras.jpg">Hướng dẫn tính độ cận – loạn</a> </th>
 								<?php endif;  ?>
 					
 					<?php elseif($attribute_name == 'pa_mau-sac') : ?>
