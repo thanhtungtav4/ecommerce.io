@@ -983,7 +983,7 @@ msgid "FOR MEN"
 msgstr "DÀNH CHO NAM GIỚI"
 
 msgid "ABOUT CARAS LENS"
-msgstr "GIỚI THIỆU CARAS LENS"
+msgstr "GIỚI THIỆU CARAS.E"
 
 msgid "MEDICAL CONTACT LENSES"
 msgstr "KÍNH Y TẾ CHUYÊN DỤNG"

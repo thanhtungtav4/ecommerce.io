@@ -2,10 +2,10 @@
   <a href="<?php echo get_permalink(get_the_ID()); ?>">
     <div class="m-news_img">
     <picture>
-        <?php if(!empty(the_post_thumbnail_url())) :?>
+          <?php if( !empty(get_the_post_thumbnail()) ) : ?>
             <img class="lazyload" src="<?php the_post_thumbnail_url(array(377, 255), array( 'class' => 'lazyload' ));  ?>" data-src="<?php the_post_thumbnail_url(array(377, 255), array( 'class' => 'lazyload' ));  ?>" alt="<?php the_title() ?>" loading="lazy" width="377" height="255">
          <?php else : ?>
-            <img class="lazyload" src="<?php echo PlaceholderNews ?>" data-src="<?php echo PlaceholderNews ?>" alt="<?php the_title() ?>" loading="lazy" width="377" height="255">
+            <img class="lazyload" src="<?php print_r(PlaceholderNews) ?>" data-src="<?php print_r(PlaceholderNews)  ?>" alt="<?php the_title() ?>" loading="lazy" width="377" height="255">
         <?php endif; ?>   
     </picture>
     </div>
