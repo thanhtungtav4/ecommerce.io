@@ -335,17 +335,17 @@ get_header(); ?>
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/m-product__gallery.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
                   </picture>
                 </a>
               </div>
               <ul class="m-product__slick m-product__slick005">
                 <?php for ($i=0; $i < 2; $i++) { ?>
                   <li>
-                    <ul>
+                    <ul class="item_show">
                     <?php
                       $current_lang = $sitepress->get_current_language();
-                      $cate_id = apply_filters( 'wpml_object_id', 67 , 'product_cat', TRUE  );
+                      $cate_id = apply_filters( 'wpml_object_id', 60 , 'product_cat', TRUE  );
                       $count = 0;
                       // change category id here
                       $args = array(
