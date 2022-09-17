@@ -307,7 +307,6 @@
         }
       </script>
     <?php endif; ?>
-
     <?php if(is_product_category()) :  ?>
       <script>
           function opent_filter(){

@@ -38,4 +38,8 @@ function conditionally_enqueue_styles_scripts() {
         wp_register_style( 'style_thankyou', get_stylesheet_directory_uri().'/assets/css/thankyou.css' );
         wp_enqueue_style('style_thankyou');
     }
+    // if(!is_front_page()){
+    //     wp_register_style( 'detail-post', get_stylesheet_directory_uri().'/assets/css/detail-post.css' );
+    //     wp_enqueue_style('detail-post');
+    // }
 }
