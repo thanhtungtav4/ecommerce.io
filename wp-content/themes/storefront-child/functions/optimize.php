@@ -9,7 +9,7 @@ function remove_cssjs_ver( $src ) {
 	add_filter( 'script_loader_src', 'remove_cssjs_ver', 10, 2 );
 // ! Remove Query Strings
 // Remove RSD Links
-	remove_action( 'wp_head', 'rsd_link' ) ;
+remove_action( 'wp_head', 'rsd_link' ) ;
 // ! Remove RSD Links
 #Disable Self Pingbacks in WordPress Using Plugins
 function no_self_ping( &$links ) {
@@ -125,3 +125,33 @@ function remove_dashboard_widgets() {
 }
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
 // ! Disable Unnecessary Dashboard Widgets
+
+
+function wp_remove_scripts() {
+    if (is_front_page() ) {
+        // Remove Scripts
+        wp_dequeue_style( 'devvn-shortcode-reviews' );
+        wp_deregister_style( 'devvn-shortcode-reviews' );
+        wp_dequeue_style( 'owl.carousel' );
+        wp_deregister_style( 'owl.carousel' );
+        wp_dequeue_style( 'devvn-post-comment' );
+        wp_deregister_style( 'devvn-post-comment' );
+        }
+    }
+add_action( 'wp_enqueue_scripts', 'wp_remove_scripts', 999 );
+function wp_remove_scripts_head() {
+    if (is_front_page() ) {
+        // Remove Scripts
+        wp_dequeue_style( 'devvn-shortcode-reviews' );
+        wp_deregister_style( 'devvn-shortcode-reviews' );
+    }
+}
+add_action( 'wp_head', 'wp_remove_scripts_head', 9999 );
+
+function wp_remove_scripts_storefront() {
+    wp_dequeue_script( 'storefront-header-cart-js' );
+    wp_deregister_script( 'storefront-header-cart-js' );
+    wp_dequeue_script( 'storefront-handheld-footer-bar-js' );
+    wp_deregister_script( 'storefront-handheld-footer-bar-js' );
+  }
+  add_action( 'wp_enqueue_scripts', 'wp_remove_scripts_storefront', 99 );

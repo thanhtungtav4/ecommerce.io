@@ -315,6 +315,7 @@
                   <div class="c-menu_subinner">
                     <form action="/" method="get">
                       <input type="text" name="s" value="<?php the_search_query(); ?>"  id="search"  placeholder="<?php _e('Search', 'storefront') ?>"><i class="gg-search"></i>
+                      <input type="hidden" name="post_type" value="product" />
                     </form>
                   </div>
                 </div>

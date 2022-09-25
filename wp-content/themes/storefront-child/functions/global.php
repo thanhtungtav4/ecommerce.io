@@ -29,3 +29,10 @@ function makewp_exclude_page_templates( $post_templates ) {
 //   }
 //   endif;
 // add_action( 'init', 'm7_remove_wmpl_notices', 11 );
+//
+if ( function_exists( 'add_theme_support' ) ) {
+  add_theme_support( 'post-thumbnails' );
+  add_image_size( 'post-thumb', 327, 172, true  ); // 300 pixels wide (and unlimited height)
+  add_image_size( 'post-thumb-smail', 137, 82, true  ); 
+  add_image_size( 'product-thumb', 324, 324, true  );
+}
