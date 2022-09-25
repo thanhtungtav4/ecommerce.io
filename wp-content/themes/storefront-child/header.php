@@ -265,7 +265,7 @@
                       <dl>
                         <dt>Blog
 												<dd>
-													<a href="#">
+													<a href="/blog">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
 														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">

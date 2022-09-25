@@ -8,7 +8,11 @@
  */
 
 ?>
-	<?php do_action( 'storefront_before_footer' ); ?>
+ <?php if(is_product_category() || is_search())  : ?>
+  <div class="l-container mt-2">
+    <?php require_once( get_stylesheet_directory() . '/module/footer_info.php' ); ?>
+  </div>       
+<?php endif; ?>
 	<footer class="c-footer">
         <div class="l-container c-footer_top">
           <dl>
