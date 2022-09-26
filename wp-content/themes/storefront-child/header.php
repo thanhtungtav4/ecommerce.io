@@ -54,8 +54,8 @@
                         <dd>
 													<a href="#">
 													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.jpg" alt="best_437x200_clear">
 													</picture>
 													</a>
 												</dd>
@@ -66,8 +66,8 @@
                         <dd>
 													<a href="#">
 													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.jpg" alt="best_437x200_lavier">
 													</picture>
 													</a>
 												</dd>
@@ -78,8 +78,8 @@
                         <dd>
 													<a href="#">
 													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.jpg" alt="best_437x200_ombre">
 													</picture>
 													</a>
 												</dd>
@@ -145,8 +145,8 @@
                         <dd>
 													<a href="#">
 													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.png" alt="accessory_dd_ngam">
 													</picture>
 													</a>
 												</dd>
@@ -157,8 +157,8 @@
                         <dd>
 													<a href="#">
 													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.png" alt="accessory_dd_nho">
 													</picture>
 													</a>
 												</dd>
@@ -168,21 +168,9 @@
 											<dt>
                         <dd>
 													<a href="#">
-													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
-													</picture>
-													</a>
-												</dd>
-												</dt>
-                      </dl>
-                      <dl>
-											<dt>
-                        <dd>
-													<a href="#">
-													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+                          <picture>
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" alt="accessory_dd_vitamin">
 													</picture>
 													</a>
 												</dd>
@@ -201,8 +189,8 @@
                         <dd>
 													<a href="#">
 													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" alt="dv_showroom">
 													</picture>
 													</a>
 												</dd>
@@ -212,8 +200,8 @@
 												<dd>
 													<a href="#">
 													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.jpg" alt="dv_do_mat">
 													</picture>
 													</a>
 												</dd>
@@ -224,8 +212,8 @@
 												<dd>
 													<a href="#">
 													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.jpg" alt="dv_tu_van_online">
 													</picture>
 													</a>
 												</dd>
@@ -244,8 +232,8 @@
                         <dd>
 													<a href="#">
 													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.jpg" alt="thong_tin_gioi_thieu_caras">
 													</picture>
 													</a>
 												</dd>
@@ -255,8 +243,8 @@
 												<dd>
 													<a href="#">
 													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.jpg" alt="thongtin_hdsd">
 													</picture>
 													</a>
 												</dd>
@@ -267,8 +255,8 @@
 												<dd>
 													<a href="/blog">
 													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/img_menu.png" alt="menu">
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.webp" type="image/webp">
+														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.jpg" alt="thong_tin_blog">
 													</picture>
 													</a>
 												</dd>

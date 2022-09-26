@@ -11,7 +11,7 @@
  <?php if(is_product_category() || is_search())  : ?>
   <div class="l-container mt-2">
     <?php require_once( get_stylesheet_directory() . '/module/footer_info.php' ); ?>
-  </div>       
+  </div>
 <?php endif; ?>
 	<footer class="c-footer">
         <div class="l-container c-footer_top">
@@ -32,11 +32,11 @@
             </dt>
           </dl>
           <dl>
-            <dt><?php _e('CARAS LENS CO., LTD', 'storefront') ?></dt>
-            <dd><strong><?php _e('Business registration certificate:', 'storefront') ?>&nbsp;</strong><?php _e('0314882698 issued by the Department of Planning and Investment of Ho Chi Minh City. HCM on Feb 07th, 2018.', 'storefront') ?></dd>
+            <dt><?php _e('CÔNG TY CỔ PHẦN THƯƠNG MẠI CALEN', 'storefront') ?></dt>
+            <dd><strong><?php _e('Business registration certificate:', 'storefront') ?>&nbsp;</strong><?php _e('0317006667', 'storefront') ?></dd>
             <dd><strong>Email:&nbsp;</strong><a href="mailto:support@caraslens.vn">support@caraslens.vn</a></dd>
             <dd><strong><?php _e('Import license No. 17830NK/BYT-TB-CT granted by the Ministry of Health', 'storefront') ?></strong></dd>
-            <dd><strong><?php _e('Issue of Contact Lens/Medical Equipment Import Permit:', 'storefront') ?></strong>20210259-ADJVINA/170000008/PCBPL-BYT</dd>
+            <dd><strong><?php _e('Giấy phép công bố & nhập khẩu chính ngạch số:', 'storefront') ?></strong>220002087/PCBB-HCM của Bộ Y tế</dd>
             <dd><strong>Hotline:&nbsp;</strong><a href="tel:1900636304">1900 63 63 04</a></dd>
           </dl>
           <dl>
