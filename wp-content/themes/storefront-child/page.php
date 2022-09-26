@@ -21,7 +21,7 @@ get_header(); ?>
 			}
 		}
 		?>
-		<main id="main" class="site-main <?php echo $is_page ?>" role="main">
+		<main id="main" class="site-main <?php $is_page ? print $is_page : "" ?>" role="main">
 
 			<div class="l-container">
 			<?php
