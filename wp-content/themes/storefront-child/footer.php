@@ -36,7 +36,6 @@
             <dd><strong><?php _e('Business registration certificate:', 'storefront') ?>&nbsp;</strong><?php _e('0317006667', 'storefront') ?></dd>
             <dd><strong>Email:&nbsp;</strong><a href="mailto:support@caraslens.vn">support@caraslens.vn</a></dd>
             <dd><strong><?php _e('Import license No. 17830NK/BYT-TB-CT granted by the Ministry of Health', 'storefront') ?></strong></dd>
-            <dd><strong><?php _e('Giấy phép công bố & nhập khẩu chính ngạch số:', 'storefront') ?></strong>220002087/PCBB-HCM của Bộ Y tế</dd>
             <dd><strong>Hotline:&nbsp;</strong><a href="tel:1900636304">1900 63 63 04</a></dd>
           </dl>
           <dl>
