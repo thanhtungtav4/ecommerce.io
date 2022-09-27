@@ -33,6 +33,74 @@ function makewp_exclude_page_templates( $post_templates ) {
 if ( function_exists( 'add_theme_support' ) ) {
   add_theme_support( 'post-thumbnails' );
   add_image_size( 'post-thumb', 327, 172, true  ); // 300 pixels wide (and unlimited height)
-  add_image_size( 'post-thumb-smail', 137, 82, true  ); 
+  add_image_size( 'post-thumb-smail', 137, 82, true  );
   add_image_size( 'product-thumb', 324, 324, true  );
+}
+
+// To set Default Length
+add_filter( 'woocommerce_product_get_length', 'xa_product_default_length' );
+add_filter( 'woocommerce_product_variation_get_length', 'xa_product_default_length' );	// For variable product variations
+
+if( ! function_exists('xa_product_default_length') ) {
+	function xa_product_default_length( $length) {
+
+		$default_length = 10;			// Provide default Length
+		if( empty($length) ) {
+			return $default_length;
+		}
+		else {
+			return $length;
+		}
+	}
+}
+
+// To set Default Width
+add_filter( 'woocommerce_product_get_width', 'xa_product_default_width');
+add_filter( 'woocommerce_product_variation_get_width', 'xa_product_default_width' );	// For variable product variations
+
+if( ! function_exists('xa_product_default_width') ) {
+	function xa_product_default_width( $width) {
+
+		$default_width = 11;			// Provide default Width
+		if( empty($width) ) {
+			return $default_width;
+		}
+		else {
+			return $width;
+		}
+	}
+}
+
+// To set Default Height
+add_filter( 'woocommerce_product_get_height', 'xa_product_default_height');
+add_filter( 'woocommerce_product_variation_get_height', 'xa_product_default_height' );	// For variable product variations
+
+if( ! function_exists('xa_product_default_height')) {
+	function xa_product_default_height( $height) {
+
+		$default_height = 12;			// Provide default Height
+		if( empty($height) ) {
+			return $default_height;
+		}
+		else {
+			return $height;
+		}
+	}
+}
+
+// To set Default Weight
+add_filter( 'woocommerce_product_get_weight', 'xa_product_default_weight' );
+add_filter( 'woocommerce_product_variation_get_weight', 'xa_product_default_weight' );	// For variable product variations
+
+if( ! function_exists('xa_product_default_weight') ) {
+	function xa_product_default_weight( $weight) {
+
+		$default_weight = 0.5;			// Provide default Weight
+		if( empty($weight) ) {
+			return $default_weight;
+		}
+		else {
+			return $weight;
+		}
+	}
 }
