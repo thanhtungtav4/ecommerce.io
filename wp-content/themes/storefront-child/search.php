@@ -146,9 +146,6 @@ $type = $_GET['post_type'];
         <?php if($type == "product")  : ?>
             
         <?php endif; ?>
-        <div class="l-container mt-2">
-            <?php require_once( get_stylesheet_directory() . '/module/footer_info.php' ); ?>
-          </div>
       </main>
 <?php
 //do_action( 'storefront_sidebar' );
