@@ -127,7 +127,7 @@
           </dl>
         </div>
       </footer>
-      <?php require( get_stylesheet_directory() . '/module/chat_bot.php' ); ?>
+      <?php //require( get_stylesheet_directory() . '/module/chat_bot.php' ); ?>
     </div>
     <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>

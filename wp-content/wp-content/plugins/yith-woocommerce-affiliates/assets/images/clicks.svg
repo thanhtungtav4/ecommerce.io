@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="46px" viewBox="0 0 70 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>click-but</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Clicks--Empty-State" transform="translate(-675.000000, -486.000000)" stroke="#333333" stroke-width="1.44">
+            <g id="click-but" transform="translate(676.000000, 487.000000)">
+                <path d="M61.0703962,28 L64.0610673,28 C66.2364798,28 68,26.2091044 68,23.9999683 L68,4 C68,1.79085863 66.2364798,0 64.0610673,0 L3.95587251,0 C1.78046006,0 0.0169398388,1.79085863 0.0169398388,4 L0.0169398388,23.6295984 C-0.0859457647,24.753028 0.283166733,25.8683349 1.03330385,26.7006347 C1.78344096,27.5329344 2.84482902,28.004811 3.95587251,28 L38.3121186,28" id="Path"></path>
+                <polygon id="Path" points="43 25.5 46.5850622 40.0643154 49.9460581 36.5539419 56.966805 43.5 61 39.466805 54.0539419 32.5207469 57.4896266 29.159751"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
