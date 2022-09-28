@@ -127,7 +127,7 @@
           </dl>
         </div>
       </footer>
-      <?php require( get_stylesheet_directory() . '/module/chat_bot.php' ); ?>
+      <?php //require( get_stylesheet_directory() . '/module/chat_bot.php' ); ?>
     </div>
     <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
@@ -448,5 +448,37 @@
     </script>
     <?php ?>
 		<?php wp_footer(); ?>
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "1889752771238179");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v15.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
   </body>
 </html>
