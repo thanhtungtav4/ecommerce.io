@@ -26,7 +26,7 @@ require_once( get_stylesheet_directory() . '/functions/quantity.php');
 require_once( get_stylesheet_directory() . '/functions/job.php');
 //add shortcode show product
 require_once( get_stylesheet_directory() . '/functions/shortcode.php');
-
+require_once( get_stylesheet_directory() . '/functions/schema.php');
 
 add_action( 'woocommerce_thankyou', 'bbloomer_thankyou_change_order_status' );
 function bbloomer_thankyou_change_order_status( $order_id ){
