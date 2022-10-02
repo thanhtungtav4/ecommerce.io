@@ -47,7 +47,7 @@ do_action( 'woocommerce_before_main_content' );
               <div class="m-pcategory_filter" id="is_filter">
                 <h5 class="title">FILTER</h5>
                 <div class="m-pcategory_filter_inner">
-					<?php echo do_shortcode('[wpf-filters id=1]')?>
+									<?php echo do_shortcode('[wpf-filters id=1]')?>
                 </div>
               </div>
               <div class="m-pcategory_list">

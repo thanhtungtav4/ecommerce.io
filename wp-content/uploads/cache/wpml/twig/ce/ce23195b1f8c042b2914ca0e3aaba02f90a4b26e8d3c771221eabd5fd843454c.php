@@ -102,6 +102,6 @@ class __TwigTemplate_78517cd1c3b1a8c65a44ba24561689a653b93cb13b27f0a75d0a0094acd
 
     public function getSourceContext()
     {
-        return new Source("", "template.twig", "D:\\Ampps\\www\\ecommerce.io\\wp-content\\plugins\\sitepress-multilingual-cms\\templates\\language-switchers\\menu-item\\template.twig");
+        return new Source("", "template.twig", "D:\\Ampps\\www\\ecommerce\\wp-content\\plugins\\sitepress-multilingual-cms\\templates\\language-switchers\\menu-item\\template.twig");
     }
 }

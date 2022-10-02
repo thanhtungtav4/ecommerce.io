@@ -26,7 +26,7 @@ define( 'DB_NAME', 'ecommerce' );
 define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'mysql' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );

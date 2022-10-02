@@ -96,6 +96,6 @@ class __TwigTemplate_7647db71b54977e7f077755193d5c297dee3dc75caac614aa87beae1922
 
     public function getSourceContext()
     {
-        return new Source("", "template.twig", "D:\\Ampps\\www\\ecommerce.io\\wp-content\\plugins\\woocommerce-multilingual\\templates\\currency-switchers\\legacy-dropdown\\template.twig");
+        return new Source("", "template.twig", "D:\\Ampps\\www\\ecommerce\\wp-content\\plugins\\woocommerce-multilingual\\templates\\currency-switchers\\legacy-dropdown\\template.twig");
     }
 }
