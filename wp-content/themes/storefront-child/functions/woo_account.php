@@ -23,10 +23,9 @@ function bbloomer_separate_registration_form() {
 
    ?>
       <form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
-
-         <?php do_action( 'woocommerce_register_form_start' ); ?>
-            <h1> <?php _e('Register', 'storefront') ?> </h1>
+      <h1> <?php _e('Register', 'storefront') ?> </h1>
             <p><?php _e('Already have an account?', 'storefront') ?> <a class="link" href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><?php _e('Login', 'storefront') ?></a></p>
+         <?php do_action( 'woocommerce_register_form_start' ); ?>
          <?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                <label for="reg_username"><?php esc_html_e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>

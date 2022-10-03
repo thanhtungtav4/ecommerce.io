@@ -300,36 +300,6 @@ if ( ! function_exists( 'storefront_skip_links' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_homepage_header' ) ) {
-	/**
-	 * Display the page header without the featured image
-	 *
-	 * @since 1.0.0
-	 */
-	function storefront_homepage_header() {
-		edit_post_link( __( 'Edit this section', 'storefront' ), '', '', '', 'button storefront-hero__button-edit' );
-		?>
-		<?php
-	}
-}
-
-if ( ! function_exists( 'storefront_page_header' ) ) {
-	/**
-	 * Display the page header
-	 *
-	 * @since 1.0.0
-	 */
-	function storefront_page_header() {
-		if ( is_front_page() && is_page_template( 'template-fullwidth.php' ) ) {
-			return;
-		}
-
-		?>
-	
-		<?php
-	}
-}
-
 if ( ! function_exists( 'storefront_page_content' ) ) {
 	/**
 	 * Display the post content
@@ -353,36 +323,6 @@ if ( ! function_exists( 'storefront_page_content' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_post_header' ) ) {
-	/**
-	 * Display the post header with a link to the single post
-	 *
-	 * @since 1.0.0
-	 */
-	function storefront_post_header() {
-		?>
-		<header class="entry-header">
-		<?php
-
-		/**
-		 * Functions hooked in to storefront_post_header_before action.
-		 *
-		 * @hooked storefront_post_meta - 10
-		 */
-		do_action( 'storefront_post_header_before' );
-
-		if ( is_single() ) {
-			//the_title( '<h1 class="entry-title">', '</h1>' );
-		} else {
-			//the_title( sprintf( '<h2 class="alpha entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-		}
-
-		do_action( 'storefront_post_header_after' );
-		?>
-		</header><!-- .entry-header -->
-		<?php
-	}
-}
 
 if ( ! function_exists( 'storefront_post_content' ) ) {
 	/**

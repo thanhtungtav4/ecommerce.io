@@ -135,3 +135,23 @@ main{
 .mt-2{
   margin-top: 3rem;
 }
+.xoo-ml-login-otp-btn{
+  width: 100%;
+  margin-top: 2.5rem;
+  font-weight: 400;
+  font-size: 2rem;
+  color: white;
+  padding: 10px;
+  background-color: #EB6A6A;
+  border-color: #EB6A6A;
+}
+.xoo-ml-ioc-input input.xoo-ml-otp-input{
+  min-height: unset;
+  min-width: unset;
+}
+.xoo-ml-inline-otp-cont{
+  margin-top: 10px;
+}
+.c-login {
+  height: auto;
+}
