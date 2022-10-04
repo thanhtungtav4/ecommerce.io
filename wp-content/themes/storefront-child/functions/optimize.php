@@ -145,6 +145,19 @@ function wp_remove_scripts_head() {
         wp_dequeue_style( 'devvn-shortcode-reviews' );
         wp_deregister_style( 'devvn-shortcode-reviews' );
     }
+	wp_dequeue_style( 'storefront-gutenberg-blocks-css' );
+    wp_deregister_style( 'storefront-gutenberg-blocks-css' );
+	wp_dequeue_style( 'storefront-style-css' );
+    wp_deregister_style( 'storefront-style-css' );
+	wp_dequeue_style( 'storefront-icons-css' );
+    wp_deregister_style( 'storefront-icons-css' );
+	wp_dequeue_style( 'storefront-woocommerce-style' );
+	wp_deregister_style('storefront-woocommerce-style');
+	wp_dequeue_style( 'storefront-style' );
+    wp_deregister_style('storefront-style');
+	wp_dequeue_style( 'storefront-woocommerce-style-css' );
+    wp_deregister_style('storefront-woocommerce-style-css');
+	
 }
 add_action( 'wp_head', 'wp_remove_scripts_head', 9999 );
 
@@ -155,3 +168,9 @@ function wp_remove_scripts_storefront() {
     wp_deregister_script( 'storefront-handheld-footer-bar-js' );
   }
   add_action( 'wp_enqueue_scripts', 'wp_remove_scripts_storefront', 99 );
+
+  add_filter( 'storefront_customizer_enabled', 'woa_storefront_disable_customizer' );
+	function woa_storefront_disable_customizer() {
+    return false;
+}
+remove_action( 'wp_enqueue_scripts', array( $storefront->customizer, 'add_customizer_css' ), 130 );

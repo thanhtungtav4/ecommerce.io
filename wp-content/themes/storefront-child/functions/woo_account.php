@@ -12,8 +12,7 @@ add_shortcode( 'wc_reg_form_bbloomer', 'bbloomer_separate_registration_form' );
 function bbloomer_separate_registration_form() {
    if ( is_admin() ) return;
    if ( is_user_logged_in() )
-   return;
-   ;
+   return; ;
    ob_start();
 
    // NOTE: THE FOLLOWING <FORM></FORM> IS COPIED FROM woocommerce\templates\myaccount\form-login.php
@@ -80,4 +79,12 @@ function bbloomer_separate_login_form() {
    ob_start();
    woocommerce_login_form( array( 'redirect' => get_permalink( get_option('woocommerce_myaccount_page_id') ) ) );
    return ob_get_clean();
+}
+
+add_action( 'template_redirect', 'redirect_if_user_logged_in' );
+function redirect_if_user_logged_in() {
+    if ( is_page('dang-ky') && is_user_logged_in() ) {
+        wp_redirect( '/tai-khoan/'); 
+     exit;  
+   }
 }

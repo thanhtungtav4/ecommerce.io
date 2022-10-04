@@ -155,3 +155,35 @@ main{
 .c-login {
   height: auto;
 }
+.xoo-ml-otp-submit-btn{
+  background: #eb6a6a;
+  color: white;
+  padding: 5px 25px;
+  margin: 14px 0;
+  display: -webkit-inline-box;
+}
+.xoo-ml-phone-input.woocommerce-Input--text{
+  height: 43px;
+  border: 1px solid #aaa;
+  padding: 0 10px;
+}
+select.xoo-ml-phone-cc + .select2.select2-container {
+  min-width: 85px;
+}
+@media screen and (max-width: 767px)
+{
+  .c-login form {
+    width: 100%;
+    min-width: 360px;
+  }
+  .c-login .entry-content {
+    justify-content: center;
+}
+}
+@media screen and (max-width: 374px)
+{
+  .c-login form, .xoo-lwo-form {
+    min-width: 320px;
+    width: 320px;
+  }
+}
