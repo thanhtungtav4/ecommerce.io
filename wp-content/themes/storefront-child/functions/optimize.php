@@ -157,7 +157,7 @@ function wp_remove_scripts_head() {
     wp_deregister_style('storefront-style');
 	wp_dequeue_style( 'storefront-woocommerce-style-css' );
     wp_deregister_style('storefront-woocommerce-style-css');
-	
+
 }
 add_action( 'wp_head', 'wp_remove_scripts_head', 9999 );
 
@@ -173,4 +173,3 @@ function wp_remove_scripts_storefront() {
 	function woa_storefront_disable_customizer() {
     return false;
 }
-remove_action( 'wp_enqueue_scripts', array( $storefront->customizer, 'add_customizer_css' ), 130 );
