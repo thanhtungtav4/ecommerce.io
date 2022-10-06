@@ -34,9 +34,10 @@ function custom_devvn_reviews_image_mime_types($mime_types){
 
 == Những thay đổi ==
 
-= V1.3.9 - 22.08.2022 =
+= SẮP RA MẮT =
 
-* Sửa lỗi không hiện SĐT trong câu hỏi/đáp của sản phẩm
+= V1.3.7 - xx.06.2022 =
+
 * add hook
 
 <?php do_action('devvn_before_review_comment', $product);?>

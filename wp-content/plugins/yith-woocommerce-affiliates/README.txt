@@ -4,7 +4,7 @@ Contributors: yithemes
 Tags:  affiliate, affiliate marketing, affiliate plugin, affiliate tool, affiliates, woocommerce affiliates, woocommerce referral, lead, link, marketing, money, partner, referral, referral links, referrer, sales, woocommerce, wp e-commerce, affiliate campaign, affiliate marketing, affiliate plugin, affiliate program, affiliate software, affiliate tool, track affiliates, tracking, affiliates manager, yit, yith, yithemes, yit affiliates, yith affiliates, yithemes affiliates
 Requires at least: 5.8
 Tested up to: 6.0
-Stable tag: 2.6.0
+Stable tag: 2.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -110,6 +110,12 @@ YITH WooCommerce Affiliates will add a new submenu called "Affiliates" under "YI
 20. [Frontend] Rejected Affiliate
 
 == Changelog ==
+
+= 2.7.0 - Released on 5 October 2022 =
+
+* New: support for WooCommerce 7.0
+* Update: YITH plugin framework
+* Fix: wrong label for total_paid stat
 
 = 2.6.0 - Released on 8 September 2022 =
 

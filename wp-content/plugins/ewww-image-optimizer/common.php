@@ -1,8 +1,8 @@
 <?php
 /**
- * Common functions for Standard and Cloud plugins
+ * Common functions for Standard plugin
  *
- * This file contains functions that are shared by both EWWW IO plugin(s), useful when we had a
+ * This file contains functions that are shared by both EWWW IO plugin(s), back when we had a
  * Cloud version. Functions that differed between the two are stored in unique.php.
  *
  * @link https://ewww.io
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'EWWW_IMAGE_OPTIMIZER_VERSION', 680 );
+define( 'EWWW_IMAGE_OPTIMIZER_VERSION', 690 );
 
 // Initialize a couple globals.
 $eio_debug  = '';
@@ -555,6 +555,30 @@ if ( ! function_exists( 'wp_getimagesize' ) ) {
 	}
 }
 
+if ( ! function_exists( 'str_ends_with' ) ) {
+	/**
+	 * Polyfill for `str_ends_with()` function added in WP 5.9 or PHP 8.0.
+	 *
+	 * Performs a case-sensitive check indicating if
+	 * the haystack ends with needle.
+	 *
+	 * @since 6.8.1
+	 *
+	 * @param string $haystack The string to search in.
+	 * @param string $needle   The substring to search for in the `$haystack`.
+	 * @return bool True if `$haystack` ends with `$needle`, otherwise false.
+	 */
+	function str_ends_with( $haystack, $needle ) {
+		if ( '' === $haystack && '' !== $needle ) {
+			return false;
+		}
+
+		$len = strlen( $needle );
+
+		return 0 === substr_compare( $haystack, $needle, -$len, $len );
+	}
+}
+
 /**
  * Wrapper around json_encode to handle non-utf8 characters.
  *
@@ -820,7 +844,7 @@ function ewww_image_optimizer_init() {
 	if ( ! empty( $_GET['uncomplete_wizard'] ) && ! empty( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( sanitize_key( $_REQUEST['_wpnonce'] ), 'ewww_image_optimizer_options-options' ) ) {
 		update_option( 'ewww_image_optimizer_wizard_complete', false, false );
 	}
-	if ( class_exists( 'S3_Uploads' ) || class_exists( 'S3_Uploads\Plugin' ) ) {
+	if ( ewww_image_optimizer_s3_uploads_enabled() ) {
 		ewwwio_debug_message( 's3-uploads detected, deferring resize_upload' );
 		add_filter( 'ewww_image_optimizer_defer_resizing', '__return_true' );
 	}
@@ -1482,21 +1506,6 @@ function ewww_image_optimizer_single_size_optimize( $id, $size ) {
 			ewww_image_optimizer_hidpi_optimize( $resize_path );
 		}
 	} // End if().
-}
-
-if ( ! function_exists( 'wp_doing_ajax' ) ) {
-	/**
-	 * Checks to see if this is an AJAX request.
-	 *
-	 * For backwards compatiblity with WordPress < 4.7.0.
-	 *
-	 * @since 3.3.0
-	 *
-	 * @return bool True if this is an AJAX request.
-	 */
-	function wp_doing_ajax() {
-		return apply_filters( 'wp_doing_ajax', defined( 'DOING_AJAX' ) && DOING_AJAX );
-	}
 }
 
 /**
@@ -2451,9 +2460,26 @@ function ewww_image_optimizer_notice_reoptimization() {
 }
 
 /**
+ * Checks if the S3 Uploads plugin is installed and active.
+ *
+ * @return bool True if it is fully active and rewriting/offloding media, false otherwise.
+ */
+function ewww_image_optimizer_s3_uploads_enabled() {
+	// For version 3.x.
+	if ( class_exists( 'S3_Uploads\Plugin', false ) && function_exists( 'S3_Uploads\enabled' ) && \S3_Uploads\enabled() ) {
+		return true;
+	}
+	// Pre version 3.
+	if ( class_exists( 'S3_Uploads', false ) && function_exists( 's3_uploads_enabled' ) && s3_uploads_enabled() ) {
+		return true;
+	}
+	return false;
+}
+
+/**
  * Checks if a plugin is offloading media to cloud storage and removing local copies.
  *
- * @return bool True if a plugin is removing local files, false otherwise..
+ * @return bool True if a plugin is removing local files, false otherwise.
  */
 function ewww_image_optimizer_cloud_based_media() {
 	if ( class_exists( 'Amazon_S3_And_CloudFront' ) ) {
@@ -2462,10 +2488,7 @@ function ewww_image_optimizer_cloud_based_media() {
 			return true;
 		}
 	}
-	if ( class_exists( 'S3_Uploads' ) && function_exists( 's3_uploads_enabled' ) && s3_uploads_enabled() ) {
-		return true;
-	}
-	if ( class_exists( 'S3_Uploads\Plugin' ) && function_exists( 'S3_Uploads\enabled' ) && \S3_Uploads\enabled() ) {
+	if ( ewww_image_optimizer_s3_uploads_enabled() ) {
 		return true;
 	}
 	if ( class_exists( 'wpCloud\StatelessMedia\EWWW' ) && function_exists( 'ud_get_stateless_media' ) ) {
@@ -2488,7 +2511,7 @@ function ewww_image_optimizer_cloud_based_media() {
  */
 function ewww_image_optimizer_load_editor( $editors ) {
 	ewwwio_debug_message( '<b>' . __FUNCTION__ . '()</b>' );
-	if ( class_exists( 'S3_Uploads\Image_Editor_Imagick' ) ) {
+	if ( class_exists( 'S3_Uploads\Image_Editor_Imagick', false ) ) {
 		return $editors;
 	}
 	if ( ! class_exists( 'EWWWIO_GD_Editor' ) && ! class_exists( 'EWWWIO_Imagick_Editor' ) ) {
@@ -4430,7 +4453,7 @@ function ewww_image_optimizer_cloud_restore_from_meta_data( $id, $gallery = 'med
 	}
 	remove_filter( 'wp_update_attachment_metadata', 'ewww_image_optimizer_update_filesize_metadata', 9 );
 	$meta = ewww_image_optimizer_update_filesize_metadata( $meta, $id );
-	if ( class_exists( 'S3_Uploads' ) || class_exists( 'S3_uploads\Plugin' ) ) {
+	if ( ewww_image_optimizer_s3_uploads_enabled() ) {
 		ewww_image_optimizer_remote_push( $meta, $id );
 		ewwwio_debug_message( 're-uploading to S3(_Uploads)' );
 	}
@@ -4616,7 +4639,7 @@ function ewww_image_optimizer_delete( $id ) {
 	}
 	$s3_path = false;
 	$s3_dir  = false;
-	if ( ( class_exists( 'S3_Uploads' ) || class_exists( 'S3_Uploads\Plugin' ) ) && ewww_image_optimizer_get_option( 'ewww_image_optimizer_webp' ) ) {
+	if ( ewww_image_optimizer_s3_uploads_enabled() && ewww_image_optimizer_get_option( 'ewww_image_optimizer_webp' ) ) {
 		$s3_path = get_attached_file( $id );
 		if ( 0 === strpos( $s3_path, 's3://' ) ) {
 			ewwwio_debug_message( 'removing: ' . $s3_path . '.webp' );
@@ -7056,7 +7079,7 @@ function ewww_image_optimizer_stream_wrapped( $filename ) {
  */
 function ewww_image_optimizer_remote_push( $meta, $id ) {
 	ewwwio_debug_message( '<b>' . __FUNCTION__ . '()</b>' );
-	if ( ( class_exists( 'S3_Uploads' ) || class_exists( 'S3_Uploads\Plugin' ) ) && ! empty( $meta['file'] ) ) {
+	if ( ewww_image_optimizer_s3_uploads_enabled() && ! empty( $meta['file'] ) ) {
 		$s3_upload_dir = wp_get_upload_dir();
 		$s3_upload_dir = trailingslashit( $s3_upload_dir['basedir'] );
 		$s3_path       = get_attached_file( $id );
@@ -7148,7 +7171,7 @@ function ewww_image_optimizer_remote_fetch( $id, $meta ) {
 		require_once( ABSPATH . '/wp-admin/includes/file.php' );
 	}
 	$filename = false;
-	if ( ( class_exists( 'S3_Uploads' ) || class_exists( 'S3_Uploads\Plugin' ) ) && ! empty( $meta['file'] ) ) {
+	if ( ewww_image_optimizer_s3_uploads_enabled() && ! empty( $meta['file'] ) ) {
 		$s3_upload_dir = wp_get_upload_dir();
 		$s3_upload_dir = trailingslashit( $s3_upload_dir['basedir'] );
 		$s3_path       = get_attached_file( $id );
@@ -8942,7 +8965,7 @@ function ewww_image_optimizer_resize_from_meta_data( $meta, $id = null, $log = t
 			ewwwio_debug_message( 'uploading to Amazon S3' );
 		}
 	}
-	if ( class_exists( 'S3_Uploads' ) || class_exists( 'S3_Uploads\Plugin' ) ) {
+	if ( ewww_image_optimizer_s3_uploads_enabled() ) {
 		ewww_image_optimizer_remote_push( $meta, $id );
 		ewwwio_debug_message( 're-uploading to S3(_Uploads)' );
 	}
@@ -9867,11 +9890,7 @@ function ewww_image_optimizer_custom_column( $column_name, $id, $meta = null ) {
 			echo '<div>' . esc_html__( 'Offloaded Media', 'ewww-image-optimizer' ) . '</div>';
 			$ewww_cdn = true;
 		}
-		if ( is_array( $meta ) && class_exists( 'S3_Uploads' ) && preg_match( '/^(http|s3|gs)\w*:/', get_attached_file( $id ) ) ) {
-			echo '<div>' . esc_html__( 'Amazon S3 image', 'ewww-image-optimizer' ) . '</div>';
-			$ewww_cdn = true;
-		}
-		if ( is_array( $meta ) && class_exists( 'S3_Uploads\Plugin' ) && preg_match( '/^(http|s3|gs)\w*:/', get_attached_file( $id ) ) ) {
+		if ( is_array( $meta ) && ewww_image_optimizer_s3_uploads_enabled() && preg_match( '/^(http|s3|gs)\w*:/', get_attached_file( $id ) ) ) {
 			echo '<div>' . esc_html__( 'Amazon S3 image', 'ewww-image-optimizer' ) . '</div>';
 			$ewww_cdn = true;
 		}
@@ -10033,7 +10052,7 @@ function ewww_image_optimizer_custom_column( $column_name, $id, $meta = null ) {
 		$backup_available = false;
 		$file_parts       = pathinfo( $file_path );
 		$basename         = $file_parts['filename'];
-		$action_id        = ewww_image_optimizer_get_primary_wpml_id( $id );
+		$action_id        = ewww_image_optimizer_get_primary_translated_media_id( $id );
 		// If necessary, use get_post_meta( $post_id, '_wp_attachment_backup_sizes', true ); to only use basename for edited attachments, but that requires extra queries, so kiss for now.
 		if ( $ewww_cdn ) {
 			if ( ewww_image_optimizer_image_is_pending( $action_id, 'media-async' ) ) {
@@ -10050,7 +10069,7 @@ function ewww_image_optimizer_custom_column( $column_name, $id, $meta = null ) {
 					$optimized_images = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->ewwwio_images WHERE attachment_id = %d AND gallery = 'media' AND image_size <> 0 ORDER BY orig_size DESC", $id ), ARRAY_A );
 				}
 				if ( ! $optimized_images ) {
-					list( $possible_action_id, $optimized_images ) = ewww_image_optimizer_get_wpml_results( $id );
+					list( $possible_action_id, $optimized_images ) = ewww_image_optimizer_get_translated_media_results( $id );
 					if ( $optimized_images ) {
 						$action_id = $possible_action_id;
 					}
@@ -10128,7 +10147,7 @@ function ewww_image_optimizer_custom_column( $column_name, $id, $meta = null ) {
 				$optimized_images = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->ewwwio_images WHERE attachment_id = %d AND gallery = 'media' AND image_size <> 0 ORDER BY orig_size DESC", $id ), ARRAY_A );
 			}
 			if ( ! $optimized_images ) {
-				list( $possible_action_id, $optimized_images ) = ewww_image_optimizer_get_wpml_results( $id );
+				list( $possible_action_id, $optimized_images ) = ewww_image_optimizer_get_translated_media_results( $id );
 				if ( $optimized_images ) {
 					$action_id = $possible_action_id;
 				}
@@ -10429,16 +10448,16 @@ function ewww_image_optimizer_custom_column_results( $id, $optimized_images ) {
 }
 
 /**
- * If attachment is translated by WPML, get the primary ID number.
+ * If attachment is translated (and duplicated), get the primary ID number.
  *
- * @param int $id The attachment ID number to search for in the WPML tables.
+ * Primarily for WPML, but if others duplicate media, the primary_translated_media_id
+ * filter may be used, or a pull request may be submitted to contribute the lookup code.
+ *
+ * @param int $id The attachment ID number to search for in the translation plugin table(s).
  * @return int The primary/original ID number.
  */
-function ewww_image_optimizer_get_primary_wpml_id( $id ) {
-	if ( ! defined( 'ICL_SITEPRESS_VERSION' ) ) {
-		return $id;
-	}
-	if ( get_post_meta( $id, 'wpml_media_processed', true ) ) {
+function ewww_image_optimizer_get_primary_translated_media_id( $id ) {
+	if ( defined( 'ICL_SITEPRESS_VERSION' ) && get_post_meta( $id, 'wpml_media_processed', true ) ) {
 		$trid = apply_filters( 'wpml_element_trid', null, $id, 'post_attachment' );
 		if ( ! empty( $trid ) ) {
 			$translations = apply_filters( 'wpml_get_element_translations', null, $trid, 'post_attachment' );
@@ -10456,40 +10475,45 @@ function ewww_image_optimizer_get_primary_wpml_id( $id ) {
 			}
 		}
 	}
-	return $id;
+	return apply_filters( 'ewwwio_primary_translated_media_id', $id );
 }
+
 /**
- * Gets results for WPML replicates.
+ * Gets results for translation (WPML) replicates.
  *
- * @param int $id The attachment ID number to search for in the WPML tables.
+ * @param int $id The attachment ID number to search for in the translation tables/data.
  * @return array The resultant attachment ID, and a list of image optimization results.
  */
-function ewww_image_optimizer_get_wpml_results( $id ) {
-	if ( ! defined( 'ICL_SITEPRESS_VERSION' ) ) {
-		return array( $id, array() );
-	}
+function ewww_image_optimizer_get_translated_media_results( $id ) {
 	ewwwio_debug_message( '<b>' . __FUNCTION__ . '()</b>' );
-	$trid = apply_filters( 'wpml_element_trid', null, $id, 'post_attachment' );
-	if ( empty( $trid ) ) {
-		return array( $id, array() );
-	}
-	$translations = apply_filters( 'wpml_get_element_translations', null, $trid, 'post_attachment' );
-	if ( empty( $translations ) ) {
-		return array( $id, array() );
-	}
-	global $wpdb;
-	foreach ( $translations as $translation ) {
-		if ( empty( $translation->element_id ) ) {
-			continue;
+	$translations = array();
+	if ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
+		$trid = apply_filters( 'wpml_element_trid', null, $id, 'post_attachment' );
+		if ( empty( $trid ) ) {
+			return array( $id, array() );
 		}
-		ewwwio_debug_message( "checking {$translation->element_id} for results with WPML" );
-		$optimized_images = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->ewwwio_images WHERE attachment_id = %d AND gallery = 'media' AND image_size <> 0 ORDER BY orig_size DESC", $translation->element_id ), ARRAY_A );
-		if ( ! empty( $optimized_images ) ) {
-			return array( (int) $translation->element_id, $optimized_images );
+		$translations = apply_filters( 'wpml_get_element_translations', null, $trid, 'post_attachment' );
+		if ( empty( $translations ) ) {
+			return array( $id, array() );
+		}
+	}
+	apply_filters( 'ewwwio_translated_media_ids', $translations, $id );
+	if ( ewww_image_optimizer_iterable( $translations ) ) {
+		global $wpdb;
+		foreach ( $translations as $translation ) {
+			if ( empty( $translation->element_id ) ) {
+				continue;
+			}
+			ewwwio_debug_message( "checking {$translation->element_id} for results with WPML (or another translation plugin)" );
+			$optimized_images = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->ewwwio_images WHERE attachment_id = %d AND gallery = 'media' AND image_size <> 0 ORDER BY orig_size DESC", $translation->element_id ), ARRAY_A );
+			if ( ! empty( $optimized_images ) ) {
+				return array( (int) $translation->element_id, $optimized_images );
+			}
 		}
 	}
 	return array( $id, array() );
 }
+
 /**
  * Removes optimization from metadata, because we store it all in the images table now.
  *
@@ -13453,6 +13477,7 @@ function ewww_image_optimizer_options( $network = 'singlesite' ) {
 						<textarea id='ewww_image_optimizer_ll_all_things' name='ewww_image_optimizer_ll_all_things' rows='3' cols='60'><?php echo esc_html( ewww_image_optimizer_get_option( 'ewww_image_optimizer_ll_all_things' ) ); ?></textarea>
 						<p class='description'>
 							<?php esc_html_e( 'Specify class/id values of elements with CSS background images (comma-separated).', 'ewww-image-optimizer' ); ?>
+							<?php esc_html_e( 'Can match any text within the target element, like elementor-widget-container or et_pb_column.', 'ewww-image-optimizer' ); ?>
 							<br>*<?php esc_html_e( 'Background images directly attached via inline style attributes will be lazy loaded by default.', 'ewww-image-optimizer' ); ?>
 						</p>
 					</td>

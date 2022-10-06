@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: DevVN Woocommerce Reviews\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 15:27+0700\n"
-"PO-Revision-Date: 2022-08-07 22:59+0700\n"
+"PO-Revision-Date: 2022-07-14 15:28+0700\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -195,7 +195,7 @@ msgstr "Trả lời"
 #: devvn-woocommerce-reviews-main.php:1227
 #: devvn-woocommerce-reviews-main.php:1280
 msgid "ago"
-msgstr "trước"
+msgstr "cách đây"
 
 #: devvn-woocommerce-reviews-main.php:1234
 #: devvn-woocommerce-reviews-main.php:1287

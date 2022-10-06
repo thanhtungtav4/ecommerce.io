@@ -1,0 +1,98 @@
+.depots-wrap, .depots-wrap *{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+button.devvn-check-showroom {
+    background: #6c6d70;
+    color: #fff;
+    width: 100%;
+    display: block;
+    margin: 0 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 10px;
+    line-height: 1;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    text-decoration: none;
+    clear: both;
+    cursor: pointer;
+    border: 0;
+}
+.depots-wrap.is_variation{
+    display: none;
+}
+.depots-wrap {
+    margin-bottom: 20px;
+}
+.depots-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.nhanhvn-loading {
+    position: relative;
+    opacity: .5;
+    pointer-events: none
+}
+
+.nhanhvn-loading:after {
+    -webkit-animation: devvn_spin 500ms infinite linear;
+    animation: devvn_spin 500ms infinite linear;
+    border: 2px solid #fff;
+    border-radius: 32px;
+    border-right-color: transparent!important;
+    border-top-color: transparent!important;
+    content: "";
+    display: block;
+    height: 16px;
+    top: 50%;
+    margin-top: -8px;
+    left: 50%;
+    margin-left: -8px;
+    position: absolute;
+    width: 16px;
+    border: 2px solid #c29a44
+}
+
+@-webkit-keyframes devvn_spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes devvn_spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+.depots-list {
+    border: 1px #ccc solid;
+    border-radius: 3px;
+    margin: 0 0 15px;
+    list-style: none;
+    padding: 0;
+    display: none;
+}
+.depots-list .depot-item {
+    padding: 5px 10px;
+    margin: 0!important;
+}
+.depots-list .depot-item ~ .depot-item{
+    border-top: 1px #ccc dashed;
+}

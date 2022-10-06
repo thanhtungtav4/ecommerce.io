@@ -647,7 +647,7 @@ if ( ! class_exists( 'YITH_WCAF_Commission_Data_Store' ) ) {
 
 					if ( in_array( 'total_paid', $request_stats, true ) ) {
 						$paid_statues  = YITH_WCAF_Commissions::get_payment_statuses();
-						$query_select .= ', SUM( CASE WHEN yc.status IN ( ' . trim( str_repeat( '%s, ', count( $paid_statues ) ), ', ' ) . ' ) THEN amount ELSE 0 END ) AS total_refunds';
+						$query_select .= ', SUM( CASE WHEN yc.status IN ( ' . trim( str_repeat( '%s, ', count( $paid_statues ) ), ', ' ) . ' ) THEN amount ELSE 0 END ) AS total_paid';
 						$query_args    = array_merge(
 							$query_args,
 							$paid_statues

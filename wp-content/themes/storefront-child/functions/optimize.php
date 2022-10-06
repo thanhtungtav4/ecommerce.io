@@ -157,13 +157,11 @@ function wp_remove_scripts_head() {
         wp_deregister_style( 'devvn-shortcode-reviews' );
     }
 		wp_deregister_style( 'storefront-style-css' );
-	wp_dequeue_style( 'storefront-style-css' );
-
-	wp_deregister_style( 'storefront-icons-css' );
-	wp_dequeue_style( 'storefront-icons-css' );
-
-	wp_deregister_style( 'storefront-woocommerce-style' );
-	wp_dequeue_style( 'storefront-woocommerce-style' );
+		wp_dequeue_style( 'storefront-style-css' );
+		wp_deregister_style( 'storefront-icons-css' );
+		wp_dequeue_style( 'storefront-icons-css' );
+		wp_deregister_style( 'storefront-woocommerce-style' );
+		wp_dequeue_style( 'storefront-woocommerce-style' );
 }
 add_action( 'wp_head', 'wp_remove_scripts_head', 9999 );
 
