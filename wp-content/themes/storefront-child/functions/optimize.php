@@ -156,8 +156,6 @@ function wp_remove_scripts_head() {
         wp_dequeue_style( 'devvn-shortcode-reviews' );
         wp_deregister_style( 'devvn-shortcode-reviews' );
     }
-		wp_deregister_style( 'storefront-style-css' );
-		wp_dequeue_style( 'storefront-style-css' );
 		wp_deregister_style( 'storefront-icons-css' );
 		wp_dequeue_style( 'storefront-icons-css' );
 		wp_deregister_style( 'storefront-woocommerce-style' );
@@ -177,6 +175,6 @@ function wpcustom_deregister_scripts_and_styles(){
 	wp_dequeue_style( 'wp-block-library-theme' );
 	wp_dequeue_style( 'wc-blocks-style' );
 }
-add_action( 'wp_print_styles', 'wpcustom_deregister_scripts_and_styles', 100 );
+//add_action( 'wp_print_styles', 'wpcustom_deregister_scripts_and_styles', 100 );
 
 remove_action('storefront_footer', 'storefront_credit',20);
