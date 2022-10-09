@@ -1025,3 +1025,39 @@ msgstr "BẢO HÀNH"
 
 msgid "REVIEW"
 msgstr "Đánh giá"
+
+msgid "Update cart"
+msgstr "Cập nhật giỏ hàng"
+
+msgid "Left Eye"
+msgstr "Mắt trái"
+
+msgid "Right Eye"
+msgstr "Mắt phải"
+
+msgid "Billing details"
+msgstr "Chi tiết Thanh toán"
+
+msgid "Billing &amp; Shipping"
+msgstr "Thanh toán & Vận chuyển"
+
+msgid "Billing details"
+msgstr "Chi tiết thanh toán"
+
+msgid "Additional information"
+msgstr "Thông tin bổ sung"
+
+msgid "Order notes"
+msgstr "Ghi chú đơn hàng"
+
+msgid "Your order"
+msgstr "Đơn đặt hàng của bạn"
+
+msgid "Notes about your order, e.g. special notes for delivery."
+msgstr "Ghi chú về đơn đặt hàng của bạn, ví dụ như ghi chú đặc biệt để giao hàng."
+
+msgid "Product"
+msgstr "Sản phẩm"
+
+msgid "Price"
+msgstr "Giá"

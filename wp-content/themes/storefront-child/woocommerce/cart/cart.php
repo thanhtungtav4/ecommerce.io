@@ -63,7 +63,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 												</div>
 												<div class="info">
 													<div class="content">
-														<div class="name product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+														<div class="name product-name" data-title="<?php esc_attr_e( 'Product', 'storefront' ); ?>">
 														<?php
 															if ( ! $product_permalink ) {
 																echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
@@ -81,7 +81,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 																echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
 															}
 															?>
-															<p class="only-sp product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
+															<p class="only-sp product-price" data-title="<?php esc_attr_e( 'Price', 'storefront' ); ?>">
 																<?php
 																	echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 																?>

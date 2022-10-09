@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Storefront 4.1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/storefront\n"
 "POT-Creation-Date: 2022-08-23 19:58:14+00:00\n"
-"PO-Revision-Date: 2022-10-08 10:30+0700\n"
+"PO-Revision-Date: 2022-10-09 15:22+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi_VN\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: 404.php:19
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Trang này không tồn tại."
+msgstr ""
 
 #: 404.php:22
 msgid ""
@@ -770,19 +770,19 @@ msgstr[0] ""
 #: inc/storefront-template-functions.php:561
 msgid "Tag:"
 msgid_plural "Tags:"
-msgstr[0] ""
+msgstr[0] "Thẻ"
 
 #: inc/storefront-template-functions.php:593
 msgid "Next post:"
-msgstr ""
+msgstr "Kế tiếp"
 
 #: inc/storefront-template-functions.php:594
 msgid "Previous post:"
-msgstr ""
+msgstr "Trang trước"
 
 #: inc/woocommerce/class-storefront-woocommerce-customizer.php:60
 msgid "Product Page"
-msgstr ""
+msgstr " Trang sản phẩm"
 
 #: inc/woocommerce/class-storefront-woocommerce-customizer.php:87
 msgid "Sticky Add-To-Cart"
@@ -834,11 +834,11 @@ msgstr ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:576
 msgid "Best Selling Products"
-msgstr ""
+msgstr "BEST SELLER - BÁN CHẠY NHẤT"
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:627
 msgid "On Sale Now"
-msgstr ""
+msgstr "Mua ngay"
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:640
 msgid "New In Store"
@@ -871,7 +871,7 @@ msgstr ""
 #. translators: %s: search term
 #: search.php:19
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Tìm kiếm từ khóa"
 
 #. Theme Name of the plugin/theme
 msgid "Storefront"
@@ -914,12 +914,12 @@ msgstr[0] ""
 #: inc/storefront-template-functions.php:579
 msgctxt "Next post"
 msgid "Next"
-msgstr ""
+msgstr "Trang tiếp theo"
 
 #: inc/storefront-template-functions.php:580
 msgctxt "Previous post"
 msgid "Previous"
-msgstr ""
+msgstr "Trang trước"
 
 msgid "CUSTOMER SUPPORT"
 msgstr "HỖ TRỢ KHÁCH HÀNG"
@@ -1098,3 +1098,28 @@ msgstr "BẢO HÀNH"
 
 msgid "REVIEW"
 msgstr "Đánh giá"
+
+msgid "Left Eye"
+msgstr "Mắt trái"
+
+msgid "Right Eye"
+msgstr "Mắt phải"
+
+msgid "Billing details"
+msgstr "Chi tiết thanh toán"
+
+msgid "Billing &amp; Shipping"
+msgstr "Thanh toán & Vận chuyển"
+
+msgid "Additional information"
+msgstr "Thông tin bổ sung"
+
+msgid "Order notes"
+msgstr "Ghi chú đơn hàng"
+
+msgid "Your order"
+msgstr "Đơn đặt hàng của bạn"
+
+msgid "Notes about your order, e.g. special notes for delivery."
+msgstr ""
+"Ghi chú về đơn đặt hàng của bạn, ví dụ như ghi chú đặc biệt để giao hàng."
