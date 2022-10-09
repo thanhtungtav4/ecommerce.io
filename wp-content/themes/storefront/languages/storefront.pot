@@ -1061,3 +1061,9 @@ msgstr "Sản phẩm"
 
 msgid "Price"
 msgstr "Giá"
+
+msgid "Related products"
+msgstr "SẢN PHẨM TƯƠNG TỰ"
+
+msgid "Buy together products"
+msgstr "SẢN PHẨM THƯỜNG ĐƯỢC MUA KÈM"

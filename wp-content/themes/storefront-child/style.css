@@ -167,8 +167,15 @@ main{
   border: 1px solid #aaa;
   padding: 0 10px;
 }
+
 select.xoo-ml-phone-cc + .select2.select2-container {
   min-width: 85px;
+}
+@media screen and (min-width: 767px)
+{
+  .woocommerce form .form-row.address-field .select2-container, .woocommerce form .form-row.devvn-address-field .select2-container{
+    width: calc(100% - 200px) !important;
+  }
 }
 @media screen and (max-width: 767px)
 {
