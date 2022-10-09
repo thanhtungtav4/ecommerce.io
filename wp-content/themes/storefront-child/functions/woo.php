@@ -60,13 +60,13 @@ add_filter( 'woocommerce_show_variation_price', '__return_true' );
 //!Luôn hiển thị giá biến thể đơn
 
 //Auto select first available options from a variation on WooCommerce variable products
-add_filter('woocommerce_dropdown_variation_attribute_options_args','fun_select_default_option',10,1);
-function fun_select_default_option( $args)
-{
-    if(count($args['options']) > 0) //Check the count of available options in dropdown
-        $args['selected'] = $args['options'][0];
-    return $args;
-}
+// add_filter('woocommerce_dropdown_variation_attribute_options_args','fun_select_default_option',10,1);
+// function fun_select_default_option( $args)
+// {
+//     if(count($args['options']) > 0) //Check the count of available options in dropdown
+//         $args['selected'] = $args['options'][0];
+//     return $args;
+// }
 //!Auto select first available options from a variation on WooCommerce variable products
 remove_action( 'woocommerce_before_shop_loop', 'storefront_woocommerce_pagination', 30 );
 

@@ -1025,6 +1025,3 @@ msgstr "BẢO HÀNH"
 
 msgid "REVIEW"
 msgstr "Đánh giá"
-
-msgid "Login with OTP"
-msgstr "Đăng nhập bằng số điện thoại"

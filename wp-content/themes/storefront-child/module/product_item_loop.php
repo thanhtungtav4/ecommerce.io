@@ -1,8 +1,5 @@
 <li>
     <a href="<?php echo get_permalink(get_the_ID()); ?>">
-    <?php 
-        var_dump(the_post_thumbnail_url('product-thumb',get_the_ID()));
-    ?>
         <picture>
           <img class="lazyload" src="<?php !empty($image) ? print $image : print Placeholder; ?>" data-src="<?php !empty($image) ?  print $image : print Placeholder; ?>" alt="<?php the_title() ?>" loading="lazy" width="323" height="323">
         </picture>
