@@ -55,88 +55,34 @@ function toggleMenu(){
     }
 
 }
+// only product detail
+function toggleVariations(){
+  const is_true = document.getElementsByClassName("js_hide");
+  const is_toggle = document.getElementsByClassName("fold");
+  if(is_true.length >= 1){
+    document.getElementsByClassName('js_down')[0].classList.add('d-none');
+    document.getElementsByClassName('js_up')[0].classList.remove('d-none');
+    for (const item of is_toggle){
+        item.classList.remove("js_hide");
+    }
+  }
+  else{
+    document.getElementsByClassName('js_up')[0].classList.add('d-none');
+    document.getElementsByClassName('js_down')[0].classList.remove('d-none');
+    for (const item of is_toggle){
+      item.classList.add("js_hide");
+    }
+  }
+}
 function toggleChat(){
   let chat = document.getElementsByClassName("m-chat_inner");
   chat[0].classList.toggle("js-active");
+  if ($('.m-chat_inner').hasClass('js-active')) {
+    setTimeout(function(){
+      $('.overlay-welcome').fadeOut();
+    }, 3000);
+  }
 }
-///
-var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
-
-function showTab(n) {
-  // This function will display the specified tab of the form...
-  var x = document.getElementsByClassName("tab");
-  x[n].style.display = "block";
-  //... and fix the Previous/Next buttons:
-  if (n == 0) {
-    document.getElementById("prevBtn").style.display = "none";
-  } else {
-    document.getElementById("prevBtn").style.display = "inline";
-  }
-  if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
-  } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
-  }
-  //... and run a function that will display the correct step indicator:
-  //fixStepIndicator(n)
-}
-
-function nextPrev(n) {
-  // This function will figure out which tab to display
-  var x = document.getElementsByClassName("tab");
-  // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
-  x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
-  currentTab = currentTab + n;
-  // if you have reached the end of the form...
-  if (currentTab >= x.length) {
-    // ... the form gets submitted:
-    document.getElementById("regForm").submit();
-    return false;
-  }
-  // Otherwise, display the correct tab:
-  showTab(currentTab);
-}
-
-function validateForm() {
-  // This function deals with validation of the form fields
-  var x, y, i, valid = true;
-  x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
-  // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false
-      valid = false;
-    }
-  }
-  // If the valid status is true, mark the step as finished and valid:
-  if (valid) {
-    //document.getElementsByClassName("step")[currentTab].className += " finish";
-  }
-  return valid; // return the valid status
-}
-
-// function fixStepIndicator(n) {
-//   // This function removes the "active" class of all steps...
-//   var i, x = document.getElementsByClassName("step");
-//   for (i = 0; i < x.length; i++) {
-//     x[i].className = x[i].className.replace(" active", "");
-//   }
-//   //... and adds the "active" class on the current step:
-//   x[n].className += " active";
-// }
-
-$('#regForm').submit(function() {
-  console.log($(this).serialize());
-  return false;
-});
 ///
 jQuery.event.special.touchstart = {
   setup: function( _, ns, handle ) {
@@ -172,22 +118,121 @@ $(window).scroll(function(){
   }
   positionBf = positionAf;
 });
-// only product detail
-function toggleVariations(){
-  const is_true = document.getElementsByClassName("js_hide");
-  const is_toggle = document.getElementsByClassName("fold");
-  if(is_true.length >= 1){
-    document.getElementsByClassName('js_down')[0].classList.add('d-none');
-    document.getElementsByClassName('js_up')[0].classList.remove('d-none');
-    for (const item of is_toggle){
-        item.classList.remove("js_hide");
-    }
-  }
+
+///
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+ function showTab(n) {
+//   // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+//   // console.log(x[n]);
+
+//   //... and fix the Previous/Next buttons:
+//   // if (n == 0) {
+//   //   document.getElementById("prevBtn").style.display = "none";
+//   // } else {
+//   //   document.getElementById("prevBtn").style.display = "inline";
+//   // }
+//   // if (n == (x.length - 1)) {
+//   //   document.getElementById("nextBtn").innerHTML = "Submit";
+//   // } else {
+//   //   document.getElementById("nextBtn").innerHTML = "Next";
+//   // }
+//   //... and run a function that will display the correct step indicator:
+//   //fixStepIndicator(n)
+ }
+function nextPrev(Tabcurrent){
+  let inputCurrent = $(Tabcurrent).find("input:checked").val();
+  console.log('tab-'+ inputCurrent);
+  if(inputCurrent == undefined){
+    //hide current tab
+    $(Tabcurrent).css({"display": "none"});
+    $('.tab-giam-do-can').css({"display": "block"});
+   }
   else{
-    document.getElementsByClassName('js_up')[0].classList.add('d-none');
-    document.getElementsByClassName('js_down')[0].classList.remove('d-none');
-    for (const item of is_toggle){
-      item.classList.add("js_hide");
-    }
+    $(Tabcurrent).css({"display": "none"});
+    $('.tab-'+ inputCurrent).css({"display": "block"});
   }
 }
+
+// function nextPrev(n) {
+//   // This function will figure out which tab to display
+//   var x = document.getElementsByClassName("tab");
+//   //console.log(x);
+//   // Exit the function if any field in the current tab is invalid:
+//   if (n == 1 && !validateForm()) return false;
+//   controlShow();
+//   // Hide the current tab:
+//   x[currentTab].style.display = "none";
+//   // Increase or decrease the current tab by 1:
+//   currentTab = currentTab + n;
+//   // if you have reached the end of the form...
+//   if (currentTab >= x.length) {
+//     // ... the form gets submitted:
+//     document.getElementById("regForm").submit();
+//     return false;
+//   }
+//   // Otherwise, display the correct tab:
+//   showTab(currentTab);
+// }
+
+// function validateForm() {
+//   // This function deals with validation of the form fields
+//   var x, y, i, valid = true;
+//   x = document.getElementsByClassName("tab");
+//   y = x[currentTab].getElementsByTagName("input");
+//   // A loop that checks every input field in the current tab:
+//   for (i = 0; i < y.length; i++) {
+//     // If a field is empty...
+//     if (y[i].value == "") {
+//       // add an "invalid" class to the field:
+//       y[i].className += " invalid";
+//       // and set the current valid status to false
+//       valid = false;
+//     }
+//   }
+//   // If the valid status is true, mark the step as finished and valid:
+//   if (valid) {
+//     //document.getElementsByClassName("step")[currentTab].className += " finish";
+//   }
+//   return valid; // return the valid status
+// }
+// function controlShow(){
+
+//   const dataTab = $("input[type=radio]:checked");
+//   console.log(dataTab.data('tab'));
+//   // var is_Tab = $(".tab");
+//   // is_Tab.forEach(function(tab) {
+//     // console.log(tab);
+//     // debugger;
+//   // })
+//   // const is_check = is_Tab[currentTab].getElementsByTagName("input");
+//   // console.log(is_check);
+// }
+// $('#regForm').submit(function() {
+//   console.log($(this).serialize());
+//   return false;
+// });
+$(document).ready(function() {
+  var tabArray = ['#tab-welcome'];
+  $('.js-chatbot .tab').each(function(){
+    var _this = $(this);
+    _this.find('.btn-next').click(function(){
+      var screenValue = _this.find('.radiobtn input:checked').data('value');
+      tabArray.push(screenValue);
+      $('.js-chatbot .tab').hide();
+      $('.js-chatbot .tab' + screenValue).show();
+    })
+    _this.find('#prevBtn').click(function(){
+      var screenBack = tabArray[tabArray.length - 2];
+      tabArray.pop();
+      $('.js-chatbot .tab').hide();
+      $('.js-chatbot .tab' + screenBack).show();
+      if($.isEmptyObject(tabArray)) {
+        tabArray.push('#tab-welcome');
+      }
+    })
+  })
+});

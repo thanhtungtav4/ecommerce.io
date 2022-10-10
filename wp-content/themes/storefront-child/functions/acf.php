@@ -22,6 +22,11 @@ if (function_exists('acf_add_local_field_group')):
             'menu_title' => 'Settings Home Page',
             'parent_slug' => 'theme-general-settings',
         ));
+        acf_add_options_sub_page(array(
+            'page_title' => 'Settings Chatbot',
+            'menu_title' => 'Settings Chatbot',
+            'parent_slug' => 'theme-general-settings',
+        ));
     }
     acf_add_local_field_group(array(
         'key' => 'group_63429592ab849',
