@@ -121,13 +121,15 @@ $(window).scroll(function(){
 
 $(document).ready(function() {
   var tabArray = ['#tab-welcome'];
+  var tabData = [''];
   $('.js-chatbot .tab').each(function(){
     var _this = $(this);
     _this.find('.btn-next').click(function(){
       var screenValue = _this.find('.radiobtn input:checked').data('value');
       tabArray.push(screenValue);
+      tabData.push(screenValue);
       $('.js-chatbot .tab').hide();
-      console.log($('.js-chatbot .tab' + screenValue));
+      console.log($(tabData));
       $('.js-chatbot .tab' + screenValue).show();
     })
     _this.find('#prevBtn').click(function(){
