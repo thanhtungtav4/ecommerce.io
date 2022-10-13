@@ -77,30 +77,7 @@
 			</div>
 			<div class="m-chat_bottom"><a class="btn-next" href="javascript:;">TIẾP TỤC</a></div>
 		</div>
-		<div class="tab tab-tu_van" id="tab-tu-van-khac">
-			<div class="m-chat_top">
-				<a id="prevBtn" href="javascript:;" data-back="#">
-					<svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M11.6699 1.8699L9.89992 0.099903L-7.73358e-05 9.9999L9.89992 19.8999L11.6699 18.1299L3.53992 9.9999L11.6699 1.8699H11.6699Z" fill="white" />
-					</svg>
-				</a>
-				<p>HỖ TRỢ CHỌN LENS</p>
-				<div class="close" onclick="toggleChat()">
-					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M17.5866 2.24525L15.8828 0.541504L9.12826 7.29609L2.37367 0.541504L0.669922 2.24525L7.42451 8.99984L0.669922 15.7544L2.37367 17.4582L9.12826 10.7036L15.8828 17.4582L17.5866 15.7544L10.832 8.99984L17.5866 2.24525Z"
-							fill="white"
-						/>
-					</svg>
-				</div>
-			</div>
-			<div class="tab_inner">
-				<p class="tab_ttl center">HỖ TRỢ QUA FACEBOOK</p>
-				<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook-messenger-2881.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook-messenger-2881.svg" loading="lazy" />
-			</div>
-			<div class="m-chat_bottom"><a class="btn-next" href="https://www.messenger.com/t/Carasyvn/" target="_blank">Chat với chúng tôi</a></div>
-		</div>
-		<div class="tab tab-tu_van_khac" id="tab-tu_van_khac">
+		<div class="tab tab-tu-van-khac" id="tab-tu-van-khac">
 			<div class="m-chat_top">
 				<a id="prevBtn" href="javascript:;" data-back="#">
 					<svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +96,7 @@
 			</div>
 			<div class="tab_inner">
 				<p class="tab_ttl center">Tư vấn hỗ trợ khách hàng</p>
-				<a href="https://www.facebook.com/" taget="_blank">
+				<a href="https://www.messenger.com/t/Carasyvn/" taget="_blank">
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150px" height="150px" viewbox="0 0 150 150" version="1.1">
 						<defs>
 							<radialgradient id="radial0" gradientunits="userSpaceOnUse" cx="0.19247" cy="0.99465" fx="0.19247" fy="0.99465" r="1.0896" gradienttransform="matrix(117.1875,0,0,116.785156,16.40625,17.871094)">
@@ -142,6 +119,7 @@
 					</svg>
 				</a>
 			</div>
+			<div class="m-chat_bottom"><a class="btn-next" href="https://www.messenger.com/t/Carasyvn/" taget="_blank">TIẾP TỤC</a></div>
 		</div>
 		<div class="tab tab-mua_hang" id="tab-mua_hang">
 			<div class="m-chat_top">
@@ -574,7 +552,7 @@
 			</div>
 			<div class="m-chat_bottom"><a class="btn-next" href="javascript:;">TIẾP TỤC</a></div>
 		</div>
-    <div class="tab tab-can_thi" id="khong_can">
+    	<div class="tab tab-can_thi" id="khong_can">
 			<div class="m-chat_top">
 				<a id="prevBtn" href="javascript:;" data-back="#">
 					<svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1076,7 +1054,7 @@
 						</div>
 					</div>
 				</div>
-        <a data-fancybox="" href="<?php echo get_stylesheet_directory_uri() ?>/assets/images/huong-dan-chon-do-can-caras.jpg">Bảng tư vấn giảm độ cận </a>
+        	<a data-fancybox="" href="<?php echo get_stylesheet_directory_uri() ?>/assets/images/huong-dan-chon-do-can-caras.jpg">Bảng tư vấn giảm độ cận </a>
 			</div>
 			<div class="m-chat_bottom"><a class="btn-next" href="javascript:;">TIẾP TỤC</a></div>
 		</div>
@@ -1176,12 +1154,12 @@
 				<p class="tab_ttl center">3. Bạn thích tròng lens size như thế nào?</p>
 				<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/eye_img.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/eye_img.png" loading="lazy" />
 				<div class="radiobtn">
-					<input id="size" type="radio" data-value="#daily-use" oninput="this.className = ''" name="size" value="Không cận" checked />
-					<label for="size">Size S (Không giãn)</label>
+					<input id="size" type="radio" data-value="#daily-use" oninput="this.className = ''" name="size" value="Size S" checked />
+					<label for="size">Size S ( 13.5-13.8)</label>
 				</div>
 				<div class="radiobtn">
-					<input id="size2" type="radio" data-value="#daily-use" oninput="this.className = ''" name="size" value="Cận và loạn thị" />
-					<label for="size2">Size M (Giãn nhẹ)</label>
+					<input id="size2" type="radio" data-value="#daily-use" oninput="this.className = ''" name="size" value="Size M" />
+					<label for="size2">Size M ( 14.0 )</label>
 				</div>
 				<div class="m-chat_bottom"><a class="btn-next" href="javascript:;">TIẾP TỤC</a></div>
 			</div>
@@ -1207,11 +1185,11 @@
 				<p class="tab_ttl center">4. Bạn sử dụng lens trong dịp nào?</p>
 				<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chat_3.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chat_3.svg" loading="lazy" />
 				<div class="radiobtn">
-					<input id="forday" type="radio" data-value="#tab-color" oninput="this.className = ''" name="forday" value="Không cận" checked />
+					<input id="forday" type="radio" data-value="#tab-color" oninput="this.className = ''" name="forday" value="Hàng ngày, đi làm, đi học" checked />
 					<label for="forday">Hàng ngày, đi làm, đi học</label>
 				</div>
 				<div class="radiobtn">
-					<input id="forday2" type="radio" data-value="#tab-color" oninput="this.className = ''" name="forday" value="Cận và loạn thị" />
+					<input id="forday2" type="radio" data-value="#tab-color" oninput="this.className = ''" name="forday" value="Đi chơi, bar, pub" />
 					<label for="forday2">Đi chơi, bar, pub</label>
 				</div>
 			</div>
@@ -1239,12 +1217,16 @@
 				<p class="tab_ttl center">Bạn thích lens tone nâu hay xám?</p>
 				<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/eye_img.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/eye_img.png" loading="lazy" />
 				<div class="radiobtn">
-					<input id="color" type="radio" data-value="#daily-use" oninput="this.className = ''" name="color" value="Không cận" checked />
-					<label for="color">Size S (Không giãn)</label>
+					<input id="color" type="radio" data-value="#san-pham" oninput="this.className = ''" name="color" value="Choco" checked />
+					<label for="color">Choco</label>
 				</div>
 				<div class="radiobtn">
-					<input id="size2" type="radio" data-value="#daily-use" oninput="this.className = ''" name="color" value="Cận và loạn thị" />
-					<label for="size2">Size M (Giãn nhẹ)</label>
+					<input id="color2" type="radio" data-value="#san-pham" oninput="this.className = ''" name="color" value="Brown" />
+					<label for="color2">Brown</label>
+				</div>
+				<div class="radiobtn">
+					<input id="color3" type="radio" data-value="#san-pham" oninput="this.className = ''" name="color" value="Gray" />
+					<label for="color3">Gray</label>
 				</div>
 				<div class="m-chat_bottom"><a class="btn-next" href="javascript:;">TIẾP TỤC</a></div>
 			</div>
@@ -1378,7 +1360,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="m-chat_bottom"><a class="btn-next" href="javascript:;">TIẾP TỤC</a></div>
+			<div class="m-chat_bottom"><a class="btn-next" href="https://www.messenger.com/t/Carasyvn/" taget="_blank" >Tư vấn thêm</a></div>
 		</div>
 	</form>
 </div>

@@ -126,8 +126,9 @@ $(document).ready(function() {
     var _this = $(this);
     _this.find('.btn-next').click(function(){
       var screenValue = _this.find('.radiobtn input:checked').data('value');
+      var TabValue = _this.find('.radiobtn input:checked').val();
       tabArray.push(screenValue);
-      tabData.push(screenValue);
+      tabData.push(TabValue);
       $('.js-chatbot .tab').hide();
       console.log($(tabData));
       $('.js-chatbot .tab' + screenValue).show();
