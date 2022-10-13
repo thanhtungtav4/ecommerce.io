@@ -167,6 +167,15 @@ main{
   border: 1px solid #aaa;
   padding: 0 10px;
 }
+.m-messenger svg{
+  width: 60px;
+  height: 60px;
+  
+}
+.m-messenger{
+  bottom: 11rem;
+  right: 4rem;
+}
 
 select.xoo-ml-phone-cc + .select2.select2-container {
   min-width: 85px;

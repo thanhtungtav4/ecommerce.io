@@ -13,122 +13,122 @@
     <?php require_once( get_stylesheet_directory() . '/module/footer_info.php' ); ?>
   </div>
 <?php endif; ?>
+<?php require( get_stylesheet_directory() . '/module/chat_bot.php' ); ?>
 	<footer class="c-footer">
-        <div class="l-container c-footer_top">
-          <dl>
-            <dd class="c-footer_logo"><a href="#">
+      <div class="l-container c-footer_top">
+        <dl>
+          <dd class="c-footer_logo"><a href="#">
+              <picture>
+                <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.webp" type="image/webp">
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" alt="caras" loading="lazy" width="161" height="46">
+              </picture></a>
+            <dd class="c-footer_copy">© Copyright 2022 CARAS LENS. All rights reserved.</dd>
+          </dd>
+          <dt class="c-footer_fw"><?php _e('FOLLOW AT', 'storefront') ?>
+            <dl class="c-footer_social c-footer_certificates">
+              <dd><img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" width="39" height="39"></dd>
+              <dd><img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png" width="39" height="39"></dd>
+              <dd><img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtube.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtube.png" width="39" height="39"></dd>
+            </dl>
+          </dt>
+        </dl>
+        <dl>
+          <dt><?php _e('CÔNG TY CỔ PHẦN THƯƠNG MẠI CALEN', 'storefront') ?></dt>
+          <dd><strong><?php _e('Business registration certificate:', 'storefront') ?>&nbsp;</strong><?php _e('0317006667', 'storefront') ?></dd>
+          <dd><strong>Email:&nbsp;</strong><a href="mailto:support@caraslens.vn">support@caraslens.vn</a></dd>
+          <dd><strong><?php _e('Import license No. 17830NK/BYT-TB-CT granted by the Ministry of Health', 'storefront') ?></strong></dd>
+          <dd><strong>Hotline:&nbsp;</strong><a href="tel:1900636304">1900 63 63 04</a></dd>
+        </dl>
+        <dl>
+          <dt><?php _e('CUSTOMER SUPPORT', 'storefront') ?>
+            <dl>
+              <dd><a href="#"><?php _e('Warranty Policy', 'storefront') ?></a></dd>
+              <dd><a href="#"><?php _e('Return Policy', 'storefront') ?></a></dd>
+              <dd><a href="#"><?php _e('Delivery policy', 'storefront') ?></a></dd>
+              <dd><a href="#"><?php _e('Shopping guide', 'storefront') ?></a></dd>
+              <dd><a href="#"><?php _e('FAQs', 'storefront') ?></a></dd>
+              <dd><a href="/<?php echo apply_filters( 'wpml_get_translated_slug', 'lien-he', 'page' , 'ICL_LANGUAGE_CODE');?>"><?php _e('CONTACT US', 'storefront') ?></a></dd>
+            </dl>
+          </dt>
+          <dt>MEDICAL CERTIFICATES
+            <dl class="c-footer_social c-footer_certificates">
+              <dd>
                 <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.webp" type="image/webp">
-                  <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" alt="caras" loading="lazy" width="161" height="46">
-                </picture></a>
-              <dd class="c-footer_copy">© Copyright 2022 CARAS LENS. All rights reserved.</dd>
-            </dd>
-            <dt class="c-footer_fw"><?php _e('FOLLOW AT', 'storefront') ?>
-              <dl class="c-footer_social c-footer_certificates">
-                <dd><img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" width="39" height="39"></dd>
-                <dd><img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png" width="39" height="39"></dd>
-                <dd><img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtube.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtube.png" width="39" height="39"></dd>
-              </dl>
-            </dt>
-          </dl>
-          <dl>
-            <dt><?php _e('CÔNG TY CỔ PHẦN THƯƠNG MẠI CALEN', 'storefront') ?></dt>
-            <dd><strong><?php _e('Business registration certificate:', 'storefront') ?>&nbsp;</strong><?php _e('0317006667', 'storefront') ?></dd>
-            <dd><strong>Email:&nbsp;</strong><a href="mailto:support@caraslens.vn">support@caraslens.vn</a></dd>
-            <dd><strong><?php _e('Import license No. 17830NK/BYT-TB-CT granted by the Ministry of Health', 'storefront') ?></strong></dd>
-            <dd><strong>Hotline:&nbsp;</strong><a href="tel:1900636304">1900 63 63 04</a></dd>
-          </dl>
-          <dl>
-            <dt><?php _e('CUSTOMER SUPPORT', 'storefront') ?>
-              <dl>
-                <dd><a href="#"><?php _e('Warranty Policy', 'storefront') ?></a></dd>
-                <dd><a href="#"><?php _e('Return Policy', 'storefront') ?></a></dd>
-                <dd><a href="#"><?php _e('Delivery policy', 'storefront') ?></a></dd>
-                <dd><a href="#"><?php _e('Shopping guide', 'storefront') ?></a></dd>
-                <dd><a href="#"><?php _e('FAQs', 'storefront') ?></a></dd>
-                <dd><a href="/<?php echo apply_filters( 'wpml_get_translated_slug', 'lien-he', 'page' , 'ICL_LANGUAGE_CODE');?>"><?php _e('CONTACT US', 'storefront') ?></a></dd>
-              </dl>
-            </dt>
-            <dt>MEDICAL CERTIFICATES
-              <dl class="c-footer_social c-footer_certificates">
-                <dd>
-                  <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" alt="byt" loading="lazy" width="47" height="47">
-                  </picture>
-                </dd>
-                <dd>
-                  <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/fda.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/fda.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/fda.png" alt="fda" loading="lazy" width="56" height="22">
-                  </picture>
-                </dd>
-                <dd>
-                  <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/iso.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/iso.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/iso.png" alt="iso" loading="lazy" width="50" height="49">
-                  </picture>
-                </dd>
-              </dl>
-            </dt>
-          </dl>
-          <dl>
-            <dt><?php _e('CARAS AFFILIATE PROGRAM', 'storefront') ?>
-              <dl>
-                <dd><a href="#">Affiliate program</a></dd>
-              </dl>
-            </dt>
-            <dt>PAYMENT ACCEPT
-              <dl class="c-footer_social c-footer_certificates">
-                <dd>
-                  <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/visa.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/visa.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/visa.png" alt="visa" loading="lazy" width="71" height="23">
-                  </picture>
-                </dd>
-                <dd>
-                  <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/jcb.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/jcb.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/jcb.png" alt="jcb" loading="lazy" width="45" height="32">
-                  </picture>
-                </dd>
-                <dd>
-                  <picture>
-                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mastercard.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mastercard.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mastercard.png" alt="mastercard" loading="lazy" width="56" height="33.5">
-                  </picture>
-                </dd>
-              </dl>
-            </dt>
-          </dl>
-        </div>
-        <div class="l-container c-footer_bottom">
-          <dl>
-            <dd>
-              <picture>
-                <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.png" alt="Logo" loading="lazy" width="101" height="86">
-              </picture>
-            </dd>
-          </dl>
-          <dl>
-            <dd>
-              <picture>
-                <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" alt="Logo" loading="lazy" width="155" height="75.5">
-              </picture>
-            </dd>
-          </dl>
-          <dl>
-            <dd>
-              <picture>
-                <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" alt="Logo" loading="lazy" width="193" height="61">
-              </picture>
-            </dd>
-          </dl>
-          <dl>
-            <dd>
-              <picture>
-                <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" alt="Logo" loading="lazy" width="124" height="123">
-              </picture>
-            </dd>
-          </dl>
-        </div>
-      </footer>
-      <?php require( get_stylesheet_directory() . '/module/chat_bot.php' ); ?>
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" alt="byt" loading="lazy" width="47" height="47">
+                </picture>
+              </dd>
+              <dd>
+                <picture>
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/fda.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/fda.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/fda.png" alt="fda" loading="lazy" width="56" height="22">
+                </picture>
+              </dd>
+              <dd>
+                <picture>
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/iso.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/iso.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/iso.png" alt="iso" loading="lazy" width="50" height="49">
+                </picture>
+              </dd>
+            </dl>
+          </dt>
+        </dl>
+        <dl>
+          <dt><?php _e('CARAS AFFILIATE PROGRAM', 'storefront') ?>
+            <dl>
+              <dd><a href="#">Affiliate program</a></dd>
+            </dl>
+          </dt>
+          <dt>PAYMENT ACCEPT
+            <dl class="c-footer_social c-footer_certificates">
+              <dd>
+                <picture>
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/visa.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/visa.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/visa.png" alt="visa" loading="lazy" width="71" height="23">
+                </picture>
+              </dd>
+              <dd>
+                <picture>
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/jcb.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/jcb.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/jcb.png" alt="jcb" loading="lazy" width="45" height="32">
+                </picture>
+              </dd>
+              <dd>
+                <picture>
+                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mastercard.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mastercard.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mastercard.png" alt="mastercard" loading="lazy" width="56" height="33.5">
+                </picture>
+              </dd>
+            </dl>
+          </dt>
+        </dl>
+      </div>
+      <div class="l-container c-footer_bottom">
+        <dl>
+          <dd>
+            <picture>
+              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.png" alt="Logo" loading="lazy" width="101" height="86">
+            </picture>
+          </dd>
+        </dl>
+        <dl>
+          <dd>
+            <picture>
+              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" alt="Logo" loading="lazy" width="155" height="75.5">
+            </picture>
+          </dd>
+        </dl>
+        <dl>
+          <dd>
+            <picture>
+              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" alt="Logo" loading="lazy" width="193" height="61">
+            </picture>
+          </dd>
+        </dl>
+        <dl>
+          <dd>
+            <picture>
+              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" alt="Logo" loading="lazy" width="124" height="123">
+            </picture>
+          </dd>
+        </dl>
+      </div>
     </div>
+    </footer>
     <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/common.js"></script>
