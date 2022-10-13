@@ -1046,11 +1046,11 @@
 					<div class="gr-input">
 						<div class="gr-input-item">
 							<label for="mat_trai">Mắt trái:</label>
-							<input name="mat-trai" type="text" value="1.0" />
+							<input name="mat-trai" id="mat-trai" type="text" value="1.0" />
 						</div>
 						<div class="gr-input-item">
 							<label for="mat_phai">Mắt Phải:</label>
-							<input name="mat-phai" type="text" value="1.0" />
+							<input name="mat-phai" id="mat-phai" type="text" value="1.0" />
 						</div>
 					</div>
 				</div>

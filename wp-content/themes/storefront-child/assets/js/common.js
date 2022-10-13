@@ -143,4 +143,7 @@ $(document).ready(function() {
       }
     })
   })
+  $('input#matrai').on("change keyup input",function() { 
+    alert($(this).val()); 
+});
 });
