@@ -121,18 +121,20 @@ $(window).scroll(function(){
 
 $(document).ready(function() {
   var tabArray = ['#tab-welcome'];
-  var tabData = [''];
+  var tabData = [];
+  var data
   $('.js-chatbot .tab').each(function(){
     var _this = $(this);
     _this.find('.btn-next').click(function(){
       var screenValue = _this.find('.radiobtn input:checked').data('value');
       var TabValue = _this.find('.radiobtn input:checked').val();
+      console.log(_this.on('change paste keyup').val());
       tabArray.push(screenValue);
       tabData.push(TabValue);
       $('.js-chatbot .tab').hide();
       console.log($(tabData));
       $('.js-chatbot .tab' + screenValue).show();
-    })
+    });
     _this.find('#prevBtn').click(function(){
       var screenBack = tabArray[tabArray.length - 2];
       tabArray.pop();
@@ -141,9 +143,18 @@ $(document).ready(function() {
       if($.isEmptyObject(tabArray)) {
         tabArray.push('#tab-welcome');
       }
-    })
-  })
-  $('input#matrai').on("change keyup input",function() { 
-    alert($(this).val()); 
+    });
 });
+$(document).ready(function() {
+  var dataMattrai = [];
+  var dataMatphai = [];
+  $('#mat-trai').on("change keyup input",function() { 
+    dataMattrai = $(this).val();
+    console.log(dataMattrai);
+  });
+  $("#mat-phai").on("change paste keyup", function() {
+    dataMatphai = $(this).val();
+    console.log(dataMatphai);
+  });
+  })
 });
