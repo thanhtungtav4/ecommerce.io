@@ -118,7 +118,12 @@ $(window).scroll(function(){
   }
   positionBf = positionAf;
 });
-
+$(document).ready(function(){
+  $('.c-menu_dropdown').click(function(){
+    $(this).stop().toggleClass('active');
+    $(this).find('.c-menu_sub').stop().slideToggle();
+  })
+})
 $(document).ready(function() {
   var tabArray = ['#tab-welcome'];
   var tabData = [];
@@ -148,7 +153,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   var dataMattrai = [];
   var dataMatphai = [];
-  $('#mat-trai').on("change keyup input",function() { 
+  $('#mat-trai').on("change keyup input",function() {
     dataMattrai = $(this).val();
     console.log(dataMattrai);
   });

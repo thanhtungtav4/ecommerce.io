@@ -15,6 +15,7 @@
 <?php endif; ?>
 <?php require( get_stylesheet_directory() . '/module/chat_bot.php' ); ?>
 	<footer class="c-footer">
+      <?php if(!wp_is_mobile()) : ?>
       <div class="l-container c-footer_top">
         <dl>
           <dd class="c-footer_logo"><a href="#">
@@ -127,8 +128,126 @@
           </dd>
         </dl>
       </div>
+      <?php else : ?>
+        <div class="l-container c-footer_top">
+          <div class="m-support"><strong>HỖ TRỢ</strong>
+            <div class="m-support_inner">
+              <ul class="m-support_list">
+                <li><a href="/chinh-sach-bao-hanh/">Chính sách bảo hành</a></li>
+                <li><a href="/chinh-sach-doi-tra/">Chính sách đổi trả</a></li>
+                <li><a href="/chinh-sach-giao-nhan/">Chính sách giao nhận</a></li>
+                <li><a href="/huong-dan-mua-hang/">Hướng dẫn mua hàng</a></li>
+              </ul>
+              <ul class="m-support_list">
+                <li><a href="#">Affiliate</a></li>
+                <li><a href="/hoi-dap/">Q&A</a></li>
+                <li><a href="/lien-he/">Liên hệ</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="m-med">
+            <div class="m-med_block"><strong>MEDICAL CERTIFICATES</strong>
+              <ul class="l-icon">
+                <li>
+                  <a href="#">
+                    <picture>
+                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" alt="byt" loading="lazy" width="47" height="47">
+                    </picture>
+                  </a>
+                </li>
+                <li>
+                  <picture>
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/fda.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/fda.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/fda.png" alt="fda" loading="lazy" width="56" height="22">
+                  </picture>
+                </li>
+                <li>
+                  <picture>
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/iso.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/iso.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/iso.png" alt="iso" loading="lazy" width="50" height="49">
+                  </picture>
+                </li>
+              </ul>
+            </div>
+            <div class="m-med_block"><strong>PAYMENT ACCEPT</strong>
+              <ul class="l-icon">
+                <li>
+                    <picture>
+                      <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/visa.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/visa.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/visa.png" alt="visa" loading="lazy" width="71" height="23">
+                    </picture>
+                </li>
+                <li>
+                  <picture>
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/jcb.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/jcb.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/jcb.png" alt="jcb" loading="lazy" width="45" height="32">
+                  </picture>
+                </li>
+                <li>
+                  <picture>
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mastercard.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mastercard.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mastercard.png" alt="mastercard" loading="lazy" width="56" height="33.5">
+                  </picture>
+                </li>
+              </ul>
+            </div>
+            <div class="m-med_block"><strong>SOCIAL MEDIA</strong>
+              <ul class="l-icon">
+                <li>
+                  <a href="#">
+                    <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" width="39" height="39">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png"  width="39" height="39">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtube.png" width="39" height="39">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="m-info-company">
+            <div class="m-info-company_information"><strong>Công ty CPTM CALEN</strong>
+              <p class="txt">(Calen Trading Joint Stock Company)</p>
+              <p class="txt">619 Nguyễn Đình Chiểu, P2, P3, Tp.HCM</p>
+              <p class="txt">Mã số thuế: 0317006667</p>
+              <p class="txt">Hotline: 1900 636304</p>
+              <p class="txt">GIẤY PHÉP CÔNG BỐ & NHẬP KHẨU: 220002087/PCBB-HCM</p>
+            </div>
+            <ul class="m-info-company_cert">
+              <li>
+                <picture>
+                  <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" width="48" height="48">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" width="88" height="44">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" width="88" height="28">
+                </picture>
+              </li>
+              <li>
+                <picture>
+                  <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" width="88" height="88">
+                </picture>
+              </li>
+            </ul>
+          </div>
+          <div class="m-copy-right">
+            <div class="logo">
+              <picture>
+                <img data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png"  src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" alt="caras" loading="lazy">
+              </picture>
+            </div><small class="copyright">&copy;Copyright 2022 CARAS LENS. All rights reserved.</small>
+          </div>
+        </div>
+      <?php endif; ?>  
     </div>
-    </footer>
+  </footer>
     <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/common.js"></script>

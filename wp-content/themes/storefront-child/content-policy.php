@@ -12,19 +12,19 @@
           <b>HỖ TRỢ KHÁCH HÀNG</b>
         </li>
         <li>
-          <a href="#">Chính Sách Bảo Hành</a>
+          <a href="/chinh-sach-bao-hanh/">Chính Sách Bảo Hành</a>
         </li>
         <li>
-          <a href="# ">Chính Sách Đổi Trả</a>
+          <a href="/chinh-sach-doi-tra/">Chính Sách Đổi Trả</a>
         </li>
         <li>
-          <a href="# ">Chính Sách Giao Nhận</a>
+          <a href="/chinh-sach-giao-nhan/">Chính Sách Giao Nhận</a>
         </li>
         <li>
-          <a href="# ">Chính Sách Mua Hàng</a>
+          <a href="/huong-dan-mua-hang/">Chính Sách Mua Hàng</a>
         </li>
         <li>
-          <a href="# ">Hỏi Đáp</a>
+          <a href="/lien-he/">Hỏi Đáp</a>
         </li>
       </ul>
     </div>

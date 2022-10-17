@@ -52,7 +52,7 @@ get_header(); ?>
             </div>
             <div class="m-product__inner">
               <div class="m-product__gallery">
-                 <a href="#">
+                 <a href="/best-seller-contact-lenses/">
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.webp" type="image/webp">
@@ -121,7 +121,7 @@ get_header(); ?>
             </div>
             <div class="m-product__inner">
               <div class="m-product__gallery">
-                 <a href="#">
+                 <a href="/lens-deo-di-hoc-va-di-lam/">
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.webp" type="image/webp">
@@ -331,7 +331,7 @@ get_header(); ?>
             </div>
             <div class="m-product__inner">
               <div class="m-product__gallery">
-                 <a href="#">
+                 <a href="/lens-trong-suot/">
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.webp" type="image/webp">
@@ -401,7 +401,7 @@ get_header(); ?>
             </div>
             <div class="m-product__inner">
               <div class="m-product__gallery">
-                 <a href="#">
+                 <a href="/phu-kien-lens/">
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.webp" type="image/webp">
