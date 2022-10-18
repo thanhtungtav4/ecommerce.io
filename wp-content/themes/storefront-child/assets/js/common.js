@@ -119,7 +119,7 @@ $(window).scroll(function(){
   positionBf = positionAf;
 });
 $(document).ready(function(){
-  $('.c-menu_dropdown').click(function(){
+  $('.c-header_menu .c-menu_dropdown').click(function(){
     $(this).stop().toggleClass('active');
     $(this).find('.c-menu_sub').stop().slideToggle();
   })

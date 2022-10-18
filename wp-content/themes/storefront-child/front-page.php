@@ -342,7 +342,7 @@ get_header(); ?>
               <ul class="m-product__slick m-product__slick005">
                 <?php for ($i=0; $i < 2; $i++) { ?>
                   <li>
-                    <ul class="item_show">
+                    <ul>
                     <?php
                       $current_lang = $sitepress->get_current_language();
                       $cate_id = apply_filters( 'wpml_object_id', 60 , 'product_cat', TRUE  );
