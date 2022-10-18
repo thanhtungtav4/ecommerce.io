@@ -43,11 +43,11 @@
         <dl>
           <dt><?php _e('CUSTOMER SUPPORT', 'storefront') ?>
             <dl>
-              <dd><a href="#"><?php _e('Warranty Policy', 'storefront') ?></a></dd>
-              <dd><a href="#"><?php _e('Return Policy', 'storefront') ?></a></dd>
-              <dd><a href="#"><?php _e('Delivery policy', 'storefront') ?></a></dd>
-              <dd><a href="#"><?php _e('Shopping guide', 'storefront') ?></a></dd>
-              <dd><a href="#"><?php _e('FAQs', 'storefront') ?></a></dd>
+              <dd><a href="/chinh-sach-bao-hanh/"><?php _e('Warranty Policy', 'storefront') ?></a></dd>
+              <dd><a href="/chinh-sach-doi-tra/"><?php _e('Return Policy', 'storefront') ?></a></dd>
+              <dd><a href="/chinh-sach-giao-nhan/"><?php _e('Delivery policy', 'storefront') ?></a></dd>
+              <dd><a href="/huong-dan-mua-hang/"><?php _e('Shopping guide', 'storefront') ?></a></dd>
+              <dd><a href="/hoi-dap/"><?php _e('FAQs', 'storefront') ?></a></dd>
               <dd><a href="/<?php echo apply_filters( 'wpml_get_translated_slug', 'lien-he', 'page' , 'ICL_LANGUAGE_CODE');?>"><?php _e('CONTACT US', 'storefront') ?></a></dd>
             </dl>
           </dt>
@@ -133,15 +133,15 @@
           <div class="m-support"><strong>HỖ TRỢ</strong>
             <div class="m-support_inner">
               <ul class="m-support_list">
-                <li><a href="/chinh-sach-bao-hanh/">Chính sách bảo hành</a></li>
-                <li><a href="/chinh-sach-doi-tra/">Chính sách đổi trả</a></li>
-                <li><a href="/chinh-sach-giao-nhan/">Chính sách giao nhận</a></li>
-                <li><a href="/huong-dan-mua-hang/">Hướng dẫn mua hàng</a></li>
+                <li><a href="/chinh-sach-bao-hanh/"><?php _e('Warranty Policy', 'storefront') ?></a></li>
+                <li><a href="/chinh-sach-doi-tra/"><?php _e('Return Policy', 'storefront') ?></a></li>
+                <li><a href="/chinh-sach-giao-nhan/"><?php _e('Delivery policy', 'storefront') ?></a></li>
+                <li><a href="/huong-dan-mua-hang/"><?php _e('Shopping guide', 'storefront') ?></a></li>
               </ul>
               <ul class="m-support_list">
                 <li><a href="#">Affiliate</a></li>
                 <li><a href="/hoi-dap/">Q&A</a></li>
-                <li><a href="/lien-he/">Liên hệ</a></li>
+                <li><a href="/lien-he/"><?php _e('CONTACT US', 'storefront') ?></a></li>
               </ul>
             </div>
           </div>
