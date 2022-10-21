@@ -126,19 +126,26 @@ $(document).ready(function(){
 })
 $(document).ready(function() {
   var tabArray = ['#tab-welcome'];
-  var tabData = [];
-  var data
+  var tabData = '';
   $('.js-chatbot .tab').each(function(){
     var _this = $(this);
     _this.find('.btn-next').click(function(){
       var screenValue = _this.find('.radiobtn input:checked').data('value');
-      var TabValue = _this.find('.radiobtn input:checked').val();
-      console.log(_this.on('change paste keyup').val());
+      var TabValue = _this.find('.radiobtn input:checked').data('options');
+      if(typeof TabValue =='number'){
+        tabData += TabValue;
+      }
       tabArray.push(screenValue);
-      tabData.push(TabValue);
+      console.log(tabData);
       $('.js-chatbot .tab').hide();
-      console.log($(tabData));
-      $('.js-chatbot .tab' + screenValue).show();
+      if(tabData == 274  || tabData == 375 || tabData == 276 || tabData == 284 || tabData == 285
+        || tabData == 286 || tabData == 374 || tabData == 376 || tabData == 376 || tabData == 384 || tabData == 385 || tabData == 386 ){
+          console.log(tabData);
+          $('.js-chatbot .tab' + tabData).show();
+      }
+      else{
+        $('.js-chatbot .tab' + screenValue).show();
+      }
     });
     _this.find('#prevBtn').click(function(){
       var screenBack = tabArray[tabArray.length - 2];

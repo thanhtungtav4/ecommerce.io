@@ -76,7 +76,7 @@ function dorzki_wc_display_products_viewed() {
 	echo '<ul>';
 	echo '<div class="m-product__inner w-100">';
     echo '<ul class="m-item w-100">';
-	foreach ( $products as $product ) : 
+	foreach ( $products as $product ) :
 
 			$post_object = get_post( $product );
 

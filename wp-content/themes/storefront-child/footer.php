@@ -13,7 +13,7 @@
     <?php require_once( get_stylesheet_directory() . '/module/footer_info.php' ); ?>
   </div>
 <?php endif; ?>
-<?php //require( get_stylesheet_directory() . '/module/chat_bot.php' ); ?>
+<?php require( get_stylesheet_directory() . '/module/chat_bot.php' ); ?>
 	<footer class="c-footer">
       <?php if(!wp_is_mobile()) : ?>
       <div class="l-container c-footer_top">

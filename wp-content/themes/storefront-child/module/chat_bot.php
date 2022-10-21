@@ -552,7 +552,7 @@
 			</div>
 			<div class="m-chat_bottom"><a class="btn-next" href="javascript:;">TIẾP TỤC</a></div>
 		</div>
-    	<div class="tab tab-can_thi" id="khong_can">
+    <div class="tab tab-can_thi" id="khong_can">
 			<div class="m-chat_top">
 				<a id="prevBtn" href="javascript:;" data-back="#">
 					<svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1154,11 +1154,11 @@
 				<p class="tab_ttl center">3. Bạn thích tròng lens size như thế nào?</p>
 				<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/eye_img.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/eye_img.png" loading="lazy" />
 				<div class="radiobtn">
-					<input id="size" type="radio" data-value="#daily-use" oninput="this.className = ''" name="size" value="Size S" checked />
+					<input id="size" type="radio" data-options="2" data-value="#daily-use" oninput="this.className = ''" name="size" value="Size S" checked />
 					<label for="size">Size S ( 13.5-13.8)</label>
 				</div>
 				<div class="radiobtn">
-					<input id="size2" type="radio" data-value="#daily-use" oninput="this.className = ''" name="size" value="Size M" />
+					<input id="size2" type="radio"  data-options="3" data-value="#daily-use" oninput="this.className = ''" name="size" value="Size M" />
 					<label for="size2">Size M ( 14.0 )</label>
 				</div>
 				<div class="m-chat_bottom"><a class="btn-next" href="javascript:;">TIẾP TỤC</a></div>
@@ -1185,11 +1185,11 @@
 				<p class="tab_ttl center">4. Bạn sử dụng lens trong dịp nào?</p>
 				<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chat_3.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chat_3.svg" loading="lazy" />
 				<div class="radiobtn">
-					<input id="forday" type="radio" data-value="#tab-color" oninput="this.className = ''" name="forday" value="Hàng ngày, đi làm, đi học" checked />
+					<input id="forday" type="radio" data-options="7" data-value="#tab-color" oninput="this.className = ''" name="forday" value="Hàng ngày, đi làm, đi học" checked />
 					<label for="forday">Hàng ngày, đi làm, đi học</label>
 				</div>
 				<div class="radiobtn">
-					<input id="forday2" type="radio" data-value="#tab-color" oninput="this.className = ''" name="forday" value="Đi chơi, bar, pub" />
+					<input id="forday2" type="radio" data-options="8" data-value="#tab-color" oninput="this.className = ''" name="forday" value="Đi chơi, bar, pub" />
 					<label for="forday2">Đi chơi, bar, pub</label>
 				</div>
 			</div>
@@ -1217,15 +1217,15 @@
 				<p class="tab_ttl center">Bạn thích lens tone nâu hay xám?</p>
 				<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/eye_img.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/eye_img.png" loading="lazy" />
 				<div class="radiobtn">
-					<input id="color" type="radio" data-value="#san-pham" oninput="this.className = ''" name="color" value="Choco" checked />
+					<input id="color" type="radio" data-options="4" data-value="#san-pham" oninput="this.className = ''" name="color" value="Choco" checked />
 					<label for="color">Choco</label>
 				</div>
 				<div class="radiobtn">
-					<input id="color2" type="radio" data-value="#san-pham" oninput="this.className = ''" name="color" value="Brown" />
+					<input id="color2" type="radio" data-options="5" data-value="#san-pham" oninput="this.className = ''" name="color" value="Brown" />
 					<label for="color2">Brown</label>
 				</div>
 				<div class="radiobtn">
-					<input id="color3" type="radio" data-value="#san-pham" oninput="this.className = ''" name="color" value="Gray" />
+					<input id="color3" type="radio" data-options="6" data-value="#san-pham" oninput="this.className = ''" name="color" value="Gray" />
 					<label for="color3">Gray</label>
 				</div>
 				<div class="m-chat_bottom"><a class="btn-next" href="javascript:;">TIẾP TỤC</a></div>

@@ -1488,10 +1488,10 @@ body.js-active {
   border-radius: 5px;
   text-align: center;
   display: block;
-  padding: 7px 10px;
+  padding: 0 10px;
   margin: 5px;
   width: 20px;
-  height: 23px;
+  height: 20px;
 }
 .btn_area__add {
   background: #ABABAB;
@@ -3957,6 +3957,11 @@ body.js-active {
   display: inline-block;
   bottom: 2rem;
 }
+@media screen and (max-width: 767px) {
+  .m-chat_inner.js-active {
+    right: 1rem;
+  }
+}
 .m-chat_inner.js-active form {
   display: flex;
   align-items: center;
@@ -4221,7 +4226,4 @@ body.js-active {
 }
 .chatbot_screen:first-child {
   display: block;
-}
-.c-header_icon > li.active .c-menu_sub{
-  z-index: 99;
 }
