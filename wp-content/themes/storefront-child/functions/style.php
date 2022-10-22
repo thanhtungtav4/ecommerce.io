@@ -38,8 +38,8 @@ function conditionally_enqueue_styles_scripts() {
         wp_register_style( 'style_thankyou', get_stylesheet_directory_uri().'/assets/css/thankyou.css' );
         wp_enqueue_style('style_thankyou');
     }
-    // if(!is_front_page()){
-    //     wp_register_style( 'detail-post', get_stylesheet_directory_uri().'/assets/css/detail-post.css' );
-    //     wp_enqueue_style('detail-post');
-    // }
+    if(wp_is_mobile() && is_product()){
+        wp_register_style( 'detail-woo', get_stylesheet_directory_uri().'/assets/css/detail_wooo.css' );
+        wp_enqueue_style('detail-woo');
+    }
 }

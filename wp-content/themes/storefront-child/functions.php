@@ -15,7 +15,10 @@ require_once( get_stylesheet_directory() . '/functions/style.php' );
 //only load product detail
 require_once( get_stylesheet_directory() . '/functions/woo_detail.php');
 require_once( get_stylesheet_directory() . '/functions/recently.php' );
-require_once( get_stylesheet_directory() . '/functions/gallery-slider/woo-product-gallery-image-slider.php' );
+if(!wp_is_mobile()){
+	require_once( get_stylesheet_directory() . '/functions/gallery-slider/woo-product-gallery-image-slider.php' );
+}
+
 // control order status if vnpay succes pay
 // account
 require_once( get_stylesheet_directory() . '/functions/woo_account.php');

@@ -138,10 +138,10 @@ $(document).ready(function() {
       tabArray.push(screenValue);
       console.log(tabData);
       $('.js-chatbot .tab').hide();
-      if(tabData == 274  || tabData == 375 || tabData == 276 || tabData == 284 || tabData == 285
-        || tabData == 286 || tabData == 374 || tabData == 376 || tabData == 376 || tabData == 384 || tabData == 385 || tabData == 386 ){
-          console.log(tabData);
-          $('.js-chatbot .tab' + tabData).show();
+      if(tabData == 274  || tabData == 275 || tabData == 276 || tabData == 284 || tabData == 285
+        || tabData == 286 || tabData == 374 || tabData == 375 || tabData == 376 || tabData == 384 || tabData == 385 || tabData == 386 ){
+          console.log('tab-'+ tabData);
+          $('.js-chatbot .tab-' + tabData).show();
       }
       else{
         $('.js-chatbot .tab' + screenValue).show();

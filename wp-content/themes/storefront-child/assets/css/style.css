@@ -1434,6 +1434,7 @@ body.js-active {
   flex-wrap: wrap;
   flex-direction: column;
   text-align: right;
+  align-items: flex-start;
 }
 @media screen and (max-width: 767px) {
   .m-discount {
@@ -1481,7 +1482,7 @@ body.js-active {
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
-  width: 100px;
+  width: 110px;
   min-width: 100px;
 }
 .btn_area a {
@@ -1489,18 +1490,20 @@ body.js-active {
   text-align: center;
   display: block;
   padding: 0 10px;
-  margin: 5px;
+  margin: 0 5px;
   width: 20px;
   height: 20px;
 }
 .btn_area__add {
-  background: #ABABAB;
+  background: white;
+  border: 1px solid gray;
 }
 .btn_area__add img {
   height: 20px;
 }
 .btn_area__del {
-  background: #EB6A6A;
+  background: black;
+  height: 22px !important;
 }
 .btn_area .add_to_cart_button {
   background-color: rgb(235, 106, 106);
@@ -1789,6 +1792,7 @@ body.js-active {
 .m-product__img {
   position: relative;
   width: 100%;
+  border-radius: 3px;
 }
 .m-product__img img {
   position: absolute;
@@ -4082,7 +4086,7 @@ body.js-active {
   padding: 10px;
 }
 .m-chat_product li {
-  width: calc(50% - 10px);
+  width: calc(50% - 5px);
   margin: 1rem 0;
 }
 

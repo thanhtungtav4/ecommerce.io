@@ -78,11 +78,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
     <div class="m-product__content-bottom">
       <p></p>
       <div class="btn_area">
-        <a class="btn_area__add" href="
-					<?php the_permalink();?>" tabindex="0">
+        <a class="btn_area__add" href="<?php the_permalink();?>" tabindex="0">
           <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/note_add.svg" alt="add to cart" loading="lazy" width="16" height="20">
         </a>
-				<?php woocommerce_template_loop_add_to_cart();?>
+		<?php woocommerce_template_loop_add_to_cart();?>
       </div>
     </div>
   </div>

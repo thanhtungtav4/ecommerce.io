@@ -964,7 +964,463 @@ if (function_exists('acf_add_local_field_group')):
         'show_in_rest' => 0,
     ));
 
-
+    acf_add_local_field_group(array(
+        'key' => 'group_6343734ce4903',
+        'title' => 'Chatbot',
+        'fields' => array(
+            array(
+                'key' => 'field_6346fddbd40da',
+                'label' => 'Xin Chào -> Mua Hàng -> Link Đặt Hàng',
+                'name' => 'product_list_1',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_6346fe5459b17',
+                'label' => 'Tư vấn về kính áp tròng 	 -> Không cận',
+                'name' => 'product_list_2',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_63538a8aacec2',
+                'label' => 'Cận thị kèm Loạn thị',
+                'name' => 'product_list_3',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_6353688a4c3e2',
+                'label' => 'Product 274',
+                'name' => '274',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_635368d308f78',
+                'label' => 'Product 275',
+                'name' => '275',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_6353699483cca',
+                'label' => 'Product 276',
+                'name' => '276',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_635369ed2faf2',
+                'label' => 'Product 284',
+                'name' => '284',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_63536a10cf37a',
+                'label' => 'Product 285',
+                'name' => '285',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_63536a2bcf92e',
+                'label' => 'Product 286',
+                'name' => '286',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_63536a48049f8',
+                'label' => 'Product 374',
+                'name' => '374',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_63536a6829b47',
+                'label' => 'Product 375',
+                'name' => '375',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_63536a818028b',
+                'label' => 'Product 376',
+                'name' => '376',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_63536adbd747f',
+                'label' => 'Product 384',
+                'name' => '384',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_63536b200e0b9',
+                'label' => 'Product 385',
+                'name' => '385',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_63536b5d40980',
+                'label' => 'Product 386',
+                'name' => '386',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_635371e4bbd86',
+                'label' => 'Product Default',
+                'name' => 'product_default',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'product',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'acf-options-settings-chatbot',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ));
+    
 
     endif;
 
