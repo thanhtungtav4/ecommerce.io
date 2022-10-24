@@ -170,3 +170,16 @@ $(document).ready(function() {
   });
   })
 });
+
+function quickview($id){
+  document.getElementById('overlay').classList.add('js-visible');
+  document.getElementById('modal').classList.add('js-visible');
+}
+document.getElementById('close-btn').addEventListener('click', function() {
+  document.getElementById('overlay').classList.remove('js-visible');
+  document.getElementById('modal').classList.remove('js-visible');
+});
+document.getElementById('overlay').addEventListener('click', function() {
+  document.getElementById('overlay').classList.remove('js-visible');
+  document.getElementById('modal').classList.remove('js-visible');
+});
