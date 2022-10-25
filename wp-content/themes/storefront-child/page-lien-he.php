@@ -46,8 +46,8 @@ get_header(); ?>
                   <path d="M70.8789 71.5114H67.936C65.876 71.5114 64.1103 73.2771 64.1103 75.3372C64.1103 77.3971 65.876 79.1629 67.936 79.1629H70.8789C72.9389 79.1629 74.7046 77.3971 74.7046 75.3372C74.7046 72.9829 72.9389 71.5114 70.8789 71.5114ZM96.4817 21.4829V15.3029C96.4817 14.42 96.1874 13.2429 95.5989 12.36L90.3017 2.94286C89.1246 1.17714 87.3589 0 85.2989 0H12.316C10.256 0 8.19601 1.17714 7.31315 2.94286L1.72172 12.36C1.13315 13.2429 0.838867 14.1257 0.838867 15.3029V23.8371V25.8971C0.838867 30.9 4.66458 34.7257 9.66744 34.7257H10.256C15.2589 34.7257 19.0846 30.9 19.0846 25.8971V20.6C19.0846 18.54 20.8503 16.7743 22.9103 16.7743C25.2646 17.0686 26.736 18.54 26.736 20.6V25.8971C26.736 30.9 30.5617 34.7257 35.5646 34.7257H36.1532C41.156 34.7257 44.9817 30.9 44.9817 25.8971V21.4829V20.6C44.9817 18.54 46.7474 16.7743 48.5132 16.7743C50.5732 16.7743 52.3389 18.54 52.3389 20.6V23.8371V25.8971C52.3389 30.9 56.1646 34.7257 61.1674 34.7257H62.0503C67.0532 34.7257 70.8789 30.9 70.8789 25.8971V20.6C70.8789 18.54 72.6446 16.7743 74.7046 16.7743C76.7646 16.7743 78.5303 18.54 78.5303 20.6V25.8971C78.5303 30.9 82.356 34.7257 87.3589 34.7257H87.9474C92.9503 34.7257 96.776 30.9 96.776 25.8971L96.4817 21.4829Z" fill="#1E1C1C"></path>
                 </svg>
                 <div class="content">
-                  <h4>TRỤ SỞ CHÍNH</h4>
-                  <p>619 Nguyễn Đình Chiểu, Phường 2, Quận 3, TP. Hồ Chí Minh</p>
+                  <h4>Cửa Hàng</h4>
+                  <p>2 Phố Huế, Hoàn Kiếm, Hà Nội</p>
                 </div>
               </li>
               <li>
@@ -56,8 +56,8 @@ get_header(); ?>
                   <path d="M65.303 23.0396H27.3556C24.374 23.0396 21.9346 25.479 21.9346 28.4606V66.408C21.9346 68.5764 24.374 69.9317 26.2714 68.5764L31.4214 64.7817C32.2346 63.9685 33.5898 63.6974 34.674 63.6974H65.303C68.2846 63.6974 70.724 61.258 70.724 58.2764V28.4606C70.724 25.479 68.2846 23.0396 65.303 23.0396ZM49.0398 55.0238H35.4872C33.5898 55.0238 31.9635 53.3974 31.9635 51.5001C31.9635 49.6027 33.5898 47.9764 35.4872 47.9764H49.0398C50.9372 47.9764 52.5635 49.6027 52.5635 51.5001C52.5635 53.3974 50.9372 55.0238 49.0398 55.0238ZM59.8819 41.4711H35.4872C33.5898 41.4711 31.9635 39.8448 31.9635 37.9474C31.9635 36.0501 33.5898 34.4238 35.4872 34.4238H59.8819C61.7793 34.4238 63.4056 36.0501 63.4056 37.9474C63.4056 39.8448 61.7793 41.4711 59.8819 41.4711Z" fill="#1E1C1C"></path>
                 </svg>
                 <div class="content">
-                  <h4>TRỤ SỞ CHÍNH</h4>
-                  <p>619 Nguyễn Đình Chiểu, Phường 2, Quận 3, TP. Hồ Chí Minh</p>
+                  <h4>Hotline</h4>
+                  <p>1900 63 63 04</p>
                 </div>
               </li>
             </ul>
@@ -65,54 +65,59 @@ get_header(); ?>
         </div>
         <div class="contact">
           <div class="l-container">
-            <div class="map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7839.040405691896!2d106.68206902644715!3d10.771412409120655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fc2ce24c1f7%3A0x223c99e3370fea8!2zQuG7h25oIHZp4buHbiBCw6xuaCBEw6Ju!5e0!3m2!1sen!2s!4v1657273312849!5m2!1sen!2s" width="100%" height="888" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
             <div class="form">
-              <div class="form_inner">
-                <h4>LIÊN HỆ VỚI CHÚNG TÔI</h4>
-                <input type="text" placeholder="Tên của bạn *">
-                <input type="mail" placeholder="Email của bạn *">
-                <input type="phone" placeholder="Số điện thoại *">
-                <input type="text" placeholder="Tiêu đề">
-                <textarea name="" cols="30" rows="25" placeholder="Nội dung *"></textarea>
-                <input class="btn_red" type="submit" value="GỬI">
+              <div class="form_inner"><h3 >HỆ THỐNG CỬA HÀNG CARAS</h3>
+                <table class="table table-bordered">
+                <tbody id="t_points"></tbody>
+                </table>
               </div>
             </div>
-          </div>
-          <div class="l-container">
-            <?php   require_once( get_stylesheet_directory() . '/module/footer_info.php' ); ?>
+            <div class="map" id="map"></div>
           </div>
         </div>
     </main>
-    <script>
-        $(document).ready(function(){
-        $('.slick-sure').not('.slick-initialized').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            dots: false,
-            arrows: false,
-            lazyLoad: 'ondemand',
-            responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-                }
-            }
-            ]
-        });
-        });
-</script>
 <?php
-//do_action( 'storefront_sidebar' );
 get_footer();
+?>
+<script>
+    var map = L.map('map').setView([10.766932, 106.679240], 14);
+    var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    function addRowTable(code, coords){
+      var tr = document.createElement("tr");
+      var td = document.createElement("td");
+      td.textContent = code;
+      tr.appendChild(td);
+      tr.onclick = function(){map.flyTo(coords, 18);};
+      document.getElementById("t_points").appendChild(tr);
+    }
+    var buffers = [];
+    function addMarker(code,lat,lng){
+      var p = L.marker([lat,lng]);
+      p.title = code;
+      p.alt = code;
+      p.bindPopup(code);
+      p.addTo(map);
+      addRowTable(code, [lat,lng]);
+      var c = L.circle([lat,lng], {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 0
+      }).addTo(map);
+      buffers.push(c);
+    }
+    $(document).ready(function (){
+      var points = [["619 Nguyễn Đình Chiểu, Phường 2, Quận 3, TP. Hồ Chí Minh",10.766932, 106.679240],
+                    ["350C Hoàng Văn Thụ, Phường 4, Quận Tân Bình",10.7952279,106.6374614],
+                    ["2 Phố Huế, Hoàn Kiếm, Hà Nội",21.0197083,105.8496002],];
+      for (var i=0; i < points.length; i++){
+        addMarker(points[i][0],points[i][1],points[i][2]);
+      }
+    });
+    L.control.scale({maxWidth:240, metric:true, position: 'bottomleft'}).addTo(map);
+    L.control.polylineMeasure({position:'topleft', imperial:false, clearMeasurementsOnStop: false, showMeasurementsClearControl: true}).addTo(map);
+</script>

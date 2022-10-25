@@ -104,3 +104,11 @@ if( ! function_exists('xa_product_default_weight') ) {
 		}
 	}
 }
+// Update jquery version
+function replace_core_jquery_version() {
+	wp_deregister_script( 'jquery-core' );
+	wp_register_script( 'jquery-core',  get_stylesheet_directory_uri().'/assets/js/jquery.js', array(), '3.6.1' );
+	wp_deregister_script( 'jquery-migrate' );
+	wp_register_script( 'jquery-migrate', get_stylesheet_directory_uri().'/assets/js/jquery-migrate.js', array(), '3.4.0' );
+}
+add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
