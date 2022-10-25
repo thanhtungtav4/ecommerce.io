@@ -1851,6 +1851,7 @@ body.js-active {
 .m-product__content-top .color li {
   width: auto;
   margin: 0 0 0 5px;
+  display: inline-block !important;
 }
 .m-product__content-top .color li span {
   display: block;
@@ -4377,4 +4378,3 @@ body.js-active {
   border: 0;
   background: transparent;
 }
-
