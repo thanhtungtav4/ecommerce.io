@@ -5,11 +5,21 @@
         </picture>
     </a>
     <div class="m-product__content">
-        <div class="m-product__content-top">
-        <a href="<?php echo get_permalink(get_the_ID()); ?>">
-            <h3 class="strong"><?php the_title() ?></h3></a>
+        <!-- <div class="m-product__content-top">
+        <a href="<?php //echo get_permalink(get_the_ID()); ?>">
+            <h3 class="strong"><?php //the_title() ?></h3></a>
         <p>
-            <?php echo wc_get_product( get_the_ID() )->get_price_html(); ?></p>
+            <?php //echo wc_get_product( get_the_ID() )->get_price_html(); ?></p>
+        </div> -->
+        <div class="m-product__content-top">
+            <div class="inner"><a href="<?php echo get_permalink(get_the_ID()); ?>">
+                <h3 class="strong"><?php the_title() ?></h3></a>
+            <ul class="color">
+                <li><span class="is-brown"></span></li>
+                <li><span class="is-gray"></span></li>
+                <li><span class="is-choco"></span></li>
+            </ul>
+            </div><a class="favorite-btn" href="#" tabindex="0"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/heart.png" alt=""></a>
         </div>
         <div class="m-product__content-bottom">
         <p>
