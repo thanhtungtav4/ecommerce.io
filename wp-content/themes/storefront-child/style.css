@@ -17,13 +17,13 @@ Domain Path: /languages
  .m-cart li .info .content {
    flex-direction: column;
 }
-.btn_addCard{
+/* .btn_addCard{
   border-radius: 5px;
   margin: 0 0 0 1rem !important;
   padding: 8px 15px;
   background-color: rgb(235, 106, 106);
   color: white !important;
-}
+} */
 @media screen and (max-width: 767px) {
   .btn_addCard{
     font-size: 1.2rem !important;
@@ -35,9 +35,9 @@ Domain Path: /languages
 .ul.products li.product .price{
   text-align: right !important;
 }
-.btn_area .add_to_cart_button{
+/* .btn_area .add_to_cart_button{
   background-color: rgb(235, 106, 106);
-}
+} */
 a.remove::before{
   content: unset !important;
 }
@@ -50,7 +50,7 @@ a.remove{
   display: flex;
   width: 35px !important;
   height: 35px !important;
-  background-color: #EB6A6A !important;
+  /* background-color: #EB6A6A !important; */
   border-radius: 5px;
   margin-left: 17px;
   align-items: center;
@@ -170,7 +170,7 @@ main{
 .m-messenger svg{
   width: 60px;
   height: 60px;
-  
+
 }
 .m-messenger{
   bottom: 11rem;

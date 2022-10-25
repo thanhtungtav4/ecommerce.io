@@ -10,7 +10,6 @@ add_action('init','remove_storefront_sort_pagination');
 function remove_storefront_sort_pagination(){
 remove_action( 'woocommerce_before_shop_loop', 'storefront_woocommerce_pagination', 30 );
 }
-
 // add page templace
 function makewp_exclude_page_templates( $post_templates ) {
   if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
@@ -36,7 +35,6 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_image_size( 'post-thumb-smail', 137, 82, true  );
   add_image_size( 'product-thumb', 324, 324, true  );
 }
-
 // To set Default Length
 add_filter( 'woocommerce_product_get_length', 'xa_product_default_length' );
 add_filter( 'woocommerce_product_variation_get_length', 'xa_product_default_length' );	// For variable product variations
@@ -53,7 +51,6 @@ if( ! function_exists('xa_product_default_length') ) {
 		}
 	}
 }
-
 // To set Default Width
 add_filter( 'woocommerce_product_get_width', 'xa_product_default_width');
 add_filter( 'woocommerce_product_variation_get_width', 'xa_product_default_width' );	// For variable product variations
@@ -70,7 +67,6 @@ if( ! function_exists('xa_product_default_width') ) {
 		}
 	}
 }
-
 // To set Default Height
 add_filter( 'woocommerce_product_get_height', 'xa_product_default_height');
 add_filter( 'woocommerce_product_variation_get_height', 'xa_product_default_height' );	// For variable product variations
@@ -87,7 +83,6 @@ if( ! function_exists('xa_product_default_height')) {
 		}
 	}
 }
-
 // To set Default Weight
 add_filter( 'woocommerce_product_get_weight', 'xa_product_default_weight' );
 add_filter( 'woocommerce_product_variation_get_weight', 'xa_product_default_weight' );	// For variable product variations

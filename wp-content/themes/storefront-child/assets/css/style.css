@@ -1507,7 +1507,7 @@ body.js-active {
   height: 22px !important;
 }
 .btn_area .add_to_cart_button {
-  background-color: rgb(235, 106, 106);
+  background-color: black;
 }
 
 .btn_remove {
@@ -2742,6 +2742,7 @@ body.js-active {
   padding: 10px;
   border-radius: 10px;
   height: 500px;
+  z-index: 1;
 }
 @media screen and (max-width: 767px) {
   .contact .l-container .map {
