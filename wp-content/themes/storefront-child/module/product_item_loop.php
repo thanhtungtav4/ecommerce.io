@@ -29,7 +29,7 @@
             </span>
         </p>
         <div class="btn_area">
-            <a class="btn_area__add" href="#">
+            <a class="btn_area__add" onclick="quickview('<?php echo get_the_ID() ?>')">
                 <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_eye.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_eye.svg" alt="quick view" loading="lazy" width="16" height="20">
             </a>
             <?php woocommerce_template_loop_add_to_cart();?>

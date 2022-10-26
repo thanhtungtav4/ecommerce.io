@@ -18,7 +18,7 @@ $type = $_GET['post_type'];
           <div class="l-container">
             <p class="ttl">Tổng hợp bài viết của <br class="only-pc">  CARAS LENS</p>
             <div class="m-search_inner">
-              <form action="<?php echo home_url(); ?>" id="search-form" method="get"> 
+              <form action="<?php echo home_url(); ?>" id="search-form" method="get">
                 <input type="text"  name="s" placeholder="Bạn đang tìm kiếm" id="search">
                 <input class="search-submit" type="submit" value="search">
                 <input type="hidden" name="post_type" value="post" />
@@ -34,7 +34,6 @@ $type = $_GET['post_type'];
         <div class="m-category">
           <div class="l-container">
             <ul>
-             
               <li><a href="/kien-thuc-kinh-ap-trong/">
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/category_list.webp" type="image/webp">
@@ -75,7 +74,7 @@ $type = $_GET['post_type'];
               <h5 class="title only-pc">Bài viết mới nhất</h5>
             </div>
             <div class="m-news_inner">
-                <div class="m-news_list"> 
+                <div class="m-news_list">
             <?php
             if ( have_posts() ) :
                 ?>
@@ -104,7 +103,7 @@ $type = $_GET['post_type'];
                         'post_status ' => 'publish',
                         'posts_per_page' => '5' );
                         $the_query = new WP_Query( $args );
-                        if ( $the_query->have_posts() ) : 
+                        if ( $the_query->have_posts() ) :
 	                ?>
                   <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                   <div class="m-news_item">
@@ -115,7 +114,7 @@ $type = $_GET['post_type'];
                             <img class="lazyload" src="<?php the_post_thumbnail_url('post-thumb', array( 'class' => 'lazyload' ));  ?>" data-src="<?php the_post_thumbnail_url('post-thumb', array( 'class' => 'lazyload' ));  ?>" alt="<?php the_title() ?>" loading="lazy" width="377" height="255">
                           <?php else : ?>
                             <img class="lazyload" src="<?php print_r(PlaceholderNews) ?>" data-src="<?php print_r(PlaceholderNews)  ?>" alt="<?php the_title() ?>" loading="lazy" width="377" height="255">
-                          <?php endif; ?>   
+                          <?php endif; ?>
                         </picture>
                       </div>
                       <div class="content">
@@ -144,7 +143,7 @@ $type = $_GET['post_type'];
         </div>
         <?php endif; ?>
         <?php if($type == "product")  : ?>
-            
+
         <?php endif; ?>
       </main>
 <?php

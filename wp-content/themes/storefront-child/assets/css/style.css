@@ -4282,6 +4282,11 @@ body.js-active {
 .modal_inner {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+.modal_inner svg {
+  margin: 6rem auto;
+  text-align: center;
 }
 .modal_top {
   display: flex;
