@@ -7,9 +7,11 @@
             <div class="inner"><a href="<?php echo get_permalink(get_the_ID()); ?>">
                 <h3 class="strong"><?php the_title() ?></h3></a>
             <ul class="color">
-                <li><span class="is-brown"></span></li>
-                <li><span class="is-gray"></span></li>
-                <li><span class="is-choco"></span></li>
+                <?php if(get_field('select_color', get_the_ID())) : ?>
+                    <?php foreach(get_field('select_color', get_the_ID()) as $color) : ?>
+                        <li><span class="is-<?php echo $color ?>"></span></li>
+                    <?php endforeach;?>    
+                <?php endif ;?>
             </ul>
             </div>
             <a class="favorite-btn" href="#">

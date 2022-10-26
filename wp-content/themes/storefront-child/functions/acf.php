@@ -855,10 +855,10 @@ if (function_exists('acf_add_local_field_group')):
                     'blue' => 'Blue',
                     'gold' => 'Gold',
                     'green' => 'Green',
-                    'violet' => 'Ciolet',
+                    'violet' => 'Violet',
                     'black' => 'Black',
                 ),
-                'default_value' => array(
+                'default_value' => array( 
                 ),
                 'allow_null' => 0,
                 'multiple' => 1,

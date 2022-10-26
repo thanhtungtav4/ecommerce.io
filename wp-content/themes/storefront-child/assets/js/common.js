@@ -189,14 +189,10 @@ function quickview($id){
   document.getElementById('overlay').classList.add('js-visible');
   document.getElementById('modal').classList.add('js-visible');
 }
-  const closeBtn = document.getElementById('close-btn')
-  if(closeBtn){
-    closeBtn.addEventListener('click', function() {
-      document.getElementById('overlay').classList.remove('js-visible');
-      document.getElementById('modal').classList.remove('js-visible');
-      console.log(1323);
-    });
-  }
+function closeQuickView(){
+  document.getElementById('overlay').classList.remove('js-visible');
+  document.getElementById('modal').classList.remove('js-visible');
+}
 
 window.onload=function(event){
   document.getElementById('overlay').addEventListener('click', function() {

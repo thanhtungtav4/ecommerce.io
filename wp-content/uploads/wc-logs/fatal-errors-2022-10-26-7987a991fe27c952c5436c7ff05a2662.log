@@ -88,3 +88,11 @@ Stack trace:
 #4 {main}
   thrown in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\quickview.php on line 8
 
+2022-10-26T17:25:07+00:00 CRITICAL syntax error, unexpected '&' in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\acf.php on line 862
+
+2022-10-26T17:25:11+00:00 CRITICAL syntax error, unexpected '&' in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\acf.php on line 862
+
+2022-10-26T17:25:51+00:00 CRITICAL Cannot use temporary expression in write context in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\acf.php on line 862
+
+2022-10-26T17:25:54+00:00 CRITICAL Cannot use temporary expression in write context in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\functions\acf.php on line 862
+

@@ -1871,6 +1871,21 @@ body.js-active {
 .m-product__content-top .color li span.is-choco {
   background: #745D52;
 }
+.m-product__content-top .color li span.is-gold {
+  background: #FFD700;
+}
+.m-product__content-top .color li span.is-green {
+  background: green;
+}
+.m-product__content-top .color li span.is-violet {
+  background: violet;
+}
+.m-product__content-top .color li span.is-blue {
+  background: rgba(41, 41, 231, 0.762);
+}
+.m-product__content-top .color li span.is-black {
+  background: #2B2929;
+}
 .m-product__content-bottom {
   display: flex;
   justify-content: space-between;
@@ -4386,3 +4401,4 @@ body.js-active {
   border: 0;
   background: transparent;
 }
+
