@@ -59,39 +59,30 @@ function bbloomer_update_price_with_variation_price() {
 add_filter( 'woocommerce_show_variation_price', '__return_true' );
 //!Luôn hiển thị giá biến thể đơn
 
-//Auto select first available options from a variation on WooCommerce variable products
-// add_filter('woocommerce_dropdown_variation_attribute_options_args','fun_select_default_option',10,1);
-// function fun_select_default_option( $args)
-// {
-//     if(count($args['options']) > 0) //Check the count of available options in dropdown
-//         $args['selected'] = $args['options'][0];
-//     return $args;
-// }
-//!Auto select first available options from a variation on WooCommerce variable products
 remove_action( 'woocommerce_before_shop_loop', 'storefront_woocommerce_pagination', 30 );
 
 add_action('woocommerce_pagination_tungnt', 'add_woocommerce_pagination');
 function add_woocommerce_pagination(){
    woocommerce_pagination();
 }
-if(!is_product()){
-   function wc_varb_price_range( $wcv_price, $product ) {
 
-      $prefix = sprintf('%s: ', __('From', 'wcvp_range'));
-
-      $wcv_reg_min_price = $product->get_variation_regular_price( 'min', true );
-      $wcv_min_sale_price    = $product->get_variation_sale_price( 'min', true );
-      $wcv_max_price = $product->get_variation_price( 'max', true );
-      $wcv_min_price = $product->get_variation_price( 'min', true );
-
-      $wcv_price = ( $wcv_min_sale_price == $wcv_reg_min_price ) ?
-         wc_price( $wcv_reg_min_price ) :
-         '<del>' . wc_price( $wcv_reg_min_price ) . '</del>' . '<ins>' . wc_price( $wcv_min_sale_price ) . '</ins>';
-
-      return ( $wcv_min_price == $wcv_max_price ) ?
-         $wcv_price :
-         sprintf('%s%s', $prefix, $wcv_price);
+add_filter('woocommerce_variable_sale_price_html', 'shop_variable_product_price', 10, 2);
+add_filter('woocommerce_variable_price_html','shop_variable_product_price', 10, 2 );
+function shop_variable_product_price( $price, $product ){
+   if(!is_product()){
+      $variation_min_reg_price = $product->get_variation_regular_price('min', true);
+      $variation_min_sale_price = $product->get_variation_sale_price('min', true);
+      if ( $product->is_on_sale() && !empty($variation_min_sale_price)){
+          if ( !empty($variation_min_sale_price) )
+              $price = '<del class="strike">' .  wc_price($variation_min_reg_price) . '</del>
+          <ins class="highlight">' .  wc_price($variation_min_sale_price) . '</ins>';
+      } else {
+          if(!empty($variation_min_reg_price))
+              $price = '<ins class="highlight">'.wc_price( $variation_min_reg_price ).'</ins>';
+          else
+              $price = '<ins class="highlight">'.wc_price( $product->regular_price ).'</ins>';
+      }
+      return $price;
    }
-   add_filter( 'woocommerce_variable_sale_price_html', 'wc_varb_price_range', 10, 2 );
-   add_filter( 'woocommerce_variable_price_html', 'wc_varb_price_range', 10, 2 );
+   return $price;
 }

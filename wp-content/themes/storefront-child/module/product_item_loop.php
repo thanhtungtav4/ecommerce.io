@@ -1,8 +1,6 @@
 <li>
     <a href="<?php echo get_permalink(get_the_ID()); ?>">
-        <picture>
-          <img class="lazyload" src="<?php !empty($image) ? print $image : print Placeholder; ?>" data-src="<?php !empty($image) ?  print $image : print Placeholder; ?>" alt="<?php the_title() ?>" loading="lazy" width="323" height="323">
-        </picture>
+        <?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
     </a>
     <div class="m-product__content">
         <div class="m-product__content-top">

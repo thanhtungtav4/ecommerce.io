@@ -1495,6 +1495,9 @@ body.js-active {
   width: 20px;
   height: 20px;
 }
+.btn_area img {
+  vertical-align: initial;
+}
 .btn_area__add {
   background: white;
   border: 1px solid gray;
