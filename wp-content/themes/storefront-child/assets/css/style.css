@@ -4318,24 +4318,14 @@ body.js-active {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  width: 200px;
-}
-@media screen and (max-width: 767px) {
-  .modal_top h3 {
-    width: 160px;
-  }
+  width: 100px;
 }
 .modal_img {
   display: flex;
   flex-wrap: wrap;
-  width: calc(100% - 200px);
+  width: calc(100% - 100px);
   justify-content: space-around;
   gap: 5px;
-}
-@media screen and (max-width: 767px) {
-  .modal_img {
-    width: calc(100% - 160px);
-  }
 }
 .modal_img img {
   width: 50px;
