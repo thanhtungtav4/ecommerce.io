@@ -76,8 +76,16 @@ if ( post_password_required() ) {
 		 * @hooked woocommerce_template_single_sharing - 50
 		 * @hooked WC_Structured_Data::generate_product_data() - 60
 		 */
-		do_action( 'woocommerce_single_product_summary' );
+		//do_action( 'woocommerce_single_product_summary' );
 		?>
+		<div class="single_top">
+	  		<?php do_action('nt_woocommerce_template_single_title'); ?>
+			<?php do_action('nt_woocommerce_template_single_price'); ?>
+		</div>
+		<div class="single_top">
+			<?php do_action( 'nt_woocommerce_template_single_add_to_cart' ); ?>
+		</div>
+		
 	</div>
 
 	<?php

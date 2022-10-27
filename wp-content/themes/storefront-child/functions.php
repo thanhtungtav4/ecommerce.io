@@ -18,6 +18,9 @@ require_once( get_stylesheet_directory() . '/functions/recently.php' );
 if(!wp_is_mobile()){
 	require_once( get_stylesheet_directory() . '/functions/gallery-slider/woo-product-gallery-image-slider.php' );
 }
+if(wp_is_mobile()){
+	require_once( get_stylesheet_directory() . '/functions/product_single_mobile.php' );
+}
 
 // control order status if vnpay succes pay
 // account
