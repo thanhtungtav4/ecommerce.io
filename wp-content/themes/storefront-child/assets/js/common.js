@@ -192,12 +192,13 @@ function quickview($id){
 function closeQuickView(){
   document.getElementById('overlay').classList.remove('js-visible');
   document.getElementById('modal').classList.remove('js-visible');
+  $('.modal').empty().append('is update');
 }
 
 window.onload=function(event){
   document.getElementById('overlay').addEventListener('click', function() {
     document.getElementById('overlay').classList.remove('js-visible');
     document.getElementById('modal').classList.remove('js-visible');
-    //$('#modal').empty().append(res);
+    $('.modal').empty().append('is update');
   });
 };
