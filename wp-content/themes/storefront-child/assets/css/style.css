@@ -4387,6 +4387,7 @@ body.js-active {
   padding: 5px 10px;
   border-radius: 10px;
   margin-left: 10px;
+  text-align: center;
 }
 .modal_bottom .btn img {
   height: 25px;

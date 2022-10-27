@@ -10,7 +10,7 @@
                 <?php if(get_field('select_color', get_the_ID())) : ?>
                     <?php foreach(get_field('select_color', get_the_ID()) as $color) : ?>
                         <li><span class="is-<?php echo $color ?>"></span></li>
-                    <?php endforeach;?>    
+                    <?php endforeach;?>
                 <?php endif ;?>
             </ul>
             </div>

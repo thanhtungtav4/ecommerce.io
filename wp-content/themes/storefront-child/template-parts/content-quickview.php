@@ -1,14 +1,18 @@
 <div class="modal_top">
     <h3> <?php the_title() ?> </h3>
     <ol class="modal_img">
-      <?php if(get_field('select_color')) : ?>
-          <?php foreach(get_field('select_color') as $color) : ?>
-            <li class="<?php echo 'is-'.$color ?>">
-              <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/category_list.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-brown-lens-50x50.png" alt="Logo" loading="lazy" width="50" height="50">
-              <p><?php echo $color ?></p>
-            </li>
-          <?php endforeach;?>
-      <?php endif ;?>
+    <?php
+        $productID = wc_get_product(get_the_ID());
+        $product_arr = $productID->get_attributes();
+        $products = $product_arr['pa_mau-sac']['options'];
+        foreach($products as $key => $item) :
+          $thumb_id = get_term_meta($item);
+          $img_src = wp_get_attachment_url($thumb_id['product_attribute_image'][0] );
+        ?>
+          <li>
+              <img class="lazyload" src="<?php echo $img_src ?>" alt="mau sac" loading="lazy" width="50" height="50">
+          </li>
+        <?php endforeach;?>
     </ol>
   </div>
   <div class="modal_content">
@@ -32,7 +36,7 @@
         </tr>
         <tr>
             <th>GDIA:</th>
-            <td><?php get_field('gdia', get_the_ID()) ? print '14mm' : print '13mm' ?></td>
+            <td><?php get_field('gdia', get_the_ID()) ? print '14mm' : print '13.8mm' ?></td>
         </tr>
        <?php if(get_field('dia', get_the_ID())) : ?>
           <tr>
