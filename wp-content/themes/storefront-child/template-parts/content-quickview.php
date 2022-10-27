@@ -1,72 +1,94 @@
 <div class="modal_top">
     <h3> <?php the_title() ?> </h3>
     <ol class="modal_img">
-      <li class="brown">
-        <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/category_list.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-brown-lens-50x50.png" alt="Logo" loading="lazy" width="50" height="50">
-        <p>brown</p>
-      </li>
-      <li class="brown">
-        <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/category_list.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-brown-lens-50x50.png" alt="Logo" loading="lazy" width="50" height="50">
-        <p>brown</p>
-      </li>
-      <li class="brown">
-        <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/category_list.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-brown-lens-50x50.png" alt="Logo" loading="lazy" width="50" height="50">
-        <p>brown</p>
-      </li>
+      <?php if(get_field('select_color')) : ?>
+          <?php foreach(get_field('select_color') as $color) : ?>
+            <li class="<?php echo 'is-'.$color ?>">
+              <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/category_list.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-brown-lens-50x50.png" alt="Logo" loading="lazy" width="50" height="50">
+              <p><?php echo $color ?></p>
+            </li>
+          <?php endforeach;?>
+      <?php endif ;?>
     </ol>
   </div>
   <div class="modal_content">
     <table>
       <tbody>
-        <tr>
-          <th>HSD: </th>
-          <td> 3 tháng</td>
-        </tr>
+        <?php if(get_field('hsd', get_the_ID())) : ?>
+            <tr>
+              <th>HSD:</th>
+              <td><?php the_field('hsd', get_the_ID()) ?></td>
+            </tr>
+        <?php endif ;?>
         <?php if(get_field('time_deo', get_the_ID())) : ?>
           <tr>
             <th>Đeo:</th>
             <td><?php the_field('time_deo', get_the_ID()) ?></td>
-          </tr>         
-       <?php endif ;?>
+          </tr>
+        <?php endif ;?>
         <tr>
-          <th>Size:</th>
-          <td>S</td>
+            <th>Size:</th>
+            <td><?php get_field('gdia', get_the_ID()) ? print 'M' : print 'S' ?></td>
         </tr>
-        <?php if(get_field('gdia', get_the_ID())) : ?>
-          <tr>
+        <tr>
             <th>GDIA:</th>
-            <td><?php the_field('gdia', get_the_ID()) ?></td>
-          </tr>         
-       <?php endif ;?>
+            <td><?php get_field('gdia', get_the_ID()) ? print '14mm' : print '13mm' ?></td>
+        </tr>
        <?php if(get_field('dia', get_the_ID())) : ?>
           <tr>
-            <th>DIA:</th>
             <td><?php the_field('dia', get_the_ID()) ?></td>
-          </tr>         
+          </tr>
        <?php endif ;?>
-        <tr>
-          <th>Độ Cận:</th>
-          <td>0 - 10 độ </td>
-        </tr>
+       <?php if(get_field('do_can', get_the_ID())) : ?>
+          <tr>
+            <th>Độ cận:</th>
+            <td><?php the_field('do_can', get_the_ID()) ?></td>
+          </tr>
+       <?php endif ;?>
         <tr>
           <th>Phù hợp:</th>
           <td>
             <table>
               <tbody>
-                <tr>
-                  <td>Đi học</td>
-                  <td>Đi Làm</td>
-                  <td>Đi Chơi</td>
-                </tr>
-                <tr>
-                  <td>Đi học</td>
-                  <td>Đi Làm</td>
-                  <td>Đi Chơi</td>
-                </tr>
-                <tr>
-                  <td>Đi học</td>
-                  <td>Đi Làm</td>
-                </tr>
+              <?php if(get_field('select_color')) : ?>
+                  <?php foreach(get_field('select_color') as $color) : ?>
+                    <tr>
+                      <?php
+                      switch($color){
+                          case 'choco' :
+                            echo '<td>Đi học</td>';
+                            echo '<td>Đi Làm</td>';
+                            break;
+                          case 'brown' :
+                            echo '<td>Đi học</td>';
+                            echo '<td>Đi Làm</td>';
+                            echo '<td>Đi Chơi</td>';
+                            break;
+                          case 'gray' :
+                            echo '<td>Đi học</td>';
+                            echo '<td>Đi Làm</td>';
+                            echo '<td>Đi Chơi</td>';
+                            break;
+                          case 'blue' :
+                            echo '<td>Đi Chơi</td>';
+                            break;
+                          case 'gold' :
+                            echo '<td>Đi Chơi</td>';
+                            break;
+                          case 'green' :
+                            echo '<td>Đi Chơi</td>';
+                            break;
+                          case 'violet' :
+                            echo '<td>Đi Chơi</td>';
+                            break;
+                          case 'black' :
+                            echo '<td>Đi Chơi</td>';
+                            break;
+                      }
+                      ?>
+                    </tr>
+                  <?php endforeach;?>
+              <?php endif ;?>
               </tbody>
             </table>
           </td>

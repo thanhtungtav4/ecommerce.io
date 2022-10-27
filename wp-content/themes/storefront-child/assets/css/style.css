@@ -4343,6 +4343,30 @@ body.js-active {
   display: block;
   align-items: center;
 }
+.modal_img li.is-brown {
+  color: #c6a66f;
+}
+.modal_img li.is-gray {
+  color: #737373;
+}
+.modal_img li.is-choco {
+  color: #745D52;
+}
+.modal_img li.is-gold {
+  color: #FFD700;
+}
+.modal_img li.is-green {
+  color: green;
+}
+.modal_img li.is-violet {
+  color: violet;
+}
+.modal_img li.is-blue {
+  color: rgba(41, 41, 231, 0.762);
+}
+.modal_img li.is-black {
+  color: #2B2929;
+}
 .modal_img li p {
   font-weight: 600;
   font-size: 1.5rem;
@@ -4381,11 +4405,11 @@ body.js-active {
 }
 .modal_content table {
   width: 100%;
-  padding: 10px;
 }
 .modal_content table tr th {
   text-align: start;
   width: 90px;
+  padding: 10px;
 }
 .modal_content table tr td {
   line-height: 1.5;
@@ -4401,4 +4425,3 @@ body.js-active {
   border: 0;
   background: transparent;
 }
-

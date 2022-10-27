@@ -31,18 +31,7 @@ require_once( get_stylesheet_directory() . '/functions/job.php');
 require_once( get_stylesheet_directory() . '/functions/shortcode.php');
 require_once( get_stylesheet_directory() . '/functions/schema.php');
 require_once( get_stylesheet_directory() . '/functions/quickview.php');
-
-add_action( 'woocommerce_thankyou', 'bbloomer_thankyou_change_order_status' );
-function bbloomer_thankyou_change_order_status( $order_id ){
-   if( ! $order_id ) return;
-   $order = wc_get_order( $order_id );
-	 $is_payment = $order->get_payment_method();
-	 if($is_payment == 'vnpay'){
-			$order->update_status( 'wc-completed' );
-	 	}
-	 else{
-		$order->update_status( 'wc-processing' );
-	 }
-}
+// add Advanced Custom Fields to WooCommerce Attributes
+require_once( get_stylesheet_directory() . '/functions/acf-wcattributes.php');
 
 
