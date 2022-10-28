@@ -71,7 +71,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 										<th class="label">
 											<a data-fancybox href="<?php echo get_stylesheet_directory_uri() ?>/assets/images/huong-dan-chon-do-can-caras.jpg">Hướng dẫn tính độ cận – loạn</a> </th>
 									<?php endif;  ?>
-						
+
 						<?php elseif($attribute_name == 'pa_mau-sac') : ?>
 							<tr style="order: 3;">
 								<th class="label <?php echo 'is_'.$attribute_name ?>">
@@ -150,21 +150,73 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 			<table class="variations" cellspacing="0" role="presentation">
 				<tbody>
 					<?php foreach ( $attributes as $attribute_name => $options ) : ?>
-						<tr>
-							<th class="label"><label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label></th>
-							<td class="value">
-								<?php
-									wc_dropdown_variation_attribute_options(
-										array(
-											'options'   => $options,
-											'attribute' => $attribute_name,
-											'product'   => $product,
-										)
-									);
-									echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
-								?>
-							</td>
-						</tr>
+						<?php var_dump($attribute_name); ?>
+						<?php if($attribute_name == 'pa_mau-sac') : ?>
+							<tr>
+								<td class="label"><label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label></th>
+								<td class="value">
+									<?php
+										wc_dropdown_variation_attribute_options(
+											array(
+												'options'   => $options,
+												'attribute' => $attribute_name,
+												'product'   => $product,
+											)
+										);
+										echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+									?>
+								</td>
+							</tr>
+						<?php elseif($attribute_name == 'pa_mat-trai' || $attribute_name == 'pa_mat-phai') : ?>
+							<tr>
+								<?php if($attribute_name == 'pa_mat-trai') : ?>
+											<td class="value">
+												<?php
+													wc_dropdown_variation_attribute_options(
+														array(
+															'options'   => $options,
+															'attribute' => $attribute_name,
+															'product'   => $product,
+														)
+													);
+													echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+												?>
+											</td>
+									<?php endif;?>
+									<?php if($attribute_name == 'pa_mat-phai') : ?>
+											<td class="value">
+												<?php
+													wc_dropdown_variation_attribute_options(
+														array(
+															'options'   => $options,
+															'attribute' => $attribute_name,
+															'product'   => $product,
+														)
+													);
+													echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+												?>
+											</td>
+									<?php endif;?>
+							</tr>
+						<?php else: ?>
+							<tr>
+								<th class="label <?php echo 'is_'.$attribute_name ?>">
+									<?php echo wc_attribute_label( $attribute_name );  ?>
+								</th>
+								<td class="value">
+									<?php
+										wc_dropdown_variation_attribute_options(
+											array(
+												'options'   => $options,
+												'attribute' => $attribute_name,
+												'product'   => $product,
+											)
+										);
+										echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+									?>
+								</td>
+							</tr>
+						<?php endif;?>
 					<?php endforeach; ?>
 				</tbody>
 			</table>
@@ -197,6 +249,6 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		<?php do_action( 'woocommerce_after_variations_form' ); ?>
 	</form>
 <?php endif; ?>
- 
+
 <?php
 do_action( 'woocommerce_after_add_to_cart_form' );
