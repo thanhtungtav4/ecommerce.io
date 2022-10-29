@@ -42,6 +42,10 @@ function conditionally_enqueue_styles_scripts() {
         wp_register_style( 'detail-woo', get_stylesheet_directory_uri().'/assets/css/detail_wooo.css' );
         wp_enqueue_style('detail-woo');
     }
+    if(wp_is_mobile() && is_product()){
+        wp_register_style( 'detail-product-mobile', get_stylesheet_directory_uri().'/assets/css/detail-product-mobile.css' );
+        wp_enqueue_style('detail-product-mobile');
+    }
     if(is_page('lien-he') || is_page('contact-us')){
         wp_enqueue_style( 'style-leaflet', 'https://unpkg.com/leaflet@1.0.3/dist/leaflet.css' );
         wp_enqueue_style( 'style-poly', 'https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css' );

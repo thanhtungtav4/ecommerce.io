@@ -115,14 +115,3 @@
 .summary a {
   color: #ea403f;
 }
-/* custome css using only mobile */
-	.single_top {
-    display: flex;
-    justify-content: space-between;
-  }
-	.single_top .woocommerce-Price-currencySymbol{
-    display: block;
-    text-align: end;
-  }
-
-/* !custome css using only mobile */

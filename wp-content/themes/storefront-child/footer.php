@@ -102,28 +102,28 @@
         <dl>
           <dd>
             <picture>
-              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.png" alt="Logo" loading="lazy" width="101" height="86">
+              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bct.png" alt="Bct" loading="lazy" width="101" height="86">
             </picture>
           </dd>
         </dl>
         <dl>
           <dd>
             <picture>
-              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" alt="Logo" loading="lazy" width="155" height="75.5">
+              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" alt="Bsi" loading="lazy" width="155" height="75.5">
             </picture>
           </dd>
         </dl>
         <dl>
           <dd>
             <picture>
-              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" alt="Logo" loading="lazy" width="193" height="61">
+              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" alt="dmca" loading="lazy" width="193" height="61">
             </picture>
           </dd>
         </dl>
         <dl>
           <dd>
             <picture>
-              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" alt="Logo" loading="lazy" width="124" height="123">
+              <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.webp" type="image/webp"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" alt="chong hang gia" loading="lazy" width="124" height="123">
             </picture>
           </dd>
         </dl>
@@ -190,17 +190,17 @@
               <ul class="l-icon">
                 <li>
                   <a href="#">
-                    <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" width="39" height="39">
+                    <img class="lazyload" loading="lazy" alt="facebook" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/facebook.png" width="39" height="39">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png"  width="39" height="39">
+                    <img class="lazyload" loading="lazy" alt="insta" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/insta.png"  width="39" height="39">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtube.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtube.png" width="39" height="39">
+                    <img class="lazyload" loading="lazy" alt="youtube" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtube.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/youtube.png" width="39" height="39">
                   </a>
                 </li>
               </ul>
@@ -217,22 +217,22 @@
             <ul class="m-info-company_cert">
               <li>
                 <picture>
-                  <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" width="48" height="48">
+                  <img class="lazyload" loading="lazy" alt="bộ y tế" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/byt.png" width="48" height="48">
                 </picture>
               </li>
               <li>
                 <picture>
-                  <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" width="88" height="44">
+                  <img class="lazyload" loading="lazy" alt='bsi' data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bsi.png" width="88" height="44">
                 </picture>
               </li>
               <li>
                 <picture>
-                  <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" width="88" height="28">
+                  <img class="lazyload" loading="lazy" alt="dmca" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dmca.png" width="88" height="28">
                 </picture>
               </li>
               <li>
                 <picture>
-                  <img class="lazyload" loading="lazy" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" width="88" height="88">
+                  <img class="lazyload" loading="lazy" alt="chong hang gia" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chong-hang-gia.png" width="88" height="88">
                 </picture>
               </li>
             </ul>
@@ -240,7 +240,7 @@
           <div class="m-copy-right">
             <div class="logo">
               <picture>
-                <img data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png"  src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" alt="caras" loading="lazy">
+                <img data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png"  src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" alt="CARAS LENS" loading="lazy">
               </picture>
             </div><small class="copyright">&copy;Copyright 2022 CARAS LENS. All rights reserved.</small>
           </div>
