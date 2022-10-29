@@ -149,10 +149,28 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		<?php else : ?>
 			<table class="variations" cellspacing="0" role="presentation">
 				<tbody>
-					<?php foreach ( $attributes as $attribute_name => $options ) : ?>
-						<?php if($attribute_name == 'pa_mau-sac') : ?>
-							<tr>
-								<td class="label"><label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label></th>
+					<tr class="m-flex">
+						<?php foreach ( $attributes as $attribute_name => $options ) : ?>
+								<?php if($attribute_name == 'pa_mau-sac') : ?>
+									<td>
+										<?php
+											wc_dropdown_variation_attribute_options(
+												array(
+													'options'   => $options,
+													'attribute' => $attribute_name,
+													'product'   => $product,
+												)
+											);
+											echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
+										?>
+									</td>
+								<?php endif; ?>		
+						<?php endforeach; ?>
+						<td><?php do_action('nt_woocommerce_template_single_rating'); ?></td>	
+					</tr>	
+					<tr class="m-flex">
+						<?php foreach ( $attributes as $attribute_name => $options ) : ?>
+							<?php if($attribute_name == 'pa_mat-trai') : ?>
 								<td class="value">
 									<?php
 										wc_dropdown_variation_attribute_options(
@@ -165,43 +183,10 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 										echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
 									?>
 								</td>
-							</tr>
-						<?php elseif($attribute_name == 'pa_mat-trai' || $attribute_name == 'pa_mat-phai') : ?>
-							<tr>
-								<?php if($attribute_name == 'pa_mat-trai') : ?>
-											<td class="value">
-												<?php
-													wc_dropdown_variation_attribute_options(
-														array(
-															'options'   => $options,
-															'attribute' => $attribute_name,
-															'product'   => $product,
-														)
-													);
-													echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
-												?>
-											</td>
-									<?php endif;?>
-									<?php if($attribute_name == 'pa_mat-phai') : ?>
-											<td class="value">
-												<?php
-													wc_dropdown_variation_attribute_options(
-														array(
-															'options'   => $options,
-															'attribute' => $attribute_name,
-															'product'   => $product,
-														)
-													);
-													echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
-												?>
-											</td>
-									<?php endif;?>
-							</tr>
-						<?php else: ?>
-							<tr>
-								<th class="label <?php echo 'is_'.$attribute_name ?>">
-									<?php echo wc_attribute_label( $attribute_name );  ?>
-								</th>
+							<?php endif; ?>							
+						<?php endforeach; ?>
+						<?php foreach ( $attributes as $attribute_name => $options ) : ?>
+							<?php if($attribute_name == 'pa_mat-phai') : ?>
 								<td class="value">
 									<?php
 										wc_dropdown_variation_attribute_options(
@@ -214,9 +199,14 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 										echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
 									?>
 								</td>
-							</tr>
-						<?php endif;?>
-					<?php endforeach; ?>
+							<?php endif; ?>							
+						<?php endforeach; ?>
+						<td>
+							<a class="favorite-btn" href="#">
+								<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/heart.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/heart.png" alt="favorite" loading="lazy" width="20" height="20">
+							</a>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 			<?php do_action( 'woocommerce_after_variations_table' ); ?>

@@ -18,3 +18,9 @@
     function wc_custome_cart(){
         woocommerce_template_single_add_to_cart();
     }
+
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+    add_action('nt_woocommerce_template_single_rating', 'wc_custome_rating');
+    function wc_custome_rating(){
+        woocommerce_template_single_rating();
+    }
