@@ -23,15 +23,13 @@ function nt_woocommerce_output_product_data_tabs(){
 //Data Tab
 //REMOVE PRODUCT META
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-if(wp_is_mobile()){
-    add_filter( 'woocommerce_single_product_carousel_options', 'sf_update_woo_flexslider_options' );
-    /** 
-     * Filer WooCommerce Flexslider options - Add Dot Pagination Instead of Thumbnails
-     */
-    function sf_update_woo_flexslider_options( $options ) {
+add_filter( 'woocommerce_single_product_carousel_options', 'sf_update_woo_flexslider_options' );
+/** 
+ * Filer WooCommerce Flexslider options - Add Dot Pagination Instead of Thumbnails
+ */
+function sf_update_woo_flexslider_options( $options ) {
 
-        $options['controlNav'] = true;
+    $options['controlNav'] = true;
 
-        return $options;
-    }
+    return $options;
 }
