@@ -202,7 +202,7 @@
                       <dl>
                         <dt>Showroom</dt>
                         <dd>
-													<a href="#">
+													<a href="/lien-he/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.webp" type="image/webp">
 														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" alt="dv_showroom">

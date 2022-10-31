@@ -44,7 +44,6 @@
           <dt><?php _e('CUSTOMER SUPPORT', 'storefront') ?>
             <dl>
               <dd><a href="/chinh-sach-bao-hanh/"><?php _e('Warranty Policy', 'storefront') ?></a></dd>
-              <dd><a href="/chinh-sach-doi-tra/"><?php _e('Return Policy', 'storefront') ?></a></dd>
               <dd><a href="/chinh-sach-giao-nhan/"><?php _e('Delivery policy', 'storefront') ?></a></dd>
               <dd><a href="/huong-dan-mua-hang/"><?php _e('Shopping guide', 'storefront') ?></a></dd>
               <dd><a href="/hoi-dap/"><?php _e('FAQs', 'storefront') ?></a></dd>
@@ -134,7 +133,6 @@
             <div class="m-support_inner">
               <ul class="m-support_list">
                 <li><a href="/chinh-sach-bao-hanh/"><?php _e('Warranty Policy', 'storefront') ?></a></li>
-                <li><a href="/chinh-sach-doi-tra/"><?php _e('Return Policy', 'storefront') ?></a></li>
                 <li><a href="/chinh-sach-giao-nhan/"><?php _e('Delivery policy', 'storefront') ?></a></li>
                 <li><a href="/huong-dan-mua-hang/"><?php _e('Shopping guide', 'storefront') ?></a></li>
               </ul>
