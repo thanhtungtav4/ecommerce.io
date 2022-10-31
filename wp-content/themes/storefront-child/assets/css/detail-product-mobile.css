@@ -110,6 +110,9 @@ li.variable-item.image-variable-item{
 .single-product .devvn_single_rating > span.devvn_sold{
   display: none !important;
 }
+.single-product div.product table.variations select {
+  padding: 0 5px !important;
+}
 /* .single-product div.product .m-flex .woocommerce-product-rating .star-rating{
   float: none;
   display: block;

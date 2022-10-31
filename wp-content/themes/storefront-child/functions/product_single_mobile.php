@@ -31,3 +31,19 @@
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+
+// define the woocommerce_dropdown_variation_attribute_options_args callback
+function filter_woocommerce_dropdown_variation_attribute_options_args( $array ) {
+
+    // Find the name of the attribute for the slug we passed in to the function
+    $attribute_name = wc_attribute_label($array['attribute']);
+
+    // Create a string for our select
+    $select_text = 'Chọn độ cận';
+
+    $array['show_option_none'] = __( $select_text, 'woocommerce' );
+    return $array;
+};
+
+// add the filter
+add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'filter_woocommerce_dropdown_variation_attribute_options_args', 10, 1 );
