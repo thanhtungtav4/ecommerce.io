@@ -205,6 +205,50 @@ select.xoo-ml-phone-cc + .select2.select2-container {
   }
   .c-login .entry-content {
     justify-content: center;
+  }
+  .c-sure ul li {
+    height: 60px;
+    font-size: 1rem;
+  }
+  .c-sure ul li p {
+    font-size: 1.4rem;
+  }
+  .c-sure ul li picture img {
+    height: 40px;
+  }
+  .c-tab_top button {
+    width: 25%;
+    font-size: 1rem;
+    padding: 0.9rem 0;
+    font-weight: 500;
+}
+.c-tab_top {
+  align-items: flex-end;
+}
+.c-tab_top.col-2 button{
+  width: 50%;
+}
+.c-tab_top button.active, .c-tab_top button:hover {
+  background: #ffffff;
+  color: black;
+  height: 40px;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+  border-right: 1.5px solid;
+  border-bottom: 0;
+}
+.c-tab_top button{
+  border: 1.5px solid #9e9e9e;
+  background: white;
+  border-radius: 1px;
+  border-bottom: 1.5px solid;
+}
+.woocommerce-cart-form .m-cart li .img{
+  width: 60px;
+  height: 60px;
+}
+.woocommerce-cart-form .m-cart li .info{
+  width: calc(100% - 65px);
 }
 }
 @media screen and (max-width: 374px)

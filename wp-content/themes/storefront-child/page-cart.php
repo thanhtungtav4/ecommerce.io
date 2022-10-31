@@ -11,17 +11,17 @@
  */
 
 get_header(); ?>
-    <div class="l-container">\sites
+    <div class="l-container">
         <ul class="c-breadcrumb">
             <li><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>"><?php _e('Home', 'storefront') ?></a></li>
             <li><?php _e('Cart', 'storefront') ?></li>
         </ul>
         <?php require_once( get_stylesheet_directory() . '/module/list_promotion.php' ); ?>
         <div class="c-tab c-tabCart">
-            <div class="c-tab_top">
+            <div class="c-tab_top col-2">
               <button class="button tablinks active" onclick="openTab(event, 'cart')"><?php _e('Cart', 'storefront') ?></button>
               <button class="button tablinks" onclick="openTab(event, 'parameter')"><?php _e('Delivery', 'storefront') ?></button>
-              <button class="button tablinks" onclick="openTab(event, 'insurane')"><?php _e('Completed', 'storefront') ?></button>
+              <button class="button tablinks  only-pc" onclick="openTab(event, 'insurane')"><?php _e('Completed', 'storefront') ?></button>
             </div>
             <div class="c-tab_content">
               <div class="c-tab_item" id="cart" style="display: block;">

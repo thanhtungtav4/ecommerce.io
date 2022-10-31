@@ -18,17 +18,17 @@
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
-<div class="l-container">
+<div class="container">
 	<ul class="c-breadcrumb">
 		<li><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>"><?php ICL_LANGUAGE_CODE == 'en' ? print 'Home' : print 'Trang chủ'; ?></a></li>
 		<li><?php single_post_title(); ?></li>
 	</ul>
 	<?php require_once( get_stylesheet_directory() . '/module/list_promotion.php' ); ?>
 	<div class="c-tab c-tabCart">
-		<div class="c-tab_top">
-			<button class="button tablinks active">GIỎ HÀNG</button>
-			<button class="button tablinks">Giao Hàng</button>
-			<button class="button tablinks">Hoàn Tất</button>
+		<div class="c-tab_top col-2">
+			<button class="button tablinks active"><?php _e('Cart', 'storefront') ?></button>
+			<button class="button tablinks"><?php _e('Delivery', 'storefront') ?></button>
+			<button class="button tablinks only-pc"><?php _e('Completed', 'storefront') ?></button>
 		</div>
 	</div>
 	<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">

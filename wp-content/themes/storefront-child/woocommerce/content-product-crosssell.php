@@ -39,7 +39,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
           <input class="quantity" min="0" name="quantity" value="1" type="number">
 		  <button type="button" class="plus">+</button>  
         </div>
-				<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+		<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
       </div>
     </div>
 		<?php if ( $price_html = $product->get_price_html() ) : ?>

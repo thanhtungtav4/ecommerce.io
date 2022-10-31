@@ -12,6 +12,7 @@
 get_header(); ?>
 	<div id="primary" class="content-area">
 		<?php
+		$is_page = [];
 		if(is_page('dang-ky') || is_page('register')){
 			$is_page = "c-login";
 		}

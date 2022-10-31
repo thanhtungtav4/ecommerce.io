@@ -33,9 +33,9 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 	<?php require_once( get_stylesheet_directory() . '/module/list_promotion.php' ); ?>
 	<div class="c-tab c-tabCart">
 		<div class="c-tab_top">
-			<button class="button tablinks">GIỎ HÀNG</button>
-			<button class="button tablinks">Giao Hàng</button>
-			<button class="button tablinks active">Thanh Toán</button>
+			<button class="button tablinks"><?php _e('Cart', 'storefront') ?></button>
+			<button class="button tablinks"><?php _e('Delivery', 'storefront') ?></button>
+			<button class="button tablinks active"><?php _e('Completed', 'storefront') ?></button>
 		</div>
 	</div>
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">

@@ -34,7 +34,7 @@ if ( ! empty( $product_tabs ) ) : ?>
 				<button class="button tablinks active" onclick="openTab(event, 'description')">MÔ TẢ</button>
 				<button class="button tablinks" onclick="openTab(event, 'parameter')">THÔNG SỐ</button>
 				<button class="button tablinks" onclick="openTab(event, 'insurane')">BẢO HÀNH</button>
-				<button class="button tablinks" onclick="openTab(event, 'reviews')">REVIEW (24)</button>
+				<button class="button tablinks" onclick="openTab(event, 'reviews')">REVIEW</button>
 			</div>
 		<div class="c-tab_content">
 		<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
