@@ -45,7 +45,8 @@
 							</a>
 						</div>
             <ul class="c-header_menu">
-              <li class="c-menu c-menu_dropdown"><a href="https://caraslens.com/best-seller-contact-lenses/">Best Seller</a>
+              <li class="c-menu c-menu_dropdown">
+                <a href="https://caraslens.com/best-seller-contact-lenses/">Best Seller</a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <div class="l-container col-3">
@@ -202,7 +203,7 @@
                       <dl>
                         <dt>Showroom</dt>
                         <dd>
-													<a href="/lien-he/">
+													<a href="https://caraslens.com/lien-he/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.webp" type="image/webp">
 														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" alt="dv_showroom">

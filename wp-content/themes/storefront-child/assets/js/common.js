@@ -39,11 +39,10 @@ function toggleMenu(){
     '</svg>'+
     '              </li>';
     let html_appent= '<li class="c-menu c-menu__logo"><a href="/"><picture>'+
-    '                  <source srcset="/wp-content/themes/storefront-child/assets/images/caras_logo.webp" type="image/webp"><img src="/wp-content/themes/storefront-child/assets/images/caras_logo.png" data-src="/wp-content/themes/storefront-child/assets/images/caras_logo.png" alt="logo caras">'+
+    '                  <source srcset="/wp-content/themes/storefront-child/assets/images/caras_logo_white.webp" type="image/webp"><img src="/wp-content/themes/storefront-child/assets/images/caras_logo_white.png" data-src="/wp-content/themes/storefront-child/assets/images/caras_logo_white.png" alt="logo caras">'+
     '                </picture></a>'+
     '              </li>';
-    let html_appentLang = '<li class="c-menu c-menu__logo"><a href="#">Tiếng Việt</a>'+
-    '              </li>';
+    let html_appentLang = '';
     let is_true =  document.getElementsByClassName("c-menu__logo")[0];
     if(is_true == undefined){
 

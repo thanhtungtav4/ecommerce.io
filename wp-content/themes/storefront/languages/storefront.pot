@@ -1067,3 +1067,7 @@ msgstr "SẢN PHẨM TƯƠNG TỰ"
 
 msgid "Buy together products"
 msgstr "SẢN PHẨM THƯỜNG ĐƯỢC MUA KÈM"
+
+msgid "SPECIALIZED MEDICAL CONTACT LENSES"
+msgstr "KÍNH ÁP TRÒNG Y TẾ"
+

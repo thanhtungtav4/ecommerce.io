@@ -1047,9 +1047,6 @@ msgstr "Chi tiết thanh toán"
 msgid "Additional information"
 msgstr "Thông tin bổ sung"
 
-msgid "Additional information"
-msgstr "Ghi chú"
-
 msgid "Order notes"
 msgstr "Ghi chú đơn hàng"
 
@@ -1058,3 +1055,19 @@ msgstr "Đơn đặt hàng của bạn"
 
 msgid "Notes about your order, e.g. special notes for delivery."
 msgstr "Ghi chú về đơn đặt hàng của bạn, ví dụ như ghi chú đặc biệt để giao hàng."
+
+msgid "Product"
+msgstr "Sản phẩm"
+
+msgid "Price"
+msgstr "Giá"
+
+msgid "Related products"
+msgstr "SẢN PHẨM TƯƠNG TỰ"
+
+msgid "Buy together products"
+msgstr "SẢN PHẨM THƯỜNG ĐƯỢC MUA KÈM"
+
+msgid "SPECIALIZED MEDICAL CONTACT LENSES"
+msgstr "KÍNH ÁP TRÒNG Y TẾ"
+
