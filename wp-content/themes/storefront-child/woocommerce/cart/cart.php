@@ -202,7 +202,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								</div>
 									</div>
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
-			
+
 				<?php //do_action( 'woocommerce_after_cart_contents' ); ?>
 
 			</tbody>

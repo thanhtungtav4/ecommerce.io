@@ -37,7 +37,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
         <div class="number-input">
 		  <button type="button" class="minus">-</button>
           <input class="quantity" min="0" name="quantity" value="1" type="number">
-		  <button type="button" class="plus">+</button>  
+		  <button type="button" class="plus">+</button>
         </div>
 		<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
       </div>
