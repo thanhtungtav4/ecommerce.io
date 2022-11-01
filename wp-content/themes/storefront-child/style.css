@@ -261,6 +261,7 @@ select.xoo-ml-phone-cc + .select2.select2-container {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  color: black;
 }
 .mwc-item .info{
   width: calc(100% - 85px);
@@ -268,9 +269,10 @@ select.xoo-ml-phone-cc + .select2.select2-container {
 .mwc-item .product-name a{
   font-weight: 600;
   text-decoration: none;
+  color: black;
 }
 .mwc-item .product-name .product-price {
   margin-bottom: 0;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
 }

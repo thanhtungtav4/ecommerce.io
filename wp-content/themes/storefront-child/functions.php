@@ -37,4 +37,6 @@ require_once( get_stylesheet_directory() . '/functions/quickview.php');
 // add Advanced Custom Fields to WooCommerce Attributes
 require_once( get_stylesheet_directory() . '/functions/acf-wcattributes.php');
 
+// custome hook using is cart
+require_once( get_stylesheet_directory() . '/functions/checkout.php');
 
