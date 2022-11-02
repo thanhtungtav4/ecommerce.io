@@ -53,44 +53,31 @@
           <th>Phù hợp:</th>
           <td>
             <table>
-              <tbody>
+              <tbody class="table_popup">
               <?php if(get_field('select_color')) : ?>
                   <?php foreach(get_field('select_color') as $color) : ?>
-                    <tr>
                       <?php
-                      switch($color){
-                          case 'choco' :
-                            echo '<td>Đi học</td>';
-                            echo '<td>Đi Làm</td>';
-                            break;
-                          case 'brown' :
-                            echo '<td>Đi học</td>';
-                            echo '<td>Đi Làm</td>';
-                            echo '<td>Đi Chơi</td>';
-                            break;
-                          case 'gray' :
-                            echo '<td>Đi học</td>';
-                            echo '<td>Đi Làm</td>';
-                            echo '<td>Đi Chơi</td>';
-                            break;
-                          case 'blue' :
-                            echo '<td>Đi Chơi</td>';
-                            break;
-                          case 'gold' :
-                            echo '<td>Đi Chơi</td>';
-                            break;
-                          case 'green' :
-                            echo '<td>Đi Chơi</td>';
-                            break;
-                          case 'violet' :
-                            echo '<td>Đi Chơi</td>';
-                            break;
-                          case 'black' :
-                            echo '<td>Đi Chơi</td>';
-                            break;
-                      }
+                          if($color == 'choco') {
+                            echo '<tr><td>';
+                            echo '<p>Đi học</p>';
+                            echo '<p>Đi Làm</p>';
+                            echo '</td></tr>';
+                          }
+                          if($color == 'brown' || $color == 'gray' ) {
+                            echo '<tr><td>';
+                            echo '<p>Đi học</p>';
+                            echo '<p>Đi Làm</p>';
+                            echo '<p>Đi Chơi</p>';
+                            echo '</td></tr>';
+                          }
+                          if($color == 'blue' ||  $color == 'gold' ||
+                            $color == 'green' || $color == 'violet' ||
+                            $color == 'black') {
+                            echo '<tr><td>';
+                            echo '<p>Đi Chơi</p>';
+                            echo '</td></tr>';
+                          }
                       ?>
-                    </tr>
                   <?php endforeach;?>
               <?php endif ;?>
               </tbody>

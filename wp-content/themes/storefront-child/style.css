@@ -276,3 +276,9 @@ select.xoo-ml-phone-cc + .select2.select2-container {
   font-weight: 500;
   font-size: 1.6rem;
 }
+.table_popup{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
