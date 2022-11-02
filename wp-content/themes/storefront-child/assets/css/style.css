@@ -1684,21 +1684,20 @@ body.js-active {
 .m-product_top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .m-product_top > h4 {
   font-weight: 300;
   font-size: 3.6rem;
   line-height: 1.3;
   margin-bottom: 3rem;
-}
-@media screen and (max-width: 767px) {
-  .m-product_top > h4 {
-    margin-bottom: 1rem;
-  }
+  font-size: 2.5rem;
+  margin-bottom: 0;
 }
 @media screen and (max-width: 767px) {
   .m-product_top {
     flex-direction: column;
+    align-items: flex-start;
   }
 }
 .m-product__inner {
@@ -4417,4 +4416,3 @@ body.js-active {
   border: 0;
   background: transparent;
 }
-
