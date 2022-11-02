@@ -110,6 +110,7 @@ main {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -4416,3 +4417,4 @@ body.js-active {
   border: 0;
   background: transparent;
 }
+
