@@ -9,7 +9,8 @@
 	.theme-jevelin.woocommerce-page .woocomerce-styling,
 	.woocommerce-page .content_wrapper,
 	.woocommerce-page #col-mask,
-	#main-content .content-area
+	#main-content .content-area,
+	#main #content-wrap
 	{
 		-js-display: flex;
 		display: -webkit-box;

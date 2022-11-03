@@ -67,6 +67,8 @@
                     WC_Cache_Helper::invalidate_cache_group( 'wvs_variation_attribute_options_html' );
                     WC_Cache_Helper::invalidate_cache_group( 'wvs_rest_single_product' );
                     WC_Cache_Helper::invalidate_cache_group( 'wvs_rest_archive_product' );
+                    WC_Cache_Helper::invalidate_cache_group( 'wvs_rest_archive_product_preview' );
+                    WC_Cache_Helper::invalidate_cache_group( 'wvs_rest_single_product_preview' );
                 }
             }
         }

@@ -33,7 +33,7 @@
 			<div id="wpfTableTblNavShell" class="woobewoo-tbl-pagination-shell"></div>
 			<div class="woobewoo-clear"></div>
 			<hr />
-			<table id="wpfTableTbl"></table>
+			<table id="wpfTableTbl" data-columns="<?php echo esc_attr__('ID', 'woo-product-filter') . ';' . esc_attr__('Title', 'woo-product-filter') . ';' . esc_attr__('Shortcode', 'woo-product-filter'); ?>"></table>
 			<div id="wpfTableTblNav"></div>
 			<div id="wpfTableTblEmptyMsg" class="woobewoo-hidden">
 				<h3><?php echo esc_html__('You have no Filters for now.', 'woo-product-filter') . ' <a href="' . esc_url($this->addNewLink) . '">' . esc_html__('Create', 'woo-product-filter') . '</a> ' . esc_html__('your Filter', 'woo-product-filter') . '!'; ?></h3>

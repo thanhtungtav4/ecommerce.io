@@ -118,6 +118,37 @@ class WoofiltersWpf extends ModuleWpf {
 		if ( is_plugin_active( 'woolementor/woolementor.php' ) ) {
 			add_filter( 'woolementor-product_query_params', array( $this, 'replaceArgsIfBuilderUsed' ) );
 		}
+		//Integration with Advanced Woo Search
+		add_filter( 'aws_search_results_products_ids', array( $this, 'my_aws_search_results_products_ids') );
+	}
+	public function my_aws_search_results_products_ids( $ids ) {
+		$q = new WP_Query( DispatcherWpf::applyFilters( 'beforeFilterExistsTermsWithEmptyArgs', array(
+			'post_type'  => 'product',
+			'fields' 	 => 'ids',
+			'meta_query' => array(),
+			'tax_query'  => array(),
+			'post__in'	=> array_merge( array( 0 ), $ids ),
+			'aws_post_in'	=> array_merge( array( 0 ), $ids ),
+			) ) );
+		
+		$this->loadProductsFilter( $q );
+		if (!empty($this->mainWCQueryFiltered)) {
+			unset($this->mainWCQueryFiltered['s']);
+		}
+		unset($this->mainWCQuery['s']);
+		$args = ( '' !== $this->mainWCQueryFiltered ? $this->mainWCQueryFiltered : $this->mainWCQuery );
+				
+		$filterLoop = new WP_Query( $args );
+		$ids = $filterLoop->posts;
+		
+		add_filter( 'wpf_addFilterExistsItemsArgs', function($arg) {
+			if (isset($arg['aws_post_in'])) {
+				$arg['post__in'] = $arg['aws_post_in'];
+			}
+			return $arg;
+		}, 99999999 );
+		
+		return $ids;
 	}
 
 	public function forceElementorProductFilter( $widget ) {
@@ -130,7 +161,23 @@ class WoofiltersWpf extends ModuleWpf {
 	}
 
 	public function forceProductFilter( $query ) {
+		
+		$existFilter = false;
+		$blocksApi = false;
 		if ( ! empty( $this->renderModes ) ) {
+			foreach ( $this->renderModes as $mode ) {
+				if (!empty($mode)) {
+					$existFilter = true;
+					break;
+				}
+			}
+		}
+		if ( !$existFilter ) {
+			$uri = $_SERVER['REQUEST_URI'];
+			$blocksApi = strpos( $uri, 'wp-json/wc/store/') && strpos( $uri, '/products?');
+		}
+
+		if ( $existFilter || $blocksApi ) {
 			$forced = false;
 			if ( isset( $query->query_vars['post_type'] ) && 'product' === $query->query_vars['post_type'] && function_exists( 'debug_backtrace' ) ) {
 				$backtrace = debug_backtrace( DEBUG_BACKTRACE_IGNORE_ARGS, 10 ); //phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_debug_backtrace
@@ -141,6 +188,7 @@ class WoofiltersWpf extends ModuleWpf {
 						'DynamicContentForElementor\Widgets\DCE_Widget_DynamicPosts_Base',
 						'DynamicContentForElementor\Widgets\DynamicPostsBase',
 						'DCP_WooProducts',
+						'Automattic\WooCommerce\Blocks\StoreApi\Utilities\ProductQuery'
 					);
 					$found   = ( ( isset( $backtrace[5]['class'] ) && 'Automattic\WooCommerce\Blocks\BlockTypes\AbstractProductGrid' === $backtrace[5]['class'] ) || ( isset( $backtrace[7]['class'] ) && in_array( $backtrace[7]['class'], $classes, true ) ) )
 						? true
@@ -754,7 +802,7 @@ class WoofiltersWpf extends ModuleWpf {
 							'include_children' => true,
 						);
 					}
-				} elseif ( strpos( $key, 'product_brand' ) === 0 ) {
+				} elseif ( strpos( $key, 'product_brand' ) === 0 || strpos( $key, 'wpf_filter_brand' ) === 0 ) {
 					if ( ! empty( $param ) ) {
 						$idsOr      = explode( ',', $param );
 						$idsAnd     = explode( '|', $param );
@@ -969,19 +1017,19 @@ class WoofiltersWpf extends ModuleWpf {
 			$orderby = ReqWpf::getVar( 'orderby' );
 			switch ( $orderby ) {
 				case 'price':
-					add_filter( 'posts_clauses', array( $this, 'addPriceOrder' ) );
+					add_filter( 'posts_clauses', array( $this, 'addPriceOrder' ), 99999 );
 					break;
 				case 'price-desc':
-					add_filter( 'posts_clauses', array( $this, 'addPriceOrderDesc' ) );
+					add_filter( 'posts_clauses', array( $this, 'addPriceOrderDesc' ), 99999 );
 					break;
 				case 'sku':
-					add_filter( 'posts_clauses', array( $this, 'addSKUOrder' ) );
+					add_filter( 'posts_clauses', array( $this, 'addSKUOrder' ), 99999 );
 					break;
 				case 'sku-desc':
-					add_filter( 'posts_clauses', array( $this, 'addSKUOrderDesc' ) );
+					add_filter( 'posts_clauses', array( $this, 'addSKUOrderDesc' ), 99999 );
 					break;
 				case 'date-asc':
-					add_filter('posts_clauses', array($this, 'addDateOrderAsc'));
+					add_filter('posts_clauses', array($this, 'addDateOrderAsc'), 99999 );
 					break;
 			}
 		}
@@ -1019,8 +1067,6 @@ class WoofiltersWpf extends ModuleWpf {
 		if ( $this->isFiltered( false ) ) {
 			remove_filter( 'woocommerce_product_loop_start', 'woocommerce_maybe_show_product_subcategories' );
 		}
-
-
 	}
 
 
@@ -1069,11 +1115,24 @@ class WoofiltersWpf extends ModuleWpf {
 
 	public function addPriceOrder( $args ) {
 		global $wpdb;
-		$metaKeyId = $this->getMetaKeyId( '_price' );
-		if ( $metaKeyId ) {
-			$metaDataTable   = DbWpf::getTableName( 'meta_data' );
-			$args['join']   .= ' LEFT JOIN ' . $metaDataTable . ' AS wpf_price_order ON (wpf_price_order.product_id=' . $wpdb->posts . '.ID AND wpf_price_order.key_id=' . $metaKeyId . ')';
-			$args['orderby'] = ' wpf_price_order.val_dec ASC, wpf_price_order.product_id ';
+		if (function_exists('wcpbc_the_zone') && wcpbc_the_zone()) {
+			if (strpos($args['join'], ' wpf_price_wcpbc ') === false) {
+				$key = '_' . wcpbc_the_zone()->get_id() . '_price';
+				$args['join']   .= 
+					' LEFT JOIN ' . $wpdb->postmeta . ' as wpf_price ON (wpf_price.post_id=' . $wpdb->posts . ".ID AND wpf_price.meta_key='_price')" .
+					' LEFT JOIN ' . $wpdb->postmeta . ' as wpf_price_wcpbc ON (wpf_price_wcpbc.post_id=' . $wpdb->posts . ".ID AND wpf_price_wcpbc.meta_key='" . $key . "')";
+			}
+			$args['orderby'] = ' IFNULL(CAST(wpf_price_wcpbc.meta_value AS DECIMAL(20,3)), CAST(wpf_price.meta_value AS DECIMAL(20,3))) ASC, ' . $wpdb->posts . '.ID ';
+		} else {
+			$metaKeyId = $this->getMetaKeyId( '_price' );
+			if ( $metaKeyId ) {
+				$metaDataTable   = DbWpf::getTableName( 'meta_data' );
+				$args['join']   .= ' LEFT JOIN ' . $metaDataTable . ' AS wpf_price_order ON (wpf_price_order.product_id=' . $wpdb->posts . '.ID AND wpf_price_order.key_id=' . $metaKeyId . ')';
+				$args['orderby'] = ' wpf_price_order.val_dec ASC, wpf_price_order.product_id ';
+			} else {
+				$args['join'] .= ' LEFT JOIN ' . $wpdb->postmeta . ' as wpf_price_order ON (wpf_price_order.post_id=' . $wpdb->posts . ".ID AND wpf_price_order.meta_key='_price')";
+				$args['orderby'] = ' CAST(wpf_price_order.meta_value AS DECIMAL(20,3)) ASC, ' . $wpdb->posts . '.ID ';
+			}
 		}
 		remove_filter( 'posts_clauses', array( $this, 'addPriceOrder' ) );
 
@@ -1082,11 +1141,24 @@ class WoofiltersWpf extends ModuleWpf {
 
 	public function addPriceOrderDesc( $args ) {
 		global $wpdb;
-		$metaKeyId = $this->getMetaKeyId( '_price' );
-		if ( $metaKeyId ) {
-			$metaDataTable   = DbWpf::getTableName( 'meta_data' );
-			$args['join']   .= ' LEFT JOIN ' . $metaDataTable . ' AS wpf_price_order ON (wpf_price_order.product_id=' . $wpdb->posts . '.ID AND wpf_price_order.key_id=' . $metaKeyId . ')';
-			$args['orderby'] = ' wpf_price_order.val_dec DESC, wpf_price_order.product_id ';
+		if (function_exists('wcpbc_the_zone') && wcpbc_the_zone()) {
+			if (strpos($args['join'], ' wpf_price_wcpbc ') === false) {
+				$key = '_' . wcpbc_the_zone()->get_id() . '_price';
+				$args['join']   .= 
+					' LEFT JOIN ' . $wpdb->postmeta . ' as wpf_price ON (wpf_price.post_id=' . $wpdb->posts . ".ID AND wpf_price.meta_key='_price')" .
+					' LEFT JOIN ' . $wpdb->postmeta . ' as wpf_price_wcpbc ON (wpf_price_wcpbc.post_id=' . $wpdb->posts . ".ID AND wpf_price_wcpbc.meta_key='" . $key . "')";
+			}
+			$args['orderby'] = ' IFNULL(CAST(wpf_price_wcpbc.meta_value AS DECIMAL(20,3)), CAST(wpf_price.meta_value AS DECIMAL(20,3))) DESC, ' . $wpdb->posts . '.ID ';
+		} else {
+			$metaKeyId = $this->getMetaKeyId( '_price' );
+			if ( $metaKeyId ) {
+				$metaDataTable   = DbWpf::getTableName( 'meta_data' );
+				$args['join']   .= ' LEFT JOIN ' . $metaDataTable . ' AS wpf_price_order ON (wpf_price_order.product_id=' . $wpdb->posts . '.ID AND wpf_price_order.key_id=' . $metaKeyId . ')';
+				$args['orderby'] = ' wpf_price_order.val_dec DESC, wpf_price_order.product_id ';
+			} else {
+				$args['join'] .= ' LEFT JOIN ' . $wpdb->postmeta . ' as wpf_price_order ON (wpf_price_order.post_id=' . $wpdb->posts . ".ID AND wpf_price_order.meta_key='_price')";
+				$args['orderby'] = ' CAST(wpf_price_order.meta_value AS DECIMAL(20,3)) DESC, ' . $wpdb->posts . '.ID ';
+			}
 		}
 		remove_filter( 'posts_clauses', array( $this, 'addPriceOrderDesc' ) );
 
@@ -1182,6 +1254,20 @@ class WoofiltersWpf extends ModuleWpf {
 			}
 
 			$this->addPreselectedParams();
+			
+			if ( ReqWpf::getVar( 'all_products_filtering' ) && ($filterKey != '-')) {
+				$exclude = array( 'paged', 'posts_per_page', 'post_type', 'wc_query', 'orderby', 'order', 'fields' );
+				foreach ( $args as $queryVarKey => $queryVarValue ) {
+					if ( ! in_array( $queryVarKey, $exclude ) ) {
+						if ( is_string( $queryVarValue ) ) {
+							$args[$queryVarKey] = '';
+						}
+						if ( is_array( $queryVarValue ) ) {
+							$args[$queryVarKey] = array();
+						}
+					}
+				}
+			}
 
 			$metaQuery           = isset( $args['meta_query'] ) ? $args['meta_query'] : array();
 			$taxQuery            = isset( $args['tax_query'] ) ? $args['tax_query'] : array();
@@ -1444,12 +1530,14 @@ class WoofiltersWpf extends ModuleWpf {
 					$sql = " WHERE p.post_type='product_variation'";
 					$this->clausesByParam['variation']['base_request'][2] = $sql;
 					$query .= $sql;
+					$this->clausesByParam['variation']['base_request'][3] = '';
 
 					if ( ! empty( $clauses['where'] ) ) {
 						$query .= ' AND ' . $clauses['where'];
 					}
 					if ( $isGroupBy ) {
 						$query .= ' GROUP BY p.post_parent';
+						$this->clausesByParam['variation']['base_request'][3] = ' GROUP BY p.post_parent';
 					}
 					if ( ! empty( $clauses['having'] ) ) {
 						$query .= ' HAVING ' . $clauses['having'];
@@ -1900,19 +1988,27 @@ class WoofiltersWpf extends ModuleWpf {
 			$metaQuery['compare'] = 'BETWEEN';
 			$metaQuery['value']   = array( $minPrice / $rate, $maxPrice / $rate );
 		}
-		add_filter( 'posts_where', array( $this, 'controlDecimalType' ), 9999, 2 );
-
+		
 		if (function_exists('wcpbc_the_zone') && wcpbc_the_zone()) {
-			
+			global $wpdb;
 			$key = '_' . wcpbc_the_zone()->get_id() . '_price';
-			$exists = array('key' => $key, 'compare' => 'NOT EXISTS');
-			$metaQueryZ = $metaQuery;
-			$metaQueryZ['key'] = $key;
-
-			$metaQuery = array('relation' => 'AND', $exists, $metaQuery);
-			$exists['compare'] = 'EXISTS';
-			$metaQuery = array('relation' => 'OR', array('relation' => 'AND', $exists, $metaQueryZ), $metaQuery);
+			
+			$value = $metaQuery['compare'] . 
+				(is_array($metaQuery['value']) ? " '" . $metaQuery['value'][0] . "' AND '" . $metaQuery['value'][1]. "'" : "'" . $metaQuery['value'] . "'");
+			$clauses = array(
+				'join' => array(
+					' LEFT JOIN ' . $wpdb->postmeta . ' as wpf_price ON (wpf_price.post_id=' . $wpdb->posts . ".ID AND wpf_price.meta_key='_price')",
+					' LEFT JOIN ' . $wpdb->postmeta . ' as wpf_price_wcpbc ON (wpf_price_wcpbc.post_id=' . $wpdb->posts . ".ID AND wpf_price_wcpbc.meta_key='" . $key . "')"
+				),
+				'where' => array(
+					' AND ((wpf_price_wcpbc.post_id is NOT NULL AND CAST(wpf_price_wcpbc.meta_value AS DECIMAL(20,3)) ' . $value .
+						') OR (wpf_price_wcpbc.post_id is NULL AND CAST(wpf_price.meta_value AS DECIMAL(20,3)) ' . $value . '))'
+				)
+			);
+			$this->addFilterClauses( $clauses, false );
+			return array();
 		}
+		add_filter( 'posts_where', array( $this, 'controlDecimalType' ), 9999, 2 );
 		
 		return array( 'price_filter' => $metaQuery );
 	}
@@ -2161,11 +2257,14 @@ class WoofiltersWpf extends ModuleWpf {
 			}
 
 			if ( ! empty( $taxonomy ) ) {
-				$settingName = ( 'product_cat' === $taxonomy ) ? 'f_multi_logic' : 'f_query_logic';
-				$queryLogic  = $this->getFilterSetting( $filter['settings'], $settingName, 'and' );
+				$typ = $this->getFilterSetting( $filter['settings'], 'f_frontend_type');
+				if (!in_array($typ, array('dropdown', 'list'))) {
+					$settingName = ( 'product_cat' === $taxonomy ) ? 'f_multi_logic' : 'f_query_logic';
+					$queryLogic  = $this->getFilterSetting( $filter['settings'], $settingName, 'and' );
 
-				if ( ( 'and' === $multiLogic && 'or' === $queryLogic ) || ( 'or' === $multiLogic && 'and' === $queryLogic ) ) {
-					$differentLogic[ $key ] = $taxonomy;
+					if ( ( 'and' === $multiLogic && 'or' === $queryLogic ) || ( 'or' === $multiLogic && 'and' === $queryLogic ) ) {
+						$differentLogic[ $key ] = $taxonomy;
+					}
 				}
 
 				$taxonomies[ $key ] = $taxonomy;
@@ -2421,7 +2520,6 @@ class WoofiltersWpf extends ModuleWpf {
 				? array( 'full' => $args )
 				: array( 'full' => $argsFiltered, 'light' => $args );
 		}
-
 		if ( $multiLogicOr ) {
 
 			if ( isset( $calc['light'] ) ) {
@@ -2468,7 +2566,6 @@ class WoofiltersWpf extends ModuleWpf {
 				'currentSettings' => $currentSettings,
 			);
 			$args  = $this->addArgs( $args, $param );
-
 			$isCalcCategory = ! is_null( $calcCategory );
 
 			$param = array(
@@ -2500,13 +2597,11 @@ class WoofiltersWpf extends ModuleWpf {
 			}
 
 			$isModeStandart = in_array( $mode, array( 'full', 'light' ), true );
-
 			if ( ! empty( $this->clauses ) && ( ( ! $multiLogicOr && ! $isModeStandart ) || ( $multiLogicOr && $isModeStandart ) ) ) {
 				$filterLoop = $this->getFilterLoopFromMode( $mode, $args );
 			} else {
 				$filterLoop = new WP_Query( $args );
 			}
-
 			$this->isLightMode = false;
 			$listTable         = '';
 
@@ -2515,7 +2610,6 @@ class WoofiltersWpf extends ModuleWpf {
 			$onlyHaveFound = !empty($currentSettings['only_have_found']);
 
 			if ( $havePosts && !$onlyHaveFound ) {
-
 				$createOtherTemporaryTable = false;
 
 				if ( isset( $this->clausesByParam['variation']['base_request'] ) ) {
@@ -2555,6 +2649,7 @@ class WoofiltersWpf extends ModuleWpf {
 						if ( '' !== $where ) {
 							$query .= $where;
 						}
+						$query .= $this->clausesByParam['variation']['base_request'][3];
 
 						$first = true;
 
@@ -2655,7 +2750,6 @@ class WoofiltersWpf extends ModuleWpf {
 				$result['existsTermsJS'] = '<div class="wpfExistsTermsJS"><script type="text/javascript">' . $jsFound . 'wpfShowHideFiltersAtts(' . wp_json_encode( $result['exists'] ) . ', ' . wp_json_encode( $result['existsUsers'] ) . ');</script><script type="text/javascript">wpfChangeFiltersCount(' . wp_json_encode( $result['exists'] ) . ');</script></div>';
 			}
 		}
-
 		return $result;
 	}
 
@@ -2780,7 +2874,6 @@ class WoofiltersWpf extends ModuleWpf {
 				}
 			}
 		}
-
 		if ( $addEFC ) {
 			$args['tax_query'][] = array(
 				'taxonomy' => 'product_visibility',
@@ -2808,7 +2901,6 @@ class WoofiltersWpf extends ModuleWpf {
 		if ( class_exists( 'Iconic_WSSV_Query' ) ) {
 			$args = $this->Iconic_Wssv_Query_Args( $args );
 		}
-
 		//Integration with AJAX Search for WooCommerce
 
 		/*
@@ -2833,9 +2925,7 @@ class WoofiltersWpf extends ModuleWpf {
 		if ( ! empty( $args['post__in'] ) && ( 'product' === $args['post_type'] ) ) {
 			$args['post_type'] = array( 'product', 'product_variation' );
 		}
-
 		$args = $this->addWooOptions( $args );
-
 		foreach ( $param['generalSettings'] as $filter ) {
 			$settings = ( isset( $filter['settings'] ) ) ? $filter['settings'] : [];
 			$hiddens  = array( 'f_hidden_brands', 'f_hidden_categories', 'f_hidden_attributes', 'f_hidden_tags' );
@@ -2853,7 +2943,6 @@ class WoofiltersWpf extends ModuleWpf {
 				}
 			}
 		}
-
 		return DispatcherWpf::applyFilters( 'addFilterExistsItemsArgs', $args );
 	}
 

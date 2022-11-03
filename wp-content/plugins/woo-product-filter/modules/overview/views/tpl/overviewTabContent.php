@@ -9,26 +9,21 @@
 </section>
 <section>
 	<div class="woobewoo-item woobewoo-panel wpf-overview-panel">
+		<div class="wpf-overview-block">
+			<div class="wpf-overview-block-body wpf-ads-reward">
+				<div class="wpf-overview-center">
+					<input type="text" class="wpf-overview-input" name="wpf-promo" readonly value="woobewoomax">
+					<a class="wpf-overview-button button" href="https://woobewoo.com/plugins/reward-points-for-woocoommerce/#license" target="_blank">
+						<?php esc_html_e('GET PLUGIN', 'woo-product-filter'); ?>
+					</a>
+				</div>
+			</div>
+		</div>
 		<?php 
 			if ($this->isWeek) {
 				include_once 'overviewFeedback.php';
 			}
 		?>
-		<div class="wpf-overview-block">
-			<div class="wpf-overview-block-body">
-				<div class="wpf-overview-body-title">
-					<?php esc_html_e('New! Reward points and loyalty plugin from WooBeWoo', 'woo-product-filter'); ?>
-				</div>
-				<div class="wpf-overview-body-text">
-					<?php esc_html_e('Set rewards in the form of bonus points for the purchase of good, signup, writing review and more. Create delayed campaigns with automatic reward points accrual based on triggers/conditions.', 'woo-product-filter'); ?>
-				</div>
-				<div class="wpf-overview-center">
-					<a class="wpf-overview-button button" href="https://woobewoo.com/plugins/reward-points-for-woocoommerce/" target="_blank">
-						<?php esc_html_e('MORE INFO', 'woo-product-filter'); ?>
-					</a>
-				</div>
-			</div>
-		</div>
 		<div class="wpf-overview-block">
 			<div class="wpf-overview-block-header">
 				<div class="wpf-overview-header-title">

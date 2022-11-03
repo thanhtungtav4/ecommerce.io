@@ -257,7 +257,7 @@ class MetaModelWpf extends ModelWpf {
 
 					switch ($keyType) {
 						case 0:							
-							$join = ' JOIN @__meta_values as v ON (v.key_id=' . ( $isMetaVar ? $keyDataVar['id'] : $keyId ) . ' AND v.value=CAST(meta_value AS CHAR(' . $maxTextLength . '))' ;
+							$join = ' JOIN @__meta_values as v ON (v.key_id=' . ( $isMetaVar ? $keyDataVar['id'] : $keyId ) . ' AND v.value=' . ( $isMetaVar || !$isAllProducts ? 'CAST(meta_value AS CHAR(' . $maxTextLength . '))' : 'm.meta_value' );
 							for ($k = 2; $k <= $maxKeySize; $k++) {
 								$join .= ' AND v.key' . $k . "=''";
 							}
@@ -268,13 +268,29 @@ class MetaModelWpf extends ModelWpf {
 							} else {
 								set_time_limit(300);
 								DbWpf::query('SET session wait_timeout=600');
-								$query = 'INSERT IGNORE INTO @__meta_values (key_id, value)' .
-									' SELECT DISTINCT ' . $keyId . ',CAST(meta_value AS CHAR(' . $maxTextLength . '))' .
-									$from . ' LEFT ' . $join .
-									$whereMeta . ' AND ISNULL(v.id)' . ( strpos($keyName, 'attribute_') === 0 ? '' : " AND m.meta_value!=''" );
+								
+								if ($isAllProducts) {
+									$query = 'SELECT m.meta_id as id, m.post_id, ' . $selectType . ' CAST(meta_value AS CHAR(' . $maxTextLength . ')) as meta_value' .
+										$from . $whereMeta . ( strpos($keyName, 'attribute_') === 0 ? '' : " AND m.meta_value!=''" );
+									
+									$tempTableAttr  = FrameWpf::_()->getModule('woofilters')->createTemporaryTable('wpf_meta_calc_attr', $query);
+									$query = 'INSERT IGNORE INTO @__meta_values (key_id, value)' .
+										' SELECT DISTINCT ' . $keyId . ',m.meta_value' .
+										' FROM ' . $tempTableAttr . ' m LEFT ' . $join .
+										' WHERE ISNULL(v.id)';
+								} else {
+									$query = 'INSERT IGNORE INTO @__meta_values (key_id, value)' .
+										' SELECT DISTINCT ' . $keyId . ',CAST(meta_value AS CHAR(' . $maxTextLength . '))' .
+										$from . ' LEFT ' . $join .
+										$whereMeta . ' AND ISNULL(v.id)' . ( strpos($keyName, 'attribute_') === 0 ? '' : " AND m.meta_value!=''" );
+								}
 								if (DbWpf::query($query)) {
-									$query = $insert . 'val_id) SELECT post_id,' . $selectType . $keyId . ',v.id' . $from . ' INNER ' . $join . $whereMeta;
-									if ($isAllProducts && $maxCntTemp > 8000) {
+									if ($isAllProducts) {
+										$query = $insert . 'val_id) SELECT post_id, is_var, ' . $keyId . ',v.id FROM ' . $tempTableAttr . ' as m INNER ' . $join;
+									} else {
+										$query = $insert . 'val_id) SELECT post_id,' . $selectType . $keyId . ',v.id' . $from . ' INNER ' . $join . $whereMeta;
+									}
+									/*if ($isAllProducts && $maxCntTemp > 8000) {
 										$cntValues = DbWpf::get( 'SELECT count(*) FROM `@__meta_values` WHERE key_id=' . $keyId, 'one');
 										if ($cntValues > 50) {
 											if ($cntValues < 5000 || $maxCntTemp < 25000) {											
@@ -310,7 +326,7 @@ class MetaModelWpf extends ModelWpf {
 											$status = 1;
 											$query  = '';
 										}
-									}
+									}*/
 								} else {
 									$this->pushError(DbWpf::getError());
 									return false;

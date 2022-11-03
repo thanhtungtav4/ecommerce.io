@@ -2252,15 +2252,19 @@ class WoofiltersViewWpf extends ViewWpf {
 
 		list( $showedTerms, $countsTerms, $showFilter, $allTerms ) = $this->getShowedTerms( $attrName, $show_all_atts, $filterName );
 
-
 		//doing the sorting through the hook while some themes/plugins impose their own
 		if ($isCustomOrder) {
 			$args['wpf_orderby'] = implode(',', $includeAttsId);
 			add_filter('get_terms_orderby', array($this, 'wpfGetTermsOrderby'), 99, 2);
 		}
+		if ($isCustom) {
+			$custArgs = array(
+				'wpf_fbv' => $this->getFilterSetting($filterSettings['settings'], 'filtering_by_variations'),
+				'all_attrs' => $this->getFilterSetting($settings, 'f_show_all_attributes', false)
+			);
+		}
 
-		$productAttr = $isCustom ? DispatcherWpf::applyFilters('getCustomTerms', array(), $attrSlug, array_merge($args, array('wpf_fbv' => $this->getFilterSetting($filterSettings['settings'], 'filtering_by_variations')))) : $this->getTaxonomyHierarchy($attrName, $args);
-
+		$productAttr = $isCustom ? DispatcherWpf::applyFilters('getCustomTerms', array(), $attrSlug, array_merge($args, $custArgs)) : $this->getTaxonomyHierarchy($attrName, $args);
 		remove_filter('get_terms_orderby', array($this, 'wpfGetTermsOrderby'), 99, 2);
 
 		if (!$productAttr) {

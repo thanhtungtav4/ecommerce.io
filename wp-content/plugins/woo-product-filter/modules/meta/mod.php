@@ -2,11 +2,14 @@
 
 class MetaWpf extends ModuleWpf {
 	private $calculated = false;
+	public static $wpfPreviousProductId = -1;
+	public static $wpfPreviousProductIdAcf = -1;
 
 	public function init() {
 		parent::init();
 		DispatcherWpf::addFilter( 'optionsDefine', array( $this, 'addOptions' ) );
-		add_action( 'woocommerce_update_product', array( $this, 'recalcProductMetaValues' ), 100, 1 );
+		add_action( 'woocommerce_update_product', array( $this, 'recalcProductMetaValues' ), 99999, 1 );
+		add_action( 'acf/save_post', array( $this, 'recalcProductMetaValuesAcf' ), 99999, 1);
 		add_action( 'woocommerce_product_set_stock_status', array( $this, 'recalcProductStockStatus' ), 100, 1 );
 		add_action( 'woocommerce_variation_set_stock_status', array( $this, 'recalcProductStockStatus' ), 100, 1 );
 		add_action( 'wpf_calc_meta_indexing', array( $this->getModel(), 'recalcMetaValues' ), 10, 1 );
@@ -137,7 +140,18 @@ class MetaWpf extends ModuleWpf {
 
 	public function recalcProductMetaValues( $productId ) {
 		if ( ! $this->isDisabledAutoindexing() ) {
-			$this->getModel()->recalcMetaValues( $productId );
+			if (self::$wpfPreviousProductId !== $productId) {
+				self::$wpfPreviousProductId = $productId;
+				$this->getModel()->recalcMetaValues( $productId );
+			}
+		}
+	}
+	public function recalcProductMetaValuesAcf( $productId ) {
+		if ( ! $this->isDisabledAutoindexing() ) {
+			if (self::$wpfPreviousProductIdAcf !== $productId) {
+				self::$wpfPreviousProductIdAcf = $productId;
+				$this->getModel()->recalcMetaValues( $productId );
+			}
 		}
 	}
 

@@ -3,7 +3,7 @@
 	$isRating = $this->getModule()->getModel()->isRating();
 	if (!$isSubscribe || !$isRating) {
 ?>
-	<div class="row">
+	<div class="row wpf-overview-block-row">
 		<?php if (!$isSubscribe) { ?>
 			<div class="col-sm-<?php echo $isRating ? 12 : 6; ?>">
 				<div class="wpf-overview-block">

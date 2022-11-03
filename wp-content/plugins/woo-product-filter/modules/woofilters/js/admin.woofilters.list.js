@@ -11,11 +11,11 @@ jQuery(document).ready(function(){
 		datatype: 'json',
 		autowidth: true,
 		shrinkToFit: true,
-		colNames:[toeLangWpf('ID'), toeLangWpf('Title'), toeLangWpf('Shortcode')],
+		colNames:tableObj.data('columns').split(';'),
 		colModel:[
 			{name: 'id', index: 'id', searchoptions: {sopt: ['eq']}, width: '50', align: 'center'},
 			{name: 'title', index: 'title', searchoptions: {sopt: ['eq']}, align: 'center'},
-			{name: 'shortcode', index: 'shortcode', searchoptions: {sopt: ['eq']}, align: 'center'}
+			{name: 'shortcode', index: 'shortcode', searchoptions: {sopt: ['eq']}, align: 'center', sortable:false}
 		],
 		postData: {
 			search: {

@@ -1308,7 +1308,10 @@
 				} else if(filterDisplay == 'text') {
 					$synchroFilters.find('input').val($filter.find('input').val());
 				} else {
-					$synchroFilters.find('select').val($filter.find('select').val());
+					var value = $filter.find('select').val();
+					$synchroFilters.find('select').each(function() {
+						if (jQuery(this).find('option[value="'+value+'"]').length) jQuery(this).val(value);
+					});
 				}
 				
 				if(typeof(_thisObj.syncronizeFiltersPro) == 'function') {

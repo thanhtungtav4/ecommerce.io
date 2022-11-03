@@ -4,6 +4,7 @@
 	font-size: 18px;
 	font-weight: bold;
 	margin-top: 20px;
+	max-width: 1200px;
 }
 .wpf-overview-panel {
 	background-color: #ffffff;
@@ -15,6 +16,10 @@
     border-radius: 10px;
     box-shadow: rgb(0 0 0 / 25%) 0px 3px 3px 0px;
 	margin-bottom: 20px;
+	max-width: 1200px;
+}
+.wpf-overview-block-row {
+	max-width: 1230px;
 }
 .wpf-overview-block-50 {
 	width: 50%;
@@ -158,3 +163,14 @@
 .wpfStarInput:nth-of-type(5):checked ~ .active:nth-of-type(-n+5){
 	color: #eeee22; 
 }
+.wpf-ads-reward {
+	background-image: url(../img/reward_full.svg);
+	background-repeat: no-repeat;
+	height: 650px !important;
+	position: relative;
+}
+.wpf-ads-reward .wpf-overview-center {
+    bottom: 15px;
+    position: absolute;
+}
+

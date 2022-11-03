@@ -204,7 +204,14 @@
                 
                 $this->add_inline_style();
                 
-                wp_register_script( 'woo-variation-swatches', woo_variation_swatches()->assets_url( "/js/frontend{$suffix}.js" ), array( 'jquery', 'wp-util', 'underscore', 'jquery-blockui', 'wp-api-request', 'wp-api-fetch', 'wp-polyfill' ), woo_variation_swatches()->assets_version( "/js/frontend{$suffix}.js" ), true );
+                wp_register_script( 'woo-variation-swatches', woo_variation_swatches()->assets_url( "/js/frontend{$suffix}.js" ), array( 'jquery', 'wp-util', 'underscore', 'jquery-blockui', 'wp-api-request', 'wp-api-fetch', 'wp-polyfill', 'wp-url' ), woo_variation_swatches()->assets_version( "/js/frontend{$suffix}.js" ), true );
+                
+                $extra_params_for_rest_uri = apply_filters( 'woo_variation_swatches_rest_add_extra_params', array() );
+                
+                if ( $extra_params_for_rest_uri ) {
+                    $extra_params_for_rest_uri = map_deep( $extra_params_for_rest_uri, 'sanitize_text_field' );
+                    wp_add_inline_script( 'woo-variation-swatches', sprintf( 'wp.apiFetch.use( window.createMiddlewareForExtraQueryParams(%s) )', wp_json_encode( $extra_params_for_rest_uri ) ) );
+                }
                 
                 wp_localize_script( 'woo-variation-swatches', 'woo_variation_swatches_options', $this->js_options() );
                 
@@ -355,24 +362,23 @@
                 $option_slug = $data[ 'option_slug' ];
                 $slug        = $data[ 'slug' ];
                 
-                
                 $is_term = wc_string_to_bool( $data[ 'is_term' ] );
                 
-                $css_class = implode( ' ', array_unique( array_values( apply_filters( 'woo_variation_swatches_variable_item_css_class', $this->get_item_css_classes( $data ), $data ) ) ) );
+                $css_class = implode( ' ', array_unique( array_values( apply_filters( 'woo_variation_swatches_variable_item_css_class', $this->get_item_css_classes( $data, $attribute_type, $variation_data ), $data, $attribute_type, $variation_data ) ) ) );
                 
                 $html_attributes = array(
                     'aria-checked' => ( $is_selected ? 'true' : 'false' ),
                     'tabindex'     => ( wp_is_mobile() ? '2' : '0' ),
                 );
                 
-                $html_attributes = wp_parse_args( $this->get_item_tooltip_attribute( $data ), $html_attributes );
+                $html_attributes = wp_parse_args( $this->get_item_tooltip_attribute( $data, $attribute_type, $variation_data ), $html_attributes );
                 
-                $html_attributes = apply_filters( 'woo_variation_swatches_variable_item_custom_attributes', $html_attributes, $attribute_type, $data );
+                $html_attributes = apply_filters( 'woo_variation_swatches_variable_item_custom_attributes', $html_attributes, $data, $attribute_type, $variation_data );
                 
                 return sprintf( '<li %1$s class="variable-item %2$s-variable-item %2$s-variable-item-%3$s %4$s" title="%5$s" data-title="%5$s" data-value="%6$s" role="radio" tabindex="0"><div class="variable-item-contents">', wc_implode_html_attributes( $html_attributes ), esc_attr( $attribute_type ), esc_attr( $option_slug ), esc_attr( $css_class ), esc_html( $option_name ), esc_attr( $slug ) );
             }
             
-            public function get_item_css_classes( $data ) {
+            public function get_item_css_classes( $data, $attribute_type, $variation_data = array() ) {
                 
                 $css_classes = array();
                 
@@ -385,7 +391,7 @@
                 return $css_classes;
             }
             
-            public function get_item_tooltip_attribute( $data ) {
+            public function get_item_tooltip_attribute( $data, $attribute_type, $variation_data = array() ) {
                 
                 $html_attributes = array();
                 
@@ -503,6 +509,19 @@
                 }
                 
                 return $assigned;
+            }
+            
+            public function get_image_attribute_id( $data, $attribute_type, $variation_data = array() ) {
+                if ( 'image' === $attribute_type ) {
+                    
+                    $term = $data[ 'item' ];
+                    
+                    // Global
+                    return apply_filters( 'woo_variation_swatches_global_product_attribute_image_id', absint( woo_variation_swatches()->get_frontend()->get_product_attribute_image( $term, $data ) ), $data );
+                    
+                }
+                
+                return 0;
             }
             
             public function get_image_attribute( $data, $attribute_type, $variation_data = array() ) {
