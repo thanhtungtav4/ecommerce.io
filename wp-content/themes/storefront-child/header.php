@@ -291,6 +291,10 @@
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 3V0H27.5V3H0.5ZM0.5 10.5H27.5V7.5H0.5V10.5ZM0.5 18H27.5V15H0.5V18Z" fill="#ccc"></path>
                 </svg>
               </li>
+              <li class="logo only-sp" href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>">
+                <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.webp" type="image/webp">
+                <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" alt="caras logo" loading="lazy" width="110" height="45">
+              </li>
               <li class="cart c-menu_dropdown"><a class="icon_inner" href="#">
                   <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M26.6821 17.9563C26.1863 18.8605 25.2238 19.4584 24.13 19.4584H13.2654L11.6613 22.3751H29.1613V25.2917H11.6613C9.44459 25.2917 8.04459 22.9147 9.10917 20.9605L11.0779 17.4022L5.82792 6.33341H2.91125V3.41675H7.68001L9.05084 6.33341H30.6342C31.7425 6.33341 32.4425 7.52925 31.9029 8.49175L26.6821 17.9563ZM28.155 9.25008H10.4363L13.8925 16.5417H24.13L28.155 9.25008ZM11.6613 26.7501C10.0571 26.7501 8.75917 28.0626 8.75917 29.6667C8.75917 31.2709 10.0571 32.5834 11.6613 32.5834C13.2654 32.5834 14.5779 31.2709 14.5779 29.6667C14.5779 28.0626 13.2654 26.7501 11.6613 26.7501ZM23.3425 29.6667C23.3425 28.0626 24.6404 26.7501 26.2446 26.7501C27.8488 26.7501 29.1613 28.0626 29.1613 29.6667C29.1613 31.2709 27.8488 32.5834 26.2446 32.5834C24.6404 32.5834 23.3425 31.2709 23.3425 29.6667Z"></path>
