@@ -589,7 +589,6 @@ body.js-active {
   align-items: center;
 }
 .c-header_icon > li.navbar {
-  display: inline-flex;
   align-items: center;
 }
 .c-header_bottom {
