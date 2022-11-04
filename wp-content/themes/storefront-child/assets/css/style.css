@@ -1379,6 +1379,42 @@ body.js-active {
   background-color: #EB6A6A;
 }
 
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 35%;
+  display: block;
+  width: 23px;
+  height: 23px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: black;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.slick-next {
+  right: 5px;
+}
+.slick-next:before {
+  content: url(../../assets/images/chevron-right.svg);
+  color: rgb(255, 255, 255);
+  margin-left: -2px;
+}
+
+.slick-prev {
+  left: 5px;
+}
+.slick-prev:before {
+  content: url(../../assets/images/chevron-left.svg);
+  color: rgb(255, 255, 255);
+  margin-left: -2px;
+}
+
 .gg-search {
   box-sizing: border-box;
   position: relative;

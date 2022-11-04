@@ -443,7 +443,7 @@
           });
       </script>
     <?php endif; ?>
-    <?php if(is_checkout() || is_front_page() || is_product() || is_page('tuyen-dung') || is_page('job') || is_page('gio-hang') || is_page('cart')) :  ?>
+    <?php if(is_checkout() || is_front_page() || is_product() || is_page('lien-he') || is_page('contact-us')|| is_page('tuyen-dung') || is_page('job') || is_page('gio-hang') || is_page('cart')) :  ?>
       <script>
         $(document).ready(function(){
           $('.slick-sure').not('.slick-initialized').slick({
@@ -458,7 +458,8 @@
                 breakpoint: 992,
                 settings: {
                   slidesToShow: 2,
-                  slidesToScroll: 2
+                  slidesToScroll: 2,
+                  arrows: true,
                 }
               },
               {
@@ -466,6 +467,7 @@
                 settings: {
                   slidesToShow: 1,
                   slidesToScroll: 1,
+                  arrows: true,
                 }
               }
             ]
@@ -496,7 +498,7 @@
         });
       </script>
     <?php endif; ?>
-    <?php if(is_page('lien-he') || is_page('contact')) :  ?>
+    <!-- <?php //if(is_page('lien-he') || is_page('contact')) :  ?>
       <script>
        $(document).ready(function(){
         $('.slick-sure').not('.slick-initialized').slick({
@@ -511,21 +513,23 @@
               breakpoint: 992,
               settings: {
                 slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToScroll: 2,
+                arrows: true
               }
             },
             {
               breakpoint: 768,
               settings: {
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                arrows: true
               }
             }
           ]
         });
       });
       </script>
-    <?php endif; ?>
+    <?php //endif; ?> -->
     <?php if(is_single()) ?>
     <script>
       $(document).ready(function(){
