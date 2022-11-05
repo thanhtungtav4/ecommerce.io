@@ -1,17 +1,8 @@
-<div class="m-chat" onclick="toggleChat()">
-	<picture>
-		<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chatbot.webp" type="image/webp" />
-		<img
-			class="lazyload"
-			src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chatbot.png"
-			data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/chatbot.png"
-			alt="chatbot"
-			loading="lazy"
-			width="70"
-			height="70"
-		/>
-	</picture>
-</div>
+<div class="m-chat">
+      <div class="m-chat__item chat" onclick="toggleChat()">
+        <picture><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_chatbot.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_chatbot.png" alt="chatbot" loading="lazy" width="30" height="30"></picture>
+      </div><a class="m-chat__item messenger" target="_blank" href="https://m.me/Carasyvn"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/icons8-facebook-messenger.svg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/icons8-facebook-messenger.svg" alt="chatbot" loading="lazy" width="30" height="30"></a>
+    </div>
 <div class="m-chat_inner">
 	<form class="js-chatbot" id="regForm">
 		<div class="overlay-welcome">
