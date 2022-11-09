@@ -1,0 +1,54 @@
+2022-11-09T08:10:01+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php:139
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects('en_US')
+#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale('en_US')
+#3 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched('en')
+#4 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_a in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php on line 139
+
+2022-11-09T08:10:22+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php:139
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects('en_US')
+#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale('en_US')
+#3 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched('en')
+#4 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_a in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php on line 139
+
+2022-11-09T08:10:36+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php:139
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects('en_US')
+#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale('en_US')
+#3 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched('en')
+#4 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_a in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php on line 139
+
+2022-11-09T08:10:43+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php:139
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects('en_US')
+#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale('en_US')
+#3 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched('en')
+#4 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_a in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php on line 139
+
+2022-11-09T08:11:04+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php:139
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects('en_US')
+#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale('en_US')
+#3 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched('en')
+#4 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_a in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php on line 139
+
+2022-11-09T08:11:46+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php:139
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects('en_US')
+#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale('en_US')
+#3 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched('en')
+#4 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#5 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_a in D:\xampp\htdocs\ecommerce\wp-content\plugins\wpml-string-translation\classes\MO\Hooks\LanguageSwitch.php on line 139
+
