@@ -12,6 +12,7 @@
 get_header(); ?>
   <?php //do_shortcode('[devvn_list_reviews number="15" has_img="1"]') ?>
   <?php
+    do_shortcode('[yith_wcwl_wishlist]');
     get_ProductByCategory(15);
     // $args = array (
     //   'post_type' => 'product',
