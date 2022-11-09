@@ -415,7 +415,10 @@ body.js-active {
 }
 @media screen and (max-width: 767px) {
   .c-header_icon > li svg {
-    fill: #ccc;
+    fill: #737373;
+  }
+  .c-header_icon > li svg:hover {
+    fill: #EB6A6A;
   }
 }
 .c-header_icon > li .icon_inner {
@@ -424,17 +427,6 @@ body.js-active {
 }
 .c-header_icon > li:hover svg {
   fill: #EB6A6A;
-}
-.c-header_icon > li:hover .icon_inner::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid #FFFFFF;
-  position: absolute;
-  bottom: -4px;
-  left: 5px;
 }
 .c-header_icon > li.cart .icon_inner span {
   position: absolute;

@@ -288,7 +288,7 @@
             <ul class="c-header_icon">
               <li class="navbar only-sp" onclick="toggleMenu()">
                 <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 3V0H27.5V3H0.5ZM0.5 10.5H27.5V7.5H0.5V10.5ZM0.5 18H27.5V15H0.5V18Z" fill="#ccc"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 3V0H27.5V3H0.5ZM0.5 10.5H27.5V7.5H0.5V10.5ZM0.5 18H27.5V15H0.5V18Z" fill="#737373" ></path>
                 </svg>
               </li>
               <li class="logo only-sp" href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>">
