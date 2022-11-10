@@ -6,6 +6,8 @@ require_once dirname(__FILE__) . '/provider.php';
 
 abstract class NextendSocialProviderOpenId extends NextendSocialProvider {
 
+    private $openIdClaimedId = false;
+
     /**
      * @return bool
      */
@@ -100,6 +102,69 @@ abstract class NextendSocialProviderOpenId extends NextendSocialProvider {
 
     public function deleteTokenPersistentData() {
         Persistent::delete($this->id . '_openid_claimed_id');
+    }
+
+    /**
+     * @param $openIdClaimedId
+     *                        Intended use: Developers can use this for setting an openIdClaimedId outside of
+     *                        our normal flow.
+     */
+    protected function setOpenIdClaimedId($openIdClaimedId) {
+        $this->openIdClaimedId = $openIdClaimedId;
+    }
+
+    /**
+     * @return mixed
+     *              We should use this function only to get a fallback openIdClaimedId in getCurrentUserInfo()
+     *              function, when a developer tries to get data from the API with the getAuthUserDataByAuthOptions()
+     *              function.
+     */
+    protected function getOpenIdClaimedId() {
+        return $this->openIdClaimedId;
+    }
+
+    public function getAuthUserDataByAuthOptions($key, $authOptions) {
+        if (empty($this->authUserData)) {
+            if (!empty($authOptions['openid_claimed_id'])) {
+                $this->setOpenIdClaimedId($authOptions['openid_claimed_id']);
+                $this->authUserData = $this->getCurrentUserInfo();
+            }
+        }
+
+        if (!empty($this->authUserData)) {
+            return $this->getAuthUserData($key);
+        }
+
+
+        return '';
+    }
+
+    /**
+     * @param integer $user_id
+     * @param ['openid_claimed_id'=>String]  $authOptions
+     * @param String  $action - login/link/register
+     * @param boolean $shouldSyncProfile
+     *                        Rest API specific integrations might need this function to store the sync data fields,
+     *                        the access token, and to update the avatar on login.
+     */
+    public function triggerSync($user_id, $authOptions, $action = "login", $shouldSyncProfile = false) {
+        if (!empty($authOptions['openid_claimed_id'])) {
+            switch ($action) {
+                case "login":
+                    do_action('nsl_' . $this->getId() . '_login', $user_id, $this, $authOptions);
+                    break;
+                case "link":
+                    do_action('nsl_' . $this->getId() . '_link_user', $user_id, $this->getId());
+                    break;
+                case "register":
+                    do_action('nsl_' . $this->getId() . '_register_new_user', $user_id, $this);
+                    break;
+            }
+
+            if ($shouldSyncProfile) {
+                $this->syncProfile($user_id, $this, $authOptions);
+            }
+        }
     }
 
 }

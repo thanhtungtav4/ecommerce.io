@@ -11,9 +11,9 @@ div.nsl-container[data-align="right"] {
 }
 
 
-div.nsl-container .nsl-container-buttons a {
-    text-decoration: none !important;
-    box-shadow: none !important;
+div.nsl-container div.nsl-container-buttons a[data-plugin="nsl"] {
+    text-decoration: none;
+    box-shadow: none;
     border: 0;
 }
 

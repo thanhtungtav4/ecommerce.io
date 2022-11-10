@@ -2,7 +2,7 @@
 defined('ABSPATH') || die();
 /** @var $this NextendSocialProviderAdmin */
 
-$lastUpdated = '2022-01-17';
+$lastUpdated = '2022-09-12';
 
 $provider = $this->getProvider();
 ?>
@@ -29,7 +29,9 @@ $provider = $this->getProvider();
             <li><?php printf(__('You’ll find your API key and secret on this page. Copy and paste the "<b>%1$s</b>" and the "<b>%2$s</b>" to the corresponding fields at %3$s and press "<b>Save Changes</b>".', 'nextend-facebook-connect'), 'API Key', 'API Key Secret', 'Nextend Social Login > Twitter > Settings'); ?></li>
             <li><?php printf(__('Go back to your Twitter project and on the left side, under the "<b>%s</b>" section click on the name of your App.', 'nextend-facebook-connect'), 'Projects & Apps'); ?></li>
             <li><?php printf(__('Scroll down and click on the %1$s button at %2$s.', 'nextend-facebook-connect'), '"<b>Set up</b>"', '"<b>User authentication settings</b>"'); ?></li>
-            <li><?php printf(__('Switch on the %s option.', 'nextend-facebook-connect'), '"<b>OAuth 1.0a</b>"'); ?></li>
+            <li><?php printf(__('Choose the %1$s option at %2$s.', 'nextend-facebook-connect'), '"<b>Read</b>"', '"<b>App permission</b>"'); ?></li>
+            <li><?php printf(__('If you want to get the email address as well, then don’t forget to enable the %1$s option. In this case you also need to fill the "<b>%2$s</b>" and the "<b>%3$s</b>" fields with the corresponding URLs!', 'nextend-facebook-connect'), '"<b>Request email from users</b>"', 'Terms of service', 'Privacy policy'); ?></li>
+            <li><?php printf(__('Select the %1$s option for %2$s.', 'nextend-facebook-connect'), '"<b>Web App, Automated App or Bot</b>"', '"<b>Type of App</b>"'); ?></li>
             <li><?php
                 $loginUrls = $provider->getAllRedirectUrisForAppCreation();
                 printf(__('Add the following URL to the %s field:', 'nextend-facebook-connect'), '"<b>Callback URI / Redirect URL</b>"');
@@ -41,7 +43,6 @@ $provider = $this->getProvider();
                 ?>
             </li>
             <li><?php printf(__('Enter your site\'s URL to the "<b>%1$s</b>" field: <b>%2$s</b>', 'nextend-facebook-connect'), 'Website URL', site_url()); ?></li>
-            <li><?php printf(__('If you want to get the email address as well, then don’t forget to enable the %1$s option. In this case you also need to fill the "<b>%2$s</b>" and the "<b>%3$s</b>" fields with the corresponding URLs!', 'nextend-facebook-connect'), '"<b>Request email from users (optional)</b>"', 'Terms of service', 'Privacy policy'); ?></li>
             <li><?php printf(__('Click on %s.', 'nextend-facebook-connect'), '"<b>Save</b>"'); ?></li>
             <li><?php printf(__('On the left side, under the "<b>%s</b>" section click on the name of your Project ( that you created the App for ).', 'nextend-facebook-connect'), 'Projects & Apps'); ?></li>
             <li><?php printf(__('Click on the %1$s button, then fill the %2$s, %3$s, %4$s and %5$s forms.', 'nextend-facebook-connect'), '"<b>Apply for Elevated</b>"', 'Basic info', 'Intended use', 'Review', 'Terms'); ?></li>

@@ -25,10 +25,12 @@ class Persistent {
             'init'
         ), 0);
 
-        add_action('wp_login', array(
-            $this,
-            'transferSessionToUser'
-        ), 10, 2);
+        add_action('nsl_before_wp_login', function () {
+            add_action('wp_login', array(
+                $this,
+                'transferSessionToUser'
+            ), 10, 2);
+        });
     }
 
     public function init() {

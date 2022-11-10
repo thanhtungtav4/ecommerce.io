@@ -113,6 +113,6 @@ class __TwigTemplate_39e5ac0f73b00b7c84d6a54a96e1915afce3b0018965a5ade0f01ff1c8e
             {{ flag_width }}
             {{ flag_height }}
     />
-{%- endif -%}", "flag.twig", "D:\\Ampps\\www\\ecommerce.io\\wp-content\\plugins\\sitepress-multilingual-cms\\templates\\language-switchers\\flag.twig");
+{%- endif -%}", "flag.twig", "D:\\Ampps\\www\\ecommerce\\wp-content\\plugins\\sitepress-multilingual-cms\\templates\\language-switchers\\flag.twig");
     }
 }

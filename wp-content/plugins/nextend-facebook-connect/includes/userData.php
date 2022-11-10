@@ -76,7 +76,9 @@ class NextendSocialUserData {
                 Notices::addError($this->errors->get_error_message());
             }
 
-            wp_redirect(NextendSocialLogin::enableNoticeForUrl(site_url('wp-login.php')));
+            $registerDisabledRedirectURL = apply_filters('nsl_disabled_register_redirect_url', NextendSocialLogin::getLoginUrl());
+
+            wp_redirect(NextendSocialLogin::enableNoticeForUrl($registerDisabledRedirectURL));
             exit();
         }
     }

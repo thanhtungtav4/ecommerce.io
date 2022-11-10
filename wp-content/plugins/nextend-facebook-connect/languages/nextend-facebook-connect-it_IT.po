@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nextend-facebook-connect\n"
-"POT-Creation-Date: 2022-08-30 15:56+0200\n"
-"PO-Revision-Date: 2022-08-30 15:56+0200\n"
+"POT-Creation-Date: 2022-11-04 09:00+0100\n"
+"PO-Revision-Date: 2022-11-04 09:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: nextend-facebook-connect\n"
 "Language: it_IT\n"
@@ -1897,13 +1897,9 @@ msgid "Scroll down and click on the %1$s button at %2$s."
 msgstr ""
 
 #, fuzzy, php-format
-#| msgid "Switch on the \"<b>%s</b>\" option."
-msgid "Switch on the %s option."
-msgstr "Scegli l'opzione \"<b>%s</b>\"."
-
-#, php-format
-msgid "Enter your site's URL to the \"<b>%1$s</b>\" field: <b>%2$s</b>"
-msgstr "Inserisci l'URL del tuo sito nel campo \"<b>%1$s</b>\": <b>%2$s</b>"
+#| msgid "Choose the \"<b>OAuth client ID</b>\" option."
+msgid "Choose the %1$s option at %2$s."
+msgstr "Scegli l'opzione \"<b>OAuth client ID</b>\"."
 
 #, php-format
 msgid ""
@@ -1911,6 +1907,15 @@ msgid ""
 "the %1$s option. In this case you also need to fill the \"<b>%2$s</b>\" and "
 "the \"<b>%3$s</b>\" fields with the corresponding URLs!"
 msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Choose the \"<b>OAuth client ID</b>\" option."
+msgid "Select the %1$s option for %2$s."
+msgstr "Scegli l'opzione \"<b>OAuth client ID</b>\"."
+
+#, php-format
+msgid "Enter your site's URL to the \"<b>%1$s</b>\" field: <b>%2$s</b>"
+msgstr "Inserisci l'URL del tuo sito nel campo \"<b>%1$s</b>\": <b>%2$s</b>"
 
 #, fuzzy, php-format
 #| msgid "Click on \"<b>%s</b>\"."
@@ -2650,6 +2655,14 @@ msgstr ""
 msgid "API Secret"
 msgstr "API Secret"
 
+#, php-format
+msgid "We detected that your %1$s is probably overridden over the %2$s filter!"
+msgstr ""
+
+#, php-format
+msgid "We detected that your %1$s has been overridden over the %2$s filter!"
+msgstr ""
+
 msgid "Continue with <b>Disqus</b>"
 msgstr "Continua con <b>Disqus</b>"
 
@@ -3058,6 +3071,17 @@ msgid ""
 "you can learn more."
 msgstr ""
 
+#, fuzzy, php-format
+#| msgid ""
+#| "Find \"<b>OAuth 2.0 settings</b>\" section and add the following URL to "
+#| "the \"<b>Redirect URLs</b>\" field:"
+msgid ""
+"At the %1$s field, select the %2$s option as platform, and add the following "
+"URL into the input field:"
+msgstr ""
+"Cerca la sezione \"<b>OAuth 2.0 settings</b>\" e aggiungi l'URL seguente al "
+"campo \"<b>Redirect URLs</b>\":"
+
 #, php-format
 msgid ""
 "%1$s It seems the suggested %2$s contains query string(s), that %3$s doesn't "
@@ -3112,13 +3136,12 @@ msgstr "Aggiungi l'URL seguente nel campo \"<b>Redirect URLs</b>\": <b>%s</b>"
 msgid "Then create your Client Secret with the \"<b>Add</b>\" button."
 msgstr ""
 
-#, fuzzy
+#, fuzzy, php-format
 #| msgid ""
 #| "Here you can see your \"<b>Client ID</b>\" and \"<b>Client Secret</b>\". "
 #| "These will be needed in the plugin's settings."
 msgid ""
-"Copy the \"<b>Client Secret Value</b>\", this will be the <b>Client secret</"
-"b> in the plugin settings."
+"Copy the %s, this will be the <b>Client secret</b> in the plugin settings."
 msgstr ""
 "Qui vedrai il tuo \"<b>Client ID</b>\" e il tuo \"<b>Client Secret</b>\". "
 "Questi saranno richiesti nei settaggi del plugin."
@@ -3748,6 +3771,88 @@ msgstr "Collega account con <b>LinkedIn</b>"
 msgid "Unlink account from <b>TikTok</b>"
 msgstr "Scollega account da <b>LinkedIn</b>"
 
+#, php-format
+msgid "On the %1$s tab, find your app and click %2$s."
+msgstr ""
+
+msgid "Complete the human verification test."
+msgstr "Completa il test \"verifica umano\"."
+
+#, fuzzy, php-format
+#| msgid "Log in with your %s credentials if you are not logged in yet"
+msgid "Open the %1$s and login with your %2$s account."
+msgstr "Accedi con le tue credenziali %s se non sei ancora loggato"
+
+#, php-format
+msgid "To be able to create a %s your account both needs:"
+msgstr ""
+
+#, php-format
+msgid "to be %s"
+msgstr ""
+
+#, php-format
+msgid ""
+"and to have the %1$s enabled. If it is not enabled already, you can enable "
+"it at your %2$s page on the %3$s tab"
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Navigate to %s"
+msgid "Navigate to the %1$s tab."
+msgstr "Vai su %s"
+
+#, fuzzy, php-format
+#| msgid "Click on the \"<b>Create</b>\" button"
+msgid "Click on the %s button on the right side."
+msgstr "Clicca sul bottone \"<b>Crea</b>\""
+
+#, fuzzy, php-format
+#| msgid "Enter a \"<b>Description</b>\" for your app!"
+msgid "Enter a %s for your App."
+msgstr "Inserisci una \"<b>Descrizione</b>\" per la tua app!"
+
+#, fuzzy, php-format
+#| msgid "Click on the \"<b>Create</b>\" button"
+msgid "Select the %1$s option in the %2$s list."
+msgstr "Clicca sul bottone \"<b>Crea</b>\""
+
+#, fuzzy, php-format
+#| msgid "Switch on the \"<b>%s</b>\" option."
+msgid "To generate a %1$s, click on the %2$s button."
+msgstr "Scegli l'opzione \"<b>%s</b>\"."
+
+#, fuzzy, php-format
+#| msgid ""
+#| "Here you can see your \"<b>Client ID</b>\" and \"<b>Client Secret</b>\". "
+#| "These will be needed in the plugin's settings."
+msgid ""
+"Copy the %1$s and the %2$s values. These will be needed in the plugin's "
+"settings."
+msgstr ""
+"Qui vedrai il tuo \"<b>Client ID</b>\" e il tuo \"<b>Client Secret</b>\". "
+"Questi saranno richiesti nei settaggi del plugin."
+
+#, fuzzy
+#| msgid "Continue with <b>Twitter</b>"
+msgid "Continue with <b>Twitch</b>"
+msgstr "Continua con <b>Twitter</b>"
+
+#, fuzzy
+#| msgid "Sign up with <b>Twitter</b>"
+msgid "Sign up with <b>Twitch</b>"
+msgstr "Registrati con <b>Twitter</b>"
+
+#, fuzzy
+#| msgid "Link account with <b>Twitter</b>"
+msgid "Link account with <b>Twitch</b>"
+msgstr "Collega account con <b>Twitter</b>"
+
+#, fuzzy
+#| msgid "Unlink account from <b>Twitter</b>"
+msgid "Unlink account from <b>Twitch</b>"
+msgstr "Scollega account da <b>Twitter</b>"
+
 msgid "Click on the \"<b>Manage</b>\" button next to the associated App."
 msgstr "Clicca sul bottone \"<b>Gestisci</b>\" vicino l'App associata."
 
@@ -3839,9 +3944,6 @@ msgstr ""
 
 msgid "You can leave the \"Javascript Origins\" field blank!"
 msgstr "Puoi lasciare il campo \"Javascript Origins\" vuoto!"
-
-msgid "Complete the human verification test."
-msgstr "Completa il test \"verifica umano\"."
 
 msgid "At the \"<b>Type</b>\" make sure \"<b>Web</b>\" is selected!"
 msgstr "In \"<b>Tipo</b>\" assicurati che \"<b>Web</b>\" sia selezionato!"
@@ -3942,6 +4044,11 @@ msgstr "OR"
 
 msgid "Social accounts"
 msgstr "Account social"
+
+#, fuzzy, php-format
+#~| msgid "Switch on the \"<b>%s</b>\" option."
+#~ msgid "Switch on the %s option."
+#~ msgstr "Scegli l'opzione \"<b>%s</b>\"."
 
 #, fuzzy, php-format
 #~| msgid "Choose the \"<b>OAuth client ID</b>\" option."

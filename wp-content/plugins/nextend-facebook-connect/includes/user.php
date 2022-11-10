@@ -57,6 +57,8 @@ class NextendSocialUser {
             $user_id = null;
         }
 
+        $this->addProfileSyncActions();
+
         if (!is_user_logged_in()) {
 
             if ($user_id == null) {
@@ -70,8 +72,6 @@ class NextendSocialUser {
                 // Let's connect the account to the current user!
 
                 if ($this->provider->linkUserToProviderIdentifier($current_user->ID, $this->getAuthUserData('id'))) {
-
-                    $this->provider->syncProfile($current_user->ID, $this->provider, $this->data);
 
                     Notices::addSuccess(sprintf(__('Your %1$s account is successfully linked with your account. Now you can sign in with %2$s easily.', 'nextend-facebook-connect'), $this->provider->getLabel(), $this->provider->getLabel()));
                 } else {
@@ -165,8 +165,7 @@ class NextendSocialUser {
                     $registerDisabledRedirectURL = add_query_arg('registration', 'disabled', $nslLoginUrl);
                 }
 
-
-                NextendSocialProvider::redirect(__('Authentication error', 'nextend-facebook-connect'), NextendSocialLogin::enableNoticeForUrl($registerDisabledRedirectURL));
+                $this->provider->redirectWithAuthenticationError($registerDisabledRedirectURL);
                 exit;
             }
 
@@ -306,10 +305,12 @@ class NextendSocialUser {
 
             //Ultimate Member redirects before we update the Avatar, we need to sync before the redirect
             if (class_exists('UM', false)) {
-                add_action('um_registration_after_auto_login', array(
-                    $this,
-                    'syncProfileUser'
-                ), 10);
+                if ($this->provider->settings->get('sync_profile/login')) {
+                    add_action('um_registration_after_auto_login', array(
+                        $this,
+                        'sync_profile_login'
+                    ), 10);
+                }
             }
 
             /*For TML 6.4.17 Register notification integration*/
@@ -383,7 +384,17 @@ class NextendSocialUser {
         }
 
 
-        $error = wp_insert_user($user_data);
+        $shouldRegister = true;
+        $error          = false;
+
+        /**
+         * The support of the BuddyPress login restriction might trigger our doAutoLogin() after BuddyPress registered the new account in our flow.
+         */
+        $this->integrationBuddyPressLoginRestriction($loginRestriction, $user_data, $shouldRegister, $error);
+
+        if ($shouldRegister) {
+            $error = wp_insert_user($user_data);
+        }
 
         if (is_wp_error($error)) {
 
@@ -520,7 +531,8 @@ class NextendSocialUser {
                 Notices::addError($userOrError);
                 do_action('wp_login_failed', $user->get('user_login'), $userOrError);
 
-                $this->provider->redirectToLoginForm();
+                $loginDisabledRedirectURL = apply_filters('nsl_disabled_login_redirect_url', NextendSocialLogin::getLoginUrl());
+                $this->provider->redirectWithAuthenticationError($loginDisabledRedirectURL);
 
                 return $userOrError;
             }
@@ -533,7 +545,8 @@ class NextendSocialUser {
                 Notices::addError($userOrError);
                 do_action('wp_login_failed', $user->get('user_login'), $userOrError);
 
-                $this->provider->redirectToLoginForm();
+                $loginDisabledRedirectURL = apply_filters('nsl_disabled_login_redirect_url', NextendSocialLogin::getLoginUrl());
+                $this->provider->redirectWithAuthenticationError($loginDisabledRedirectURL);
 
                 return $userOrError;
             }
@@ -541,11 +554,6 @@ class NextendSocialUser {
 
 
         $this->user_id = $user_id;
-
-        add_action('nsl_' . $this->provider->getId() . '_login', array(
-            $this->provider,
-            'syncProfile'
-        ), 10, 3);
 
         $isLoginAllowed = apply_filters('nsl_' . $this->provider->getId() . '_is_login_allowed', true, $this->provider, $user_id);
 
@@ -581,6 +589,7 @@ class NextendSocialUser {
                 }
             }
 
+            do_action('nsl_before_wp_login');
             do_action('wp_login', $user_info->user_login, $user_info);
 
             if ($addStrongerRedirect) {
@@ -607,7 +616,7 @@ class NextendSocialUser {
             do_action('wp_login_failed', $user->get('user_login'), $errors);
 
             if (!empty($loginDisabledRedirectURL)) {
-                NextendSocialProvider::redirect(__('Authentication error', 'nextend-facebook-connect'), NextendSocialLogin::enableNoticeForUrl($loginDisabledRedirectURL));
+                $this->provider->redirectWithAuthenticationError($loginDisabledRedirectURL);
             }
 
         }
@@ -747,5 +756,132 @@ class NextendSocialUser {
 
     public function um_get_loginpage($page_url) {
         return um_get_core_page('login');
+    }
+
+    /**
+     * BuddyPress - Support login restrictions
+     * If our login restriction is enabled, then users with email address should be able to login with social login
+     * only, if their account has been activated already.
+     *
+     * @param bool  $loginRestriction
+     * @param array $user_data
+     * @param bool  $shouldRegister
+     * @param bool  $error
+     */
+    private function integrationBuddyPressLoginRestriction($loginRestriction, $user_data, &$shouldRegister, &$error) {
+        if ($loginRestriction && class_exists('BuddyPress', false) && function_exists('bp_core_signup_user')) {
+            //we should only allow the login restriction if the email address is available and stored
+            if (is_email($user_data['user_email'])) {
+                //We need to unhook the doAutoLogin function, otherwise it will prevent BuddyPress from finishing its registration.
+                $autoLoginPriority = apply_filters('nsl_autologin_priority', 40);
+                remove_action('user_register', array(
+                    $this,
+                    'doAutoLogin'
+                ), $autoLoginPriority);
+
+                /**
+                 * The registration needs to be handled by BuddyPress.
+                 *
+                 * Limitation: To exclude the inactive users from certain features, BuddyPress removes the roles that we set and after the activation they set their default role.
+                 * This means that these accounts are  always registered with the BuddyPress default role.
+                 */
+                $user_id = bp_core_signup_user($user_data['user_login'], $user_data['user_pass'], $user_data['user_email'], array());
+                if (!is_wp_error($user_id)) {
+                    /**
+                     * If auto login is disabled, then we might continue our register flow.
+                     * so we shouldn't run wp_insert_user() again.
+                     */
+                    $shouldRegister = false;
+
+                    //If the registration was successful, attempt to log the user in.
+                    $this->doAutoLogin($user_id);
+                } else {
+                    $error = $user_id;
+                }
+            }
+        }
+    }
+
+    public function addProfileSyncActions() {
+        if ($this->provider->settings->get('sync_profile/register')) {
+
+
+            add_action('nsl_' . $this->provider->getId() . '_register_new_user', array(
+                $this,
+                'sync_profile_register_new_user'
+            ), 10);
+        }
+
+        if ($this->provider->settings->get('sync_profile/login')) {
+            add_action('nsl_' . $this->provider->getId() . '_login', array(
+                $this,
+                'sync_profile_login'
+            ), 10);
+        }
+
+        if ($this->provider->settings->get('sync_profile/link')) {
+            add_action('nsl_' . $this->provider->getId() . '_link_user', array(
+                $this,
+                'sync_profile_link_user'
+            ), 10, 3);
+        }
+    }
+
+    public function removeProfileSyncActions() {
+
+        /** Prevent multiple profile sync in the same request */
+        remove_action('nsl_' . $this->provider->getId() . '_register_new_user', array(
+            $this,
+            'sync_profile_register_new_user'
+        ));
+
+        remove_action('nsl_' . $this->provider->getId() . '_login', array(
+            $this,
+            'sync_profile_login'
+        ));
+
+        remove_action('nsl_' . $this->provider->getId() . '_link_user', array(
+            $this,
+            'sync_profile_link_user'
+        ));
+    }
+
+
+    /**
+     * @param $user_id
+     */
+    public function sync_profile_register_new_user($user_id) {
+
+        $this->syncProfileUser($user_id);
+
+        $this->removeProfileSyncActions();
+    }
+
+    /**
+     * @param $user_id
+     */
+    public function sync_profile_login($user_id) {
+
+        $this->syncProfileUser($user_id);
+
+        $this->removeProfileSyncActions();
+    }
+
+    /**
+     * @param $user_id
+     * @param $providerIdentifier
+     * @param $isRegister
+     */
+    public function sync_profile_link_user($user_id, $providerIdentifier, $isRegister) {
+
+        /**
+         * When the registration happens with social login, the linking happens before we trigger the register specific action.
+         * This could make the profile being synced even if the registration specific action is disabled.
+         */
+        if (!$isRegister) {
+            $this->syncProfileUser($user_id);
+
+            $this->removeProfileSyncActions();
+        }
     }
 }

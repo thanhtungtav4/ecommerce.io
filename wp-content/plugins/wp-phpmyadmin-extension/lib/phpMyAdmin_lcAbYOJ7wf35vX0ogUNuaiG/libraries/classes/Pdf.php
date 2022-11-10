@@ -1,1 +1,0 @@
-<?php declare(strict_types=1);  namespace PhpMyAdmin { class Pdf { public function __construct() { } } }

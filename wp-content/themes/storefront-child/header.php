@@ -284,21 +284,61 @@
                   </div>
                 </div>
               </li>
+              <?php if(is_user_logged_in() && wp_is_mobile()) : ?>
+                <li class="c-menu"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><strong><?php echo wp_get_current_user()->user_login; ?></strong></a></li>
+                <li  class="c-menu"><a href="http://"><strong><?php _e('Tracking order', 'storefront') ?></strong></a></li>
+                <li  class="c-menu"><a href="<?php echo wc_logout_url() ?>"><strong><?php _e('Logout', 'storefront') ?></strong></a></li>
+                <?php elseif(!is_user_logged_in()  && wp_is_mobile()) :?>
+                <li  class="c-menu"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><strong><?php _e('Login', 'storefront') ?></strong></a></li>
+                <li  class="c-menu"><a href="<?php echo apply_filters( 'wpml_permalink', home_url('/'). 'dang-ky', apply_filters( 'wpml_current_language', NULL ) );  ?>"><strong><?php _e('Create an account', 'storefront') ?></strong></a></li>
+              <?php endif ;?>
+              <?php if(wp_is_mobile()) : ?>
+                <li  class="cart c-menu">
+                  <a class="" href="<?php echo apply_filters( 'wpml_permalink', home_url('/'). 'gio-hang', apply_filters( 'wpml_current_language', NULL ) );  ?>"><strong>
+                    <?php _e('Cart', 'storefront') ?></strong>
+                    <?php
+                      if (function_exists( 'WC' ) ) {
+                        if(WC()->cart->cart_contents_count >= 1){
+                          echo '<span class="m-cart_num" id="m-cart_num">';
+                          echo (WC()->cart->cart_contents_count);
+                          echo '</span>';
+                        }
+                      }
+                      ?>
+                  </a>
+                </li>
+              <?php endif ;?>
             </ul>
             <ul class="c-header_icon">
               <li class="navbar only-sp" onclick="toggleMenu()">
                 <svg width="28" height="18" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 3V0H27.5V3H0.5ZM0.5 10.5H27.5V7.5H0.5V10.5ZM0.5 18H27.5V15H0.5V18Z" fill="#ccc"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 3V0H27.5V3H0.5ZM0.5 10.5H27.5V7.5H0.5V10.5ZM0.5 18H27.5V15H0.5V18Z" fill="#737373" ></path>
                 </svg>
               </li>
               <li class="logo only-sp" href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>">
                 <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.webp" type="image/webp">
                 <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/caras_logo_white.png" alt="caras logo" loading="lazy" width="110" height="45">
               </li>
+              <li class="search c-menu_dropdown"><a class="icon_inner" href="#">
+                  <svg width="30" height="30" viewBox="0 0 36 36" fill="#737373" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22.4475 21.3826H23.6325L31.1175 28.8826L28.8825 31.1176L21.3825 23.6326V22.4476L20.9775 22.0276C19.2675 23.4976 17.0475 24.3826 14.6325 24.3826C9.24751 24.3826 4.88251 20.0176 4.88251 14.6326C4.88251 9.24757 9.24751 4.88257 14.6325 4.88257C20.0175 4.88257 24.3825 9.24757 24.3825 14.6326C24.3825 17.0476 23.4975 19.2676 22.0275 20.9776L22.4475 21.3826ZM7.88251 14.6326C7.88251 18.3676 10.8975 21.3826 14.6325 21.3826C18.3675 21.3826 21.3825 18.3676 21.3825 14.6326C21.3825 10.8976 18.3675 7.88257 14.6325 7.88257C10.8975 7.88257 7.88251 10.8976 7.88251 14.6326Z"></path>
+                  </svg></a>
+                <div class="c-menu_sub">
+                  <div class="c-menu_subinner">
+                    <form action="/" method="get">
+                      <input type="text" name="s" value="<?php the_search_query(); ?>"  id="search"  placeholder="<?php _e('Search', 'storefront') ?>"><i class="gg-search"></i>
+                      <input type="hidden" name="post_type" value="product" />
+                    </form>
+                  </div>
+                </div>
+              </li>
               <li class="cart c-menu_dropdown" id="xyz"><a class="icon_inner" href="#">
-                  <svg width="35" height="36" viewBox="0 0 35 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M26.6821 17.9563C26.1863 18.8605 25.2238 19.4584 24.13 19.4584H13.2654L11.6613 22.3751H29.1613V25.2917H11.6613C9.44459 25.2917 8.04459 22.9147 9.10917 20.9605L11.0779 17.4022L5.82792 6.33341H2.91125V3.41675H7.68001L9.05084 6.33341H30.6342C31.7425 6.33341 32.4425 7.52925 31.9029 8.49175L26.6821 17.9563ZM28.155 9.25008H10.4363L13.8925 16.5417H24.13L28.155 9.25008ZM11.6613 26.7501C10.0571 26.7501 8.75917 28.0626 8.75917 29.6667C8.75917 31.2709 10.0571 32.5834 11.6613 32.5834C13.2654 32.5834 14.5779 31.2709 14.5779 29.6667C14.5779 28.0626 13.2654 26.7501 11.6613 26.7501ZM23.3425 29.6667C23.3425 28.0626 24.6404 26.7501 26.2446 26.7501C27.8488 26.7501 29.1613 28.0626 29.1613 29.6667C29.1613 31.2709 27.8488 32.5834 26.2446 32.5834C24.6404 32.5834 23.3425 31.2709 23.3425 29.6667Z"></path>
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px" viewBox="0 0 35 35" version="1.1">
+                  <g id="surface1">
+                  <path style="stroke:none;fill-rule:nonzero;fill: #737373;fill-opacity:1;" d="M 34.402344 28.285156 L 30.769531 5.410156 C 30.449219 3.378906 28.71875 1.902344 26.664062 1.902344 L 8.335938 1.902344 C 6.28125 1.902344 4.550781 3.378906 4.230469 5.410156 L 0.597656 28.285156 C 0.40625 29.488281 0.753906 30.710938 1.542969 31.636719 C 2.335938 32.566406 3.488281 33.097656 4.707031 33.097656 L 30.292969 33.097656 C 31.511719 33.097656 32.664062 32.566406 33.457031 31.636719 C 34.246094 30.710938 34.59375 29.488281 34.402344 28.285156 Z M 30.960938 29.507812 C 30.863281 29.621094 30.644531 29.816406 30.292969 29.816406 L 4.707031 29.816406 C 4.355469 29.816406 4.136719 29.621094 4.039062 29.507812 C 3.941406 29.390625 3.785156 29.148438 3.839844 28.800781 L 7.46875 5.925781 C 7.539062 5.496094 7.902344 5.183594 8.335938 5.183594 L 26.664062 5.183594 C 27.097656 5.183594 27.460938 5.496094 27.53125 5.925781 L 31.160156 28.796875 C 31.214844 29.148438 31.058594 29.390625 30.960938 29.507812 Z M 30.960938 29.507812 "/>
+                  <path style="stroke:none;fill-rule:nonzero;fill: #737373;fill-opacity:1;" d="M 23.269531 7.019531 C 22.363281 7.019531 21.628906 7.753906 21.628906 8.660156 L 21.628906 13.214844 C 21.628906 15.492188 19.777344 17.34375 17.5 17.34375 C 15.222656 17.34375 13.371094 15.492188 13.371094 13.214844 L 13.371094 8.660156 C 13.371094 7.753906 12.636719 7.019531 11.730469 7.019531 C 10.824219 7.019531 10.089844 7.753906 10.089844 8.660156 L 10.089844 13.214844 C 10.089844 17.300781 13.414062 20.625 17.5 20.625 C 21.585938 20.625 24.910156 17.300781 24.910156 13.214844 L 24.910156 8.660156 C 24.910156 7.753906 24.175781 7.019531 23.269531 7.019531 Z M 23.269531 7.019531 "/>
+                  </g>
+                </svg>
                     <?php
                     if (function_exists( 'WC' ) ) {
                       if(WC()->cart->cart_contents_count >= 1){
@@ -314,19 +354,6 @@
                     <div  class="cart_inner widget_shopping_cart_content">
                       <?php woocommerce_mini_cart(); ?>
                     </div>
-                  </div>
-                </div>
-              </li>
-              <li class="search c-menu_dropdown"><a class="icon_inner" href="#">
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22.4475 21.3826H23.6325L31.1175 28.8826L28.8825 31.1176L21.3825 23.6326V22.4476L20.9775 22.0276C19.2675 23.4976 17.0475 24.3826 14.6325 24.3826C9.24751 24.3826 4.88251 20.0176 4.88251 14.6326C4.88251 9.24757 9.24751 4.88257 14.6325 4.88257C20.0175 4.88257 24.3825 9.24757 24.3825 14.6326C24.3825 17.0476 23.4975 19.2676 22.0275 20.9776L22.4475 21.3826ZM7.88251 14.6326C7.88251 18.3676 10.8975 21.3826 14.6325 21.3826C18.3675 21.3826 21.3825 18.3676 21.3825 14.6326C21.3825 10.8976 18.3675 7.88257 14.6325 7.88257C10.8975 7.88257 7.88251 10.8976 7.88251 14.6326Z"></path>
-                  </svg></a>
-                <div class="c-menu_sub">
-                  <div class="c-menu_subinner">
-                    <form action="/" method="get">
-                      <input type="text" name="s" value="<?php the_search_query(); ?>"  id="search"  placeholder="<?php _e('Search', 'storefront') ?>"><i class="gg-search"></i>
-                      <input type="hidden" name="post_type" value="product" />
-                    </form>
                   </div>
                 </div>
               </li>
@@ -352,12 +379,9 @@
               <li class="lang c-menu_dropdown">
                 <a class="icon_inner" href="#">
                   <?php if(apply_filters('wpml_current_language', null) == 'vi') : ?>
-                  <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect y="0.5" width="29" height="29" rx="14.5" fill="#EA403F"></rect>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.5 18.4463L10.0916 21.746L11.7182 16.3241L7.36708 12.9415L12.7807 12.8903L14.5 7.5L16.2193 12.8903L21.6329 12.9415L17.2818 16.3241L18.9084 21.746L14.5 18.4463Z" fill="#FFFE4E"></path>
-                  </svg>
+                    <span class="lang_text">VN</span>
                   <?php elseif(apply_filters('wpml_current_language', null) == 'en') : ?>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" xmlns:v="https://vecta.io/nano"><path d="M30 15c0 8.285-6.715 15-15 15S0 23.285 0 15 6.715 0 15 0s15 6.715 15 15zm0 0" fill="rgb(94.117647%,94.117647%,94.117647%)"/><g fill="rgb(0%,32.156863%,70.588235%)"><path d="M3.102 5.867a14.99 14.99 0 0 0-2.586 5.219H8.32zm26.382 5.219a14.99 14.99 0 0 0-2.586-5.219l-5.219 5.219zM.516 18.914a14.99 14.99 0 0 0 2.586 5.219l5.219-5.219zM24.133 3.102A14.99 14.99 0 0 0 18.914.516V8.32zM5.867 26.898a14.99 14.99 0 0 0 5.219 2.586V21.68zm0 0"/><path d="M11.086.516a14.99 14.99 0 0 0-5.219 2.586l5.219 5.219zm7.828 28.968a14.99 14.99 0 0 0 5.219-2.586l-5.219-5.219zm2.766-10.57l5.219 5.219a14.99 14.99 0 0 0 2.586-5.219zm0 0"/></g><g fill="rgb(84.705882%,0%,15.294118%)"><path d="M29.871 13.043H16.957V.129A14.7 14.7 0 0 0 15 0a14.7 14.7 0 0 0-1.957.129v12.914H.129A14.7 14.7 0 0 0 0 15a14.7 14.7 0 0 0 .129 1.957h12.914v12.914A14.7 14.7 0 0 0 15 30a14.7 14.7 0 0 0 1.957-.129V16.957h12.914A14.7 14.7 0 0 0 30 15a14.7 14.7 0 0 0-.129-1.957zm-10.957 5.871l6.691 6.691.883-.961-5.73-5.73zm-7.828 0l-6.691 6.691.961.883 5.73-5.73zm0-7.828L4.395 4.395l-.883.961 5.73 5.73zm0 0"/><path d="M18.914 11.086l6.691-6.691-.961-.883-5.73 5.73zm0 0"/></g></svg>
+                    <span class="lang_text">EN</span>
                   <?php endif; ?>
                 </a>
                 <div class="c-menu_sub">

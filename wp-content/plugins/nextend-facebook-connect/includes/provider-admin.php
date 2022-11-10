@@ -88,6 +88,22 @@ class NextendSocialProviderAdmin {
             }
         }
 
+        if (!empty($postedData['sync_profile']) && is_array($postedData['sync_profile'])) {
+            $sync_profile = $postedData['sync_profile'];
+
+            if (isset($sync_profile['register'])) {
+                $newData['sync_profile/register'] = intval($sync_profile['register']) ? 1 : 0;
+            }
+
+            if (isset($sync_profile['login'])) {
+                $newData['sync_profile/login'] = intval($sync_profile['login']) ? 1 : 0;
+            }
+
+            if (isset($sync_profile['link'])) {
+                $newData['sync_profile/link'] = intval($sync_profile['link']) ? 1 : 0;
+            }
+        }
+
         foreach ($postedData AS $key => $value) {
 
             switch ($key) {
@@ -135,11 +151,16 @@ class NextendSocialProviderAdmin {
                     $this->render('buttons');
                     break;
                 case 'sync-data':
-                    if ($this->provider->hasSyncFields()) {
+                    if ($this->provider->hasSyncFields() || $this->provider->hasSyncableProfileFields()) {
                         $this->render('sync-data');
                     } else {
-                        wp_redirect($this->provider->getAdmin()
-                                                   ->getUrl());
+                        if (headers_sent()) {
+                            echo '<script>window.location.href="' . $this->provider->getAdmin()
+                                                                                   ->getUrl() . '"</script>';
+                        } else {
+                            wp_redirect($this->provider->getAdmin()
+                                                       ->getUrl());
+                        }
                         exit;
                     }
                     break;

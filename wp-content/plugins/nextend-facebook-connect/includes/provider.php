@@ -73,6 +73,10 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
             'oauth_redirect_url'    => '',
             'terms'                 => '',
 
+            'sync_profile/register' => 1,
+            'sync_profile/login'    => 1,
+            'sync_profile/link'     => 1,
+
             'sync_fields/link'  => 0,
             'sync_fields/login' => 0
         ), $extraSettings, $defaultSettings));
@@ -310,14 +314,16 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
             ));
         }
 
-        // Redirect if the registration is blocked by another Plugin like Cerber.
+        // Redirect if the login is blocked by another Plugin like Cerber.
         if (function_exists('cerber_is_allowed')) {
             $allowed = cerber_is_allowed();
             if (!$allowed) {
                 global $wp_cerber;
                 $error = $wp_cerber->getErrorMsg();
                 Notices::addError($error);
-                $this->redirectToLoginForm();
+
+                $loginDisabledRedirectURL = apply_filters('nsl_disabled_login_redirect_url', NextendSocialLogin::getLoginUrl());
+                $this->redirectWithAuthenticationError($loginDisabledRedirectURL);
             }
         }
 
@@ -457,7 +463,7 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
             ));
         }
 
-        do_action('nsl_' . $this->getId() . '_link_user', $user_id, $this->getId());
+        do_action('nsl_' . $this->getId() . '_link_user', $user_id, $this->getId(), $isRegister);
 
         return true;
     }
@@ -716,7 +722,14 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
     }
 
     public function redirectToLoginForm() {
-        self::redirect(__('Authentication error', 'nextend-facebook-connect'), NextendSocialLogin::enableNoticeForUrl(NextendSocialLogin::getLoginUrl()));
+        $this->redirectWithAuthenticationError(NextendSocialLogin::getLoginUrl());
+    }
+
+    /**
+     * @param $url
+     */
+    public function redirectWithAuthenticationError($url) {
+        self::redirect(__('Authentication error', 'nextend-facebook-connect'), NextendSocialLogin::enableNoticeForUrl($url));
     }
 
     /**
@@ -918,6 +931,13 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
     }
 
     /**
+     * @return bool
+     */
+    public function hasSyncableProfileFields() {
+        return true;
+    }
+
+    /**
      * Check if a logged in user with manage_options capability, want to verify their provider settings.
      *
      * @return bool
@@ -1062,6 +1082,28 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
     public function getAuthUserData($key) {
         return '';
     }
+
+
+    /**
+     * @param $key
+     * @param $authOptions
+     *                        Can be used for accessing the getAuthUserData() function outside of our normal flow.
+     *
+     * @return mixed
+     */
+    public abstract function getAuthUserDataByAuthOptions($key, $authOptions);
+
+    /**
+     * @param        $user_id
+     * @param        $authOptions
+     * @param string $action
+     * @param bool   $shouldSyncProfile
+     *                                 Can be used for triggering the Sync Data storing and Avatar updating functions
+     *                                 outside of our normal flow.
+     *
+     * @return mixed
+     */
+    public abstract function triggerSync($user_id, $authOptions, $action = "login", $shouldSyncProfile = false);
 
     /**
      * @param $title

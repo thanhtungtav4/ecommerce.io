@@ -71,13 +71,20 @@
   }
 
 .entry-summary .single_add_to_cart_button{
-  height: 35px;
+  height: 45px;
   background-color: black !important;
   font-size: 1.4rem;
   font-weight: 600;
   padding: 10px 0;
   margin-bottom: 0;
   margin-top: 1rem;
+  position: relative;
+}
+.entry-summary .single_add_to_cart_button::before{
+  position: absolute;
+  left: 2rem;
+  content: url(../images/ico_cart.svg);
+  top: 5px;
 }
 .single-product div.product .summary{
   margin-bottom: 0 !important;

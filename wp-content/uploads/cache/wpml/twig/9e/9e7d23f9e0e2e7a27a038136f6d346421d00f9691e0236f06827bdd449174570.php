@@ -213,6 +213,6 @@ class __TwigTemplate_be0be0e3c9ac57efb2a419bce085d637caa5fdef8f4ce45651ee12df067
 
 \t</ul>
 </div>
-", "template.twig", "D:\\Ampps\\www\\ecommerce.io\\wp-content\\plugins\\sitepress-multilingual-cms\\templates\\language-switchers\\legacy-list-horizontal\\template.twig");
+", "template.twig", "D:\\Ampps\\www\\ecommerce\\wp-content\\plugins\\sitepress-multilingual-cms\\templates\\language-switchers\\legacy-list-horizontal\\template.twig");
     }
 }

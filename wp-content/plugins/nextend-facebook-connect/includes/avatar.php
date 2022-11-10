@@ -204,11 +204,15 @@ class NextendSocialLoginAvatar {
 
             if (!$original_attachment_id) {
                 /**
-                 * If the user unlink and link the social provider back the original avatar will be used.
+                 * If the <preffix>user_avatar user meta was deleted, but the attachment stored by the provider still exists,
+                 * then we should restore the user meta and attempt to use that attachment as the original attachment.
                  */
                 $args  = array(
                     'post_type'   => 'attachment',
-                    'post_status' => 'inherit',
+                    'post_status' => array(
+                        'inherit',
+                        'private'
+                    ),
                     'meta_query'  => array(
                         array(
                             'key'   => $provider->getId() . '_avatar',
@@ -221,6 +225,14 @@ class NextendSocialLoginAvatar {
                     $original_attachment_id = $query->posts[0]->ID;
                     $overwriteAttachment    = true;
                     update_user_meta($user_id, $wpdb->get_blog_prefix($blog_id) . 'user_avatar', $original_attachment_id);
+
+                    $attached_file = get_attached_file($original_attachment_id);
+                    if ($attached_file && file_exists($attached_file)) {
+                        /**
+                         * The user has an avatar stored by the provider, so we should get the stored md5 value of the file, too!
+                         */
+                        $original_attachment_md5 = get_user_meta($user_id, 'nsl_user_avatar_md5', true);
+                    }
                 }
             }
 
@@ -325,6 +337,7 @@ class NextendSocialLoginAvatar {
                                         'post_title'     => '',
                                         'post_content'   => '',
                                         'post_status'    => 'private',
+                                        'post_author'    => $user_id
                                     );
 
                                     $new_attachment_id = wp_insert_attachment($attachment, $newAvatarPath);

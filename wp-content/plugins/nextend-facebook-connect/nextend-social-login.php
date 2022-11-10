@@ -20,9 +20,9 @@ require_once(NSL_PATH . '/compat.php');
 
 class NextendSocialLogin {
 
-    public static $version = '3.1.6';
+    public static $version = '3.1.7';
 
-    public static $nslPROMinVersion = '3.1.6';
+    public static $nslPROMinVersion = '3.1.7';
 
     public static $proxyPage = false;
 
@@ -169,7 +169,7 @@ class NextendSocialLogin {
             'store_name'                       => 1,
             'store_email'                      => 1,
             'avatar_store'                     => 1,
-            'store_access_token'               => 1,
+            'store_access_token'               => 0,
             'redirect_prevent_external'        => 0,
             'redirect'                         => '',
             'redirect_reg'                     => '',
@@ -272,6 +272,7 @@ class NextendSocialLogin {
         ));
 
         NextendSocialLoginAdmin::init();
+        NextendSocialUpgrader::init();
 
         $lastVersion = get_option('nsl-version');
         if ($lastVersion != self::$version) {
@@ -405,14 +406,30 @@ class NextendSocialLogin {
 
             add_action('wp_head', 'NextendSocialLogin::styles', 100);
 
-            /*
+            /**
+             * AMP integration:
              *
-             * We need to call in our styles on the AMP pages using this action, since:
-             * -the "AMP" plugin does not call wp_head in Reader mode.
-             * -the "AMP for WP" plugin does not call wp_head in AMP view at all.
-             * -AMP plugins only allow adding custom CSS in the unique <style> tag with the attribute "amp-custom". Callbacks are only allowed to output bare CSS on this action.
+             * NSL_DISABLE_IN_AMP_REQUESTS constant can be used for disabling our social buttons in the AMP requests.
+             * If the constant is defined, then we shouldn't force the loading of our styles either.
              */
-            add_action('amp_post_template_css', 'NextendSocialLogin::stylesWithoutTag');
+            if (!defined('NSL_DISABLE_IN_AMP_REQUESTS')) {
+                /**
+                 * We need to call in our styles on the AMP pages using this action, since:
+                 * -the "AMP" plugin does not call wp_head in Reader mode.
+                 * -the "AMP for WP" plugin does not call wp_head in AMP view at all.
+                 * -AMP plugins only allow adding custom CSS in the unique <style> tag with the attribute "amp-custom". Callbacks are only allowed to output bare CSS on this action.
+                 */
+                add_action('amp_post_template_css', 'NextendSocialLogin::stylesWithoutTag');
+            } else {
+                /**
+                 * If the NSL_DISABLE_IN_AMP_REQUESTS constant is defined, then our social buttons won't be rendered, so we shouldn't load our assets either.
+                 */
+                add_action('wp', function () {
+                    if (NextendSocialLogin::isAMPRequest()) {
+                        NextendSocialLogin::removeFrontendAssets();
+                    }
+                });
+            }
 
 
             add_action('admin_head', 'NextendSocialLogin::styles', 100);
@@ -528,6 +545,12 @@ class NextendSocialLogin {
         remove_action('init', '\SR\Utils\Scheduled::init', 10);
     }
 
+    public static function removeFrontendAssets() {
+        remove_action('wp_head', 'NextendSocialLogin::styles', 100);
+        remove_action('wp_print_footer_scripts', 'NextendSocialLogin::scripts', 100);
+        remove_action('wp_print_scripts', 'NextendSocialLogin::nslDOMReady');
+    }
+
     public static function removeLoginFormAssets() {
         remove_action('login_head', 'NextendSocialLogin::loginHead', 100);
         remove_action('wp_print_footer_scripts', 'NextendSocialLogin::scripts', 100);
@@ -564,19 +587,6 @@ class NextendSocialLogin {
 
     public static function loginHead() {
         self::styles();
-
-        if (!self::isLostPasswordRequest()) {
-            /*
-             * The default lost password page doesn't fire any actions where we should display the social buttons
-             * so we shouldn't call in any templates there either!
-             * We should still call the styles in just in case if the buttons were rendered manually.
-             */
-
-            $template = self::get_template_part('login/' . sanitize_file_name(self::$settings->get('login_form_layout')) . '.php');
-            if (!empty($template) && file_exists($template)) {
-                require($template);
-            }
-        }
 
         self::$loginHeadAdded = true;
     }
@@ -903,13 +913,20 @@ class NextendSocialLogin {
         }
 
         self::$loginMainButtonsAdded = true;
+        ob_start();
 
         $ret = '<div id="nsl-custom-login-form-main">';
         $ret .= self::renderButtonsWithContainer(self::$settings->get('login_form_button_style'), false, false, false, self::$settings->get('login_form_button_align'), $labelType);
         $ret .= '</div>';
+        echo $ret;
+
+        $template = self::get_template_part('login/' . sanitize_file_name(self::$settings->get('login_form_layout')) . '.php');
+        if (!empty($template) && file_exists($template)) {
+            include($template);
+        }
 
 
-        return $ret;
+        return ob_get_clean();
     }
 
     public static function addLinkAndUnlinkButtons() {
@@ -928,6 +945,14 @@ class NextendSocialLogin {
      */
     public static function renderLinkAndUnlinkButtons($heading = '', $link = true, $unlink = true, $align = "left", $providers = false, $style = "default") {
         if (count(self::$enabledProviders)) {
+
+            /**
+             * If the NSL_DISABLE_IN_AMP_REQUESTS constant is defined, we shouldn't display the link/unlink buttons on the AMP pages.
+             */
+            if (defined('NSL_DISABLE_IN_AMP_REQUESTS') && NextendSocialLogin::isAMPRequest()) {
+
+                return '';
+            }
 
             /**
              * We shouldn't allow the icon style for Link and Unlink buttons
@@ -1070,6 +1095,13 @@ class NextendSocialLogin {
     }
 
     private static function renderButtonsWithContainerAndTitle($heading = false, $style = 'default', $providers = false, $redirect_to = false, $trackerData = false, $align = 'left', $labelType = 'login') {
+
+        /**
+         * If the NSL_DISABLE_IN_AMP_REQUESTS constant is defined, we shouldn't display the social buttons in the AMP requests.
+         */
+        if (defined('NSL_DISABLE_IN_AMP_REQUESTS') && NextendSocialLogin::isAMPRequest()) {
+            return '';
+        }
 
         if (!isset(self::$styles[$style])) {
             $style = 'default';
@@ -1509,6 +1541,49 @@ el.setAttribute("href",href+"redirect="+encodeURIComponent(window.location.href)
         $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : 'login';
 
         return $action === 'lostpassword';
+    }
+
+    /**
+     * @param String $providerID
+     *
+     * @return bool|NextendSocialProvider
+     */
+    public static function getProviderByProviderID($providerID) {
+        if (NextendSocialLogin::isProviderEnabled($providerID)) {
+            return NextendSocialLogin::$enabledProviders[$providerID];
+        }
+
+        return false;
+    }
+
+    /**
+     * This action should be used only at places where the "wp" action has been already fired!
+     *
+     * @return bool
+     */
+    public static function isAMPRequest() {
+        /**
+         * Both the AMP and the AMP For WordPress plugins need to have access to the WP_Query object, so we need to run these checks after the object has been already set up.
+         */
+        if (did_action('wp')) {
+
+            /*
+             * AMP plugin
+             */
+            if (class_exists('AMP_Theme_Support') && function_exists('amp_is_request') && amp_is_request()) {
+                return true;
+            }
+
+            /*
+             * AMP for WP plugin
+             */
+            if ((defined('AMPFORWP_VERSION') && function_exists('ampforwp_is_amp_endpoint') && ampforwp_is_amp_endpoint()) || (function_exists('amp_activate') && function_exists('is_amp_endpoint') && is_amp_endpoint())) {
+                return true;
+            }
+
+        }
+
+        return false;
     }
 
 }

@@ -99,16 +99,16 @@ if ( post_password_required() ) {
 	//do_action( 'woocommerce_after_single_product_summary' );
 	?>
 </div>
-          <?php require_once( get_stylesheet_directory() . '/module/list_promotion.php' ); ?>
-          <?php
-            /**
-             * Hook: tungnt custome position view data_tabs
-             *
-             * @hooked woocommerce_output_product_data_tabs - 10
-             */
-            do_action( 'tungnt_woocommerce_output_product_data_tabs' );
-          ?>
-          <?php  require_once( get_stylesheet_directory() . '/module/detail_list_product_suggest.php' ); ?>
-          <?php  require_once( get_stylesheet_directory() . '/module/footer_info.php' ); ?>
-        </div>
+	<?php require_once( get_stylesheet_directory() . '/module/list_promotion.php' ); ?>
+	<?php
+		/**
+		 * Hook: tungnt custome position view data_tabs
+		 *
+		 * @hooked woocommerce_output_product_data_tabs - 10
+		 */
+		do_action( 'tungnt_woocommerce_output_product_data_tabs' );
+	?>
+	<?php  require_once( get_stylesheet_directory() . '/module/detail_list_product_suggest.php' ); ?>
+	<?php  require_once( get_stylesheet_directory() . '/module/footer_info.php' ); ?>
+</div>
 <?php do_action( 'woocommerce_after_single_product' ); ?>

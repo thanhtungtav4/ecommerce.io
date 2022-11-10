@@ -5,7 +5,6 @@ use NSL\Notices;
 define('NSL_ADMIN_PATH', __FILE__);
 
 require_once dirname(__FILE__) . '/upgrader.php';
-NextendSocialUpgrader::init();
 
 class NextendSocialLoginAdmin {
 

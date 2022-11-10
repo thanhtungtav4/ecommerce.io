@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nextend-facebook-connect\n"
-"POT-Creation-Date: 2022-08-30 15:56+0200\n"
-"PO-Revision-Date: 2022-08-30 15:56+0200\n"
+"POT-Creation-Date: 2022-11-04 08:59+0100\n"
+"PO-Revision-Date: 2022-11-04 08:59+0100\n"
 "Last-Translator: Gabriel Vilaró <gabo@etereo.ch>\n"
 "Language-Team: nextend-facebook-connect\n"
 "Language: es_419\n"
@@ -1959,14 +1959,8 @@ msgstr "Denomina tu proyecto y luego haz clic en el botón Create"
 
 #, fuzzy, php-format
 #| msgid "Click on the Create button"
-msgid "Switch on the %s option."
+msgid "Choose the %1$s option at %2$s."
 msgstr "Haz clic en el botón Create"
-
-#, fuzzy, php-format
-#| msgid ""
-#| "Add the following URL to the \"Allowed Return URLs\" field <b>%s</b> "
-msgid "Enter your site's URL to the \"<b>%1$s</b>\" field: <b>%2$s</b>"
-msgstr "Agrega la siguiente URL al campo \"Allowed Return URLs\" <b>%s</b> "
 
 #, php-format
 msgid ""
@@ -1974,6 +1968,17 @@ msgid ""
 "the %1$s option. In this case you also need to fill the \"<b>%2$s</b>\" and "
 "the \"<b>%3$s</b>\" fields with the corresponding URLs!"
 msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Click on the Create button"
+msgid "Select the %1$s option for %2$s."
+msgstr "Haz clic en el botón Create"
+
+#, fuzzy, php-format
+#| msgid ""
+#| "Add the following URL to the \"Allowed Return URLs\" field <b>%s</b> "
+msgid "Enter your site's URL to the \"<b>%1$s</b>\" field: <b>%2$s</b>"
+msgstr "Agrega la siguiente URL al campo \"Allowed Return URLs\" <b>%s</b> "
 
 #, fuzzy, php-format
 #| msgid "Click on \"Save\""
@@ -2761,6 +2766,14 @@ msgstr ""
 msgid "API Secret"
 msgstr "App Secret"
 
+#, php-format
+msgid "We detected that your %1$s is probably overridden over the %2$s filter!"
+msgstr ""
+
+#, php-format
+msgid "We detected that your %1$s has been overridden over the %2$s filter!"
+msgstr ""
+
 msgid "Continue with <b>Disqus</b>"
 msgstr "Sigue con <b>Disqus</b>"
 
@@ -3151,6 +3164,16 @@ msgid ""
 "you can learn more."
 msgstr ""
 
+#, fuzzy, php-format
+#| msgid ""
+#| "Add the following URL to the \"Authorized Redirect URLs:\" field: <b>%s</"
+#| "b>"
+msgid ""
+"At the %1$s field, select the %2$s option as platform, and add the following "
+"URL into the input field:"
+msgstr ""
+"Agrega la siguiente URL al campo \"Authorized Redirect URLs\": <b>%s</b>"
+
 #, php-format
 msgid ""
 "%1$s It seems the suggested %2$s contains query string(s), that %3$s doesn't "
@@ -3203,14 +3226,13 @@ msgstr ""
 msgid "Then create your Client Secret with the \"<b>Add</b>\" button."
 msgstr ""
 
-#, fuzzy
+#, fuzzy, php-format
 #| msgid ""
 #| "Here you can see your \"APP ID\" and you can see your \"App secret\" if "
 #| "you click on the \"Show\" button. These will be needed in plugin's "
 #| "settings."
 msgid ""
-"Copy the \"<b>Client Secret Value</b>\", this will be the <b>Client secret</"
-"b> in the plugin settings."
+"Copy the %s, this will be the <b>Client secret</b> in the plugin settings."
 msgstr ""
 "Aquí puedes ver tu \"APP ID\" y puedes ver tu \"App secret\" si haces clic "
 "en el botón \"Mostrar\". Estos serán necesarios en la configuración del "
@@ -3801,6 +3823,89 @@ msgstr "Enlazar cuenta con <b>LinkedIn</b>"
 msgid "Unlink account from <b>TikTok</b>"
 msgstr "Desenlazar cuenta de <b>LinkedIn</b>"
 
+#, php-format
+msgid "On the %1$s tab, find your app and click %2$s."
+msgstr ""
+
+msgid "Complete the human verification test."
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Log in with your %s credentials if you are not logged in"
+msgid "Open the %1$s and login with your %2$s account."
+msgstr "Inicia sesión con tus %s credenciales si no has iniciado sesión"
+
+#, php-format
+msgid "To be able to create a %s your account both needs:"
+msgstr ""
+
+#, php-format
+msgid "to be %s"
+msgstr ""
+
+#, php-format
+msgid ""
+"and to have the %1$s enabled. If it is not enabled already, you can enable "
+"it at your %2$s page on the %3$s tab"
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Navigate to %s"
+msgid "Navigate to the %1$s tab."
+msgstr "Navegar a %s"
+
+#, fuzzy, php-format
+#| msgid "Click on the Create button"
+msgid "Click on the %s button on the right side."
+msgstr "Haz clic en el botón Create"
+
+#, php-format
+msgid "Enter a %s for your App."
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Click on the Create button"
+msgid "Select the %1$s option in the %2$s list."
+msgstr "Haz clic en el botón Create"
+
+#, fuzzy, php-format
+#| msgid "Name your project and then click on the Create button"
+msgid "To generate a %1$s, click on the %2$s button."
+msgstr "Denomina tu proyecto y luego haz clic en el botón Create"
+
+#, fuzzy, php-format
+#| msgid ""
+#| "Here you can see your \"APP ID\" and you can see your \"App secret\" if "
+#| "you click on the \"Show\" button. These will be needed in plugin's "
+#| "settings."
+msgid ""
+"Copy the %1$s and the %2$s values. These will be needed in the plugin's "
+"settings."
+msgstr ""
+"Aquí puedes ver tu \"APP ID\" y puedes ver tu \"App secret\" si haces clic "
+"en el botón \"Mostrar\". Estos serán necesarios en la configuración del "
+"plugin."
+
+#, fuzzy
+#| msgid "Continue with <b>Twitter</b>"
+msgid "Continue with <b>Twitch</b>"
+msgstr "Sigue con <b>Twitter</b>"
+
+#, fuzzy
+#| msgid "Continue with <b>Twitter</b>"
+msgid "Sign up with <b>Twitch</b>"
+msgstr "Sigue con <b>Twitter</b>"
+
+#, fuzzy
+#| msgid "Link account with <b>Twitter</b>"
+msgid "Link account with <b>Twitch</b>"
+msgstr "Enlazar cuenta con <b>Twitter</b>"
+
+#, fuzzy
+#| msgid "Unlink account from <b>Twitter</b>"
+msgid "Unlink account from <b>Twitch</b>"
+msgstr "Desenlazar cuenta de <b>Twitter</b>"
+
 #, fuzzy
 #| msgid "Click on the Manage button at the App"
 msgid "Click on the \"<b>Manage</b>\" button next to the associated App."
@@ -3917,9 +4022,6 @@ msgstr ""
 msgid "You can leave the \"Javascript Origins\" field blank!"
 msgstr ""
 
-msgid "Complete the human verification test."
-msgstr ""
-
 msgid "At the \"<b>Type</b>\" make sure \"<b>Web</b>\" is selected!"
 msgstr ""
 
@@ -4034,6 +4136,11 @@ msgstr "O"
 
 msgid "Social accounts"
 msgstr "Cuentas sociales"
+
+#, fuzzy, php-format
+#~| msgid "Click on the Create button"
+#~ msgid "Switch on the %s option."
+#~ msgstr "Haz clic en el botón Create"
 
 #, fuzzy, php-format
 #~| msgid "Click on the Create button"

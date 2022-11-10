@@ -39,4 +39,6 @@ require_once( get_stylesheet_directory() . '/functions/acf-wcattributes.php');
 
 // custome hook using is cart
 require_once( get_stylesheet_directory() . '/functions/checkout.php');
+// load in review
+require_once( get_stylesheet_directory() . '/functions/comment.php');
 

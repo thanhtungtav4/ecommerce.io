@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nextend-facebook-connect\n"
-"POT-Creation-Date: 2022-08-30 15:56+0200\n"
-"PO-Revision-Date: 2022-08-30 15:56+0200\n"
+"POT-Creation-Date: 2022-11-04 09:00+0100\n"
+"PO-Revision-Date: 2022-11-04 09:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: renato@modernstuff.com.br\n"
 "Language: pt_BR\n"
@@ -1976,13 +1976,8 @@ msgstr "Nomeie o projeto e, em seguida, clique no botão Criar"
 
 #, fuzzy, php-format
 #| msgid "Click on the Create button"
-msgid "Switch on the %s option."
+msgid "Choose the %1$s option at %2$s."
 msgstr "Clique no botão Criar"
-
-#, fuzzy, php-format
-#| msgid "Add the following URL to the \"Live Return URL\" field <b>%s</b> "
-msgid "Enter your site's URL to the \"<b>%1$s</b>\" field: <b>%2$s</b>"
-msgstr "Adicione a seguinte URL ao campo \"URL de retorno ao vivo\" <b>%s</b>"
 
 #, php-format
 msgid ""
@@ -1990,6 +1985,16 @@ msgid ""
 "the %1$s option. In this case you also need to fill the \"<b>%2$s</b>\" and "
 "the \"<b>%3$s</b>\" fields with the corresponding URLs!"
 msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Click on the Create button"
+msgid "Select the %1$s option for %2$s."
+msgstr "Clique no botão Criar"
+
+#, fuzzy, php-format
+#| msgid "Add the following URL to the \"Live Return URL\" field <b>%s</b> "
+msgid "Enter your site's URL to the \"<b>%1$s</b>\" field: <b>%2$s</b>"
+msgstr "Adicione a seguinte URL ao campo \"URL de retorno ao vivo\" <b>%s</b>"
 
 #, fuzzy, php-format
 #| msgid "Click on \"Save\""
@@ -2781,6 +2786,14 @@ msgstr ""
 msgid "API Secret"
 msgstr "Chave Secreta do App"
 
+#, php-format
+msgid "We detected that your %1$s is probably overridden over the %2$s filter!"
+msgstr ""
+
+#, php-format
+msgid "We detected that your %1$s has been overridden over the %2$s filter!"
+msgstr ""
+
 msgid "Continue with <b>Disqus</b>"
 msgstr "Continuar com <b>Disqus</b>"
 
@@ -3170,6 +3183,13 @@ msgid ""
 "you can learn more."
 msgstr ""
 
+#, fuzzy, php-format
+#| msgid "Add the following URL to the \"Redirect URLs\" field <b>%s</b> "
+msgid ""
+"At the %1$s field, select the %2$s option as platform, and add the following "
+"URL into the input field:"
+msgstr "Adicione a seguinte URL ao campo \"Redirecionar URLs\"<b>%s</b> "
+
 #, php-format
 msgid ""
 "%1$s It seems the suggested %2$s contains query string(s), that %3$s doesn't "
@@ -3221,13 +3241,12 @@ msgstr "Adicione a seguinte URL ao campo \"Redirecionar URLs\"<b>%s</b> "
 msgid "Then create your Client Secret with the \"<b>Add</b>\" button."
 msgstr ""
 
-#, fuzzy
+#, fuzzy, php-format
 #| msgid ""
 #| "Here you can see your \"Client ID\" and \"Client Secret\". These will be "
 #| "needed in the plugin's settings."
 msgid ""
-"Copy the \"<b>Client Secret Value</b>\", this will be the <b>Client secret</"
-"b> in the plugin settings."
+"Copy the %s, this will be the <b>Client secret</b> in the plugin settings."
 msgstr ""
 "Aqui você pode ver o seu \"ID do Cliente\" e \"Segredo do cliente\". Estes "
 "serão necessários nas configurações do plugin."
@@ -3848,6 +3867,88 @@ msgstr "Vincular conta com <b>LinkedIn</b>"
 msgid "Unlink account from <b>TikTok</b>"
 msgstr "Desvincular conta do <b>LinkedIn</b>"
 
+#, php-format
+msgid "On the %1$s tab, find your app and click %2$s."
+msgstr ""
+
+msgid "Complete the human verification test."
+msgstr "Complete o teste de verificação humano."
+
+#, fuzzy, php-format
+#| msgid "Log in with your %s credentials if you are not logged in"
+msgid "Open the %1$s and login with your %2$s account."
+msgstr "Logue com suas credenciais %s se você não estiver logado"
+
+#, php-format
+msgid "To be able to create a %s your account both needs:"
+msgstr ""
+
+#, php-format
+msgid "to be %s"
+msgstr ""
+
+#, php-format
+msgid ""
+"and to have the %1$s enabled. If it is not enabled already, you can enable "
+"it at your %2$s page on the %3$s tab"
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Navigate to %s"
+msgid "Navigate to the %1$s tab."
+msgstr "Navegar para %s"
+
+#, fuzzy, php-format
+#| msgid "Click on the Create button"
+msgid "Click on the %s button on the right side."
+msgstr "Clique no botão Criar"
+
+#, fuzzy, php-format
+#| msgid "Enter a \"Name\" and \"Description\" for your App."
+msgid "Enter a %s for your App."
+msgstr "Digite um \"Nome\" e \"Descrição\" para seu aplicativo."
+
+#, fuzzy, php-format
+#| msgid "Select the \"Live\" option on the top-right side. "
+msgid "Select the %1$s option in the %2$s list."
+msgstr "Selecione a opção \"ao vivo\" no lado superior direito."
+
+#, fuzzy, php-format
+#| msgid "Name your project and then click on the Create button again"
+msgid "To generate a %1$s, click on the %2$s button."
+msgstr "Nomeie o projeto e, em seguida, clique no botão Criar"
+
+#, fuzzy, php-format
+#| msgid ""
+#| "Here you can see your \"Client ID\" and \"Client Secret\". These will be "
+#| "needed in the plugin's settings."
+msgid ""
+"Copy the %1$s and the %2$s values. These will be needed in the plugin's "
+"settings."
+msgstr ""
+"Aqui você pode ver o seu \"ID do Cliente\" e \"Segredo do cliente\". Estes "
+"serão necessários nas configurações do plugin."
+
+#, fuzzy
+#| msgid "Continue with <b>Twitter</b>"
+msgid "Continue with <b>Twitch</b>"
+msgstr "Continuar com <b>Twitter</b>"
+
+#, fuzzy
+#| msgid "Continue with <b>Twitter</b>"
+msgid "Sign up with <b>Twitch</b>"
+msgstr "Continuar com <b>Twitter</b>"
+
+#, fuzzy
+#| msgid "Link account with <b>Twitter</b>"
+msgid "Link account with <b>Twitch</b>"
+msgstr "Vincular conta com <b>Twitter</b>"
+
+#, fuzzy
+#| msgid "Unlink account from <b>Twitter</b>"
+msgid "Unlink account from <b>Twitch</b>"
+msgstr "Desvincular conta do <b>Twitter</b>"
+
 #, fuzzy
 #| msgid "Click on the Manage button at the App"
 msgid "Click on the \"<b>Manage</b>\" button next to the associated App."
@@ -3965,9 +4066,6 @@ msgstr ""
 
 msgid "You can leave the \"Javascript Origins\" field blank!"
 msgstr "Você pode deixar o campo \"Javascript Origins\" em branco!"
-
-msgid "Complete the human verification test."
-msgstr "Complete o teste de verificação humano."
 
 #, fuzzy
 #| msgid "At the \"Type\" make sure \"Web\" is selected!"
@@ -4088,6 +4186,11 @@ msgstr "OU"
 
 msgid "Social accounts"
 msgstr "Contas redes sociais"
+
+#, fuzzy, php-format
+#~| msgid "Click on the Create button"
+#~ msgid "Switch on the %s option."
+#~ msgstr "Clique no botão Criar"
 
 #, fuzzy, php-format
 #~| msgid "Click on the Create button"
@@ -4385,9 +4488,6 @@ msgstr "Contas redes sociais"
 
 #~ msgid "Scroll down to  \"REST API apps\"."
 #~ msgstr "Role para baixo até \"apps de API REST\"."
-
-#~ msgid "Select the \"Live\" option on the top-right side. "
-#~ msgstr "Selecione a opção \"ao vivo\" no lado superior direito."
 
 #~ msgid "Click the \"Create App\" button."
 #~ msgstr "Clique no botão \"Criar Novo App\"."

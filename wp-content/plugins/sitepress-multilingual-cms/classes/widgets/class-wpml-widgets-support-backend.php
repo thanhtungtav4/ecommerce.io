@@ -2,6 +2,7 @@
 
 use \WPML\FP\Obj;
 use WPML\LIB\WP\Option as Option;
+use WPML\LIB\WP\User;
 
 /**
  * This code is inspired by WPML Widgets (https://wordpress.org/plugins/wpml-widgets/),
@@ -29,7 +30,9 @@ class WPML_Widgets_Support_Backend implements IWPML_Action {
 	public function add_hooks() {
 		add_action( 'in_widget_form', array( $this, 'language_selector' ), 10, 3 );
 		add_filter( 'widget_update_callback', array( $this, 'update' ), 10, 4 );
-		add_action( 'wp_ajax_wpml_change_selected_language_for_legacy_widget', array( $this, 'set_selected_language_for_legacy_widget' ) );
+		if ( User::getCurrent() && User::getCurrent()->has_cap('wpml_manage_languages') ) {
+			add_action( 'wp_ajax_wpml_change_selected_language_for_legacy_widget', array( $this, 'set_selected_language_for_legacy_widget' ) );
+		}
 		if ( $this->is_widgets_page() ) {
 			add_action('enqueue_block_editor_assets', array($this, 'enqueue_scripts'));
 		}

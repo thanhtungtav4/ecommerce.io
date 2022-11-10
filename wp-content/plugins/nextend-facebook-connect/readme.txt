@@ -3,8 +3,8 @@ Contributors: nextendweb
 Tags: social login, facebook, google, twitter, linkedin, register, login, social, nextend facebook connect, social sign in
 Donate link: https://www.facebook.com/nextendweb
 Requires at least: 4.9
-Tested up to: 6.0.2
-Stable tag: 3.1.6
+Tested up to: 6.1
+Stable tag: 3.1.7
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -124,6 +124,24 @@ Using the Pro Addon you can set where the login buttons should appear on the Reg
 4. The Settings page of the Facebook provider.
 
 == Changelog ==
+
+= 3.1.7 =
+* Fix: The !important CSS rules can cause problems for AMP validators, so we will use more specific selectors instead.
+* Fix: Some object cache might caused a PHP warning when the login happened with third party login forms.
+* Fix: There was a JavaScript error in WordPress-like login forms that didn't fire any login specific actions
+* Improvement: [Twitter Getting Started](https://nextendweb.com/nextend-social-login-docs/provider-twitter/#configuration) Update
+* Improvement: Support login restrictions - BuddyPress activation integration - in this case the actual registration is done by BuddyPress, not Nextend Social Login.
+* Improvement: Developers can now define the NSL_DISABLE_IN_AMP_REQUESTS constant, to disable the social buttons and its assets in the AMP requests.
+* Improvement: Developers can now use the "nsl_disabled_register_redirect_url" and "nsl_disabled_login_redirect_url" filters to override the redirects in most cases when the registration or login with social login fails for some reason
+* Improvement: Introduced some public PHP functions that developers can use to get some user data outside of our normal flow
+* Improvement: Avatar storing improvements
+* Feature: Option to allow the profile syncing separately for the registration, login and link actions
+
+* PRO: Fix: Apple provider - There was an encoding problem with the scope parameter of the Apple authorization URL.
+* PRO: Improvement: Developers can now override the GitHub and Disqus client credentials over the "nsl_disqus_api_key" / "nsl_disqus_api_secret" and "nsl_github_client_id" / "nsl_github_client_secret" filters. ( Can be useful for multi sites and multi language sites, as the App of these providers support only a single redirect URL. )
+* PRO: Improvement: [Microsoft Getting Started](https://nextendweb.com/nextend-social-login-docs/provider-microsoft/#configuration) Update
+* PRO: New provider: [Twitch](https://nextendweb.com/nextend-social-login-docs/provider-twitch/)
+
 
 = 3.1.6 =
 * Fix: Google provider - Google OAuth no longer supports any kind of WebViews, so the Google button will be hidden in all WebView environments.

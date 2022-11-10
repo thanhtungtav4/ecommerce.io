@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nextend-facebook-connect\n"
-"POT-Creation-Date: 2022-08-30 15:56+0200\n"
-"PO-Revision-Date: 2022-08-30 15:56+0200\n"
+"POT-Creation-Date: 2022-11-04 09:00+0100\n"
+"PO-Revision-Date: 2022-11-04 09:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: nextend-facebook-connect\n"
 "Language: hu\n"
@@ -1933,13 +1933,8 @@ msgstr "Adj nevet a projektnek és kattints a \"Create\" gombra újra."
 
 #, fuzzy, php-format
 #| msgid "Click on the Create button"
-msgid "Switch on the %s option."
+msgid "Choose the %1$s option at %2$s."
 msgstr "Kattints a \"Create\" gombra"
-
-#, fuzzy, php-format
-#| msgid "Add the following URL to the \"Live Return URL\" field <b>%s</b> "
-msgid "Enter your site's URL to the \"<b>%1$s</b>\" field: <b>%2$s</b>"
-msgstr "Tedd a következő linket az \"Live Return URL\" mezőbe: <b>%s</b>"
 
 #, php-format
 msgid ""
@@ -1947,6 +1942,16 @@ msgid ""
 "the %1$s option. In this case you also need to fill the \"<b>%2$s</b>\" and "
 "the \"<b>%3$s</b>\" fields with the corresponding URLs!"
 msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Click on the Create button"
+msgid "Select the %1$s option for %2$s."
+msgstr "Kattints a \"Create\" gombra"
+
+#, fuzzy, php-format
+#| msgid "Add the following URL to the \"Live Return URL\" field <b>%s</b> "
+msgid "Enter your site's URL to the \"<b>%1$s</b>\" field: <b>%2$s</b>"
+msgstr "Tedd a következő linket az \"Live Return URL\" mezőbe: <b>%s</b>"
 
 #, fuzzy, php-format
 #| msgid "Click on \"Save\""
@@ -2692,6 +2697,14 @@ msgstr ""
 msgid "API Secret"
 msgstr "API Secret"
 
+#, php-format
+msgid "We detected that your %1$s is probably overridden over the %2$s filter!"
+msgstr ""
+
+#, php-format
+msgid "We detected that your %1$s has been overridden over the %2$s filter!"
+msgstr ""
+
 msgid "Continue with <b>Disqus</b>"
 msgstr "Folytatás a <b>Disqus</b>-szal"
 
@@ -3073,6 +3086,13 @@ msgid ""
 "you can learn more."
 msgstr ""
 
+#, fuzzy, php-format
+#| msgid "Add the following URL to the \"Redirect URLs\" field <b>%s</b> "
+msgid ""
+"At the %1$s field, select the %2$s option as platform, and add the following "
+"URL into the input field:"
+msgstr "Tedd a következő linket az \"Redirect URLs:\" mezőbe: <b>%s</b>"
+
 #, php-format
 msgid ""
 "%1$s It seems the suggested %2$s contains query string(s), that %3$s doesn't "
@@ -3122,13 +3142,12 @@ msgstr "Tedd a következő linket az \"Redirect URLs:\" mezőbe: <b>%s</b>"
 msgid "Then create your Client Secret with the \"<b>Add</b>\" button."
 msgstr ""
 
-#, fuzzy
+#, fuzzy, php-format
 #| msgid ""
 #| "Here you can see your \"Client ID\" and \"Client Secret\". These will be "
 #| "needed in the plugin's settings."
 msgid ""
-"Copy the \"<b>Client Secret Value</b>\", this will be the <b>Client secret</"
-"b> in the plugin settings."
+"Copy the %s, this will be the <b>Client secret</b> in the plugin settings."
 msgstr ""
 "Itt találod az \"Client ID\"-t és az \"Client Secret\"-et. Ezekre lesz "
 "szükséged a plugin beállításainál."
@@ -3709,6 +3728,87 @@ msgstr "Fiók összekapcsolása a <b>LinkedIn</b>-nel"
 msgid "Unlink account from <b>TikTok</b>"
 msgstr "Szétkapcsolás <b>LinkedIn</b>-től"
 
+#, php-format
+msgid "On the %1$s tab, find your app and click %2$s."
+msgstr ""
+
+msgid "Complete the human verification test."
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Log in with your %s credentials if you are not logged in yet"
+msgid "Open the %1$s and login with your %2$s account."
+msgstr "Lépj be a %s fiókoddal ha még nem vagy belépve."
+
+#, php-format
+msgid "To be able to create a %s your account both needs:"
+msgstr ""
+
+#, php-format
+msgid "to be %s"
+msgstr ""
+
+#, php-format
+msgid ""
+"and to have the %1$s enabled. If it is not enabled already, you can enable "
+"it at your %2$s page on the %3$s tab"
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Navigate to %s"
+msgid "Navigate to the %1$s tab."
+msgstr "Látogasd meg ezt az oldalt: %s"
+
+#, fuzzy, php-format
+#| msgid "Click on the Create button"
+msgid "Click on the %s button on the right side."
+msgstr "Kattints a \"Create\" gombra"
+
+#, php-format
+msgid "Enter a %s for your App."
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Click on the Create button"
+msgid "Select the %1$s option in the %2$s list."
+msgstr "Kattints a \"Create\" gombra"
+
+#, fuzzy, php-format
+#| msgid "Name your project and then click on the Create button again"
+msgid "To generate a %1$s, click on the %2$s button."
+msgstr "Adj nevet a projektnek és kattints a \"Create\" gombra újra."
+
+#, fuzzy, php-format
+#| msgid ""
+#| "Here you can see your \"Client ID\" and \"Client Secret\". These will be "
+#| "needed in the plugin's settings."
+msgid ""
+"Copy the %1$s and the %2$s values. These will be needed in the plugin's "
+"settings."
+msgstr ""
+"Itt találod az \"Client ID\"-t és az \"Client Secret\"-et. Ezekre lesz "
+"szükséged a plugin beállításainál."
+
+#, fuzzy
+#| msgid "Continue with <b>Twitter</b>"
+msgid "Continue with <b>Twitch</b>"
+msgstr "Folytatás a <b>Twitter</b>-rel"
+
+#, fuzzy
+#| msgid "Sign up with <b>Twitter</b>"
+msgid "Sign up with <b>Twitch</b>"
+msgstr "Regisztrálás a <b>Twitter</b>-rel"
+
+#, fuzzy
+#| msgid "Link account with <b>Twitter</b>"
+msgid "Link account with <b>Twitch</b>"
+msgstr "Fiók összekapcsolása a <b>Twitter</b>-rel"
+
+#, fuzzy
+#| msgid "Unlink account from <b>Twitter</b>"
+msgid "Unlink account from <b>Twitch</b>"
+msgstr "Szétkapcsolás <b>Twitter</b>-től"
+
 #, fuzzy
 #| msgid "Click on the Manage button at the App"
 msgid "Click on the \"<b>Manage</b>\" button next to the associated App."
@@ -3813,9 +3913,6 @@ msgstr ""
 "Valószínűleg ez lesz az: <b>%s</b>"
 
 msgid "You can leave the \"Javascript Origins\" field blank!"
-msgstr ""
-
-msgid "Complete the human verification test."
 msgstr ""
 
 #, fuzzy
@@ -3926,6 +4023,11 @@ msgstr "VAGY"
 
 msgid "Social accounts"
 msgstr "Közösségi fiókok"
+
+#, fuzzy, php-format
+#~| msgid "Click on the Create button"
+#~ msgid "Switch on the %s option."
+#~ msgstr "Kattints a \"Create\" gombra"
 
 #, fuzzy, php-format
 #~| msgid "Click on the Create button"

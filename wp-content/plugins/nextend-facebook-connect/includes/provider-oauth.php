@@ -189,6 +189,52 @@ abstract class NextendSocialProviderOAuth extends NextendSocialProvider {
         return $this->getAuthUserData('id');
     }
 
+    public function getAuthUserDataByAuthOptions($key, $authOptions) {
+        if (empty($this->authUserData)) {
+            if (!empty($authOptions['access_token_data'])) {
+                $client = $this->getClient();
+                $client->setAccessTokenData($authOptions['access_token_data']);
+                $this->authUserData = $this->getCurrentUserInfo();
+            }
+        }
+
+        if (!empty($this->authUserData)) {
+            return $this->getAuthUserData($key);
+        }
+
+
+        return '';
+    }
+
+    /**
+     * @param integer $user_id
+     * @param ['access_token_data'=>String]  $authOptions
+     * @param String  $action - login/link/register
+     * @param boolean $shouldSyncProfile
+     *                        Rest API specific integrations might need this function to store the sync data fields,
+     *                        the access token, and to update the avatar on login.
+     */
+    public function triggerSync($user_id, $authOptions, $action = "login", $shouldSyncProfile = false) {
+        if (!empty($authOptions['access_token_data'])) {
+            switch ($action) {
+                case "login":
+                    do_action('nsl_' . $this->getId() . '_login', $user_id, $this, $authOptions);
+                    break;
+                case "link":
+                    do_action('nsl_' . $this->getId() . '_link_user', $user_id, $this->getId());
+                    break;
+                case "register":
+                    do_action('nsl_' . $this->getId() . '_register_new_user', $user_id, $this);
+                    break;
+            }
+
+            if ($shouldSyncProfile) {
+                $this->syncProfile($user_id, $this, $authOptions);
+            }
+        }
+
+    }
+
     /**
      * @param $accessToken
      * Store the accessToken data.
