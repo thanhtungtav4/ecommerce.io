@@ -5,6 +5,7 @@
         $productID = wc_get_product(get_the_ID());
         $product_arr = $productID->get_attributes();
         $products = $product_arr['pa_mau-sac']['options'];
+        $num_color = get_field('select_color', get_the_ID()) ? count(get_field('select_color', get_the_ID())) : "";
         foreach($products as $key => $item) :
           $thumb_id = get_term_meta($item);
           $img_src = wp_get_attachment_url($thumb_id['product_attribute_image'][0] );
@@ -53,7 +54,14 @@
           <th>Phù hợp:</th>
           <td>
             <table>
-              <tbody class="table_popup">
+              <tbody class="table_popup table_popup_<?php $num_color ? print $num_color : print '1'  ?>">
+              <?php if(empty($num_color)){
+                  echo '<tr><td>';
+                  echo '<p>Đi học</p>';
+                  echo '<p>Đi Làm</p>';
+                  echo '<p>Đi Chơi</p>';
+                  echo '</td></tr>';
+              }?>
               <?php if(get_field('select_color')) : ?>
                   <?php foreach(get_field('select_color') as $color) : ?>
                       <?php

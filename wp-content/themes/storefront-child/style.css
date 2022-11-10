@@ -282,3 +282,6 @@ select.xoo-ml-phone-cc + .select2.select2-container {
   align-items: center;
   padding: 0 10px;
 }
+.table_popup_1{
+  justify-content: center;
+}
