@@ -1,0 +1,11 @@
+2022-11-10T01:05:22+00:00 CRITICAL Out of memory (allocated 92274688) (tried to allocate 28672 bytes) in D:\xampp\htdocs\ecommerce\wp-content\plugins\wordpress-seo\src\integrations\watchers\indexable-permalink-watcher.php on line 209
+
+2022-11-10T01:56:37+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\inc\currencies\class-wcml-custom-prices.php:79
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\inc\currencies\class-wcml-multi-currency-prices.php(246): WCML_Custom_Prices->get_product_custom_prices(577, 'USD')
+#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\sitepress-multilingual-cms\vendor\wpml\fp\core\Logic.php(123): WCML_Multi_Currency_Prices->{closure}(NULL)
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}(Object(Closure), Array, NULL)
+#3 D:\xampp\htdocs\ecommerce\wp-content\plugins\sitepress-multilingual-cms\vendor\wpml\fp\core\functions.php(152): call_user_func_array(Object(Closure), Array)
+#4 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\inc\currencies\class-wcml-multi-currency-prices.php(266): WPML\FP\{closure}(NULL)
+#5 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(310): WCML in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\inc\currencies\class-wcml-custom-prices.php on line 79
+

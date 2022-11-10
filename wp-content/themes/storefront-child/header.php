@@ -284,6 +284,30 @@
                   </div>
                 </div>
               </li>
+              <?php if(is_user_logged_in() && wp_is_mobile()) : ?>
+                <li class="c-menu"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><strong><?php echo wp_get_current_user()->user_login; ?></strong></a></li>
+                <li  class="c-menu"><a href="http://"><strong><?php _e('Tracking order', 'storefront') ?></strong></a></li>
+                <li  class="c-menu"><a href="<?php echo wc_logout_url() ?>"><strong><?php _e('Logout', 'storefront') ?></strong></a></li>
+                <?php elseif(!is_user_logged_in()  && wp_is_mobile()) :?>
+                <li  class="c-menu"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>"><strong><?php _e('Login', 'storefront') ?></strong></a></li>
+                <li  class="c-menu"><a href="<?php echo apply_filters( 'wpml_permalink', home_url('/'). 'dang-ky', apply_filters( 'wpml_current_language', NULL ) );  ?>"><strong><?php _e('Create an account', 'storefront') ?></strong></a></li>
+              <?php endif ;?>
+              <?php if(wp_is_mobile()) : ?>
+                <li  class="cart c-menu">
+                  <a class="" href="<?php echo apply_filters( 'wpml_permalink', home_url('/'). 'gio-hang', apply_filters( 'wpml_current_language', NULL ) );  ?>"><strong>
+                    <?php _e('Cart', 'storefront') ?></strong>
+                    <?php
+                      if (function_exists( 'WC' ) ) {
+                        if(WC()->cart->cart_contents_count >= 1){
+                          echo '<span class="m-cart_num" id="m-cart_num">';
+                          echo (WC()->cart->cart_contents_count);
+                          echo '</span>';
+                        }
+                      }
+                      ?>
+                  </a>
+                </li>
+              <?php endif ;?>
             </ul>
             <ul class="c-header_icon">
               <li class="navbar only-sp" onclick="toggleMenu()">

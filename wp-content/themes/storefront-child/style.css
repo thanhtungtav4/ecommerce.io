@@ -243,6 +243,16 @@ select.xoo-ml-phone-cc + .select2.select2-container {
     border-radius: 1px;
     border-bottom: 1.5px solid;
   }
+  .cart a span.m-cart_num{
+    background-color: #EB6A6A;
+    color: #ffff;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 2px 4px;
+    position: relative;
+    top: -10px;
+    left: -11px;
+  }
 }
 @media screen and (max-width: 374px)
 {
