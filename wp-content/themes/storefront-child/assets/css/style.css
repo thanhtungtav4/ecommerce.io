@@ -415,30 +415,18 @@ body.js-active {
 }
 @media screen and (max-width: 767px) {
   .c-header_icon > li svg {
-    fill: #ccc;
+    fill: #737373;
+  }
+  .c-header_icon > li svg:hover {
+    fill: #EB6A6A;
   }
 }
 .c-header_icon > li .icon_inner {
   position: relative;
+  display: inline-block;
 }
 .c-header_icon > li:hover svg {
   fill: #EB6A6A;
-}
-.c-header_icon > li:hover .icon_inner::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid #FFFFFF;
-  position: absolute;
-  bottom: -4px;
-  left: 5px;
-}
-@media screen and (max-width: 767px) {
-  .c-header_icon > li.cart {
-    margin-left: auto;
-  }
 }
 .c-header_icon > li.cart .icon_inner span {
   position: absolute;
@@ -452,6 +440,11 @@ body.js-active {
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
+}
+@media screen and (max-width: 767px) {
+  .c-header_icon > li.search {
+    margin-left: auto;
+  }
 }
 .c-header_icon > li .c-menu_sub {
   width: 350px;
@@ -1196,6 +1189,9 @@ body.js-active {
 .c-menu_dropdown.lang::before, .c-menu_dropdown.user::before, .c-menu_dropdown.search::before, .c-menu_dropdown.cart::before {
   display: none;
 }
+.c-menu_dropdown.lang:hover, .c-menu_dropdown.user:hover, .c-menu_dropdown.search:hover, .c-menu_dropdown.cart:hover {
+  content: none;
+}
 
 /*------------------------------------------------------------
 	Table
@@ -1397,7 +1393,7 @@ body.js-active {
 }
 
 .slick-next {
-  right: 5px;
+  right: -3px;
 }
 .slick-next:before {
   content: url(../../assets/images/chevron-right.svg);
@@ -1406,7 +1402,7 @@ body.js-active {
 }
 
 .slick-prev {
-  left: 5px;
+  left: -3px;
 }
 .slick-prev:before {
   content: url(../../assets/images/chevron-left.svg);
@@ -1659,6 +1655,15 @@ body.js-active {
   border: 0;
   background-color: #EB6A6A;
   padding: 8px 15px;
+}
+
+.lang_text {
+  font-size: 2.3rem;
+  color: #737373;
+  font-weight: 700;
+}
+.lang_text:hover {
+  color: #EB6A6A;
 }
 
 .c-sure ul {
@@ -4522,4 +4527,3 @@ body.js-active {
   border: 0;
   background: transparent;
 }
-

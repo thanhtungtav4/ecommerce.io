@@ -1,7 +1,7 @@
 .flex-control-nav {
 	width: 100%;
 	position: absolute;
-	bottom: -40px;
+	bottom: -27px;
 	text-align: center;
 }
 
@@ -12,8 +12,8 @@
 }
 
 .flex-control-paging li a {
-	width: 11px;
-	height: 11px;
+	width: 7px;
+	height: 7px;
 	display: block;
 	background: #666;
 	background: rgba(0, 0, 0, 0.5);
@@ -40,4 +40,7 @@
 }
 .product_title{
     font-weight: bold;
+}
+.woo-variation-swatches .variable-items-wrapper .variable-item.image-variable-item:not(.radio-variable-item){
+	box-shadow: none;
 }
