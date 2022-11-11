@@ -34,15 +34,25 @@
 
 // define the woocommerce_dropdown_variation_attribute_options_args callback
 function filter_woocommerce_dropdown_variation_attribute_options_args( $array ) {
+    if($array['attribute'] == 'pa_mat-trai'){
+        $attribute_name = wc_attribute_label($array['attribute']);
+        // Create a string for our select
+        $select_text = 'LEFT eye';
 
-    // Find the name of the attribute for the slug we passed in to the function
-    $attribute_name = wc_attribute_label($array['attribute']);
+        $array['show_option_none'] = __( $select_text, 'storefront' );
+        return $array;
+    }
+    if($array['attribute'] == 'pa_mat-phai'){
+        $attribute_name = wc_attribute_label($array['attribute']);
+        // Create a string for our select
+        $select_text = 'Right eye';
 
-    // Create a string for our select
-    $select_text = 'Chọn độ cận';
-
-    $array['show_option_none'] = __( $select_text, 'woocommerce' );
+        $array['show_option_none'] = __( $select_text, 'storefront' );
+        return $array;
+    }
     return $array;
+    // Find the name of the attribute for the slug we passed in to the function
+
 };
 
 // add the filter
