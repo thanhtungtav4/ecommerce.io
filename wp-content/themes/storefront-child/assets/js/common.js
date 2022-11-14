@@ -218,3 +218,10 @@ window.onload=function(event){
     $('.modal').empty().append('is update');
   });
 };
+
+$(document).ready(function() {
+  $('.image-variable-items-wrapper li').click(function() {
+      let sColor  =  $(this).data('wvstooltip');
+      $("#js_color_check").text(sColor);
+  });
+});

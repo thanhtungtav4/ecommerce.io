@@ -36,6 +36,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 					<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 							<?php if($attribute_name == 'pa_mau-sac') : ?>
 								<td>
+									<p><b><?php _e('Color', 'storefront') ?></b> :  <span id="js_color_check"></span></p>
 									<?php
 										wc_dropdown_variation_attribute_options(
 											array(
@@ -93,7 +94,6 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 					<?php if($attribute_name != 'pa_mau-sac' && $attribute_name != 'pa_mat-trai' && $attribute_name != 'pa_mat-phai') :?>
 						<tr>
-							<th class="label"><label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label></th>
 							<td class="value">
 								<?php
 									wc_dropdown_variation_attribute_options(
