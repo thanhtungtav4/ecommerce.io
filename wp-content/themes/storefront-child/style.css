@@ -295,3 +295,5 @@ select.xoo-ml-phone-cc + .select2.select2-container {
 .table_popup_1{
   justify-content: center;
 }
+.slider { display: none; }
+.slider.slick-initialized { display: block; }

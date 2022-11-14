@@ -30,6 +30,9 @@
     font-weight: 600;
     font-size: 2.5rem;
   }
+  .single_top .cart{
+   width: 100%;
+  }
   .m-flex{
     display: flex;
     align-items: center;
@@ -57,7 +60,7 @@
     width: 4rem;
   }
   .favorite-btn img{
-    width: 20px;
+    width: 35px;
     height: auto;
   }
   .single-product div.product table.variations tbody{
@@ -122,4 +125,17 @@ li.variable-item.image-variable-item{
 }
 .single-product div.product .variations_button {
   padding-top: 0 !important;
+}
+.how_to{
+  color: black !important;
+  text-decoration: none;
+}
+.single-product div.product form.cart{
+  padding-bottom: 0.5rem !important;
+}
+.single-product div.product table.variations tr.select-eyes td{
+  display: block;
+}
+.single-product div.product table.variations tr.select-eyes td.value{
+  width: 250px !important;
 }

@@ -47,11 +47,11 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 										echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
 									?>
 								</td>
-							<?php endif; ?>		
+							<?php endif; ?>
 					<?php endforeach; ?>
-					<td><?php do_action('nt_woocommerce_template_single_rating'); ?></td>	
-				</tr>	
-				<tr class="m-flex">
+					<td><?php do_action('nt_woocommerce_template_single_rating'); ?></td>
+				</tr>
+				<tr class="m-flex select-eyes">
 					<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 						<?php if($attribute_name == 'pa_mat-trai') : ?>
 							<td class="value">
@@ -66,7 +66,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 									echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
 								?>
 							</td>
-						<?php endif; ?>							
+						<?php endif; ?>
 					<?php endforeach; ?>
 					<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 						<?php if($attribute_name == 'pa_mat-phai') : ?>
@@ -82,7 +82,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 									echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
 								?>
 							</td>
-						<?php endif; ?>							
+						<?php endif; ?>
 					<?php endforeach; ?>
 					<td>
 						<a class="favorite-btn" href="#">
@@ -107,11 +107,11 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 								?>
 							</td>
 						</tr>
-					<?php endif; ?>	
+					<?php endif; ?>
 			<?php endforeach; ?>
 			</tbody>
 		</table>
-		
+
 		<?php do_action( 'woocommerce_after_variations_table' ); ?>
 
 		<div class="single_variation_wrap">
