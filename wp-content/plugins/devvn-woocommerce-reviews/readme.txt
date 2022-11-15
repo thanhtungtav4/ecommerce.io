@@ -34,6 +34,17 @@ function custom_devvn_reviews_image_mime_types($mime_types){
 
 == Những thay đổi ==
 
+= V1.4.1 - 04.11.2022 =
+
+* Fix select2 với woo và wp cũ
+
+= V1.4.0 - 03.11.2022 =
+
+* Fix lỗi tương thích với WordPress 6.1 và Woo 7.x.x
+* Thêm lựa chọn sản phẩm cụ thể để đánh giá tự động
+* Thêm lựa chọn sản phẩm chưa có đánh giá để đánh giá tự động
+* Thêm filter devvn_auto_reviews_args để custom các thông số trước khi chạy đánh giá sản phẩm tự động
+
 = V1.3.9 - 22.08.2022 =
 
 * Sửa lỗi không hiện SĐT trong câu hỏi/đáp của sản phẩm

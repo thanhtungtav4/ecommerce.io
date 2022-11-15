@@ -297,3 +297,7 @@ select.xoo-ml-phone-cc + .select2.select2-container {
 }
 .slider { display: none; }
 .slider.slick-initialized { display: block; }
+.disable_hover{
+  cursor: not-allowed;
+  pointer-events: all;
+}

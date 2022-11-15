@@ -442,7 +442,7 @@ if ( ! class_exists( 'YITH_WCAF_Install' ) ) {
                     ID bigint(20) NOT NULL AUTO_INCREMENT,
                     name varchar(255) NOT NULL DEFAULT '',
                     enabled tinyint(1) NOT NULL DEFAULT 1,
-                    rate decimal(4,2) NOT NULL,
+                    rate double(9,3) NOT NULL,
                     type varchar(255) NOT NULL DEFAULT '',
                     priority int(5) NOT NULL DEFAULT 0,
                     PRIMARY KEY (ID),

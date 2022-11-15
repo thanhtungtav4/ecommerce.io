@@ -176,7 +176,8 @@ span.label_new {
     overflow: hidden;
 }
 
-#cat_reviews{
+#cat_reviews,
+#prod_reviews{
     width: 100%;
 }
 

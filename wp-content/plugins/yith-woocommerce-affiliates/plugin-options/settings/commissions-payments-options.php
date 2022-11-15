@@ -43,7 +43,7 @@ return apply_filters(
 				'default'           => 0,
 				'custom_attributes' => array(
 					'min'          => 0,
-					'max'          => 100,
+					'max'          => apply_filters( 'yith_wcaf_max_rate_value', 100 ),
 					'step'         => 'any',
 					'data-postfix' => '%',
 				),

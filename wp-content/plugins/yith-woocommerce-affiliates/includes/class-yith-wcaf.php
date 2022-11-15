@@ -25,7 +25,7 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 		 * @const string
 		 * @since 2.0.0
 		 */
-		const VERSION = '2.7.0';
+		const VERSION = '2.8.0';
 
 		/**
 		 * Plugin version
@@ -42,7 +42,7 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 		 * @const string
 		 * @since 1.0.0
 		 */
-		const DB_VERSION = '2.1.0';
+		const DB_VERSION = '2.2.0';
 
 		/**
 		 * Single instance of the class
