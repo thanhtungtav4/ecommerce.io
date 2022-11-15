@@ -66,6 +66,40 @@ function add_woocommerce_pagination(){
    woocommerce_pagination();
 }
 
+/***
+ * change price variable select in product page detail
+ */
+add_action('woocommerce_before_add_to_cart_form', 'selected_variation_price_replace_variable_price_range');
+function selected_variation_price_replace_variable_price_range(){
+    global $product;
+
+    if( $product->is_type('variable') ):
+    ?>
+    <style> .woocommerce-variation-price {display:none;} </style>
+    <script>
+    jQuery(function($) {
+        var p = 'p.price'
+            q = $(p).html();
+
+        $('form.cart').on('show_variation', function( event, data ) {
+            if ( data.price_html ) {
+                $(p).html(data.price_html);
+            }
+        }).on('hide_variation', function( event ) {
+            $(p).html(q);
+        });
+    });
+    </script>
+    <?php
+    endif;
+}
+/***
+ * !change price variable select in product page detail
+ */
+
+/***
+ * show min price in loop && !page prodcut detail
+ */
 add_filter('woocommerce_variable_sale_price_html', 'shop_variable_product_price', 10, 2);
 add_filter('woocommerce_variable_price_html','shop_variable_product_price', 10, 2 );
 function shop_variable_product_price( $price, $product ){
@@ -86,3 +120,7 @@ function shop_variable_product_price( $price, $product ){
    }
    return $price;
 }
+
+/***
+ * show min price in loop && !page prodcut detail
+ */
