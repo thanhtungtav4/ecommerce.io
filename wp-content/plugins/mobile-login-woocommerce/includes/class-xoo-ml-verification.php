@@ -421,7 +421,7 @@ class Xoo_Ml_Phone_Verification{
 
 
 					if( isset( $_POST['firebase_error'] ) ){
-						$fb_error = array_map( 'sanitize_text_field', json_decode ( stripslashes( $_POST['firebase_error'] ) ) );
+						$fb_error = json_decode ( stripslashes( $_POST['firebase_error'] ) );
 
 						if( $fb_error->code === 'auth/code-expired' ){
 							throw new Xoo_Exception( __( 'OTP Expired', 'mobile-login-woocommerce' ) );
@@ -448,7 +448,7 @@ class Xoo_Ml_Phone_Verification{
 						$fb_body 		= json_decode( $validate_raw['body'] );
 
 						if( is_object( $fb_body ) && !empty( $fb_body->users ) ){
-							if( $fb_body->users[0]->phoneNumber === ( $phone_otp_data['phone_code'].$phone_otp_data['phone_no'] ) ){
+							if( $fb_body->users[0]->phoneNumber === ( $phone_otp_data['phone_code'].$phone_otp_data['phone_no'] ) || $fb_body->users[0]->phoneNumber === ( $phone_otp_data['phone_code'].ltrim( $phone_otp_data['phone_no'], '0' ) ) ){
 								$firebaseVerified = true;
 							}
 						}

@@ -98,8 +98,8 @@
                     <div class="l-container col-5">
                     <dl>
                         <dt><?php _e('FOR INDIVIDUAL NEEDS', 'storefront') ?></dt>
-                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lens-for-men/' : print get_site_url().'/lens-nam/');   ?>"><?php _e('Lens Women', 'storefront') ?></a></dd>
-                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-women/' : print get_site_url().'/lens-nu/');   ?>"><?php _e('Lens Men', 'storefront') ?></a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lens-for-men/' : print get_site_url().'/lens-nu/');   ?>"><?php _e('Lens Women', 'storefront') ?></a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-women/' : print get_site_url().'/lens-nam/');   ?>"><?php _e('Lens Men', 'storefront') ?></a></dd>
                         <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-casual-occasions/' : print get_site_url().'/lens-deo-di-hoc-va-di-lam/'); ?>">Lens sáng nhẹ</a></dd>
                         <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-special-occasion/' : print get_site_url().'/lens-deo-chup-anh-va-du-tiec/'); ?>">Lens sáng tây</a></dd>
                       </dl>

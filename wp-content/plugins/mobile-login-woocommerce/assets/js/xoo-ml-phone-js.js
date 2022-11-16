@@ -322,6 +322,8 @@ jQuery(document).ready(function($){
 			self.$noticeCont = self.$phoneForm.siblings('.xoo-ml-notice');
 		}
 
+		self.$phoneInput.add( self.$phoneCode ).on( 'keyup change', { phoneForm: self }, self.cleanNumber );
+
 		self.adjustPositions();
 
 		self.$phoneForm.on( 'submit', { phoneForm: self }, self.sendOTP );
@@ -381,6 +383,23 @@ jQuery(document).ready(function($){
 
 		},200)
 		
+	}
+
+
+	PhoneForm.prototype.cleanNumber = function( event ){
+
+		var phoneForm = event.data.phoneForm;
+
+		
+		if( isNaN( phoneForm.getPhoneNumber('number') ) ){
+			phoneForm.$phoneInput.val('');
+		}
+
+		//Remove 0 from front
+		if( xoo_ml_phone_localize.del_0 === "yes" && phoneForm.getPhoneNumber('number') ){
+			phoneForm.$phoneInput.val( parseInt( phoneForm.getPhoneNumber('number') ) );
+		}
+
 	}
 
 
@@ -565,7 +584,7 @@ jQuery(document).ready(function($){
 			$phoneForm 		= phoneFormHandler.$phoneForm,
 			error_string 		= ''; 
 
-		if( phoneFormHandler.getPhoneNumber( 'number' ).length !== ( parseInt( phoneFormHandler.getPhoneNumber( 'number'  ) ) ).toString().length ){
+		if( isNaN( phoneFormHandler.getPhoneNumber( 'number' ) ) ){
 			error_string 		= xoo_ml_phone_localize.notices.invalid_phone;
 		}
 			

@@ -76,6 +76,18 @@ $settings = array(
 
 
 	array(
+		'type' 			=> 'setting',
+		'callback' 		=> 'checkbox',
+		'section' 		=> 'main-section',
+		'option_name' 	=> $option_name,
+		'id' 			=> 'm-del-0',
+		'title' 		=> 'Remove 0 from phone number',
+		'default' 		=> 'no',
+		'desc' 			=> 'Removes 0 from the starting'
+	),
+
+
+	array(
 		'type' 			=> 'section',
 		'callback' 		=> 'section',
 		'id' 			=> 'otp-section',

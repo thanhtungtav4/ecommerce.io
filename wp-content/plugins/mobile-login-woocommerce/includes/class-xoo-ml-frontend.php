@@ -108,6 +108,7 @@ class Xoo_Ml_Phone_Frontend{
 			'show_phone' 			=> $settings['r-phone-field'],
 			'otp_form_type' 		=> $settings['m-otp-form-type'],
 			'operator' 				=> $settings['m-operator'],
+			'del_0' 				=> $settings['m-del-0'],
 			'inline_otp_verify_btn' => apply_filters( 'xoo_ml_inline_otp_verify', '<span class="xoo-ml-inline-verify">'.__( 'Verify', 'mobile-login-woocommerce' ).'</span>' ),
 			'strings'				=> array(
 				'verified' 				=> __( '<span class="dashicons dashicons-yes"></span>', 'mobile-login-woocommerce' ),

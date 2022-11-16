@@ -189,7 +189,6 @@ $(document).ready(function() {
 // quick view
 function quickview($id){
   currentID = $id;
-  console.log($id);
   $.ajax({
     type: 'POST',
     url: '/wp-admin/admin-ajax.php',
@@ -225,3 +224,22 @@ $(document).ready(function() {
       $("#js_color_check").text(sColor);
   });
 });
+//only cart
+// quick view
+function variationUpdate($key){
+  currentKey = $key;
+  $.ajax({
+    type: 'POST',
+    url: '/wp-admin/admin-ajax.php',
+    dataType: 'html',
+    data: {
+      action: 'productVariation',
+      key: currentKey,
+    },
+    success: function (res) {
+     $('.modal').empty().append(res);
+    }
+  });
+  document.getElementById('overlay').classList.add('js-visible');
+  document.getElementById('modal').classList.add('js-visible');
+}

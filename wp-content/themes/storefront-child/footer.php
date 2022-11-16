@@ -498,38 +498,6 @@
         });
       </script>
     <?php endif; ?>
-    <!-- <?php //if(is_page('lien-he') || is_page('contact')) :  ?>
-      <script>
-       $(document).ready(function(){
-        $('.slick-sure').not('.slick-initialized').slick({
-          infinite: true,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          dots: false,
-          arrows: false,
-          lazyLoad: 'ondemand',
-          responsive: [
-             {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: true
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true
-              }
-            }
-          ]
-        });
-      });
-      </script>
-    <?php //endif; ?> -->
     <?php if(is_single()) ?>
     <script>
       $(document).ready(function(){

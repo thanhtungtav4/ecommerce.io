@@ -52,4 +52,8 @@ function conditionally_enqueue_styles_scripts() {
         wp_enqueue_script( 'script-leaflet', 'https://unpkg.com/leaflet@1.0.3/dist/leaflet.js', array('jquery') );
         wp_enqueue_script( 'script-PolylineMeasure', 'https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js', array('jquery'));
     }
+    if(is_page( 'cart' ) || is_cart()){
+        wp_register_style( 'cart_page', get_stylesheet_directory_uri().'/assets/css/cart.css' );
+        wp_enqueue_style('cart_page');
+    }
 }

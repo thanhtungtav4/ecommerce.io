@@ -41,4 +41,6 @@ require_once( get_stylesheet_directory() . '/functions/acf-wcattributes.php');
 require_once( get_stylesheet_directory() . '/functions/checkout.php');
 // load in review
 require_once( get_stylesheet_directory() . '/functions/comment.php');
+//load in cart page
+require_once( get_stylesheet_directory() . '/functions/cart.php');
 
