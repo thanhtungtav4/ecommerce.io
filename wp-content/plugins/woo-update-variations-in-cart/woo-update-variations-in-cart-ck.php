@@ -11,7 +11,7 @@
  * Text Domain: woocommerce-extension
  * Domain Path: /languages
  *
- * Copyright: ï¿½ 20016-2022 WooCommerce.
+ * Copyright: © 20016-2022 WooCommerce.
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  */

@@ -163,9 +163,15 @@ class Wc_updateVariationInCart {
 
 	public function woo_ck_wuvic_update_product_in_cart() {
 
-		WC()->cart->remove_cart_item( $_POST['old_key'] );
-		var_dump($_POST['old_key']);
-		return true;
+		parse_str( $_POST['form_data'], $form_data );
+
+		if ( '' != $form_data['variation_id'] ) {
+			WC()->cart->remove_cart_item( $_POST['old_key'] );
+		}
+
+		wp_redirect( add_query_arg( $form_data, wc_get_cart_url() ) );
+		die();
+
 	}
 
 }

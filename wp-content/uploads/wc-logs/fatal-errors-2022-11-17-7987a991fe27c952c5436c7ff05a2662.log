@@ -1,0 +1,126 @@
+2022-11-17T02:20:55+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:43
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 43
+
+2022-11-17T02:21:05+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:43
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 43
+
+2022-11-17T02:21:11+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:43
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 43
+
+2022-11-17T02:21:17+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:43
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 43
+
+2022-11-17T02:21:22+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:43
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 43
+
+2022-11-17T02:21:37+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:43
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 43
+
+2022-11-17T02:21:55+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:43
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 43
+
+2022-11-17T02:33:19+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:65
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 65
+
+2022-11-17T04:01:29+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:65
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 65
+
+2022-11-17T04:01:53+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:65
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 65
+
+2022-11-17T04:08:54+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:65
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 65
+
+2022-11-17T04:17:02+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:65
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 65
+
+2022-11-17T04:17:14+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:65
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 65
+
+2022-11-17T04:28:57+00:00 CRITICAL Uncaught Error: Call to a member function get_available_variations() on bool in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php:100
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(308): Wc_updateVariationInCart->woo_ck_wuvic_get_variation_form('')
+#1 D:\xampp\htdocs\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters('', Array)
+#2 D:\xampp\htdocs\ecommerce\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-admin\admin-ajax.php(203): do_action('wp_ajax_nopriv_...')
+#4 {main}
+  thrown in D:\xampp\htdocs\ecommerce\wp-content\plugins\woo-update-variations-in-cart\front\class-wc_update-variation_in-cart_ck.php on line 100
+

@@ -86,7 +86,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						// Meta data.
 						echo wc_get_formatted_cart_item_data( $cart_item );
-						var_dump($cart_item['key']); // PHPCS: XSS ok.
+						//var_dump($cart_item['key']); // PHPCS: XSS ok.
 						//attribute_slug_to_name($cart_item['variation']['attribute_pa_mau-sac']);
 						// Backorder notification.
 						if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
