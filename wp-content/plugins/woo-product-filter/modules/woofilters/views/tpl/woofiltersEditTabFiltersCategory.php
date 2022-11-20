@@ -326,10 +326,10 @@ ViewWpf::display('woofiltersEditTabCustomTags');
 <div class="row-settings-block">
 	<div class="settings-block-label settings-w100 col-xs-4 col-sm-3">
 		<?php esc_html_e('Product categories', 'woo-product-filter'); ?>
-		<i class="fa fa-question woobewoo-tooltip no-tooltip" title="<?php echo esc_attr(__('Select product categories to be displayed on site from the list. If you want to select several categories, hold the "Shift" button and click on category names. Or you can hold "Ctrl" and click on category names. Press "Ctrl" + "a" for checking all categories.', 'woo-product-filter') . ' <a href="https://woobewoo.com/documentation/product-categories/" target="_blank">' . __('Learn More', 'woo-product-filter') . '</a>.'); ?>"></i>
+		<i class="fa fa-question woobewoo-tooltip no-tooltip" title="<?php echo esc_attr(__('Select product categories to be displayed on site from the list. Press "Ctrl" + "a" for checking all categories.', 'woo-product-filter') . ' <a href="https://woobewoo.com/documentation/product-categories/" target="_blank">' . __('Learn More', 'woo-product-filter') . '</a>.'); ?>"></i>
 	</div>
 	<div class="settings-block-values settings-w100 col-xs-8 col-sm-9">
-		<div class="settings-value woobewoo-width-full">
+		<div class="settings-value woobewoo-width-full wpf-multi-select">
 			<?php 
 				HtmlWpf::selectlist('f_mlist', array(
 					'options' => $categoryDisplay,

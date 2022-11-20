@@ -9,7 +9,7 @@ class Wc_updateVariationInCart {
 			add_action( 'wp_head', array( $this, 'woo_ck_wuvic_hook_js' ) );
 
 			// add edit link on cart page
-			add_filter( 'woocommerce_cart_item_name', array( $this, 'woo_ck_wuvic_cart_product_title' ), 20, 3 );
+			//add_filter( 'woocommerce_cart_item_name', array( $this, 'woo_ck_wuvic_cart_product_title' ), 20, 3 );
 
 			// get variation form using ajax
 			add_action( 'wp_ajax_get_variation_form', array( $this, 'woo_ck_wuvic_get_variation_form' ) );

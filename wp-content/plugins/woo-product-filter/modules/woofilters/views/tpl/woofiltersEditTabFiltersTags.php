@@ -180,10 +180,10 @@ endif;
 <div class="row-settings-block">
 	<div class="settings-block-label settings-w100 col-xs-4 col-sm-3">
 		<?php esc_html_e('Product tags', 'woo-product-filter'); ?>
-		<i class="fa fa-question woobewoo-tooltip no-tooltip" title="<?php echo esc_attr(__('Select product tags to be displayed on site from the list. If you want to select several tags, hold the "Shift" button and click on tag names. Or hold "Ctrl" and click on tag names. Press "Ctrl" + "a" for checking all tags.', 'woo-product-filter') . ' <a href="https://woobewoo.com/documentation/product-tags/" target="_blank">' . __('Learn More', 'woo-product-filter') . '</a>.'); ?>"></i>
+		<i class="fa fa-question woobewoo-tooltip no-tooltip" title="<?php echo esc_attr(__('Select product tags to be displayed on site from the list. Press "Ctrl" + "a" for checking all tags.', 'woo-product-filter') . ' <a href="https://woobewoo.com/documentation/product-tags/" target="_blank">' . __('Learn More', 'woo-product-filter') . '</a>.'); ?>"></i>
 	</div>
 	<div class="settings-block-values settings-w100 col-xs-8 col-sm-9">
-		<div class="settings-value settings-w100 woobewoo-width-full">
+		<div class="settings-value settings-w100 woobewoo-width-full wpf-multi-select">
 			<?php 
 			if (!empty($tagsDisplay)) {
 				HtmlWpf::selectlist('f_mlist', array('options' => $tagsDisplay,));

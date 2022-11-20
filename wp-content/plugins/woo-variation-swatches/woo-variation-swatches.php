@@ -4,13 +4,13 @@
      * Plugin URI: https://wordpress.org/plugins/woo-variation-swatches/
      * Description: Beautiful colors, images and buttons variation swatches for woocommerce product attributes. Requires WooCommerce 5.6+
      * Author: Emran Ahmed
-     * Version: 2.0.12
+     * Version: 2.0.13
      * Domain Path: /languages
      * Requires PHP: 7.0
      * Requires at least: 5.6
      * Tested up to: 6.1
      * WC requires at least: 5.6
-     * WC tested up to: 7.0
+     * WC tested up to: 7.1
      * Text Domain: woo-variation-swatches
      * Author URI: https://getwooplugins.com/
      */
@@ -18,7 +18,7 @@
     defined( 'ABSPATH' ) or die( 'Keep Silent' );
     
     if ( ! defined( 'WOO_VARIATION_SWATCHES_PLUGIN_VERSION' ) ) {
-        define( 'WOO_VARIATION_SWATCHES_PLUGIN_VERSION', '2.0.12' );
+        define( 'WOO_VARIATION_SWATCHES_PLUGIN_VERSION', '2.0.13' );
     }
     
     if ( ! defined( 'WOO_VARIATION_SWATCHES_PLUGIN_FILE' ) ) {
@@ -35,13 +35,13 @@
         
         if ( ! class_exists( 'WooCommerce' ) ) {
             $text    = esc_html__( 'WooCommerce', 'woo-variation-swatches' );
-            $link = esc_url( add_query_arg(                                                                                                                                                                                                                               array(
-                                                                                                                                                                                                                                                                           'tab'       => 'plugin-information',
-                                                                                                                                                                                                                                                                           'plugin' => 'woocommerce',
-                                                                                                                                                                                                                                                                           'TB_iframe' => 'true',
-                                                                                                                                                                                                                                                                           'width'     => '640',
-                                                                                                                                                                                                                                                                           'height'    => '500',
-                                                                                                                                                                                                                                                                       ), admin_url( 'plugin-install.php' ) ) );
+            $link = esc_url( add_query_arg(                                                                                                                                                                                                                                                                                                                array(
+                                                                                                                                                                                                                                                                                                                                                            'tab'       => 'plugin-information',
+                                                                                                                                                                                                                                                                                                                                                            'plugin' => 'woocommerce',
+                                                                                                                                                                                                                                                                                                                                                            'TB_iframe' => 'true',
+                                                                                                                                                                                                                                                                                                                                                            'width'     => '640',
+                                                                                                                                                                                                                                                                                                                                                            'height'    => '500',
+                                                                                                                                                                                                                                                                                                                                                        ), admin_url( 'plugin-install.php' ) ) );
             $message = wp_kses( __( "<strong>Variation Swatches for WooCommerce</strong> is an add-on of ", 'woo-variation-swatches' ), array( 'strong' => array() ) );
             
             printf( '<div class="%1$s"><p>%2$s <a class="thickbox open-plugin-details-modal" href="%3$s"><strong>%4$s</strong></a></p></div>', 'notice notice-error', $message, $link, $text );

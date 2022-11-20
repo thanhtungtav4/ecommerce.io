@@ -245,13 +245,17 @@ class WoofiltersWpf extends ModuleWpf {
 	}
 
 	public function replaceArgsIfBuilderUsed( $args ) {
-
+		$paged = empty($args["paged"]) ? 0 : $args["paged"];
+		$flag = empty($args["post_cards_query"]) ? false : $args["post_cards_query"];
 		if ( isset( $this->mainWCQueryFiltered ) && ! empty( $this->mainWCQueryFiltered ) ) {
 			$args = $this->mainWCQueryFiltered;
 		} elseif ( isset( $this->mainWCQuery ) && ! empty( $this->mainWCQuery ) ) {
 			$args = $this->mainWCQuery;
 		}
-
+		$args["paged"] = $paged;
+		if ($flag) {
+			$args["post_cards_query"] = $flag;
+		}
 		return $args;
 	}
 
@@ -802,7 +806,7 @@ class WoofiltersWpf extends ModuleWpf {
 							'include_children' => true,
 						);
 					}
-				} elseif ( strpos( $key, 'product_brand' ) === 0 || strpos( $key, 'wpf_filter_brand' ) === 0 ) {
+				} elseif ( ( strpos( $key, 'product_brand' ) === 0 || strpos( $key, 'wpf_filter_brand' ) === 0 ) && taxonomy_exists('product_brand') ) {
 					if ( ! empty( $param ) ) {
 						$idsOr      = explode( ',', $param );
 						$idsAnd     = explode( '|', $param );
@@ -1334,13 +1338,13 @@ class WoofiltersWpf extends ModuleWpf {
 							add_filter( 'posts_clauses', array( $this, 'addPriceOrderDesc' ), 99999 );
 							break;
 						case 'sku':
-							add_filter( 'posts_clauses', array( $this, 'addSKUOrder' ) );
+							add_filter( 'posts_clauses', array( $this, 'addSKUOrder' ), 99999 );
 							break;
 						case 'sku-desc':
-							add_filter( 'posts_clauses', array( $this, 'addSKUOrderDesc' ) );
+							add_filter( 'posts_clauses', array( $this, 'addSKUOrderDesc' ), 99999 );
 							break;
 						case 'date-asc':
-							add_filter( 'posts_clauses', array( $this, 'addDateOrderAsc' ) );
+							add_filter( 'posts_clauses', array( $this, 'addDateOrderAsc' ), 99999 );
 							break;
 					}
 				}

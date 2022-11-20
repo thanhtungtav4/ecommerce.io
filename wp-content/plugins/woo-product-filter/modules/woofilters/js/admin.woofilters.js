@@ -450,6 +450,19 @@
 				jQuery(this).hide();
 			}
 		});
+		
+		$(document).keydown(function(e) {
+			if (e.keyCode == 65 && e.ctrlKey) {
+				var $multiBlock = $('.wpfFiltersBlock .wpfFilter .wpfOptions:not(.wpfHidden) .wpf-multi-select');
+				if ($multiBlock.length == 1 && $multiBlock.find('.chosen-container-multi').hasClass('chosen-container-active')) {
+					var ctrlAttr = $multiBlock.attr('data-ctrl-a') != '1',
+						$select = $multiBlock.find('select');
+					$select.find('option').prop('selected', ctrlAttr);
+					$select.trigger('chosen:updated');
+					$multiBlock.attr('data-ctrl-a', ctrlAttr ? '1' : '0');
+				}
+			}
+		});
 
 	});
 
