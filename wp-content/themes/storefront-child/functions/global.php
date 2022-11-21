@@ -33,7 +33,7 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_theme_support( 'post-thumbnails' );
   add_image_size( 'post-thumb', 327, 172, true  ); // 300 pixels wide (and unlimited height)
   add_image_size( 'post-thumb-smail', 137, 82, true  );
-  add_image_size( 'product-thumb', 324, 324, true  );
+  add_image_size( 'product-thumb', 500, 500, true  );
 }
 // To set Default Length
 add_filter( 'woocommerce_product_get_length', 'xa_product_default_length' );

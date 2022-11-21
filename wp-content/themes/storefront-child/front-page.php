@@ -159,7 +159,7 @@ get_header(); ?>
                         $firstLoop = true;
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <?php
-                             $image = get_the_post_thumbnail_url(get_the_ID(), array(307, 307), array( 'class' => 'lazyload' ));
+                             $image = get_the_post_thumbnail_url(get_the_ID(), 'product-thumb', array( 'class' => 'lazyload' ));
                             ?>
                         <?php require( get_stylesheet_directory() . '/module/product_item_loop.php' ); ?>
                         <?php
@@ -229,7 +229,7 @@ get_header(); ?>
                         $firstLoop = true;
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <?php
-                             $image = get_the_post_thumbnail_url(get_the_ID(), array(307, 307), array( 'class' => 'lazyload' ));
+                             $image = get_the_post_thumbnail_url(get_the_ID(), 'product-thumb', array( 'class' => 'lazyload' ));
                             ?>
                           <?php require( get_stylesheet_directory() . '/module/product_item_loop.php' ); ?>
                         <?php
@@ -299,7 +299,7 @@ get_header(); ?>
                         $firstLoop = true;
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <?php
-                             $image = get_the_post_thumbnail_url(get_the_ID(), array(307, 307), array( 'class' => 'lazyload' ));
+                             $image = get_the_post_thumbnail_url(get_the_ID(), 'product-thumb', array( 'class' => 'lazyload' ));
                             ?>
                             <?php require( get_stylesheet_directory() . '/module/product_item_loop.php' ); ?>
                         <?php
@@ -369,7 +369,7 @@ get_header(); ?>
                         $firstLoop = true;
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <?php
-                             $image = get_the_post_thumbnail_url(get_the_ID(), array(307, 307), array( 'class' => 'lazyload' ));
+                              $image = get_the_post_thumbnail_url(get_the_ID(), 'product-thumb', array( 'class' => 'lazyload' ));
                             ?>
                             <?php require( get_stylesheet_directory() . '/module/product_item_loop.php' ); ?>
                         <?php
@@ -439,7 +439,7 @@ get_header(); ?>
                         $firstLoop = true;
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
                             <?php
-                             $image = get_the_post_thumbnail_url(get_the_ID(), array(307, 307), array( 'class' => 'lazyload' ));
+                             $image = get_the_post_thumbnail_url(get_the_ID(), 'product-thumb', array( 'class' => 'lazyload' ));
                             ?>
                             <?php require( get_stylesheet_directory() . '/module/product_item_loop.php' ); ?>
                         <?php
