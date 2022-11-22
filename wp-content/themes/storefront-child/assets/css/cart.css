@@ -13,8 +13,19 @@ table{
   bottom: 0;
   border: 1px solid;
 }
+table.cart td.product-name{
+  text-align: left !important;
+}
 table.cart td.product-name a{
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   color: black;
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+table.cart .product-thumbnail img {
+  max-width: 120px !important;
+}
+table.shop_table_responsive tr td {
+  text-align: center !important;
 }
