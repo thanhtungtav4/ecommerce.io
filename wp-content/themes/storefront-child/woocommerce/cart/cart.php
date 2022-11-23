@@ -68,7 +68,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 
 						// Meta data.
-						echo wc_get_formatted_cart_item_data( $cart_item );
+						//echo wc_get_formatted_cart_item_data( $cart_item );
 						//var_dump($cart_item['key']); // PHPCS: XSS ok.
 						//attribute_slug_to_name($cart_item['variation']['attribute_pa_mau-sac']);
 						// Backorder notification.
@@ -76,6 +76,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
 						}
 						?>
+						<p>Độ Cận:</p>
+						<div>
+						<select id="eyesleft" class="eyesbox">
+							<option value="volvo">0.2</option>
+						</select>
+						<select id="eyesright" class="eyesbox">
+							<option value="volvo">0.2</option>
+						</select>
+						</div>
 						</td>
 
 						<!-- <td class="product-price" data-title="<?php //esc_attr_e( 'Price', 'woocommerce' ); ?>">

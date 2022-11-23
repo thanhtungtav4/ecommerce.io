@@ -13,8 +13,16 @@ table{
   bottom: 0;
   border: 1px solid;
 }
+table.cart tr{
+  margin-bottom: 2rem !important;
+}
+table.cart td{
+  padding: 0 !important;
+}
 table.cart td.product-name{
   text-align: left !important;
+  display: flex;
+  flex-direction: column;
 }
 table.cart td.product-name a{
   font-weight: 700;
@@ -24,8 +32,16 @@ table.cart td.product-name a{
   line-height: 1.5;
 }
 table.cart .product-thumbnail img {
-  max-width: 120px !important;
+  max-width: 100px !important;
 }
 table.shop_table_responsive tr td {
   text-align: center !important;
+}
+.eyesbox{
+  padding: 2px 13px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
