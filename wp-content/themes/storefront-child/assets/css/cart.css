@@ -48,3 +48,14 @@ table.shop_table_responsive tr td {
   font-weight: 500;
   font-size: 1.2rem;
 }
+table.cart .qty {
+  width: unset;
+}
+.number-input button{
+  width: unset;
+  height: unset;
+  background-color: unset;
+}
+.number-input button:after {
+  content: unset;
+}
