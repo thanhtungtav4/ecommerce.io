@@ -1725,7 +1725,7 @@ body.js-active {
 .c-sure_contact ul li {
   display: flex;
   justify-content: space-between;
-  height: 207px;
+  height: 160px !important;
   padding: 0 15px;
 }
 .c-sure_contact ul li svg {

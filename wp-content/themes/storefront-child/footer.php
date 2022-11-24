@@ -443,12 +443,44 @@
           });
       </script>
     <?php endif; ?>
-    <?php if(is_checkout() || is_front_page() || is_product() || is_page('lien-he') || is_page('contact-us')|| is_page('tuyen-dung') || is_page('job') || is_page('gio-hang') || is_page('cart')) :  ?>
+    <?php if(is_checkout() || is_front_page() || is_product() || is_page('tuyen-dung') || is_page('job') || is_page('gio-hang') || is_page('cart')) :  ?>
       <script>
         $(document).ready(function(){
           $('.slick-sure').not('.slick-initialized').slick({
             infinite: true,
             slidesToShow: 4,
+            slidesToScroll: 1,
+            dots: false,
+            arrows: false,
+            lazyLoad: 'ondemand',
+            responsive: [
+              {
+                breakpoint: 992,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                  arrows: true,
+                }
+              },
+              {
+                breakpoint: 768,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  arrows: true,
+                }
+              }
+            ]
+          });
+        });
+      </script>
+    <?php endif; ?>
+    <?php if(is_page('lien-he') || is_page('contact-us')) :  ?>
+      <script>
+        $(document).ready(function(){
+          $('.slick-sure').not('.slick-initialized').slick({
+            infinite: true,
+            slidesToShow: 3,
             slidesToScroll: 1,
             dots: false,
             arrows: false,
