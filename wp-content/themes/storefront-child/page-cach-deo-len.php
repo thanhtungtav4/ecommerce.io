@@ -25,7 +25,7 @@
          </nav>
          <div class="m-product" id="kien-thuc-co-ban-ve-contact-lens">
             <div class="m-product_top">
-               <h4>Kiến thức cơ bản về contact lens</h4>
+               <h4>KIẾN THỨC CƠ BẢN VỀ CONTACT LENS</h4>
                <div class="m-product__nav">
                   <button class="m-product__prev m-new__prev">
                      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,28 +42,30 @@
                </div>
             </div>
             <ul class="m-new__slick w-100">
-               <li>
-                  <a href>
-                     <div class="m-new__img">
-                        <picture>
-                           <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.avif" type="image/avif">
-                           <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.webp" type="image/webp">
-                           <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278">
-                        </picture>
-                     </div>
-                     <div class="m-new__content">
-                        <h3 class="strong">Hướng dẫn các bước skincare từ cơ bản tới nâng cao</h3>
-                        <p class="m-date"><i class="gg-calendar-dates"></i>Tháng Sáu 18, 2021</p>
-                        <p>Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và...</p>
-                     </div>
-                  </a>
-               </li>
+              <?php
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 5,
+                  );
+                  $the_query = new WP_Query($args);
+                  if($the_query->have_posts()):
+                  while ( $the_query->have_posts() ) : $the_query->the_post();
+                  $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
+                ?>
+                  <?php require( get_stylesheet_directory() . '/module/new_item_loop.php' ); ?>
+                <?php
+                  endwhile;
+                  endif;
+                  // Reset Post Data
+                  wp_reset_postdata();
+                ?>
             </ul>
          </div>
          <a class="m-btn" href="#">Xem Toàn bộ</a>
          <div class="m-product" id="chuan-bi-truoc-khi-mua-lens">
             <div class="m-product_top">
-               <h4>Đọc gì trước khi mua lens?</h4>
+               <h4>ĐỌC GÌ TRƯỚC KHI MUA LENS?</h4>
                <div class="m-product__nav">
                   <button class="m-product__prev m-new__prev">
                      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -80,57 +82,64 @@
                </div>
             </div>
             <ul class="m-new__slick w-100">
-               <li>
-                  <a href>
-                     <div class="m-new__img">
-                        <picture>
-                           <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.avif" type="image/avif">
-                           <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.webp" type="image/webp">
-                           <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278">
-                        </picture>
-                     </div>
-                     <div class="m-new__content">
-                        <h3 class="strong">Hướng dẫn các bước skincare từ cơ bản tới nâng cao</h3>
-                        <p class="m-date"><i class="gg-calendar-dates"></i>Tháng Sáu 18, 2021</p>
-                        <p>Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và...</p>
-                     </div>
-                  </a>
-               </li>
+              <?php
+                $args = array(
+                  'post_type'   => 'post',
+                  'post_status' => 'publish',
+                  'posts_per_page' => 5,
+                );
+                $the_query = new WP_Query($args);
+                if($the_query->have_posts()):
+                while ( $the_query->have_posts() ) : $the_query->the_post();
+                $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
+                ?>
+                  <?php require( get_stylesheet_directory() . '/module/new_item_loop.php' ); ?>
+                <?php
+                  endwhile;
+                  endif;
+                  // Reset Post Data
+                  wp_reset_postdata();
+              ?>
             </ul>
          </div>
          <a class="m-btn" href="#">Xem Toàn bộ</a>
          <div class="m-docs_post" id="kien-thuc-cho-nguoi-moi-deo-lens">
-            <h2>Kiến thức cho người mới đeo lens</h2>
+            <h2>KIẾN THỨC CHO NGƯỜI MỚI ĐEO LENS</h2>
             <div class="m-docs_inner">
                <h3 class="m-ttl3">Ngày 1</h3>
-               <div class="m-docs_item">
+               <?php
+                if(get_field('list_news_show', 'option')){
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'post__in' => get_field('list_news_show', 'option'),
+                  );
+                }
+                else{
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 3,
+                  );
+                }
+                $the_query = new WP_Query($args);
+                if($the_query->have_posts()):
+                while ( $the_query->have_posts() ) : $the_query->the_post();
+                $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
+              ?>
+                <div class="m-docs_item">
                   <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
                   <div class="m-docs_info">
                      <a href="#">Marketing </a>
                      <p>14 MIN READ</p>
                   </div>
-               </div>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ            </p>
-                  </div>
-               </div>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ</p>
-                  </div>
-               </div>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ               </p>
-                  </div>
-               </div>
+                </div>
+              <?php
+                endwhile;
+                endif;
+                // Reset Post Data
+                wp_reset_postdata();
+              ?>
             </div>
             <div class="m-docs_inner">
                <h3 class="m-ttl3">Ngày 2</h3>
@@ -141,94 +150,31 @@
                      <p>14 MIN READ</p>
                   </div>
                </div>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ            </p>
-                  </div>
-               </div>
+            </div>
+            <div class="m-docs_inner">
+               <h3 class="m-ttl3">Ngày 3</h3>
                <div class="m-docs_item">
                   <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
                   <div class="m-docs_info">
                      <a href="#">Marketing </a>
                      <p>14 MIN READ</p>
-                  </div>
-               </div>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ                             </p>
                   </div>
                </div>
             </div>
             <div class="m-docs_inner">
-               <h3 class="m-ttl3">Ngày 1</h3>
+               <h3 class="m-ttl3">Ngày 4</h3>
                <div class="m-docs_item">
                   <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
                   <div class="m-docs_info">
                      <a href="#">Marketing </a>
                      <p>14 MIN READ</p>
-                  </div>
-               </div>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ            </p>
-                  </div>
-               </div>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ</p>
-                  </div>
-               </div>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ               </p>
-                  </div>
-               </div>
-            </div>
-            <div class="m-docs_inner">
-               <h3 class="m-ttl3">Ngày 2</h3>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ</p>
-                  </div>
-               </div>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ            </p>
-                  </div>
-               </div>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ</p>
-                  </div>
-               </div>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ       </p>
                   </div>
                </div>
             </div>
          </div>
          <div class="m-product" id="kien-thuc-cho-nguoi-deo-lens-lau-nam">
             <div class="m-product_top">
-               <h4>Kiến thức cho người đeo lens lâu năm</h4>
+               <h4>KIẾN THỨC CHO NGƯỜI ĐEO LENS LÂU NĂM</h4>
                <div class="m-product__nav">
                   <button class="m-product__prev m-new__prev">
                      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -245,28 +191,30 @@
                </div>
             </div>
             <ul class="m-new__slick w-100">
-               <li>
-                  <a href>
-                     <div class="m-new__img">
-                        <picture>
-                           <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.avif" type="image/avif">
-                           <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.webp" type="image/webp">
-                           <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278">
-                        </picture>
-                     </div>
-                     <div class="m-new__content">
-                        <h3 class="strong">Hướng dẫn các bước skincare từ cơ bản tới nâng cao</h3>
-                        <p class="m-date"><i class="gg-calendar-dates"></i>Tháng Sáu 18, 2021</p>
-                        <p>Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và...</p>
-                     </div>
-                  </a>
-               </li>
+              <?php
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 5,
+                  );
+                  $the_query = new WP_Query($args);
+                  if($the_query->have_posts()):
+                  while ( $the_query->have_posts() ) : $the_query->the_post();
+                  $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
+                  ?>
+                    <?php require( get_stylesheet_directory() . '/module/new_item_loop.php' ); ?>
+                  <?php
+                    endwhile;
+                    endif;
+                    // Reset Post Data
+                    wp_reset_postdata();
+                ?>
             </ul>
          </div>
          <a class="m-btn" href="#">Xem Toàn bộ</a>
          <div class="m-product" id="life-and-contact-lens">
             <div class="m-product_top">
-               <h4>Life & Contact Lens</h4>
+               <h4>LIFE & CONTACT LENS</h4>
                <div class="m-product__nav">
                   <button class="m-product__prev m-new__prev">
                      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -283,22 +231,24 @@
                </div>
             </div>
             <ul class="m-new__slick w-100">
-               <li>
-                  <a href>
-                     <div class="m-new__img">
-                        <picture>
-                           <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.avif" type="image/avif">
-                           <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.webp" type="image/webp">
-                           <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/item-new.jpg" alt="item new" loading="lazy" width="437" height="278">
-                        </picture>
-                     </div>
-                     <div class="m-new__content">
-                        <h3 class="strong">Hướng dẫn các bước skincare từ cơ bản tới nâng cao</h3>
-                        <p class="m-date"><i class="gg-calendar-dates"></i>Tháng Sáu 18, 2021</p>
-                        <p>Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và Đối với các tín đồ làm đẹp, chắc hẳn thuật ngữ skincare đã dần trở nên quen thuộc và...</p>
-                     </div>
-                  </a>
-               </li>
+              <?php
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 5,
+                  );
+                  $the_query = new WP_Query($args);
+                  if($the_query->have_posts()):
+                  while ( $the_query->have_posts() ) : $the_query->the_post();
+                  $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
+                  ?>
+                    <?php require( get_stylesheet_directory() . '/module/new_item_loop.php' ); ?>
+                  <?php
+                    endwhile;
+                    endif;
+                    // Reset Post Data
+                    wp_reset_postdata();
+                ?>
             </ul>
          </div>
          <a class="m-btn" href="#">Xem Toàn bộ</a>
