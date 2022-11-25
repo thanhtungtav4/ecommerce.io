@@ -47,6 +47,7 @@
                     'post_type'   => 'post',
                     'post_status' => 'publish',
                     'posts_per_page' => 5,
+                    'category' => 378,
                   );
                   $the_query = new WP_Query($args);
                   if($the_query->have_posts()):
@@ -87,6 +88,7 @@
                   'post_type'   => 'post',
                   'post_status' => 'publish',
                   'posts_per_page' => 5,
+                  'category' => 380,
                 );
                 $the_query = new WP_Query($args);
                 if($the_query->have_posts()):
@@ -108,11 +110,11 @@
             <div class="m-docs_inner">
                <h3 class="m-ttl3">Ngày 1</h3>
                <?php
-                if(get_field('list_news_show', 'option')){
+                if(get_field('day_1')){
                   $args = array(
                     'post_type'   => 'post',
                     'post_status' => 'publish',
-                    'post__in' => get_field('list_news_show', 'option'),
+                    'post__in' => get_field('day_1'),
                   );
                 }
                 else{
@@ -143,33 +145,111 @@
             </div>
             <div class="m-docs_inner">
                <h3 class="m-ttl3">Ngày 2</h3>
-               <div class="m-docs_item">
+               <?php
+                if(get_field('day_2')){
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'post__in' => get_field('day_2'),
+                  );
+                }
+                else{
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 3,
+                  );
+                }
+                $the_query = new WP_Query($args);
+                if($the_query->have_posts()):
+                while ( $the_query->have_posts() ) : $the_query->the_post();
+                $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
+              ?>
+                <div class="m-docs_item">
                   <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
                   <div class="m-docs_info">
                      <a href="#">Marketing </a>
                      <p>14 MIN READ</p>
                   </div>
-               </div>
+                </div>
+              <?php
+                endwhile;
+                endif;
+                // Reset Post Data
+                wp_reset_postdata();
+              ?>
+            </div>
+            <div class="m-docs_inner">
+               <h3 class="m-ttl3">Ngày 1</h3>
+               <?php
+                if(get_field('day_1')){
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'post__in' => get_field('day_1'),
+                  );
+                }
+                else{
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 3,
+                  );
+                }
+                $the_query = new WP_Query($args);
+                if($the_query->have_posts()):
+                while ( $the_query->have_posts() ) : $the_query->the_post();
+                $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
+              ?>
+                <div class="m-docs_item">
+                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
+                  <div class="m-docs_info">
+                     <a href="#">Marketing </a>
+                     <p>14 MIN READ</p>
+                  </div>
+                </div>
+              <?php
+                endwhile;
+                endif;
+                // Reset Post Data
+                wp_reset_postdata();
+              ?>
             </div>
             <div class="m-docs_inner">
                <h3 class="m-ttl3">Ngày 3</h3>
-               <div class="m-docs_item">
+               <?php
+                if(get_field('day_3')){
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'post__in' => get_field('day_3'),
+                  );
+                }
+                else{
+                  $args = array(
+                    'post_type'   => 'post',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 3,
+                  );
+                }
+                $the_query = new WP_Query($args);
+                if($the_query->have_posts()):
+                while ( $the_query->have_posts() ) : $the_query->the_post();
+                $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
+              ?>
+                <div class="m-docs_item">
                   <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
                   <div class="m-docs_info">
                      <a href="#">Marketing </a>
                      <p>14 MIN READ</p>
                   </div>
-               </div>
-            </div>
-            <div class="m-docs_inner">
-               <h3 class="m-ttl3">Ngày 4</h3>
-               <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
-                  <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ</p>
-                  </div>
-               </div>
+                </div>
+              <?php
+                endwhile;
+                endif;
+                // Reset Post Data
+                wp_reset_postdata();
+              ?>
             </div>
          </div>
          <div class="m-product" id="kien-thuc-cho-nguoi-deo-lens-lau-nam">
