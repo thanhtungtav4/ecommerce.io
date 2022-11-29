@@ -250,5 +250,6 @@ $(document).ready(function() {
       $('.review_tablinks').addClass("active");
       $('.c-tab_item').hide();
       $('#reviews').show();
+      $('#reviews')[0].scrollIntoView({behavior: 'smooth'});
   });
 });
