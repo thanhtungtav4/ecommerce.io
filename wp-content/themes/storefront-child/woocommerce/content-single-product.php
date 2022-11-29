@@ -85,7 +85,7 @@ if ( post_password_required() ) {
 		<div class="single_top">
 			<?php do_action( 'nt_woocommerce_template_single_add_to_cart' ); ?>
 		</div>
-		<a href="" target="_blank" class="how_to">Hướng dẫn tính độ cận - loạn</a>
+		<a href="/kien-thuc-kinh-ap-trong-hub/" target="_blank" class="how_to">Hướng dẫn tính độ cận - loạn</a>
 	</div>
 
 	<?php

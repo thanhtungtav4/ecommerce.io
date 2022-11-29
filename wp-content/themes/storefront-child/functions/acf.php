@@ -643,6 +643,7 @@ if (function_exists('acf_add_local_field_group')):
         'description' => '',
         'show_in_rest' => 0,
     ));
+
     acf_add_local_field_group(array(
         'key' => 'group_630e20de96454',
         'title' => 'Job field',
@@ -743,6 +744,7 @@ if (function_exists('acf_add_local_field_group')):
         'description' => '',
         'show_in_rest' => 0,
     ));
+
     acf_add_local_field_group(array(
         'key' => 'group_63307668417b7',
         'title' => 'Time Read',
@@ -788,6 +790,7 @@ if (function_exists('acf_add_local_field_group')):
         'description' => '',
         'show_in_rest' => 0,
     ));
+
     acf_add_local_field_group(array(
         'key' => 'group_630af818b5465',
         'title' => 'Insert schema Product',
@@ -833,7 +836,8 @@ if (function_exists('acf_add_local_field_group')):
       ));
 
 
-    acf_add_local_field_group(array(
+
+      acf_add_local_field_group(array(
         'key' => 'group_6343734ce4903',
         'title' => 'Chatbot',
         'fields' => array(
@@ -1289,6 +1293,7 @@ if (function_exists('acf_add_local_field_group')):
         'description' => '',
         'show_in_rest' => 0,
     ));
+
     acf_add_local_field_group(array(
         'key' => 'group_634e0b26a8ce1',
         'title' => 'Product info Manual',
@@ -1478,5 +1483,123 @@ if (function_exists('acf_add_local_field_group')):
         'description' => '',
         'show_in_rest' => 0,
     ));
+
+    acf_add_local_field_group(array(
+        'key' => 'group_6380464e26612',
+        'title' => 'KIẾN THỨC CHO NGƯỜI MỚI ĐEO LENS',
+        'fields' => array(
+            array(
+                'key' => 'field_638046bde870a',
+                'label' => 'Day 1',
+                'name' => 'day_1',
+                'type' => 'post_object',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'aria-label' => '',
+                'post_type' => array(
+                    0 => 'post',
+                ),
+                'taxonomy' => '',
+                'return_format' => 'id',
+                'multiple' => 1,
+                'allow_null' => 0,
+                'ui' => 1,
+            ),
+            array(
+                'key' => 'field_638047359da03',
+                'label' => 'Day 2',
+                'name' => 'day_2',
+                'type' => 'post_object',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'aria-label' => '',
+                'post_type' => array(
+                    0 => 'post',
+                ),
+                'taxonomy' => '',
+                'return_format' => 'id',
+                'multiple' => 1,
+                'allow_null' => 0,
+                'ui' => 1,
+            ),
+            array(
+                'key' => 'field_6380473d9042c',
+                'label' => 'Day 3',
+                'name' => 'day_3',
+                'type' => 'post_object',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'aria-label' => '',
+                'post_type' => array(
+                    0 => 'post',
+                ),
+                'taxonomy' => '',
+                'return_format' => 'id',
+                'multiple' => 1,
+                'allow_null' => 0,
+                'ui' => 1,
+            ),
+            array(
+                'key' => 'field_638047476d7fd',
+                'label' => 'Day 4',
+                'name' => 'day_4',
+                'type' => 'post_object',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'aria-label' => '',
+                'post_type' => array(
+                    0 => 'post',
+                ),
+                'taxonomy' => '',
+                'return_format' => 'id',
+                'multiple' => 1,
+                'allow_null' => 0,
+                'ui' => 1,
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page',
+                    'operator' => '==',
+                    'value' => '21943',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ));
+
     endif;
 

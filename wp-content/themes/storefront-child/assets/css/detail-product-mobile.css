@@ -104,6 +104,9 @@ li.variable-item.image-variable-item{
   margin-right: 10px !important;
   border-radius: 100% !important;
 }
+.single-product .devvn_single_rating {
+  cursor: pointer;
+}
 .single-product .devvn_single_rating > .star-rating {
   display: flex;
   margin: auto;

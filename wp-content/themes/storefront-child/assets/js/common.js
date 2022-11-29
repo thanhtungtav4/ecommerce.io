@@ -243,3 +243,12 @@ function variationUpdate($key){
   document.getElementById('overlay').classList.add('js-visible');
   document.getElementById('modal').classList.add('js-visible');
 }
+
+$(document).ready(function() {
+  $('.devvn_single_rating').click(function() {
+      $('.tablinks').removeClass("active");
+      $('.review_tablinks').addClass("active");
+      $('.c-tab_item').hide();
+      $('#reviews').show();
+  });
+});
