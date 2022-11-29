@@ -107,3 +107,50 @@ function replace_core_jquery_version() {
 	wp_register_script( 'jquery-migrate', get_stylesheet_directory_uri().'/assets/js/jquery-migrate.js', array(), '3.4.0' );
 }
 add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
+
+// Display the Primary Category
+function get_primary_category( $useCatLink = true ) {
+
+	// Retrieves post categories
+	$category = get_the_category();
+
+	// If post has a category assigned.
+	if ( $category ) {
+		$category_display = '';
+		$category_link = '';
+
+		// Get post's 'Primary' category from post meta
+		$yoast_primary_key = get_post_meta( get_the_id(), '_yoast_wpseo_primary_category', TRUE );
+
+		if ( !empty($yoast_primary_key) )
+		{
+			$term = get_term( $yoast_primary_key );
+
+			if ( is_wp_error($term) ) {
+				// Default to first category (not Yoast) if an error is returned
+				$category_display = $category[0]->name;
+				$category_link = get_category_link( $category[0]->term_id );
+			} else {
+				// Yoast's Primary category
+				$category_display = $term->name;
+				$category_link = get_category_link( $term->term_id );
+			}
+		}
+		else {
+			// Default, display the first category in WP's list of assigned categories
+			$category_display = $category[0]->name;
+			$category_link = get_category_link( $category[0]->term_id );
+		}
+
+		// Display category
+		if ( !empty($category_display) ){
+			if ( $useCatLink == true && !empty($category_link) ){
+				echo '<span class="post-category">';
+				echo '<a href="', esc_url($category_link), '">', esc_html_e($category_display), '</a>';
+				echo '</span>';
+			} else {
+				echo '<span class="post-category">', esc_html_e($category_display), '</span>';
+			}
+		}
+	}
+}

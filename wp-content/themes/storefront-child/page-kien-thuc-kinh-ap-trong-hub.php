@@ -63,7 +63,7 @@
                 ?>
             </ul>
          </div>
-         <a class="m-btn" href="#">Xem Toàn bộ</a>
+         <a class="m-btn" href="/kien-thuc-co-ban-ve-contact-lens/">Xem Toàn bộ</a>
          <div class="m-product" id="chuan-bi-truoc-khi-mua-lens">
             <div class="m-product_top">
                <h4>ĐỌC GÌ TRƯỚC KHI MUA LENS?</h4>
@@ -88,7 +88,7 @@
                   'post_type'   => 'post',
                   'post_status' => 'publish',
                   'posts_per_page' => 5,
-                  'category' => 380,
+                  'category' => 379,
                 );
                 $the_query = new WP_Query($args);
                 if($the_query->have_posts()):
@@ -104,7 +104,7 @@
               ?>
             </ul>
          </div>
-         <a class="m-btn" href="#">Xem Toàn bộ</a>
+         <a class="m-btn" href="/chuan-bi-truoc-khi-mua-lens/">Xem Toàn bộ</a>
          <div class="m-docs_post" id="kien-thuc-cho-nguoi-moi-deo-lens">
             <h2>KIẾN THỨC CHO NGƯỜI MỚI ĐEO LENS</h2>
             <div class="m-docs_inner">
@@ -130,10 +130,10 @@
                 $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
               ?>
                 <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
+                  <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
                   <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ</p>
+                     <?php get_primary_category() ?>
+                     <p><?php get_field('time_read') ? the_field('time_read') : '15'; ?> MIN READ</p>
                   </div>
                 </div>
               <?php
@@ -166,10 +166,10 @@
                 $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
               ?>
                 <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
+                  <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
                   <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ</p>
+                     <?php get_primary_category() ?>
+                     <p><?php get_field('time_read') ? the_field('time_read') : '15'; ?> MIN READ</p>
                   </div>
                 </div>
               <?php
@@ -202,10 +202,10 @@
                 $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
               ?>
                 <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
+                  <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
                   <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ</p>
+                     <?php get_primary_category() ?>
+                     <p><?php get_field('time_read') ? the_field('time_read') : '15'; ?> MIN READ</p>
                   </div>
                 </div>
               <?php
@@ -238,10 +238,10 @@
                 $image = get_the_post_thumbnail_url(get_the_ID(), array(350, 222), array( 'class' => 'lazyload' ));
               ?>
                 <div class="m-docs_item">
-                  <a href="#">Tư vấn các vấn đề về thẻ tín dụng, vay tín chấp các ngân hàng</a>
+                  <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
                   <div class="m-docs_info">
-                     <a href="#">Marketing </a>
-                     <p>14 MIN READ</p>
+                     <?php get_primary_category() ?>
+                     <p><?php get_field('time_read') ? the_field('time_read') : '15'; ?> MIN READ</p>
                   </div>
                 </div>
               <?php
@@ -276,6 +276,7 @@
                     'post_type'   => 'post',
                     'post_status' => 'publish',
                     'posts_per_page' => 5,
+                    'category' => 381,
                   );
                   $the_query = new WP_Query($args);
                   if($the_query->have_posts()):
@@ -291,7 +292,7 @@
                 ?>
             </ul>
          </div>
-         <a class="m-btn" href="#">Xem Toàn bộ</a>
+         <a class="m-btn" href="/kien-thuc-cho-nguoi-deo-lens-lau-nam/">Xem Toàn bộ</a>
          <div class="m-product" id="life-and-contact-lens">
             <div class="m-product_top">
                <h4>LIFE & CONTACT LENS</h4>
@@ -316,6 +317,7 @@
                     'post_type'   => 'post',
                     'post_status' => 'publish',
                     'posts_per_page' => 5,
+                    'category' => 382,
                   );
                   $the_query = new WP_Query($args);
                   if($the_query->have_posts()):
@@ -331,7 +333,7 @@
                 ?>
             </ul>
          </div>
-         <a class="m-btn" href="#">Xem Toàn bộ</a>
+         <a class="m-btn" href="/life-contact-lens/">Xem Toàn bộ</a>
       </div>
    </div>
 </main>
