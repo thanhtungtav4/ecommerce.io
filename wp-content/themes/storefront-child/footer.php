@@ -74,9 +74,9 @@
           <dt><?php _e('CARAS AFFILIATE PROGRAM', 'storefront') ?>
             <dl>
               <dd><a href="#">Affiliate program</a></dd>
-              <dd><a href="https://caras.talent.vn/" rel="nofollow" target="_blank">CƠ HỘI VIỆC LÀM TẠI CARASE</a></dd>
             </dl>
           </dt>
+          <dt><a href="https://caras.talent.vn/" rel="nofollow" target="_blank">CƠ HỘI VIỆC LÀM TẠI CARASE</a></dt>
           <dt>PAYMENT ACCEPT
             <dl class="c-footer_social c-footer_certificates">
               <dd>
