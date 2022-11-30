@@ -1,2 +1,0 @@
-2022-10-31T01:07:58+00:00 CRITICAL Out of memory (allocated 81788928) (tried to allocate 131072 bytes) in D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce-multilingual\vendor\otgs\installer\includes\class-otgs-installer-settings.php on line 25
-

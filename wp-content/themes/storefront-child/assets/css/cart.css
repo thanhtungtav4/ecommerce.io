@@ -59,3 +59,38 @@ table.cart .qty {
 .number-input button:after {
   content: unset;
 }
+/* .woocommerce-cart{
+  display: flex;
+  flex-wrap: wrap;
+} */
+.woocommerce-cart form.woocommerce-cart-form{
+  width: 70%;
+}
+.woocommerce-cart  .cart-collaterals{
+  width: 30%;
+}
+.entry-content .woocommerce{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.entry-content .woocommerce .cart_totals {
+  width: 100% !important;
+}
+.woocommerce .m-product{
+  width: 100% !important;
+}
+.number-input{
+  border: 1px solid;
+  padding: 2px 13px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+table.cart td.product-quantity .qty {
+  border: unset;
+  width: 3rem !important;
+  padding: 0 !important;
+}
