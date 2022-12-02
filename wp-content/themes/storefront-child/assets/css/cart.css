@@ -109,3 +109,6 @@ table.cart td.product-quantity .qty {
 .product-name{
   width: calc(100% - 265px);
 }
+.woocommerce-notices-wrapper{
+  width: 100%;
+}
