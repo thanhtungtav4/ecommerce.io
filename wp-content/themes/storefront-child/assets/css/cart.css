@@ -64,10 +64,10 @@ table.cart .qty {
   flex-wrap: wrap;
 } */
 .woocommerce-cart form.woocommerce-cart-form{
-  width: 70%;
+  width: calc(65% - 10px);
 }
 .woocommerce-cart  .cart-collaterals{
-  width: 30%;
+  width: calc(35% - 10px);
 }
 .entry-content .woocommerce{
   display: flex;
@@ -97,4 +97,15 @@ table.cart td.product-quantity .qty {
 .number-input input[type=number] {
   height: 1.3rem;
   font-size: 1.5rem;
+}
+.product-thumbnail{
+  width: 100px;
+  margin-right: 15px;
+}
+.product-quantity{
+  width: 150px;
+  margin-left: auto;
+}
+.product-name{
+  width: calc(100% - 265px);
 }
