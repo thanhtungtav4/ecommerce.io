@@ -59,10 +59,6 @@ table.cart .qty {
 .number-input button:after {
   content: unset;
 }
-/* .woocommerce-cart{
-  display: flex;
-  flex-wrap: wrap;
-} */
 .woocommerce-cart form.woocommerce-cart-form{
   width: calc(65% - 10px);
 }
@@ -97,11 +93,10 @@ table.cart td.product-quantity .qty {
 .number-input input[type=number] {
   height: 20px !important;
   font-size: 1.5rem;
-  
+
 }
 .product-thumbnail{
   width: 100px;
-  margin-right: 15px;
 }
 .product-quantity{
   width: 150px;
@@ -110,8 +105,9 @@ table.cart td.product-quantity .qty {
   flex-direction: column;
   justify-content: space-between;
 }
-.product-name{
+table.cart td.product-name {
   width: calc(100% - 265px);
+  padding-left: 15px !important;
 }
 .woocommerce-notices-wrapper{
   width: 100%;
@@ -127,4 +123,7 @@ table.cart td.product-quantity .qty {
   width: 100%;
   font-weight: 500;
   font-size: 1.4rem;
+}
+table.shop_table_responsive tr td {
+  padding: 10px 0 !important;
 }
