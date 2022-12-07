@@ -52,7 +52,7 @@ define('WPF_CURRENT', 'current');
 define('WPF_EOL', "\n");
 
 define('WPF_PLUGIN_INSTALLED', true);
-define('WPF_VERSION', '2.2.3');
+define('WPF_VERSION', '2.2.4');
 define('WPF_PRO_REQUIRES', '2.0.0');
 define('WPF_USER', 'user');
 

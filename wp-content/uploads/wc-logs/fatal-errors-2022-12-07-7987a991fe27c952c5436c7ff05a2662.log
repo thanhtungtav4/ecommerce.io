@@ -1,0 +1,11 @@
+2022-12-07T09:49:45+00:00 CRITICAL Uncaught Error: Call to undefined function attribute_slug_to_name() in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\cart\cart.php:73
+Stack trace:
+#0 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\wc-core-functions.php(345): include()
+#1 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-cart.php(99): wc_get_template('cart/cart.php')
+#2 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(72): WC_Shortcode_Cart::output(Array)
+#3 D:\xampp\htdocs\ecommerce\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(85): WC_Shortcodes::shortcode_wrapper(Array)
+#4 D:\xampp\htdocs\ecommerce\wp-includes\shortcodes.php(355): WC_Shortcodes::cart('', '', 'woocommerce_car...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 D:\xampp\htdocs\ecommerce\wp-includes\shortcodes.php(227): preg_replace_callback('/\\[(\\[?)(woocom...', 'do_shortcode_ta...', '[woocommerce_ca...')
+#7 D:\xampp\htdo in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\cart\cart.php on line 73
+

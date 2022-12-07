@@ -13,7 +13,7 @@
 			<div class="wpf-overview-block-body wpf-ads-reward">
 				<div class="wpf-overview-center">
 					<input type="text" class="wpf-overview-input" name="wpf-promo" readonly value="woobewoomax">
-					<a class="wpf-overview-button button" href="https://woobewoo.com/plugins/reward-points-for-woocoommerce/#license" target="_blank">
+					<a class="wpf-overview-button button" href="https://woobewoo.com/plugins/reward-points-for-woocommerce/#license" target="_blank">
 						<?php esc_html_e('GET PLUGIN', 'woo-product-filter'); ?>
 					</a>
 				</div>
@@ -175,12 +175,12 @@
 					<div class="col-sm-4">
 						<div class="wpf-overview-img wpf-overview-img-rp">
 							<div class="wpf-overview-body-title">
-								<a href="https://woobewoo.com/plugins/reward-points-for-woocoommerce/" target="_blank">
+								<a href="https://woobewoo.com/plugins/reward-points-for-woocommerce/" target="_blank">
 									<?php esc_html_e('Reward Points', 'woo-product-filter'); ?>
 								</a>
 							</div>
 							<div class="wpf-overview-body-text">
-								<a href="https://woobewoo.com/plugins/reward-points-for-woocoommerce/" target="_blank">
+								<a href="https://woobewoo.com/plugins/reward-points-for-woocommerce/" target="_blank">
 									<?php esc_html_e('The plugin provides a thoughtful and fully customizable loyalty program for your online store. Reward customers for purchases and actions, arrange promotions, set membership levels, and more. This is the real magic in the fight to attract and retain customers and the desire to shop in your online store again and again.', 'woo-product-filter'); ?>
 								</a>
 							</div>

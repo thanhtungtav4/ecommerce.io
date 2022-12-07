@@ -137,7 +137,11 @@ class WoofiltersWpf extends ModuleWpf {
 		}
 		unset($this->mainWCQuery['s']);
 		$args = ( '' !== $this->mainWCQueryFiltered ? $this->mainWCQueryFiltered : $this->mainWCQuery );
-				
+		
+		if (!ReqWpf::getVar('wpf_count')) {
+			$args['posts_per_page'] = count($ids);
+		}
+		
 		$filterLoop = new WP_Query( $args );
 		$ids = $filterLoop->posts;
 		
@@ -245,6 +249,14 @@ class WoofiltersWpf extends ModuleWpf {
 	}
 
 	public function replaceArgsIfBuilderUsed( $args ) {
+		// For Woocommerce Lookup table regeneration
+		if ( ($args['return'] == 'ids') && ($args['limit'] == 1) ) {
+			return $args;
+		}
+		// For TI WooCommerce Merkzettel
+		if (ReqWpf::getVar('wc-ajax') == 'tinvwl') {
+			return $args;
+		}
 		$paged = empty($args["paged"]) ? 0 : $args["paged"];
 		$flag = empty($args["post_cards_query"]) ? false : $args["post_cards_query"];
 		if ( isset( $this->mainWCQueryFiltered ) && ! empty( $this->mainWCQueryFiltered ) ) {
@@ -3349,7 +3361,9 @@ class WoofiltersWpf extends ModuleWpf {
 	}
 
 	public function getAttributesDisplay() {
-		$productAttr = DispatcherWpf::applyFilters( 'addCustomAttributes', wc_get_attribute_taxonomies() );
+		$productAttr = function_exists('wc_get_attribute_taxonomies') ? wc_get_attribute_taxonomies() : array();
+
+		$productAttr = DispatcherWpf::applyFilters( 'addCustomAttributes', $productAttr );
 
 		$attrDisplay = array( 0 => esc_html__( 'Select...', 'woo-product-filter' ) );
 		$attrTypes   = array();

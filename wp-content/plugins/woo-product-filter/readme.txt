@@ -4,14 +4,14 @@ Donate link: https://woobewoo.com/product/woocommerce-filter/
 Tags: product filter, WooCommerce product filter, shop filter, e-commerce filter, WooCommerce filter, product, filter 
 Requires at least: 3.4.0
 Tested up to: 6.1
-Stable tag: 2.2.3
+Stable tag: 2.2.4
  
 Filter products by categories, attributes, prices, and more. 100% Elementor Compatibility. Shoppers easily find products with WooCommerce Product Filter
 
 == Description ==
 [WooCommerce Product Filter plugin](https://woobewoo.com/plugins/woocommerce-filter/?utm_source=wordpress&utm_medium=description&utm_campaign=filter "WooCommerce Product Filter plugin") allows customers to filter your products/items by price, categories, tags, taxonomy, and attributes. Each filter criteria customizable, giving you maximum control.
 100% Elementor Compatibility
- 
+
 = WooCommerce Product Filter Main Features =
 
 **[Filters by any criteria](https://woobewoo.com/feature/filters-by-price-price-range-sort-categories-tags-and-attributes?utm_source=wordpress&utm_medium=criteria&utm_campaign=filter "Filters by any criteria")**
@@ -145,6 +145,11 @@ If none of this advice helps you, contact us via [support form on our website](h
 You may help us translate the plugin into your language and get the PRO version of the plugin for free as soon as it is released. If this method seems to be too complicated, please send us a request and we will let you know as soon as the WooBeWoo Filter plugin will be available in your localization.
 
 == Changelog ==
+
+= 2.2.4 =
+ * Fix for Woocommerce Loockup table regeneration
+ * Checking the existence of an ACF-attribute value
+ * Minor issues fix
 
 = 2.2.3 =
  * Added Select All for muiliselect in adminarea 

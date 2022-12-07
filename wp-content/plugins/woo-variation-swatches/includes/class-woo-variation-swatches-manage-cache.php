@@ -35,7 +35,7 @@
                 // Products
                 add_action( 'woocommerce_save_product_variation', array( $this, 'clear_cache_on_product_modify' ) );
                 add_action( 'woocommerce_update_product_variation', array( $this, 'clear_cache_on_product_modify' ) );
-                add_action( 'woocommerce_delete_product_variation', array( $this, 'clear_cache_on_product_modify' ) );
+                add_action( 'woocommerce_before_delete_product_variation', array( $this, 'clear_cache_on_product_modify' ) );
                 add_action( 'woocommerce_trash_product_variation', array( $this, 'clear_cache_on_product_modify' ) );
                 
                 // WooCommerce -> Status -> Tools -> Clear transients
