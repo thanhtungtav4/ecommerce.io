@@ -50,3 +50,18 @@ Stack trace:
 [07-Dec-2022 09:51:26 UTC] PHP Notice:  Undefined index: attribute_pa_mat-trai in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\cart\cart.php on line 72
 [07-Dec-2022 09:51:26 UTC] PHP Notice:  Undefined index: attribute_pa_mat-trai in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\cart\cart.php on line 72
 [07-Dec-2022 09:51:26 UTC] PHP Notice:  Undefined index: attribute_pa_mat-trai in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\cart\cart.php on line 72
+[21-Dec-2022 04:21:28 UTC] PHP Notice:  Trying to get property 'comment_type' of non-object in D:\xampp\htdocs\ecommerce\wp-content\plugins\devvn-woocommerce-reviews\devvn-woocommerce-reviews-main.php on line 0
+[21-Dec-2022 06:23:01 UTC] PHP Parse error:  syntax error, unexpected '?' in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:23:02 UTC] PHP Parse error:  syntax error, unexpected '?' in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:23:26 UTC] PHP Parse error:  syntax error, unexpected '?' in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:23:27 UTC] PHP Parse error:  syntax error, unexpected '?' in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:23:43 UTC] PHP Parse error:  syntax error, unexpected '_e' (T_STRING), expecting ',' or ';' in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:23:44 UTC] PHP Parse error:  syntax error, unexpected '_e' (T_STRING), expecting ',' or ';' in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:24:20 UTC] PHP Parse error:  syntax error, unexpected '_e' (T_STRING), expecting ',' or ';' in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:24:21 UTC] PHP Parse error:  syntax error, unexpected '_e' (T_STRING), expecting ',' or ';' in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:24:29 UTC] PHP Parse error:  syntax error, unexpected '_e' (T_STRING) in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:24:30 UTC] PHP Parse error:  syntax error, unexpected '_e' (T_STRING) in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:24:43 UTC] PHP Parse error:  syntax error, unexpected ''</h2>'' (T_CONSTANT_ENCAPSED_STRING) in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:24:43 UTC] PHP Parse error:  syntax error, unexpected ''</h2>'' (T_CONSTANT_ENCAPSED_STRING) in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:36:56 UTC] PHP Parse error:  syntax error, unexpected ''Total amount'' (T_CONSTANT_ENCAPSED_STRING) in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129
+[21-Dec-2022 06:36:56 UTC] PHP Parse error:  syntax error, unexpected ''Total amount'' (T_CONSTANT_ENCAPSED_STRING) in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\woo.php on line 129

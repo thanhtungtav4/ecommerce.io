@@ -124,3 +124,14 @@ function shop_variable_product_price( $price, $product ){
 /***
  * show min price in loop && !page prodcut detail
  */
+add_action( 'woocommerce_before_cart_totals', 'custom_before_cart_totals' );
+function custom_before_cart_totals() {
+    print '<h2 class="ttl_cart">';
+    print 'Total amount';
+    print '</h2>';
+}
+
+add_action('woocommerce_before_cart', 'add_banner_woocommerce');
+function add_banner_woocommerce(){
+    require_once( get_stylesheet_directory() . '/module/list_promotion.php' );
+}

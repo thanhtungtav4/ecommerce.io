@@ -960,7 +960,7 @@ msgstr "Mã khuyến mãi"
 msgid "Update cart"
 msgstr "Cập nhật giỏ hàng"
 
-msgid "Coupon"
+msgid "Total amount"
 msgstr "TỔNG TIỀN"
 
 msgid "TOTAL CASH"

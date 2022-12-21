@@ -134,9 +134,12 @@ $(window).scroll(function(){
 });
 
 $(document).ready(function(){
-  $('.c-menu_dropdown').click(function(){
+  $('.c-menu.c-menu_dropdown, .cart.c-menu_dropdown, .lang.c-menu_dropdown, .user.c-menu_dropdown').click(function(){
     $(this).stop().toggleClass('active');
     $(this).find('.c-menu_sub').stop().slideToggle();
+  })
+  $('.search.c-menu_dropdown .icon_inner').click(function(){
+    $('.search.c-menu_dropdown .c-menu_sub').toggle();
   })
 })
 
