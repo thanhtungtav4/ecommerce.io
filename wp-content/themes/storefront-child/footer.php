@@ -454,7 +454,7 @@
             slidesToScroll: 1,
             dots: false,
             arrows: false,
-            lazyLoad: 'ondemand',
+            //lazyLoad: 'ondemand',
             responsive: [
               {
                 breakpoint: 992,

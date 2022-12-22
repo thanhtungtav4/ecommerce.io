@@ -18,7 +18,6 @@
 defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
-
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
@@ -77,14 +76,16 @@ do_action( 'woocommerce_before_cart' ); ?>
 						}
 						?>
 						<?php if(!empty($cart_item['variation']["attribute_pa_mat-trai"]) &&  !empty($cart_item['variation']["attribute_pa_mat-phai"])) : ?>
-							<p>Độ Cận:</p>
 							<div>
-								<select id="eyesleft" class="eyesbox" disabled>
-									<option value="volvo"><?php echo $cart_item['variation']["attribute_pa_mat-trai"] ?></option>
-								</select>
-								<select id="eyesright" class="eyesbox" disabled>
-									<option value="volvo"><?php echo $cart_item['variation']["attribute_pa_mat-phai"] ?></option>
-								</select>
+								<p>Độ Cận:</p>
+								<div class="eyes_box">
+									<select id="eyesleft" class="eyesbox" disabled>
+										<option value="volvo"><?php echo $cart_item['variation']["attribute_pa_mat-trai"] ?></option>
+									</select>
+									<select id="eyesright" class="eyesbox" disabled>
+										<option value="volvo"><?php echo $cart_item['variation']["attribute_pa_mat-phai"] ?></option>
+									</select>
+								</div>
 							</div>
 						<?php endif; ?>
 						</td>
@@ -129,7 +130,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
 
-			<tr>
+			<tr class="woocommerce_cart_actions">
 				<td colspan="6" class="actions">
 
 					<?php if ( wc_coupons_enabled() ) { ?>
