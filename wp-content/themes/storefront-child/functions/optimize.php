@@ -125,8 +125,6 @@ function remove_dashboard_widgets() {
 }
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
 // ! Disable Unnecessary Dashboard Widgets
-
-
 function wp_remove_scripts() {
     if (is_front_page() ) {
         // Remove Scripts
@@ -139,7 +137,6 @@ function wp_remove_scripts() {
         }
 				wp_dequeue_script( 'storefront-header-cart' );
 				wp_deregister_script( 'storefront-header-cart' );
-
 
 				wp_deregister_script('storefront-navigation');
 				wp_dequeue_script('storefront-navigation');

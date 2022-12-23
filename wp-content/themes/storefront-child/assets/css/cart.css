@@ -153,6 +153,9 @@ table.shop_table_responsive tr td {
   text-transform: uppercase;
   margin: 20px -20px 0;
 }
+.table.cart .product-quantity .plus, table.cart .product-quantity .minus{
+  color: black;
+}
 @media screen and (max-width: 768px) {
   .woocommerce-cart form.woocommerce-cart-form, .woocommerce-cart  .cart-collaterals{
     width: 100%;
@@ -186,6 +189,7 @@ table.shop_table_responsive tr td {
   }
   table.cart .product-quantity .plus, table.cart .product-quantity .minus {
     display: block !important;
+    color: black;
   }
   .product-quantity .number-input button{
     padding: 0;
@@ -207,5 +211,15 @@ table.shop_table_responsive tr td {
     width: 75%;
     display: flex;
     gap: 5px;
+  }
+  table.cart td.product-name {
+    justify-content: space-between;
+  }
+  .woocommerce_cart_actions button{
+    height: 32px;
+    font-size: 1.1rem;
+  }
+  .woocommerce_cart_actions input{
+    margin: 0 !important;
   }
 }

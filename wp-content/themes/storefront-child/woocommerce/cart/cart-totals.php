@@ -27,8 +27,6 @@ defined( 'ABSPATH' ) || exit;
 	<?php endforeach; ?>
 	<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
 
-
-
 		<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
 
 			<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
@@ -36,9 +34,6 @@ defined( 'ABSPATH' ) || exit;
 			<?php wc_cart_totals_shipping_html(); ?>
 
 			<?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
-
-
-
 
 		<?php elseif ( WC()->cart->needs_shipping() && 'yes' === get_option( 'woocommerce_enable_shipping_calc' ) ) : ?>
 

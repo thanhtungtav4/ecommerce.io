@@ -16,25 +16,26 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-
 do_action( 'woocommerce_before_cart' ); ?>
+<div class='l-container'>
+	<ul class="c-breadcrumb">
+		<li><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE : print get_site_url().'/');   ?>"><?php ICL_LANGUAGE_CODE == 'en' ? print 'Home' : print 'Trang chủ'; ?></a></li>
+		<li><?php single_post_title(); ?></li>
+	</ul>
+	<?php require_once( get_stylesheet_directory() . '/module/list_promotion.php' ); ?>
+	<div class="c-tab c-tabCart">
+		<div class="c-tab_top col-2">
+			<button class="button tablinks active"><?php _e('Cart', 'storefront') ?></button>
+			<button class="button tablinks disable_hover"><?php _e('Delivery', 'storefront') ?></button>
+			<button class="button tablinks only-pc"><?php _e('Completed', 'storefront') ?></button>
+		</div>
+	</div>
+</div>
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
-
 	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-		<!-- <thead>
-			<tr>
-				<th class="product-remove"><span class="screen-reader-text"><?php //esc_html_e( 'Remove item', 'woocommerce' ); ?></span></th>
-				<th class="product-thumbnail"><span class="screen-reader-text"><?php //esc_html_e( 'Thumbnail image', 'woocommerce' ); ?></span></th>
-				<th class="product-name"><?php //esc_html_e( 'Product', 'woocommerce' ); ?></th>
-				<th class="product-price"><?php //esc_html_e( 'Price', 'woocommerce' ); ?></th>
-				<th class="product-quantity"><?php //( 'Quantity', 'woocommerce' ); ?></th>
-				<th class="product-subtotal"><?php //esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
-			</tr>
-		</thead> -->
 		<tbody>
 			<?php do_action( 'woocommerce_before_cart_contents' ); ?>
-
 			<?php
 			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
