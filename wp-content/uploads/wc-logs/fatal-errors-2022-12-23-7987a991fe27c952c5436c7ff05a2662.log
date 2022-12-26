@@ -1,0 +1,12 @@
+2022-12-23T03:01:02+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF), expecting end of file in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\module\loadjs.php on line 320
+
+2022-12-23T03:01:18+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF), expecting end of file in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\module\loadjs.php on line 320
+
+2022-12-23T03:01:58+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF), expecting end of file in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\module\loadjs.php on line 320
+
+2022-12-23T03:03:34+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF), expecting end of file in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\module\loadjs.php on line 320
+
+2022-12-23T03:03:44+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF), expecting end of file in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\module\loadjs.php on line 320
+
+2022-12-23T06:32:27+00:00 CRITICAL syntax error, unexpected '<', expecting end of file in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\cart\cart.php on line 20
+

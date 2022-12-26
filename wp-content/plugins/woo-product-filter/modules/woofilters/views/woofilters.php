@@ -1776,6 +1776,7 @@ class WoofiltersViewWpf extends ViewWpf {
 				require_once ABSPATH . 'wp-admin/includes/user.php';
 			}
 			$rolesMain = get_editable_roles();
+			$roleNames = array();
 			foreach ($rolesMain as $key => $role) {
 				$roleNames[] = $key;
 			}
@@ -1813,7 +1814,7 @@ class WoofiltersViewWpf extends ViewWpf {
 
 			$users[] = $u;
 
-			if ( strpos( ReqWpf::getVar( 'pr_author' ), $user->user_nicename ) !== false ) {
+			if ( strpos( ReqWpf::getVar( 'pr_author', 'all', '' ), $user->user_nicename ) !== false ) {
 				$userSelectedSlugs[] = $user->user_nicename;
 				$filter['is_slugs']  = true;
 			}

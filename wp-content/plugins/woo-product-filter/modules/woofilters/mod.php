@@ -157,8 +157,9 @@ class WoofiltersWpf extends ModuleWpf {
 
 	public function forceElementorProductFilter( $widget ) {
 		$paged      = get_query_var( 'paged' );
+		$orderby    = get_query_var( 'orderby' );
 		$widgetName = $widget->get_name();
-		if ( '' !== $this->mainWCQueryFiltered && ( $paged > 0 || ( 'archive-posts' == $widgetName && get_query_var( 'wpf_query' ) == 1 ) ) ) {
+		if ( '' !== $this->mainWCQueryFiltered && ( ( $paged > 0 && 'popularity' != $orderby ) || ( 'archive-posts' == $widgetName && get_query_var( 'wpf_query' ) == 1 ) ) ) {
 			$this->mainWCQueryFiltered['paged'] = $paged;
 			$GLOBALS['wp_query']                = new WP_Query( $this->mainWCQueryFiltered ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 		}
@@ -1375,7 +1376,6 @@ class WoofiltersWpf extends ModuleWpf {
 	public function addBeforeFiltersFrontendArgs( $args, $filterSettings = array(), $urlQuery = array() ) {
 
 		$args = DispatcherWpf::applyFilters( 'checkBeforeFiltersFrontendArgs', $args, $filterSettings, $urlQuery );
-
 		if ( ! empty( $args ) ) {
 			global $wpdb;
 			$args['post_type']             = array( 'product' );
@@ -1520,9 +1520,15 @@ class WoofiltersWpf extends ModuleWpf {
 							if ( $backorderVariations ) {
 								$sqlOutofstock .= ' AND md' . $i . '.val_id!=' . $modelMetaValues->getMetaValueId( $metaKeyId, 'onbackorder' );
 							}
+						} elseif (!empty($urlQuery['pr_stock'])) {
+							$valueIds = $modelMetaValues->getMetaValueIds( $metaKeyId, explode('|', $urlQuery['pr_stock']));
+							if ( ! empty( $valueIds ) ) {
+								$sqlOutofstock = ' AND md' . $i . '.val_id IN (' . implode( ',', $valueIds ) . ')';
+							}
 						}
-
-						$clauses['join'] .= ' INNER JOIN `' . $metaDataTable . '` md' . $i . ' ON (md' . $i . '.product_id=p.ID AND md' . $i . '.key_id=' . $metaKeyId . $sqlOutofstock . ')';
+						if (!empty($sqlOutofstock)) {
+							$clauses['join'] .= ' INNER JOIN `' . $metaDataTable . '` md' . $i . ' ON (md' . $i . '.product_id=p.ID AND md' . $i . '.key_id=' . $metaKeyId . $sqlOutofstock . ')';
+						}
 					}
 
 					$options = FrameWpf::_()->getModule( 'options' )->getModel( 'options' )->getAll();

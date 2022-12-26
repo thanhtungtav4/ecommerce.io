@@ -24,66 +24,23 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li class="woocommerce-cart-form__cart-item cart_item cross-sells" ?>
-<div class="img">
-    <?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
-  </div>
-  <div class="info">
-    <div class="content">
-      <div class="name">
-        <a href="<?php the_permalink();?>"><?php the_title();?></a>
-      </div>
-      <div class="m-control">
-        <div class="number-input">
-		  <button type="button" class="minus">-</button>
-          <input class="quantity" min="0" name="quantity" value="1" type="number">
-		  <button type="button" class="plus">+</button>
-        </div>
-		<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
-      </div>
-    </div>
+<tr class="woocommerce-cart-form__cart-item cart_item cross-sells">
+  <td class="product-thumbnail">
+  	<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
+  </td>
+  <td class="product-name" data-title="Product">
+		<a href="<?php the_permalink();?>"><?php the_title();?></a>
+  </td>
+  <!-- <td class="product-price" data-title=""></td> -->
+  <td class="product-quantity" data-title="Quantity">
 		<?php if ( $price_html = $product->get_price_html() ) : ?>
-			<span class="price"><?php echo $price_html; ?></span>
+			<div class="product-subtotal" data-title="Subtotal">
+				<span class="woocommerce-Price-amount amount">
+					<bdi><?php echo $price_html; ?>&nbsp;
+					</bdi>
+				</span>
+			</div>
 		<?php endif; ?>
-  </div>
-	<?php
-
-	/**
-	 * Hook: woocommerce_before_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_open - 10
-	 */
-	//do_action( 'woocommerce_before_shop_loop_item' );
-
-	/**
-	 * Hook: woocommerce_before_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_show_product_loop_sale_flash - 10
-	 * @hooked woocommerce_template_loop_product_thumbnail - 10
-	 */
-	//do_action( 'woocommerce_before_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_product_title - 10
-	 */
-	//do_action( 'woocommerce_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_rating - 5
-	 * @hooked woocommerce_template_loop_price - 10
-	 */
-	//do_action( 'woocommerce_after_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_close - 5
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	//do_action( 'woocommerce_after_shop_loop_item' );
-	?>
-</li>
+		<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+  </td>
+</tr>

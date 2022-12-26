@@ -301,3 +301,6 @@ select.xoo-ml-phone-cc + .select2.select2-container {
   cursor: not-allowed;
   pointer-events: all;
 }
+.tablinks:hover{
+  cursor: pointer;
+}

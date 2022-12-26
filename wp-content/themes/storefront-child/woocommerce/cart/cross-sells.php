@@ -18,19 +18,8 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( $cross_sells ) : ?>
-
-		<?php
-		$heading = apply_filters( 'woocommerce_product_cross_sells_products_heading', __( 'You may be interested in&hellip;', 'storefront' ) );
-
-		if ( $heading ) :
-			?>
-			<li><?php echo esc_html( $heading ); ?></li>
-		<?php endif; ?>
-
 		<?php woocommerce_product_loop_start(); ?>
-
-			<?php foreach ( $cross_sells as $cross_sell ) : ?>
-
+		<?php foreach ( $cross_sells as $cross_sell ) : ?>
 				<?php
 					$post_object = get_post( $cross_sell->get_id() );
 

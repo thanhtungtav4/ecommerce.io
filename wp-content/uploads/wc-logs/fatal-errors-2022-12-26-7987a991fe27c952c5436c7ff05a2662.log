@@ -1,0 +1,4 @@
+2022-12-26T09:19:31+00:00 CRITICAL syntax error, unexpected '?>' in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\cart\cross-sells.php on line 29
+
+2022-12-26T09:33:59+00:00 CRITICAL syntax error, unexpected ';', expecting ')' in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\woocommerce\cart\cross-sells.php on line 23
+

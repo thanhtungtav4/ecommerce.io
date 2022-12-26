@@ -156,6 +156,15 @@ table.shop_table_responsive tr td {
 .table.cart .product-quantity .plus, table.cart .product-quantity .minus{
   color: black;
 }
+.cross-sells a.add_to_cart_button{
+  background: black;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
 @media screen and (max-width: 768px) {
   .woocommerce-cart form.woocommerce-cart-form, .woocommerce-cart  .cart-collaterals{
     width: 100%;

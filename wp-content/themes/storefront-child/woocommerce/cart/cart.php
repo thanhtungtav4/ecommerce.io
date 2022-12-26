@@ -128,9 +128,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 				}
 			}
 			?>
-
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
-
+			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
+			<?php do_action('woocommerce_after_cart_contents_nt'); ?>
 			<tr class="woocommerce_cart_actions">
 				<td colspan="6" class="actions">
 
@@ -148,8 +148,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
 				</td>
 			</tr>
-
-			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 		</tbody>
 	</table>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
