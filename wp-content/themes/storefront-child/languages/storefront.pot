@@ -951,6 +951,9 @@ msgstr "Tạm tính"
 msgid "Total"
 msgstr "Thành tiền"
 
+msgid "Recently viewed products"
+msgstr "Sản phẩm đã xem gần đây"
+
 msgid "Apply"
 msgstr "NHẬP"
 
@@ -960,7 +963,7 @@ msgstr "Mã khuyến mãi"
 msgid "Update cart"
 msgstr "Cập nhật giỏ hàng"
 
-msgid "Coupon"
+msgid "Total amount"
 msgstr "TỔNG TIỀN"
 
 msgid "TOTAL CASH"

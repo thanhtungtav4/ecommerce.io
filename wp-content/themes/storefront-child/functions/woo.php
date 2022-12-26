@@ -18,10 +18,10 @@ function refresh_cart_count( $fragments ){
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 add_action( 'woocommerce_after_cart_contents_nt', 'woocommerce_cross_sell_display' );
 //Move of Cross-Sells in page cart
-add_action( 'woocommerce_after_cart_contents', 'showh2' );
-function showh2(){
-    echo '<tr  class="woocommerce_cart_actions"> xxxxxxxxxxxxxx</tr>';
-}
+// add_action( 'woocommerce_after_cart_contents', 'showh2' );
+// function showh2(){
+//     print '<tr class="woocommerce_cart_actions xxx">xxxxxxxxxxxxxx</tr>';
+// }
 
 add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
 

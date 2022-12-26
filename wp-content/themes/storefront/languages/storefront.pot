@@ -951,6 +951,9 @@ msgstr "Tạm tính"
 msgid "Total"
 msgstr "Thành tiền"
 
+msgid "Recently viewed products"
+msgstr "Sản phẩm đã xem gần đây"
+
 msgid "Apply"
 msgstr "NHẬP"
 

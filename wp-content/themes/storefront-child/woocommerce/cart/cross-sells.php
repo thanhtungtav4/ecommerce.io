@@ -18,6 +18,9 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( $cross_sells ) : ?>
+		<tr class="table_ttl"> 
+			<td><?php _e('You may be interested in&hellip;', 'storefront') ?></td> 
+		</tr>
 		<?php woocommerce_product_loop_start(); ?>
 		<?php foreach ( $cross_sells as $cross_sell ) : ?>
 				<?php

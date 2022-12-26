@@ -165,6 +165,9 @@ table.shop_table_responsive tr td {
   align-items: center;
   margin: auto;
 }
+.cart-collaterals{
+  margin-bottom: 2rem;
+}
 @media screen and (max-width: 768px) {
   .woocommerce-cart form.woocommerce-cart-form, .woocommerce-cart  .cart-collaterals{
     width: 100%;
@@ -230,5 +233,10 @@ table.shop_table_responsive tr td {
   }
   .woocommerce_cart_actions input{
     margin: 0 !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  .product-quantity {
+    width: auto;
   }
 }
