@@ -861,6 +861,9 @@ msgstr ""
 msgid "CUSTOMER SUPPORT"
 msgstr "HỖ TRỢ KHÁCH HÀNG"
 
+msgid "SUPPORT"
+msgstr "HỖ TRỢ"
+
 msgid "CARAS AFFILIATE PROGRAM"
 msgstr "CHƯƠNG TRÌNH CARAS AFFILIATE"
 
@@ -991,7 +994,7 @@ msgid "MEDICAL CONTACT LENSES"
 msgstr "KÍNH Y TẾ CHUYÊN DỤNG"
 
 msgid "CONTACT LENS ACCESSORIES"
-msgstr "PHỤ KIỆN"
+msgstr "PHỤ KIỆN KÍNH ÁP TRÒNG"
 
 msgid "Add to cart"
 msgstr "THÊM VÀO GIỎ HÀNG"
@@ -1074,3 +1077,74 @@ msgstr "SẢN PHẨM THƯỜNG ĐƯỢC MUA KÈM"
 msgid "SPECIALIZED MEDICAL CONTACT LENSES"
 msgstr "KÍNH ÁP TRÒNG Y TẾ"
 
+msgid "Service"
+msgstr "Dịch Vụ"
+
+msgid "Free eye test"
+msgstr "Đo mắt miễn phí"
+
+msgid "Online consultation"
+msgstr "Tư vấn online"
+
+msgid "Information"
+msgstr "Thông Tin"
+
+msgid "About CARAS"
+msgstr "Giới thiệu CARAS"
+
+msgid "User manual"
+msgstr "Hướng Dẫn Sử Dụng"
+
+msgid "Lens"
+msgstr "Kính Áp Tròng"
+
+msgid "JOB OPPORTUNITIES IN CARASE"
+msgstr "CƠ HỘI VIỆC LÀM TẠI CARASE"
+
+msgid "619 Nguyen Dinh Chieu, Ward 2, Ward 3, HCMC"
+msgstr "619 Nguyễn Đình Chiểu, P2, P3, Tp.HCM"
+
+msgid "GIẤY PHÉP CÔNG BỐ & NHẬP KHẨU"
+msgstr "PUBLICATION & IMPORT LICENSE"
+
+msgid "Mã số thuế"
+msgstr "Tax code"
+
+msgid "Công ty CPTM"
+msgstr "Trade Joint Stock Company"
+
+msgid "Lens is light"
+msgstr "Lens sáng nhẹ"
+
+msgid "Lens west morning"
+msgstr "Lens sáng tây"
+
+msgid "Myopia contact lenses"
+msgstr "Lens cận"
+
+msgid "Astigmatism contact lenses"
+msgstr "Lens Loạn"
+
+msgid "Eyepiece"
+msgstr "Lens viễn"
+
+msgid "Myopia, hyperopia lens"
+msgstr "Lens cận loạn"
+
+msgid "month"
+msgstr "tháng"
+
+msgid "day"
+msgstr "ngày"
+
+msgid "Spontaneous"
+msgstr "Tự nhiên"
+
+msgid "Light stretch"
+msgstr "Giãn nhẹ"
+
+msgid "Brown"
+msgstr "Nâu"
+
+msgid "Gray"
+msgstr "Xám"

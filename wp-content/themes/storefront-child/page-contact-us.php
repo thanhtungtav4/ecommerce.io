@@ -111,8 +111,8 @@ get_footer();
       buffers.push(c);
     }
     $(document).ready(function (){
-      var points = [["619 Nguyễn Đình Chiểu, Phường 2, Quận 3, TP. Hồ Chí Minh",10.766932, 106.679240],
-                    ["350C Hoàng Văn Thụ, Phường 4, Quận Tân Bình",10.7952279,106.6374614],
+      var points = [["619 Nguyễn Đình Chiểu, Phường 2, Quận 3, TP. Hồ Chí Minh",10.766932,106.679240],
+                    ["350C Hoàng Văn Thụ, Phường 4, Quận Tân Bình",10.7968469,106.6568688],
                     ["2 Phố Huế, Hoàn Kiếm, Hà Nội",21.0197083,105.8496002],];
       for (var i=0; i < points.length; i++){
         addMarker(points[i][0],points[i][1],points[i][2]);

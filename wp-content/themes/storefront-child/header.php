@@ -92,7 +92,7 @@
                   </div>
                 </div>
               </li>
-              <li class="c-menu c-menu_dropdown"><a href="/contact-lens/">Kính Áp Tròng</a>
+              <li class="c-menu c-menu_dropdown"><a href="/contact-lens/"><?php _e('Lens', 'storefront') ?></a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <div class="l-container col-5">
@@ -100,16 +100,16 @@
                         <dt><?php _e('FOR INDIVIDUAL NEEDS', 'storefront') ?></dt>
                         <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lens-for-men/' : print get_site_url().'/lens-nu/');   ?>"><?php _e('Lens Women', 'storefront') ?></a></dd>
                         <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-women/' : print get_site_url().'/lens-nam/');   ?>"><?php _e('Lens Men', 'storefront') ?></a></dd>
-                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-casual-occasions/' : print get_site_url().'/lens-deo-di-hoc-va-di-lam/'); ?>">Lens sáng nhẹ</a></dd>
-                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-special-occasion/' : print get_site_url().'/lens-deo-chup-anh-va-du-tiec/'); ?>">Lens sáng tây</a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-casual-occasions/' : print get_site_url().'/lens-deo-di-hoc-va-di-lam/'); ?>"><?php _e('Lens is light', 'storefront') ?></a></dd>
+                        <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/contact-lenses-for-special-occasion/' : print get_site_url().'/lens-deo-chup-anh-va-du-tiec/'); ?>"><?php _e('Lens west morning', 'storefront') ?></a></dd>
                       </dl>
                       <div class="gr-menu">
                         <dl>
                           <dt><?php _e('Eye Refraction', 'storefront') ?></dt>
-                          <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-can-thi/'); ?>">Lens cận</a></dd>
-                          <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-loan-thi/'); ?>">Lens loạn</a></dd>
-                          <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-can-loan/'); ?>">Lens cận loạn</a></dd>
-                          <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-vien-thi/'); ?>">Lens viễn</a></dd>
+                          <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-can-thi/'); ?>"><?php _e('Myopia contact lenses', 'storefront') ?></a></dd>
+                          <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-loan-thi/'); ?>"><?php _e('Astigmatism contact lenses', 'storefront') ?></a></dd>
+                          <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-can-loan/'); ?>"><?php _e('Myopia, hyperopia lens', 'storefront') ?></a></dd>
+                          <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-vien-thi/'); ?>"><?php _e('Eyepiece', 'storefront') ?></a></dd>
                         </dl>
                         <dl class="sp-only time-use">
                           <dt><?php _e('BY FREQUENCY', 'storefront') ?></dt>
@@ -123,20 +123,20 @@
                       <div class="gr-menu">
                         <dl class="types">
                           <dt><?php _e('Glass Type', 'storefront') ?></dt>
-                          <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-3-thang/'); ?>">3 tháng</a></dd>
-                          <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-1-ngay/'); ?>">1 ngày</a></dd>
+                          <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-3-thang/'); ?>">3 <?php _e('month', 'storefront') ?></a></dd>
+                          <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-1-ngay/'); ?>">1 <?php _e('day', 'storefront') ?></a></dd>
                           <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-3-thang/'); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_3month.png" alt="3 tháng"></a></dd>
                           <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-1-ngay/'); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_1month.png" alt="1 ngày"></a></dd>
                           <dt>Size</dt>
-                          <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-13-6mm-13-8mm/'); ?>">Tự nhiên - 13.8mm</a></dd>
-                          <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-14mm/'); ?>">Giãn nhẹ - 14.0 mm</a></dd>
-                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-13-6mm-13-8mm/'); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_13mm.png" alt="Tự nhiên - 13.8mm">Tự nhiên</a></dd>
-                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-14mm/'); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_14mm.png" alt="Giãn nhẹ - 14.0 mm">Giãn nhẹ</a></dd>
+                          <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-13-6mm-13-8mm/'); ?>"><?php _e('Spontaneous', 'storefront') ?> - 13.8mm</a></dd>
+                          <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-14mm/'); ?>"><?php _e('Light stretch', 'storefront') ?> - 14.0 mm</a></dd>
+                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-13-6mm-13-8mm/'); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_13mm.png" alt="<?php _e('Spontaneous', 'storefront') ?> - 13.8mm"><?php _e('Spontaneous', 'storefront') ?></a></dd>
+                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-14mm/'); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_14mm.png" alt="<?php _e('Light stretch', 'storefront') ?> - 14.0 mm"><?php _e('Light stretch', 'storefront') ?></a></dd>
                         </dl>
                         <dl class="color">
                           <dt><?php _e('BY COLOR', 'storefront') ?></dt>
-                          <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-mau-nau/'); ?>">Nâu</a></dd>
-                          <dd><a class="is-gray" href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-mau-xam/'); ?>">Xám</a></dd>
+                          <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-mau-nau/'); ?>"><?php _e('Brown', 'storefront') ?></a></dd>
+                          <dd><a class="is-gray" href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-mau-xam/'); ?>"><?php _e('Gray', 'storefront') ?></a></dd>
                           <dd><a class="is-choco" href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-mau-choco/'); ?>">Choco</a></dd>
                           <dd><a class="is-clear" href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-trong-suot/'); ?>">Clear</a></dd>
                         </dl>
@@ -154,7 +154,7 @@
                 </div>
               </li>
               <li class="c-menu c-menu_dropdown">
-                <a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/phu-kien-lens/'); ?>">Phụ Kiện</a>
+                <a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/phu-kien-lens/'); ?>"><?php _e('CONTACT LENS ACCESSORIES', 'storefront') ?></a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <div class="l-container col-3">
@@ -198,7 +198,7 @@
                   </div>
                 </div>
               </li>
-              <li class="c-menu c-menu_dropdown"><a href="#">Dịch Vụ</a>
+              <li class="c-menu c-menu_dropdown"><a href="#"><?php _e('Service', 'storefront') ?></a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <div class="l-container col-3">
@@ -214,7 +214,7 @@
 												</dd>
                       </dl>
                       <dl>
-                        <dt>Đo mắt miễn phí
+                        <dt><?php _e('Free eye test', 'storefront') ?>
 												<dd>
 													<a href="#">
 													<picture>
@@ -226,7 +226,7 @@
                         </dt>
                       </dl>
                       <dl>
-                        <dt>Tư vấn online
+                        <dt><?php _e('Online consultation', 'storefront') ?>
 												<dd>
 													<a href="#">
 													<picture>
@@ -241,12 +241,12 @@
                   </div>
                 </div>
               </li>
-              <li class="c-menu c-menu_dropdown"><a href="">Thông Tin</a>
+              <li class="c-menu c-menu_dropdown"><a href=""><?php _e('Information', 'storefront') ?></a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <div class="l-container col-3">
                       <dl>
-                        <dt>Giới thiệu CARAS</dt>
+                        <dt><?php _e('About CARAS', 'storefront') ?></dt>
                         <dd>
 													<a href="/gioi-thieu/">
 													<picture>
@@ -257,7 +257,7 @@
 												</dd>
                       </dl>
                       <dl>
-                        <dt>Hướng Dẫn Sử Dụng
+                        <dt><?php _e('User manual', 'storefront') ?>
 												<dd>
 													<a href="/cach-deo-lens/">
 													<picture>
@@ -294,7 +294,7 @@
               <?php endif ;?>
               <?php if(wp_is_mobile()) : ?>
                 <li  class="cart c-menu">
-                  <a class="" href="<?php echo apply_filters( 'wpml_permalink', home_url('/'). 'gio-hang', apply_filters( 'wpml_current_language', NULL ) );  ?>"><strong>
+                  <a class="" href="<?php echo apply_filters( 'wpml_permalink', home_url('/'). 'cart', apply_filters( 'wpml_current_language', NULL ) );  ?>"><strong>
                     <?php _e('Cart', 'storefront') ?></strong>
                     <?php
                       if (function_exists( 'WC' ) ) {

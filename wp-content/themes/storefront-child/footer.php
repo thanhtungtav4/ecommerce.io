@@ -130,7 +130,7 @@
       </div>
       <?php else : ?>
         <div class="l-container c-footer_top">
-          <div class="m-support"><strong>HỖ TRỢ</strong>
+          <div class="m-support"><strong><?php _e('SUPPORT', 'storefront') ?></strong>
             <div class="m-support_inner">
               <ul class="m-support_list">
                 <li><a href="/chinh-sach-bao-hanh/"><?php _e('Warranty Policy', 'storefront') ?></a></li>
@@ -141,7 +141,7 @@
                 <li><a href="#">Affiliate</a></li>
                 <li><a href="/hoi-dap/">Q&A</a></li>
                 <li><a href="/lien-he/"><?php _e('CONTACT US', 'storefront') ?></a></li>
-                <li><a href="https://caras.talent.vn/" rel="nofollow" target="_blank">CƠ HỘI VIỆC LÀM TẠI CARASE</a></li>
+                <li><a href="https://caras.talent.vn/" rel="nofollow" target="_blank"><?php _e('JOB OPPORTUNITIES IN', 'storefront') ?></a></li>
               </ul>
             </div>
           </div>
@@ -207,12 +207,12 @@
             </div>
           </div>
           <div class="m-info-company">
-            <div class="m-info-company_information"><strong>Công ty CPTM CALEN</strong>
+            <div class="m-info-company_information"><strong><?php _e('Trade Joint Stock Company', 'storefront') ?> CALEN</strong>
               <p class="txt">(Calen Trading Joint Stock Company)</p>
-              <p class="txt">619 Nguyễn Đình Chiểu, P2, P3, Tp.HCM</p>
-              <p class="txt">Mã số thuế: 0317006667</p>
+              <p class="txt"><?php _e('619 Nguyen Dinh Chieu, Ward 2, Ward 3, HCMC', 'storefront') ?></p>
+              <p class="txt"><?php _e('Tax code', 'storefront') ?>: 0317006667</p>
               <p class="txt">Hotline: 1900 636304</p>
-              <p class="txt">GIẤY PHÉP CÔNG BỐ & NHẬP KHẨU: 220002087/PCBB-HCM</p>
+              <p class="txt"><?php _e('PUBLICATION & IMPORT LICENSE', 'storefront') ?>: 220002087/PCBB-HCM</p>
             </div>
             <ul class="m-info-company_cert">
               <li>
