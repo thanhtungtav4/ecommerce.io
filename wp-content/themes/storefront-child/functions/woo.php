@@ -18,10 +18,6 @@ function refresh_cart_count( $fragments ){
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 add_action( 'woocommerce_after_cart_contents_nt', 'woocommerce_cross_sell_display' );
 //Move of Cross-Sells in page cart
-// add_action( 'woocommerce_after_cart_contents', 'showh2' );
-// function showh2(){
-//     print '<tr class="woocommerce_cart_actions xxx">xxxxxxxxxxxxxx</tr>';
-// }
 
 add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
 
@@ -135,7 +131,53 @@ function custom_before_cart_totals() {
     print '</h2>';
 }
 
-// add_action('woocommerce_before_cart', 'add_banner_woocommerce');
-// function add_banner_woocommerce(){
-//     require_once( get_stylesheet_directory() . '/module/list_promotion.php' );
-// }
+function news_post() {
+
+	if ( empty( $_COOKIE['woocommerce_recently_viewed'] ) ) {
+		return;
+	}
+	$viewed_products = wp_parse_id_list( (array) explode( '|', wp_unslash( $_COOKIE['woocommerce_recently_viewed'] ) ) );
+
+	$products = array_slice( $viewed_products, 0, 8 );
+
+	//woocommerce_product_loop_start();
+	echo '<div class="m-product">';
+	echo '<div class="m-product_top">';
+	echo "<h4>";
+	echo _e('R1ecently viewed products', 'storefront');
+	echo "</h4>";
+	echo '<div class="m-product__nav">';
+	echo  '<button class="m-item__prev">';
+	echo	"<svg width='46' height='46' viewBox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>";
+	echo	  "<circle cx='23' cy='23' r='22' stroke-width='2'></circle>";
+	echo	  "<path d='M28.835 14.8699L27.065 13.0999L17.165 22.9999L27.065 32.8999L28.835 31.1299L20.705 22.9999L28.835 14.8699H28.835Z'></path>";
+	echo	'</svg>';
+	echo  '</button>';
+	echo  '<button class="m-item__next">';
+	echo	"<svg width='46' height='46' viewBox='0 0 46 46' fill='none' xmlns='http://www.w3.org/2000/svg'>";
+	echo	  "<circle cx='23' cy='23' r='22' stroke-width='2'></circle>";
+	echo	  "<path d='M18.165 31.1301L19.935 32.9001L29.835 23.0001L19.935 13.1001L18.165 14.8701L26.295 23.0001L18.165 31.1301V31.1301Z' fill='#2B2929'></path>";
+	echo	'</svg>';
+	echo  '</button>';
+	echo '</div>';
+	echo '</div>';
+	echo '<ul>';
+	echo '<div class="m-product__inner w-100">';
+    echo '<ul class="m-item w-100">';
+	foreach ( $products as $product ) :
+
+			$post_object = get_post( $product );
+
+			setup_postdata( $GLOBALS['post'] =& $post_object );
+
+			wc_get_template_part( 'content', 'product-item' );
+
+	endforeach;
+	wp_reset_postdata();
+	echo '</ul>';
+	echo '</div>';
+
+}
+
+//add_action( 'woocommerce_after_cart', 'news_post', 2 );
+
