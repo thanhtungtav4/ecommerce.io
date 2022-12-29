@@ -483,7 +483,7 @@ get_header(); ?>
           <?php require( get_stylesheet_directory() . '/module/shopservice.php' ); ?>
           <div class="m-product">
             <div class="m-product_top">
-              <h4>TIN TỨC</h4>
+              <h4><?php _e('NEWS', 'storefront'); ?></h4>
               <div class="m-product__nav">
                 <button class="m-product__prev m-new__prev">
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">

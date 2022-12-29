@@ -318,3 +318,39 @@
       });
     </script>
     <?php endif; ?>
+    <?php if(is_cart() || is_page('gio-hang')) : ?>
+    <script>
+      $(document).ready(function(){
+        $('.m-new__prev').click(function(e){
+          $('.m-new__slick').slick('slickPrev');
+        } );
+        $('.m-new__next').click(function(e){
+          $('.m-new__slick').slick('slickNext');
+        } );
+        $('.m-new__slick').not('.slick-initialized').slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          dots: false,
+          arrows: false,
+          lazyLoad: 'progressive',
+          responsive: [
+             {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
+        });
+      });
+    </script>
+    <?php endif; ?>

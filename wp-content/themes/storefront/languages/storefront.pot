@@ -993,11 +993,11 @@ msgstr "GIỚI THIỆU CARAS.E"
 msgid "MEDICAL CONTACT LENSES"
 msgstr "KÍNH Y TẾ CHUYÊN DỤNG"
 
-msgid "CONTACT LENS ACCESSORIES"
-msgstr "PHỤ KIỆN KÍNH ÁP TRÒNG"
+msgid "Accessories "
+msgstr "Phụ kiện"
 
 msgid "Add to cart"
-msgstr "THÊM VÀO GIỎ HÀNG"
+msgstr "Thêm vào giỏ hàng"
 
 msgid "Register"
 msgstr "ĐĂNG KÝ"
@@ -1148,3 +1148,6 @@ msgstr "Nâu"
 
 msgid "Gray"
 msgstr "Xám"
+
+msgid "NEWS"
+msgstr "TIN TỨC"

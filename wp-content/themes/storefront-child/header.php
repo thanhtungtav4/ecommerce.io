@@ -154,7 +154,7 @@
                 </div>
               </li>
               <li class="c-menu c-menu_dropdown">
-                <a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/phu-kien-lens/'); ?>"><?php _e('CONTACT LENS ACCESSORIES', 'storefront') ?></a>
+                <a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/phu-kien-lens/'); ?>"><?php _e('Accessories', 'storefront') ?></a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <div class="l-container col-3">

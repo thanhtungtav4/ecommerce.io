@@ -1,0 +1,4 @@
+2022-12-29T06:13:32+00:00 CRITICAL Cannot redeclare dorzki_wc_track_product_views() (previously declared in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\recently.php:7) in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\recently.php on line 134
+
+2022-12-29T06:13:32+00:00 CRITICAL Cannot redeclare dorzki_wc_track_product_views() (previously declared in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\recently.php:7) in D:\xampp\htdocs\ecommerce\wp-content\themes\storefront-child\functions\recently.php on line 134
+
