@@ -80,9 +80,9 @@ get_header(); ?>
 get_footer();
 ?>
 <script>
-    var map = L.map('map').setView([10.766932, 106.679240], 14);
+    var map = L.map('map').setView([10.766932, 106.679240], 10);
     var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
+      maxZoom: 13,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
@@ -91,7 +91,7 @@ get_footer();
       var td = document.createElement("td");
       td.textContent = code;
       tr.appendChild(td);
-      tr.onclick = function(){map.flyTo(coords, 18);};
+      tr.onclick = function(){map.flyTo(coords, 10);};
       document.getElementById("t_points").appendChild(tr);
     }
     var buffers = [];
@@ -105,7 +105,7 @@ get_footer();
       var c = L.circle([lat,lng], {
         color: 'red',
         fillColor: '#f03',
-        fillOpacity: 0.5,
+        fillOpacity: 0.3,
         radius: 0
       }).addTo(map);
       buffers.push(c);
