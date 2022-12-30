@@ -1,1 +1,158 @@
-!function($){$(document).ready(function(){$(window).load(function(){var a={formatNoMatches:vncheckout_array.formatNoMatches},b=loading_shipping=!1;$("#billing_state").select2(a),$("#billing_city").select2(a),$("#billing_address_2").select2(a),$("body").on("click","#add_customer_to_register",function(){setTimeout(function(){$("body #billing_state, body #shipping_state").select2(),$("body #billing_city,body #billing_address_2").select2(),$("body #shipping_city,body #shipping_address_2").select2()},500)}),$("body").on("change","#billing_state",function(c){$("body #billing_city option").val("");var a=c.val;a||(a=$("body #billing_state option:selected").val()),a&&!b&&(b=!0,$.ajax({type:"post",dataType:"json",url:vncheckout_array.get_address,data:{action:"load_diagioihanhchinh",matp:a},context:this,beforeSend:function(){$("body #billing_city_field").addClass("devvn_loading"),$("body #billing_address_2_field").addClass("devvn_loading")},success:function(a){if(b=!1,$("body #billing_city,body #billing_address_2").html("").select2(),a.success){var c=a.data,d=new Option("","");$("body #billing_city").append(d),$.each(c,function(c,a){var b=new Option(a.name,a.maqh);$("body #billing_city").append(b)})}$("body #billing_city_field").removeClass("devvn_loading"),$("body #billing_address_2_field").removeClass("devvn_loading")}}))}),$("body").on("change","#billing_city",function(b){var a=b.val;a||(a=$("body #billing_city option:selected").val()),a&&$.ajax({type:"post",dataType:"json",url:vncheckout_array.get_address,data:{action:"load_diagioihanhchinh",maqh:a},context:this,beforeSend:function(){$("body #billing_address_2_field").addClass("devvn_loading")},success:function(a){if($("body #billing_address_2").html("").select2(),a.success){var b=a.data,c=new Option("","");$("body #billing_address_2").append(c),$.each(b,function(c,a){var b=new Option(a.name,a.xaid);$("body #billing_address_2").append(b)})}$("body #billing_address_2_field").removeClass("devvn_loading")}})}),$("#shipping_state").select2(a),$("#shipping_city").select2(a),$("#shipping_address_2").select2(a),$("body").on("change","#shipping_state",function(b){$("body #shipping_city option").val("");var a=b.val;a||(a=$("body #shipping_state option:selected").val()),a&&!loading_shipping&&(loading_shipping=!0,$.ajax({type:"post",dataType:"json",url:vncheckout_array.get_address,data:{action:"load_diagioihanhchinh",matp:a},context:this,beforeSend:function(){$("body #shipping_city_field").addClass("devvn_loading"),$("body #shipping_address_2_field").addClass("devvn_loading")},success:function(a){if(loading_shipping=!1,$("body #shipping_city,body #shipping_address_2").html("").select2(),a.success){var b=a.data,c=new Option("","");$("body #shipping_city").append(c),$.each(b,function(c,a){var b=new Option(a.name,a.maqh);$("body #shipping_city").append(b)})}$("body #shipping_city_field").removeClass("devvn_loading"),$("body #shipping_address_2_field").removeClass("devvn_loading")}}))}),$("body").on("change","#shipping_city",function(b){var a=b.val;a||(a=$("body #shipping_city option:selected").val()),a&&$.ajax({type:"post",dataType:"json",url:vncheckout_array.get_address,data:{action:"load_diagioihanhchinh",maqh:a},context:this,beforeSend:function(){$("body #shipping_address_2_field").addClass("devvn_loading")},success:function(a){if($("body #shipping_address_2").html("").select2(),a.success){var b=a.data,c=new Option("","");$("body #shipping_address_2").append(c),$.each(b,function(c,a){var b=new Option(a.name,a.xaid);$("body #shipping_address_2").append(b)})}$("body #shipping_address_2_field").removeClass("devvn_loading")}})})})})}(jQuery)
+(function($){
+	$(document).ready(function(){
+        $(window).load(function(){
+            var $defaultSetting = {
+                formatNoMatches: vncheckout_array.formatNoMatches,
+            };
+            var loading_billing = loading_shipping = false;
+            //billing
+
+            //User profile
+            $('#billing_state').select2($defaultSetting);
+            $('#billing_city').select2($defaultSetting);
+            $('#billing_address_2').select2($defaultSetting);
+
+            $('body').on('click', '#add_customer_to_register', function () {
+                setTimeout(function () {
+                    $('body #billing_state, body #shipping_state').select2();
+                    $('body #billing_city,body #billing_address_2').select2();
+                    $('body #shipping_city,body #shipping_address_2').select2();
+                }, 500)
+            });
+
+            $('body').on('change', '#billing_state', function(e){
+                $( "body #billing_city option" ).val('');
+                var matp = e.val;
+                if(!matp) matp = $( "body #billing_state option:selected" ).val();
+                if(matp && !loading_billing){
+                    loading_billing = true;
+                    $.ajax({
+                        type : "post",
+                        dataType : "json",
+                        url : vncheckout_array.get_address,
+                        data : {action: "load_diagioihanhchinh", matp : matp},
+                        context: this,
+                        beforeSend: function(){
+                            $('body #billing_city_field').addClass('devvn_loading');
+                            $('body #billing_address_2_field').addClass('devvn_loading');
+                        },
+                        success: function(response) {
+                            loading_billing = false;
+                            $("body #billing_city,body #billing_address_2").html('').select2();
+                            if(response.success) {
+                                var listQH = response.data;
+                                var newState = new Option('', '');
+                                $("body #billing_city").append(newState);
+                                $.each(listQH,function(index,value){
+                                    var newState = new Option(value.name, value.maqh);
+                                    $("body #billing_city").append(newState);
+                                });
+                            }
+                            $('body #billing_city_field').removeClass('devvn_loading');
+                            $('body #billing_address_2_field').removeClass('devvn_loading');
+                        }
+                    });
+                }
+            });
+            $('body').on('change', '#billing_city', function(e){
+                var maqh = e.val;
+                if(!maqh) maqh = $( "body #billing_city option:selected" ).val();
+                if(maqh) {
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: vncheckout_array.get_address,
+                        data: {action: "load_diagioihanhchinh", maqh: maqh},
+                        context: this,
+                        beforeSend: function(){
+                            $('body #billing_address_2_field').addClass('devvn_loading');
+                        },
+                        success: function (response) {
+                            $("body #billing_address_2").html('').select2();
+                            if (response.success) {
+                                var listQH = response.data;
+                                var newState = new Option('', '');
+                                $("body #billing_address_2").append(newState);
+                                $.each(listQH, function (index, value) {
+                                    var newState = new Option(value.name, value.xaid);
+                                    $("body #billing_address_2").append(newState);
+                                });
+                            }
+                            $('body #billing_address_2_field').removeClass('devvn_loading');
+                        }
+                    });
+                }
+            });
+            //shipping
+
+            //User profile
+            $('#shipping_state').select2($defaultSetting);
+            $('#shipping_city').select2($defaultSetting);
+            $('#shipping_address_2').select2($defaultSetting);
+
+            $('body').on('change', '#shipping_state', function(e){
+                $( "body #shipping_city option" ).val('');
+                var matp = e.val;
+                if(!matp) matp = $( "body #shipping_state option:selected" ).val();
+                if(matp && !loading_shipping){
+                    loading_shipping = true;
+                    $.ajax({
+                        type : "post",
+                        dataType : "json",
+                        url : vncheckout_array.get_address,
+                        data : {action: "load_diagioihanhchinh", matp : matp},
+                        context: this,
+                        beforeSend: function(){
+                            $('body #shipping_city_field').addClass('devvn_loading');
+                            $('body #shipping_address_2_field').addClass('devvn_loading');
+                        },
+                        success: function(response) {
+                            loading_shipping = false;
+                            $("body #shipping_city,body #shipping_address_2").html('').select2();
+                            if(response.success) {
+                                var listQH = response.data;
+                                var newState = new Option('', '');
+                                $("body #shipping_city").append(newState);
+                                $.each(listQH,function(index,value){
+                                    var newState = new Option(value.name, value.maqh);
+                                    $("body #shipping_city").append(newState);
+                                });
+                            }
+                            $('body #shipping_city_field').removeClass('devvn_loading');
+                            $('body #shipping_address_2_field').removeClass('devvn_loading');
+                        }
+                    });
+                }
+            });
+            $('body').on('change', '#shipping_city',function(e){
+                var maqh = e.val;
+                if(!maqh) maqh = $( "body #shipping_city option:selected" ).val();
+                if(maqh) {
+                    $.ajax({
+                        type: "post",
+                        dataType: "json",
+                        url: vncheckout_array.get_address,
+                        data: {action: "load_diagioihanhchinh", maqh: maqh},
+                        context: this,
+                        beforeSend: function(){
+                            $('body #shipping_address_2_field').addClass('devvn_loading');
+                        },
+                        success: function (response) {
+                            $("body #shipping_address_2").html('').select2();
+                            if (response.success) {
+                                var listQH = response.data;
+                                var newState = new Option('', '');
+                                $("body #shipping_address_2").append(newState);
+                                $.each(listQH, function (index, value) {
+                                    var newState = new Option(value.name, value.xaid);
+                                    $("body #shipping_address_2").append(newState);
+                                });
+                            }
+                            $('body #shipping_address_2_field').removeClass('devvn_loading');
+                        }
+                    });
+                }
+            });
+        });
+	});
+})(jQuery);

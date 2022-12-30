@@ -10609,4 +10609,10 @@ $xa_phuong_thitran = array(
     "40007"=>array("xaid"=>"40007","name"=>"Khu 8","maqh"=>"755","vt"=>"10287","ghn"=>"541305", "vnpost"=>"79430"),
     "40008"=>array("xaid"=>"40008","name"=>"Khu 9","maqh"=>"755","vt"=>"10287","ghn"=>"541305", "vnpost"=>"79430"),
     "40009"=>array("xaid"=>"40009","name"=>"Khu 10","maqh"=>"755","vt"=>"10287","ghn"=>"541305", "vnpost"=>"79430"),
+
+    //todo cập nhật thông tin ghn và vnpost
+    "50000"=>array("xaid"=>"50000","name"=>"Xã An Bình","maqh"=>"536","vt"=>"8327","ghn"=>"350201", "vnpost"=>"57142"),
+    "50001"=>array("xaid"=>"50001","name"=>"Xã An Hải","maqh"=>"536","vt"=>"8328","ghn"=>"350202", "vnpost"=>"57140"),
+    "50002"=>array("xaid"=>"50002","name"=>"Xã An Vĩnh","maqh"=>"536","vt"=>"8329","ghn"=>"350203", "vnpost"=>"57141"),
+    //"50003"=>array("xaid"=>"50003","name"=>"Lý sơn","maqh"=>"536","vt"=>"25697","ghn"=>"", "vnpost"=>""),
 );

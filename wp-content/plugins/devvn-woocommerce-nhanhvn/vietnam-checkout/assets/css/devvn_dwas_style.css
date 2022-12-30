@@ -174,9 +174,13 @@ form#devvn_ghtk_tracking button {
     display: block !important;
     opacity: 1 !important;
     width: 100% !important;
+    clip: auto !important;
+    height: auto !important;
+    clip-path: unset !important;
+    top: unset !important;
 }
-p.form-row-first {
-    clear: both;
+#billing_address_2_field>label.screen-reader-text, #shipping_address_2_field>label.screen-reader-text {
+    position: relative !important;
 }
 .get_address_byphone_wrap button.get_address_byphone {
     color: #0081bd;
@@ -263,5 +267,9 @@ div#get_address_content {
     margin-bottom: 5px;
 }
 .get_address_error .get_address_content_input {
+    display: none;
+}
+.woocommerce-column--billing-address p.woocommerce-customer-details--phone,
+.woocommerce-column--shipping-address p.woocommerce-customer-details--phone{
     display: none;
 }

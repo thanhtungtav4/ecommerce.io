@@ -3,24 +3,86 @@
 # https://wpml.org
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: WPML_EXPORT_devvn-vn-checkout\n"
-"POT-Creation-Date: 2021-09-24 17:53+0000\n"
-"PO-Revision-Date: 2021-09-24 18:19+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2022-12-23 12:48+0700\n"
 "Last-Translator: \n"
 "Language-Team: Tiếng Việt\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
-"Report-Msgid-Bugs-To: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.5.3; wp-5.8.1"
+"X-Generator: Poedit 3.2.2\n"
+"X-Loco-Version: 2.5.3; wp-5.8.1\n"
+
+# wpml-name: beedb99805cad1d1c89714b8bf232416
+#: $fields['billing_phone']['placeholder'] = _x('Type your phone number',
+#: 'placeholder', 'devvn-vn-checkout'); $fields['billing_email']['placeholder']
+#: email',
+msgctxt "placeholder"
+msgid "Type your email"
+msgstr "Nhập địa chỉ Email"
+
+# wpml-name: 612093d824cb6a833d7253dcb843221e
+msgctxt "placeholder"
+msgid "Type your phone number"
+msgstr "Nhập số điện thoại"
+
+# wpml-name: 9799b2a0d2201706283079d0f6d0715d
+msgid "Cập nhật dữ liệu địa chỉ"
+msgstr "Cập nhật dữ liệu địa chỉ"
+
+# wpml-name: be45c8a93c8e520864418566a25e5c6b
+msgid "Có làm tròn phí ship"
+msgstr ""
+
+# wpml-name: a51f0855f436b1cc7c894def9cdff816
+msgid "Làm tròn phí ship"
+msgstr ""
+
+# wpml-name: 5b01c1377b32588939ebd1cca87e26b9
+msgid "Trường email sẽ KHÔNG bắt buộc phải nhập nữa"
+msgstr ""
+
+# wpml-name: 5db26959d3003a9fea8790724b315b7c
+msgid "KHÔNG bắt buộc nhập Email"
+msgstr "KHÔNG bắt buộc nhập Email"
+
+# wpml-name: a263ff66de8c5bb03812344c67fbb208
+msgid "Hiển thị mục chọn cách xưng hô Anh/Chị"
+msgstr "Hiển thị mục chọn cách xưng hô Anh/Chị"
+
+# wpml-name: aecc53448e0c99c19fbec187ed4cc208
+msgid "Check vào để hiện trường postcode. Mặc định là ẩn"
+msgstr ""
+
+# wpml-name: d9fb2c9776d463db66e1cfd185accc76
+msgid "Show postcode"
+msgstr ""
+
+# wpml-name: e25e445df86062d48206b5c960f8a75e
+msgid "Show postcode for Viet Nam"
+msgstr ""
+
+# wpml-name: 205975674303a67af43f18ad370efc15
+msgid "Show country/Last name"
+msgstr ""
+
+# wpml-name: ce5cbbf4b33680e074bf4f2717b1b3c0
+msgid "Tổng đơn hàng nhỏ nhất được áp dụng miễn phí vận chuyển"
+msgstr ""
+
+# wpml-name: 9fb34cdb0b6eb1192ae75d6036026f9f
+msgid "Tổng đơn hàng"
+msgstr "Tổng đơn hàng"
+
+# wpml-name: 1f4a9953a70be11903a2452632e75aa4
+msgid "Freeship by payment method"
+msgstr "Freeship bởi hình thức thanh toán"
 
 # wpml-name: bcc254b55c4a1babdf1dcb82c207506b
-#: $fields['shipping']['shipping_phone'] = array( 'label' => __('Phone',
-#: 'devvn-vn-checkout'), 'placeholder' => _x('Phone', 'placeholder',
-#: 'devvn-vn-checkout'),
 msgctxt "placeholder"
 msgid "Phone"
 msgstr "Số điện thoại"
@@ -387,8 +449,8 @@ msgid "Tùy chọn miễn phí vận chuyển cho hình thức thanh toán"
 msgstr "Tùy chọn miễn phí vận chuyển cho hình thức thanh toán"
 
 # wpml-name: 1f4a9953a70be11903a2452632e75aa4
-msgid "Freeship by payment method"
-msgstr "Freeship bởi hình thức thanh toán"
+msgid "Freeship by payment methob"
+msgstr "Miễn phí vận chuyển bởi hình thức thanh toán"
 
 # wpml-name: 408c6a916155e3c80f4d8f70948998b0
 msgid ""

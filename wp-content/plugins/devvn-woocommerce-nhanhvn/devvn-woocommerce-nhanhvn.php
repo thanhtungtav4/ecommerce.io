@@ -1,7 +1,7 @@
 <?php
 /*
 * Plugin Name: DevVN - Woocommerce vs Nhanh.vn
-* Version: 1.0.2
+* Version: 1.0.7
 * Requires PHP: 7.2
 * Description: Tính phí vận chuyển, đăng đơn, đồng bộ tồn kho giữa Nhanh.vn vs Woocommerce
 * Author: Lê Văn Toản
@@ -10,13 +10,13 @@
 * Text Domain: devvn-woocommerce-nhanhvn
 * Domain Path: /languages
 * WC requires at least: 3.5.4
-* WC tested up to: 6.8.1
+* WC tested up to: 7.2.2
 */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 if ( !defined( 'DEVVN_NHANHVN_VERSION_NUM' ) )
-    define( 'DEVVN_NHANHVN_VERSION_NUM', '1.0.2' );
+    define( 'DEVVN_NHANHVN_VERSION_NUM', '1.0.7' );
 if ( !defined( 'DEVVN_NHANHVN_URL' ) )
     define( 'DEVVN_NHANHVN_URL', plugin_dir_url( __FILE__ ) );
 if ( !defined( 'DEVVN_NHANHVN_BASENAME' ) )
@@ -38,4 +38,25 @@ if(extension_loaded('ionCube Loader')) {
         printf( '<div class="%1$s">%2$s<p>%3$s</p>%4$s</div>', esc_attr( $class ), $title, $message, $btn );
     }
     add_action( 'admin_notices', 'devvn_nhanhvn_admin_notice__error' );
+}
+
+add_filter('pre_data_shipping_fee','nhanhvn_change_name_city');
+add_filter('pre_data_create_order','nhanhvn_change_name_city');
+function nhanhvn_change_name_city($data){
+    if(isset($data['customerCityName']) && $data['customerCityName']){
+        $data['customerCityName'] = nhanhvn_str_replace($data['customerCityName']);
+    }
+    if(isset($data['fromCityName']) && $data['fromCityName']){
+        $data['fromCityName'] = nhanhvn_str_replace($data['fromCityName']);
+    }
+    if(isset($data['toCityName']) && $data['toCityName']){
+        $data['toCityName'] = nhanhvn_str_replace($data['toCityName']);
+    }
+    return $data;
+}
+
+function nhanhvn_str_replace($str){
+    $str = str_replace('Đắk Nông','Đắc Nông', $str);
+    $str = str_replace('Đắk Lắk','Đắc Lắc', $str);
+    return $str;
 }
