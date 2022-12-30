@@ -170,7 +170,7 @@ function my_deregister_scripts_firebase() {
 	}
 }
 
-add_action( 'wp_enqueue_style', 'my_dequeue_style_firebase', 99 );
+add_action( 'init', 'my_dequeue_style_firebase', 99 );
  function my_dequeue_style_firebase() {
 	if(!is_page('register') || !is_page('dang-ky') || !is_page('tai-khoan') || !is_page('my-account')){
 		wp_dequeue_style( 'xoo-ml-style' );
