@@ -93,6 +93,9 @@ tfoot tr th{
 .form-row input, .form-row textarea, .form-row select {
   width: -webkit-fill-available;
 }
+.xoo-ml-regphin input.xoo-ml-phone-input {
+  width: -webkit-fill-available;
+}
 @media screen and (max-width: 768px) {
   .woocommerce-billing-fields__field-wrapper .form-row, #billing_city_field, #billing_address_2_field, .woocommerce-additional-fields{
     flex-direction: column;

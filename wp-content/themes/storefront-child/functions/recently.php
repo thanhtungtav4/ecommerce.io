@@ -94,7 +94,7 @@ function dorzki_wc_display_products_viewed() {
 }
 
 add_action( 'woocommerce_after_cart', 'dorzki_wc_display_products_viewed' );
-
+add_action( 'woocommerce_after_checkout_form', 'dorzki_wc_display_products_viewed' );
 
 function news_viewed() {
 	echo '<div class="m-product">';
@@ -147,3 +147,20 @@ function news_viewed() {
 	}
 
 add_action( 'woocommerce_after_cart', 'news_viewed' );
+add_action( 'woocommerce_after_checkout_form', 'news_viewed' );
+
+add_filter( 'woocommerce_add_to_cart_validation', 'items_allowed_add_to_cart', 10, 3 );
+
+function items_allowed_add_to_cart( $passed, $product_id, $quantity ) {
+
+    $cart_items_count = WC()->cart->get_cart_contents_count();
+    $total_count = $cart_items_count + $quantity;
+
+    if( $cart_items_count >= 10 || $total_count > 10 ){
+        // Set to false
+        $passed = false;
+        // Display a message
+         wc_add_notice( __( "You can't have more than 10 items in the basket", "woocommerce" ), "error" );
+    }
+    return $passed;
+}

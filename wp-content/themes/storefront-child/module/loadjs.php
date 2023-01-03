@@ -318,7 +318,7 @@
       });
     </script>
     <?php endif; ?>
-    <?php if(is_cart() || is_page('gio-hang')) : ?>
+    <?php if(is_cart() || is_page('gio-hang') || is_checkout() || is_page('thanh-toan')) : ?>
     <script>
       $(document).ready(function(){
         $('.m-new__prev').click(function(e){
