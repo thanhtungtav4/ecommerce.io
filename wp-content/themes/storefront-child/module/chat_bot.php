@@ -562,7 +562,7 @@
 			</div>
 			<div class="tab_inner">
 				<ul class="m-chat_product">
-				<?php 
+				<?php
 					$args = array(
 						'post_type' => 'product',
 						'post__in' => get_field('product_list_2', 'option'),
@@ -576,7 +576,7 @@
 					?>
 					<?php require( get_stylesheet_directory() . '/module/product_item_loop.php' ); ?>
 				<?php endwhile; ?>
-				<?php 
+				<?php
 				endif;
 				wp_reset_postdata();
 				?>
@@ -678,7 +678,7 @@
 			</div>
 			<div class="tab_inner">
 				<ul class="m-chat_product">
-				<?php 
+				<?php
 					$args = array(
 						'post_type' => 'product',
 						'post__in' => get_field('product_list_3', 'option'),
@@ -692,7 +692,7 @@
 					?>
 					<?php require( get_stylesheet_directory() . '/module/product_item_loop.php' ); ?>
 				<?php endwhile; ?>
-				<?php 
+				<?php
 				endif;
 				wp_reset_postdata();
 				?>
@@ -841,7 +841,7 @@
 			</div>
 			<div class="tab_inner">
 				<ul class="m-chat_product">
-				<?php 
+				<?php
 					$args = array(
 						'post_type' => 'product',
 						'post__in' => get_field('product_list_1', 'option'),
@@ -855,7 +855,7 @@
 					?>
 					<?php require( get_stylesheet_directory() . '/module/product_item_loop.php' ); ?>
 				<?php endwhile; ?>
-				<?php 
+				<?php
 				endif;
 				wp_reset_postdata();
 				?>
@@ -864,7 +864,7 @@
 			<div class="m-chat_bottom"><a class="btn-next" href="https://www.messenger.com/t/Carasyvn/" taget="_blank" >Tư vấn thêm</a></div>
 		</div>
 		<!-- -->
-		<?php 
+		<?php
 			$product_sreen = ['274','275','276','284','285','286','374','375','376','384','385','386'];
 			foreach($product_sreen as $key=> $sreen) :
 			$args = array(
@@ -893,7 +893,7 @@
 				</div>
 				<div class="tab_inner">
 				<ul class="m-chat_product">
-				<?php 
+				<?php
 					$args = array(
 						'post_type' => 'product',
 						'post__in' => get_field('product_list_1', 'option'),
@@ -907,7 +907,7 @@
 					?>
 					<?php require( get_stylesheet_directory() . '/module/product_item_loop.php' ); ?>
 				<?php endwhile; ?>
-				<?php 
+				<?php
 				endif;
 				wp_reset_postdata();
 				?>
@@ -915,10 +915,10 @@
 			</div>
 				<div class="m-chat_bottom"><a class="btn-next" href="https://www.messenger.com/t/Carasyvn/" taget="_blank" >Tư vấn thêm</a></div>
 			</div>
-		<?php 
+		<?php
 			endif;
 			wp_reset_postdata();
-			endforeach; 
+			endforeach;
 		?>
 		<!-- -->
 	</form>
