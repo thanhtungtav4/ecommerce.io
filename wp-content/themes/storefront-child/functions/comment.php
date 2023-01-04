@@ -19,5 +19,4 @@
       )
    ),
   ) );
-  var_dump($all_ids);
  }

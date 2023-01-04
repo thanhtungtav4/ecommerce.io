@@ -2815,14 +2815,15 @@ var YITH_WCAF_Shortcodes = /*#__PURE__*/function () {
   }, {
     key: "initCopyButtons",
     value: function initCopyButtons() {
-      var $copyButton = $('.copy-trigger', this.$container);
+      this.$container.find('.copy-trigger').each(function () {
+        var $trigger = $(this),
+            $target = $trigger.parent().find('.copy-target');
 
-      if (!$copyButton.length) {
-        return;
-      }
+        if (!$target.length) {
+          return;
+        }
 
-      new YITH_WCAF_Copy_Button($copyButton, function ($trigger) {
-        return $trigger.parent().find('.copy-target').first();
+        new YITH_WCAF_Copy_Button($trigger, $target);
       });
     }
   }, {

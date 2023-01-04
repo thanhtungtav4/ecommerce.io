@@ -71,7 +71,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
     <div class="m-product__content">
         <div class="m-product__content-top">
             <div class="inner"><a href="<?php echo get_permalink(); ?>">
-                <h3 class="strong"><?php the_title() ?></h3>
+                <h3 class="strong"><?php the_title(); ?></h3>
 							</a>
             <ul class="color">
                 <li><span class="is-brown"></span></li>

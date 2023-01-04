@@ -1,18 +1,17 @@
 # <!=Copyright (C) 2022 Automattic
 # This file is distributed under the GNU General Public License v3 or later.=!>
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Storefront 4.1.3\n"
+"Project-Id-Version: Storefront 4.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/storefront\n"
-"POT-Creation-Date: 2023-01-03 14:08+0700\n"
-"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2022-11-15 10:34:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: node-wp-i18n 1.2.7\n"
 
 #: 404.php:19
 msgid "Oops! That page can&rsquo;t be found."
@@ -26,7 +25,7 @@ msgstr ""
 
 #: 404.php:25 inc/woocommerce/storefront-woocommerce-template-functions.php:716
 msgid "Search"
-msgstr "Tìm Kiếm"
+msgstr ""
 
 #: 404.php:39
 msgid "Promoted Products"
@@ -74,10 +73,9 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#. translators: 1: URL
 #: content-none.php:23
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#. translators: 1: URL
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: content-none.php:29
@@ -104,8 +102,8 @@ msgstr ""
 msgid "Development blog"
 msgstr ""
 
-#. translators: 1: HTML, 2: HTML
 #: inc/admin/class-storefront-admin.php:104
+#. translators: 1: HTML, 2: HTML
 msgid "Setup complete %1$sYour Storefront adventure begins now 🚀%2$s "
 msgstr ""
 
@@ -126,8 +124,7 @@ msgid "Storefront Extensions Bundle"
 msgstr ""
 
 #: inc/admin/class-storefront-admin.php:124
-msgid ""
-"All the tools you'll need to define your style and customize Storefront."
+msgid "All the tools you'll need to define your style and customize Storefront."
 msgstr ""
 
 #: inc/admin/class-storefront-admin.php:128
@@ -151,8 +148,7 @@ msgid ""
 msgstr ""
 
 #: inc/admin/class-storefront-admin.php:145
-msgid ""
-"Each has been designed to serve a different industry - from fashion to food."
+msgid "Each has been designed to serve a different industry - from fashion to food."
 msgstr ""
 
 #: inc/admin/class-storefront-admin.php:149
@@ -163,8 +159,8 @@ msgstr ""
 msgid "Check 'em out"
 msgstr ""
 
-#. translators: %s: Automattic branding
 #: inc/admin/class-storefront-admin.php:162
+#. translators: %s: Automattic branding
 msgid "An %s project"
 msgstr ""
 
@@ -187,9 +183,9 @@ msgstr ""
 msgid "Learn more"
 msgstr ""
 
+#: inc/admin/class-storefront-plugin-install.php:115
 #. translators: conjunction of two alternative options user can choose (in
 #. missing plugin admin notice). Example: "Activate WooCommerce or learn more"
-#: inc/admin/class-storefront-plugin-install.php:115
 msgid "or"
 msgstr ""
 
@@ -232,160 +228,160 @@ msgstr ""
 msgid "Huge"
 msgstr ""
 
-#: inc/class-storefront.php:247
+#: inc/class-storefront.php:259
 msgid "Sidebar"
 msgstr ""
 
-#: inc/class-storefront.php:253
+#: inc/class-storefront.php:265
 msgid "Below Header"
 msgstr ""
 
-#: inc/class-storefront.php:255
+#: inc/class-storefront.php:267
 msgid ""
 "Widgets added to this region will appear beneath the header and above the "
 "main content."
 msgstr ""
 
+#: inc/class-storefront.php:280
 #. translators: 1: column number
-#: inc/class-storefront.php:268
 msgid "Footer Column %1$d"
 msgstr ""
 
+#: inc/class-storefront.php:283
 #. translators: 1: column number
-#: inc/class-storefront.php:271
 msgid "Widgets added here will appear in column %1$d of the footer."
 msgstr ""
 
+#: inc/class-storefront.php:286
 #. translators: 1: row number, 2: column number
-#: inc/class-storefront.php:274
 msgid "Footer Row %1$d - Column %2$d"
 msgstr ""
 
+#: inc/class-storefront.php:289
 #. translators: 1: column number, 2: row number
-#: inc/class-storefront.php:277
 msgid "Widgets added here will appear in column %1$d of footer row %2$d."
 msgstr ""
 
-#: inc/class-storefront.php:349
+#: inc/class-storefront.php:361
 msgid "Expand child menu"
 msgstr ""
 
-#: inc/class-storefront.php:350
+#: inc/class-storefront.php:362
 msgid "Collapse child menu"
 msgstr ""
 
-#: inc/class-storefront.php:484
+#: inc/class-storefront.php:496
 msgid "Post Navigation"
 msgstr ""
 
-#. translators: 1: Storefront, 2: start <a> tag, 3: Storefront, 4: end <a> tag
 #: inc/customizer/class-storefront-customizer-control-more.php:29
+#. translators: 1: Storefront, 2: start <a> tag, 3: Storefront, 4: end <a> tag
 msgid ""
-"There's a range of %1$s extensions available to put additional power in your "
-"hands. Check out the %2$s%3$s%4$s page in your dashboard for more "
+"There's a range of %1$s extensions available to put additional power in "
+"your hands. Check out the %2$s%3$s%4$s page in your dashboard for more "
 "information."
 msgstr ""
 
-#. translators: %s: Storefront
 #: inc/customizer/class-storefront-customizer-control-more.php:36
+#. translators: %s: Storefront
 msgid "Enjoying %s?"
 msgstr ""
 
-#. translators: 1: start <a> tag, 2: end <a> tag
 #: inc/customizer/class-storefront-customizer-control-more.php:43
+#. translators: 1: start <a> tag, 2: end <a> tag
 msgid ""
 "Why not leave us a review on %1$sWordPress.org%2$s?  We'd really appreciate "
 "it!"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:123
+#: inc/customizer/class-storefront-customizer.php:130
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:127
+#: inc/customizer/class-storefront-customizer.php:134
 msgid "Header"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:176
+#: inc/customizer/class-storefront-customizer.php:190
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:197
-#: inc/customizer/class-storefront-customizer.php:438
+#: inc/customizer/class-storefront-customizer.php:218
+#: inc/customizer/class-storefront-customizer.php:522
 msgid "Heading color"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:221
-#: inc/customizer/class-storefront-customizer.php:354
-#: inc/customizer/class-storefront-customizer.php:462
-#: inc/customizer/class-storefront-customizer.php:546
+#: inc/customizer/class-storefront-customizer.php:249
+#: inc/customizer/class-storefront-customizer.php:417
+#: inc/customizer/class-storefront-customizer.php:553
+#: inc/customizer/class-storefront-customizer.php:658
 msgid "Text color"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:245
+#: inc/customizer/class-storefront-customizer.php:280
 msgid "Link / accent color"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:269
+#: inc/customizer/class-storefront-customizer.php:311
 msgid "Hero heading color"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:293
+#: inc/customizer/class-storefront-customizer.php:342
 msgid "Hero text color"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:308
+#: inc/customizer/class-storefront-customizer.php:357
 msgid "Header background image"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:330
-#: inc/customizer/class-storefront-customizer.php:414
-#: inc/customizer/class-storefront-customizer.php:522
+#: inc/customizer/class-storefront-customizer.php:386
+#: inc/customizer/class-storefront-customizer.php:491
+#: inc/customizer/class-storefront-customizer.php:627
 msgid "Background color"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:378
-#: inc/customizer/class-storefront-customizer.php:486
+#: inc/customizer/class-storefront-customizer.php:448
+#: inc/customizer/class-storefront-customizer.php:584
 msgid "Link color"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:392
+#: inc/customizer/class-storefront-customizer.php:462
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:394
+#: inc/customizer/class-storefront-customizer.php:464
 msgid "Customize the look & feel of your website footer."
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:500
+#: inc/customizer/class-storefront-customizer.php:598
 msgid "Buttons"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:502
+#: inc/customizer/class-storefront-customizer.php:600
 msgid "Customize the look & feel of your website buttons."
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:570
+#: inc/customizer/class-storefront-customizer.php:689
 msgid "Alternate button background color"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:594
+#: inc/customizer/class-storefront-customizer.php:720
 msgid "Alternate button text color"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:608
+#: inc/customizer/class-storefront-customizer.php:734
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:628
+#: inc/customizer/class-storefront-customizer.php:761
 msgid "General Layout"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:645
+#: inc/customizer/class-storefront-customizer.php:782
 msgid "More"
 msgstr ""
 
-#: inc/customizer/class-storefront-customizer.php:663
+#: inc/customizer/class-storefront-customizer.php:800
 msgid "Looking for more options?"
 msgstr ""
 
@@ -410,8 +406,7 @@ msgid "Thanks for installing Storefront, you rock! 🤘"
 msgstr ""
 
 #: inc/nux/class-storefront-nux-admin.php:129
-msgid ""
-"To enable eCommerce features you need to install the WooCommerce plugin."
+msgid "To enable eCommerce features you need to install the WooCommerce plugin."
 msgstr ""
 
 #: inc/nux/class-storefront-nux-admin.php:130
@@ -433,8 +428,8 @@ msgstr ""
 #: inc/nux/class-storefront-nux-admin.php:138
 msgid ""
 "Before you add your first product let's design your store. We'll add some "
-"example products for you. When you're ready let's get started by adding your "
-"logo."
+"example products for you. When you're ready let's get started by adding "
+"your logo."
 msgstr ""
 
 #: inc/nux/class-storefront-nux-admin.php:140
@@ -475,8 +470,8 @@ msgstr ""
 msgid "Welcome to the Customizer"
 msgstr ""
 
-#. translators: %s: 'End Of Line' symbol
 #: inc/nux/class-storefront-nux-guided-tour.php:111
+#. translators: %s: 'End Of Line' symbol
 msgid ""
 "Here you can control the overall look and feel of your store.%sTo get "
 "started, let's add your logo"
@@ -497,8 +492,7 @@ msgid "Customize your navigation menus"
 msgstr ""
 
 #: inc/nux/class-storefront-nux-guided-tour.php:126
-msgid ""
-"Organize your menus by adding Pages, Categories, Tags, and Custom Links."
+msgid "Organize your menus by adding Pages, Categories, Tags, and Custom Links."
 msgstr ""
 
 #: inc/nux/class-storefront-nux-guided-tour.php:131
@@ -508,8 +502,8 @@ msgstr ""
 #: inc/nux/class-storefront-nux-guided-tour.php:132
 msgid ""
 "In the typography panel you can specify an accent color which will be "
-"applied to things like links and star ratings. We recommend using your brand "
-"color for this setting."
+"applied to things like links and star ratings. We recommend using your "
+"brand color for this setting."
 msgstr ""
 
 #: inc/nux/class-storefront-nux-guided-tour.php:137
@@ -518,16 +512,16 @@ msgstr ""
 
 #: inc/nux/class-storefront-nux-guided-tour.php:138
 msgid ""
-"Choose colors for your button backgrounds and text. Once again, brand colors "
-"are good choices here."
+"Choose colors for your button backgrounds and text. Once again, brand "
+"colors are good choices here."
 msgstr ""
 
+#: inc/nux/class-storefront-nux-guided-tour.php:145
 #. translators: 1: open <strong> tag, 2: close <strong> tag, 3: 'End Of Line'
 #. symbol
-#: inc/nux/class-storefront-nux-guided-tour.php:145
 msgid ""
-"All set! Remember to %1$ssave & publish%2$s your changes when you're done."
-"%3$sYou can return to your dashboard by clicking the X in the top left "
+"All set! Remember to %1$ssave & publish%2$s your changes when you're "
+"done.%3$sYou can return to your dashboard by clicking the X in the top left "
 "corner."
 msgstr ""
 
@@ -559,110 +553,114 @@ msgid ""
 "phone number. You might also try a plugin to add a contact form."
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:703
-#: inc/nux/class-storefront-nux-starter-content.php:706
-#: inc/nux/class-storefront-nux-starter-content.php:709
-msgid "A short category description"
+#: inc/nux/class-storefront-nux-starter-content.php:704
+msgid "Accessories"
 msgstr ""
 
 #: inc/nux/class-storefront-nux-starter-content.php:705
+#: inc/nux/class-storefront-nux-starter-content.php:708
+#: inc/nux/class-storefront-nux-starter-content.php:711
+msgid "A short category description"
+msgstr ""
+
+#: inc/nux/class-storefront-nux-starter-content.php:707
 msgid "Hoodies"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:708
+#: inc/nux/class-storefront-nux-starter-content.php:710
 msgid "Tshirts"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:714
+#: inc/nux/class-storefront-nux-starter-content.php:716
 msgid "Beanie"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:736
+#: inc/nux/class-storefront-nux-starter-content.php:738
 msgid "Belt"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:758
+#: inc/nux/class-storefront-nux-starter-content.php:760
 msgid "Cap"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:780
+#: inc/nux/class-storefront-nux-starter-content.php:782
 msgid "Sunglasses"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:801
+#: inc/nux/class-storefront-nux-starter-content.php:803
 msgid "Hoodie with Logo"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:822
+#: inc/nux/class-storefront-nux-starter-content.php:824
 msgid "Hoodie with Pocket"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:844
+#: inc/nux/class-storefront-nux-starter-content.php:846
 msgid "Hoodie with Zipper"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:865
+#: inc/nux/class-storefront-nux-starter-content.php:867
 msgid "Hoodie"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:887
+#: inc/nux/class-storefront-nux-starter-content.php:889
 msgid "Long Sleeve Tee"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:908
+#: inc/nux/class-storefront-nux-starter-content.php:910
 msgid "Polo"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:929
+#: inc/nux/class-storefront-nux-starter-content.php:931
 msgid "Tshirt"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:950
+#: inc/nux/class-storefront-nux-starter-content.php:952
 msgid "Vneck Tshirt"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:1019
+#: inc/nux/class-storefront-nux-starter-content.php:1021
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:276
 msgid "Shop by Category"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:1027
+#: inc/nux/class-storefront-nux-starter-content.php:1029
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:331
 msgid "New In"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:1035
+#: inc/nux/class-storefront-nux-starter-content.php:1037
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:443
 msgid "Fan Favorites"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:1041
+#: inc/nux/class-storefront-nux-starter-content.php:1043
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:499
 msgid "On Sale"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:1047
+#: inc/nux/class-storefront-nux-starter-content.php:1049
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:555
 msgid "Best Sellers"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:1072
+#: inc/nux/class-storefront-nux-starter-content.php:1074
 msgid "Welcome"
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:1076
+#: inc/nux/class-storefront-nux-starter-content.php:1078
 msgid ""
 "This is your homepage which is what most visitors will see when they first "
 "visit your shop."
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:1080
+#: inc/nux/class-storefront-nux-starter-content.php:1082
 msgid ""
 "You can change this text by editing the \"Welcome\" page via the \"Pages\" "
 "menu in your dashboard."
 msgstr ""
 
-#: inc/nux/class-storefront-nux-starter-content.php:1106
+#: inc/nux/class-storefront-nux-starter-content.php:1108
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:387
 msgid "We Recommend"
 msgstr ""
@@ -720,13 +718,13 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#. translators: %s: post title
 #: inc/storefront-template-functions.php:418
+#. translators: %s: post title
 msgid "Continue reading %s"
 msgstr ""
 
-#. translators: %s: post date
 #: inc/storefront-template-functions.php:468
+#. translators: %s: post date
 msgid "Posted on %s"
 msgstr ""
 
@@ -746,14 +744,14 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#. translators: %s: Name of current post. Only visible to screen readers
 #: inc/storefront-template-functions.php:523
+#. translators: %s: Name of current post. Only visible to screen readers
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
 #: inc/storefront-template-functions.php:546
 #: inc/storefront-template-functions.php:549
+#. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
@@ -787,9 +785,9 @@ msgstr ""
 
 #: inc/woocommerce/class-storefront-woocommerce-customizer.php:88
 msgid ""
-"A small content bar at the top of the browser window which includes relevant "
-"product information and an add-to-cart button. It slides into view once the "
-"standard add-to-cart button has scrolled out of view."
+"A small content bar at the top of the browser window which includes "
+"relevant product information and an add-to-cart button. It slides into view "
+"once the standard add-to-cart button has scrolled out of view."
 msgstr ""
 
 #: inc/woocommerce/class-storefront-woocommerce-customizer.php:98
@@ -810,8 +808,8 @@ msgstr ""
 msgid "View your shopping cart"
 msgstr ""
 
-#. translators: %d: number of items in cart
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:93
+#. translators: %d: number of items in cart
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
@@ -844,30 +842,30 @@ msgstr ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:732
 msgid "Cart"
-msgstr "Giỏ hàng"
+msgstr ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:746
 msgid "My Account"
 msgstr ""
 
-#: inc/woocommerce/storefront-woocommerce-template-functions.php:774
+#: inc/woocommerce/storefront-woocommerce-template-functions.php:776
 msgid "More products"
 msgstr ""
 
-#: inc/woocommerce/storefront-woocommerce-template-functions.php:838
+#: inc/woocommerce/storefront-woocommerce-template-functions.php:840
 msgid "You're viewing:"
 msgstr ""
 
-#: inc/woocommerce/storefront-woocommerce-template-functions.php:874
+#: inc/woocommerce/storefront-woocommerce-template-functions.php:876
 msgid "Shop by Brand"
 msgstr ""
 
-#: inc/woocommerce/storefront-woocommerce-template-functions.php:891
+#: inc/woocommerce/storefront-woocommerce-template-functions.php:893
 msgid "Product Brands"
 msgstr ""
 
-#. translators: %s: search term
 #: search.php:19
+#. translators: %s: search term
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -885,9 +883,10 @@ msgid ""
 "and developed by WooCommerce Core developers, it features a bespoke "
 "integration with WooCommerce itself plus many of the most popular customer "
 "facing WooCommerce extensions. There are several layout & color options to "
-"personalise your shop, multiple widget regions, a responsive design and much "
-"more. Developers will love its lean and extensible codebase making it a joy "
-"to customize and extend. Looking for a WooCommerce theme? Look no further!"
+"personalise your shop, multiple widget regions, a responsive design and "
+"much more. Developers will love its lean and extensible codebase making it "
+"a joy to customize and extend. Looking for a WooCommerce theme? Look no "
+"further!"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -902,8 +901,8 @@ msgstr ""
 msgid "Full width"
 msgstr ""
 
-#. translators: 1: number of comments, 2: post title
 #: comments.php:31
+#. translators: 1: number of comments, 2: post title
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
@@ -919,307 +918,3 @@ msgstr ""
 msgctxt "Previous post"
 msgid "Previous"
 msgstr ""
-
-msgid "CUSTOMER SUPPORT"
-msgstr "HỖ TRỢ KHÁCH HÀNG"
-
-msgid "SUPPORT"
-msgstr "HỖ TRỢ"
-
-msgid "CARAS AFFILIATE PROGRAM"
-msgstr "CHƯƠNG TRÌNH CARAS AFFILIATE"
-
-msgid "CARAS LENS CO., LTD"
-msgstr "CÔNG TY TNHH CARAS LENS"
-
-msgid "PAYMENT ACCEPT"
-msgstr "CHẤP NHẬN THANH TOÁN"
-
-msgid "MEDICAL CERTIFICATES"
-msgstr "CHỨNG NHẬN Y KHOA"
-
-msgid "Tracking order"
-msgstr "Tra cứu đơn hàng"
-
-msgid "Create an account"
-msgstr "Đăng ký"
-
-msgid "Login"
-msgstr "Đăng Nhập"
-
-msgid "Change Language"
-msgstr "Thay Đổi Ngôn Ngữ"
-
-msgid "FOLLOW AT"
-msgstr "THEO DÕI TẠI"
-
-msgid "Business registration certificate:"
-msgstr "GĐKKD:"
-
-msgid ""
-"0314882698 issued by the Department of Planning and Investment of Ho Chi "
-"Minh City. HCM on Feb 07th, 2018."
-msgstr "0314882698 do Sở Kế hoạch và Đầu tư TP.HCM cấp ngày 07/02/2018."
-
-msgid "Import license No. 17830NK/BYT-TB-CT granted by the Ministry of Health"
-msgstr "Giấy phép nhập khẩu chính ngạch số 17830NK/BYT-TB-CT của Bộ Y tế"
-
-msgid "Issue of Contact Lens/Medical Equipment Import Permit:"
-msgstr "Giấy phép nhập khẩu Kính áp tròng/ Trang thiết bị y tế:"
-
-msgid "Warranty Policy"
-msgstr "Chính sách bảo hành"
-
-msgid "Return Policy"
-msgstr "Chính sách đổi trả"
-
-msgid "Delivery policy"
-msgstr "Chính sách giao nhận"
-
-msgid "Delivery"
-msgstr "Giao hàng"
-
-msgid "Completed"
-msgstr "Hoàn Tất"
-
-msgid "Shopping guide"
-msgstr "Hướng dẫn mua hàng"
-
-msgid "FAQs"
-msgstr "Hỏi Đáp"
-
-msgid "No products in the cart."
-msgstr "Không có sản phẩm nào trong giỏ hàng."
-
-msgid "Home"
-msgstr "Trang chủ"
-
-msgid ""
-"Freeship within the city for orders <strong>from 250,000 VND</strong>– "
-"Province <strong>from 400.000 VND</strong>"
-msgstr ""
-"Freeship nội thành cho đơn <strong>từ 250.000đ</strong>– Tỉnh <strong>từ "
-"400.000đ</strong>"
-
-msgid "Vision test and consultation <strong>free </strong>(book in advance)"
-msgstr "Khám thị lực và tư vấn <strong>miễn phí </strong>(đặt lịch trước)"
-
-msgid ""
-"Pay <strong>swipe the card on the spot </strong>(applied within Hanoi and "
-"HCMC)"
-msgstr ""
-"Thanh toán <strong>quẹt thẻ tận nơi </strong>(áp dụng nội thành HN, TP.HCM)"
-
-msgid "Protection mode <strong>gold for </strong>case of tear, scratch"
-msgstr ""
-"Chế độ bảo <strong>hành vàng cho </strong>trường hợp rách, xước, đồ cộm"
-
-msgid "Proceed to checkout"
-msgstr "Đặt hàng"
-
-msgid "You may be interested in&hellip;"
-msgstr "Bạn đã sở hữu nước nhỏ mắt chuyên dụng hay ngâm lens chưa?"
-
-msgid "Subtotal"
-msgstr "Tạm tính"
-
-msgid "Total"
-msgstr "Thành tiền"
-
-msgid "Recently viewed products"
-msgstr "Sản phẩm đã xem gần đây"
-
-msgid "Apply"
-msgstr "NHẬP"
-
-msgid "Coupon code"
-msgstr "Mã khuyến mãi"
-
-msgid "Update cart"
-msgstr "Cập nhật giỏ hàng"
-
-msgid "Total amount"
-msgstr "TỔNG TIỀN"
-
-msgid "TOTAL CASH"
-msgstr "Thành tiền"
-
-msgid "Prices include VAT"
-msgstr "Giá đã bao gồm VAT"
-
-msgid "BEST SELLER"
-msgstr "BEST SELLER - BÁN CHẠY NHẤT"
-
-msgid "SCHOOL-TO-WORK CONTACT LENSES"
-msgstr "TỰ NHIÊN - ĐI HỌC ĐI LÀM"
-
-msgid "LIGHT COLOR - HANG OUT, TAKE A PHOTO"
-msgstr "SÁNG MÀU - ĐI CHƠI, CHỤP ẢNH"
-
-msgid "FOR MEN"
-msgstr "DÀNH CHO NAM GIỚI"
-
-msgid "ABOUT CARAS LENS"
-msgstr "GIỚI THIỆU CARAS.E"
-
-msgid "MEDICAL CONTACT LENSES"
-msgstr "KÍNH Y TẾ CHUYÊN DỤNG"
-
-msgid "Accessories"
-msgstr "Phụ kiện"
-
-msgid "Add to cart"
-msgstr "Thêm vào giỏ hàng"
-
-msgid "Register"
-msgstr "ĐĂNG KÝ"
-
-msgid "Remember me"
-msgstr "Ghi nhớ tài khoản"
-
-msgid "Lost your password?"
-msgstr "Quên mật khẩu?"
-
-msgid "Logout"
-msgstr "Đăng xuất"
-
-msgid "Already have an account?"
-msgstr "Đã có tài khoản?"
-
-msgid "Contact lens' patterns"
-msgstr "Màu vân kính áp tròng"
-
-msgid "PRODUCT INFORMATION"
-msgstr "THÔNG TIN SẢN PHẨM"
-
-msgid "Power"
-msgstr "Chọn độ cận"
-
-msgid "PARAMETER"
-msgstr "THÔNG SỐ"
-
-msgid "INSURANCE"
-msgstr "BẢO HÀNH"
-
-msgid "REVIEW"
-msgstr "Đánh giá"
-
-msgid "Left Eye"
-msgstr "Mắt trái"
-
-msgid "Right Eye"
-msgstr "Mắt phải"
-
-#, fuzzy
-msgid "Billing details"
-msgstr ""
-"#-#-#-#-#  catalog.pot (Storefront 4.1.3)  #-#-#-#-#\n"
-"Chi tiết Thanh toán\n"
-"#-#-#-#-#  catalog.pot (Storefront 4.1.3)  #-#-#-#-#\n"
-"Chi tiết thanh toán"
-
-msgid "Billing &amp; Shipping"
-msgstr "Thanh toán & Vận chuyển"
-
-msgid "Additional information"
-msgstr "Thông tin bổ sung"
-
-msgid "Order notes"
-msgstr "Ghi chú đơn hàng"
-
-msgid "Your order"
-msgstr "Đơn đặt hàng của bạn"
-
-msgid "Notes about your order, e.g. special notes for delivery."
-msgstr ""
-"Ghi chú về đơn đặt hàng của bạn, ví dụ như ghi chú đặc biệt để giao hàng."
-
-msgid "Product"
-msgstr "Sản phẩm"
-
-msgid "Price"
-msgstr "Giá"
-
-msgid "Related products"
-msgstr "SẢN PHẨM TƯƠNG TỰ"
-
-msgid "Buy together products"
-msgstr "SẢN PHẨM THƯỜNG ĐƯỢC MUA KÈM"
-
-msgid "SPECIALIZED MEDICAL CONTACT LENSES"
-msgstr "KÍNH ÁP TRÒNG Y TẾ"
-
-msgid "Service"
-msgstr "Dịch Vụ"
-
-msgid "Free eye test"
-msgstr "Đo mắt miễn phí"
-
-msgid "Online consultation"
-msgstr "Tư vấn online"
-
-msgid "Information"
-msgstr "Thông Tin"
-
-msgid "About CARAS"
-msgstr "Giới thiệu CARAS"
-
-msgid "User manual"
-msgstr "Hướng Dẫn Sử Dụng"
-
-msgid "Lens"
-msgstr "Kính Áp Tròng"
-
-msgid "JOB OPPORTUNITIES IN CARASE"
-msgstr "CƠ HỘI VIỆC LÀM TẠI CARASE"
-
-msgid "619 Nguyen Dinh Chieu, Ward 2, Ward 3, HCMC"
-msgstr "619 Nguyễn Đình Chiểu, P2, P3, Tp.HCM"
-
-msgid "GIẤY PHÉP CÔNG BỐ & NHẬP KHẨU"
-msgstr "PUBLICATION & IMPORT LICENSE"
-
-msgid "Mã số thuế"
-msgstr "Tax code"
-
-msgid "Công ty CPTM"
-msgstr "Trade Joint Stock Company"
-
-msgid "Lens is light"
-msgstr "Lens sáng nhẹ"
-
-msgid "Lens west morning"
-msgstr "Lens sáng tây"
-
-msgid "Myopia contact lenses"
-msgstr "Lens cận"
-
-msgid "Astigmatism contact lenses"
-msgstr "Lens Loạn"
-
-msgid "Eyepiece"
-msgstr "Lens viễn"
-
-msgid "Myopia, hyperopia lens"
-msgstr "Lens cận loạn"
-
-msgid "month"
-msgstr "tháng"
-
-msgid "day"
-msgstr "ngày"
-
-msgid "Spontaneous"
-msgstr "Tự nhiên"
-
-msgid "Light stretch"
-msgstr "Giãn nhẹ"
-
-msgid "Brown"
-msgstr "Nâu"
-
-msgid "Gray"
-msgstr "Xám"
-
-msgid "NEWS"
-msgstr "TIN TỨC"

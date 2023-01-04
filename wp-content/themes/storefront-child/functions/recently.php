@@ -149,18 +149,18 @@ function news_viewed() {
 add_action( 'woocommerce_after_cart', 'news_viewed' );
 add_action( 'woocommerce_after_checkout_form', 'news_viewed' );
 
-add_filter( 'woocommerce_add_to_cart_validation', 'items_allowed_add_to_cart', 10, 3 );
+add_filter ( 'wc_add_to_cart_message', 'wc_add_to_cart_message_filter', 10, 2 );
+function wc_add_to_cart_message_filter($message, $product_id = null) {
+$titles[] = get_the_title( $product_id );
 
-function items_allowed_add_to_cart( $passed, $product_id, $quantity ) {
+$titles = array_filter( $titles );
+$added_text = sprintf( _n( '%s has been added to yxxxxour cart.', '%s have been added to your cart.', sizeof( $titles ), 'woocommerce' ), wc_format_list_of_items( $titles ) );
 
-    $cart_items_count = WC()->cart->get_cart_contents_count();
-    $total_count = $cart_items_count + $quantity;
+$message = sprintf( '%s <a href="%s" class="button">%s</a>&nbsp;<a href="%s" class="button">%s</a>',
+                esc_html( $added_text ),
+                esc_url( wc_get_page_permalink( 'checkout' ) ),
+                esc_html__( 'Checkout', 'woocommerce' ),
+                esc_url( wc_get_page_permalink( 'cart' ) ),
+                esc_html__( 'View Cart', 'woocommerce' ));
 
-    if( $cart_items_count >= 10 || $total_count > 10 ){
-        // Set to false
-        $passed = false;
-        // Display a message
-         wc_add_notice( __( "You can't have more than 10 items in the basket", "woocommerce" ), "error" );
-    }
-    return $passed;
-}
+return $message;}

@@ -107,8 +107,6 @@
                 
                 $this->delete_last_changed();
                 $this->clear_cache_by_group();
-                // Clear any cached data that has been removed.
-                wp_cache_flush();
             }
             
             // Clear Attributes Cache
@@ -197,7 +195,7 @@
             }
             
             public function clear_cache_by_group() {
-                if ( function_exists( 'wp_cache_flush_group' ) ) {
+                if ( function_exists( 'wp_cache_flush_group' ) && method_exists( 'WP_Object_Cache', 'flush_group' ) ) {
                     if ( wp_cache_supports( 'flush_group' ) ) {
                         wp_cache_flush_group( 'woo_variation_swatches' );
                     }
