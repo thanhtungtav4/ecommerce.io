@@ -1959,6 +1959,8 @@ class WoofiltersWpf extends ModuleWpf {
 	public function getCurrencyPrice( $raw_price, $dec = false ) {
 		if ( function_exists( 'alg_wc_currency_switcher_plugin' ) ) {
 			$price = alg_wc_currency_switcher_plugin()->core->change_price_by_currency( $raw_price );
+		} else if ( function_exists( 'wmc_get_price' ) ) {
+			$price = wmc_get_price( $raw_price );
 		} else {
 
 			$price = apply_filters( 'raw_woocommerce_price', $raw_price );
