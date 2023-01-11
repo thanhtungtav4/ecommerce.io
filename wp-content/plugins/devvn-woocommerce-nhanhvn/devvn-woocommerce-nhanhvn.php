@@ -1,7 +1,7 @@
 <?php
 /*
 * Plugin Name: DevVN - Woocommerce vs Nhanh.vn
-* Version: 1.0.7
+* Version: 1.0.8
 * Requires PHP: 7.2
 * Description: Tính phí vận chuyển, đăng đơn, đồng bộ tồn kho giữa Nhanh.vn vs Woocommerce
 * Author: Lê Văn Toản
@@ -16,7 +16,7 @@
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 if ( !defined( 'DEVVN_NHANHVN_VERSION_NUM' ) )
-    define( 'DEVVN_NHANHVN_VERSION_NUM', '1.0.7' );
+    define( 'DEVVN_NHANHVN_VERSION_NUM', '1.0.8' );
 if ( !defined( 'DEVVN_NHANHVN_URL' ) )
     define( 'DEVVN_NHANHVN_URL', plugin_dir_url( __FILE__ ) );
 if ( !defined( 'DEVVN_NHANHVN_BASENAME' ) )
@@ -46,11 +46,23 @@ function nhanhvn_change_name_city($data){
     if(isset($data['customerCityName']) && $data['customerCityName']){
         $data['customerCityName'] = nhanhvn_str_replace($data['customerCityName']);
     }
+    if(isset($data['customerDistrictName']) && $data['customerDistrictName']){
+        $data['customerDistrictName'] = nhanhvn_str_replace($data['customerDistrictName']);
+    }
+    if(isset($data['customerWardLocationName']) && $data['customerWardLocationName']){
+        $data['customerWardLocationName'] = nhanhvn_str_replace($data['customerWardLocationName']);
+    }
     if(isset($data['fromCityName']) && $data['fromCityName']){
         $data['fromCityName'] = nhanhvn_str_replace($data['fromCityName']);
     }
+    if(isset($data['fromDistrictName']) && $data['fromDistrictName']){
+        $data['fromDistrictName'] = nhanhvn_str_replace($data['fromDistrictName']);
+    }
     if(isset($data['toCityName']) && $data['toCityName']){
         $data['toCityName'] = nhanhvn_str_replace($data['toCityName']);
+    }
+    if(isset($data['toDistrictName']) && $data['toDistrictName']){
+        $data['toDistrictName'] = nhanhvn_str_replace($data['toDistrictName']);
     }
     return $data;
 }
@@ -58,5 +70,13 @@ function nhanhvn_change_name_city($data){
 function nhanhvn_str_replace($str){
     $str = str_replace('Đắk Nông','Đắc Nông', $str);
     $str = str_replace('Đắk Lắk','Đắc Lắc', $str);
-    return $str;
+    $str = str_replace('Huyện Phú Quí','Huyện đảo Phú Quý', $str);
+    $str = str_replace("Huyện Cư M'gar",'Huyện Cư Mgar', $str);
+    $str = str_replace("Huyện M'Đrắk","Huyện M'Đrăk", $str);
+    $str = str_replace('Huyện Đắk Mil','Huyện Đăk Mil', $str);
+    $str = str_replace("Huyện Đắk R'Lấp","Huyện Đăk R'Lấp", $str);
+    $str = str_replace("Huyện Đắk Song","Huyện Đăk Song", $str);
+    $str = str_replace("Huyện Đắk Tô","Huyện Đăk Tô", $str);
+    $str = str_replace("Quận Bình Thuỷ","Quận Bình Thủy", $str);
+    return apply_filters('devvn_nhanh_str_replace', $str);
 }
