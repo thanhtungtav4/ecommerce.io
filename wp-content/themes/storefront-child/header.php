@@ -58,7 +58,7 @@
 													<a href="https://caraslens.com/lens-trong-suot/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.jpg" alt="best_437x200_clear">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.jpg" alt="best_437x200_clear">
 													</picture>
 													</a>
 												</dd>
@@ -70,7 +70,7 @@
 													<a href="https://caraslens.com/lavier/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.jpg" alt="best_437x200_lavier">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.jpg" alt="best_437x200_lavier">
 													</picture>
 													</a>
 												</dd>
@@ -82,7 +82,7 @@
 													<a href="https://caraslens.com/amber/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.jpg" alt="best_437x200_ombre">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.jpg" alt="best_437x200_ombre">
 													</picture>
 													</a>
 												</dd>
@@ -125,13 +125,13 @@
                           <dt><?php _e('Glass Type', 'storefront') ?></dt>
                           <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-3-thang/'); ?>">3 <?php _e('month', 'storefront') ?></a></dd>
                           <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-1-ngay/'); ?>">1 <?php _e('day', 'storefront') ?></a></dd>
-                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-3-thang/'); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_3month.png" alt="3 tháng"></a></dd>
-                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-1-ngay/'); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_1month.png" alt="1 ngày"></a></dd>
+                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-3-thang/'); ?>"><img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_3month.png" alt="3 tháng"></a></dd>
+                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-1-ngay/'); ?>"><img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_1month.png" alt="1 ngày"></a></dd>
                           <dt>Size</dt>
                           <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-13-6mm-13-8mm/'); ?>"><?php _e('Spontaneous', 'storefront') ?> - 13.8mm</a></dd>
                           <dd class="pc-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-14mm/'); ?>"><?php _e('Light stretch', 'storefront') ?> - 14.0 mm</a></dd>
-                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-13-6mm-13-8mm/'); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_13mm.png" alt="<?php _e('Spontaneous', 'storefront') ?> - 13.8mm"><?php _e('Spontaneous', 'storefront') ?></a></dd>
-                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-14mm/'); ?>"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_14mm.png" alt="<?php _e('Light stretch', 'storefront') ?> - 14.0 mm"><?php _e('Light stretch', 'storefront') ?></a></dd>
+                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-13-6mm-13-8mm/'); ?>"><img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_13mm.png" alt="<?php _e('Spontaneous', 'storefront') ?> - 13.8mm"><?php _e('Spontaneous', 'storefront') ?></a></dd>
+                          <dd class="sp-only"><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/lens-14mm/'); ?>"><img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ico_14mm.png" alt="<?php _e('Light stretch', 'storefront') ?> - 14.0 mm"><?php _e('Light stretch', 'storefront') ?></a></dd>
                         </dl>
                         <dl class="color">
                           <dt><?php _e('BY COLOR', 'storefront') ?></dt>
@@ -164,7 +164,7 @@
 													<a href="/nuoc-ngam-kinh-ap-trong/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.png" alt="accessory_dd_ngam">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.png" alt="accessory_dd_ngam">
 													</picture>
 													</a>
 												</dd>
@@ -176,7 +176,7 @@
 													<a href="/thuoc-nho-mat-lens/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.png" alt="accessory_dd_nho">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.png" alt="accessory_dd_nho">
 													</picture>
 													</a>
 												</dd>
@@ -188,7 +188,7 @@
 													<a href="/dd-vitamin/">
                           <picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" alt="accessory_dd_vitamin">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" alt="accessory_dd_vitamin">
 													</picture>
 													</a>
 												</dd>
@@ -208,7 +208,7 @@
 													<a href="https://caraslens.com/lien-he/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" alt="dv_showroom">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" alt="dv_showroom">
 													</picture>
 													</a>
 												</dd>
@@ -219,7 +219,7 @@
 													<a href="#">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.jpg" alt="dv_do_mat">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.jpg" alt="dv_do_mat">
 													</picture>
 													</a>
 												</dd>
@@ -231,7 +231,7 @@
 													<a href="#">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.jpg" alt="dv_tu_van_online">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.jpg" alt="dv_tu_van_online">
 													</picture>
 													</a>
 												</dd>
@@ -251,7 +251,7 @@
 													<a href="/gioi-thieu/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.jpg" alt="thong_tin_gioi_thieu_caras">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.jpg" alt="thong_tin_gioi_thieu_caras">
 													</picture>
 													</a>
 												</dd>
@@ -262,7 +262,7 @@
 													<a href="/cach-deo-lens/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.jpg" alt="thongtin_hdsd">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.jpg" alt="thongtin_hdsd">
 													</picture>
 													</a>
 												</dd>
@@ -274,7 +274,7 @@
 													<a href="/blog">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.webp" type="image/webp">
-														<img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.jpg" alt="thong_tin_blog">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.jpg" alt="thong_tin_blog">
 													</picture>
 													</a>
 												</dd>

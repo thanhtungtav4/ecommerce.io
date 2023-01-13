@@ -19,3 +19,5 @@
 [12-Jan-2023 16:56:40 UTC] PHP Notice:  Undefined index: pa_mau-sac in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\template-parts\content-quickview.php on line 7
 [12-Jan-2023 16:56:40 UTC] PHP Notice:  Trying to access array offset on value of type null in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\template-parts\content-quickview.php on line 7
 [12-Jan-2023 16:56:40 UTC] PHP Warning:  Invalid argument supplied for foreach() in D:\Ampps\www\ecommerce\wp-content\themes\storefront-child\template-parts\content-quickview.php on line 9
+[13-Jan-2023 07:04:08 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in D:\xampp\htdocs\ecommerce\wp-includes\class-wpdb.php on line 1775
+[13-Jan-2023 07:04:08 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in D:\xampp\htdocs\ecommerce\wp-includes\class-wpdb.php on line 1775
