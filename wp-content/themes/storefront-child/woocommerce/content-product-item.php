@@ -80,7 +80,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             </ul>
             </div>
             <a class="favorite-btn" href="#">
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/heart.png" alt="favorite">
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/heart.png" alt="favorite" loading="lazy" width="16" height="16">
             </a>
         </div>
         <div class="m-product__content-bottom">

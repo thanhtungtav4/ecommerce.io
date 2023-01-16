@@ -15,7 +15,7 @@
             </ul>
             </div>
             <a class="favorite-btn" href="#">
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/heart.png" alt="favorite">
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/heart.png" alt="favorite" loading="lazy" width="16px" height="16px">
             </a>
         </div>
         <div class="m-product__content-bottom">

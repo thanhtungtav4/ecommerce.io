@@ -164,7 +164,7 @@
 													<a href="/nuoc-ngam-kinh-ap-trong/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.png" alt="accessory_dd_ngam">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.png" alt="accessory_dd_ngam" width="326" height="149">
 													</picture>
 													</a>
 												</dd>
@@ -176,7 +176,7 @@
 													<a href="/thuoc-nho-mat-lens/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.png" alt="accessory_dd_nho">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.png" alt="accessory_dd_nho" width="326" height="149">
 													</picture>
 													</a>
 												</dd>
@@ -188,7 +188,7 @@
 													<a href="/dd-vitamin/">
                           <picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" alt="accessory_dd_vitamin">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" alt="accessory_dd_vitamin" width="326" height="149">
 													</picture>
 													</a>
 												</dd>
@@ -208,7 +208,7 @@
 													<a href="https://caraslens.com/lien-he/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" alt="dv_showroom">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" alt="dv_showroom" width="326" height="149">
 													</picture>
 													</a>
 												</dd>
@@ -219,7 +219,7 @@
 													<a href="#">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.jpg" alt="dv_do_mat">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_do_mat.jpg" alt="dv_do_mat" width="326" height="149">
 													</picture>
 													</a>
 												</dd>
@@ -231,7 +231,7 @@
 													<a href="#">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.jpg" alt="dv_tu_van_online">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_tu_van_online.jpg" alt="dv_tu_van_online" width="326" height="149">
 													</picture>
 													</a>
 												</dd>
@@ -251,7 +251,7 @@
 													<a href="/gioi-thieu/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.jpg" alt="thong_tin_gioi_thieu_caras">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_gioi_thieu_caras.jpg" alt="thong_tin_gioi_thieu_caras" width="326" height="149">
 													</picture>
 													</a>
 												</dd>
@@ -262,7 +262,7 @@
 													<a href="/cach-deo-lens/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.jpg" alt="thongtin_hdsd">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thongtin_hdsd.jpg" alt="thongtin_hdsd" width="326" height="149">
 													</picture>
 													</a>
 												</dd>
@@ -274,7 +274,7 @@
 													<a href="/blog">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.jpg" alt="thong_tin_blog">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/thong_tin_blog.jpg" alt="thong_tin_blog" width="326" height="149">
 													</picture>
 													</a>
 												</dd>
