@@ -163,7 +163,7 @@ if ( ! class_exists( 'YITH_WCAF_Clicks' ) ) {
 					'affiliate_id' => $affiliate->get_id(),
 					'ip'           => $requester_ip,
 					'interval'     => array(
-						'start_date' => gmdate( 'Y-m-d H:i:s', time() - $this->hit_resolution ),
+						'start_date' => wp_date( 'Y-m-d H:i:s', time() - $this->hit_resolution ),
 					),
 				)
 			);

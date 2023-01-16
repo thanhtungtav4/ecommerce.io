@@ -59,7 +59,7 @@ get_header(); ?>
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.jpg" alt="BEST SELLER - BÁN CHẠY NHẤT" loading="lazy" width="666" height="912">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best-seller-contact-lens.jpg" alt="BEST SELLER - BÁN CHẠY NHẤT" loading="lazy" width="495" height="678">
                   </picture>
                 </a>
               </div>
@@ -128,7 +128,7 @@ get_header(); ?>
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.jpg" alt="TỰ NHIÊN - ĐI HỌC ĐI LÀM" loading="lazy" width="666" height="912">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-tu-nhien.jpg" alt="TỰ NHIÊN - ĐI HỌC ĐI LÀM" loading="lazy" width="495" height="678">
                   </picture>
                 </a>
               </div>
@@ -198,7 +198,7 @@ get_header(); ?>
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-sang-mau.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-sang-mau.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-sang-mau.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-sang-mau.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-sang-mau.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-sang-mau.jpg" alt="<?php the_title() ?>" loading="lazy" width="495" height="678">
                   </picture>
                 </a>
               </div>
@@ -268,7 +268,7 @@ get_header(); ?>
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-nam-homepage.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-nam-homepage.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-nam-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-nam-homepage.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-nam-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-nam-homepage.jpg" alt="<?php the_title() ?>" loading="lazy" width="495" height="678">
                   </picture>
                 </a>
               </div>
@@ -338,7 +338,7 @@ get_header(); ?>
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.jpg" alt="<?php the_title() ?>" loading="lazy" width="666" height="912">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lens-y-te-homepage.jpg" alt="<?php the_title() ?>" loading="lazy" width="495" height="678">
                   </picture>
                 </a>
               </div>
@@ -408,7 +408,7 @@ get_header(); ?>
                   <picture>
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.avif" type="image/avif">
                     <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.webp" type="image/webp">
-                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.jpg" alt="phu kien lens" loading="lazy" width="666" height="912">
+                    <img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/phu-kien-lens-homepage.jpg" alt="phu kien lens" loading="lazy" width="495" height="678">
                   </picture>
                 </a>
               </div>

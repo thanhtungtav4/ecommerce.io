@@ -43,4 +43,7 @@ require_once( get_stylesheet_directory() . '/functions/checkout.php');
 require_once( get_stylesheet_directory() . '/functions/comment.php');
 //load in cart page
 require_once( get_stylesheet_directory() . '/functions/cart.php');
+//fetch data
+require_once( get_stylesheet_directory() . '/functions/fetchdata.php');
+
 
