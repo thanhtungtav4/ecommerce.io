@@ -296,28 +296,6 @@ select.xoo-ml-phone-cc + .select2.select2-container {
 .table_popup_1{
   justify-content: center;
 }
-.slick-slider{
-  visibility:hidden;
-  opacity:0;
-  transition: opacity 1s;
-}
-
-.slick-slider.slick-initialized{
- visibility:visible;
- opacity:1;
-}
-
-.slick-slider .slick-slide{
- display:none ;
-}
-
-.slick-slider .slick-slide:first-child{
- display:block; visibility:hidden;
-}
-
-.slick-slider.slick-initialized .slick-slide{
- display:flex;visibility:visible!important;
-}
 .disable_hover{
   cursor: not-allowed;
   pointer-events: all;

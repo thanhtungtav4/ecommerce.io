@@ -58,7 +58,7 @@
 													<a href="https://caraslens.com/lens-trong-suot/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.jpg" alt="best_437x200_clear">
+														<img width="326" height="149" loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_clear.jpg" alt="best_437x200_clear">
 													</picture>
 													</a>
 												</dd>
@@ -70,7 +70,7 @@
 													<a href="https://caraslens.com/lavier/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.jpg" alt="best_437x200_lavier">
+														<img width="326" height="149" loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_lavier.jpg" alt="best_437x200_lavier">
 													</picture>
 													</a>
 												</dd>
@@ -82,7 +82,7 @@
 													<a href="https://caraslens.com/amber/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.jpg" alt="best_437x200_ombre">
+														<img width="326" height="149" loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/best_437x200_ombre.jpg" alt="best_437x200_ombre">
 													</picture>
 													</a>
 												</dd>

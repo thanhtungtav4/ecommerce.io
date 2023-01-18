@@ -154,27 +154,3 @@ function get_primary_category( $useCatLink = true ) {
 		}
 	}
 }
-
-//mobile login woocommerce
-add_action( 'init', 'my_deregister_scripts_firebase', 99 );
-function my_deregister_scripts_firebase() {
-	if(!is_page('register') || !is_page('dang-ky') || !is_page('tai-khoan') || !is_page('my-account')){
-		wp_deregister_script( 'firebase' );
-		wp_dequeue_script('firebase');
-		wp_deregister_script( 'firebase-auth' );
-		wp_dequeue_script('firebase-auth');
-		wp_deregister_script( 'select2' );
-		wp_dequeue_script('select2');
-		wp_deregister_script( 'xoo-ml-phone-js' );
-		wp_dequeue_script('xoo-ml-phone-js');
-	}
-}
-
-add_action( 'init', 'my_dequeue_style_firebase', 99 );
- function my_dequeue_style_firebase() {
-	if(!is_page('register') || !is_page('dang-ky') || !is_page('tai-khoan') || !is_page('my-account')){
-		wp_dequeue_style( 'xoo-ml-style' );
-		wp_dequeue_style('xoo-ml-style');
-	}
-}
-// !!mobile login woocommerce
