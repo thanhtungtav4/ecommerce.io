@@ -208,6 +208,7 @@ select.xoo-ml-phone-cc + .select2.select2-container {
   }
   .c-sure ul li {
     height: 110px;
+    width: 325px;
     font-size: 1rem;
   }
   .c-sure ul li p {
@@ -295,8 +296,28 @@ select.xoo-ml-phone-cc + .select2.select2-container {
 .table_popup_1{
   justify-content: center;
 }
-.slider { display: none; }
-.slider.slick-initialized { display: block; }
+.slick-slider{
+  visibility:hidden;
+  opacity:0;
+  transition: opacity 1s;
+}
+
+.slick-slider.slick-initialized{
+ visibility:visible;
+ opacity:1;
+}
+
+.slick-slider .slick-slide{
+ display:none ;
+}
+
+.slick-slider .slick-slide:first-child{
+ display:block; visibility:hidden;
+}
+
+.slick-slider.slick-initialized .slick-slide{
+ display:flex;visibility:visible!important;
+}
 .disable_hover{
   cursor: not-allowed;
   pointer-events: all;

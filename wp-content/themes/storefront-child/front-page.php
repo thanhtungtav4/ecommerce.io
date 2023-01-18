@@ -16,21 +16,21 @@ get_header(); ?>
 <main class="l-main">
         <div class="c-carousel">
           <div class="c-carousel_inner">
-            <!-- <div class="c-carousel_item">
-              <a href="#">
-                <picture>
-                  <source srcset="<?php //echo get_stylesheet_directory_uri() ?>/assets/images/launching-web.avif" type="image/avif">
-                  <source srcset="<?php //echo get_stylesheet_directory_uri() ?>/assets/images/launching-web.webp" type="image/webp">
-                  <img src="<?php //echo get_stylesheet_directory_uri() ?>/assets/images/launching-web.jpg" data-src="<?php //echo get_stylesheet_directory_uri() ?>/assets/images/launching-web.jpg" alt="launching-web" width="1512" height="600">
-                </picture></a>
-              </div> -->
             <div class="c-carousel_item">
               <a href="https://caraslens.com/bo-suu-tap-kinh-ap-trong-tu-nhien/">
                 <picture>
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.avif" type="image/avif">
-                  <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.webp" type="image/webp">
-                  <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.jpg" alt="lavier collection homepage" width="1512" height="600">
-                </picture></a></div>
+                  <?php if(wp_is_mobile()) : ?>
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/banner_lavier.avif" type="image/avif">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/banner_lavier.webp" type="image/webp">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/banner_lavier.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/banner_lavier.jpg" alt="lavier collection homepage" width="960" height="960">
+                  <?php else: ?>
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.avif" type="image/avif">
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.webp" type="image/webp">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/lavier-collection-homepage.jpg" alt="lavier collection homepage" width="1512" height="600">
+                  <?php endif; ?>
+                </picture>
+              </a>
+            </div>
           </div>
         </div>
         <div class="l-container">
