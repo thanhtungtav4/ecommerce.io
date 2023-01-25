@@ -308,6 +308,28 @@ select.xoo-ml-phone-cc + .select2.select2-container {
   transform: translateX(0);
   z-index: 1;
 }
+.c-page_content ul li, .c-news_content ul li{
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+.c-page_content ul, .c-news_content ul {
+  list-style: disc;
+  margin-left: 2rem;
+}
+.c-page_content  img:hover, .c-news_content img:hover{
+  box-shadow: 0 0 6px rgb(0 0 0 / 40%);
+  transition: all .5s ease-in;
+  transform: scale(1.03);
+}
+.c-news_inner h2{
+  font-size: 2.5rem;
+  margin-bottom: 1.8rem;
+}
+.c-news_inner h3{
+  font-size: 2.1rem;
+  margin-bottom: 1.8rem;
+}
 @media screen and (max-width: 767px){
   #mini-cart-content, #mini-cart-content .c-menu_subinner{
     background-color: black;
