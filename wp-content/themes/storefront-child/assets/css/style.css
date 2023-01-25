@@ -454,7 +454,7 @@ body.js-active {
 }
 @media screen and (max-width: 767px) {
   .c-header_icon > li .c-menu_sub {
-    width: 100vw;
+    width: 80vw;
   }
 }
 .c-header_icon > li .c-menu_subinner {

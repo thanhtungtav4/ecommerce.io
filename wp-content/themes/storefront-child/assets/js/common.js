@@ -97,6 +97,11 @@ function toggleChat(){
     }, 3000);
   }
 }
+
+function showCart(){
+  $('#ico_cart').addClass('active');
+  $('#mini-cart-content').css("display", "block").addClass('js_cart_active');
+}
 ///
 jQuery.event.special.touchstart = {
   setup: function( _, ns, handle ) {

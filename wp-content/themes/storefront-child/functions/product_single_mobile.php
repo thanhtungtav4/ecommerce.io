@@ -57,3 +57,15 @@ function filter_woocommerce_dropdown_variation_attribute_options_args( $array ) 
 
 // add the filter
 add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'filter_woocommerce_dropdown_variation_attribute_options_args', 10, 1 );
+
+function woocommerce_show_mini_cart() {
+    function add_this_script_footer() { 
+        ?>
+            <script>
+                showCart();
+            </script>
+        <?php } 
+        add_action('wp_footer', 'add_this_script_footer'); 
+}
+add_action( 'woocommerce_add_to_cart', 'woocommerce_show_mini_cart' );
+

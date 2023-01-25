@@ -303,3 +303,16 @@ select.xoo-ml-phone-cc + .select2.select2-container {
 .tablinks:hover{
   cursor: pointer;
 }
+.js_cart_active{
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 1;
+}
+@media screen and (max-width: 767px){
+  #mini-cart-content, #mini-cart-content .c-menu_subinner{
+    background-color: black;
+  }
+  #mini-cart-content .cart_content_top strong , #mini-cart-content  .cart_content_bottom, #mini-cart-content .woocommerce-mini-cart__total, #mini-cart-content .woocommerce-mini-cart__buttons a{
+    color: #ABABAB;
+  }
+}

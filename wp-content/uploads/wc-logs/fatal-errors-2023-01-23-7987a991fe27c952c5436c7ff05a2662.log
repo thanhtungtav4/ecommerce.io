@@ -1,0 +1,10 @@
+2023-01-23T14:13:05+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Error as array in D:\Ampps\www\ecommerce\wp-content\plugins\devvn-woocommerce-reviews\includes\functions.php:0
+Stack trace:
+#0 D:\Ampps\www\ecommerce\wp-content\plugins\devvn-woocommerce-reviews\devvn-woocommerce-reviews-main.php(0): reviews_set_license()
+#1 D:\Ampps\www\ecommerce\wp-includes\class-wp-hook.php(308): DevVN_Reviews_Class->devvn_check_license_cron_func()
+#2 D:\Ampps\www\ecommerce\wp-includes\class-wp-hook.php(332): WP_Hook->apply_filters()
+#3 D:\Ampps\www\ecommerce\wp-includes\plugin.php(565): WP_Hook->do_action()
+#4 D:\Ampps\www\ecommerce\wp-cron.php(188): do_action_ref_array()
+#5 {main}
+  thrown in D:\Ampps\www\ecommerce\wp-content\plugins\devvn-woocommerce-reviews\includes\functions.php on line 0
+
