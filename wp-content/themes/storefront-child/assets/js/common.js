@@ -262,14 +262,3 @@ $(document).ready(function() {
   });
 });
 //  show popup
-// quick view
-function showpopup(){
-  $html = '<img class="ls-is-cached lazyloaded" src="/wp-content/themes/storefront-child/assets/images/tet_day.jpg" data-src="/wp-content/themes/storefront-child/assets/images/tet_day.jpg" alt="Tet Day" loading="lazy" width="666" height="912">';
-  $('.modal').empty().append($html);
-  document.getElementById('modal').style.top = '9%';
-  document.getElementById('overlay').classList.add('js-visible');
-  document.getElementById('modal').classList.add('js-visible');
-}
-$(document).ready(function() {
-  setTimeout("showpopup()", 10000);
-});
