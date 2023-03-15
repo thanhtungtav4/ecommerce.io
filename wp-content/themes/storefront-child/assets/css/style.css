@@ -361,11 +361,11 @@ body.js-active {
   }
 }
 .c-header_menu li {
-  padding: 10px 13px;
+  padding: 10px;
 }
 .c-header_menu li a {
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 500;
   color: #2B2929;
 }
@@ -4656,4 +4656,7 @@ body.js-active {
 }
 .m-docs_info p {
   font-size: 1.3rem;
+}
+.gap-2{
+  gap: 2rem;
 }

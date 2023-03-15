@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Storefront 4.1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/storefront\n"
 "POT-Creation-Date: 2023-01-03 14:08+0700\n"
-"PO-Revision-Date: 2023-01-03 14:08+0700\n"
+"PO-Revision-Date: 2023-03-15 11:20+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi_VN\n"
@@ -761,12 +761,12 @@ msgstr ""
 #: inc/storefront-template-functions.php:555
 msgid "Category:"
 msgid_plural "Categories:"
-msgstr[0] ""
+msgstr[0] "Danh mục:"
 
 #: inc/storefront-template-functions.php:561
 msgid "Tag:"
 msgid_plural "Tags:"
-msgstr[0] ""
+msgstr[0] "Thẻ:"
 
 #: inc/storefront-template-functions.php:593
 msgid "Next post:"
@@ -817,7 +817,7 @@ msgstr[0] ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:352
 msgid "Recent Products"
-msgstr ""
+msgstr "SẢN PHẨM TƯƠNG TỰ"
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:409
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:614
@@ -830,7 +830,7 @@ msgstr ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:576
 msgid "Best Selling Products"
-msgstr ""
+msgstr "BEST SELLER - BÁN CHẠY NHẤT"
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:627
 msgid "On Sale Now"
@@ -850,7 +850,7 @@ msgstr ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:774
 msgid "More products"
-msgstr ""
+msgstr "SẢN PHẨM TƯƠNG TỰ"
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:838
 msgid "You're viewing:"
@@ -890,7 +890,7 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Automattic"
-msgstr ""
+msgstr "Tự động"
 
 #. Author URI of the plugin/theme
 msgid "https://woocommerce.com/"
@@ -898,7 +898,7 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Full width"
-msgstr ""
+msgstr "Rộng toàn màn hình"
 
 #. translators: 1: number of comments, 2: post title
 #: comments.php:31
@@ -910,12 +910,12 @@ msgstr[0] ""
 #: inc/storefront-template-functions.php:579
 msgctxt "Next post"
 msgid "Next"
-msgstr ""
+msgstr "Kế tiếp"
 
 #: inc/storefront-template-functions.php:580
 msgctxt "Previous post"
 msgid "Previous"
-msgstr ""
+msgstr "Quay lại"
 
 msgid "CUSTOMER SUPPORT"
 msgstr "HỖ TRỢ KHÁCH HÀNG"
@@ -1220,3 +1220,6 @@ msgstr "Xám"
 
 msgid "NEWS"
 msgstr "TIN TỨC"
+
+msgid "Glass Dixon"
+msgstr "Kính Dixon"

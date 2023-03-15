@@ -198,6 +198,35 @@
                   </div>
                 </div>
               </li>
+              <li class="c-menu c-menu_dropdown"><a href="https://dixon.vn/"><?php _e('Glass Dixon', 'storefront') ?></a>
+                <div class="c-menu_sub">
+                  <div class="c-menu_subinner">
+                    <div class="l-container col-2 gap-2">
+                      <dl>
+												<dd>
+													<a href="#">
+													<picture>
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bannerkg_dx2.webp" type="image/webp">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bannerkg_dx2.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bannerkg_dx2.jpg" alt="bannerkg_dx2" width="326" height="149">
+													</picture>
+													</a>
+												</dd>
+                        </dt>
+                      </dl>
+                      <dl>
+                        <dd>
+													<a href="#">
+													<picture>
+														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bannerkg_km1.webp" type="image/webp">
+														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bannerkg_km1.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bannerkg_km1.jpg" alt="bannerkg" width="326" height="149">
+													</picture>
+													</a>
+												</dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+              </li>
               <li class="c-menu c-menu_dropdown"><a href="#"><?php _e('Service', 'storefront') ?></a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">

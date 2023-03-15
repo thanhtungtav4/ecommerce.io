@@ -1223,3 +1223,6 @@ msgstr "Xám"
 
 msgid "NEWS"
 msgstr "TIN TỨC"
+
+msgid "Glass Dixon"
+msgstr "Kính Dixon"

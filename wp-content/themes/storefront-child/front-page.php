@@ -31,6 +31,19 @@ get_header(); ?>
                 </picture>
               </a>
             </div>
+            <div class="c-carousel_item">
+              <a href="https://dixon.vn/">
+                <picture>
+                  <?php if(wp_is_mobile()) : ?>
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/webbaner_960x960.webp" type="image/webp">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/webbaner_960x960.webp" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/webbaner_960x960.webp" alt="dixon" width="960" height="960">
+                  <?php else: ?>
+                    <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bannerkg_1280x508.webp" type="image/webp">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bannerkg_1280x508.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/bannerkg_1280x508.jpg" alt="dixon" width="1512" height="600">
+                  <?php endif; ?>
+                </picture>
+              </a>
+            </div>
           </div>
         </div>
         <div class="l-container">

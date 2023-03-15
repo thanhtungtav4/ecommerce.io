@@ -40,3 +40,5 @@ Stack trace:
 #4 D:\Ampps\www\ecommerce\wp-cron.php(188): do_action_ref_array()
 #5 {main}
   thrown in D:\Ampps\www\ecommerce\wp-content\plugins\devvn-woocommerce-nhanhvn\includes\functions.php on line 0
+[15-Mar-2023 02:30:41 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in D:\xampp\htdocs\ecommerce\wp-includes\class-wpdb.php on line 1775
+[15-Mar-2023 02:30:41 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in D:\xampp\htdocs\ecommerce\wp-includes\class-wpdb.php on line 1775
