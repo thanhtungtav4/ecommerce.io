@@ -4660,3 +4660,6 @@ body.js-active {
 .gap-2{
   gap: 2rem;
 }
+.flexcenter{
+  justify-content: center !important;
+}
