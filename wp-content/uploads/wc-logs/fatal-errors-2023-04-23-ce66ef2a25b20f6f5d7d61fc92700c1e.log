@@ -1,0 +1,461 @@
+2023-04-23T00:25:15+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T01:41:38+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T01:44:44+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T01:54:45+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T02:06:26+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T02:07:33+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T02:48:25+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T03:04:46+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T03:14:41+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T03:27:14+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T03:27:15+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T03:47:15+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T04:39:12+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T05:02:04+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T05:21:59+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T06:13:11+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T06:16:30+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T06:20:30+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T06:58:31+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T07:32:19+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T07:32:28+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T07:34:53+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T09:04:48+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T09:45:58+00:00 CRITICAL Out of memory (allocated 27262976) (tried to allocate 20480 bytes) in /home/caraslens.com/public_html/wp-includes/rest-api.php on line 3280
+
+2023-04-23T10:17:56+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T10:26:31+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T11:45:51+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T11:47:05+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T11:47:18+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T11:47:42+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T11:48:19+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T11:57:19+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T12:05:00+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T13:06:37+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T13:32:45+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T13:51:39+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T14:22:03+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T16:01:45+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T16:04:30+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T17:24:06+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T17:30:38+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T18:00:32+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T19:04:23+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T19:04:37+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T20:11:02+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T21:23:44+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T21:39:53+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T21:41:23+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T21:49:59+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T22:43:12+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T23:40:41+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-04-23T23:44:56+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+

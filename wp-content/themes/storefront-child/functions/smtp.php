@@ -1,8 +1,8 @@
 <?php
-define( 'SMTP_username', 'nguyenthanhtung74119@gmail.com' );  // username of host like Gmail
-define( 'SMTP_password', 'whglrvdhwqtuapvd' );   // password for login into the App
+define( 'SMTP_username', 'caraslensvn@gmail.com' );  // username of host like Gmail
+define( 'SMTP_password', 'ctamsznebfqoqeut' );   // password for login into the App
 define( 'SMTP_server', 'smtp.gmail.com' );     // SMTP server address
-define( 'SMTP_FROM', 'nguyenthanhtung74119@gmail.com' );   // Your Business Email Address
+define( 'SMTP_FROM', 'caraslensvn@gmail.com' );   // Your Business Email Address
 define( 'SMTP_NAME', 'CARAS LENS' );   //  Business From Name
 define( 'SMTP_PORT', '587' );     // Server Port Number
 define( 'SMTP_SECURE', 'tls' );   // Encryption - ssl or tls

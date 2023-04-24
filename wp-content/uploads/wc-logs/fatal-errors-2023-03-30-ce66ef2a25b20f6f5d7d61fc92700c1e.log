@@ -1,0 +1,394 @@
+2023-03-30T00:02:10+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T00:02:21+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T00:02:22+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T00:14:36+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T00:20:46+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T00:20:53+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T00:29:43+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/TranslateWpmlString.php(167): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/TranslateWpmlString.php(109): WPML\ST\TranslateWpmlString->withMOLocale()
+#4 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/TranslateWpmlString.php(76): WPML\ST\Transl in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T00:36:05+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T00:36:09+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T00:43:38+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T00:49:15+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:02:46+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:03:26+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:03:51+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:07:40+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:08:12+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:08:14+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:08:15+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:08:28+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:09:08+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:09:29+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:11:21+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:19:53+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:20:34+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:20:36+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:20:36+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:20:37+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:20:38+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:20:56+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Textdomain_Registry::reset() in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php:139
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(119): WPML\ST\MO\Hooks\LanguageSwitch->resetTranslationAvailabilityInformation()
+#1 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(73): WPML\ST\MO\Hooks\LanguageSwitch->changeMoObjects()
+#2 /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php(48): WPML\ST\MO\Hooks\LanguageSwitch->switchToLocale()
+#3 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WPML\ST\MO\Hooks\LanguageSwitch->languageHasSwitched()
+#4 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters()
+#5 /home/caraslens.com/public_html/wp-includes/plugin.php(517):  in /home/caraslens.com/public_html/wp-content/plugins/wpml-string-translation/classes/MO/Hooks/LanguageSwitch.php on line 139
+
+2023-03-30T01:30:42+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T01:31:02+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T01:33:12+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T01:34:23+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T03:09:59+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T07:42:11+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T07:42:40+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T09:42:53+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T09:44:30+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T10:05:13+00:00 CRITICAL Out of memory (allocated 18874368) (tried to allocate 163840 bytes) in /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/composer/ClassLoader.php on line 444
+
+2023-03-30T10:05:14+00:00 CRITICAL Out of memory (allocated 18874368) (tried to allocate 98304 bytes) in /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/composer/ClassLoader.php on line 444
+
+2023-03-30T10:05:14+00:00 CRITICAL Out of memory (allocated 25165824) (tried to allocate 98304 bytes) in /home/caraslens.com/public_html/wp-content/plugins/woocommerce/vendor/jetpack-autoloader/class-php-autoloader.php on line 87
+
+2023-03-30T10:05:14+00:00 CRITICAL Out of memory (allocated 25165824) (tried to allocate 98304 bytes) in /home/caraslens.com/public_html/wp-content/plugins/woocommerce/vendor/jetpack-autoloader/class-php-autoloader.php on line 87
+
+2023-03-30T14:52:55+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T17:38:30+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T18:58:24+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T18:58:34+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+
+2023-03-30T22:21:43+00:00 CRITICAL Uncaught Error: Call to a member function get_original_product_id() on null in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php:84
+Stack trace:
+#0 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(267): WCML_Custom_Prices->get_product_custom_prices()
+#1 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/Logic.php(121): WCML_Multi_Currency_Prices->{closure}()
+#2 [internal function]: WPML\FP\Logic::WPML\FP\{closure}()
+#3 /home/caraslens.com/public_html/wp-content/plugins/sitepress-multilingual-cms/vendor/wpml/fp/core/functions.php(152): call_user_func_array()
+#4 /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-multi-currency-prices.php(287): WPML\FP\{closure}()
+#5 /home/caraslens.com/public_html/wp-includes/class-wp-hook.php(310): WCML_Multi_Currency_Prices->product_ in /home/caraslens.com/public_html/wp-content/plugins/woocommerce-multilingual/inc/currencies/class-wcml-custom-prices.php on line 84
+

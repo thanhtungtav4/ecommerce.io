@@ -284,7 +284,7 @@ form label {
 }
 @media (min-width: 1200px) {
   .l-container {
-    width: 1040px;
+    width: 1140px;
   }
 }
 article {
@@ -1095,6 +1095,11 @@ body.js-active {
   display: flex;
   justify-content: space-between;
   padding: 0;
+}
+.c-menu_subinner .l-container.col-2 dl {
+  width: calc(35% - 20px);
+  margin: 15px;
+  gap: 2rem;
 }
 .c-menu_subinner .l-container.col-3 dl {
   width: calc(33.3% - 20px);
@@ -4662,4 +4667,7 @@ body.js-active {
 }
 .flexcenter{
   justify-content: center !important;
+}
+.flex-wrap{
+  flex-wrap: wrap !important;
 }
