@@ -336,7 +336,7 @@ select.xoo-ml-phone-cc + .select2.select2-container {
   padding: 0;
 }
 .promotion-container.col-2 dl {
-  width: calc(40% - 20px);
+  width: calc(100% - 20px);
   margin: 15px;
   gap: 2rem;
 }
@@ -350,8 +350,5 @@ select.xoo-ml-phone-cc + .select2.select2-container {
   }
   #mini-cart-content .cart_content_top strong , #mini-cart-content  .cart_content_bottom, #mini-cart-content .woocommerce-mini-cart__total, #mini-cart-content .woocommerce-mini-cart__buttons a{
     color: #ABABAB;
-  }
-  .promotion-container.col-2 dl {
-    width: calc(80% - 20px);
   }
 }
