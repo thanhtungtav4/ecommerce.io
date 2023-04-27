@@ -2,10 +2,10 @@
 /**
  * Plugin Name: WPML Multilingual CMS
  * Plugin URI: https://wpml.org/
- * Description: WPML Multilingual CMS | <a href="https://wpml.org">Documentation</a> | <a href="https://wpml.org/version/wpml-4-5-13/">WPML 4.5.13 release notes</a>
+ * Description: WPML Multilingual CMS | <a href="https://wpml.org">Documentation</a> | <a href="https://wpml.org/version/wpml-4-5-5/">WPML 4.5.5 release notes</a>
  * Author: OnTheGoSystems
  * Author URI: http://www.onthegosystems.com/
- * Version: 4.5.13
+ * Version: 4.5.5
  * Plugin Slug: sitepress-multilingual-cms
  *
  * @package WPML\Core
@@ -14,23 +14,7 @@
 use WPML\Container\Config;
 use function WPML\Container\share;
 use function WPML\FP\partial;
-$wpml_setup = get_option( 'WPML(setup)', [] );
-if ( isset( $wpml_setup['current-step'] ) ) {
-if ( $wpml_setup['current-step'] == 'license' ) {
-$wpml_setup['current-step'] = 'translation';
-update_option( 'WPML(setup)', $wpml_setup );
-}
-if ( $wpml_setup['current-step'] == 'support' ) {
-$wpml_setup['current-step'] = 'plugins';
-update_option( 'WPML(setup)', $wpml_setup );
-}
-}
-add_action( 'admin_init', function() {
-if ( class_exists( 'WP_Installer' ) ) {
-remove_action( 'admin_notices', [ WP_Installer::instance(), 'setup_plugins_page_notices' ] );
-remove_action( 'admin_init', [ WP_Installer::instance(), 'setup_plugins_action_links' ] );
-}
-}, 20 );
+
 if ( preg_match( '#' . basename( __FILE__ ) . '#', $_SERVER['PHP_SELF'] ) ) {
 	die( 'You are not allowed to call this page directly.' );
 }
@@ -45,7 +29,7 @@ if ( ! \WPML\Requirements\WordPress::checkMinimumRequiredVersion() ) {
 	return;
 }
 
-define( 'ICL_SITEPRESS_VERSION', '4.5.13' );
+define( 'ICL_SITEPRESS_VERSION', '4.5.5' );
 
 // Do not uncomment the following line!
 // If you need to use this constant, use it in the wp-config.php file
@@ -124,9 +108,6 @@ require_once __DIR__ . '/inc/constants.php';
 require_once __DIR__ . '/vendor/otgs/ui/loader.php';
 otgs_ui_initialize( __DIR__ . '/vendor/otgs/ui', ICL_PLUGIN_URL . '/vendor/otgs/ui' );
 
-$vendor_root_url = ICL_PLUGIN_URL . '/vendor';
-require_once __DIR__ . '/vendor/otgs/icons/loader.php';
-
 require_once __DIR__ . '/inc/taxonomy-term-translation/wpml-term-translations.class.php';
 require_once __DIR__ . '/inc/functions-troubleshooting.php';
 require_once __DIR__ . '/menu/term-taxonomy-menus/taxonomy-translation-display.class.php';
@@ -192,7 +173,7 @@ $action_filter_loader->load( [
 
 if ( $sitepress->is_setup_complete() ) {
 	$actions = [
-		'WPML_Copy_Once_Custom_Field',
+		'WPML_Copy_Once_Custom_Field_Factory',
 		'WPML_Adjacent_Links_Hooks_Factory',
 		'WPML_Widgets_Support_Factory',
 		'WPML_Admin_Resources_Hooks',
@@ -239,8 +220,6 @@ if ( $sitepress->is_setup_complete() ) {
 		\WPML\FullSiteEditing\BlockTemplates::class,
 		\WPML\AdminLanguageSwitcher\DisableWpLanguageSwitcher::class,
 		\WPML\AdminLanguageSwitcher\AdminLanguageSwitcher::class,
-		\WPML\TM\Troubleshooting\Loader::class,
-		\WPML\TaxonomyTermTranslation\Hooks::class,
 	];
 	$action_filter_loader->load( $actions );
 
