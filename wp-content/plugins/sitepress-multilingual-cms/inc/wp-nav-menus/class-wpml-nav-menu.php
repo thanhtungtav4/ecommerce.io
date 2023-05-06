@@ -1,4 +1,7 @@
 <?php
+
+use WPML\API\Sanitize;
+
 class WPML_Nav_Menu {
 	private $current_menu;
 	private $current_lang;
@@ -44,7 +47,7 @@ class WPML_Nav_Menu {
 		add_action( 'init', array( $this, 'init' ) );
 		add_filter( 'wp_nav_menu_args', array( $this, 'wp_nav_menu_args_filter' ) );
 		add_filter( 'wp_nav_menu_items', array( $this, 'wp_nav_menu_items_filter' ) );
-		add_filter( 'nav_menu_meta_box_object', array( $this, '_enable_sitepress_query_filters' ) );
+		add_filter( 'nav_menu_meta_box_object', array( $this, '_enable_sitepress_query_filters' ), 11 );
 	}
 
 	/**
@@ -155,6 +158,18 @@ class WPML_Nav_Menu {
 
 	public function get_links_for_menu_strings_translation_ajax() {
 		global $icl_menus_sync, $wpml_post_translations, $wpml_term_translations;
+		$nonce = isset( $_GET['_nonce'] ) ? sanitize_text_field( $_GET['_nonce'] ) : '';
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json_error( esc_html__( 'Unauthorized', 'sitepress' ), 401 );
+			return;
+		}
+
+		if ( ! wp_verify_nonce( $nonce, 'wpml_get_links_for_menu_strings_translation' ) ) {
+			wp_send_json_error( esc_html__( 'Invalid request!', 'sitepress' ), 400 );
+			return;
+		}
+
 		include_once WPML_PLUGIN_PATH . '/inc/wp-nav-menus/menus-sync.php';
 		$icl_menus_sync = new ICLMenusSync( $this->sitepress, $this->wpdb, $wpml_post_translations, $wpml_term_translations );
 		wp_send_json_success( $icl_menus_sync->get_links_for_menu_strings_translation() );
@@ -642,8 +657,8 @@ class WPML_Nav_Menu {
 		$debug_backtrace = $sitepress->get_backtrace( 5 ); // Ignore objects and limit to first 5 stack frames, since 4 is the highest index we use
 
 		if ( isset( $debug_backtrace[4] ) && $debug_backtrace[4]['function'] === '_wp_auto_add_pages_to_menu' && ! empty( $val['auto_add'] ) ) {
-			$post_lang = isset( $_POST['icl_post_language'] ) ? filter_var( $_POST['icl_post_language'], FILTER_SANITIZE_STRING ) : false;
-			$post_lang = ! $post_lang && isset( $_POST['lang'] ) ? filter_var( $_POST['lang'], FILTER_SANITIZE_STRING ) : $post_lang;
+			$post_lang = Sanitize::stringProp( 'icl_post_language', $_POST );
+			$post_lang = ! $post_lang && isset( $_POST['lang'] ) ? Sanitize::string( $_POST['lang'] ) : $post_lang;
 			$post_lang = ! $post_lang && $this->is_duplication_mode() ? $sitepress->get_current_language() : $post_lang;
 
 			if ( $post_lang ) {

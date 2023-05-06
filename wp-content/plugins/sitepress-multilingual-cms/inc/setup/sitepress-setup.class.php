@@ -274,9 +274,10 @@ class SitePress_Setup {
 	private static function create_table( $name, $table_sql ) {
 		global $wpdb;
 
-		$table_name = $wpdb->prefix . $name;
+		$table_name  = $wpdb->prefix . $name;
+		$found_table = (string) $wpdb->get_var( "SHOW TABLES LIKE '{$table_name}'" );
 
-		return 0 === strcasecmp( $wpdb->get_var( "SHOW TABLES LIKE '{$table_name}'" ), $table_name )
+		return 0 === strcasecmp( $found_table, $table_name )
 			|| ( $wpdb->query(
 				sprintf( 'CREATE TABLE IF NOT EXISTS `%s` ', $table_name )
 				. $table_sql . ' '
@@ -318,9 +319,17 @@ class SitePress_Setup {
 			}
 			$code_parts = explode( '-', $code );
 
-			$file = 'nil.png';
+			if ( file_exists( WPML_PLUGIN_PATH . '/res/flags/nil.svg' ) ) {
+				$file = 'nil.svg';
+			} else {
+				$file = 'nil.png';
+			}
 
-			if ( file_exists( WPML_PLUGIN_PATH . '/res/flags/' . $code . '.png' ) ) {
+			if ( file_exists( WPML_PLUGIN_PATH . '/res/flags/' . $code . '.svg' ) ) {
+				$file = $code . '.svg';
+			} elseif ( file_exists( WPML_PLUGIN_PATH . '/res/flags/' . $code_parts[0] . '.svg' ) ) {
+				$file = $code_parts[0] . '.svg';
+			} elseif ( file_exists( WPML_PLUGIN_PATH . '/res/flags/' . $code . '.png' ) ) {
 				$file = $code . '.png';
 			} elseif ( file_exists( WPML_PLUGIN_PATH . '/res/flags/' . $code_parts[0] . '.png' ) ) {
 				$file = $code_parts[0] . '.png';

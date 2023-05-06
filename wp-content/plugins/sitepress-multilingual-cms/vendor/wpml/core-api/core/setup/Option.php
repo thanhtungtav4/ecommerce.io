@@ -22,6 +22,7 @@ class Option {
 	const WHO_MODE = 'who-mode';
 	const TRANSLATE_EVERYTHING = 'translate-everything';
 	const TRANSLATE_EVERYTHING_COMPLETED = 'translate-everything-completed';
+	const TRANSLATE_EVERYTHING_IS_PAUSED = 'translate-everything-is-paused';
 	const TM_ALLOWED = 'is-tm-allowed';
 	const REVIEW_MODE = 'review-mode';
 
@@ -54,6 +55,19 @@ class Option {
 		self::set( self::TRANSLATED_LANGS, $langs );
 	}
 
+	/**
+	 * Sets service as default translation mode if there's a default Translation Service linked to this instance.
+	 *
+	 * @param bool $hasPreferredTranslationService
+	 */
+	public static function setDefaultTranslationMode( $hasPreferredTranslationService = false ) {
+		if ( self::get( self::WHO_MODE, null ) === null ) {
+
+			$defaultTranslationMode = $hasPreferredTranslationService ? 'service' : 'myself';
+			self::setTranslationMode( [ $defaultTranslationMode ] );
+		}
+	}
+
 	public static function setOnlyMyselfAsDefault() {
 		if ( self::get( self::WHO_MODE, null ) === null ) {
 			self::setTranslationMode( [ 'myself' ] );
@@ -81,6 +95,18 @@ class Option {
 	/** @param bool $state */
 	public static function setTranslateEverything( $state ) {
 		self::set( self::TRANSLATE_EVERYTHING, $state );
+	}
+
+	/**
+	 * @return bool
+	 */
+	public static function isPausedTranslateEverything() {
+		return self::get( self::TRANSLATE_EVERYTHING_IS_PAUSED, false );
+	}
+
+	/** @param bool $state */
+	public static function setIsPausedTranslateEverything( $state ) {
+		self::set( self::TRANSLATE_EVERYTHING_IS_PAUSED, (bool) $state );
 	}
 
 	/**
@@ -126,12 +152,12 @@ class Option {
 		}
 	}
 
-	public static function getReviewMode() {
-		return self::get( self::REVIEW_MODE, self::HOLD_FOR_REVIEW );
+	public static function getReviewMode( $default = self::HOLD_FOR_REVIEW ) {
+		return self::get( self::REVIEW_MODE, $default );
 	}
 
 	public static function shouldBeReviewed() {
-		return self::shouldTranslateEverything() && self::getReviewMode() !== self::NO_REVIEW;
+		return self::getReviewMode() !== self::NO_REVIEW;
 	}
 
 	/**
@@ -156,7 +182,14 @@ class Option {
 		return ( new OptionManager() )->set( self::OPTION_GROUP, $key, $value );
 	}
 
-	public static function getTranslateEverythingDefaultInSetup() {
+	/**
+	 * @param bool $hasPreferredTranslationService
+	 * @return bool
+	 */
+	public static function getTranslateEverythingDefaultInSetup( $hasPreferredTranslationService = false ) {
+		if ( $hasPreferredTranslationService ) {
+			return false;
+		}
 		return PostType::getPublishedCount( 'post' ) + PostType::getPublishedCount( 'page' ) > self::POSTS_LIMIT_FOR_AUTOMATIC_TRANSLATION
 			? false
 			: true;

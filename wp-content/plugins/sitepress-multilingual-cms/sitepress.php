@@ -2,10 +2,10 @@
 /**
  * Plugin Name: WPML Multilingual CMS
  * Plugin URI: https://wpml.org/
- * Description: WPML Multilingual CMS | <a href="https://wpml.org">Documentation</a> | <a href="https://wpml.org/version/wpml-4-5-5/">WPML 4.5.5 release notes</a>
+ * Description: WPML Multilingual CMS | <a href="https://wpml.org">Documentation</a> | <a href="https://wpml.org/version/wpml-4-6-3/">WPML 4.6.3 release notes</a>
  * Author: OnTheGoSystems
  * Author URI: http://www.onthegosystems.com/
- * Version: 4.5.5
+ * Version: 4.6.3
  * Plugin Slug: sitepress-multilingual-cms
  *
  * @package WPML\Core
@@ -29,7 +29,7 @@ if ( ! \WPML\Requirements\WordPress::checkMinimumRequiredVersion() ) {
 	return;
 }
 
-define( 'ICL_SITEPRESS_VERSION', '4.5.5' );
+define( 'ICL_SITEPRESS_VERSION', '4.6.3' );
 
 // Do not uncomment the following line!
 // If you need to use this constant, use it in the wp-config.php file
@@ -108,6 +108,9 @@ require_once __DIR__ . '/inc/constants.php';
 require_once __DIR__ . '/vendor/otgs/ui/loader.php';
 otgs_ui_initialize( __DIR__ . '/vendor/otgs/ui', ICL_PLUGIN_URL . '/vendor/otgs/ui' );
 
+$vendor_root_url = ICL_PLUGIN_URL . '/vendor';
+require_once __DIR__ . '/vendor/otgs/icons/loader.php';
+
 require_once __DIR__ . '/inc/taxonomy-term-translation/wpml-term-translations.class.php';
 require_once __DIR__ . '/inc/functions-troubleshooting.php';
 require_once __DIR__ . '/menu/term-taxonomy-menus/taxonomy-translation-display.class.php';
@@ -168,12 +171,11 @@ $action_filter_loader = new WPML_Action_Filter_Loader();
 $action_filter_loader->load( [
 	\WPML\Ajax\Factory::class,
 	\WPML\Installer\AddSiteUrl::class,
-	\WPML\Core\BackgroundTask::class,
 ] );
 
 if ( $sitepress->is_setup_complete() ) {
 	$actions = [
-		'WPML_Copy_Once_Custom_Field_Factory',
+		'WPML_Copy_Once_Custom_Field',
 		'WPML_Adjacent_Links_Hooks_Factory',
 		'WPML_Widgets_Support_Factory',
 		'WPML_Admin_Resources_Hooks',
@@ -220,6 +222,11 @@ if ( $sitepress->is_setup_complete() ) {
 		\WPML\FullSiteEditing\BlockTemplates::class,
 		\WPML\AdminLanguageSwitcher\DisableWpLanguageSwitcher::class,
 		\WPML\AdminLanguageSwitcher\AdminLanguageSwitcher::class,
+		\WPML\TM\Troubleshooting\Loader::class,
+		\WPML\TaxonomyTermTranslation\Hooks::class,
+		\WPML\BlockEditor\Loader::class,
+		\WPML\TM\ATE\Hooks\LanguageMappingCache::class,
+		\WPML\BackgroundTask\BackgroundTaskLoader::class,
 	];
 	$action_filter_loader->load( $actions );
 
