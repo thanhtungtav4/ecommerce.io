@@ -131,7 +131,8 @@ class WPML_TM_Dashboard_Display_Filter {
 			<?php
 			$option_status = array(
 				-1                    => esc_html__( 'All translation statuses', 'wpml-translation-management' ),
-				ICL_TM_NOT_TRANSLATED => esc_html__(
+				ICL_TM_NOT_TRANSLATED => esc_html__( 'Not translated', 'wpml-translation-management' ),
+				ICL_TM_NOT_TRANSLATED . '_' . ICL_TM_NEEDS_UPDATE => esc_html__(
 					'Not translated or needs updating',
 					'wpml-translation-management'
 				),
@@ -291,6 +292,7 @@ class WPML_TM_Dashboard_Display_Filter {
 				'page'          => WPML_TM_FOLDER . '/menu/main.php',
 				'sm'            => 'dashboard',
 				'icl_tm_action' => 'reset_dashboard_filters',
+				'nonce'         => wp_create_nonce( 'reset_dashboard_filters' ),
 			)
 		);
 		?>
@@ -330,6 +332,7 @@ class WPML_TM_Dashboard_Display_Filter {
 
 		<form method="post" name="translation-dashboard-filter" class="wpml-tm-dashboard-filter" action="<?php echo esc_url( $form_url ); ?>">
 			<input type="hidden" name="icl_tm_action" value="dashboard_filter"/>
+			<input type="hidden" name="nonce" value="<?php echo esc_html( wp_create_nonce( 'dashboard_filter' ) ); ?>"/>
 
 			<?php
 
