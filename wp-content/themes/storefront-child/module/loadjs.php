@@ -257,7 +257,7 @@
         });
       </script>
     <?php endif; ?>
-    <?php if(is_page('lien-he') || is_page('contact-us')) :  ?>
+    <?php if(is_page('showroom') || is_page('showroom-us')) :  ?>
       <script>
         $(document).ready(function(){
           $('.slick-sure').not('.slick-initialized').slick({

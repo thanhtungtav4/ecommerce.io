@@ -24,7 +24,7 @@
           <a href="/huong-dan-mua-hang/">Chính Sách Mua Hàng</a>
         </li>
         <li>
-          <a href="/lien-he/">Hỏi Đáp</a>
+          <a href="/showroom/">Hỏi Đáp</a>
         </li>
       </ul>
     </div>

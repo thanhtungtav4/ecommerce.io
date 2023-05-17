@@ -47,7 +47,7 @@
               <dd><a href="/chinh-sach-giao-nhan/"><?php _e('Delivery policy', 'storefront') ?></a></dd>
               <dd><a href="/huong-dan-mua-hang/"><?php _e('Shopping guide', 'storefront') ?></a></dd>
               <dd><a href="/hoi-dap/"><?php _e('FAQs', 'storefront') ?></a></dd>
-              <dd><a href="/<?php echo apply_filters( 'wpml_get_translated_slug', 'lien-he', 'page' , 'ICL_LANGUAGE_CODE');?>"><?php _e('CONTACT US', 'storefront') ?></a></dd>
+              <dd><a href="/<?php echo apply_filters( 'wpml_get_translated_slug', 'showroom', 'page' , 'ICL_LANGUAGE_CODE');?>"><?php _e('CONTACT US', 'storefront') ?></a></dd>
             </dl>
           </dt>
           <dt>MEDICAL CERTIFICATES
@@ -140,7 +140,7 @@
               <ul class="m-support_list">
                 <li><a href="#">Affiliate</a></li>
                 <li><a href="/hoi-dap/">Q&A</a></li>
-                <li><a href="/lien-he/"><?php _e('CONTACT US', 'storefront') ?></a></li>
+                <li><a href="/showroom/"><?php _e('CONTACT US', 'storefront') ?></a></li>
                 <li><a href="https://caras.talent.vn/" rel="nofollow" target="_blank"><?php _e('JOB OPPORTUNITIES IN', 'storefront') ?></a></li>
               </ul>
             </div>

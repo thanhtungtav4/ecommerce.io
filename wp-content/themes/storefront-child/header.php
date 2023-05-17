@@ -234,7 +234,7 @@
                       <dl>
                         <dt>Showroom</dt>
                         <dd>
-													<a href="https://caraslens.com/lien-he/">
+													<a href="https://caraslens.com/showroom/">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.webp" type="image/webp">
 														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" alt="dv_showroom" width="326" height="149">
