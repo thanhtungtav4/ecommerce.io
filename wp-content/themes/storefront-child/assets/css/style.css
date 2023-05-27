@@ -2836,7 +2836,6 @@ body.js-active {
   background-color: white;
   padding: 10px;
   border-radius: 10px;
-  height: 500px;
   z-index: 1;
 }
 @media screen and (max-width: 767px) {
@@ -4764,4 +4763,5 @@ body.js-active {
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+  margin-bottom: 1rem;
 }

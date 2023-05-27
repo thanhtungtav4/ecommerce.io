@@ -92,15 +92,24 @@ get_header(); ?>
               </div>
             </div>
             <div class="map slider-showroom">
-            <div>
-              <img src="http://placehold.it/550x500?text=1">
-            </div>
-            <div>
-              <img src="http://placehold.it/550x500?text=2">
-            </div>
-            <div>
-              <img src="http://placehold.it/550x500?text=3">
-            </div>
+              <div>
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/88-ndc.jpg">
+              </div>
+              <div>
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/619-ndc.jpg">
+              </div>
+              <div>
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carasce-350-hvt-blur.jpg">
+              </div>
+              <div>
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carasce-350-hvt-blur2.jpg">
+              </div>
+              <div>
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carasce-350-hvt-blur3.jpg">
+              </div>
+              <div>
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/02-pho-hue.jpg">
+              </div>
             </div>
           </div>
         </div>
@@ -112,7 +121,6 @@ get_footer();
     $(document).on('ready', function() {
       $(".slider-showroom").slick({
         dots: false,
-        centerMode: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
