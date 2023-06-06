@@ -370,7 +370,8 @@ body.js-active {
   color: #2B2929;
 }
 .c-header_menu li a:hover {
-  color: #EB6A6A;
+  /* color: #EB6A6A; */
+  font-weight: 700;
 }
 @media screen and (max-width: 767px) {
   .c-header_menu li a {
@@ -2835,7 +2836,6 @@ body.js-active {
   background-color: white;
   padding: 10px;
   border-radius: 10px;
-  height: 500px;
   z-index: 1;
 }
 @media screen and (max-width: 767px) {
@@ -2859,7 +2859,7 @@ body.js-active {
   }
 }
 .contact .l-container .form h3 {
-  font-size: 2.9rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
 }
@@ -4670,4 +4670,98 @@ body.js-active {
 }
 .flex-wrap{
   flex-wrap: wrap !important;
+}
+.gg-pin {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: rotate(45deg) scale(var(--ggs,1));
+  width: 18px;
+  height: 18px;
+  border-radius: 100% 100% 0 100%;
+  border: 2px solid;
+  margin-top: -4px
+ }
+ 
+ .gg-pin::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 2px solid;
+  top: 3px;
+  left: 3px;
+  border-radius: 40px
+ } 
+
+ .gg-phone {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+  transform: scale(var(--ggs,1))
+ }
+ 
+ .gg-phone::after,
+ .gg-phone::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute
+ }
+ 
+ .gg-phone::after {
+  width: 18px;
+  height: 18px;
+  border-top-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  border-bottom-left-radius: 12px;
+  border-left: 4px solid;
+  border-bottom: 4px solid;
+  left: 2px;
+  bottom: 2px;
+  background:
+  linear-gradient(
+  to left,
+  currentColor 10px,
+  transparent 0
+  ) no-repeat right 11px/6px 4px,
+  linear-gradient(
+  to left,
+  currentColor 10px,
+  transparent 0
+  ) no-repeat -1px 0/4px 6px
+ }
+ 
+ .gg-phone::before {
+  width: 20px;
+  height: 20px;
+  border: 6px double;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  bottom: 2px;
+  left: 2px
+ } 
+
+ .showroom-icon{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #000000;
+}
+.showroom-icon i{
+  color: black;
+}
+.table-showroom tr td p{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
 }

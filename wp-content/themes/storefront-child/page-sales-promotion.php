@@ -16,8 +16,8 @@ get_header(); ?>
       <dd>
         <a href="http://caraslens.com/sales-promotion/">
         <picture>
-          <source media="(max-width:768px)" srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mctkm-30-pearlsapphire.jpg" type="image/jpeg">
-          <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ctkm-30-pearlsapphire.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ctkm-30-pearlsapphire.jpg" alt="ctkm-30-pearlsapphire" width="326" height="149">
+          <source media="(max-width:768px)" srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/voucher-10-00-mobile.jpg" type="image/jpeg">
+          <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/voucher-10-00-desktop.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/voucher-10-00-desktop.jpg" alt="voucher-10" width="326" height="149">
         </picture>
         </a>
       </dd>

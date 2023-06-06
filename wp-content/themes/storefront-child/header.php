@@ -149,51 +149,13 @@
                         <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/deo-14-tieng/'); ?>">14h</a></dd>
                         <dd><a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/deo-24-tieng/'); ?>">24h</a></dd>
                       </dl>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="c-menu c-menu_dropdown">
-                <a href="<?php if(ICL_LANGUAGE_CODE == 'en' ? print get_site_url().'/' .ICL_LANGUAGE_CODE. '/' : print get_site_url().'/phu-kien-lens/'); ?>"><?php _e('Accessories', 'storefront') ?></a>
-                <div class="c-menu_sub">
-                  <div class="c-menu_subinner">
-                    <div class="l-container col-3">
-                      <dl>
-											<dt>
-                        <dd>
-													<a href="/nuoc-ngam-kinh-ap-trong/">
-													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_ngam.png" alt="accessory_dd_ngam" width="326" height="149">
-													</picture>
-													</a>
-												</dd>
-												</dt>
-                      </dl>
-                      <dl>
-											<dt>
-                        <dd>
-													<a href="/thuoc-nho-mat-lens/">
-													<picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_nho.png" alt="accessory_dd_nho" width="326" height="149">
-													</picture>
-													</a>
-												</dd>
-												</dt>
-                      </dl>
-                      <dl>
-											<dt>
-                        <dd>
-													<a href="/dd-vitamin/">
-                          <picture>
-														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.webp" type="image/webp">
-														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/accessory_dd_vitamin.jpg" alt="accessory_dd_vitamin" width="326" height="149">
-													</picture>
-													</a>
-												</dd>
-												</dt>
-                      </dl>
+                      <div class="gr-menu">
+                        <dl class="types">
+                          <dt>Phụ Kiện</dt>
+                          <dd><a href="/nuoc-ngam-kinh-ap-trong/">Nước Ngâm Kính Áp Tròng</a></dd>
+                          <dd><a href="/thuoc-nho-mat-lens/">Thuốc Nhỏ Mắt Lens</a></dd>
+                          <dd><a href="/dd-vitamin/">Dưỡng chất Vitamin</a></dd></dl>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -232,9 +194,9 @@
                   <div class="c-menu_subinner">
                     <div class="l-container col-3">
                       <dl>
-                        <dt>Showroom</dt>
+                        <dt>Thăm khám bởi Bác sĩ Nhãn Khoa</dt>
                         <dd>
-													<a href="https://caraslens.com/showroom/">
+													<a href="#">
 													<picture>
 														<source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.webp" type="image/webp">
 														<img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/dv_showroom.jpg" alt="dv_showroom" width="326" height="149">
@@ -306,7 +268,7 @@
                   </div>
                 </div>
               </li>
-              <li class="c-menu c-menu_dropdown"><a href=""><?php _e('Information', 'storefront') ?></a>
+              <li class="c-menu c-menu_dropdown"><a href="http://caraslens.com/showroom/"><?php _e('Showroom', 'storefront') ?></a>
                 <div class="c-menu_sub">
                   <div class="c-menu_subinner">
                     <div class="l-container col-3">
