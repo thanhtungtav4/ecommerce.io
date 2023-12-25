@@ -281,6 +281,10 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Settings', false ) ) :
 					$value['is_new'] = false;
 				}
                 
+                if ( ! isset( $value['is_classic'] ) ) {
+					$value['is_classic'] = false;
+				}
+                
                 if ( ! isset( $value['help_preview'] ) ) {
 					$value['help_preview'] = false;
 				}
@@ -307,6 +311,10 @@ if ( ! class_exists( 'GetWooPlugins_Admin_Settings', false ) ) :
                 
                 if( $value['is_new'] ){
                     $classes[] = 'is-new';
+                }
+                
+                if( $value['is_classic'] ){
+                    $classes[] = 'is-classic';
                 }
                 
                 if( $value['help_preview'] ){

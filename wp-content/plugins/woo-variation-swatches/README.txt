@@ -1,12 +1,12 @@
 === Variation Swatches for WooCommerce ===
 Contributors: EmranAhmed, getwooplugins
 Tags: woocommerce variation swatches, woocommerce variation, woocommerce, variation swatches, woocommerce attributes, product attributes, product color, product size, variable product attributes, variation product swatches, color variation swatch, image variation swatch, printful color swatches
-Requires PHP: 7.0
+Requires PHP: 7.4
 Requires at least: 5.6
-Tested up to: 6.2
+Tested up to: 6.4
 WC requires at least: 5.6
-WC tested up to: 7.5
-Stable tag: 2.0.20
+WC tested up to: 8.3
+Stable tag: 2.0.29
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -113,7 +113,7 @@ If you want to convert variation select dropdown into buttons. You don’t need 
 
   [Live Demo & Documentation](http://j.mp/button-to-dropdown-readme)
 <hr />
-👉 Compatible With Eelementor Page Builder Plugin 
+👉 Compatible With Elementor Page Builder Plugin
 
 Elementor works well with all the themes and plugins which respect the coding. The WooCommerce Variation Swatches plugin is compatible with the Elementor page builder plugin.
 
@@ -168,9 +168,9 @@ There are many other useful plugins that serve different purposes, and many user
 >It you’re looking for a great product with superlative support then look no further!'
 
 [Ruben Zuidervaart](https://wordpress.org/support/topic/does-what-it-should-with-no-issues/): 
-> 'It just works, and the support is also pretty damn good for something that they offer for free.
+> 'It just works, and the support is also pretty damn good for something that they offer for free.'
 
->Leaving a 5/5 is the least I could do 🙂'
+> 'Leaving a 5/5 is the least I could do 🙂'
 
 [cl4udio](https://wordpress.org/support/topic/good-support-278/): 
 > 'I like this plugin! Works great and the customer support is the best. Love it!'
@@ -271,7 +271,7 @@ In the WooCommerce Variation Swatches plugin,there are options for styling swatc
 <hr />
 👉 Show Cross Sign For Out of Stock Variation Swatches (Unlimited Variations Without hiding out of stock item from catalog)
 
-The free version of thos Swatches plugin enables you to show cross signs up to 30 variations that are currently out of stock. However, the advanced version will allow to show cross signs for unlimited variations.  
+The free version of those Swatches plugin enables you to show cross signs up to 30 variations that are currently out of stock. However, the advanced version will allow to show cross signs for unlimited variations.
 
   [Live Demo & Documentation](http://bit.ly/3rd-readme-demo-cross-out-of-stock-variations-more-than-30-variations)
 <hr />
@@ -613,6 +613,52 @@ And your are ready to go.
 12. Global Variation Color Swatches Attribute List Preview
 
 == Changelog ==
+
+= 2.0.29 - 21-11-2023 =
+
+* Update: WordPress 6.4+ Compatibility.
+* Update: WooCommerce 8.3+ Compatibility.
+
+= 2.0.28 - 25-10-2023 =
+
+* Fix: Hide disabled variation attributes
+
+= 2.0.27 - 18-10-2023 =
+
+* Fix: Block variation product add to cart
+* Fix: Select2 hover css issue fixed.
+* Update: WooCommerce 8.2 Compatibility.
+* Add: Filter added: `woo_variation_swatches_remove_attribute_item` and `woo_variation_swatches_get_swatch_data`
+
+= 2.0.26 - 05-09-2023 =
+
+* Fix: All import plugin issue.
+
+= 2.0.25 - 31-08-2023 =
+
+* Add: WordPress 6.3 compatibility
+* Add: WooCommerce 8.0 compatibility
+* Update: Color / Image data can update by API Request
+
+= 2.0.24 - 05-07-2023 =
+
+* Fix: Bundle product radio attribute issue.
+
+= 2.0.23 - 18-06-2023 =
+
+* Update: WooCommerce 7.8 Compatibility
+* Fix: API Issue
+
+= 2.0.22 - 11-06-2023 =
+
+* Fix: Tooltip width issue
+
+= 2.0.21 - 02-06-2023 =
+
+* Update: WooCommerce 7.7 Compatibility
+* Update: Responsive tooltip
+* Add: Additional rest api response
+* Add: Filters to modify attribute template response
 
 = 2.0.20 - 13-04-2023 =
 

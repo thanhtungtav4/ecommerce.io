@@ -1,8 +1,8 @@
 /**
  * External dependencies
  */
-import { ChangeEventHandler } from 'react';
-import { ProductResponseItem } from '@woocommerce/type-defs/product-response';
+import type { ChangeEventHandler } from 'react';
+import type { ProductResponseItem } from '@woocommerce/types';
 
 interface GenerateQueryProps {
 	sortValue: string;
@@ -76,6 +76,7 @@ export interface ProductSortSelectProps {
 
 export interface ProductListContainerProps {
 	attributes: Attributes;
+	urlParameterSuffix: string | undefined;
 }
 
 export interface NoMatchingProductsProps {

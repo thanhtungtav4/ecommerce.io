@@ -15,6 +15,7 @@
     display: inline-block;
     clear: both;
     margin-bottom: 20px;
+    vertical-align: middle;
 }
 
 .devvn_option_2col, .devvn_option_2col *, .devvn_option_1col, .devvn_option_1col * {
@@ -157,8 +158,8 @@ a.devvn_checkbox_all {
     opacity: .8;
     animation: spin .6s infinite linear;
     border-radius: 50%;
-    width: 10px;
-    height: 10px;
+    width: 40px;
+    height: 40px;
     pointer-events: none;
     position: absolute;
     top: 50%;
@@ -169,7 +170,7 @@ a.devvn_checkbox_all {
     border-top: 3px solid rgba(0, 0, 0, 0.1) !important;
     border-right: 3px solid rgba(0, 0, 0, 0.1) !important;
     border-bottom: 3px solid rgba(0, 0, 0, 0.1) !important;
-    border-left: 3px solid #fff !important;
+    border-left: 3px solid #009688 !important;
 }
 
 @keyframes spin {

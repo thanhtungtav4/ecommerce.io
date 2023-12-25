@@ -2,7 +2,7 @@
 /**
  * Trait that offers cache methods for any object that implements it
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Traits
  * @version 2.0.0
  */

@@ -84,6 +84,7 @@ class TemplatesWpf extends ModuleWpf {
 		if (is_admin()) {
 			$jsData['isPro'] = FrameWpf::_()->getModule('promo')->isPro();
 			$jsData['mainLink'] = FrameWpf::_()->getModule('promo')->getMainLink();
+			$jsData['isWCLicense'] = FrameWpf::_()->isWCLicense();
 		}
 		$jsData = DispatcherWpf::applyFilters('jsInitVariables', $jsData);
 		FrameWpf::_()->addJSVar('coreWpf', 'WPF_DATA', $jsData);
@@ -112,7 +113,7 @@ class TemplatesWpf extends ModuleWpf {
 	public function loadCoreCss( $isElementorEditor = false ) {
 		$this->_styles = array(
 			'styleWpf'			=> array('path' => WPF_CSS_PATH . 'style.css', 'for' => 'admin'),
-			'woobewoo-uiWpf'	=> array('path' => WPF_CSS_PATH . 'woobewoo-ui.css', 'for' => 'admin'),
+			'woobewoo-uiWpf'	=> array('path' => WPF_CSS_PATH . 'woobewoo-ui' . ( FrameWpf::_()->isWCLicense() ? '-wc' : '' ) . '.css', 'for' => 'admin'),
 			'dashicons'			=> array('for' => 'admin'),
 			'bootstrap-alerts'	=> array('path' => WPF_CSS_PATH . 'bootstrap-alerts.css', 'for' => 'admin'),
 			'icheck'			=> array('path' => WPF_CSS_PATH . 'jquery.icheck.css', 'for' => 'admin'),
@@ -130,11 +131,13 @@ class TemplatesWpf extends ModuleWpf {
 		}
 		$this->loadFontAwesome();
 	}
-	public function loadJqueryUi() {
-			FrameWpf::_()->addStyle('jquery-ui', WPF_CSS_PATH . 'jquery-ui.min.css');
-			FrameWpf::_()->addStyle('jquery-ui.structure', WPF_CSS_PATH . 'jquery-ui.structure.min.css');
-			FrameWpf::_()->addStyle('jquery-ui.theme', WPF_CSS_PATH . 'jquery-ui.theme.min.css');
+	public function loadJqueryUi( $slider = true ) {
+		FrameWpf::_()->addStyle('jquery-ui', WPF_CSS_PATH . 'jquery-ui.min.css');
+		FrameWpf::_()->addStyle('jquery-ui.structure', WPF_CSS_PATH . 'jquery-ui.structure.min.css');
+		FrameWpf::_()->addStyle('jquery-ui.theme', WPF_CSS_PATH . 'jquery-ui.theme.min.css');
+		if ($slider) {
 			FrameWpf::_()->addStyle('jquery-slider', WPF_CSS_PATH . 'jquery-slider.css');
+		}
 	}
 	public function loadJqGrid() {
 		static $loaded = false;

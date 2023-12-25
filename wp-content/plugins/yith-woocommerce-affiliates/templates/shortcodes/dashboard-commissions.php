@@ -2,7 +2,7 @@
 /**
  * Affiliate Dashboard Commissions
  *
- * @author YITH
+ * @author YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Templates
  * @version 1.0.5
  */

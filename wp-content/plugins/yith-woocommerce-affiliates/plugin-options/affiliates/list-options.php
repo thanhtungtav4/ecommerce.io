@@ -2,7 +2,7 @@
 /**
  * Affiliates list options
  *
- * @author YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates
  * @version 1.0.0
  */
@@ -24,25 +24,9 @@ return apply_filters(
 	'yith_wcaf_affiliates_list_settings',
 	array(
 		'affiliates-list' => array(
-			'affiliates_section_start' => array(
-				'type' => 'title',
-				'desc' => '',
-				'id'   => 'yith_wcaf_affiliates_settings',
-			),
-			'affiliates_table'         => array(
-				'name'                 => _x( 'Affiliates', '[ADMIN] Title for affiliates table, in affiliates tab', 'yith-woocommerce-affiliates' ),
-				'type'                 => 'yith-field',
-				'yith-type'            => 'list-table',
-				'class'                => '',
-				'list_table_class'     => 'YITH_WCAF_Affiliates_Admin_Table',
-				'list_table_class_dir' => YITH_WCAF_INC . 'admin/admin-tables/class-yith-wcaf-affiliates-table.php',
-				'id'                   => 'affiliates',
-				'add_new_button'       => _x( 'Add affiliate', '[ADMIN] Add new affiliate button, in affiliates tab', 'yith-woocommerce-affiliates' ),
-				'add_new_url'          => '#',
-			),
-			'affiliates_section_end'   => array(
-				'type' => 'sectionend',
-				'id'   => 'yith_wcaf_affiliates_settings',
+			'affiliates-list-tab' => array(
+				'type'   => 'custom_tab',
+				'action' => 'yith_wcaf_print_affiliates_list_tab',
 			),
 		),
 	)

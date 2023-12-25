@@ -30,7 +30,7 @@
 	left: 9999px;
 }
 .woobewoo-plugin select {
-    background: #fff url(images/down.png) no-repeat left 5px top 55%;
+    background: #fff url(images/down.png) no-repeat left 5px top 55% !important;
     padding-left: 24px !important;
 }
 #wpfFiltersEditForm .chosen-container-multi {
@@ -55,5 +55,16 @@
 }
 .wpfFilterWrapper i, .wpfFilterWrapper svg{
     float: left !important;
+}
+.wpfSingleInputSearch button, .wpfSearchWrapper button {
+	left: 0 !important;
+	right: auto !important;
+}
+.wpfSingleInputSearch input, .wpfSearchWrapper input {
+	padding-left: 25px !important;
+}
+.wpfMainWrapper .wpfCount {
+	padding-left: 0;
+	padding-right: 10px;
 }
 

@@ -9,6 +9,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
 if ( class_exists( 'WP_Image_Editor_Gmagick' ) ) {
 	/**
 	 * Extension of the WP_Image_Editor_Gmagick class to auto-compress edited images.
@@ -47,9 +48,6 @@ if ( class_exists( 'WP_Image_Editor_Gmagick' ) ) {
 						'mime-type' => $mime_type,
 					);
 				}
-			}
-			if ( ! defined( 'EWWW_IMAGE_OPTIMIZER_CLOUD' ) ) {
-				ewww_image_optimizer_cloud_init();
 			}
 			$saved = parent::_save( $image, $filename, $mime_type );
 			if ( ! is_wp_error( $saved ) ) {

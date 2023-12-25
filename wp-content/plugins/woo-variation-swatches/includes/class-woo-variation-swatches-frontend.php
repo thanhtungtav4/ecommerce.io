@@ -64,12 +64,28 @@
                     
                     global $wpdb;
                     
-                    $attribute_taxonomy = $wpdb->get_row( "SELECT * FROM " . $wpdb->prefix . "woocommerce_attribute_taxonomies WHERE attribute_name='{$attribute_name}'" );
+                    $attribute_taxonomy = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}woocommerce_attribute_taxonomies WHERE attribute_name = %s", esc_sql( $attribute_name ) ) );
                     
                     set_transient( $transient_key, $attribute_taxonomy );
                 }
                 
                 return apply_filters( 'woo_variation_swatches_get_wc_attribute_taxonomy', $attribute_taxonomy, $attribute_name );
+            }
+            
+            public function get_attribute_taxonomy_by_id( $attribute_id ) {
+                
+                $transient_key = woo_variation_swatches()->get_cache()->get_cache_key( sprintf( 'woo_variation_swatches_cache_attribute_taxonomy_id__%s', $attribute_id ) );
+                
+                if ( false === ( $attribute_taxonomy = get_transient( $transient_key ) ) ) {
+                    
+                    global $wpdb;
+                    
+                    $attribute_taxonomy = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}woocommerce_attribute_taxonomies WHERE attribute_id = %d", $attribute_id ) );
+                    
+                    set_transient( $transient_key, $attribute_taxonomy );
+                }
+                
+                return apply_filters( 'woo_variation_swatches_get_wc_attribute_taxonomy_by_id', $attribute_taxonomy, $attribute_taxonomy );
             }
             
             public function body_class( $classes ) {

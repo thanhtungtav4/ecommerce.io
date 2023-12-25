@@ -17,7 +17,6 @@ import { dispatch } from '@wordpress/data';
  * Internal dependencies
  */
 import PaymentMethods from '../payment-methods';
-import { defaultCartState } from '../../../../data/cart/default-state';
 
 jest.mock( '../saved-payment-method-options', () => ( { onChange } ) => {
 	return (
@@ -28,19 +27,24 @@ jest.mock( '../saved-payment-method-options', () => ( { onChange } ) => {
 	);
 } );
 
-jest.mock(
-	'@woocommerce/base-components/radio-control-accordion',
-	() =>
-		( { onChange } ) =>
-			(
-				<>
-					<span>Payment method options</span>
-					<button onClick={ () => onChange( 'credit-card' ) }>
-						Select new payment
-					</button>
-				</>
-			)
-);
+jest.mock( '@woocommerce/blocks-components', () => {
+	const originalModule = jest.requireActual(
+		'@woocommerce/blocks-components'
+	);
+
+	return {
+		__esModule: true,
+		...originalModule,
+		RadioControlAccordion: ( { onChange } ) => (
+			<>
+				<span>Payment method options</span>
+				<button onClick={ () => onChange( 'credit-card' ) }>
+					Select new payment
+				</button>
+			</>
+		),
+	};
+} );
 
 const originalSelect = jest.requireActual( '@wordpress/data' ).select;
 const selectMock = jest
@@ -102,9 +106,10 @@ describe( 'PaymentMethods', () => {
 		wpDataFunctions
 			.dispatch( CART_STORE_KEY )
 			.invalidateResolutionForStore();
-		wpDataFunctions
-			.dispatch( CART_STORE_KEY )
-			.receiveCart( defaultCartState.cartData );
+		wpDataFunctions.dispatch( CART_STORE_KEY ).receiveCart( {
+			...previewCart,
+			payment_methods: [ 'cod', 'credit-card' ],
+		} );
 	} );
 
 	afterEach( () => {

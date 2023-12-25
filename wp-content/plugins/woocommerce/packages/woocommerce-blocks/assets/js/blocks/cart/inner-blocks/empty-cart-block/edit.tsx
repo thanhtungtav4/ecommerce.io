@@ -15,8 +15,6 @@ import {
 	useForcedLayout,
 	getAllowedBlocks,
 } from '../../../cart-checkout-shared';
-import iconDataUri from './icon-data-uri.js';
-import './style.scss';
 
 const browseStoreTemplate = SHOP_URL
 	? [
@@ -26,7 +24,7 @@ const browseStoreTemplate = SHOP_URL
 				content: sprintf(
 					/* translators: %s is the link to the store product directory. */
 					__(
-						'<a href="%s">Browse store</a>.',
+						'<a href="%s">Browse store</a>',
 						'woo-gutenberg-products-block'
 					),
 					SHOP_URL
@@ -38,14 +36,6 @@ const browseStoreTemplate = SHOP_URL
 
 const defaultTemplate = [
 	[
-		'core/image',
-		{
-			align: 'center',
-			url: iconDataUri,
-			sizeSlug: 'small',
-		},
-	],
-	[
 		'core/heading',
 		{
 			textAlign: 'center',
@@ -54,7 +44,7 @@ const defaultTemplate = [
 				'woo-gutenberg-products-block'
 			),
 			level: 2,
-			className: 'wc-block-cart__empty-cart__title',
+			className: 'with-empty-cart-icon wc-block-cart__empty-cart__title',
 		},
 	],
 	browseStoreTemplate,
@@ -75,7 +65,7 @@ const defaultTemplate = [
 	[
 		'woocommerce/product-new',
 		{
-			columns: 3,
+			columns: 4,
 			rows: 1,
 		},
 	],

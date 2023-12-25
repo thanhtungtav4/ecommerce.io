@@ -20,11 +20,15 @@ require_once(NSL_PATH . '/compat.php');
 
 class NextendSocialLogin {
 
-    public static $version = '3.1.7';
+    public static $version = '3.1.11';
 
-    public static $nslPROMinVersion = '3.1.7';
+    public static $nslPROMinVersion = '3.1.11';
 
     public static $proxyPage = false;
+
+    public static function getRequiredCapability() {
+        return apply_filters('nsl_required_capability', 'manage_options');
+    }
 
     public static function checkVersion() {
 
@@ -57,7 +61,7 @@ class NextendSocialLogin {
             $showNotice = false;
         }
 
-        if (is_admin() && current_user_can('manage_options') && $showNotice) {
+        if (is_admin() && current_user_can(NextendSocialLogin::getRequiredCapability()) && $showNotice) {
             $file = 'nextend-facebook-connect/nextend-facebook-connect.php';
             Notices::addError(sprintf(__('Please update %1$s to version %2$s or newer.', 'nextend-facebook-connect'), "Nextend Social Login", NextendSocialLoginPRO::$nslMinVersion) . ' <a href="' . esc_url(wp_nonce_url(admin_url('update.php?action=upgrade-plugin&plugin=') . $file, 'upgrade-plugin_' . $file)) . '">' . __('Update now!', 'nextend-facebook-connect') . '</a>');
         }
@@ -69,7 +73,7 @@ class NextendSocialLogin {
             $showNotice = false;
         }
 
-        if (is_admin() && current_user_can('manage_options') && $showNotice) {
+        if (is_admin() && current_user_can(NextendSocialLogin::getRequiredCapability()) && $showNotice) {
             $file = 'nextend-social-login-pro/nextend-social-login-pro.php';
             Notices::addError(sprintf(__('Please update %1$s to version %2$s or newer.', 'nextend-facebook-connect'), "Nextend Social Login Pro Addon", self::$nslPROMinVersion) . ' <a href="' . esc_url(wp_nonce_url(admin_url('update.php?action=upgrade-plugin&plugin=') . $file, 'upgrade-plugin_' . $file)) . '">' . __('Update now!', 'nextend-facebook-connect') . '</a>');
         }
@@ -199,15 +203,16 @@ class NextendSocialLogin {
             'comment_button_align' => 'left',
             'comment_button_style' => 'default',
 
-            'buddypress_register_button'       => 'bp_before_account_details_fields',
-            'buddypress_register_button_align' => 'left',
-            'buddypress_register_button_style' => 'default',
-            'buddypress_register_form_layout'  => 'default',
-            'buddypress_login'                 => 'show',
-            'buddypress_login_form_layout'     => 'default',
-            'buddypress_login_button_style'    => 'default',
-            'buddypress_sidebar_login'         => 'show',
-            'buddypress_social_accounts_tab'   => 'show',
+            'buddypress_register_button'          => 'bp_before_account_details_fields',
+            'buddypress_register_button_align'    => 'left',
+            'buddypress_register_button_style'    => 'default',
+            'buddypress_register_form_layout'     => 'default',
+            'buddypress_login'                    => 'show',
+            'buddypress_login_form_layout'        => 'default',
+            'buddypress_login_button_style'       => 'default',
+            'buddypress_sidebar_login'            => 'show',
+            'buddypress_social_accounts_tab'      => 'show',
+            'buddypress_registration_integration' => '0',
 
             'woocommerce_login'                => 'after',
             'woocommerce_login_form_layout'    => 'default',
@@ -302,7 +307,7 @@ class NextendSocialLogin {
                 wp_redirect(admin_url());
             }
             exit;
-        } else if (isset($_REQUEST['repairnsl']) && current_user_can('manage_options') && check_admin_referer('repairnsl')) {
+        } else if (isset($_REQUEST['repairnsl']) && current_user_can(NextendSocialLogin::getRequiredCapability()) && check_admin_referer('repairnsl')) {
             self::install();
             wp_redirect(admin_url('admin.php?page=nextend-social-login'));
             exit;
@@ -492,11 +497,12 @@ class NextendSocialLogin {
             add_filter('jetpack_sso_bypass_login_forward_wpcom', '__return_false');
 
             /**
-             * Fix: our autologin after the registration prevents WooRewards (MyRewards) plugin from awarding the points for the registration
-             * so we need to make our autologin happen after WooRewards have already awarded the points. They use 999999 priority.
+             * Fix: our autologin after the registration prevents WooRewards (MyRewards) and Ultimate Affiliate Pro plugins from awarding the points for the registration
+             * so we need to make our autologin happen after they have already awarded the points. They use 999999 and 99 priority respectively.
              * @url https://plugins.longwatchstudio.com/product/woorewards/
+             * @url2 https://affiliate.wpindeed.com/
              */
-            if (class_exists('LWS_WooRewards')) {
+            if (class_exists('LWS_WooRewards') || class_exists('UAP_Main')) {
                 add_filter('nsl_autologin_priority', function () {
                     return 10000000;
                 });
@@ -523,8 +529,8 @@ class NextendSocialLogin {
             if (defined('WP_2FA_VERSION')) {
                 if (self::$settings->get('login_restriction')) {
                     add_filter('wp_2fa_skip_2fa_login_form', function ($skip, $user) {
-                        if (class_exists('WP2FA\Authenticator\Login', false)) {
-                            $is_user_using_two_factor = WP2FA\Authenticator\Login::is_user_using_two_factor($user->ID);
+                        if (class_exists('WP2FA\Admin\Helpers\User_Helper', false) && method_exists(WP2FA\Admin\Helpers\User_Helper::class, 'is_user_using_two_factor')) {
+                            $is_user_using_two_factor = WP2FA\Admin\Helpers\User_Helper::is_user_using_two_factor($user->ID);
                             if ($is_user_using_two_factor) {
                                 return $skip;
                             }
@@ -944,7 +950,7 @@ class NextendSocialLogin {
      * @return string
      */
     public static function renderLinkAndUnlinkButtons($heading = '', $link = true, $unlink = true, $align = "left", $providers = false, $style = "default") {
-        if (count(self::$enabledProviders)) {
+        if (count(self::$enabledProviders) && is_user_logged_in()) {
 
             /**
              * If the NSL_DISABLE_IN_AMP_REQUESTS constant is defined, we shouldn't display the link/unlink buttons on the AMP pages.
@@ -1046,7 +1052,7 @@ class NextendSocialLogin {
             'link'     => 0,
             'unlink'   => 0,
             'heading'  => false,
-            'align'    => 'left',
+            'align'    => 'left'
         ), $atts);
 
         $providers  = false;
@@ -1064,10 +1070,11 @@ class NextendSocialLogin {
             $atts = array_merge(array(
                 'redirect'    => false,
                 'trackerdata' => false,
-                'labeltype'   => 'login'
+                'labeltype'   => 'login',
+                'customlabel' => false
             ), $atts);
 
-            return self::renderButtonsWithContainerAndTitle($atts['heading'], $atts['style'], $providers, $atts['redirect'], $atts['trackerdata'], $atts['align'], $atts['labeltype']);
+            return self::renderButtonsWithContainerAndTitle($atts['heading'], $atts['style'], $providers, $atts['redirect'], $atts['trackerdata'], $atts['align'], $atts['labeltype'], $atts['customlabel']);
         }
 
         $link   = filter_var($atts['link'], FILTER_VALIDATE_BOOLEAN);
@@ -1094,62 +1101,64 @@ class NextendSocialLogin {
         return self::renderButtonsWithContainerAndTitle(false, $style, $providers, $redirect_to, $trackerData, $align, $labelType);
     }
 
-    private static function renderButtonsWithContainerAndTitle($heading = false, $style = 'default', $providers = false, $redirect_to = false, $trackerData = false, $align = 'left', $labelType = 'login') {
+    private static function renderButtonsWithContainerAndTitle($heading = false, $style = 'default', $providers = false, $redirect_to = false, $trackerData = false, $align = 'left', $labelType = 'login', $customLabel = false) {
+        if (!is_user_logged_in()) {
 
-        /**
-         * If the NSL_DISABLE_IN_AMP_REQUESTS constant is defined, we shouldn't display the social buttons in the AMP requests.
-         */
-        if (defined('NSL_DISABLE_IN_AMP_REQUESTS') && NextendSocialLogin::isAMPRequest()) {
-            return '';
-        }
+            /**
+             * If the NSL_DISABLE_IN_AMP_REQUESTS constant is defined, we shouldn't display the social buttons in the AMP requests.
+             */
+            if (defined('NSL_DISABLE_IN_AMP_REQUESTS') && NextendSocialLogin::isAMPRequest()) {
+                return '';
+            }
 
-        if (!isset(self::$styles[$style])) {
-            $style = 'default';
-        }
+            if (!isset(self::$styles[$style])) {
+                $style = 'default';
+            }
 
-        if (!in_array($align, self::$styles[$style]['align'])) {
-            $align = 'left';
-        }
+            if (!in_array($align, self::$styles[$style]['align'])) {
+                $align = 'left';
+            }
 
 
-        $enabledProviders = false;
-        if (is_array($providers)) {
-            $enabledProviders = array();
-            foreach ($providers as $provider) {
-                if ($provider && isset(self::$enabledProviders[$provider->getId()])) {
-                    $enabledProviders[$provider->getId()] = $provider;
+            $enabledProviders = false;
+            if (is_array($providers)) {
+                $enabledProviders = array();
+                foreach ($providers as $provider) {
+                    if ($provider && isset(self::$enabledProviders[$provider->getId()])) {
+                        $enabledProviders[$provider->getId()] = $provider;
+                    }
                 }
             }
-        }
-        if ($enabledProviders === false) {
-            $enabledProviders = self::$enabledProviders;
-        }
-
-        if (count($enabledProviders)) {
-            $buttons = '';
-            foreach ($enabledProviders as $provider) {
-                $buttons .= $provider->getConnectButton($style, $redirect_to, $trackerData, $labelType);
+            if ($enabledProviders === false) {
+                $enabledProviders = self::$enabledProviders;
             }
 
-            if (!empty($heading)) {
-                $heading = '<h2>' . $heading . '</h2>';
-            } else {
-                $heading = '';
-            }
+            if (count($enabledProviders)) {
+                $buttons = '';
+                foreach ($enabledProviders as $provider) {
+                    $buttons .= $provider->getConnectButton($style, $redirect_to, $trackerData, $labelType, $customLabel);
+                }
 
-            $buttons = '<div class="nsl-container-buttons">' . $buttons . '</div>';
+                if (!empty($heading)) {
+                    $heading = '<h2>' . $heading . '</h2>';
+                } else {
+                    $heading = '';
+                }
 
-            $ret = '<div class="nsl-container ' . self::$styles[$style]['container'] . '"' . ($style !== 'fullwidth' ? ' data-align="' . esc_attr($align) . '"' : '') . '>' . $heading . $buttons . '</div>';
-            if (defined('DOING_AJAX') && DOING_AJAX) {
-                $id  = md5(uniqid('nsl-ajax-'));
-                $ret = '<div id="' . $id . '">' . $ret . '</div>';
-                if (!$redirect_to) {
-                    $ret .= '<script>window._nslDOMReady(function(){var socialButtonContainer=document.getElementById("' . $id . '");if(socialButtonContainer){var socialButtons=socialButtonContainer.querySelectorAll("a");socialButtons.forEach(function(el,i){var href=el.getAttribute("href");if(href.indexOf("?")===-1){href+="?"}else{href+="&"}
+                $buttons = '<div class="nsl-container-buttons">' . $buttons . '</div>';
+
+                $ret = '<div class="nsl-container ' . self::$styles[$style]['container'] . '"' . ($style !== 'fullwidth' ? ' data-align="' . esc_attr($align) . '"' : '') . '>' . $heading . $buttons . '</div>';
+                if (defined('DOING_AJAX') && DOING_AJAX) {
+                    $id  = md5(uniqid('nsl-ajax-'));
+                    $ret = '<div id="' . $id . '">' . $ret . '</div>';
+                    if (!$redirect_to) {
+                        $ret .= '<script>window._nslDOMReady(function(){var socialButtonContainer=document.getElementById("' . $id . '");if(socialButtonContainer){var socialButtons=socialButtonContainer.querySelectorAll("a");socialButtons.forEach(function(el,i){var href=el.getAttribute("href");if(href.indexOf("?")===-1){href+="?"}else{href+="&"}
 el.setAttribute("href",href+"redirect="+encodeURIComponent(window.location.href))})}});</script>';
+                    }
                 }
-            }
 
-            return $ret;
+                return $ret;
+            }
         }
 
         return '';
@@ -1184,6 +1193,7 @@ el.setAttribute("href",href+"redirect="+encodeURIComponent(window.location.href)
         }
 
         if ($alternateLoginPage !== false) {
+
             return $alternateLoginPage;
         }
 
@@ -1375,7 +1385,7 @@ el.setAttribute("href",href+"redirect="+encodeURIComponent(window.location.href)
         static $registerFlowPage = null;
         if ($registerFlowPage === null) {
             $registerFlowPage = intval(self::$settings->get('register-flow-page'));
-            if (empty($registerFlowPage) || get_post($registerFlowPage) === null) {
+            if (empty($registerFlowPage) || get_post($registerFlowPage) === null || get_post_status($registerFlowPage) !== 'publish') {
                 $registerFlowPage = false;
             }
         }
@@ -1387,7 +1397,7 @@ el.setAttribute("href",href+"redirect="+encodeURIComponent(window.location.href)
         static $proxyPage = null;
         if ($proxyPage === null) {
             $proxyPage = intval(self::$settings->get('proxy-page'));
-            if (empty($proxyPage) || get_post($proxyPage) === null) {
+            if (empty($proxyPage) || get_post($proxyPage) === null || get_post_status($proxyPage) !== 'publish') {
                 $proxyPage = false;
             }
         }

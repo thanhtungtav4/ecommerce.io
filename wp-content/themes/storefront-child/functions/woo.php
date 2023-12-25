@@ -30,7 +30,7 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
    }
    else{
       switch( $currency ) {
-         case 'VND': $currency_symbol = 'VNĐ/cặp'; break;
+         case 'VND': $currency_symbol = 'VNĐ/chiếc'; break;
          }
    }
 

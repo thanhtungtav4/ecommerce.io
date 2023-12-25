@@ -1,13 +1,20 @@
 /**
  * External dependencies
  */
-import { ElementType } from 'react';
 import { __ } from '@wordpress/i18n';
 import { InspectorControls } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
 import { addFilter } from '@wordpress/hooks';
+import { type ElementType } from '@wordpress/element';
 import { ProductQueryFeedbackPrompt } from '@woocommerce/editor-components/feedback-prompt';
-import { EditorBlock } from '@woocommerce/types';
+import { EditorBlock, isNumber } from '@woocommerce/types';
+import { usePrevious } from '@woocommerce/base-hooks';
+import {
+	manualUpdate,
+	MANUAL_REPLACE_PRODUCTS_WITH_PRODUCT_COLLECTION,
+} from '@woocommerce/blocks/migration-products-to-product-collection';
+import { getSettingWithCoercion } from '@woocommerce/settings';
+import { ProductQueryBlockQuery } from '@woocommerce/blocks/product-query/types';
 import {
 	FormTokenField,
 	ToggleControl,
@@ -33,11 +40,14 @@ import {
 } from './utils';
 import {
 	ALL_PRODUCT_QUERY_CONTROLS,
+	QUERY_DEFAULT_ATTRIBUTES,
 	QUERY_LOOP_ID,
 	STOCK_STATUS_OPTIONS,
 } from './constants';
-import { PopularPresets } from './inspector-controls/popular-presets';
 import { AttributesFilter } from './inspector-controls/attributes-filter';
+import { PopularPresets } from './inspector-controls/popular-presets';
+import { ProductSelector } from './inspector-controls/product-selector';
+import { UpgradeNotice } from './inspector-controls/upgrade-notice';
 
 import './editor.scss';
 
@@ -88,6 +98,71 @@ function getStockStatusIdByLabel( statusLabel: FormTokenField.Value ) {
 	)?.[ 0 ];
 }
 
+export const WooInheritToggleControl = (
+	props: ProductQueryBlock & {
+		defaultWooQueryParams: Partial< ProductQueryArguments >;
+	}
+) => {
+	const queryObjectBeforeInheritEnabled = usePrevious(
+		props.attributes.query,
+		( value ) => {
+			return value.inherit === false;
+		}
+	);
+
+	return (
+		<ToggleControl
+			className="woo-inherit-query-toggle"
+			label={ __(
+				'Inherit query from template',
+				'woo-gutenberg-products-block'
+			) }
+			help={ __(
+				'Toggle to use the global query context that is set with the current template, such as variations of the product catalog or search. Disable to customize the filtering independently.',
+				'woo-gutenberg-products-block'
+			) }
+			checked={
+				isCustomInheritGlobalQueryImplementationEnabled
+					? props.attributes.query.__woocommerceInherit || false
+					: props.attributes.query.inherit || false
+			}
+			onChange={ ( inherit ) => {
+				const inheritQuery: Partial< ProductQueryBlockQuery > = {
+					inherit,
+				};
+
+				if ( inherit ) {
+					inheritQuery.perPage = getSettingWithCoercion(
+						'loopShopPerPage',
+						12,
+						isNumber
+					);
+				}
+
+				if ( isCustomInheritGlobalQueryImplementationEnabled ) {
+					return setQueryAttribute( props, {
+						...QUERY_DEFAULT_ATTRIBUTES.query,
+						__woocommerceInherit: inherit,
+						// Restore the query object value before inherit was enabled.
+						...( inherit === false && {
+							...queryObjectBeforeInheritEnabled,
+						} ),
+					} );
+				}
+
+				setQueryAttribute( props, {
+					...props.defaultWooQueryParams,
+					...inheritQuery,
+					// Restore the query object value before inherit was enabled.
+					...( inherit === false && {
+						...queryObjectBeforeInheritEnabled,
+					} ),
+				} );
+			} }
+		/>
+	);
+};
+
 export const TOOLS_PANEL_CONTROLS = {
 	attributes: AttributesFilter,
 	onSale: ( props: ProductQueryBlock ) => {
@@ -113,6 +188,7 @@ export const TOOLS_PANEL_CONTROLS = {
 			</ToolsPanelItem>
 		);
 	},
+	productSelector: ProductSelector,
 	stockStatus: ( props: ProductQueryBlock ) => {
 		const { query } = props.attributes;
 
@@ -149,34 +225,7 @@ export const TOOLS_PANEL_CONTROLS = {
 			</ToolsPanelItem>
 		);
 	},
-	wooInherit: ( props: ProductQueryBlock ) => {
-		return (
-			<ToggleControl
-				className="woo-inherit-query-toggle"
-				label={ __(
-					'Inherit query from template',
-					'woo-gutenberg-products-block'
-				) }
-				help={ __(
-					'Toggle to use the global query context that is set with the current template, such as variations of the product catalog or search. Disable to customize the filtering independently.',
-					'woo-gutenberg-products-block'
-				) }
-				checked={
-					isCustomInheritGlobalQueryImplementationEnabled
-						? props.attributes.query.__woocommerceInherit || false
-						: props.attributes.query.inherit || false
-				}
-				onChange={ ( inherit ) => {
-					if ( isCustomInheritGlobalQueryImplementationEnabled ) {
-						return setQueryAttribute( props, {
-							__woocommerceInherit: inherit,
-						} );
-					}
-					return setQueryAttribute( props, { inherit } );
-				} }
-			/>
-		);
-	},
+	wooInherit: WooInheritToggleControl,
 };
 
 const ProductQueryControls = ( props: ProductQueryBlock ) => {
@@ -184,9 +233,13 @@ const ProductQueryControls = ( props: ProductQueryBlock ) => {
 	const defaultWooQueryParams = useDefaultWooQueryParamsForVariation(
 		props.attributes.namespace
 	);
+
 	return (
 		<>
 			<InspectorControls>
+				{ MANUAL_REPLACE_PRODUCTS_WITH_PRODUCT_COLLECTION && (
+					<UpgradeNotice upgradeBlock={ manualUpdate } />
+				) }
 				{ allowedControls?.includes( 'presets' ) && (
 					<PopularPresets { ...props } />
 				) }
@@ -203,17 +256,16 @@ const ProductQueryControls = ( props: ProductQueryBlock ) => {
 					{ Object.entries( TOOLS_PANEL_CONTROLS ).map(
 						( [ key, Control ] ) =>
 							allowedControls?.includes( key ) ? (
-								<Control { ...props } key={ key } />
+								<Control
+									{ ...props }
+									defaultWooQueryParams={
+										defaultWooQueryParams
+									}
+									key={ key }
+								/>
 							) : null
 					) }
 				</ToolsPanel>
-			</InspectorControls>
-			{
-				// Hacky temporary solution to display the feedback prompt
-				// at the bottom of the inspector controls
-			 }
-			<InspectorControls __experimentalGroup="color">
-				<ProductQueryFeedbackPrompt />
 			</InspectorControls>
 		</>
 	);
@@ -226,6 +278,9 @@ export const withProductQueryControls =
 			<>
 				<ProductQueryControls { ...props } />
 				<BlockEdit { ...props } />
+				<InspectorControls>
+					<ProductQueryFeedbackPrompt />
+				</InspectorControls>
 			</>
 		) : (
 			<BlockEdit { ...props } />

@@ -76,25 +76,18 @@ class WCML_Admin_Menus {
 	 * @return bool
 	 */
 	private static function is_page_without_admin_language_switcher() {
-		global $pagenow;
+		$get_page = isset( $_GET['page'] ) ? $_GET['page'] : false;
 
-		$get_post_type = isset( $_GET['post_type'] ) ? $_GET['post_type'] : false;
-		$get_post      = isset( $_GET['post'] ) ? $_GET['post'] : false;
-		$get_page      = isset( $_GET['page'] ) ? $_GET['page'] : false;
-
-		$is_page_wpml_wcml       = isset( $_GET['page'] ) && self::SLUG === $_GET['page'];
-		$is_new_order_or_coupon  = in_array( $pagenow, [ 'edit.php', 'post-new.php' ], true ) &&
-								   $get_post_type &&
-								   in_array( $get_post_type, [ 'shop_coupon', 'shop_order' ], true );
-		$is_edit_order_or_coupon = 'post.php' === $pagenow && $get_post &&
-								   in_array( get_post_type( $get_post ), [ 'shop_coupon', 'shop_order' ], true );
-		$is_shipping_zones       = 'shipping_zones' === $get_page;
-		$is_attributes_page      = apply_filters( 'wcml_is_attributes_page', 'product_attributes' === $get_page );
+		$is_page_wpml_wcml        = self::SLUG === $get_page;
+		$is_shipping_zones        = 'shipping_zones' === $get_page;
+		$is_attributes_page       = apply_filters( 'wcml_is_attributes_page', 'product_attributes' === $get_page );
+		$is_order_create_or_edit  = \WCML\Orders\Helper::isOrderCreateAdminScreen() || \WCML\Orders\Helper::isOrderEditAdminScreen();
+		$is_coupon_create_or_edit = \WCML\Coupons\Helper::isCouponCreateAdminScreen() || \WCML\Coupons\Helper::isCouponEditAdminScreen();
 
 		return is_admin() && (
 				$is_page_wpml_wcml ||
-				$is_new_order_or_coupon ||
-				$is_edit_order_or_coupon ||
+				$is_order_create_or_edit ||
+				$is_coupon_create_or_edit ||
 				$is_shipping_zones ||
 				$is_attributes_page
 			);
@@ -173,7 +166,7 @@ class WCML_Admin_Menus {
 		$get_post_type = get_post_type( $post->ID );
 
 		if ( 'product' === $get_post_type && 'edit.php' === $pagenow ) {
-			$quick_edit_notice = '<div id="quick_edit_notice" style="display:none;"><p>';
+			$quick_edit_notice = '<p>';
 
 			$quick_edit_notice .= sprintf(
 				/* translators: 1: WooCommerce Multilingual products editor, 2: Edit this product translation */
@@ -181,13 +174,13 @@ class WCML_Admin_Menus {
 				'<a href="' . admin_url( 'admin.php?page=wpml-wcml&tab=products' ) . '" >' . __( 'WooCommerce Multilingual & Multicurrency products editor', 'woocommerce-multilingual' ) . '</a>',
 				'<a href="" class="quick_product_trnsl_link" >' . __( 'Edit this product translation', 'woocommerce-multilingual' ) . '</a>'
 			);
-			$quick_edit_notice .= '</p></div>';
+			$quick_edit_notice .= '</p>';
 
 			$quick_edit_notice_prod_link = '<input type="hidden" id="wcml_product_trnsl_link" value="' . admin_url( 'admin.php?page=wpml-wcml&tab=products&prid=' ) . '">';
 			// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 			?>
 			<script type="text/javascript">
-				jQuery( '.subsubsub' ).append( '<?php echo wp_filter_post_kses( $quick_edit_notice ); ?>' );
+				jQuery( '.subsubsub' ).append( '<div id="quick_edit_notice" style="display:none;"><?php echo wp_filter_post_kses( $quick_edit_notice ); ?></div>' );
 				jQuery( '.subsubsub' ).append( ' <?php echo $quick_edit_notice_prod_link; ?> ' );
 				jQuery( '.quick_hide a' ).on( 'click', function() {
 					jQuery( '.quick_product_trnsl_link' ).attr( 'href', jQuery( '#wcml_product_trnsl_link' ).val() + jQuery( this ).closest( 'tr' ).attr( 'id' ).replace( /post-/, '' ) );

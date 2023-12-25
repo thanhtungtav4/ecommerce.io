@@ -2,7 +2,7 @@
 /**
  * Payments admin panel handling
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -105,8 +105,34 @@ if ( ! class_exists( 'YITH_WCAF_Payments_Admin_Panel' ) ) {
 			// set get method.
 			$this->set_get_form();
 
+			add_action( 'yith_wcaf_print_payments_list_tab', array( $this, 'render_list_table' ) );
+
 			// call parent constructor.
 			parent::__construct();
+		}
+
+		/**
+		 * Get the affiliates list table.
+		 *
+		 * @return YITH_WCAF_Payments_Admin_Table
+		 */
+		protected function get_payments_list_table() {
+			return new YITH_WCAF_Payments_Admin_Table();
+		}
+
+		/**
+		 * Render the Affiliates List tab.
+		 */
+		public function render_list_table() {
+			$list_table = $this->get_payments_list_table();
+
+			$list_table->prepare_items();
+			$list_table->views();
+			?>
+			<form method="get" id="yith-wcaf-list-table-form" class="yith-plugin-ui--wp-list-auto-h-scroll">
+				<?php $list_table->display(); ?>
+			</form>
+			<?php
 		}
 
 		/**
@@ -306,8 +332,8 @@ if ( ! class_exists( 'YITH_WCAF_Payments_Admin_Panel' ) ) {
 					} else {
 						return array_filter(
 							array(
-								'payments_done'   => implode( ', ', $res['can_be_paid'] ),
-								'payments_failed' => implode( ', ', $res['cannot_be_paid'] ),
+								'payments_done'   => implode( ', ', isset( $res['can_be_paid'] ) ? $res['can_be_paid'] : array() ),
+								'payments_failed' => implode( ', ', isset( $res['cannot_be_paid'] ) ? $res['cannot_be_paid'] : array() ),
 							)
 						);
 					}

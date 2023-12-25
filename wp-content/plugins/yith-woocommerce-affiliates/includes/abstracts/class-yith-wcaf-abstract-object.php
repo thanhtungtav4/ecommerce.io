@@ -2,7 +2,7 @@
 /**
  * Generic object class
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Abstracts
  * @version 2.0.0
  */
@@ -184,6 +184,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Object' ) ) {
 
 		/* === ARRAY ACCESS === */
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Checks whether or not an offset exists.
 		 *
@@ -202,6 +203,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Object' ) ) {
 			return true;
 		}
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Retrieves value for a specific offset
 		 *
@@ -220,6 +222,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Object' ) ) {
 			return $this->{"get_{$offset}"}( 'view' );
 		}
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Sets value for a specific offset
 		 *
@@ -238,6 +241,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Object' ) ) {
 			$this->{"set_{$offset}"}( $value );
 		}
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Does nothing. Just required by interface.
 		 *

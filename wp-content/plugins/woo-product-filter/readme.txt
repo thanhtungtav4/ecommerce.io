@@ -1,10 +1,10 @@
-=== Product Filter by WooBeWoo ===
-Contributors: woobewoo
+=== Product Filter by WBW ===
+Contributors: WBW
 Donate link: https://woobewoo.com/product/woocommerce-filter/
 Tags: product filter, WooCommerce product filter, shop filter, e-commerce filter, WooCommerce filter, product, filter 
 Requires at least: 3.4.0
-Tested up to: 6.1
-Stable tag: 2.2.6
+Tested up to: 6.4
+Stable tag: 2.5.1
  
 Filter products by categories, attributes, prices, and more. 100% Elementor Compatibility. Shoppers easily find products with WooCommerce Product Filter
 
@@ -23,15 +23,15 @@ Display filters in any convenient way: radio button list (single select) dropdow
 Make filtering even more comfortable by enabling AJAX search or let the process start as soon as the user selects all the options and presses the filtering button.
 
 **[Elementor Compatibility](https://woobewoo.com/documentation/elementor-compatibility/ "Elementor Compatibility")**
-WooCommerce Product Filter compatible with Ellementor. With this option, you can create a product filter directly in the Elementor. All the functions of the Product Filter by WooBeWoo will be available directly in the Elementor tab.
+WooCommerce Product Filter compatible with Ellementor. With this option, you can create a product filter directly in the Elementor. All the functions of the Product Filter by WBW will be available directly in the Elementor tab.
 
-Video tutorial on how to set up WooCommerce product filter by WooBeWoo
+Video tutorial on how to set up WooCommerce product filter by WBW
 [youtube https://youtu.be/5uFBMl5OLW0] 
 
 Product filters are the key things that allow your customers to view the products in a particular way and easily find the necessary items.
  
 **[Statistics](https://woobewoo.com/documentation/product-filter-statistics/ "Analytics")**
-Product Filter by WooBeWoo comes with a detailed filter statistics section to make it easier to collect, analyze data and subsequently support global business growth. Gather information about filtering and searching for products by your buyer and convert them into business solutions.
+Product Filter by WBW comes with a detailed filter statistics section to make it easier to collect, analyze data and subsequently support global business growth. Gather information about filtering and searching for products by your buyer and convert them into business solutions.
 
 **[Live preview](https://woobewoo.com/documentation/woocommerce-filter-main-settings/ "Main Settings")**
 With Live Preview, the results will appear in the panel right at the moment you make changes to settings.
@@ -58,15 +58,15 @@ The filter looks and works properly on different devices particularly mobile pho
 
 Ask your questions in the [support forum](https://wordpress.org/support/plugin/woo-product-filter/), or [contact us directly](https://woobewoo.com/contact-us/)
 
-== Installation ==
+== Installation == 
 
 a) VIA FTP
-A download zip archive with WooCommerce Product Filter by WooBeWoo plugin
+A download zip archive with WooCommerce Product Filter by WBW plugin
 Extract files
 Copy the folder with the plugin
 Open via FTP folder \wp-content\plugins\
 Paste plugin folder into here
-Go to admin panel => Plugins => WooCommerce Product Filter by WooBeWoo press activate 
+Go to admin panel => Plugins => WooCommerce Product Filter by WBW press activate 
 
 B) DIRECT UPLOAD VIA ADMIN AREA
 A download zip archive with plugin
@@ -77,7 +77,7 @@ Press Activate button
 
 C) VIA WORDPRESS REPOSITORY
 Navigate to admin panel => Plugins => Add new
-Type \" WooCommerce Filter Plugin by Woobewoo"\ in the search field
+Type \" WooCommerce Filter Plugin by WBW"\ in the search field
 Choose our plugin from the list and click \"Install\"
 Wait until you get the notification installation went successfully
 Press Activate button
@@ -113,7 +113,7 @@ Depending on the type and specificity of the filter, you can configure:
 * Show search and more.
 
 = How to add product filter to the store? = 
-After creating the filter you can [add a filer it in 2 ways](https://woobewoo.com/documentation/how-to-add-woocommerce-product-filter-to-shop?utm_source=wordpress&utm_medium=addfiltertothestore&utm_campaign=filter "How to add WooCommerce product filter"): with shortcode and PHP code ( you can find them under the settings tab) or add Woo Product Filter widget.
+After creating the filter you can [add a filer it in 2 ways](https://woobewoo.com/documentation/how-to-add-woocommerce-product-filter-to-shop?utm_source=wordpress&utm_medium=addfiltertothestore&utm_campaign=filter "How to add WooCommerce product filter"): with shortcode and PHP code ( you can find them under the settings tab) or add WBW Product Filter widget.
 
 * **Input shortcode**
 Copy Shortcode and paste it to your website content. Product Filter plugin will display the filter you created on the appropriate post/page using settings you tuned in this filter.
@@ -142,9 +142,193 @@ If you have problems with the work of plugin or something is not working as it s
 If none of this advice helps you, contact us via [support form on our website](https://woobewoo.com/contact-us?utm_source=wordpress&utm_medium=contactus&utm_campaign=wooproducttable "Contact us")and describe your problem.
 
 = WooCommerce Product Filter plugin is not available in my language. What shall I do? =
-You may help us translate the plugin into your language and get the PRO version of the plugin for free as soon as it is released. If this method seems to be too complicated, please send us a request and we will let you know as soon as the WooBeWoo Filter plugin will be available in your localization.
+You may help us translate the plugin into your language and get the PRO version of the plugin for free as soon as it is released. If this method seems to be too complicated, please send us a request and we will let you know as soon as the WBW Filter plugin will be available in your localization.
 
 == Changelog ==
+
+= 2.5.1 =
+ * Added compatibility with Woocommerce blocks for preselected parameters
+ * Fixed conflict with WooCommerce Google Product Feed plugin
+ * Added equals logic for SearchNumber filter
+ * Added flag for Woocommerce Load More Products
+ * Fixed option Filter synchronization for color-filters
+ * Added option Сheck category hierarchy for One by One mode
+ * Added compatibitity with WooCommerce Measurement Price Calculator
+ * Added compatibitity with Variation Swatches for WooCommerce - Pro
+ * Fixed preselects for multilanguage sites
+ * Added search by the list of attributes for the text filter
+ * Minor issues fix
+
+= 2.5.0 =
+ * Fixed count products recalc for list filters
+ * Added compatibility with Phone Orders for WooCommerce Plugin
+ * Fixed Not In logic for attributes
+ * Added compatibility with Divi Archive Loop
+ * Added hierarchical options for attributes filter
+ * Minor issues fix
+
+= 2.4.9 =
+ * Added fix for the ability to filter WBW-tables
+ * Added formatting for Date Picker type ACF-fields
+ * Added compatibility with Product Grid by Woo Essential plugin
+ * Fixed option Show search for attributes
+ * Fixed attributes labels
+
+= 2.4.8 =
+ * Added translation for Show More/Show Fewer
+ * Fixed defaults and preselects
+ * Added compatibility with YayCurrency Plugin
+ * Fixed FontAwesome for group colors option
+ * Minor issues fix
+
+= 2.4.7 =
+ * Updated custom order for attributes
+ * Added filter Search by Number
+ * Fixed Menu mode
+ * Added decimal step for Price filter
+ * Added compatibility with theme Total for option Display variation
+ * Minor issues fix
+
+= 2.4.6 =
+ * Added updating attribute slider by selected filters
+ * Minor issues fix
+
+= 2.4.5 =
+ * Fixed CSV Export Problem
+ * Fixed Divi load more
+
+= 2.4.4 =
+ * Fixed bulk activate by TGM Plugin Activation
+ * Added compatibility with Avada Builder Woo Product Grid
+ * Fixed Floating filter button
+ * Fixed default sorting
+ * Fixed Reset button & default StockStatus option
+
+= 2.4.3 =
+ * Fixed compatibility with Elementor widget Posts
+ * Fixed rtl-styles
+ * Fixed compatibility with Essential Addons Elementor
+ * Minor issues fix
+
+= 2.4.2 =
+ * Fixed default filters by not empty url parameters
+ * Fixed compatibility with plugin CoDesigner
+ * Fixed count products for Always Filtering By All Products
+ * Fixed char + in uri with search filter
+ * Fixed Crear button by redirect
+ * Added option By default сreate filters for all products
+ * Fixed pagination for Elementor widget woocommerce-products
+ * Fixed custom order for attributes
+ * Fixed Force Theme templates for grid/list display mode
+ * Fixed bulk plugins activate
+ * Fixed option Form attribute filters by variations
+ * Minor issues fix
+
+= 2.4.1 =
+ * Increased range for Price Slider
+ * Fixed products count for compatibility with Essential Addons Elementor
+ * Added selection of filter blocks by creating a new product filter
+ * Fixed Clear All button
+ * Minor issues fix
+ 
+= 2.4.0 =
+ * Fixed loader style
+ * Fixed count products for Always Filtering By All Products
+ * Added compatibility with plugin CoDesigner (Formerly Woolementor)
+ * Minor issues fix
+
+= 2.3.9 =
+ * Fixed processing many parallel ajax-requests
+ * Fixed order by price
+ * Fixed option Display Variations Instead Of Variable Product for shortcodes
+ * Added compatibility for Divi Plus pagination
+ * Added hook for default settings
+ * Fix for multisite
+
+= 2.3.8 =
+ * Fixed autocomplete for several TextSearch fields on page
+ * Added compatibility with widget Premium Woo Products from Premium Addons for Elementor
+ * Fixed compatibility with Advanced Woo Search
+ * Added hook for Dokan
+ * Fixed default params for Visual Builders products block
+ * Added the ability to select child attributes in the list of displayed
+ * Minor issues fix
+
+= 2.3.7 =
+ * Fixed admin area for iphone
+ * Fixed checkboxes in Firefox
+ * Fixed filtration for search page
+ * Added option Hide filter with single item
+ * Fixed option Close popup after action
+
+= 2.3.6 =
+ * Fixed deprecated functions
+
+= 2.3.5 =
+ * Delete PhpMailer
+ * Added Perfect brands to autocomplete for Search Filter
+ * Fixed decimals for Numeric Attributes Slider
+ * Added translatable strings
+ * Fix for Elementor
+ * Added option to prevent redirect when product is missing
+ * Minor issues fix
+
+= 2.3.4 =
+ * Added compatibility with Royal Addons widget Woo Grid
+ * Added compatibility for widget Advance Products by Phlox Shop plugin
+ * Fixed option Don't Use Shortcode Settings
+ * Fixed products widget from UX Builder by Flatsome Theme
+ * Fixed attributes filter for variations
+ * Added compatibility for Besa Theme
+ * Minor issues fix
+
+= 2.3.3 =
+ * Added a link to start indexing
+ * Fixed option Move sidebar to top for mobile for Allston theme
+ * Fixed Autocomplete search filter
+ * Added compatibility with Divi Plus
+ * Added option for disabled reindexing by product stock changes
+ * Fixed page reseting by filtering
+ * Fixed styles loading
+ * Added compatibility with plugin Woocommerce Products Per Page and added option Display on Perfect Brands Page
+ * Minor issues fix
+
+= 2.3.2 =
+ * Fixed call button in floating mode
+ * Added compatibility with Qi Addons For Elementor
+ * Added option for disable loading Fontawesome library
+ * Fixed bug when temporary tables not allowed in DB
+ * Hid last license error
+ * Rebranding
+
+= 2.3.1 =
+ * Small code fix for Safari
+ * Fixed compatibility with EA Elementor Product Gallery
+ * Added option for Hide price slider if there are no products with price
+ * Fixed compatibility with Elementor
+ * Added compatibility with Flatsome UXBuilder
+ * Added compatibility with Relevanssi Plugin
+ * Added compatibility with Perfect Brands in the Search Text Filter
+ * Declaring compatibility with HPOS
+ * Minor issues fix
+
+= 2.3.0 =
+ * Minor issues fix
+
+= 2.2.9 =
+ * Fixed Hide Filter Button on mobile
+ * Added option for form filter attribute blocks by variations
+ * Fixed filtering on search page
+
+= 2.2.8 =
+ * Added for Hide Filters Button option Show as open if filtered
+ * Added custom order for ACF-attributes
+ * Fix for Safari scrollbars
+ * Minor issues fix
+
+= 2.2.7 =
+ * Fixed option Recount Products By Selected Filter by page reload
+ * Minor issues fix
 
 = 2.2.6 =
  * Added compatibility with CURCY plugin
@@ -858,7 +1042,7 @@ You may help us translate the plugin into your language and get the PRO version 
 * Fixed pagination for shortcode [products]
 * Change CDN URL
 * Add the custom number of decimals optionality for a price range filter
-* Remove woobewoo-for-all-admin style
+* Remove for-all-admin style
 * Fixes for color tooltips
 * Change updater link
 
@@ -1112,7 +1296,7 @@ You may help us translate the plugin into your language and get the PRO version 
 * Added Show Count for Dropdown-lists
 * Screenshots update
 * Add outofstock, onbackorder features
-* Add custom loader woobewoo logo
+* Add custom loader WBW logo
 
 = 1.0.5 =
 * Add new types of price skins

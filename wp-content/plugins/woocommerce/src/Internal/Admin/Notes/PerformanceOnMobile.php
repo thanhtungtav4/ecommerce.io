@@ -9,8 +9,8 @@ namespace Automattic\WooCommerce\Internal\Admin\Notes;
 
 defined( 'ABSPATH' ) || exit;
 
-use \Automattic\WooCommerce\Admin\Notes\Note;
-use \Automattic\WooCommerce\Admin\Notes\NoteTraits;
+use Automattic\WooCommerce\Admin\Notes\Note;
+use Automattic\WooCommerce\Admin\Notes\NoteTraits;
 
 /**
  * Performance_On_Mobile
@@ -60,7 +60,7 @@ class PerformanceOnMobile {
 		$note->add_action(
 			'learn-more',
 			__( 'Learn more', 'woocommerce' ),
-			'https://woocommerce.com/mobile/?utm_source=inbox&utm_medium=product'
+			'https://woo.com/mobile/?utm_source=inbox&utm_medium=product'
 		);
 
 		return $note;

@@ -4,19 +4,16 @@
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
 import { createInterpolateElement, useEffect } from '@wordpress/element';
-import { useStoreCart } from '@woocommerce/base-context/hooks';
 import {
-	CheckoutProvider,
-	SnackbarNoticesContainer,
-} from '@woocommerce/base-context';
-
+	useStoreCart,
+	useShowShippingTotalWarning,
+} from '@woocommerce/base-context/hooks';
+import { CheckoutProvider, noticeContexts } from '@woocommerce/base-context';
 import BlockErrorBoundary from '@woocommerce/base-components/block-error-boundary';
 import { SidebarLayout } from '@woocommerce/base-components/sidebar-layout';
 import { CURRENT_USER_IS_ADMIN, getSetting } from '@woocommerce/settings';
-import {
-	SlotFillProvider,
-	StoreNoticesContainer,
-} from '@woocommerce/blocks-checkout';
+import { StoreNoticesContainer } from '@woocommerce/blocks-components';
+import { SlotFillProvider } from '@woocommerce/blocks-checkout';
 import withScrollToTop from '@woocommerce/base-hocs/with-scroll-to-top';
 import { useDispatch, useSelect } from '@wordpress/data';
 import {
@@ -33,22 +30,21 @@ import CheckoutOrderError from './checkout-order-error';
 import { LOGIN_TO_CHECKOUT_URL, isLoginRequired, reloadPage } from './utils';
 import type { Attributes } from './types';
 import { CheckoutBlockContext } from './context';
-import { hasNoticesOfType } from '../../utils/notices';
 
-const LoginPrompt = () => {
+const MustLoginPrompt = () => {
 	return (
-		<>
+		<div className="wc-block-must-login-prompt">
 			{ __(
-				'You must be logged in to checkout. ',
+				'You must be logged in to checkout.',
 				'woo-gutenberg-products-block'
-			) }
+			) }{ ' ' }
 			<a href={ LOGIN_TO_CHECKOUT_URL }>
 				{ __(
 					'Click here to log in.',
 					'woo-gutenberg-products-block'
 				) }
 			</a>
-		</>
+		</div>
 	);
 };
 
@@ -69,7 +65,6 @@ const Checkout = ( {
 	const { cartItems, cartIsLoading } = useStoreCart();
 
 	const {
-		allowCreateAccount,
 		showCompanyField,
 		requireCompanyField,
 		showApartmentField,
@@ -85,24 +80,29 @@ const Checkout = ( {
 		return <CheckoutOrderError />;
 	}
 
+	/**
+	 * If checkout requires an account (guest checkout is turned off), render
+	 * a notice and prevent access to the checkout, unless we explicitly allow
+	 * account creation during the checkout flow.
+	 */
 	if (
 		isLoginRequired( customerId ) &&
-		allowCreateAccount &&
-		getSetting( 'checkoutAllowsSignup', false )
+		! getSetting( 'checkoutAllowsSignup', false )
 	) {
-		<LoginPrompt />;
+		return <MustLoginPrompt />;
 	}
 
 	return (
 		<CheckoutBlockContext.Provider
-			value={ {
-				allowCreateAccount,
-				showCompanyField,
-				requireCompanyField,
-				showApartmentField,
-				showPhoneField,
-				requirePhoneField,
-			} }
+			value={
+				{
+					showCompanyField,
+					requireCompanyField,
+					showApartmentField,
+					showPhoneField,
+					requirePhoneField,
+				} as Attributes
+			}
 		>
 			{ children }
 		</CheckoutBlockContext.Provider>
@@ -132,9 +132,7 @@ const ScrollOnError = ( {
 	const { showAllValidationErrors } = useDispatch( VALIDATION_STORE_KEY );
 
 	const hasErrorsToDisplay =
-		checkoutIsIdle &&
-		checkoutHasError &&
-		( hasValidationErrors || hasNoticesOfType( 'wc/checkout', 'default' ) );
+		checkoutIsIdle && checkoutHasError && hasValidationErrors;
 
 	useEffect( () => {
 		let scrollToTopTimeout: number;
@@ -164,6 +162,7 @@ const Block = ( {
 	children: React.ReactChildren;
 	scrollToTop: ( props: Record< string, unknown > ) => void;
 } ): JSX.Element => {
+	useShowShippingTotalWarning();
 	return (
 		<BlockErrorBoundary
 			header={ __(
@@ -186,8 +185,9 @@ const Block = ( {
 			) }
 			showErrorMessage={ CURRENT_USER_IS_ADMIN }
 		>
-			<SnackbarNoticesContainer context="wc/checkout" />
-			<StoreNoticesContainer context="wc/checkout" />
+			<StoreNoticesContainer
+				context={ [ noticeContexts.CHECKOUT, noticeContexts.CART ] }
+			/>
 			{ /* SlotFillProvider need to be defined before CheckoutProvider so fills have the SlotFill context ready when they mount. */ }
 			<SlotFillProvider>
 				<CheckoutProvider>

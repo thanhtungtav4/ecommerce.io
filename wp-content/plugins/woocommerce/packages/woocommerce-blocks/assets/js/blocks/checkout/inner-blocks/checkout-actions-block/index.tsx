@@ -3,14 +3,16 @@
  */
 import { Icon, button } from '@wordpress/icons';
 import { registerBlockType } from '@wordpress/blocks';
+import type { BlockConfiguration } from '@wordpress/blocks';
 
 /**
  * Internal dependencies
  */
 import attributes from './attributes';
 import { Edit, Save } from './edit';
+import './style.scss';
 
-registerBlockType( 'woocommerce/checkout-actions-block', {
+const blockConfig: BlockConfiguration = {
 	icon: {
 		src: (
 			<Icon
@@ -20,6 +22,8 @@ registerBlockType( 'woocommerce/checkout-actions-block', {
 		),
 	},
 	attributes,
-	edit: Edit,
 	save: Save,
-} );
+	edit: Edit,
+};
+
+registerBlockType( 'woocommerce/checkout-actions-block', blockConfig );

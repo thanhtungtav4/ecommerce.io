@@ -2,7 +2,7 @@
 /**
  * Add extra profile fields for users in admin
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -270,14 +270,14 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 		 */
 		public static function print_profile_fields( $user, $sets = false, $show_title = true ) {
 			/**
-			 * APPLY_FILTERS: yith_wcaf_current_user_can_edit_profile_fields
+			 * APPLY_FILTERS: yith_wcaf_current_user_can_view_profile_fields
 			 *
-			 * Filters whether the current user can edit profile fields.
+			 * Filters whether the current user can view profile fields.
 			 *
-			 * @param bool $can_edit Whether the current user can edit profile fields or not.
+			 * @param bool $can_view Whether the current user can view profile fields or not.
 			 * @param int  $user_id  User id.
 			 */
-			if ( ! apply_filters( 'yith_wcaf_current_user_can_edit_profile_fields', YITH_WCAF_Admin()->get_panel_capability(), $user->ID ) ) {
+			if ( ! apply_filters( 'yith_wcaf_current_user_can_view_profile_fields', YITH_WCAF_Admin()->current_user_can_manage_panel(), $user->ID ) ) {
 				return;
 			}
 
@@ -295,14 +295,14 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 		 */
 		public static function print_profile_details( $user, $sets = false, $show_title = true ) {
 			/**
-			 * APPLY_FILTERS: yith_wcaf_current_user_can_view_profile_fields
+			 * APPLY_FILTERS: yith_wcaf_current_user_can_view_profile_details
 			 *
-			 * Filters whether the current user can view profile fields.
+			 * Filters whether the current user can view profile details.
 			 *
-			 * @param bool $can_view Whether the current user can view profile fields or not.
+			 * @param bool $can_view Whether the current user can view profile details or not.
 			 * @param int  $user_id  User id.
 			 */
-			if ( ! apply_filters( 'yith_wcaf_current_user_can_view_profile_fields', YITH_WCAF_Admin()->get_panel_capability(), $user->ID ) ) {
+			if ( ! apply_filters( 'yith_wcaf_current_user_can_view_profile_details', YITH_WCAF_Admin()->current_user_can_manage_panel(), $user->ID ) ) {
 				return;
 			}
 
@@ -615,7 +615,15 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 		 * @return void
 		 */
 		public static function save_profile_fields( $user_id, $sets = false ) {
-			if ( ! apply_filters( 'yith_wcaf_current_user_can_edit_profile_fields', YITH_WCAF_Admin()->get_panel_capability(), $user_id ) ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_current_user_can_edit_profile_fields
+			 *
+			 * Filters whether the current user can edit profile fields.
+			 *
+			 * @param bool $can_edit Whether the current user can edit profile fields or not.
+			 * @param int  $user_id  User id.
+			 */
+			if ( ! apply_filters( 'yith_wcaf_current_user_can_edit_profile_fields', YITH_WCAF_Admin()->current_user_can_manage_panel(), $user_id ) ) {
 				return;
 			}
 
@@ -796,7 +804,7 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Profile' ) ) {
 				} elseif ( 'rate' === $key && class_exists( 'YITH_WCAF_Rate_Handler_Premium' ) ) {
 					$rule = YITH_WCAF_Rate_Handler_Premium::get_best_rule_matching( $affiliate );
 
-					if ( $rule ) {
+					if ( $rule && 'affiliate_ids' === $rule->get_type() && 1 === count( $rule->get_affiliate_ids() ) ) {
 						$rule->set_rate( $value );
 						$rule->save();
 

@@ -2,7 +2,7 @@
 /**
  * Commissions/Payments options
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates
  * @version 1.0.0
  */
@@ -89,13 +89,11 @@ return apply_filters(
 			),
 
 			'gateways-table'                 => array(
-				'name'                 => _x( 'Payment Gateways', '[ADMIN] Title for gateways table, in Commissions/Payments tab', 'yith-woocommerce-affiliates' ),
-				'type'                 => 'yith-field',
-				'yith-type'            => 'list-table',
-				'class'                => '',
-				'list_table_class'     => 'YITH_WCAF_Gateways_Admin_Table',
-				'list_table_class_dir' => YITH_WCAF_INC . 'admin/admin-tables/class-yith-wcaf-gateways-table.php',
-				'id'                   => 'yith_wcaf_gateways',
+				'name'      => _x( 'Payment Gateways', '[ADMIN] Title for gateways table, in Commissions/Payments tab', 'yith-woocommerce-affiliates' ),
+				'type'      => 'yith-field',
+				'yith-type' => 'custom',
+				'action'    => 'yith_wcaf_render_gateways_list_table',
+				'class'     => '',
 			),
 
 			'gateways-options-end'           => array(

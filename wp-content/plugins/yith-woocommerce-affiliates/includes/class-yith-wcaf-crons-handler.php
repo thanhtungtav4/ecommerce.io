@@ -2,7 +2,7 @@
 /**
  * Static class that will handle all crons for the plugin
  *
- * @author YITH
+ * @author YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */

@@ -101,6 +101,8 @@ if ( ! class_exists( 'YITH_WCAF_Autoloader' ) ) {
 				$path = $this->include_path . 'data-stores/';
 			} elseif ( false !== strpos( $class, 'shortcode' ) ) {
 				$path = $this->include_path . 'shortcodes/';
+			} elseif ( false !== strpos( $class, 'block' ) ) {
+				$path = $this->include_path . 'blocks/';
 			} elseif ( false !== strpos( $class, 'widget' ) ) {
 				$path = $this->include_path . 'widgets/';
 			} elseif ( false !== strpos( $class, 'elementor' ) ) {

@@ -2,7 +2,7 @@
 /**
  * Commission class
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -70,7 +70,6 @@ if ( ! class_exists( 'YITH_WCAF_Commission' ) ) {
 		 * @param int|\YITH_WCAF_Commission $commission Commission identifier.
 		 *
 		 * @throws Exception When not able to load Data Store class.
-		 * @author Antonio La Rocca <antonio.larocca@yithemes.com>
 		 */
 		public function __construct( $commission = 0 ) {
 			// set default values.
@@ -513,7 +512,15 @@ if ( ! class_exists( 'YITH_WCAF_Commission' ) ) {
 				return $available_statuses['pending']['name'];
 			}
 
-			return $available_statuses[ $current_status ]['name'];
+			/**
+			 * APPLY_FILTERS: yith_wcaf_commission_{$current_status}_status_label
+			 *
+			 * Filters the label for the commission status.
+			 * <code>$current_status</code> will be replaced with the commission status.
+			 *
+			 * @param string $label The commission status label.
+			 */
+			return apply_filters( "yith_wcaf_commission_{$current_status}_status_label", $available_statuses[ $current_status ]['name'] );
 		}
 
 		/**

@@ -2,7 +2,7 @@
 /**
  * Click class
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -60,7 +60,6 @@ if ( ! class_exists( 'YITH_WCAF_Click' ) ) {
 		 * @param int|\YITH_WCAF_Click $click Click identifier.
 		 *
 		 * @throws Exception When not able to load Data Store class.
-		 * @author Antonio La Rocca <antonio.larocca@yithemes.com>
 		 */
 		public function __construct( $click = 0 ) {
 			// set default values.
@@ -323,7 +322,9 @@ if ( ! class_exists( 'YITH_WCAF_Click' ) ) {
 		 * @param string $link Visited url.
 		 */
 		public function set_link( $link ) {
-			$this->set_prop( 'link', esc_url( $link ) );
+			$link = $link ? esc_url( $link ) : '';
+
+			$this->set_prop( 'link', $link );
 		}
 
 		/**
@@ -332,7 +333,7 @@ if ( ! class_exists( 'YITH_WCAF_Click' ) ) {
 		 * @param string $origin Origin url.
 		 */
 		public function set_origin( $origin ) {
-			$origin = esc_url( $origin );
+			$origin = $origin ? esc_url( $origin ) : '';
 
 			if ( $this->object_read ) {
 				$new_base = wp_parse_url( $origin, PHP_URL_HOST );

@@ -2,7 +2,7 @@
 /**
  * General object data store interface
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Interfaces
  * @version 2.0.0
  */

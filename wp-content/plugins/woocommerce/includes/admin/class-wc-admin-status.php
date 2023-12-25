@@ -7,7 +7,7 @@
  */
 
 use Automattic\Jetpack\Constants;
-use Automattic\WooCommerce\Utilities\ArrayUtil;
+use Automattic\WooCommerce\Internal\Admin\Logging\PageController as LoggingPageController;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -49,13 +49,13 @@ class WC_Admin_Status {
 				$response = $tools_controller->execute_tool( $action );
 
 				$tool                  = $tools[ $action ];
-				$tool_requires_refresh = ArrayUtil::get_value_or_default( $tool, 'requires_refresh', false );
+				$tool_requires_refresh = $tool['requires_refresh'] ?? false;
 				$tool                  = array(
 					'id'          => $action,
 					'name'        => $tool['name'],
 					'action'      => $tool['button'],
 					'description' => $tool['desc'],
-					'disabled'    => ArrayUtil::get_value_or_default( $tool, 'disabled', false ),
+					'disabled'    => $tool['disabled'] ?? false,
 				);
 				$tool                  = array_merge( $tool, $response );
 
@@ -105,13 +105,7 @@ class WC_Admin_Status {
 	 * Show the logs page.
 	 */
 	public static function status_logs() {
-		$log_handler = Constants::get_constant( 'WC_LOG_HANDLER' );
-
-		if ( 'WC_Log_Handler_DB' === $log_handler ) {
-			self::status_logs_db();
-		} else {
-			self::status_logs_file();
-		}
+		wc_get_container()->get( LoggingPageController::class )->render();
 	}
 
 	/**
@@ -363,7 +357,7 @@ class WC_Admin_Status {
 			<?php
 				echo esc_html(
 					sprintf(
-					// translators: Comma seperated list of missing tables.
+					// translators: Comma separated list of missing tables.
 						__( 'Missing base tables: %s. Some WooCommerce functionality may not work as expected.', 'woocommerce' ),
 						implode( ', ', $missing_tables )
 					)
@@ -401,7 +395,7 @@ class WC_Admin_Status {
 				$has_newer_version = false;
 				$version_string    = $plugin['version'];
 				$network_string    = '';
-				if ( strstr( $plugin['url'], 'woothemes.com' ) || strstr( $plugin['url'], 'woocommerce.com' ) ) {
+				if ( strstr( $plugin['url'], 'woothemes.com' ) || strstr( $plugin['url'], 'woocommerce.com' ) || strstr( $plugin['url'], 'woo.com' ) ) {
 					if ( ! empty( $plugin['version_latest'] ) && version_compare( $plugin['version_latest'], $plugin['version'], '>' ) ) {
 						/* translators: 1: current version. 2: latest version */
 						$version_string = sprintf( __( '%1$s (update to version %2$s is available)', 'woocommerce' ), $plugin['version'], $plugin['version_latest'] );

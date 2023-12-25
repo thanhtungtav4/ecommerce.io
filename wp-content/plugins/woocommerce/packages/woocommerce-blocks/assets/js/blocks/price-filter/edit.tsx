@@ -100,17 +100,10 @@ export default function ( {
 							"Show 'Apply filters' button",
 							'woo-gutenberg-products-block'
 						) }
-						help={
-							showFilterButton
-								? __(
-										'Products will only update when the button is clicked.',
-										'woo-gutenberg-products-block'
-								  )
-								: __(
-										'Products will update when the slider is moved.',
-										'woo-gutenberg-products-block'
-								  )
-						}
+						help={ __(
+							'Products will update when the button is clicked.',
+							'woo-gutenberg-products-block'
+						) }
 						checked={ showFilterButton }
 						onChange={ () =>
 							setAttributes( {
@@ -143,6 +136,7 @@ export default function ( {
 				className="wc-block-price-slider__add-product-button"
 				isSecondary
 				href={ getAdminLink( 'post-new.php?post_type=product' ) }
+				target="_top"
 			>
 				{ __( 'Add new product', 'woo-gutenberg-products-block' ) +
 					' ' }
@@ -152,6 +146,7 @@ export default function ( {
 				className="wc-block-price-slider__read_more_button"
 				isTertiary
 				href="https://docs.woocommerce.com/document/managing-products/"
+				target="_blank"
 			>
 				{ __( 'Learn more', 'woo-gutenberg-products-block' ) }
 			</Button>

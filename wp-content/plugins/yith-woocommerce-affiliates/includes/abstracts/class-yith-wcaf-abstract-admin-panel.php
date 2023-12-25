@@ -2,7 +2,7 @@
 /**
  * General admin panel handling
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates
  * @version 1.0.0
  */
@@ -440,20 +440,16 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Admin_Panel' ) ) {
 		 * @return void.
 		 */
 		public function enqueue_assets() {
-			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
-			wp_enqueue_script(
+			YITH_WCAF_Scripts::enqueue(
 				'yith-wcaf-admin-' . $this->tab,
-				YITH_WCAF_ASSETS_URL . 'js/admin/yith-wcaf-' . $this->tab . '.bundle' . $suffix . '.js',
+				'admin',
 				array(
 					'jquery',
 					'wp-mediaelement',
 					'jquery-ui-datepicker',
 					'selectWoo',
 					'woocommerce_settings',
-				),
-				YITH_WCAF::VERSION,
-				true
+				)
 			);
 
 			$this->localize_scripts();

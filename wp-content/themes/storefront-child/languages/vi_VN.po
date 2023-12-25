@@ -4,16 +4,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Storefront 4.1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/storefront\n"
-"POT-Creation-Date: 2023-01-03 14:08+0700\n"
-"PO-Revision-Date: 2023-03-15 11:20+0700\n"
+"POT-Creation-Date: 2023-12-12 09:39+0700\n"
+"PO-Revision-Date: 2023-12-12 09:40+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: vi_VN\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.1\n"
 
 #: 404.php:19
 msgid "Oops! That page can&rsquo;t be found."
@@ -761,12 +761,12 @@ msgstr ""
 #: inc/storefront-template-functions.php:555
 msgid "Category:"
 msgid_plural "Categories:"
-msgstr[0] "Danh mục:"
+msgstr[0] ""
 
 #: inc/storefront-template-functions.php:561
 msgid "Tag:"
 msgid_plural "Tags:"
-msgstr[0] "Thẻ:"
+msgstr[0] ""
 
 #: inc/storefront-template-functions.php:593
 msgid "Next post:"
@@ -817,7 +817,7 @@ msgstr[0] ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:352
 msgid "Recent Products"
-msgstr "SẢN PHẨM TƯƠNG TỰ"
+msgstr ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:409
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:614
@@ -830,7 +830,7 @@ msgstr ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:576
 msgid "Best Selling Products"
-msgstr "BEST SELLER - BÁN CHẠY NHẤT"
+msgstr ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:627
 msgid "On Sale Now"
@@ -850,7 +850,7 @@ msgstr ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:774
 msgid "More products"
-msgstr "SẢN PHẨM TƯƠNG TỰ"
+msgstr ""
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:838
 msgid "You're viewing:"
@@ -890,7 +890,7 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Automattic"
-msgstr "Tự động"
+msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://woocommerce.com/"
@@ -898,7 +898,7 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Full width"
-msgstr "Rộng toàn màn hình"
+msgstr ""
 
 #. translators: 1: number of comments, 2: post title
 #: comments.php:31
@@ -910,12 +910,12 @@ msgstr[0] ""
 #: inc/storefront-template-functions.php:579
 msgctxt "Next post"
 msgid "Next"
-msgstr "Kế tiếp"
+msgstr ""
 
 #: inc/storefront-template-functions.php:580
 msgctxt "Previous post"
 msgid "Previous"
-msgstr "Quay lại"
+msgstr ""
 
 msgid "CUSTOMER SUPPORT"
 msgstr "HỖ TRỢ KHÁCH HÀNG"
@@ -992,20 +992,21 @@ msgid "Home"
 msgstr "Trang chủ"
 
 msgid ""
-"Freeship within the city for orders <strong>from 250,000 VND</strong>– "
-"Province <strong>from 400.000 VND</strong>"
+"Freeship within the city for orders <strong>from 300,000 VND</strong>– "
+"Province <strong>from 500.000 VND</strong>"
 msgstr ""
-"Freeship nội thành cho đơn <strong>từ 250.000đ</strong>– Tỉnh <strong>từ "
-"400.000đ</strong>"
+"Freeship nội thành cho đơn <strong>từ 300,000 VND</strong>– Tỉnh <strong>từ "
+"500.000 VND</strong>"
 
 msgid "Vision test and consultation <strong>free </strong>(book in advance)"
 msgstr "Khám thị lực và tư vấn <strong>miễn phí </strong>(đặt lịch trước)"
 
 msgid ""
 "Pay <strong>swipe the card on the spot </strong>(applied within Hanoi and "
-"HCMC)"
+"HCMC for orders form 900.000 VND)"
 msgstr ""
-"Thanh toán <strong>quẹt thẻ tận nơi </strong>(áp dụng nội thành HN, TP.HCM)"
+"Thanh toán <strong>quẹt thẻ tận nơi </strong>(áp dụng nội thành HN, TP.HCM) "
+"cho đơn từ 900.000 VND"
 
 msgid "Protection mode <strong>gold for </strong>case of tear, scratch"
 msgstr ""

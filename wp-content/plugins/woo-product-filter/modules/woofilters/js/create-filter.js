@@ -7,6 +7,7 @@
 			var $createBtn = jQuery('.create-table'),
 				$error = jQuery('#formError'),
 				$input = jQuery('#addDialog_title'),
+				$list = jQuery('#addDialog_list'),
 				$inputDuplicateId = jQuery('#addDialog_duplicateid'),
 				$dialog = jQuery('#wpfAddDialog').dialog({
 					width: 480,
@@ -23,17 +24,29 @@
 					close: function () {
 						window.location.hash = '';
 					},
-					buttons: {
-						Save: function (event) {
+					buttons: [{
+						text: jQuery('#wpfAddDialog').attr('data-button'),
+						click: function (event) {
 							$error.fadeOut();
 							jQuery(this).closest(".ui-dialog").find('.wpfDialogSave').prop('disabled',true).attr('disabled',true);
-							jQuery(this).closest(".ui-dialog").find('.wpfDialogSave .ui-button-text').prepend('<i class="fa fa-refresh wpfIconRotate360" aria-hidden="true"></i>');
+							jQuery(this).closest(".ui-dialog").find('.wpfDialogSave').prepend('<i class="fa fa-refresh wpfIconRotate360" aria-hidden="true"></i>');
+							var order = [];
+							$list.find('input:checked').each(function() {
+								var $filter = jQuery(this),
+									id = $filter.data('value'),
+									o = {'id':id,'uniqId':$filter.data('unique-id'),'settings':{'f_enable':true}};
+								if (id == 'wpfSortBy') o.settings['f_options[]'] = 'default,popularity';
+								else if (id == 'wpfInStock') o.settings['f_options[]'] = 'instock,outofstock';
+								order.push(o);
+							});
+							var settings = order.length ? {'filters':{'order':JSON.stringify(order)}} : {};
 							jQuery.sendFormWpf({
 								data: {
 									mod: 'woofilters',
 									action: 'save',
 									title: $input.val(),
 									duplicateId: $inputDuplicateId.val(),
+									settings: settings,
 									wpfNonce: window.wpfNonce
 								},
 								onSuccess: function(res) {
@@ -51,9 +64,10 @@
 								}
 							});
 						}
-					},
+					}],
 					create:function () {
 						jQuery(this).closest(".ui-dialog").addClass('woobewoo-plugin').find(".ui-dialog-buttonset button").first().addClass("wpfDialogSave");
+						if (WPF_DATA.isWCLicense) jQuery(this).closest('.ui-dialog').find('.ui-dialog-buttonset button').addClass('button button-primary');
 					}
 				});
 

@@ -631,8 +631,8 @@ function get_woocommerce_currencies() {
 					'USD' => __( 'United States (US) dollar', 'woocommerce' ),
 					'UYU' => __( 'Uruguayan peso', 'woocommerce' ),
 					'UZS' => __( 'Uzbekistani som', 'woocommerce' ),
-					'VEF' => __( 'Venezuelan bol&iacute;var', 'woocommerce' ),
-					'VES' => __( 'Bol&iacute;var soberano', 'woocommerce' ),
+					'VEF' => __( 'Venezuelan bol&iacute;var (2008–2018)', 'woocommerce' ),
+					'VES' => __( 'Venezuelan bol&iacute;var', 'woocommerce' ),
 					'VND' => __( 'Vietnamese &#x111;&#x1ed3;ng', 'woocommerce' ),
 					'VUV' => __( 'Vanuatu vatu', 'woocommerce' ),
 					'WST' => __( 'Samoan t&#x101;l&#x101;', 'woocommerce' ),
@@ -817,7 +817,7 @@ function get_woocommerce_currency_symbols() {
 			'UYU' => '&#36;',
 			'UZS' => 'UZS',
 			'VEF' => 'Bs F',
-			'VES' => 'Bs.S',
+			'VES' => 'Bs.',
 			'VND' => '&#8363;',
 			'VUV' => 'Vt',
 			'WST' => 'T',
@@ -927,7 +927,7 @@ function wc_get_theme_support( $prop = '', $default = null ) {
  */
 function wc_get_image_size( $image_size ) {
 	$cache_key = 'size-' . ( is_array( $image_size ) ? implode( '-', $image_size ) : $image_size );
-	$size      = wp_cache_get( $cache_key, 'woocommerce' );
+	$size      = ! is_customize_preview() ? wp_cache_get( $cache_key, 'woocommerce' ) : false;
 
 	if ( $size ) {
 		return $size;
@@ -983,8 +983,11 @@ function wc_get_image_size( $image_size ) {
 
 	$size = apply_filters( 'woocommerce_get_image_size_' . $image_size, $size );
 
-	wp_cache_set( $cache_key, $size, 'woocommerce' );
-
+	if ( is_customize_preview() ) {
+		wp_cache_delete( $cache_key, 'woocommerce' );
+	} else {
+		wp_cache_set( $cache_key, $size, 'woocommerce' );
+	}
 	return $size;
 }
 
@@ -1091,11 +1094,7 @@ function wc_setcookie( $name, $value, $expire = 0, $secure = false, $httponly = 
 			$value
 		);
 
-		if ( version_compare( PHP_VERSION, '7.3.0', '>=' ) ) {
-			setcookie( $name, $value, $options );
-		} else {
-			setcookie( $name, $value, $options['expires'], $options['path'], $options['domain'], $options['secure'], $options['httponly'] );
-		}
+		setcookie( $name, $value, $options );
 	} elseif ( Constants::is_true( 'WP_DEBUG' ) ) {
 		headers_sent( $file, $line );
 		trigger_error( "{$name} cookie cannot be set - headers already sent by {$file} on line {$line}", E_USER_NOTICE ); // @codingStandardsIgnoreLine
@@ -1560,12 +1559,12 @@ function wc_get_credit_card_type_label( $type ) {
 	$labels = apply_filters(
 		'woocommerce_credit_card_type_labels',
 		array(
-			'mastercard'       => __( 'MasterCard', 'woocommerce' ),
-			'visa'             => __( 'Visa', 'woocommerce' ),
-			'discover'         => __( 'Discover', 'woocommerce' ),
-			'american express' => __( 'American Express', 'woocommerce' ),
-			'diners'           => __( 'Diners', 'woocommerce' ),
-			'jcb'              => __( 'JCB', 'woocommerce' ),
+			'mastercard'       => _x( 'MasterCard', 'Name of credit card', 'woocommerce' ),
+			'visa'             => _x( 'Visa', 'Name of credit card', 'woocommerce' ),
+			'discover'         => _x( 'Discover', 'Name of credit card', 'woocommerce' ),
+			'american express' => _x( 'American Express', 'Name of credit card', 'woocommerce' ),
+			'diners'           => _x( 'Diners', 'Name of credit card', 'woocommerce' ),
+			'jcb'              => _x( 'JCB', 'Name of credit card', 'woocommerce' ),
 		)
 	);
 
@@ -1593,12 +1592,24 @@ function wc_back_link( $label, $url ) {
  */
 function wc_help_tip( $tip, $allow_html = false ) {
 	if ( $allow_html ) {
-		$tip = wc_sanitize_tooltip( $tip );
+		$sanitized_tip = wc_sanitize_tooltip( $tip );
 	} else {
-		$tip = esc_attr( $tip );
+		$sanitized_tip = esc_attr( $tip );
 	}
 
-	return '<span class="woocommerce-help-tip" data-tip="' . $tip . '"></span>';
+	/**
+	 * Filter the help tip.
+	 *
+	 * @since 7.7.0
+	 *
+	 * @param string $tip_html       Help tip HTML.
+	 * @param string $sanitized_tip  Sanitized help tip text.
+	 * @param string $tip            Original help tip text.
+	 * @param bool   $allow_html     Allow sanitized HTML if true or escape.
+	 *
+	 * @return string
+	 */
+	return apply_filters( 'wc_help_tip', '<span class="woocommerce-help-tip" tabindex="0" aria-label="' . $sanitized_tip . '" data-tip="' . $sanitized_tip . '"></span>', $sanitized_tip, $tip, $allow_html );
 }
 
 /**
@@ -1701,8 +1712,11 @@ function wc_get_shipping_method_count( $include_legacy = false, $enabled_only = 
 		return absint( $transient_value['value'] );
 	}
 
-	$where_clause = $enabled_only ? 'WHERE is_enabled=1' : '';
-	$method_count = absint( $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}woocommerce_shipping_zone_methods ${where_clause}" ) );
+	if ( $enabled_only ) {
+		$method_count = absint( $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}woocommerce_shipping_zone_methods WHERE is_enabled=1" ) );
+	} else {
+		$method_count = absint( $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}woocommerce_shipping_zone_methods" ) );
+	}
 
 	if ( $include_legacy ) {
 		// Count activated methods that don't support shipping zones.
@@ -1894,28 +1908,33 @@ function wc_get_tax_rounding_mode() {
 
 /**
  * Get rounding precision for internal WC calculations.
- * Will increase the precision of wc_get_price_decimals by 2 decimals, unless WC_ROUNDING_PRECISION is set to a higher number.
+ * Will return the value of wc_get_price_decimals increased by 2 decimals, with WC_ROUNDING_PRECISION being the minimum.
  *
  * @since 2.6.3
  * @return int
  */
 function wc_get_rounding_precision() {
 	$precision = wc_get_price_decimals() + 2;
-	if ( absint( WC_ROUNDING_PRECISION ) > $precision ) {
+	if ( $precision < absint( WC_ROUNDING_PRECISION ) ) {
 		$precision = absint( WC_ROUNDING_PRECISION );
 	}
 	return $precision;
 }
 
 /**
- * Add precision to a number and return a number.
+ * Add precision to a number by moving the decimal point to the right as many places as indicated by wc_get_price_decimals().
+ * Optionally the result is rounded so that the total number of digits equals wc_get_rounding_precision() plus one.
  *
  * @since  3.2.0
- * @param  float $value Number to add precision to.
- * @param  bool  $round If should round after adding precision.
+ * @param  float|null $value Number to add precision to.
+ * @param  bool       $round If the result should be rounded.
  * @return int|float
  */
-function wc_add_number_precision( float $value, bool $round = true ) {
+function wc_add_number_precision( ?float $value, bool $round = true ) {
+	if ( ! $value ) {
+		return 0.0;
+	}
+
 	$cent_precision = pow( 10, wc_get_price_decimals() );
 	$value          = $value * $cent_precision;
 	return $round ? NumberUtil::round( $value, wc_get_rounding_precision() - wc_get_price_decimals() ) : $value;
@@ -1929,6 +1948,10 @@ function wc_add_number_precision( float $value, bool $round = true ) {
  * @return float
  */
 function wc_remove_number_precision( $value ) {
+	if ( ! $value ) {
+		return 0.0;
+	}
+
 	$cent_precision = pow( 10, wc_get_price_decimals() );
 	return $value / $cent_precision;
 }
@@ -2187,7 +2210,9 @@ function wc_get_permalink_structure() {
  * @since 3.1.0
  */
 function wc_switch_to_site_locale() {
-	if ( function_exists( 'switch_to_locale' ) ) {
+	global $wp_locale_switcher;
+
+	if ( function_exists( 'switch_to_locale' ) && isset( $wp_locale_switcher ) ) {
 		switch_to_locale( get_locale() );
 
 		// Filter on plugin_locale so load_plugin_textdomain loads the correct locale.
@@ -2204,7 +2229,9 @@ function wc_switch_to_site_locale() {
  * @since 3.1.0
  */
 function wc_restore_locale() {
-	if ( function_exists( 'restore_previous_locale' ) ) {
+	global $wp_locale_switcher;
+
+	if ( function_exists( 'restore_previous_locale' ) && isset( $wp_locale_switcher ) ) {
 		restore_previous_locale();
 
 		// Remove filter.
@@ -2476,15 +2503,7 @@ function wc_decimal_to_fraction( $decimal ) {
  * @return float
  */
 function wc_round_discount( $value, $precision ) {
-	if ( version_compare( PHP_VERSION, '5.3.0', '>=' ) ) {
-		return NumberUtil::round( $value, $precision, WC_DISCOUNT_ROUNDING_MODE ); // phpcs:ignore PHPCompatibility.FunctionUse.NewFunctionParameters.round_modeFound
-	}
-
-	if ( PHP_ROUND_HALF_DOWN === WC_DISCOUNT_ROUNDING_MODE ) {
-		return wc_legacy_round_half_down( $value, $precision );
-	}
-
-	return NumberUtil::round( $value, $precision );
+	return NumberUtil::round( $value, $precision, WC_DISCOUNT_ROUNDING_MODE ); // phpcs:ignore PHPCompatibility.FunctionUse.NewFunctionParameters.round_modeFound
 }
 
 /**
@@ -2513,7 +2532,7 @@ function wc_selected( $value, $options ) {
 function wc_get_server_database_version() {
 	global $wpdb;
 
-	if ( empty( $wpdb->is_mysql ) || ! $wpdb->use_mysqli ) {
+	if ( empty( $wpdb->is_mysql ) || empty( $wpdb->use_mysqli ) ) {
 		return array(
 			'string' => '',
 			'number' => '',

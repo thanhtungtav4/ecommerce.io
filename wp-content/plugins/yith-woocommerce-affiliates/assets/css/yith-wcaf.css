@@ -1,8 +1,7 @@
-@charset "UTF-8";
 /**
  * Main CSS
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Styles
  * @version 2.0.0
  */
@@ -24,7 +23,7 @@
 /**
  * General variables
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Styles
  * @version 2.0.0
  */
@@ -46,21 +45,21 @@
 /**
  * General mixins
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Styles
  * @version 2.0.0
  */
 /**
  * Frontend Modals CSS
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Styles
  * @version 2.0.0
  */
 /**
  * General variables
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Styles
  * @version 2.0.0
  */
@@ -142,16 +141,65 @@
 }
 
 /**
- * Badges CSS
+ * Blocs CSS
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Styles
  * @version 2.0.0
  */
 /**
  * General variables
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * == GENERAL ===
+ */
+/**
+ * === STATUS COLORS ===
+ */
+/**
+ * === ADMIN ===
+ */
+/**
+ * === DASHBOARD ===
+ */
+.wp-block-yith-yith-wcaf-set-referrer {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.wp-block-yith-yith-wcaf-set-referrer .yith-block-components-set-referrer__form {
+  display: flex;
+  margin-bottom: 0;
+  width: 100%;
+}
+.wp-block-yith-yith-wcaf-set-referrer .yith-block-components-set-referrer__form .wc-block-components-text-input {
+  flex-grow: 1;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.wp-block-yith-yith-wcaf-set-referrer .yith-block-components-set-referrer__form .yith-block-components-set-referrer__button {
+  flex-shrink: 0;
+  height: 3em;
+  margin-left: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  white-space: nowrap;
+}
+
+/**
+ * Badges CSS
+ *
+ * @author  YITH <plugins@yithemes.com>
+ * @package YITH\Affiliates\Styles
+ * @version 2.0.0
+ */
+/**
+ * General variables
+ *
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Styles
  * @version 2.0.0
  */
@@ -257,14 +305,14 @@
   /**
    * Tooltip CSS
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
   /**
    * General variables
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
@@ -283,14 +331,14 @@
   /**
    * Toggles CSS
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
   /**
    * General variables
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
@@ -309,14 +357,14 @@
   /**
    * Dashboard Tables CSS
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
   /**
    * General variables
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
@@ -505,14 +553,14 @@
   /**
    * Fields CSS
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
   /**
    * General variables
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
@@ -717,14 +765,14 @@
   /**
    * Fields CSS
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
   /**
    * General variables
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
@@ -969,14 +1017,14 @@
   /**
    * Badges CSS
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
   /**
    * General variables
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
@@ -1182,7 +1230,7 @@
 }
 .yith-wcaf-current-affiliate .referral-user .delete-affiliate:before {
   -webkit-font-smoothing: antialiased;
-  content: "";
+  content: "\f158";
   font-family: Dashicons;
   font-variant: normal;
   font-weight: 400;
@@ -1264,14 +1312,14 @@
   /**
    * Fields CSS
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
   /**
    * General variables
    *
-   * @author  YITH
+   * @author  YITH <plugins@yithemes.com>
    * @package YITH\Affiliates\Styles
    * @version 2.0.0
    */
@@ -1395,7 +1443,7 @@
 /**
  * Responsive CSS
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Styles
  * @version 2.0.0
  */
@@ -1427,10 +1475,9 @@
     border-spacing: 0;
   }
   .yith-wcaf-dashboard table.yith-wcaf-table.shop_table_responsive tr td,
-.yith-wcaf-dashboard table.yith-wcaf-table.shop_table_responsive tr th {
+  .yith-wcaf-dashboard table.yith-wcaf-table.shop_table_responsive tr th {
     padding: 20px 5px;
   }
-
   .yith-wcaf-link-generator .link-generator-box.double-column {
     grid-template-columns: 100%;
   }
@@ -1448,7 +1495,6 @@
   .woocommerce-account .yith-wcaf-dashboard-navigation {
     display: none;
   }
-
   .yith-wcaf-dashboard .yith-wcaf-table-top-bar {
     display: none;
   }
@@ -1456,7 +1502,7 @@
     column-gap: 30px;
   }
   .yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-label,
-.yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-value {
+  .yith-wcaf-dashboard .yith-wcaf-dashboard-summary .affiliate-stats .stat-value {
     display: block;
     float: none !important;
     text-align: center;

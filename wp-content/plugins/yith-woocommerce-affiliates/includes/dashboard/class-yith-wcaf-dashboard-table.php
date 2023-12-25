@@ -2,7 +2,7 @@
 /**
  * Affiliate Dashboard Table
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH/Affiliates/Classes
  * @version 2.0.0
  */
@@ -519,23 +519,24 @@ if ( ! class_exists( 'YITH_WCAF_Dashboard_Table' ) ) {
 			$per_page = (int) $this->get_filter_values( 'per_page' );
 			$per_page = $per_page ? $per_page : (int) $this->args['per_page'];
 			$pages    = ceil( (int) $this->args['count'] / $per_page );
+			$links    = paginate_links(
+				array(
+					'base'      => YITH_WCAF_Dashboard()->get_dashboard_url( $this->args['endpoint'], '%#%' ),
+					'format'    => '%#%',
+					'current'   => $current,
+					'total'     => $pages,
+					'show_all'  => false,
+					'prev_next' => true,
+				)
+			);
+
+			if ( ! $links ) {
+				return;
+			}
 
 			?>
 			<nav class="woocommerce-pagination">
-				<?php
-				echo wp_kses_post(
-					paginate_links(
-						array(
-							'base'      => YITH_WCAF_Dashboard()->get_dashboard_url( $this->args['endpoint'], '%#%' ),
-							'format'    => '%#%',
-							'current'   => $current,
-							'total'     => $pages,
-							'show_all'  => false,
-							'prev_next' => true,
-						)
-					)
-				);
-				?>
+				<?php echo wp_kses_post( $links ); ?>
 			</nav>
 			<?php
 		}

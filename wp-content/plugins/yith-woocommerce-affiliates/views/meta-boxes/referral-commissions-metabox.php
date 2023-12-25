@@ -2,7 +2,7 @@
 /**
  * Order Referral MetaBox
  *
- * @author YITH
+ * @author YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Views
  * @version 1.0.0
  */

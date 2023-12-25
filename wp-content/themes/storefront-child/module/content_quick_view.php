@@ -74,6 +74,6 @@
     </button>
     <div class="modal_cart">
       <p class="price"> <span class="woocommerce-Price-amount amount">
-          <bdi>570,000.000<span class="woocommerce-Price-currencySymbol">VNĐ/cặp</span></bdi></span></p><a class="btn" href="#" tabindex="0"><img class="lazyload" src="<?php echo get_stylesheet_directory() ?>assets/images/basket__icon.svg" data-src="<?php echo get_stylesheet_directory() ?>/assets/images/basket__icon.svg" alt="add to cart" loading="lazy" width="30" height="30"></a>
+          <bdi>570,000.000<span class="woocommerce-Price-currencySymbol">VNĐ/chiếc</span></bdi></span></p><a class="btn" href="#" tabindex="0"><img class="lazyload" src="<?php echo get_stylesheet_directory() ?>assets/images/basket__icon.svg" data-src="<?php echo get_stylesheet_directory() ?>/assets/images/basket__icon.svg" alt="add to cart" loading="lazy" width="30" height="30"></a>
     </div>
   </div>

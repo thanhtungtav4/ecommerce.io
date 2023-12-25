@@ -126,6 +126,7 @@ jQuery(document).ready(function(){
 			},
 			create:function () {
 				jQuery(this).closest(".ui-dialog").addClass('woobewoo-plugin');
+				if (WPF_DATA.isWCLicense) jQuery(this).closest('.ui-dialog').find('.ui-dialog-buttonset button').addClass('button');
 			}
 		});
 

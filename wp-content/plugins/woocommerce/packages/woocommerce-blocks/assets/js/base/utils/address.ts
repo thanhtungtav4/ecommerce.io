@@ -12,6 +12,11 @@ import {
 	ShippingAddress,
 	BillingAddress,
 } from '@woocommerce/settings';
+import { decodeEntities } from '@wordpress/html-entities';
+import {
+	SHIPPING_COUNTRIES,
+	SHIPPING_STATES,
+} from '@woocommerce/block-settings';
 
 /**
  * Compare two addresses and see if they are the same.
@@ -99,4 +104,55 @@ export const emptyHiddenAddressFields = <
 	} );
 
 	return newAddress;
+};
+
+/*
+ * Formats a shipping address for display.
+ *
+ * @param {Object} address The address to format.
+ * @return {string | null} The formatted address or null if no address is provided.
+ */
+export const formatShippingAddress = (
+	address: ShippingAddress | BillingAddress
+): string | null => {
+	// We bail early if we don't have an address.
+	if ( Object.values( address ).length === 0 ) {
+		return null;
+	}
+	const formattedCountry =
+		typeof SHIPPING_COUNTRIES[ address.country ] === 'string'
+			? decodeEntities( SHIPPING_COUNTRIES[ address.country ] )
+			: '';
+
+	const formattedState =
+		typeof SHIPPING_STATES[ address.country ] === 'object' &&
+		typeof SHIPPING_STATES[ address.country ][ address.state ] === 'string'
+			? decodeEntities(
+					SHIPPING_STATES[ address.country ][ address.state ]
+			  )
+			: address.state;
+
+	const addressParts = [];
+
+	addressParts.push( address.postcode.toUpperCase() );
+	addressParts.push( address.city );
+	addressParts.push( formattedState );
+	addressParts.push( formattedCountry );
+
+	const formattedLocation = addressParts.filter( Boolean ).join( ', ' );
+
+	if ( ! formattedLocation ) {
+		return null;
+	}
+
+	return formattedLocation;
+};
+
+/**
+ * Returns true if the address has a city and country.
+ */
+export const isAddressComplete = (
+	address: ShippingAddress | BillingAddress
+): boolean => {
+	return !! address.city && !! address.country;
 };

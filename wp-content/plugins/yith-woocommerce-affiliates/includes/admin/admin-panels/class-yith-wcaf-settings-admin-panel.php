@@ -2,7 +2,7 @@
 /**
  * Settings admin panel handling
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -36,9 +36,53 @@ if ( ! class_exists( 'YITH_WCAF_Settings_Admin_Panel' ) ) {
 			// enqueue tab assets.
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 
+			add_action( 'yith_wcaf_print_profile_fields_list_tab', array( $this, 'render_profile_fields_list_table' ) );
+			add_action('yith_wcaf_render_gateways_list_table', array( $this, 'render_gateways_list_table' ) );
+
+
 			// call parent constructor.
 			parent::__construct();
 		}
+
+		/**
+		 * Render the Affiliates Profile fields List tab.
+		 */
+		public static function render_gateways_list_table() {
+			$list_table = new YITH_WCAF_Gateways_Admin_Table();
+			$list_table->prepare_items();
+			$list_table->views();
+			?>
+            <div id="yith_wcaf_gateways">
+				<?php $list_table->display(); ?>
+            </div>
+			<?php
+		}
+
+
+		/**
+		 * Get instance for Affiliate Profile Fields list table.
+		 *
+		 * @return YITH_WCAF_Affiliates_Profile_Fields_Admin_Table
+		 */
+		public static function get_profile_fields_list_table() {
+			return new YITH_WCAF_Affiliates_Profile_Fields_Admin_Table();
+		}
+
+
+		/**
+		 * Render the Affiliates Profile fields List tab.
+		 */
+		public static function render_profile_fields_list_table() {
+			$list_table = self::get_profile_fields_list_table();
+			$list_table->prepare_items();
+			$list_table->views();
+			?>
+			<div id="yith_wcaf_profile_fields">
+				<?php $list_table->display(); ?>
+			</div>
+			<?php
+		}
+
 
 		/* === CUSTOM FIELDS === */
 

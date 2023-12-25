@@ -2,7 +2,7 @@
 /**
  * Generic objects collection class
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Abstracts
  * @version 2.0.0
  */
@@ -245,6 +245,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Objects_Collection' ) ) {
 
 		/* === ITERATOR === */
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Return the current element
 		 *
@@ -257,6 +258,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Objects_Collection' ) ) {
 			return current( $this->objects );
 		}
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Move forward to next element
 		 *
@@ -269,6 +271,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Objects_Collection' ) ) {
 			next( $this->objects );
 		}
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Return the key of the current element
 		 *
@@ -281,6 +284,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Objects_Collection' ) ) {
 			return key( $this->objects );
 		}
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Checks if current position is valid
 		 *
@@ -294,6 +298,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Objects_Collection' ) ) {
 			return array_key_exists( $this->key(), $this->objects );
 		}
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Rewind the Iterator to the first element
 		 *
@@ -319,6 +324,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Objects_Collection' ) ) {
 
 		/* === ARRAY ACCESS === */
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Whether a offset exists
 		 *
@@ -331,6 +337,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Objects_Collection' ) ) {
 			return in_array( $offset, $this->ids, true );
 		}
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Offset to retrieve
 		 *
@@ -350,6 +357,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Objects_Collection' ) ) {
 			return $objects[ $offset ];
 		}
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Offset to set
 		 *
@@ -365,6 +373,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Objects_Collection' ) ) {
 			throw new Exception( 'You cannot add items to from collection this way; please, use ->add() method' );
 		}
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Offset to unset
 		 *
@@ -389,6 +398,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Objects_Collection' ) ) {
 
 		/* === COUNTABLE === */
 
+		#[\ReturnTypeWillChange]
 		/**
 		 * Count elements of an object
 		 *

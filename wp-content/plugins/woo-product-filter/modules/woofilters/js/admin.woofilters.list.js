@@ -20,7 +20,8 @@ jQuery(document).ready(function(){
 		postData: {
 			search: {
 				text_like: jQuery('#'+ tblId+ 'SearchTxt').val()
-			}
+			},
+			wpfNonce: window.wpfNonce
 		},
 		rowNum: 10,
 		rowList: [10, 20, 30, 1000],
@@ -204,6 +205,7 @@ jQuery(document).ready(function(){
 		},
 		create:function () {
 			jQuery(this).closest('.ui-dialog').addClass('woobewoo-plugin');
+			if (WPF_DATA.isWCLicense) jQuery(this).closest('.ui-dialog').find('.ui-dialog-buttonset button').addClass('button button-primary');
 		}
 	});
 	var $importSubmitBtn = $importWnd.parents('.ui-dialog:first')
@@ -265,6 +267,7 @@ jQuery(document).ready(function(){
 		],
 		create:function () {
 			jQuery(this).closest('.ui-dialog').addClass('woobewoo-plugin');
+			if (WPF_DATA.isWCLicense) jQuery(this).closest('.ui-dialog').find('.ui-dialog-buttonset button').addClass('button button-primary');
 		}
 	}), $statDWnd = jQuery('#wpfStatsDWnd').dialog({
 		modal:    true,
@@ -281,6 +284,7 @@ jQuery(document).ready(function(){
 		],
 		create:function () {
 			jQuery(this).closest('.ui-dialog').addClass('woobewoo-plugin');
+			if (WPF_DATA.isWCLicense) jQuery(this).closest('.ui-dialog').find('.ui-dialog-buttonset button').addClass('button button-primary');
 		}
 	});
 				

@@ -2,11 +2,7 @@
  * External dependencies
  */
 import { __, sprintf } from '@wordpress/i18n';
-import {
-	usePrevious,
-	useShallowEqual,
-	useBorderProps,
-} from '@woocommerce/base-hooks';
+import { usePrevious, useShallowEqual } from '@woocommerce/base-hooks';
 import {
 	useCollection,
 	useQueryStateByKey,
@@ -19,11 +15,11 @@ import FilterResetButton from '@woocommerce/base-components/filter-reset-button'
 import FilterSubmitButton from '@woocommerce/base-components/filter-submit-button';
 import isShallowEqual from '@wordpress/is-shallow-equal';
 import { decodeEntities } from '@wordpress/html-entities';
-import { Notice } from 'wordpress-components';
 import { getSettingWithCoercion } from '@woocommerce/settings';
 import { getQueryArgs, removeQueryArgs } from '@wordpress/url';
 import {
 	AttributeQuery,
+	AttributeTerm,
 	isAttributeQueryCollection,
 	isBoolean,
 	isString,
@@ -35,7 +31,6 @@ import {
 	PREFIX_QUERY_ARG_FILTER_TYPE,
 	PREFIX_QUERY_ARG_QUERY_TYPE,
 } from '@woocommerce/utils';
-import { difference } from 'lodash';
 import FormTokenField from '@woocommerce/base-components/form-token-field';
 import FilterTitlePlaceholder from '@woocommerce/base-components/filter-placeholder';
 import classnames from 'classnames';
@@ -56,54 +51,44 @@ import {
 	formatSlug,
 	generateUniqueId,
 } from './utils';
-import { BlockAttributes, DisplayOption } from './types';
+import { BlockAttributes, DisplayOption, GetNotice } from './types';
 import CheckboxFilter from './checkbox-filter';
 import { useSetWraperVisibility } from '../filter-wrapper/context';
-
-/**
- * Formats filter values into a string for the URL parameters needed for filtering PHP templates.
- *
- * @param {string} url    Current page URL.
- * @param {Array}  params Parameters and their constraints.
- *
- * @return {string}       New URL with query parameters in it.
- */
 
 /**
  * Component displaying an attribute filter.
  *
  * @param {Object}  props            Incoming props for the component.
  * @param {Object}  props.attributes Incoming block attributes.
- * @param {boolean} props.isEditor
+ * @param {boolean} props.isEditor   Whether the component is being rendered in the editor.
+ * @param {boolean} props.getNotice  Get notice content if in editor.
  */
 const AttributeFilterBlock = ( {
 	attributes: blockAttributes,
 	isEditor = false,
+	getNotice = () => null,
 }: {
 	attributes: BlockAttributes;
 	isEditor?: boolean;
+	getNotice?: GetNotice;
 } ) => {
 	const hasFilterableProducts = getSettingWithCoercion(
-		'has_filterable_products',
+		'hasFilterableProducts',
 		false,
 		isBoolean
 	);
 
 	const filteringForPhpTemplate = getSettingWithCoercion(
-		'is_rendering_php_template',
+		'isRenderingPhpTemplate',
 		false,
 		isBoolean
 	);
 
 	const pageUrl = getSettingWithCoercion(
-		'page_url',
+		'pageUrl',
 		window.location.href,
 		isString
 	);
-
-	const productIds = isEditor
-		? []
-		: getSettingWithCoercion( 'product_ids', [], Array.isArray );
 
 	const [ hasSetFilterDefaultsFromUrl, setHasSetFilterDefaultsFromUrl ] =
 		useState( false );
@@ -135,23 +120,19 @@ const AttributeFilterBlock = ( {
 			: []
 	);
 
-	const borderProps = useBorderProps( blockAttributes );
-
 	const [ queryState ] = useQueryStateByContext();
 	const [ productAttributesQuery, setProductAttributesQuery ] =
 		useQueryStateByKey( 'attributes', [] );
 
 	const { results: attributeTerms, isLoading: attributeTermsLoading } =
-		useCollection( {
+		useCollection< AttributeTerm >( {
 			namespace: '/wc/store/v1',
 			resourceName: 'products/attributes/terms',
 			resourceValues: [ attributeObject?.id || 0 ],
 			shouldSelect: blockAttributes.attributeId > 0,
+			query: { orderby: 'menu_order' },
 		} );
 
-	const filterAvailableTerms =
-		blockAttributes.displayStyle !== 'dropdown' &&
-		blockAttributes.queryType === 'and';
 	const { results: filteredCounts, isLoading: filteredCountsLoading } =
 		useCollectionData( {
 			queryAttribute: {
@@ -160,9 +141,8 @@ const AttributeFilterBlock = ( {
 			},
 			queryState: {
 				...queryState,
-				attributes: filterAvailableTerms ? queryState.attributes : null,
 			},
-			productIds,
+			isEditor,
 		} );
 
 	/**
@@ -282,6 +262,13 @@ const AttributeFilterBlock = ( {
 	 */
 	const updateFilterUrl = useCallback(
 		( query, allFiltersRemoved = false ) => {
+			query = query.map( ( item: AttributeQuery ) => ( {
+				...item,
+				slug: item.slug.map( ( slug: string ) =>
+					decodeURIComponent( slug )
+				),
+			} ) );
+
 			if ( allFiltersRemoved ) {
 				if ( ! attributeObject?.taxonomy ) {
 					return;
@@ -484,16 +471,7 @@ const AttributeFilterBlock = ( {
 	// Short-circuit if no attribute is selected.
 	if ( ! attributeObject ) {
 		if ( isEditor ) {
-			return (
-				<Notice status="warning" isDismissible={ false }>
-					<p>
-						{ __(
-							'Please select an attribute to use this filter!',
-							'woo-gutenberg-products-block'
-						) }
-					</p>
-				</Notice>
-			);
+			return getNotice( 'noAttributes' );
 		}
 		setWrapperVisibility( false );
 		return null;
@@ -501,16 +479,7 @@ const AttributeFilterBlock = ( {
 
 	if ( displayedOptions.length === 0 && ! attributeTermsLoading ) {
 		if ( isEditor ) {
-			return (
-				<Notice status="warning" isDismissible={ false }>
-					<p>
-						{ __(
-							'There are no products with the selected attributes.',
-							'woo-gutenberg-products-block'
-						) }
-					</p>
-				</Notice>
-			);
+			return getNotice( 'noProducts' );
 		}
 	}
 
@@ -526,6 +495,10 @@ const AttributeFilterBlock = ( {
 		setWrapperVisibility( false );
 		return null;
 	}
+
+	const showChevron = multiple
+		? ! isLoading && checked.length < displayedOptions.length
+		: ! isLoading && checked.length === 0;
 
 	const heading = (
 		<TagName className="wc-block-attribute-filter__title">
@@ -569,14 +542,10 @@ const AttributeFilterBlock = ( {
 					<>
 						<FormTokenField
 							key={ remountKey }
-							className={ classnames( borderProps.className, {
+							className={ classnames( {
 								'single-selection': ! multiple,
 								'is-loading': isLoading,
 							} ) }
-							style={ {
-								...borderProps.style,
-								borderStyle: 'none',
-							} }
 							suggestions={ displayedOptions
 								.filter(
 									( option ) =>
@@ -608,13 +577,19 @@ const AttributeFilterBlock = ( {
 										: token;
 								} );
 
-								const added = difference( tokens, checked );
+								const added = [ tokens, checked ].reduce(
+									( a, b ) =>
+										a.filter( ( c ) => ! b.includes( c ) )
+								);
 
 								if ( added.length === 1 ) {
 									return onChange( added[ 0 ] );
 								}
 
-								const removed = difference( checked, tokens );
+								const removed = [ checked, tokens ].reduce(
+									( a, b ) =>
+										a.filter( ( c ) => ! b.includes( c ) )
+								);
 								if ( removed.length === 1 ) {
 									onChange( removed[ 0 ] );
 								}
@@ -666,7 +641,7 @@ const AttributeFilterBlock = ( {
 								),
 							} }
 						/>
-						{ multiple && (
+						{ showChevron && (
 							<Icon icon={ chevronDown } size={ 30 } />
 						) }
 					</>
@@ -682,7 +657,7 @@ const AttributeFilterBlock = ( {
 			</div>
 
 			<div className="wc-block-attribute-filter__actions">
-				{ checked.length > 0 && ! isLoading && (
+				{ ( checked.length > 0 || isEditor ) && ! isLoading && (
 					<FilterResetButton
 						onClick={ () => {
 							setChecked( [] );

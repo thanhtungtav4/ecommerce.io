@@ -222,6 +222,55 @@ ViewWpf::display('woofiltersEditTabCustomTags');
 		</div>
 	</div>
 </div>
+<div class="row-settings-block wpfTypeSwitchable" data-not-type="colors buttons slider">
+	<div class="settings-block-label col-xs-4 col-sm-3">
+		<?php esc_html_e('Show hierarchical', 'woo-product-filter'); ?>
+		<i class="fa fa-question woobewoo-tooltip no-tooltip" title="<?php echo esc_attr(__('Show paternal and subsidiary attributes. If you display only some attributes, make sure that the parent attributes are selected.', 'woo-product-filter') . ' <a href="https://woobewoo.com/documentation/product-categories/" target="_blank">' . __('Learn More', 'woo-product-filter') . '</a>.'); ?>"></i>
+	</div>
+	<div class="sub-block-values col-xs-8 col-sm-9">
+		<div class="settings-value settings-w100">
+			<?php HtmlWpf::checkboxToggle('f_show_hierarchical', array()); ?>
+		</div>
+		<div class="settings-value" data-parent-switch="f_show_hierarchical">
+			<div class="settings-value-label">
+				<?php esc_html_e('Hide attributes parent', 'woo-product-filter'); ?>
+				<i class="fa fa-question woobewoo-tooltip no-tooltip" title="<?php echo esc_attr__('Show only attributes children.', 'woo-product-filter'); ?>"></i>
+			</div>
+			<?php HtmlWpf::checkboxToggle('f_hide_parent', array()); ?>
+		</div>
+		<?php
+		if ( $isPro ) :
+			?>
+			<div class="settings-value wpfDependencyHidden" data-parent-switch="f_hide_parent">
+				<div class="settings-value-label">
+					<?php esc_html_e( 'Hide parents of all levels', 'woo-product-filter' ); ?>
+					<i class="fa fa-question woobewoo-tooltip no-tooltip" title="<?php echo esc_attr__( 'Hides all parent attributes of any level, leaving only the end children', 'woo-product-filter' ); ?>"></i>
+				</div>
+				<?php HtmlWpf::checkboxToggle( 'f_hide_all_parent', array() ); ?>
+			</div>
+		<?php
+			DispatcherWpf::doAction( 'addEditTabFilters', 'partEditTabFiltersHierarchicalOption', array('attrDisplay' => true) );
+		else :
+			?>
+			<div class="settings-value wpfTypeSwitchable" data-type="radio list switch" data-parent-switch="f_show_hierarchical">
+				<div class="settings-value-label">
+					<?php esc_html_e( 'Collapsible', 'woo-product-filter' ); ?>
+					<i class="fa fa-question woobewoo-tooltip no-tooltip" title="<?php echo esc_attr__( 'If enabled, then show only parent elements, if there are children, they are minimized.', 'woo-product-filter' ); ?>"></i>
+				</div>
+				<span class="wpfProLabel"><a href="<?php echo esc_url( $this->proLink . '?utm_source=&utm_medium=&utm_campaign=' ); ?>" target="_blank"><?php esc_html_e( 'PRO Option', 'woo-product-filter' ); ?></a></span>
+			</div>
+			<div class="settings-value wpfTypeSwitchable" data-type="multi" data-parent-switch="f_show_hierarchical">
+				<div class="settings-value-label">
+					<?php esc_html_e( 'Extend parent select', 'woo-product-filter' ); ?>
+					<i class="fa fa-question woobewoo-tooltip no-tooltip" title="<?php echo esc_attr__( 'If parent filter attribute was selected then extend selection to child attributes.', 'woo-product-filter' ); ?>"></i>
+				</div>
+				<span class="wpfProLabel"><a href="<?php echo esc_url( $this->proLink . '?utm_source=&utm_medium=&utm_campaign=' ); ?>" target="_blank"><?php esc_html_e( 'PRO Option', 'woo-product-filter' ); ?></a></span>
+			</div>
+			<?php
+		endif;
+		?>
+	</div>
+</div>
 <div class="row-settings-block" data-parent="f_list" data-no-values="custom_meta_field_check">
 	<div class="settings-block-label col-xs-4 col-sm-3">
 		<?php esc_html_e('Order by custom', 'woo-product-filter'); ?>
@@ -248,6 +297,13 @@ ViewWpf::display('woofiltersEditTabCustomTags');
 				<i class="fa fa-question woobewoo-tooltip no-tooltip" title="<?php echo esc_attr(__('By default if a value is selected in the filter, items without products will still be displayed (this was done on purpose so that you can quickly switch between items).If the option is enabled, empty elements will be hidden regardless of the filter activity (this also applies to loading via ajax and when reloading the page with the parameters specified in the url).', 'woo-product-filter')); ?>"></i>
 			</div>
 			<?php HtmlWpf::checkboxToggle('f_hide_empty_active', array()); ?>
+		</div>
+		<div class="settings-value settings-w100" data-parent="f_hide_empty">
+			<div class="settings-value-label">
+				<?php esc_html_e('Hide filter with single item', 'woo-product-filter'); ?>
+				<i class="fa fa-question woobewoo-tooltip no-tooltip" title="<?php echo esc_attr(__('Option allows you to hide the filter section if previously set filters result in only one element in the section.', 'woo-product-filter')); ?>"></i>
+			</div>
+			<?php HtmlWpf::checkboxToggle('f_hide_by_single', array()); ?>
 		</div>
 	</div>
 </div>

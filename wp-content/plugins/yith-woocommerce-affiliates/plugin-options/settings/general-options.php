@@ -2,7 +2,7 @@
 /**
  * General options
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates
  * @version 1.0.0
  */
@@ -82,6 +82,7 @@ return apply_filters(
 					'yith-type'         => 'custom',
 					'action'            => 'yith_wcaf_print_admin_duration_field',
 					'id'                => 'yith_wcaf_referral_cookie_expire',
+					'default'           => DAY_IN_SECONDS,
 					'custom_attributes' => array(
 						'min'  => 1,
 						'step' => 1,

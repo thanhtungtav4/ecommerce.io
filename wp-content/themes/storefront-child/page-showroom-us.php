@@ -67,63 +67,66 @@ get_header(); ?>
           <div class="l-container">
             <div class="form">
               <div class="form_inner"><h3 >HỆ THỐNG CỬA HÀNG CARAS</h3>
-                <table class="table table-bordered">
-                <tbody id="t_points"></tbody>
+                <table class="table table-bordered table-showroom">
+                  <tr>
+                    <td>
+                      <p><b>HCM:</b></p>
+                      <p data-slide="1" >Quận 3: 619 Nguyễn Đình Chiểu, P.2<span class="showroom-icon"><a target="_blank" href="https://goo.gl/maps/NPQszQ6gA3hkG3wT9?coh=178571&entry=tt" onclick="window.open(this.href,'_blank');return false;" ><i class="gg-pin"></i></a> <a onclick="window.open(this.href,'_blank');return false;" href="tel:090 292 6071"><i class="gg-phone"></i></a></span></p>
+                      <p data-slide="2" >Q. Tân Bình: 350C Hoàng Văn Thụ, P.4<span class="showroom-icon"><a target="_blank" href="https://goo.gl/maps/eN9KhcMR2k3rTERp9?coh=178571&entry=tt" onclick="window.open(this.href,'_blank');return false;" ><i class="gg-pin"></i></a> <a href="#" onclick="window.open(this.href,'_blank');return false;"><i class="gg-phone"></i></a></span></p>
+                      <p data-slide="3" >Q. Bình Thạnh: 88 Nguyễn Gia Trí<span class="showroom-icon"><a onclick="window.open(this.href,'_blank');return false;" target="_blank" href="https://goo.gl/maps/gno4NNr8f5pQ43Nh9?coh=178571&entry=tt"><i class="gg-pin"></i></a> <a onclick="window.open(this.href,'_blank');return false;" href="#"><i class="gg-phone"></i></a></span></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <p><b>HÀ NỘI:</b></p>
+                        <p data-slide="4">02 Phố Huế, Hoàn Kiếm<span class="showroom-icon"><a target="_blank" href="https://goo.gl/maps/dJaFBtrcBqhhaQTf9?coh=178571&entry=tt" onclick="window.open(this.href,'_blank');return false;"><i class="gg-pin"></i></a> <a onclick="window.open(this.href,'_blank');return false;" href="tel:0981 470 967"><i class="gg-phone"></i></a></span></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p><b>BIÊN HOÀ:</b></p>
+                      <p data-slide="5">1866 Nguyễn Ái Quốc, P. Trung Dũng, Biên Hòa, Đồng Nai (11:00 - 21:00) <span class="showroom-icon"><a  target="_blank" onclick="window.open(this.href,'_blank');return false;" href="https://goo.gl/maps/xQCcxQxhpAXeY7Dz9?coh=178571&entry=tt"><i class="gg-pin"></i></a> <a onclick="window.open(this.href,'_blank');return false;" href="tel:0934 076 705"><i class="gg-phone"></i></a></span></p>
+                    </td>
+                  </tr>
                 </table>
               </div>
             </div>
-            <div class="map" id="map"></div>
+            <div class="map slider-showroom">
+              <div>
+                <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/619-nguyen-dinh-chieu.png">
+              </div>
+              <div>
+                <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/350c-HVT.png">
+              </div>
+              <div>
+                <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/88-nguyen-gia-tri.png">
+              </div>
+              <div>
+                <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pho-hue.png">
+              </div>
+	    <div>
+                <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/1866-bien-hoa.png">
+              </div>
+            </div>
           </div>
         </div>
     </main>
 <?php
 get_footer();
 ?>
-<script>
-    var map = L.map('map').setView([10.766932, 106.679240], 14);
-    var OpenStreetMap_Mapnik = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 14,
-      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
-
-    function addRowTable(code, coords){
-      var tr = document.createElement("tr");
-      var td = document.createElement("td");
-      td.textContent = code;
-      tr.appendChild(td);
-      tr.onclick = function(){map.flyTo(coords, 14,
-        {
-          animate: true,
-          duration: 0.5
-        }
-        );};
-      document.getElementById("t_points").appendChild(tr);
-    }
-    var buffers = [];
-    function addMarker(code,lat,lng){
-      var p = L.marker([lat,lng]);
-      p.title = code;
-      p.alt = code;
-      p.bindPopup(code);
-      p.addTo(map);
-      addRowTable(code, [lat,lng]);
-      var c = L.circle([lat,lng], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.3,
-        radius: 0
-      }).addTo(map);
-      buffers.push(c);
-    }
-    $(document).ready(function (){
-      var points = [["619 Nguyễn Đình Chiểu, Phường 2, Quận 3, TP. Hồ Chí Minh",10.766932,106.679240],
-                    ["350C Hoàng Văn Thụ, Phường 4, Quận Tân Bình",10.7968469,106.6568688],
-                    ["1866 Nguyễn Ái Quốc, P. Trung Dũng, TP. Biên Hòa, Đồng Nai", 10.9563935,106.8191859],
-                    ["2 Phố Huế, Hoàn Kiếm, Hà Nội",21.0197083,105.8496002]];
-      for (var i=0; i < points.length; i++){
-        addMarker(points[i][0],points[i][1],points[i][2]);
-      }
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".slider-showroom").slick({
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+      });
     });
-    L.control.scale({maxWidth:240, metric:true, position: 'bottomleft'}).addTo(map);
-    L.control.polylineMeasure({position:'topleft', imperial:false, clearMeasurementsOnStop: false, showMeasurementsClearControl: true}).addTo(map);
+   $('p[data-slide]').click(function(e) {
+    console.log("Hello world!");
+    e.preventDefault();
+    var slideno = $(this).data('slide');
+    $('.slider-showroom').slick('slickGoTo', slideno - 1);
+  });
 </script>

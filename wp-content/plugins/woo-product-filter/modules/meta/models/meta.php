@@ -366,7 +366,7 @@ class MetaModelWpf extends ModelWpf {
 								$lastData     = count($data) - 1;
 								$insertValues = '';
 								foreach ($data as $k => $values) {
-									$valuesArr = ( 7 == $keyType ? $values['meta_value'] : unserialize($values['meta_value']) );
+									$valuesArr = ( 7 == $keyType ? $values['meta_value'] : @unserialize($values['meta_value']) );
 									if (is_array($valuesArr)) {
 										$j++;
 										
@@ -430,6 +430,10 @@ class MetaModelWpf extends ModelWpf {
 		if (!$this->addIndexes()) {
 			return false;
 		}
+		if (!$this->addCompatibilities($productId, $tempTable)) {
+			return false;
+		}
+
 		if (!empty($keyRecalc)) {
 			$attrKey   = $keysModel->getKeyData('_product_attributes');
 			$keys      = $this->keysArray;
@@ -683,6 +687,102 @@ class MetaModelWpf extends ModelWpf {
 			}
 		}
 		
+		return true;
+	}
+	public function addCompatibilities( $productId, $tempTable ) {
+		if (class_exists( 'WC_Measurement_Price_Calculator' )) {
+			$keysModel = FrameWpf::_()->getModule('meta')->getModel('meta_keys');
+			$keyData = $keysModel->getKeyData('_price', false);
+			$keyPrice = empty($keyData) ? false : $keyData['id'];
+			$keyData = $keysModel->getKeyData('_sale_price', false);
+			$keySalePrice = empty($keyData) ? false : $keyData['id'];
+			if (!$keyPrice || !$keySalePrice) {
+				return true;
+			}
+			$isOne = false;
+			if ($tempTable) {
+				$ids = DbWpf::get( 'SELECT id FROM ' . $tempTable, 'col');
+			} else {
+				$product = wc_get_product($productId);
+				if (!$product) {
+					return true;
+				}
+				$ids = array($productId);
+				if ($product->get_type() == 'variable') {
+					$ids = array_merge($ids, $product->get_children());
+				} else {
+					$isOne = true;
+				}
+			}
+			if (empty($ids)) {
+				return true;
+			}
+			$query = 'UPDATE @__meta_data SET val_dec=';
+			$whPrice = ' WHERE key_id=' . $keyPrice . ' AND product_id=';
+			$whSalePrice = ' WHERE key_id=' . $keySalePrice . ' AND product_id=';
+			foreach ($ids as $id) {
+				if (!$isOne) {
+					$product = wc_get_product( $id );
+					if (!$product) {
+						return true;
+					}
+				}
+				$price = '';
+				$salePrice = '';
+				$settings = new \WC_Price_Calculator_Settings( $product );
+	
+				// user-defined calculator with pricing rules enabled (nothing needs to be changed for user-defined calculators with no pricing rules)
+				if ( $settings->pricing_rules_enabled() ) {
+					$price         = $settings->get_pricing_rules_maximum_price();
+					$salePrice    = $settings->pricing_rules_is_on_sale() ? $settings->get_pricing_rules_maximum_sale_price() : '';
+
+				// quantity calculator with per unit pricing
+				} elseif ( $settings->is_quantity_calculator_enabled() && \WC_Price_Calculator_Product::pricing_per_unit_enabled( $product ) ) {
+					$measurement = null;
+
+					// for variable products we must synchronize price levels to our per unit price
+					if ( $product->is_type( 'variable' ) ) {
+						// synchronize to the price per unit pricing
+						\WC_Price_Calculator_Product::variable_product_sync( $product, $settings );
+
+						// save the original price and remove the filter that we're currently within, to avoid an infinite loop
+						$price = $product->get_variation_price( 'min' );
+						$salePrice = $product->get_variation_sale_price( 'min' );
+
+						// restore the original values
+						\WC_Price_Calculator_Product::variable_product_unsync( $product );
+
+						// all other product types
+					} elseif ( $measurement = \WC_Price_Calculator_Product::get_product_measurement( $product, $settings ) ) {
+
+						$measurement->set_unit( $settings->get_pricing_unit() );
+						$measurementValue = $measurement ? $measurement->get_value() : null;
+
+						if ( $measurement && $measurementValue ) {
+							// convert to price per unit
+							$price  = $product->get_price( 'edit' )         / $measurementValue;
+							$salePrice  = $product->get_sale_price( 'edit' )    / $measurementValue;
+						}
+					}
+				}
+				if (!empty($price)) {
+					$q = $query . round($price, 4) . $whPrice . $id;
+					if (!DbWpf::query($q)) {
+						$this->pushError(DbWpf::getError());
+						$this->pushError($q);
+						return false;
+					}
+				}
+				if (!empty($salePrice)) {
+					$q = $query . round($salePrice, 4) . $whSalePrice . $id;
+					if (!DbWpf::query($q)) {
+						$this->pushError(DbWpf::getError());
+						$this->pushError($q);
+						return false;
+					}
+				}
+			}
+		}
 		return true;
 	}
 }

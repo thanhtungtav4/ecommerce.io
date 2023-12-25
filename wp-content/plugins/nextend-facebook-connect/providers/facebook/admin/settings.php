@@ -69,6 +69,36 @@ $settings = $provider->settings;
         <?php
         $this->renderOtherSettings();
 
+        ?>
+
+        <table class="form-table">
+            <tbody>
+            <tr>
+                <th scope="row"><?php _e('Profile image size', 'nextend-facebook-connect'); ?></th>
+                <td>
+                    <fieldset>
+                        <label><input type="radio" name="profile_image_size"
+                                      value="50" <?php if ($settings->get('profile_image_size') == '50') : ?> checked="checked" <?php endif; ?>>
+                            <span><?php _e('Small', 'nextend-facebook-connect'); ?></span></label><br>
+                        <label><input type="radio" name="profile_image_size"
+                                      value="100" <?php if ($settings->get('profile_image_size') == '100') : ?> checked="checked" <?php endif; ?>>
+                            <span><?php _e('Medium', 'nextend-facebook-connect'); ?></span></label><br>
+                        <label><input type="radio" name="profile_image_size"
+                                      value="default" <?php if ($settings->get('profile_image_size') == 'default') : ?> checked="checked" <?php endif; ?>>
+                            <span><?php _e('Default', 'nextend-facebook-connect'); ?></span></label><br>
+                        <label><input type="radio" name="profile_image_size"
+                                      value="480" <?php if ($settings->get('profile_image_size') == '480') : ?> checked="checked" <?php endif; ?>>
+                            <span><?php _e('Large', 'nextend-facebook-connect'); ?></span></label><br>
+                        <label><input type="radio" name="profile_image_size"
+                                      value="720" <?php if ($settings->get('profile_image_size') == '720') : ?> checked="checked" <?php endif; ?>>
+                            <span><?php _e('Extra Large', 'nextend-facebook-connect'); ?></span></label><br>
+                    </fieldset>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <?php
         $this->renderProSettings();
         ?>
     </form>

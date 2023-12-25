@@ -7,14 +7,15 @@ import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
 	InnerBlocks,
-	BlockControls,
 	InspectorControls,
 } from '@wordpress/block-editor';
 import BlockErrorBoundary from '@woocommerce/base-components/block-error-boundary';
 import { EditorProvider, CartProvider } from '@woocommerce/base-context';
 import { previewCart } from '@woocommerce/resource-previews';
-import { filledCart, removeCart } from '@woocommerce/icons';
-import { Icon } from '@wordpress/icons';
+import { SlotFillProvider } from '@woocommerce/blocks-checkout';
+import { useEffect, useRef } from '@wordpress/element';
+import { getQueryArg } from '@wordpress/url';
+import { dispatch, select } from '@wordpress/data';
 
 /**
  * Internal dependencies
@@ -23,12 +24,11 @@ import './inner-blocks';
 import './editor.scss';
 import {
 	addClassToBody,
-	useViewSwitcher,
 	useBlockPropsWithLocking,
-	useForcedLayout,
 	BlockSettings,
 } from '../cart-checkout-shared';
 import '../cart-checkout-shared/sidebar-notices';
+import '../cart-checkout-shared/view-switcher';
 import { CartBlockContext } from './context';
 
 // This is adds a class to body to signal if the selected block is locked
@@ -40,39 +40,33 @@ const ALLOWED_BLOCKS = [
 	'woocommerce/empty-cart-block',
 ];
 
-const views = [
-	{
-		view: 'woocommerce/filled-cart-block',
-		label: __( 'Filled Cart', 'woocommerce' ),
-		icon: <Icon icon={ filledCart } />,
-	},
-	{
-		view: 'woocommerce/empty-cart-block',
-		label: __( 'Empty Cart', 'woocommerce' ),
-		icon: <Icon icon={ removeCart } />,
-	},
-];
-
-export const Edit = ( { className, attributes, setAttributes, clientId } ) => {
-	const { hasDarkControls } = attributes;
-	const { currentView, component: ViewSwitcherComponent } = useViewSwitcher(
-		clientId,
-		views
-	);
+export const Edit = ( { clientId, className, attributes, setAttributes } ) => {
+	const { hasDarkControls, currentView, isPreview = false } = attributes;
 	const defaultTemplate = [
 		[ 'woocommerce/filled-cart-block', {}, [] ],
 		[ 'woocommerce/empty-cart-block', {}, [] ],
 	];
 	const blockProps = useBlockPropsWithLocking( {
 		className: classnames( className, 'wp-block-woocommerce-cart', {
-			'is-editor-preview': attributes.isPreview,
+			'is-editor-preview': isPreview,
 		} ),
 	} );
-	useForcedLayout( {
-		clientId,
-		registeredBlocks: ALLOWED_BLOCKS,
-		defaultTemplate,
-	} );
+
+	// This focuses on the block when a certain query param is found. This is used on the link from the task list.
+	const focus = useRef( getQueryArg( window.location.href, 'focus' ) );
+
+	useEffect( () => {
+		if (
+			focus.current === 'cart' &&
+			! select( 'core/block-editor' ).hasSelectedBlock()
+		) {
+			dispatch( 'core/block-editor' ).selectBlock( clientId );
+			dispatch( 'core/interface' ).enableComplementaryArea(
+				'core/edit-site',
+				'edit-site/block-inspector'
+			);
+		}
+	}, [ clientId ] );
 
 	return (
 		<div { ...blockProps }>
@@ -98,22 +92,24 @@ export const Edit = ( { className, attributes, setAttributes, clientId } ) => {
 				) }
 			>
 				<EditorProvider
-					currentView={ currentView }
 					previewData={ { previewCart } }
+					currentView={ currentView }
+					isPreview={ isPreview }
 				>
-					<BlockControls>{ ViewSwitcherComponent }</BlockControls>
 					<CartBlockContext.Provider
 						value={ {
 							hasDarkControls,
 						} }
 					>
-						<CartProvider>
-							<InnerBlocks
-								allowedBlocks={ ALLOWED_BLOCKS }
-								template={ defaultTemplate }
-								templateLock={ false }
-							/>
-						</CartProvider>
+						<SlotFillProvider>
+							<CartProvider>
+								<InnerBlocks
+									allowedBlocks={ ALLOWED_BLOCKS }
+									template={ defaultTemplate }
+									templateLock="insert"
+								/>
+							</CartProvider>
+						</SlotFillProvider>
 					</CartBlockContext.Provider>
 				</EditorProvider>
 			</BlockErrorBoundary>

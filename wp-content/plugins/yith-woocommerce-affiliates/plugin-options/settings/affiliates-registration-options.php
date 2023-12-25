@@ -2,7 +2,7 @@
 /**
  * Registration options
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates
  * @version 1.0.0
  */
@@ -26,31 +26,25 @@ return apply_filters(
 		'settings-affiliates-registration' => array(
 
 			'referral-registration-fields'            => array(
-				'title' => _x( 'Affiliate Registration Fields', '[ADMIN] Affiliate registration settings page', 'yith-woocommerce-affiliates' ),
+				'title' => _x(
+					'Registration form',
+					'[ADMIN] Affiliate registration settings page',
+					'yith-woocommerce-affiliates'
+				),
 				'type'  => 'title',
 				'id'    => 'yith_wcaf_referral_registration_fields',
+				'desc'  => _x(
+					'To show this form in a custom page, use the Gutenberg block "YITH Affiliates registration form" or copy and paste the shortcode <b>[yith_wcaf_registration_form]</b>',
+					'[ADMIN] Affiliate registration settings page',
+					'yith-woocommerce-affiliates'
+				),
 			),
 
 			'referral-registration-fields-table'      => array(
-				'name'                 => _x( 'Registration form', '[ADMIN] Affiliate registration settings page', 'yith-woocommerce-affiliates' ),
-				'type'                 => 'yith-field',
-				'yith-type'            => 'list-table',
-				'desc'                 => _x( 'To show this form in a custom page, use the Gutenberg block "YITH Affiliates registration form" or copy and paste the shortcode <b>[yith_wcaf_registration_form]</b>', '[ADMIN] Affiliate registration settings page', 'yith-woocommerce-affiliates' ),
-				'class'                => '',
-				'list_table_class'     => 'YITH_WCAF_Affiliates_Profile_Fields_Admin_Table',
-				'list_table_class_dir' => YITH_WCAF_INC . 'admin/admin-tables/class-yith-wcaf-affiliates-profile-fields-table.php',
-				'id'                   => 'yith_wcaf_profile_fields',
-			),
-
-			'referral-registration-fields-end'        => array(
-				'type' => 'sectionend',
-				'id'   => 'yith_wcaf_referral_registration_fields',
-			),
-
-			'referral-registration-options'           => array(
-				'title' => '',
-				'type'  => 'title',
-				'id'    => 'yith_wcaf_referral_registration_options',
+				'type'      => 'yith-field',
+				'yith-type' => 'custom',
+				'action'    => 'yith_wcaf_print_profile_fields_list_tab',
+				'class'     => '',
 			),
 
 			'referral-registration-use-wc-form'       => array(
@@ -66,10 +60,11 @@ return apply_filters(
 				'id'        => 'yith_wcaf_referral_registration_use_wc_form',
 			),
 
-			'referral-registration-options-end'       => array(
+			'referral-registration-fields-end'        => array(
 				'type' => 'sectionend',
-				'id'   => 'yith_wcaf_referral_registration_options',
+				'id'   => 'yith_wcaf_referral_registration_fields',
 			),
+
 
 			'referral-registration-extra-options'     => array(
 				'title' => _x( 'Registration Options', '[ADMIN] Affiliate registration settings page', 'yith-woocommerce-affiliates' ),

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb7f32083228a1a54510835a7a36c65d1
+class ComposerStaticInit7ce7128a8df9858d8d5072b86e53dcef
 {
     public static $files = array (
         'b45b351e6b6f7487d819961fef2fda77' => __DIR__ . '/..' . '/jakeasmith/http_build_url/src/http_build_url.php',
@@ -43,6 +43,8 @@ class ComposerStaticInitb7f32083228a1a54510835a7a36c65d1
         'WCML\\Block\\Convert\\Converter\\ProductsByAttributes' => __DIR__ . '/../..' . '/classes/Block/Convert/Converter/ProductsByAttributes.php',
         'WCML\\Block\\Convert\\Hooks' => __DIR__ . '/../..' . '/classes/Block/Convert/Hooks.php',
         'WCML\\CLI\\Hooks' => __DIR__ . '/../..' . '/classes/CLI/Hooks.php',
+        'WCML\\COT\\Helper' => __DIR__ . '/../..' . '/classes/COT/Helper.php',
+        'WCML\\COT\\Hooks' => __DIR__ . '/../..' . '/classes/COT/Hooks.php',
         'WCML\\Compatibility\\AdventureTours\\Factory' => __DIR__ . '/../..' . '/compatibility/AdventureTours/Factory.php',
         'WCML\\Compatibility\\Aurum\\Factory' => __DIR__ . '/../..' . '/compatibility/Aurum/Factory.php',
         'WCML\\Compatibility\\Aurum\\MulticurrencyHooks' => __DIR__ . '/../..' . '/compatibility/Aurum/MulticurrencyHooks.php',
@@ -56,17 +58,18 @@ class ComposerStaticInitb7f32083228a1a54510835a7a36c65d1
         'WCML\\Compatibility\\PerProductShipping\\Factory' => __DIR__ . '/../..' . '/compatibility/PerProductShipping/Factory.php',
         'WCML\\Compatibility\\Relevanssi\\Factory' => __DIR__ . '/../..' . '/compatibility/Relevanssi/Factory.php',
         'WCML\\Compatibility\\Sensei\\Factory' => __DIR__ . '/../..' . '/compatibility/Sensei/Factory.php',
-        'WCML\\Compatibility\\StripePayments\\Factory' => __DIR__ . '/../..' . '/compatibility/StripePayments/Factory.php',
-        'WCML\\Compatibility\\StripePayments\\MulticurrencyHooks' => __DIR__ . '/../..' . '/compatibility/StripePayments/MulticurrencyHooks.php',
         'WCML\\Compatibility\\TableRateShipping\\Factory' => __DIR__ . '/../..' . '/compatibility/TableRateShipping/Factory.php',
         'WCML\\Compatibility\\TableRateShipping\\MulticurrencyHooks' => __DIR__ . '/../..' . '/compatibility/TableRateShipping/MulticurrencyHooks.php',
         'WCML\\Compatibility\\TheEventsCalendar\\Factory' => __DIR__ . '/../..' . '/compatibility/TheEventsCalendar/Factory.php',
         'WCML\\Compatibility\\TheEventsCalendar\\MulticurrencyHooks' => __DIR__ . '/../..' . '/compatibility/TheEventsCalendar/MulticurrencyHooks.php',
         'WCML\\Compatibility\\TmExtraProductOptions\\Factory' => __DIR__ . '/../..' . '/compatibility/TmExtraProductOptions/Factory.php',
         'WCML\\Compatibility\\WcAjaxLayeredNav\\Factory' => __DIR__ . '/../..' . '/compatibility/WcAjaxLayeredNav/Factory.php',
+        'WCML\\Compatibility\\WcBookings\\Emails' => __DIR__ . '/../..' . '/compatibility/WcBookings/Emails.php',
         'WCML\\Compatibility\\WcBookings\\Factory' => __DIR__ . '/../..' . '/compatibility/WcBookings/Factory.php',
         'WCML\\Compatibility\\WcBookings\\MulticurrencyHooks' => __DIR__ . '/../..' . '/compatibility/WcBookings/MulticurrencyHooks.php',
+        'WCML\\Compatibility\\WcBookings\\Prices' => __DIR__ . '/../..' . '/compatibility/WcBookings/Prices.php',
         'WCML\\Compatibility\\WcBookings\\SharedHooks' => __DIR__ . '/../..' . '/compatibility/WcBookings/SharedHooks.php',
+        'WCML\\Compatibility\\WcBookings\\Templates\\MyBookings' => __DIR__ . '/../..' . '/compatibility/WcBookings/Templates/MyBookings.php',
         'WCML\\Compatibility\\WcBulkStockManagement\\Factory' => __DIR__ . '/../..' . '/compatibility/WcBulkStockManagement/Factory.php',
         'WCML\\Compatibility\\WcCheckoutAddons\\Factory' => __DIR__ . '/../..' . '/compatibility/WcCheckoutAddons/Factory.php',
         'WCML\\Compatibility\\WcCheckoutAddons\\MulticurrencyHooks' => __DIR__ . '/../..' . '/compatibility/WcCheckoutAddons/MulticurrencyHooks.php',
@@ -112,7 +115,12 @@ class ComposerStaticInitb7f32083228a1a54510835a7a36c65d1
         'WCML\\Compatibility\\YithWcQuickView\\Factory' => __DIR__ . '/../..' . '/compatibility/YithWcQuickView/Factory.php',
         'WCML\\Compatibility\\YithWcQuickView\\MulticurrencyHooks' => __DIR__ . '/../..' . '/compatibility/YithWcQuickView/MulticurrencyHooks.php',
         'WCML\\Container\\Config' => __DIR__ . '/../..' . '/classes/Container/Config.php',
+        'WCML\\Coupons\\Helper' => __DIR__ . '/../..' . '/classes/Coupons/Helper.php',
+        'WCML\\DisplayAsTranslated\\FrontendHooksFactory' => __DIR__ . '/../..' . '/classes/DisplayAsTranslated/FrontendHooksFactory.php',
+        'WCML\\DisplayAsTranslated\\ProductCatHooks' => __DIR__ . '/../..' . '/classes/DisplayAsTranslated/ProductCatHooks.php',
         'WCML\\Email\\Settings\\Hooks' => __DIR__ . '/../..' . '/classes/Email/Settings/Hooks.php',
+        'WCML\\Exporter\\AllLanguagesHooks' => __DIR__ . '/../..' . '/classes/Exporter/AllLanguagesHooks.php',
+        'WCML\\Exporter\\AttributeHeadersHooks' => __DIR__ . '/../..' . '/classes/Exporter/AttributeHeadersHooks.php',
         'WCML\\HomeScreen\\Factory' => __DIR__ . '/../..' . '/classes/HomeScreen/Factory.php',
         'WCML\\HomeScreen\\Hooks' => __DIR__ . '/../..' . '/classes/HomeScreen/Hooks.php',
         'WCML\\Importer\\Products' => __DIR__ . '/../..' . '/classes/Importer/Products.php',
@@ -141,6 +149,8 @@ class ComposerStaticInitb7f32083228a1a54510835a7a36c65d1
         'WCML\\MultiCurrency\\Resolver\\ResolverForModeLocation' => __DIR__ . '/../..' . '/classes/Multicurrency/Resolver/ResolverForModeLocation.php',
         'WCML\\MultiCurrency\\Settings' => __DIR__ . '/../..' . '/classes/Multicurrency/Settings.php',
         'WCML\\Multicurrency\\Analytics\\Export' => __DIR__ . '/../..' . '/classes/Multicurrency/Analytics/Export.php',
+        'WCML\\Multicurrency\\Analytics\\ExportHPOS' => __DIR__ . '/../..' . '/classes/Multicurrency/Analytics/ExportHPOS.php',
+        'WCML\\Multicurrency\\Analytics\\ExportLegacy' => __DIR__ . '/../..' . '/classes/Multicurrency/Analytics/ExportLegacy.php',
         'WCML\\Multicurrency\\Analytics\\Factory' => __DIR__ . '/../..' . '/classes/Multicurrency/Analytics/Factory.php',
         'WCML\\Multicurrency\\Analytics\\Hooks' => __DIR__ . '/../..' . '/classes/Multicurrency/Analytics/Hooks.php',
         'WCML\\Multicurrency\\Shipping\\AdminHooks' => __DIR__ . '/../..' . '/classes/Multicurrency/Shipping/AdminHooks.php',
@@ -161,6 +171,10 @@ class ComposerStaticInitb7f32083228a1a54510835a7a36c65d1
         'WCML\\Multicurrency\\UI\\Factory' => __DIR__ . '/../..' . '/classes/Multicurrency/UI/Factory.php',
         'WCML\\Multicurrency\\UI\\Hooks' => __DIR__ . '/../..' . '/classes/Multicurrency/UI/Hooks.php',
         'WCML\\Options\\WPML' => __DIR__ . '/../..' . '/classes/Options/WPML.php',
+        'WCML\\Orders\\Helper' => __DIR__ . '/../..' . '/classes/Orders/Helper.php',
+        'WCML\\Orders\\Legacy\\Helper' => __DIR__ . '/../..' . '/classes/Orders/Legacy/Helper.php',
+        'WCML\\PaymentGateways\\BlockHooks' => __DIR__ . '/../..' . '/classes/PaymentGateways/BlockHooks.php',
+        'WCML\\PaymentGateways\\BlockHooksFactory' => __DIR__ . '/../..' . '/classes/PaymentGateways/BlockHooksFactory.php',
         'WCML\\PaymentGateways\\Hooks' => __DIR__ . '/../..' . '/classes/PaymentGateways/Hooks.php',
         'WCML\\Products\\Hooks' => __DIR__ . '/../..' . '/classes/product/Hooks.php',
         'WCML\\Reports\\Categories\\Query' => __DIR__ . '/../..' . '/classes/Reports/Categories/Query.php',
@@ -187,6 +201,7 @@ class ComposerStaticInitb7f32083228a1a54510835a7a36c65d1
         'WCML\\Rest\\Wrapper\\Handler' => __DIR__ . '/../..' . '/classes/Rest/Wrapper/Handler.php',
         'WCML\\Rest\\Wrapper\\Orders\\Languages' => __DIR__ . '/../..' . '/classes/Rest/Wrapper/Orders/Languages.php',
         'WCML\\Rest\\Wrapper\\Orders\\Prices' => __DIR__ . '/../..' . '/classes/Rest/Wrapper/Orders/Prices.php',
+        'WCML\\Rest\\Wrapper\\ProductAttributes' => __DIR__ . '/../..' . '/classes/Rest/Wrapper/ProductAttributes.php',
         'WCML\\Rest\\Wrapper\\ProductTerms' => __DIR__ . '/../..' . '/classes/Rest/Wrapper/ProductTerms.php',
         'WCML\\Rest\\Wrapper\\Products\\Products' => __DIR__ . '/../..' . '/classes/Rest/Wrapper/Products/Products.php',
         'WCML\\Rest\\Wrapper\\Reports\\ProductsCount' => __DIR__ . '/../..' . '/classes/Rest/Wrapper/Reports/ProductsCount.php',
@@ -208,16 +223,19 @@ class ComposerStaticInitb7f32083228a1a54510835a7a36c65d1
         'WCML\\Terms\\Count\\Hooks' => __DIR__ . '/../..' . '/classes/Terms/Count/Hooks.php',
         'WCML\\Terms\\SuspendWpmlFilters' => __DIR__ . '/../..' . '/classes/Terms/SuspendWpmlFilters.php',
         'WCML\\Terms\\SuspendWpmlFiltersFactory' => __DIR__ . '/../..' . '/classes/Terms/SuspendWpmlFiltersFactory.php',
+        'WCML\\User\\Hooks' => __DIR__ . '/../..' . '/classes/User/Hooks.php',
         'WCML\\User\\Store\\Cookie' => __DIR__ . '/../..' . '/classes/User/Store/Cookie.php',
         'WCML\\User\\Store\\Noop' => __DIR__ . '/../..' . '/classes/User/Store/Noop.php',
         'WCML\\User\\Store\\Store' => __DIR__ . '/../..' . '/classes/User/Store/Store.php',
         'WCML\\User\\Store\\Strategy' => __DIR__ . '/../..' . '/classes/User/Store/Strategy.php',
         'WCML\\User\\Store\\WcSession' => __DIR__ . '/../..' . '/classes/User/Store/WcSession.php',
+        'WCML\\Utilities\\ActionScheduler' => __DIR__ . '/../..' . '/classes/Utilities/ActionScheduler.php',
         'WCML\\Utilities\\AdminPages' => __DIR__ . '/../..' . '/classes/Utilities/AdminPages.php',
         'WCML\\Utilities\\DB' => __DIR__ . '/../..' . '/classes/Utilities/DB.php',
         'WCML\\Utilities\\Post' => __DIR__ . '/../..' . '/classes/Utilities/Post.php',
         'WCML\\Utilities\\Resources' => __DIR__ . '/../..' . '/classes/Utilities/Resources.php',
         'WCML\\Utilities\\Suspend\\Filters' => __DIR__ . '/../..' . '/classes/Utilities/Suspend/Filters.php',
+        'WCML\\Utilities\\Suspend\\PostsQueryFiltersFactory' => __DIR__ . '/../..' . '/classes/Utilities/Suspend/PostsQueryFiltersFactory.php',
         'WCML\\Utilities\\Suspend\\Suspend' => __DIR__ . '/../..' . '/classes/Utilities/Suspend/Suspend.php',
         'WCML\\Utilities\\WcAdminPages' => __DIR__ . '/../..' . '/classes/Utilities/WcAdminPages.php',
         'WCML\\Utilities\\WpAdminPages' => __DIR__ . '/../..' . '/classes/Utilities/WpAdminPages.php',
@@ -331,13 +349,14 @@ class ComposerStaticInitb7f32083228a1a54510835a7a36c65d1
         'WCML_Settings_UI' => __DIR__ . '/../..' . '/inc/template-classes/class-wcml-settings-ui.php',
         'WCML_Setup' => __DIR__ . '/../..' . '/classes/wcml-setup/class-wcml-setup.php',
         'WCML_Setup_Attributes_UI' => __DIR__ . '/../..' . '/inc/template-classes/setup/class-wcml-setup-attributes-ui.php',
+        'WCML_Setup_Display_As_Translated_UI' => __DIR__ . '/../..' . '/inc/template-classes/setup/class-wcml-setup-display-as-translated-ui.php',
         'WCML_Setup_Footer_UI' => __DIR__ . '/../..' . '/inc/template-classes/setup/class-wcml-setup-footer.php',
         'WCML_Setup_Handlers' => __DIR__ . '/../..' . '/classes/wcml-setup/class-wcml-setup-handlers.php',
         'WCML_Setup_Header_UI' => __DIR__ . '/../..' . '/inc/template-classes/setup/class-wcml-setup-header.php',
         'WCML_Setup_Introduction_UI' => __DIR__ . '/../..' . '/inc/template-classes/setup/class-wcml-setup-introduction-ui.php',
         'WCML_Setup_Multi_Currency_UI' => __DIR__ . '/../..' . '/inc/template-classes/setup/class-wcml-setup-multi-currency-ui.php',
         'WCML_Setup_Notice_UI' => __DIR__ . '/../..' . '/inc/template-classes/setup/class-wcml-setup-notice.php',
-        'WCML_Setup_Ready_UI' => __DIR__ . '/../..' . '/inc/template-classes/setup/class-wcml-setup-ready-ui.php',
+        'WCML_Setup_Step' => __DIR__ . '/../..' . '/inc/template-classes/setup/class-wcml-setup-step.php',
         'WCML_Setup_Store_Pages_UI' => __DIR__ . '/../..' . '/inc/template-classes/setup/class-wcml-setup-store-pages-ui.php',
         'WCML_Setup_Translation_Options_UI' => __DIR__ . '/../..' . '/inc/template-classes/setup/class-wcml-setup-translation-options-ui.php',
         'WCML_Setup_UI' => __DIR__ . '/../..' . '/classes/wcml-setup/class-wcml-setup-ui.php',
@@ -405,9 +424,9 @@ class ComposerStaticInitb7f32083228a1a54510835a7a36c65d1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb7f32083228a1a54510835a7a36c65d1::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb7f32083228a1a54510835a7a36c65d1::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitb7f32083228a1a54510835a7a36c65d1::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7ce7128a8df9858d8d5072b86e53dcef::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7ce7128a8df9858d8d5072b86e53dcef::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit7ce7128a8df9858d8d5072b86e53dcef::$classMap;
 
         }, null, ClassLoader::class);
     }

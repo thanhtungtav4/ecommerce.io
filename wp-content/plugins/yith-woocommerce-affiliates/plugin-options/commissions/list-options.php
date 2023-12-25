@@ -2,7 +2,7 @@
 /**
  * Commissions list options
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates
  * @version 1.0.0
  */
@@ -24,23 +24,9 @@ return apply_filters(
 	'yith_wcaf_commissions_list_settings',
 	array(
 		'commissions-list' => array(
-			'commissions_section_start' => array(
-				'type' => 'title',
-				'desc' => '',
-				'id'   => 'yith_wcaf_commissions_settings',
-			),
-			'commissions_table'         => array(
-				'name'                 => __( 'Commissions', 'yith-woocommerce-affiliates' ),
-				'type'                 => 'yith-field',
-				'yith-type'            => 'list-table',
-				'class'                => '',
-				'list_table_class'     => 'YITH_WCAF_Commissions_Admin_Table',
-				'list_table_class_dir' => YITH_WCAF_INC . 'admin/admin-tables/class-yith-wcaf-commissions-table.php',
-				'id'                   => 'commissions',
-			),
-			'commissions_section_end'   => array(
-				'type' => 'sectionend',
-				'id'   => 'yith_wcaf_commissions_settings',
+			'commissions-list-tab' => array(
+				'type'   => 'custom_tab',
+				'action' => 'yith_wcaf_print_commissions_list_tab',
 			),
 		),
 	)

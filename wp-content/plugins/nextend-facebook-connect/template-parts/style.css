@@ -178,6 +178,11 @@ div.nsl-container .nsl-button-tiktok[data-skin="light"] {
     box-shadow: 0 0 0 1px rgba(22, 24, 35, 0.12);
 }
 
+
+div.nsl-container .nsl-button-kakao {
+    color: rgba(0, 0, 0, 0.85);
+}
+
 .nsl-clear {
     clear: both;
 }

@@ -3,8 +3,7 @@
  */
 import { __, sprintf } from '@wordpress/i18n';
 import { formatPrice } from '@woocommerce/price-format';
-import { RemovableChip } from '@woocommerce/base-components/chip';
-import Label from '@woocommerce/base-components/label';
+import { Label, RemovableChip } from '@woocommerce/blocks-components';
 import { getQueryArgs, addQueryArgs, removeQueryArgs } from '@wordpress/url';
 import { changeUrl } from '@woocommerce/utils';
 import { Icon, closeSmall } from '@wordpress/icons';
@@ -248,7 +247,7 @@ export const maybeUrlContainsFilters = (): boolean => {
 	return maybeHasFilter;
 };
 
-interface StoreAttributes {
+export interface StoreAttributes {
 	attribute_id: string;
 	attribute_label: string;
 	attribute_name: string;

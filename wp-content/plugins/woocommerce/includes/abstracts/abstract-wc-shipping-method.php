@@ -135,6 +135,30 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 	public $countries = array();
 
 	/**
+	 * Shipping method order.
+	 *
+	 * @var int
+	 */
+	public $method_order;
+
+	/**
+	 * Whether the shipping method has settings or not. Preferably, use {@see has_settings()} instead.
+	 *
+	 * @var bool
+	 */
+	public $has_settings;
+
+	/**
+	 * When the method supports the settings modal, this is the admin settings HTML.
+	 * Preferably, use {@see get_admin_options_html()} instead.
+	 *
+	 * @var string|bool
+	 */
+	public $settings_html;
+
+
+
+	/**
 	 * Constructor.
 	 *
 	 * @param int $instance_id Instance ID.
@@ -436,7 +460,7 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 			$settings_html = $this->generate_settings_html( $this->get_form_fields(), false );
 		}
 
-		return '<table class="form-table">' . $settings_html . '</table>';
+		return '<div class="wc-shipping-zone-method-fields">' . $settings_html . '</div>';
 	}
 
 	/**

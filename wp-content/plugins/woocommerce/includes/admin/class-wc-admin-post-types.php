@@ -41,6 +41,7 @@ class WC_Admin_Post_Types {
 
 		// Admin notices.
 		add_filter( 'post_updated_messages', array( $this, 'post_updated_messages' ) );
+		add_filter( 'woocommerce_order_updated_messages', array( $this, 'order_updated_messages' ) );
 		add_filter( 'bulk_post_updated_messages', array( $this, 'bulk_post_updated_messages' ), 10, 2 );
 
 		// Disable Auto Save.
@@ -145,24 +146,7 @@ class WC_Admin_Post_Types {
 			10 => sprintf( __( 'Product draft updated. <a target="_blank" href="%s">Preview product</a>', 'woocommerce' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post->ID ) ) ) ),
 		);
 
-		$messages['shop_order'] = array(
-			0  => '', // Unused. Messages start at index 1.
-			1  => __( 'Order updated.', 'woocommerce' ),
-			2  => __( 'Custom field updated.', 'woocommerce' ),
-			3  => __( 'Custom field deleted.', 'woocommerce' ),
-			4  => __( 'Order updated.', 'woocommerce' ),
-			5  => __( 'Revision restored.', 'woocommerce' ),
-			6  => __( 'Order updated.', 'woocommerce' ),
-			7  => __( 'Order saved.', 'woocommerce' ),
-			8  => __( 'Order submitted.', 'woocommerce' ),
-			9  => sprintf(
-				/* translators: %s: date */
-				__( 'Order scheduled for: %s.', 'woocommerce' ),
-				'<strong>' . date_i18n( __( 'M j, Y @ G:i', 'woocommerce' ), strtotime( $post->post_date ) ) . '</strong>'
-			),
-			10 => __( 'Order draft updated.', 'woocommerce' ),
-			11 => __( 'Order updated and sent.', 'woocommerce' ),
-		);
+		$messages = $this->order_updated_messages( $messages );
 
 		$messages['shop_coupon'] = array(
 			0  => '', // Unused. Messages start at index 1.
@@ -180,6 +164,46 @@ class WC_Admin_Post_Types {
 				'<strong>' . date_i18n( __( 'M j, Y @ G:i', 'woocommerce' ), strtotime( $post->post_date ) ) . '</strong>'
 			),
 			10 => __( 'Coupon draft updated.', 'woocommerce' ),
+		);
+
+		return $messages;
+	}
+
+	/**
+	 * Add messages when an order is updated.
+	 *
+	 * @param array $messages Array of messages.
+	 *
+	 * @return array
+	 */
+	public function order_updated_messages( array $messages ) {
+		global $post, $theorder;
+
+		if ( ! isset( $theorder ) || ! $theorder instanceof WC_Abstract_Order ) {
+			if ( ! isset( $post ) || 'shop_order' !== $post->post_type ) {
+				return $messages;
+			} else {
+				\Automattic\WooCommerce\Utilities\OrderUtil::init_theorder_object( $post );
+			}
+		}
+
+		$messages['shop_order'] = array(
+			0  => '', // Unused. Messages start at index 1.
+			1  => __( 'Order updated.', 'woocommerce' ),
+			2  => __( 'Custom field updated.', 'woocommerce' ),
+			3  => __( 'Custom field deleted.', 'woocommerce' ),
+			4  => __( 'Order updated.', 'woocommerce' ),
+			5  => __( 'Revision restored.', 'woocommerce' ),
+			6  => __( 'Order updated.', 'woocommerce' ),
+			7  => __( 'Order saved.', 'woocommerce' ),
+			8  => __( 'Order submitted.', 'woocommerce' ),
+			9  => sprintf(
+			/* translators: %s: date */
+				__( 'Order scheduled for: %s.', 'woocommerce' ),
+				'<strong>' . date_i18n( __( 'M j, Y @ G:i', 'woocommerce' ), strtotime( $theorder->get_date_created() ?? $post->post_date ) ) . '</strong>'
+			),
+			10 => __( 'Order draft updated.', 'woocommerce' ),
+			11 => __( 'Order updated and sent.', 'woocommerce' ),
 		);
 
 		return $messages;
@@ -384,6 +408,14 @@ class WC_Admin_Post_Types {
 			}
 		}
 
+		if ( ! empty( $request_data['_tax_class'] ) ) {
+			$tax_class = sanitize_title( wp_unslash( $request_data['_tax_class'] ) );
+			if ( 'standard' === $tax_class ) {
+				$tax_class = '';
+			}
+			$product->set_tax_class( $tax_class );
+		}
+
 		$product->set_featured( isset( $request_data['_featured'] ) );
 
 		if ( $product->is_type( 'simple' ) || $product->is_type( 'external' ) ) {
@@ -481,7 +513,7 @@ class WC_Admin_Post_Types {
 		}
 
 		if ( ! empty( $request_data['_tax_class'] ) ) {
-			$tax_class = wc_clean( wp_unslash( $request_data['_tax_class'] ) );
+			$tax_class = sanitize_title( wp_unslash( $request_data['_tax_class'] ) );
 			if ( 'standard' === $tax_class ) {
 				$tax_class = '';
 			}
@@ -593,7 +625,7 @@ class WC_Admin_Post_Types {
 	public function disable_autosave() {
 		global $post;
 
-		if ( $post && in_array( get_post_type( $post->ID ), wc_get_order_types( 'order-meta-boxes' ), true ) ) {
+		if ( $post instanceof WP_Post && in_array( get_post_type( $post->ID ), wc_get_order_types( 'order-meta-boxes' ), true ) ) {
 			wp_dequeue_script( 'autosave' );
 		}
 	}
@@ -847,7 +879,7 @@ class WC_Admin_Post_Types {
 		if ( $post && absint( $post->ID ) === $shop_page_id ) {
 			echo '<div class="notice notice-info">';
 			/* translators: %s: URL to read more about the shop page. */
-			echo '<p>' . sprintf( wp_kses_post( __( 'This is the WooCommerce shop page. The shop page is a special archive that lists your products. <a href="%s">You can read more about this here</a>.', 'woocommerce' ) ), 'https://docs.woocommerce.com/document/woocommerce-pages/#section-4' ) . '</p>';
+			echo '<p>' . sprintf( wp_kses_post( __( 'This is the WooCommerce shop page. The shop page is a special archive that lists your products. <a href="%s">You can read more about this here</a>.', 'woocommerce' ) ), 'https://woo.com/document/woocommerce-pages/#section-4' ) . '</p>';
 			echo '</div>';
 		}
 	}
@@ -961,7 +993,7 @@ class WC_Admin_Post_Types {
 					break;
 				}
 				$regular_price = $product->get_regular_price();
-				if ( $is_percentage ) {
+				if ( $is_percentage && is_numeric( $regular_price ) ) {
 					$percent   = $price / 100;
 					$new_price = max( 0, $regular_price - ( NumberUtil::round( $regular_price * $percent, wc_get_price_decimals() ) ) );
 				} else {

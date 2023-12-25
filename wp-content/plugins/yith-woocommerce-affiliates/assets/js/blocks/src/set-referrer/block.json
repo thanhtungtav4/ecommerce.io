@@ -1,0 +1,24 @@
+{
+	"apiVersion": 2,
+	"name": "yith/yith-wcaf-set-referrer",
+	"version": "2.16.0",
+	"title": "YITH Affiliates \"Set Referrer\" box",
+	"category": "yith",
+	"description": "Shows the \"Set referrer\" box, to allow customer set the user that suggested the site.",
+	"supports": {
+		"html": false,
+		"align": false,
+		"multiple": false,
+		"reusable": false
+	},
+	"parent": [
+		"woocommerce/checkout-totals-block",
+		"woocommerce/checkout-contact-information-block",
+		"woocommerce/checkout-shipping-address-block",
+		"woocommerce/checkout-billing-address-block",
+		"woocommerce/checkout-shipping-methods-block",
+		"woocommerce/checkout-payment-methods-block"
+	],
+	"textdomain": "yith-woocommerce-affiliates",
+	"editorStyle": "file:../../../../css/yith-wcaf.css"
+}

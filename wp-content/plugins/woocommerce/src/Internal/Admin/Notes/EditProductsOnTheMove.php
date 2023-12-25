@@ -9,8 +9,8 @@ namespace Automattic\WooCommerce\Internal\Admin\Notes;
 
 defined( 'ABSPATH' ) || exit;
 
-use \Automattic\WooCommerce\Admin\Notes\Note;
-use \Automattic\WooCommerce\Admin\Notes\NoteTraits;
+use Automattic\WooCommerce\Admin\Notes\Note;
+use Automattic\WooCommerce\Admin\Notes\NoteTraits;
 
 /**
  * Edit_Products_On_The_Move
@@ -63,7 +63,7 @@ class EditProductsOnTheMove {
 		$note->add_action(
 			'learn-more',
 			__( 'Learn more', 'woocommerce' ),
-			'https://woocommerce.com/mobile/?utm_source=inbox&utm_medium=product'
+			'https://woo.com/mobile/?utm_source=inbox&utm_medium=product'
 		);
 
 		return $note;

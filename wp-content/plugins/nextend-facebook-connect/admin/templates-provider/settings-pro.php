@@ -97,7 +97,7 @@ NextendSocialLoginAdmin::showProBox();
                 $roles    = $wp_roles->get_names();
 
                 $disable_roles = $settings->get('disabled_roles');
-                foreach ($roles AS $roleKey => $label):
+                foreach ($roles as $roleKey => $label):
                     ?>
                     <fieldset><label for="disabled_roles_<?php echo esc_attr($roleKey); ?>">
                             <input name="disabled_roles[]" type="checkbox"
@@ -118,10 +118,18 @@ NextendSocialLoginAdmin::showProBox();
                 <fieldset><label for="register_roles_default">
                         <input name="register_roles[]" type="checkbox" id="register_roles_default"
                                value="default" <?php if (in_array('default', $register_roles)) : ?> checked <?php endif ?> <?php echo $attr; ?> />
-                        <?php _e('Default', 'nextend-facebook-connect'); ?></label>
+                        <?php
+                        $default_role = get_option('default_role');
+                        if ($default_role && !empty($roles[$default_role])) {
+                            printf(__('Default (The %1$s is: %2$s)', 'nextend-facebook-connect'), ' <a href="' . admin_url('options-general.php#default_role') . '" target="_blank">' . __('default WordPress role', 'nextend-facebook-connect') . '</a>', '<strong>' . $roles[$default_role] . '</strong>');
+                        } else {
+                            printf(__('Default (The %s.)', 'nextend-facebook-connect'), ' <a href="' . admin_url('options-general.php#default_role') . '" target="_blank">' . __('default WordPress role', 'nextend-facebook-connect') . '</a>');
+                        }
+                        ?>
+                    </label>
                 </fieldset>
                 <?php
-                foreach ($roles AS $roleKey => $label):
+                foreach ($roles as $roleKey => $label):
                     ?>
                     <fieldset><label for="register_roles_<?php echo esc_attr($roleKey); ?>">
                             <input name="register_roles[]" type="checkbox"

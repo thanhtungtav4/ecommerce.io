@@ -331,6 +331,16 @@ class NextendSocialProviderAdmin {
                     });
                 }
             });
+
+            if (typeof BroadcastChannel === "function") {
+                const nslVerifySettingsBroadCastChannel = new BroadcastChannel("nsl_verify_settings_broadcast_channel");
+                nslVerifySettingsBroadCastChannel.onmessage = (event) => {
+                    if (window?._nslHasOpenedPopup && event.data?.action === 'reload') {
+                        nslVerifySettingsBroadCastChannel.close();
+                        window.location.reload();
+                    }
+                }
+            }
         </script>
         <?php
     }

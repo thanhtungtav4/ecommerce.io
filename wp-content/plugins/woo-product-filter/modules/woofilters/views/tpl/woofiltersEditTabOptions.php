@@ -1,3 +1,6 @@
+<?php 
+	$defaults = FrameWpf::_()->getModule('woofilters')->getDefaultSettings();
+?>
 <div class="row row-tab" id="row-tab-options">
 	<div class="sub-tab woobewoo-input-group col-xs-12">
 		<a href="#sub-tab-options-main" class="button"><?php esc_html_e('Main', 'woo-product-filter'); ?></a>
@@ -34,6 +37,7 @@
 
 					if ( taxonomy_exists( 'pwb-brand' ) || taxonomy_exists( 'product_brand' ) ) {
 						$selectOptions['brand'] = esc_attr__( 'Brand Page', 'woo-product-filter' ) . $labelPro;
+						$selectOptions['custom_pwb'] = esc_attr__( 'Specific Brand Page', 'woo-product-filter' ) . $labelPro;
 					}
 
 					HtmlWpf::selectbox('settings[display_on_page]', array(
@@ -93,6 +97,46 @@
 						<?php
 						HtmlWpf::checkboxToggle( 'settings[display_child_cat]', array(
 							'checked' => $this->getFilterSetting( $this->settings['settings'], 'display_child_cat', false )
+						) );
+					else :
+						?>
+						<span class="wpfProLabel"><a href="<?php echo esc_url( $this->proLink . '?utm_source=&utm_medium=&utm_campaign=' ); ?>" target="_blank"><?php esc_html_e( 'PRO Option', 'woo-product-filter' ); ?></a></span>
+					<?php
+					endif;
+					?>
+				</div>
+				
+				<?php $classHidden = 'custom_pwb' != $displayOnPage ? 'wpfHidden' : ''; ?>
+				<div class="settings-value settings-w100 <?php echo esc_attr($classHidden); ?>" data-select="settings[display_on_page]" data-select-value="custom_pwb">
+					<?php
+					if ( $isPro ) :
+						$brandList = $this->getFilterSetting( $this->settings['settings'], 'display_pwb_list', '' );
+						list( $brandDisplay ) = FrameWpf::_()->getModule( 'woofilters' )->getCategoriesDisplay('pwb-brand');
+						if ( is_array( $brandList ) ) {
+							$brandList = isset( $brandList[0] ) ? $brandList[0] : '';
+						}
+						HtmlWpf::selectlist( 'settings[display_pwb_list][]', array(
+							'options' => $brandDisplay,
+							'value'   => explode( ',', $brandList ),
+						) );
+					else :
+						?>
+						<span class="wpfProLabel "><a href="<?php echo esc_url( $this->proLink . '?utm_source=&utm_medium=&utm_campaign=' ); ?>" target="_blank"><?php esc_html_e( 'PRO Option', 'woo-product-filter' ); ?></a></span>
+					<?php
+					endif;
+					?>
+				</div>
+
+				<div class="settings-value settings-w100 <?php echo esc_attr( $classHidden ); ?>" data-select="settings[display_on_page]" data-select-value="custom_pwb">
+					<?php
+					if ( $isPro ) :
+						esc_html_e( 'Include Child Brands', 'woo-product-filter' );
+						?>
+						<i class="fa fa-question woobewoo-tooltip no-tooltip"
+						   title="<?php echo esc_attr( __( 'The filter will be displayed on all child brands', 'woo-product-filter' ) ); ?>"></i>
+						<?php
+						HtmlWpf::checkboxToggle( 'settings[display_child_brand]', array(
+							'checked' => $this->getFilterSetting( $this->settings['settings'], 'display_child_brand', false )
 						) );
 					else :
 						?>
@@ -352,7 +396,9 @@
 				</div>
 			</div>
 		</div>
-
+<?php
+	$settingValue = $this->getFilterSetting( $this->settings['settings'], 'force_theme_templates', $defaults['force_theme_templates'], false, false, true, true );
+?>
 		<div class="row row-settings-block <?php echo esc_attr($hiddenStyle); ?>" data-parent="settings[enable_ajax]">
 			<div class="settings-block-label col-xs-4 col-lg-3">
 				<?php esc_html_e('Force Theme Templates', 'woo-product-filter'); ?>
@@ -362,13 +408,10 @@
 				<div class="settings-value settings-w100">
 					<?php 
 						HtmlWpf::checkboxToggle('settings[force_theme_templates]', array(
-							'checked' => ( isset($this->settings['settings']['force_theme_templates']) ? (int) $this->settings['settings']['force_theme_templates'] : '' )
+							'checked' => $settingValue
 						));
 						?>
 				</div>
-				<?php
-				$settingValue = $this->getFilterSetting( $this->settings['settings'], 'force_theme_templates', '' );
-				?>
 				<div class="settings-value settings-w100 <?php echo esc_attr( $settingValue ? '' : 'wpfHidden' ); ?>" data-parent="settings[force_theme_templates]" data-parent-switch="settings[force_theme_templates]">
 					<div class="settings-value-label">
 						<?php esc_html_e( 'Recalculate Filters', 'woo-product-filter' ); ?>
@@ -379,6 +422,17 @@
 						'checked' => ( isset( $this->settings['settings']['recalculate_filters'] ) ? (int) $this->settings['settings']['recalculate_filters'] : '' )
 					) );
 					?>
+				</div>
+				<div class="settings-value settings-w100 <?php echo esc_attr( $settingValue ? '' : 'wpfHidden' ); ?>" data-no-preview="1" data-parent="settings[force_theme_templates]">
+					<div class="settings-value-label">
+						<?php esc_html_e("Don't allow redirect if there are no products", 'woo-product-filter'); ?>
+						<i class="fa fa-question woobewoo-tooltip" title="<?php echo esc_attr__('In some themes, if the product is not found, the system redirects to a special page. This option will not allow to make a redirect in this case, but will display a phrase stating that the products were not found.', 'woo-product-filter'); ?>"></i>
+					</div>
+					<?php
+						HtmlWpf::checkboxToggle( 'settings[no_redirect_by_no_products]', array(
+							'checked' => ( isset( $this->settings['settings']['no_redirect_by_no_products'] ) ? (int) $this->settings['settings']['no_redirect_by_no_products'] : '' )
+						));
+						?>
 				</div>
 			</div>
 		</div>
@@ -546,6 +600,10 @@
 		<div class="settings-block-title">
 			<?php esc_html_e('Filter Content', 'woo-product-filter'); ?>
 		</div>
+		<?php
+			$settingValue = ( isset($this->settings['settings']['all_products_filtering']) ? (int) $this->settings['settings']['all_products_filtering'] : '' );
+			$hiddenStyle  = $settingValue ? '' : 'wpfHidden';
+		?>
 		<div class="row row-settings-block">
 			<div class="settings-block-label col-xs-4 col-lg-3">
 				<?php esc_html_e('Always Filtering By All Products', 'woo-product-filter'); ?>
@@ -555,7 +613,18 @@
 				<div class="settings-value settings-w100" data-no-preview="1">
 					<?php
 						HtmlWpf::checkboxToggle('settings[all_products_filtering]', array(
-							'checked' => ( isset($this->settings['settings']['all_products_filtering']) ? (int) $this->settings['settings']['all_products_filtering'] : '' )
+							'checked' => $settingValue
+						));
+						?>
+				</div>
+				<div class="settings-value settings-w100 <?php echo esc_attr($hiddenStyle); ?>"  data-parent="settings[all_products_filtering]" data-no-preview="1">
+					<div class="settings-value-label">
+						<?php esc_html_e('By default сreate filters for all products', 'woo-product-filter'); ?>
+						<i class="fa fa-question woobewoo-tooltip" title="<?php echo esc_attr__('When forming filter blocks by loading the page without filtering, all products will be analyzed.', 'woo-product-filter'); ?>"></i>
+					</div>
+						<?php
+						HtmlWpf::checkboxToggle( 'settings[form_filter_by_all_products]', array(
+							'checked' => ( isset( $this->settings['settings']['form_filter_by_all_products'] ) ? (int) $this->settings['settings']['form_filter_by_all_products'] : '' )
 						));
 						?>
 				</div>
@@ -715,6 +784,17 @@
 					</div>
 					<div class="settings-value settings-w100 <?php echo esc_attr($hiddenStyle); ?>"  data-parent="settings[filtering_by_variations]">
 						<div class="settings-value-label">
+							<?php esc_html_e('Form attribute filters by variations', 'woo-product-filter'); ?>
+							<i class="fa fa-question woobewoo-tooltip" title="<?php echo esc_attr__('When forming filter blocks with attributes for variable products, only variation attributes will be taken into account. This will affect the displayed number of products in the filter elements and hiding elements without products.', 'woo-product-filter'); ?>"></i>
+						</div>
+							<?php
+							HtmlWpf::checkboxToggle( 'settings[form_filter_by_variations]', array(
+								'checked' => ( isset( $this->settings['settings']['form_filter_by_variations'] ) ? (int) $this->settings['settings']['form_filter_by_variations'] : '' )
+							));
+							?>
+					</div>
+					<div class="settings-value settings-w100 <?php echo esc_attr($hiddenStyle); ?>"  data-parent="settings[filtering_by_variations]">
+						<div class="settings-value-label">
 							<?php esc_html_e('Exclude variations on backorder', 'woo-product-filter'); ?>
 							<i class="fa fa-question woobewoo-tooltip" title="<?php echo esc_attr__('If the option "Hide out of stock items from the catalog" is enabled, out of stock products will not be filtered. If this option is also enabled, on backorder products will also be excluded.', 'woo-product-filter'); ?>"></i>
 						</div>
@@ -724,6 +804,7 @@
 							));
 							?>
 					</div>
+					
 						<div class="settings-value settings-w100 <?php echo esc_attr($hiddenStyle); ?>"  data-parent="settings[filtering_by_variations]">
 							<div class="settings-value-label">
 								<?php esc_html_e('Display Variations Instead Of Variable Product', 'woo-product-filter'); ?>

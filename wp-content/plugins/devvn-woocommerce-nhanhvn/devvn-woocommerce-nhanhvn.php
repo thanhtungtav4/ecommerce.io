@@ -1,7 +1,7 @@
 <?php
 /*
 * Plugin Name: DevVN - Woocommerce vs Nhanh.vn
-* Version: 1.0.8
+* Version: 1.1.6
 * Requires PHP: 7.2
 * Description: Tính phí vận chuyển, đăng đơn, đồng bộ tồn kho giữa Nhanh.vn vs Woocommerce
 * Author: Lê Văn Toản
@@ -10,13 +10,13 @@
 * Text Domain: devvn-woocommerce-nhanhvn
 * Domain Path: /languages
 * WC requires at least: 3.5.4
-* WC tested up to: 7.2.2
+* WC tested up to: 8.4.0
 */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 if ( !defined( 'DEVVN_NHANHVN_VERSION_NUM' ) )
-    define( 'DEVVN_NHANHVN_VERSION_NUM', '1.0.8' );
+    define( 'DEVVN_NHANHVN_VERSION_NUM', '1.1.6' );
 if ( !defined( 'DEVVN_NHANHVN_URL' ) )
     define( 'DEVVN_NHANHVN_URL', plugin_dir_url( __FILE__ ) );
 if ( !defined( 'DEVVN_NHANHVN_BASENAME' ) )
@@ -27,6 +27,9 @@ if ( !defined( 'DEVVN_NHANHVN_TEXTDOMAIN' ) )
     define( 'DEVVN_NHANHVN_TEXTDOMAIN', 'devvn-woocommerce-nhanhvn' );
 
 if(extension_loaded('ionCube Loader')) {
+    if(file_exists(plugin_dir_path(__FILE__) . 'license.php')){
+        include_once plugin_dir_path(__FILE__) . 'license.php';
+    }
     include 'includes/main.php';
 }else{
     function devvn_nhanhvn_admin_notice__error() {

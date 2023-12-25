@@ -2,7 +2,7 @@
 /**
  * Commissions Table class
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 1.0.0
  */
@@ -337,11 +337,11 @@ if ( ! class_exists( 'YITH_WCAF_Commissions_Admin_Table' ) ) {
 				return;
 			}
 
+			$this->print_hidden_fields();
 			$this->print_product_filter();
 			$this->print_affiliate_filter();
 			$this->print_datepicker( '_from' );
 			$this->print_datepicker( '_to' );
-			$this->print_status_hidden();
 			$this->print_filter_button();
 			$this->print_reset_button();
 		}

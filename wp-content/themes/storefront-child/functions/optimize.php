@@ -175,3 +175,49 @@ function wpcustom_deregister_scripts_and_styles(){
 //add_action( 'wp_print_styles', 'wpcustom_deregister_scripts_and_styles', 100 );
 
 remove_action('storefront_footer', 'storefront_credit',20);
+
+
+
+/* Remove ?ver=
+*===============================================================*/
+function wpex_remove_script_version( $src ) {
+	if ( strpos( $src, 'ver=' ) ) {
+		$src = remove_query_arg( 'ver', $src );
+	}
+	return $src;
+}
+add_filter( 'script_loader_src', 'wpex_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', 'wpex_remove_script_version', 15, 1 );
+
+/* Disable RSS Feed
+*===============================================================*/
+function fb_disable_feed() {
+wp_die( __('Website này đã tắt chức năng RSS. Vui lòng trở lại <a href="'. get_bloginfo('url') .'">Trang Chủ</a>!') );
+}
+add_action('do_feed', 'fb_disable_feed', 1);
+add_action('do_feed_rdf', 'fb_disable_feed', 1);
+add_action('do_feed_rss', 'fb_disable_feed', 1);
+add_action('do_feed_rss2', 'fb_disable_feed', 1);
+add_action('do_feed_atom', 'fb_disable_feed', 1);
+add_action('do_feed_rss2_comments', 'fb_disable_feed', 1);
+add_action('do_feed_atom_comments', 'fb_disable_feed', 1);
+
+/* Add prefetch dns
+*===============================================================*/
+function add_prefetch_dns() {
+	?>
+		<link rel="dns-prefetch" href="//fonts.googleapis.com">
+		<link rel="dns-prefetch" href="//www.google-analytics.com">
+		<link rel="dns-prefetch" href="//www.googletagmanager.com">
+		<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+		<link rel="dns-prefetch" href="//maps.googleapis.com">
+		<link rel="dns-prefetch" href="//youtube.com">
+		<link rel="dns-prefetch" href="//connect.facebook.net">
+		<link rel="dns-prefetch" href="//www.facebook.com">
+		<link rel="dns-prefetch" href="//static.xx.fbcdn.net">
+		<link rel="dns-prefetch" href="//sdk.beeketing.com">
+		<link rel="dns-prefetch" href="//fonts.gstatic.com">
+		<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+	<?php
+}
+add_action('wp_head', 'add_prefetch_dns',1);

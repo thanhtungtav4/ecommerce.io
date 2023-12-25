@@ -2,7 +2,7 @@
 /**
  * Affiliate Dashboard Summary - Stats
  *
- * @author YITH
+ * @author YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Templates
  * @version 2.0.0
  */
@@ -23,6 +23,11 @@
 if ( ! defined( 'YITH_WCAF' ) ) {
 	exit;
 } // Exit if accessed directly
+
+if ( ! $affiliate || ! $affiliate instanceof YITH_WCAF_Affiliate ) {
+	return;
+}
+
 ?>
 
 <!--AFFILIATE STATS-->

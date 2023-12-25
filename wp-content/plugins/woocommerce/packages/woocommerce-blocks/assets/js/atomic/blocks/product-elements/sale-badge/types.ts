@@ -1,5 +1,6 @@
 export interface BlockAttributes {
 	productId: number;
 	align: 'left' | 'center' | 'right';
-	isDescendentOfQueryLoop: boolean;
+	isDescendentOfQueryLoop?: boolean | undefined;
+	isDescendentOfSingleProductTemplate?: boolean;
 }

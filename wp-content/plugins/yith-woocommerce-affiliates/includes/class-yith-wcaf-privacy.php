@@ -2,7 +2,7 @@
 /**
  * Privacy class; added to let customer export personal data
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 1.2.5
  */

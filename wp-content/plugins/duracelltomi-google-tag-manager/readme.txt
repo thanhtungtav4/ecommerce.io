@@ -4,8 +4,8 @@ Donate link: https://gtm4wp.com/
 Tags: google tag manager, tag manager, gtm, google, adwords, google adwords, google ads, adwords remarketing, google ads remarketing, remarketing, google analytics, analytics, facebook ads, facebook remarketing, facebook pixel, google optimize, personalisation
 Requires at least: 3.4.0
 Requires PHP: 7.4
-Tested up to: 6.1.1
-Stable tag: 1.16.2
+Tested up to: 6.4
+Stable tag: 1.19.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -160,6 +160,7 @@ Google Tag Manager for WordPress integrates with several popular plugins. More i
 		*	implementation of [Enhanced E-commerce GA4](https://developers.google.com/tag-manager/ecommerce-ga4)
 		* Does not support promotions since WooCommerce does not have such a feature (yet)
 		* Does not support refunds
+  * Compatibility with High Performance Order Storage (HPOS)
 * Google Optimize: load your Google Optimize container directly from your website with the ability to use the data layer variables provided during page load
 * AMP: load your AMP container on the AMP version of your pages
 
@@ -231,6 +232,61 @@ https://gtm4wp.com/how-to-articles/how-to-exclude-admin-users-from-being-tracked
 6. Scroll tracking
 
 == Changelog ==
+
+= 1.19.1 =
+
+* Fixed: run additional checks when determing product category to prevent PHP errors in certain cases
+* Fixed: corrected Consent Mode flag names in admin page description texts
+
+= 1.19 =
+
+WARNING!
+Universal Analytics / GA3 ecommerce events **deprecated**!
+Please update your GTM setup so that it does not rely on any of the following GTM4WP events and the old ecommerce data layer:
+* gtm4wp.productClickEEC
+* gtm4wp.addProductToCartEEC
+* gtm4wp.removeFromCartEEC
+* gtm4wp.checkoutOptionEEC
+* gtm4wp.checkoutStepEEC
+* gtm4wp.changeDetailViewEEC
+* gtm4wp.orderCompletedEEC
+
+Instead of the above events, you can use the new GA4 ecommerce events (add_to_cart, purchase, etc.)
+In the Universal Analytics GTM tag now you have an option to use the GA4 ecommerce data in the data layer.
+If you are on GA360 and still collecting ecommerce data, you need to update your GTM setup to use that option firing on the GA4 ecommerce events.
+
+* Updated: WooCommerce integration now accepts the primary category selection of Yoast SEO and Rank Math SEO
+* Updated: use the gtm4wp_admin_page_capability filter to modify the capability needed to use the admin page (thanks [emreerkan](https://github.com/emreerkan))
+* Fixed: price did not include the .00 postfix for integers in the add_to_cart event
+* Added: if needed, you can turn on clearing the ecommerce object before a new GA4 event is being pushed.
+* Added: support for Google Consent Mode default command for use cases where the consent management tool does not support it already
+
+= 1.18.1 =
+
+* Fixed: PHP notice about Undefined variable: blocking_cookie
+
+= 1.18 =
+
+* Fixed: error while checking the new customer status in WooCommerce on the order received page (thanks [morvy](https://github.com/morvy))
+* Fixed: Call to a member function get_meta() on null error on WooCommerce order received page (thanks [Dekadinious](https://github.com/Dekadinious))
+* Updated: WordPress and WooCommerce compatibility
+* Updated: Deprecated Google Optimize integration as the tool is sunsetting in September 2023
+* Added: Create a cookie named block_gtm4wp_geoip after a specific user selected cookie preferences. Set the value to either "yes", "true", "on" or "1" and the GeoIP (and weather API) feature will be disabled for that particular user
+
+= 1.17 =
+
+* Added: pagePostTerms data layer variable will now also include a meta key with post meta values that does not start with the _ character. This should allow to utilize custom fields added by plugins like Advanced Custom Fields.
+* Added: new filter: gtm4wp_post_meta_in_datalayer to limit which post meta should be present with with the previously added feature.
+* Added: ability to use a custom path for your server side GTM container. This makes GTM4WP compatible with services like stape.io
+* Added: new advanced option to disable browser console.log() messages on frontend
+* Added: new filter: gtm4wp_purchase_datalayer to be able to alter data layer content for the purchase data
+* Added: new filter: gtm4wp_datalayer_on_pageload to be able to alter data layer content generated during page load
+* Added: customerBillingState and customerShippingState on WooCommerce order received page, thanks [massimo-maimeri](https://github.com/massimo-maimeri)
+* Added: High Performance Order Storage (HPOS) compatibility for WooCommerce
+* Updated: WooCommerce integration will also check target attitbute of product links while firing select_item event, thanks [robklo])(https://github.com/robklo)
+* Updated: YouTube tracking will not load on pages not containing a YouTube block or a YouTube iframe
+* Fixed: add_to_cart event on grouped products not working when SKU is selected as product ID in plugin options.
+* Fixed: more reliable new_customer flag working with guest orders of existing customers, thanks [morvy](https://github.com/morvy)
 
 = 1.16.2 =
 
@@ -816,6 +872,26 @@ Please report all bugs found in my plugin using the [contact form on my website]
 * First beta release
 
 == Upgrade Notice ==
+
+= 1.19.1 =
+
+Bugfix release
+
+= 1.19 =
+
+Added features
+
+= 1.18.1 =
+
+Bugfix release
+
+= 1.18 =
+
+Bugfixes and new features
+
+= 1.17 =
+
+Added features
 
 = 1.16.2 =
 

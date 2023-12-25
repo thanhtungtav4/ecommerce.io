@@ -292,7 +292,13 @@ class WC_Session_Handler extends WC_Session {
 			return false;
 		}
 
-		list( $customer_id, $session_expiration, $session_expiring, $cookie_hash ) = explode( '||', $cookie_value );
+		$parsed_cookie = explode( '||', $cookie_value );
+
+		if ( count( $parsed_cookie ) < 4 ) {
+			return false;
+		}
+
+		list( $customer_id, $session_expiration, $session_expiring, $cookie_hash ) = $parsed_cookie;
 
 		if ( empty( $customer_id ) ) {
 			return false;
@@ -369,7 +375,11 @@ class WC_Session_Handler extends WC_Session {
 	public function forget_session() {
 		wc_setcookie( $this->_cookie, '', time() - YEAR_IN_SECONDS, $this->use_secure_cookie(), true );
 
-		wc_empty_cart();
+		if ( ! is_admin() ) {
+			include_once WC_ABSPATH . 'includes/wc-cart-functions.php';
+
+			wc_empty_cart();
+		}
 
 		$this->_data        = array();
 		$this->_dirty       = false;

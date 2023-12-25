@@ -42,7 +42,7 @@ class Xoo_Ml_Phone_Frontend{
 
 		add_action( 'wp_enqueue_scripts' ,array( $this,'enqueue_styles' ) );
 		add_action( 'wp_enqueue_scripts' , array( $this,'enqueue_scripts' ), 0 );
-
+		
 	}
 
 

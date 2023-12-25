@@ -2,6 +2,7 @@
 namespace Automattic\WooCommerce\Blocks\BlockTypes;
 
 use WP_Query;
+use Automattic\WooCommerce\Blocks\Utils\Utils;
 
 // phpcs:disable WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 // phpcs:disable WordPress.DB.SlowDBQuery.slow_db_query_meta_query
@@ -71,8 +72,67 @@ class ProductQuery extends AbstractBlock {
 			10,
 			2
 		);
+		add_filter(
+			'render_block',
+			array( $this, 'enqueue_styles' ),
+			10,
+			2
+		);
 		add_filter( 'rest_product_query', array( $this, 'update_rest_query' ), 10, 2 );
 		add_filter( 'rest_product_collection_params', array( $this, 'extend_rest_query_allowed_params' ), 10, 1 );
+	}
+
+	/**
+	 * Post Template support for grid view was introduced in Gutenberg 16 / WordPress 6.3
+	 * Fixed in:
+	 * - https://github.com/woocommerce/woocommerce-blocks/pull/9916
+	 * - https://github.com/woocommerce/woocommerce-blocks/pull/10360
+	 */
+	private function check_if_post_template_has_support_for_grid_view() {
+		if ( Utils::wp_version_compare( '6.3', '>=' ) ) {
+			return true;
+		}
+
+		if ( is_plugin_active( 'gutenberg/gutenberg.php' ) ) {
+			$gutenberg_version = '';
+
+			if ( defined( 'GUTENBERG_VERSION' ) ) {
+				$gutenberg_version = GUTENBERG_VERSION;
+			}
+
+			if ( ! $gutenberg_version ) {
+				$gutenberg_data    = get_file_data(
+					WP_PLUGIN_DIR . '/gutenberg/gutenberg.php',
+					array( 'Version' => 'Version' )
+				);
+				$gutenberg_version = $gutenberg_data['Version'];
+			}
+			return version_compare( $gutenberg_version, '16.0', '>=' );
+		}
+
+		return false;
+	}
+
+	/**
+	 * Extra data passed through from server to client for block.
+	 *
+	 * @param array $attributes  Any attributes that currently are available from the block.
+	 *                           Note, this will be empty in the editor context when the block is
+	 *                           not in the post content on editor load.
+	 */
+	protected function enqueue_data( array $attributes = [] ) {
+		parent::enqueue_data( $attributes );
+
+		$post_template_has_support_for_grid_view = $this->check_if_post_template_has_support_for_grid_view();
+
+		$this->asset_data_registry->add(
+			'postTemplateHasSupportForGridView',
+			$post_template_has_support_for_grid_view
+		);
+
+		// The `loop_shop_per_page` filter can be found in WC_Query::product_query().
+		// phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment
+		$this->asset_data_registry->add( 'loopShopPerPage', apply_filters( 'loop_shop_per_page', wc_get_default_products_per_row() * wc_get_default_product_rows_per_page() ), true );
 	}
 
 	/**
@@ -81,9 +141,25 @@ class ProductQuery extends AbstractBlock {
 	 * @param array $parsed_block The block being rendered.
 	 * @return boolean
 	 */
-	private function is_woocommerce_variation( $parsed_block ) {
+	public static function is_woocommerce_variation( $parsed_block ) {
 		return isset( $parsed_block['attrs']['namespace'] )
 		&& substr( $parsed_block['attrs']['namespace'], 0, 11 ) === 'woocommerce';
+	}
+
+	/**
+	 * Enqueues the variation styles when rendering the Product Query variation.
+	 *
+	 * @param string $block_content The block content.
+	 * @param array  $block         The full block, including name and attributes.
+	 *
+	 * @return string The block content.
+	 */
+	public function enqueue_styles( string $block_content, array $block ) {
+		if ( 'core/query' === $block['blockName'] && self::is_woocommerce_variation( $block ) ) {
+			wp_enqueue_style( 'wc-blocks-style-product-query' );
+		}
+
+		return $block_content;
 	}
 
 	/**
@@ -94,16 +170,15 @@ class ProductQuery extends AbstractBlock {
 	 */
 	public function update_query( $pre_render, $parsed_block ) {
 		if ( 'core/query' !== $parsed_block['blockName'] ) {
-			return;
+			return $pre_render;
 		}
 
 		$this->parsed_block = $parsed_block;
 
-		if ( $this->is_woocommerce_variation( $parsed_block ) ) {
+		if ( self::is_woocommerce_variation( $parsed_block ) ) {
 			// Set this so that our product filters can detect if it's a PHP template.
-			$this->asset_data_registry->add( 'has_filterable_products', true, true );
-			$this->asset_data_registry->add( 'is_rendering_php_template', true, true );
-			$this->asset_data_registry->add( 'product_ids', $this->get_products_ids_by_attributes( $parsed_block ), true );
+			$this->asset_data_registry->add( 'hasFilterableProducts', true, true );
+			$this->asset_data_registry->add( 'isRenderingPhpTemplate', true, true );
 			add_filter(
 				'query_loop_block_query_vars',
 				array( $this, 'build_query' ),
@@ -111,6 +186,24 @@ class ProductQuery extends AbstractBlock {
 				1
 			);
 		}
+
+		return $pre_render;
+	}
+
+	/**
+	 * Merge tax_queries from various queries.
+	 *
+	 * @param array ...$queries Query arrays to be merged.
+	 * @return array
+	 */
+	private function merge_tax_queries( ...$queries ) {
+		$tax_query = [];
+		foreach ( $queries as $query ) {
+			if ( ! empty( $query['tax_query'] ) ) {
+				$tax_query = array_merge( $tax_query, $query['tax_query'] );
+			}
+		}
+		return [ 'tax_query' => $tax_query ];
 	}
 
 	/**
@@ -119,16 +212,21 @@ class ProductQuery extends AbstractBlock {
 	 * @param array           $args    Query args.
 	 * @param WP_REST_Request $request Request.
 	 */
-	public function update_rest_query( $args, $request ) {
-		$orderby          = $request->get_param( 'orderby' );
-		$woo_attributes   = $request->get_param( '__woocommerceAttributes' );
-		$woo_stock_status = $request->get_param( '__woocommerceStockStatus' );
-		$on_sale_query    = $request->get_param( '__woocommerceOnSale' ) === 'true' ? $this->get_on_sale_products_query() : array();
-		$orderby_query    = isset( $orderby ) ? $this->get_custom_orderby_query( $orderby ) : array();
-		$attributes_query = is_array( $woo_attributes ) ? $this->get_product_attributes_query( $woo_attributes ) : array();
-		$stock_query      = is_array( $woo_stock_status ) ? $this->get_stock_status_query( $woo_stock_status ) : array();
+	public function update_rest_query( $args, $request ): array {
+		$woo_attributes      = $request->get_param( '__woocommerceAttributes' );
+		$is_valid_attributes = is_array( $woo_attributes );
+		$orderby             = $request->get_param( 'orderby' );
+		$woo_stock_status    = $request->get_param( '__woocommerceStockStatus' );
+		$on_sale             = $request->get_param( '__woocommerceOnSale' ) === 'true';
 
-		return array_merge( $args, $on_sale_query, $orderby_query, $attributes_query, $stock_query );
+		$on_sale_query    = $on_sale ? $this->get_on_sale_products_query() : [];
+		$orderby_query    = $orderby ? $this->get_custom_orderby_query( $orderby ) : [];
+		$attributes_query = $is_valid_attributes ? $this->get_product_attributes_query( $woo_attributes ) : [];
+		$stock_query      = is_array( $woo_stock_status ) ? $this->get_stock_status_query( $woo_stock_status ) : [];
+		$visibility_query = is_array( $woo_stock_status ) ? $this->get_product_visibility_query( $stock_query ) : [];
+		$tax_query        = $is_valid_attributes ? $this->merge_tax_queries( $attributes_query, $visibility_query ) : [];
+
+		return array_merge( $args, $on_sale_query, $orderby_query, $stock_query, $tax_query );
 	}
 
 	/**
@@ -144,51 +242,31 @@ class ProductQuery extends AbstractBlock {
 		}
 
 		$common_query_values = array(
-			'post_type'      => 'product',
-			'post__in'       => array(),
-			'post_status'    => 'publish',
+			'meta_query'     => array(),
 			'posts_per_page' => $query['posts_per_page'],
 			'orderby'        => $query['orderby'],
 			'order'          => $query['order'],
 			'offset'         => $query['offset'],
-			'meta_query'     => array(),
+			'post__in'       => array(),
+			'post_status'    => 'publish',
+			'post_type'      => 'product',
 			'tax_query'      => array(),
 		);
 
-		return $this->merge_queries(
+		$handpicked_products = isset( $parsed_block['attrs']['query']['include'] ) ?
+			$parsed_block['attrs']['query']['include'] : $common_query_values['post__in'];
+
+		$merged_query = $this->merge_queries(
 			$common_query_values,
 			$this->get_global_query( $parsed_block ),
 			$this->get_custom_orderby_query( $query['orderby'] ),
-			$this->get_queries_by_attributes( $parsed_block ),
-			$this->get_queries_by_applied_filters()
-		);
-	}
-
-	/**
-	 * Return the product ids based on the attributes and global query.
-	 * This is used to allow the filter blocks to render data that matches with variations. More details here: https://github.com/woocommerce/woocommerce-blocks/issues/7245
-	 *
-	 * @param array $parsed_block The block being rendered.
-	 * @return array
-	 */
-	private function get_products_ids_by_attributes( $parsed_block ) {
-		$query = $this->merge_queries(
-			array(
-				'post_type'      => 'product',
-				'post__in'       => array(),
-				'post_status'    => 'publish',
-				'posts_per_page' => -1,
-				'meta_query'     => array(),
-				'tax_query'      => array(),
-			),
-			$this->get_queries_by_attributes( $parsed_block ),
-			$this->get_global_query( $parsed_block )
+			$this->get_queries_by_custom_attributes( $parsed_block ),
+			$this->get_queries_by_applied_filters(),
+			$this->get_filter_by_taxonomies_query( $query ),
+			$this->get_filter_by_keyword_query( $query )
 		);
 
-		$products = new \WP_Query( $query );
-		$post_ids = wp_list_pluck( $products->posts, 'ID' );
-
-		return $post_ids;
+		return $this->filter_query_to_only_include_ids( $merged_query, $handpicked_products );
 	}
 
 	/**
@@ -220,6 +298,7 @@ class ProductQuery extends AbstractBlock {
 		 */
 		if (
 			! empty( $merged_query['post__in'] ) &&
+			is_array( $merged_query['post__in'] ) &&
 			count( $merged_query['post__in'] ) > count( array_unique( $merged_query['post__in'] ) )
 		) {
 			$merged_query['post__in'] = array_unique(
@@ -285,6 +364,23 @@ class ProductQuery extends AbstractBlock {
 	}
 
 	/**
+	 * Apply the query only to a subset of products
+	 *
+	 * @param array $query  The query.
+	 * @param array $ids  Array of selected product ids.
+	 *
+	 * @return array
+	 */
+	private function filter_query_to_only_include_ids( $query, $ids ) {
+		if ( ! empty( $ids ) ) {
+			$query['post__in'] = empty( $query['post__in'] ) ?
+				$ids : array_intersect( $ids, $query['post__in'] );
+		}
+
+		return $query;
+	}
+
+	/**
 	 * Return the `tax_query` for the requested attributes
 	 *
 	 * @param array $attributes  Attributes and their terms.
@@ -325,12 +421,68 @@ class ProductQuery extends AbstractBlock {
 	 * @return array
 	 */
 	private function get_stock_status_query( $stock_statii ) {
+		if ( ! is_array( $stock_statii ) ) {
+			return array();
+		}
+
+		$stock_status_options = array_keys( wc_get_product_stock_status_options() );
+
+		/**
+		 * If all available stock status are selected, we don't need to add the
+		 * meta query for stock status.
+		 */
+		if (
+			count( $stock_statii ) === count( $stock_status_options ) &&
+			array_diff( $stock_statii, $stock_status_options ) === array_diff( $stock_status_options, $stock_statii )
+		) {
+			return array();
+		}
+
+		/**
+		 * If all stock statuses are selected except 'outofstock', we use the
+		 * product visibility query to filter out out of stock products.
+		 *
+		 * @see get_product_visibility_query()
+		 */
+		$diff = array_diff( $stock_status_options, $stock_statii );
+		if ( count( $diff ) === 1 && in_array( 'outofstock', $diff, true ) ) {
+			return array();
+		}
+
 		return array(
 			'meta_query' => array(
 				array(
 					'key'     => '_stock_status',
 					'value'   => (array) $stock_statii,
 					'compare' => 'IN',
+				),
+			),
+		);
+	}
+
+	/**
+	 * Return a query for product visibility depending on their stock status.
+	 *
+	 * @param array $stock_query Stock status query.
+	 *
+	 * @return array Tax query for product visibility.
+	 */
+	private function get_product_visibility_query( $stock_query ) {
+		$product_visibility_terms  = wc_get_product_visibility_term_ids();
+		$product_visibility_not_in = array( is_search() ? $product_visibility_terms['exclude-from-search'] : $product_visibility_terms['exclude-from-catalog'] );
+
+		// Hide out of stock products.
+		if ( empty( $stock_query ) && 'yes' === get_option( 'woocommerce_hide_out_of_stock_items' ) ) {
+			$product_visibility_not_in[] = $product_visibility_terms['outofstock'];
+		}
+
+		return array(
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'product_visibility',
+					'field'    => 'term_taxonomy_id',
+					'terms'    => $product_visibility_not_in,
+					'operator' => 'NOT IN',
 				),
 			),
 		);
@@ -434,16 +586,18 @@ class ProductQuery extends AbstractBlock {
 	 * @param array $parsed_block The Product Query that being rendered.
 	 * @return array
 	 */
-	private function get_queries_by_attributes( $parsed_block ) {
+	private function get_queries_by_custom_attributes( $parsed_block ) {
 		$query            = $parsed_block['attrs']['query'];
 		$on_sale_enabled  = isset( $query['__woocommerceOnSale'] ) && true === $query['__woocommerceOnSale'];
 		$attributes_query = isset( $query['__woocommerceAttributes'] ) ? $this->get_product_attributes_query( $query['__woocommerceAttributes'] ) : array();
 		$stock_query      = isset( $query['__woocommerceStockStatus'] ) ? $this->get_stock_status_query( $query['__woocommerceStockStatus'] ) : array();
+		$visibility_query = $this->get_product_visibility_query( $stock_query );
 
 		return array(
 			'on_sale'      => ( $on_sale_enabled ? $this->get_on_sale_products_query() : array() ),
 			'attributes'   => $attributes_query,
 			'stock_status' => $stock_query,
+			'visibility'   => $visibility_query,
 		);
 	}
 
@@ -566,7 +720,6 @@ class ProductQuery extends AbstractBlock {
 					'key'      => '_stock_status',
 					'value'    => $filtered_stock_status_values,
 					'operator' => 'IN',
-
 				),
 			),
 		);
@@ -755,4 +908,65 @@ class ProductQuery extends AbstractBlock {
 		);
 	}
 
+
+	/**
+	 * Return a query to filter products by taxonomies (product categories, product tags, etc.)
+	 *
+	 * For example:
+	 * User could provide "Product Categories" using "Filters" ToolsPanel available in Inspector Controls.
+	 * We use this function to extract it's query from $tax_query.
+	 *
+	 * For example, this is how the query for product categories will look like in $tax_query array:
+	 * Array
+	 *    (
+	 *        [taxonomy] => product_cat
+	 *        [terms] => Array
+	 *            (
+	 *                [0] => 36
+	 *            )
+	 *    )
+	 *
+	 * For product categories, taxonomy would be "product_tag"
+	 *
+	 * @param array $query WP_Query.
+	 * @return array Query to filter products by taxonomies.
+	 */
+	private function get_filter_by_taxonomies_query( $query ): array {
+		if ( ! isset( $query['tax_query'] ) || ! is_array( $query['tax_query'] ) ) {
+			return [];
+		}
+
+		$tax_query = $query['tax_query'];
+		/**
+		 * Get an array of taxonomy names associated with the "product" post type because
+		 * we also want to include custom taxonomies associated with the "product" post type.
+		 */
+		$product_taxonomies = get_taxonomies( array( 'object_type' => array( 'product' ) ), 'names' );
+		$result             = array_filter(
+			$tax_query,
+			function( $item ) use ( $product_taxonomies ) {
+				return isset( $item['taxonomy'] ) && in_array( $item['taxonomy'], $product_taxonomies, true );
+			}
+		);
+
+		return ! empty( $result ) ? [ 'tax_query' => $result ] : [];
+	}
+
+	/**
+	 * Returns the keyword filter from the given query.
+	 *
+	 * @param WP_Query $query The query to extract the keyword filter from.
+	 * @return array The keyword filter, or an empty array if none is found.
+	 */
+	private function get_filter_by_keyword_query( $query ): array {
+		if ( ! is_array( $query ) ) {
+			return [];
+		}
+
+		if ( isset( $query['s'] ) ) {
+			return [ 's' => $query['s'] ];
+		}
+
+		return [];
+	}
 }

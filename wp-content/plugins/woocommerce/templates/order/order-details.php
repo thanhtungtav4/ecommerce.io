@@ -10,9 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.woocommerce.com/document/template-structure/
+ * @see     https://woo.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 4.6.0
+ * @version 7.8.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -83,7 +83,7 @@ if ( $show_downloads ) {
 				?>
 					<tr>
 						<th scope="row"><?php echo esc_html( $total['label'] ); ?></th>
-						<td><?php echo ( 'payment_method' === $key ) ? esc_html( $total['value'] ) : wp_kses_post( $total['value'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></td>
+						<td><?php echo wp_kses_post( $total['value'] ); ?></td>
 					</tr>
 					<?php
 			}

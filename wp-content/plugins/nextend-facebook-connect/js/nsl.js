@@ -1,3 +1,8 @@
+/**
+ * Used when Cross-Origin-Opener-Policy blocked the access to the opener. We can't have a reference of the opened windows, so we should attempt to refresh only the windows that has opened popups.
+ */
+window._nslHasOpenedPopup = false;
+
 window.NSLPopup = function (url, title, w, h) {
     var userAgent = navigator.userAgent,
         mobile = function () {
@@ -12,8 +17,7 @@ window.NSLPopup = function (url, title, w, h) {
         outerHeight = window.outerHeight !== undefined ? window.outerHeight : document.documentElement.clientHeight - 22,
         targetWidth = mobile() ? null : w,
         targetHeight = mobile() ? null : h,
-        V = screenX < 0 ? window.screen.width + screenX : screenX,
-        left = parseInt(V + (outerWidth - targetWidth) / 2, 10),
+        left = parseInt(screenX + (outerWidth - targetWidth) / 2, 10),
         right = parseInt(screenY + (outerHeight - targetHeight) / 2.5, 10),
         features = [];
     if (targetWidth !== null) {
@@ -31,6 +35,8 @@ window.NSLPopup = function (url, title, w, h) {
     if (window.focus) {
         newWindow.focus();
     }
+
+    window._nslHasOpenedPopup = true;
 
     return newWindow;
 };
@@ -267,6 +273,7 @@ window._nslDOMReady(function () {
                             newTab.focus();
                         }
                         success = true;
+                        window._nslHasOpenedPopup = true;
                         e.preventDefault();
                     }
                 }
@@ -311,3 +318,23 @@ window._nslDOMReady(function () {
         })
     }
 });
+
+/**
+ * Cross-Origin-Opener-Policy blocked the access to the opener
+ */
+if (typeof BroadcastChannel === "function") {
+    const _nslLoginBroadCastChannel = new BroadcastChannel('nsl_login_broadcast_channel');
+    _nslLoginBroadCastChannel.onmessage = (event) => {
+        if (window?._nslHasOpenedPopup && event.data?.action === 'redirect') {
+            window._nslHasOpenedPopup = false;
+
+            const url = event.data?.href;
+            _nslLoginBroadCastChannel.close();
+            if (typeof window.nslRedirect === 'function') {
+                window.nslRedirect(url);
+            } else {
+                window.opener.location = url;
+            }
+        }
+    };
+}

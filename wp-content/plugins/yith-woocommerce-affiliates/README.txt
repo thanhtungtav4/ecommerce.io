@@ -2,9 +2,9 @@
 
 Contributors: yithemes
 Tags:  affiliate, affiliate marketing, affiliate plugin, affiliate tool, affiliates, woocommerce affiliates, woocommerce referral, lead, link, marketing, money, partner, referral, referral links, referrer, sales, woocommerce, wp e-commerce, affiliate campaign, affiliate marketing, affiliate plugin, affiliate program, affiliate software, affiliate tool, track affiliates, tracking, affiliates manager, yit, yith, yithemes, yit affiliates, yith affiliates, yithemes affiliates
-Requires at least: 5.9
-Tested up to: 6.1
-Stable tag: 2.10.0
+Requires at least: 6.2
+Tested up to: 6.4
+Stable tag: 3.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -110,6 +110,77 @@ YITH WooCommerce Affiliates will add a new submenu called "Affiliates" under "YI
 20. [Frontend] Rejected Affiliate
 
 == Changelog ==
+
+= 3.2.0 - Released on 21 December 2023 =
+
+* New: support for WooCommerce 8.4
+* Tweak: switch admin panel filter to GET method, so that filters are preserved when adding new query strings to current URL
+* Update: YITH plugin framework
+
+= 3.1.0 - Released on 16 November 2023 =
+
+* New: support for WordPress 6.4
+* New: support for WooCommerce 8.3
+* Update: YITH plugin framework
+
+= 3.0.0 - Released on 02 November 2023 =
+
+* New: admin panel UI
+* Update: YITH plugin framework
+
+= 2.19.0 - Released on 23 October 2023 =
+
+* New: support for WooCommerce 8.2
+* Update: YITH plugin framework
+
+= 2.18.0 - Released on 13 September 2023 =
+
+* New: support for WooCommerce 8.1
+* Update: YITH plugin framework
+
+= 2.17.0 - Released on 2 August 2023 =
+
+* New: support for WordPress 6.3
+* New: support for WooCommerce 8.0
+* Tweak: set sensible default values for duration settings
+* Update: YITH plugin framework
+* Fix: prevent JS error when dependencies module can't find any checked radio
+* Dev: added new filter yith_wcaf_commission_{$current_status}_status_label
+
+= 2.16.0 - Released on 13 July 2023 =
+
+* New: support for WooCommerce 7.9
+* Update: YITH plugin framework
+
+= 2.15.0 - Released on 13 June 2023 =
+
+* New: support for WooCommerce 7.8
+* Update: YITH plugin framework
+
+= 2.14.0 - Released on 16 May 2023 =
+
+* New: support for WooCommerce 7.7
+* Update: YITH plugin framework
+
+= 2.13.1 - Released on 19 April 2023 =
+
+* Fix: minor bugs
+
+= 2.13.0 - Released on 18 April 2023 =
+
+* New: support for WooCommerce 7.6
+* Update: YITH plugin framework
+
+= 2.12.0 - Released on 13 March 2023 =
+
+* New: support for WordPress 6.2
+* New: support for WooCommerce 7.5
+* Update: YITH plugin framework
+
+= 2.11.0 - Released on 14 February 2023 =
+
+* New: support for WooCommerce 7.4
+* Update: YITH plugin framework
 
 = 2.10.0 - Released on 10 January 2023 =
 

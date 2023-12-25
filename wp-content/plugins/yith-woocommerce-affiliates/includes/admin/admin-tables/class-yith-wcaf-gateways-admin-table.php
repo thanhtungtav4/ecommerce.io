@@ -2,7 +2,7 @@
 /**
  * Gateways Table class
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 1.0.0
  */
@@ -145,8 +145,8 @@ if ( ! class_exists( 'YITH_WCAF_Gateways_Admin_Table' ) ) {
 			$columns = array(
 				'name'         => _x( 'Name', '[ADMIN] Gateways table headings', 'yith-woocommerce-affiliates' ),
 				'availability' => _x( 'Available', '[ADMIN] Gateways table headings', 'yith-woocommerce-affiliates' ),
-				'actions'      => '',
 				'enabled'      => _x( 'Active', '[ADMIN] Gateways table headings', 'yith-woocommerce-affiliates' ),
+				'actions'      => '',
 			);
 
 			return $columns;

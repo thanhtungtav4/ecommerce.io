@@ -64,7 +64,7 @@ $GLOBALS['gtm4wp_integratefieldtexts'] = array(
 	),
 	GTM4WP_OPTION_INTEGRATE_WCEINCLUDECARTINDL    => array(
 		'label'       => esc_html__( 'Cart content in data layer', 'duracelltomi-google-tag-manager' ),
-		'description' => esc_html__( 'Enable this option to include the content of the cart in the data layer on each page. Needs WooCommerce v3.2 or newer. Especially useful for site personalization with Google Optimize.', 'duracelltomi-google-tag-manager' ),
+		'description' => esc_html__( 'Enable this option to include the content of the cart in the data layer on each page. Needs WooCommerce v3.2 or newer. Especially useful for site personalization tools.', 'duracelltomi-google-tag-manager' ),
 		'phase'       => GTM4WP_PHASE_STABLE,
 	),
 	GTM4WP_OPTION_INTEGRATE_WCUSEFULLCATEGORYPATH => array(
@@ -147,6 +147,24 @@ $GLOBALS['gtm4wp_integratefieldtexts'] = array(
 		),
 		'phase'       => GTM4WP_PHASE_STABLE,
 	),
+	GTM4WP_OPTION_INTEGRATE_WCCLEARECOMMERCEDL    => array(
+		'label'       => esc_html__( 'Clear ecommerce object before new event', 'duracelltomi-google-tag-manager' ),
+		'description' => sprintf(
+			gtm4wp_safe_admin_html(
+				// translators: 1: anchor element linking to the official GA4 doc about clearing the ecommerce object. 2: closing anchor element.
+				__(
+					'Clear the ecommerce object before any new event being pushed into the data layer.<br /><br />
+					Althought it is %1$srecommended by Google%2$s, it is not mandatory to activate this feature as
+					the GA4 event tag reads only the last pushed ecommerce data on any new event.<br />
+					Use it if you encounter issues with your GTM implementation.',
+					'duracelltomi-google-tag-manager'
+				)
+			),
+			'<a href="https://developers.google.com/analytics/devguides/collection/ga4/ecommerce?client_type=gtm#clear_the_ecommerce_object" target="_blank" rel="noopener">',
+			'</a>'
+		),
+		'phase'       => GTM4WP_PHASE_STABLE,
+	),
 
 	GTM4WP_OPTION_INTEGRATE_GOOGLEOPTIMIZEIDS     => array(
 		'label'       => esc_html__( 'Google Optimize container ID list', 'duracelltomi-google-tag-manager' ),
@@ -169,12 +187,12 @@ $GLOBALS['gtm4wp_integratefieldtexts'] = array(
 				'duracelltomi-google-tag-manager'
 			) .
 			'</span>',
-		'phase'       => GTM4WP_PHASE_EXPERIMENTAL,
+		'phase'       => GTM4WP_PHASE_DEPRECATED,
 	),
 	GTM4WP_OPTION_INTEGRATE_GOOGLEOPTIMIZETIMEOUT => array(
 		'label'       => esc_html__( 'Google Optimize page-hiding timeout', 'duracelltomi-google-tag-manager' ),
 		'description' => esc_html__( 'Enter here the amount of time in milliseconds that the page-hiding snippet should wait before page content gets visible even if Google Optimize has not been completely loaded yet.', 'duracelltomi-google-tag-manager' ),
-		'phase'       => GTM4WP_PHASE_EXPERIMENTAL,
+		'phase'       => GTM4WP_PHASE_DEPRECATED,
 	),
 
 	GTM4WP_OPTION_INTEGRATE_AMPID                 => array(
@@ -210,6 +228,62 @@ $GLOBALS['gtm4wp_integratefieldtexts'] = array(
 			),
 			'<a href="https://support.cookiebot.com/hc/en-us/articles/360009192739-Google-Tag-Manager-and-Automatic-cookie-blocking" target="_blank" rel="noopener">',
 			'</a>'
+		),
+		'phase'       => GTM4WP_PHASE_STABLE,
+	),
+
+	GTM4WP_OPTION_INTEGRATE_CONSENTMODE           => array(
+		'label'       => esc_html__( 'Google Consent Mode', 'duracelltomi-google-tag-manager' ),
+		'description' => sprintf(
+			// translators: 1: opening anchor tag linking to Google's documentation about the consent mode command. 2: Closing anchor tag.
+			gtm4wp_safe_admin_html(
+				'Enable this checkbox if you wish to execute the "default" command of %1$sGoogle Consent Mode%2$s before the container loads.
+				The "update" command needs to be executed from your consent management tool.<br /><br />
+				DO NOT enable this feature if your consent manager tool supports firing both the "default" and the "update" command.',
+				'duracelltomi-google-tag-manager'
+			),
+			'<a href="https://developers.google.com/tag-platform/gtagjs/reference#consent" target="_blank" rel="noopener">',
+			'</a>'
+		),
+		'phase'       => GTM4WP_PHASE_STABLE,
+	),
+	GTM4WP_OPTION_INTEGRATE_CONSENTMODE_ADS       => array(
+		'label'       => esc_html__( 'Ad Storage', 'duracelltomi-google-tag-manager' ),
+		'description' => esc_html__(
+			'Select thic checkbox to make the ad_storage flag "granted" by default.',
+			'duracelltomi-google-tag-manager'
+		),
+		'phase'       => GTM4WP_PHASE_STABLE,
+	),
+	GTM4WP_OPTION_INTEGRATE_CONSENTMODE_ANALYTICS => array(
+		'label'       => esc_html__( 'Analytics Storage', 'duracelltomi-google-tag-manager' ),
+		'description' => esc_html__(
+			'Select thic checkbox to make the analytics_storage flag "granted" by default.',
+			'duracelltomi-google-tag-manager'
+		),
+		'phase'       => GTM4WP_PHASE_STABLE,
+	),
+	GTM4WP_OPTION_INTEGRATE_CONSENTMODE_PERSO     => array(
+		'label'       => esc_html__( 'Personalization Storage', 'duracelltomi-google-tag-manager' ),
+		'description' => esc_html__(
+			'Select thic checkbox to make the personalization_storage flag "granted" by default.',
+			'duracelltomi-google-tag-manager'
+		),
+		'phase'       => GTM4WP_PHASE_STABLE,
+	),
+	GTM4WP_OPTION_INTEGRATE_CONSENTMODE_FUNC      => array(
+		'label'       => esc_html__( 'Functionality Storage', 'duracelltomi-google-tag-manager' ),
+		'description' => esc_html__(
+			'Select thic checkbox to make the functionality_storage flag "granted" by default.',
+			'duracelltomi-google-tag-manager'
+		),
+		'phase'       => GTM4WP_PHASE_STABLE,
+	),
+	GTM4WP_OPTION_INTEGRATE_CONSENTMODE_SECURUTY  => array(
+		'label'       => esc_html__( 'Security Storage', 'duracelltomi-google-tag-manager' ),
+		'description' => esc_html__(
+			'Select thic checkbox to make the security_storage flag "granted" by default.',
+			'duracelltomi-google-tag-manager'
 		),
 		'phase'       => GTM4WP_PHASE_STABLE,
 	),

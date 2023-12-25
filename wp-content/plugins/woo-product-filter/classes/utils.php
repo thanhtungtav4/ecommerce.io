@@ -359,12 +359,12 @@ class UtilsWpf {
 	 * 
 	 * @return NULL Check if it's site or multisite and activate.
 	 */
-	public static function activatePlugin() {
+	public static function activatePlugin( $networkwide ) {
 		global $wpdb;
 		if (WPF_TEST_MODE) {
 			add_action('activated_plugin', array(FrameWpf::_(), 'savePluginActivationErrors'));
 		}
-		if (function_exists('is_multisite') && is_multisite()) {
+		if (function_exists('is_multisite') && is_multisite() && $networkwide) {
 			$blog_id = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
 			foreach ($blog_id as $id) {
 				if (switch_to_blog($id)) {
@@ -398,9 +398,9 @@ class UtilsWpf {
 			InstallerWpf::delete();
 		}
 	}
-	public static function deactivatePlugin() {
+	public static function deactivatePlugin( $networkwide ) {
 		global $wpdb;
-		if (function_exists('is_multisite') && is_multisite()) {
+		if (function_exists('is_multisite') && is_multisite() && $networkwide) {
 			$blog_id = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
 			foreach ($blog_id as $id) {
 				if (switch_to_blog($id)) {

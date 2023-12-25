@@ -359,7 +359,7 @@ class Xoo_Ml_Phone_Verification{
 
 			wp_send_json(array(
 				'otp_sent' 	=> 1,
-				'otp' 		=> $otp,
+				//'otp' 		=> $otp,
 				'phone' 	=> $phone_code.$phone_no,
 				'phone_no' 	=> $phone_no,
 				'phone_code'=> $phone_code,

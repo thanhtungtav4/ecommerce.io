@@ -4,11 +4,7 @@
 import { __, sprintf } from '@wordpress/i18n';
 import { speak } from '@wordpress/a11y';
 import { Icon, chevronDown } from '@wordpress/icons';
-import {
-	usePrevious,
-	useShallowEqual,
-	useBorderProps,
-} from '@woocommerce/base-hooks';
+import { usePrevious, useShallowEqual } from '@woocommerce/base-hooks';
 import {
 	useQueryStateByKey,
 	useQueryStateByContext,
@@ -22,7 +18,7 @@ import {
 	useMemo,
 	useRef,
 } from '@wordpress/element';
-import CheckboxList from '@woocommerce/base-components/checkbox-list';
+import { CheckboxList } from '@woocommerce/blocks-components';
 import FilterSubmitButton from '@woocommerce/base-components/filter-submit-button';
 import FilterResetButton from '@woocommerce/base-components/filter-reset-button';
 import FilterTitlePlaceholder from '@woocommerce/base-components/filter-placeholder';
@@ -32,8 +28,11 @@ import isShallowEqual from '@wordpress/is-shallow-equal';
 import { decodeEntities } from '@wordpress/html-entities';
 import { isBoolean, objectHasProp } from '@woocommerce/types';
 import { addQueryArgs, removeQueryArgs } from '@wordpress/url';
-import { changeUrl, PREFIX_QUERY_ARG_FILTER_TYPE } from '@woocommerce/utils';
-import { difference } from 'lodash';
+import {
+	changeUrl,
+	PREFIX_QUERY_ARG_FILTER_TYPE,
+	normalizeQueryParams,
+} from '@woocommerce/utils';
 import classnames from 'classnames';
 
 /**
@@ -52,7 +51,7 @@ export const QUERY_PARAM_KEY = PREFIX_QUERY_ARG_FILTER_TYPE + 'stock_status';
  *
  * @param {Object}  props            Incoming props for the component.
  * @param {Object}  props.attributes Incoming block attributes.
- * @param {boolean} props.isEditor
+ * @param {boolean} props.isEditor   Whether the component is being rendered in the editor.
  */
 const StockStatusFilterBlock = ( {
 	attributes: blockAttributes,
@@ -64,7 +63,7 @@ const StockStatusFilterBlock = ( {
 	const setWrapperVisibility = useSetWraperVisibility();
 
 	const filteringForPhpTemplate = getSettingWithCoercion(
-		'is_rendering_php_template',
+		'isRenderingPhpTemplate',
 		false,
 		isBoolean
 	);
@@ -76,10 +75,6 @@ const StockStatusFilterBlock = ( {
 		'stockStatusOptions',
 		{}
 	);
-
-	const productIds = isEditor
-		? []
-		: getSettingWithCoercion( 'product_ids', [], Array.isArray );
 
 	const STOCK_STATUS_OPTIONS: { current: Current } = useRef(
 		getSetting( 'hideOutOfStockItems', false )
@@ -112,7 +107,7 @@ const StockStatusFilterBlock = ( {
 		useCollectionData( {
 			queryStock: true,
 			queryState,
-			productIds,
+			isEditor,
 		} );
 
 	/**
@@ -140,8 +135,6 @@ const StockStatusFilterBlock = ( {
 		More info: https://github.com/woocommerce/woocommerce-blocks/pull/6920#issuecomment-1222402482
 	 */
 	const [ remountKey, setRemountKey ] = useState( generateUniqueId() );
-
-	const borderProps = useBorderProps( blockAttributes );
 
 	/**
 	 * Compare intersection of all stock statuses and filtered counts to get a list of options to display.
@@ -223,7 +216,7 @@ const StockStatusFilterBlock = ( {
 				QUERY_PARAM_KEY
 			);
 
-			if ( url !== window.location.href ) {
+			if ( url !== normalizeQueryParams( window.location.href ) ) {
 				changeUrl( url );
 			}
 
@@ -234,7 +227,7 @@ const StockStatusFilterBlock = ( {
 			[ QUERY_PARAM_KEY ]: checkedOptions.join( ',' ),
 		} );
 
-		if ( newUrl === window.location.href ) {
+		if ( newUrl === normalizeQueryParams( window.location.href ) ) {
 			return;
 		}
 
@@ -390,13 +383,17 @@ const StockStatusFilterBlock = ( {
 			return displayOption ? displayOption.value : token;
 		} );
 
-		const added = difference( tokens, checked );
+		const added = [ tokens, checked ].reduce( ( a, b ) =>
+			a.filter( ( c ) => ! b.includes( c ) )
+		);
 
 		if ( added.length === 1 ) {
 			return onChange( added[ 0 ] );
 		}
 
-		const removed = difference( checked, tokens );
+		const removed = [ checked, tokens ].reduce( ( a, b ) =>
+			a.filter( ( c ) => ! b.includes( c ) )
+		);
 		if ( removed.length === 1 ) {
 			onChange( removed[ 0 ] );
 		}
@@ -415,7 +412,7 @@ const StockStatusFilterBlock = ( {
 	const isDisabled = ! blockAttributes.isPreview && filteredCountsLoading;
 
 	const hasFilterableProducts = getSettingWithCoercion(
-		'has_filterable_products',
+		'hasFilterableProducts',
 		false,
 		isBoolean
 	);
@@ -424,6 +421,10 @@ const StockStatusFilterBlock = ( {
 		setWrapperVisibility( false );
 		return null;
 	}
+
+	const showChevron = allowsMultipleOptions
+		? ! isLoading && checked.length < displayedOptions.length
+		: ! isLoading && checked.length === 0;
 
 	const heading = (
 		<TagName className="wc-block-stock-filter__title">
@@ -455,11 +456,10 @@ const StockStatusFilterBlock = ( {
 					<>
 						<FormTokenField
 							key={ remountKey }
-							className={ classnames( borderProps.className, {
+							className={ classnames( {
 								'single-selection': ! allowsMultipleOptions,
 								'is-loading': isLoading,
 							} ) }
-							style={ { ...borderProps.style } }
 							suggestions={ displayedOptions
 								.filter(
 									( option ) =>
@@ -499,7 +499,7 @@ const StockStatusFilterBlock = ( {
 								),
 							} }
 						/>
-						{ allowsMultipleOptions && (
+						{ showChevron && (
 							<Icon icon={ chevronDown } size={ 30 } />
 						) }
 					</>
@@ -516,7 +516,7 @@ const StockStatusFilterBlock = ( {
 			</div>
 			{
 				<div className="wc-block-stock-filter__actions">
-					{ checked.length > 0 && ! isLoading && (
+					{ ( checked.length > 0 || isEditor ) && ! isLoading && (
 						<FilterResetButton
 							onClick={ () => {
 								setChecked( [] );

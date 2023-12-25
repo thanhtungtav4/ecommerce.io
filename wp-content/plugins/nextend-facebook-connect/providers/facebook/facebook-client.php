@@ -50,7 +50,7 @@ class NextendSocialProviderFacebookClient extends NextendSocialOauth2 {
 
     public function isAccessTokenLongLived() {
 
-        return $this->access_token_data['created'] + $this->access_token_data['expires_in'] > time() + (60 * 60 * 2);
+        return isset($this->access_token_data['expires_in']) ? ($this->access_token_data['created'] + $this->access_token_data['expires_in'] > time() + (60 * 60 * 2)) : true;
     }
 
     /**

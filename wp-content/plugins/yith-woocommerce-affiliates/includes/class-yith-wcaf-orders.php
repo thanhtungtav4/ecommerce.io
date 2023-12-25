@@ -2,7 +2,7 @@
 /**
  * Orders Handler class
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -177,6 +177,17 @@ if ( ! class_exists( 'YITH_WCAF_Orders' ) ) {
 					}
 
 					$commission_amount = $this->calculate_line_item_commission( $order, $item_id, $item, $rate );
+
+					/**
+					 * APPLY_FILTERS: yith_wcaf_create_order_commission_skip_zero_commissions
+					 *
+					 * Allow to skip creation of commissions with amount 0.
+					 *
+					 * @param bool $skip_zero_commissions Whether to skip 0 commissions or not (default: true).
+					 */
+					if ( $commission_amount < 0.01 && apply_filters( 'yith_wcaf_create_order_commission_skip_zero_commissions', true ) ) {
+						continue;
+					}
 
 					$commission      = null;
 					$commission_args = array(

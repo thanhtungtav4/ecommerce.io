@@ -1,4 +1,47 @@
 
+= V1.1.6 - 22.12.2023 =
+
+* Update core plugin
+
+= V1.1.5 - 22.05.2023 =
+
+* Fix điều kiện với đơn mới không hiện nút đăng đơn lên Nhanh
+
+= V1.1.4 - 17.05.2023 =
+
+* Fix lỗi khi đăng đơn có COD = 0
+
+= V1.1.3 - 05.05.2023 =
+
+GLOBAL:
+* Tối ưu lại hình thức load địa chỉ
+
+= V1.1.2 - 24.04.2023 =
+
+* Tối ưu core
+
+GLOBAL:
+* Nâng cấp tương thích với chức năng High-Performance Order Storage (HPOS) trong Woocommerce. 1 chức năng tối ưu cho order trong Woocommerce và sẽ mặc định ở Woocommerce V8.0
+* Nâng cấp thư viện recaptcha để hỗ trợ PHP8
+
+= V1.1.1 - 18.03.2023 =
+
+* Update thêm chức năng đồng bộ giá bán từ Nhanhvn về website. có thể bật/tắt chức năng này
+* Thêm chức năng đồng bộ tồn kho chạy trong nền để cho các web có dữ liệu lớn không thể chạy trực tiếp được
+
+= V1.1.0 - 07.02.2023 =
+
+* Fix trường hợp thiếu lựa chọn tự vận chuyển
+
+= V1.0.9 - 04.02.2023 =
+
+* Thêm lựa chọn "Tự vận chuyển" khi đăng đơn lên Nhanhvn
+
+= V1.0.8 - 05.01.2023 =
+
+* Fix js với 1 số theme
+* Fix lỗi tên quận huyện khác với hệ thống Nhanhvn
+
 = V1.0.7 - 28.12.2022 =
 
 GLOBAL

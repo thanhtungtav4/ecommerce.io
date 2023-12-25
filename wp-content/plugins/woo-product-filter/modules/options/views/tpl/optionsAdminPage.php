@@ -45,10 +45,31 @@
 				<div class="clear"></div>
 			</div>
 		</section>
-		<div id="wpfAddDialog" class="woobewoo-plugin woobewoo-hidden" title="<?php echo esc_attr__('Enter product filter name', 'woo-product-filter'); ?>">
+		<?php
+			$filtersList = FrameWpf::_()->getModule('woofilters')->getModel()->getAllFilters();
+		?>
+		<div id="wpfAddDialog" class="woobewoo-plugin woobewoo-hidden" title="<?php echo esc_attr__('Add new product filter', 'woo-product-filter'); ?>" data-button="<?php echo esc_attr__('Create', 'woo-product-filter'); ?>">
 			<div>
 				<form id="tableForm">
-					<input id="addDialog_title" class="woobewoo-text woobewoo-width-full" type="text"/>
+					<div class="wpfPopupBlock">
+						<label class="wpfPopupLabel"><?php esc_html_e('Filter name', 'woo-product-filter'); ?></label>
+						<input id="addDialog_title" class="woobewoo-text woobewoo-width-full" type="text"/>
+					</div>
+					<div class="wpfPopupBlock">
+						<label class="wpfPopupLabel"><?php esc_html_e('Select Filters (You can change them later)', 'woo-product-filter'); ?></label>
+						<ul class="wpfPopupList" id="addDialog_list">
+							<?php
+							foreach ($filtersList as $filter => $data) {
+								if ('wpfPriceRange' != $filter) {
+									echo '<li><input type="checkbox" data-unique-id="' . esc_attr(uniqid('wpf_')) .
+										'" data-value="' . esc_attr($filter) .
+										'"><label>' . esc_html($data['name']) .
+									'</label></li>';
+								}
+							}
+							?>
+						</ul>
+					</div>
 					<input type="hidden" id="addDialog_duplicateid" class="woobewoo-text woobewoo-width-full"/>
 				</form>
 				<div id="formError" class="woobewoo-hidden">

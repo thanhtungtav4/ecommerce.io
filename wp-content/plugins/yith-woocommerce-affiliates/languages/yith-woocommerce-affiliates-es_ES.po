@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: YITH WooCommerce Affiliates\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
 "affiliates\n"
-"POT-Creation-Date: 2022-09-08T11:08:50+00:00\n"
+"POT-Creation-Date: 2023-12-21T09:46:04+00:00\n"
 "PO-Revision-Date: 2022-04-05 15:37+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -34,8 +34,8 @@ msgstr ""
 
 #: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:209
 #: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:300
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:150
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:244
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:157
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:251
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-profile-fields-admin-table.php:50
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-profile-fields-admin-table.php:72
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-profile-fields-admin-table.php:90
@@ -407,49 +407,55 @@ msgctxt "[ADMIN] Affiliate screen notice message"
 msgid "There was an error while unbanning affiliates."
 msgstr "Ha ocurrido un error al desbloquear afiliados. "
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:158
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:156
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:70
+msgctxt "[ADMIN] Add new affiliate button, in affiliates tab"
+msgid "Add affiliate"
+msgstr "Añadir afiliado"
+
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:198
 msgctxt "[ADMIN] Error message for affiliate creation"
 msgid "You must select a valid user to add as affiliate"
 msgstr "Debes seleccionar un usuario válido para añadirlo como afiliado"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:163
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:203
 msgctxt "[ADMIN] Error message for affiliate creation"
 msgid "You must enter a valid username for the affiliate"
 msgstr "Debes introducir un nombre de usuario válido para el afiliado"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:169
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:209
 msgctxt "[ADMIN] Error message for affiliate creation"
 msgid "You must enter a valid email for the affiliate"
 msgstr "Dedes introducir un correo electrónico válido para el afiliado"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:175
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:215
 msgctxt "[ADMIN] Error message for affiliate creation"
 msgid "You must select a valid role for the affiliate"
 msgstr "Debes seleccionar un perfil válido para el afiliado"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:181
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:221
 msgctxt "[ADMIN] Error message for affiliate creation"
 msgid "You must enter a valid password for the affiliate"
 msgstr "Debes introducir una contraseña válida para el afiliado"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:302
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:354
 msgctxt "[ADMIN] Ban affiliate modal"
 msgid "Ban affiliate"
 msgstr "Bloquear afiliado"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:303
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:355
 msgctxt "[ADMIN] Ban affiliate modal"
 msgid "Reject affiliate"
 msgstr "Rechazar afiliado"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:304
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:221
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:356
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:247
 msgctxt "[ADMIN] Confirm modal"
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:305
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:222
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:357
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:248
 msgctxt "[ADMIN] Confirm modal"
 msgid "This operation cannot be undone. Are you sure you want to proceed?"
 msgstr ""
@@ -606,22 +612,22 @@ msgid "Commission(s) %s could not be paid."
 msgstr "La(s) comision(es) %s no pudieron ser pagadas."
 
 #. translators: 1. Old status. 2. New status. 3. Username.
-#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:168
-#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:279
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:162
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:267
+#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:195
+#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:306
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:188
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:293
 msgctxt "[ADMIN] Status change note"
 msgid "Status changed from %1$s to %2$s by %3$s."
 msgstr "Estado cambiado de %1$s a %2$s por %3$s."
 
 #. translators: 1. Current user login.
-#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:290
+#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:317
 msgctxt "[ADMIN] Status change note"
 msgid "Moved to the trash by %s."
 msgstr "Movido a la papelera por %s."
 
 #. translators: 1. Current user login. 2. New commission status.
-#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:309
+#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:336
 msgctxt "[ADMIN] Status change note"
 msgid "%1$s restored this item; the system automatically assigned %2$s status."
 msgstr ""
@@ -713,32 +719,32 @@ msgctxt "[ADMIN] Payments action messages"
 msgid "Payment %s could not be completed."
 msgstr "El pago %s no pudo ser completado."
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:110
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:154
 msgctxt "[ADMIN] Duration field"
 msgid "Seconds"
 msgstr "Segundos"
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:111
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:155
 msgctxt "[ADMIN] Duration field"
 msgid "Minutes"
 msgstr "Minutos"
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:112
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:156
 msgctxt "[ADMIN] Duration field"
 msgid "Hours"
 msgstr "Horas"
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:113
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:157
 msgctxt "[ADMIN] Duration field"
 msgid "Days"
 msgstr "Días"
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:114
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:158
 msgctxt "[ADMIN] Duration field"
 msgid "Weeks"
 msgstr "Semanas"
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:115
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:159
 msgctxt "[ADMIN] Duration field"
 msgid "Months"
 msgstr "Meses"
@@ -748,125 +754,119 @@ msgctxt "[ADMIN] Affiliate empty table message"
 msgid "Sorry! There is no affiliate registered yet."
 msgstr "¡Lo sentimos! Todavía no hay ningún afiliado registrado."
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:70
-#: plugin-options/affiliates/list-options.php:40
-msgctxt "[ADMIN] Add new affiliate button, in affiliates tab"
-msgid "Add affiliate"
-msgstr "Añadir afiliado"
-
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:104
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:111
 msgctxt "[ADMIN] Affiliate status in admin table"
 msgid "Banned"
 msgstr "Bloqueado"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:109
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:116
 msgctxt "[ADMIN] Affiliate status in admin table"
 msgid "Pending"
 msgstr "Pendiente"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:113
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:120
 msgctxt "[ADMIN] Affiliate status in admin table"
 msgid "Rejected"
 msgstr "Rechazado"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:118
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:125
 msgctxt "[ADMIN] Affiliate status in admin table"
 msgid "Accepted"
 msgstr "Aceptado"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:259
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:266
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Affiliate"
 msgstr "Afiliado"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:260
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:267
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "ID"
 msgstr "ID"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:261
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:268
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Token"
 msgstr "Token"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:262
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:269
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Rate"
 msgstr "Porcentaje"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:263
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:270
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Earnings"
 msgstr "Beneficios"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:264
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:271
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Paid"
 msgstr "Pagado"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:265
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:272
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Balance"
 msgstr "Saldo"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:266
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:273
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Visits"
 msgstr "Visitas"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:267
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:274
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Conversion"
 msgstr "Conversión"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:268
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:275
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Conversion rate"
 msgstr "Porcentaje de conversión"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:269
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:276
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Status"
 msgstr "Estado"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:270
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:277
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Actions"
 msgstr "Acciones"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:340
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:347
 msgctxt "[ADMIN] Affiliates view"
 msgid "All"
 msgstr "Todo"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:342
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:349
 msgctxt "[ADMIN] Affiliates view"
 msgid "Banned"
 msgid_plural "Banned"
 msgstr[0] "Bloqueado"
 msgstr[1] ""
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:368
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:375
 msgctxt "[ADMIN] Affiliates bulk actions"
 msgid "Delete affiliate"
 msgstr "Eliminar afiliado"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:369
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:376
 msgctxt "[ADMIN] Affiliates bulk actions"
 msgid "Change status to accepted"
 msgstr "Cambiar estado a aceptado"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:370
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:377
 msgctxt "[ADMIN] Affiliates bulk actions"
 msgid "Change status to rejected"
 msgstr "Cambiar estado a rechazado"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:371
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:378
 msgctxt "[ADMIN] Affiliates bulk actions"
 msgid "Ban affiliate"
 msgstr "Bloquear afiliado"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:372
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:379
 msgctxt "[ADMIN] Affiliates bulk actions"
 msgid "Unban affiliate"
 msgstr "Desbloquear afiliado"
@@ -1037,7 +1037,7 @@ msgctxt "[ADMIN] Gateways table headings"
 msgid "Available"
 msgstr "Disponible"
 
-#: includes/admin/admin-tables/class-yith-wcaf-gateways-admin-table.php:149
+#: includes/admin/admin-tables/class-yith-wcaf-gateways-admin-table.php:148
 msgctxt "[ADMIN] Gateways table headings"
 msgid "Active"
 msgstr "Activo"
@@ -1269,48 +1269,48 @@ msgctxt "[ADMIN] Success message after deleting template from theme directory"
 msgid "Template file deleted from the theme."
 msgstr "Archivo de plantilla eliminado del tema."
 
-#: includes/admin/class-yith-wcaf-admin.php:220
+#: includes/admin/class-yith-wcaf-admin.php:221
 msgctxt "[ADMIN] Panel tabs"
 msgid "Affiliates"
 msgstr "Afiliados"
 
-#: includes/admin/class-yith-wcaf-admin.php:221
+#: includes/admin/class-yith-wcaf-admin.php:225
 msgctxt "[ADMIN] Panel tabs"
 msgid "Commissions"
 msgstr "Comisiones"
 
-#: includes/admin/class-yith-wcaf-admin.php:222
+#: includes/admin/class-yith-wcaf-admin.php:229
 msgctxt "[ADMIN] Panel tabs"
 msgid "General Options"
 msgstr "Opciones generales"
 
-#: includes/admin/class-yith-wcaf-admin.php:279
+#: includes/admin/class-yith-wcaf-admin.php:293
 msgctxt "[HELP TAB] Video title"
 msgid ""
 "Check this video to learn how to <b>set up an affiliate program for your "
 "online shop:</b>"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:300
+#: includes/admin/class-yith-wcaf-admin.php:315
 msgid ""
 "<b>Get access to advanced reports</b> (hits, commissions, earnings, best "
 "affiliates, popular products, etc.) in the integrated dashboard"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:301
+#: includes/admin/class-yith-wcaf-admin.php:316
 msgid ""
 "Create a <b>custom advanced form for your affiliate’s registration</b> "
 "process: add unlimited fields to the form, such as Website or Blog url, "
 "Links of their social channels, a small bio, etc. "
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:302
+#: includes/admin/class-yith-wcaf-admin.php:317
 msgid ""
 "Override the default commission rate and <b>set a different rate value for "
 "specific users, user roles or products</b>"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:303
+#: includes/admin/class-yith-wcaf-admin.php:318
 #, fuzzy
 msgid ""
 "<b>Exclude specific products, categories, tag, user or user roles</b> from "
@@ -1319,7 +1319,7 @@ msgstr ""
 "Elige excluir a usuarios específicos o perfiles de usuario del programa de "
 "afiliación."
 
-#: includes/admin/class-yith-wcaf-admin.php:304
+#: includes/admin/class-yith-wcaf-admin.php:319
 msgid ""
 "<b>Automatic payment of the commissions</b> (with PayPal or Stripe) when the "
 "affiliate reaches a threshold, on a specific month date (ex: each 1st of "
@@ -1327,56 +1327,56 @@ msgid ""
 "schedule a daily payment. "
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:305
+#: includes/admin/class-yith-wcaf-admin.php:320
 msgid ""
 "<b>Let affiliates to ask their commissions withdrawal</b> (and upload or "
 "generate invoices for their requests)"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:306
+#: includes/admin/class-yith-wcaf-admin.php:321
 msgid ""
 "<b>Get access to the report of clicks</b> generated from referrers in a "
 "summarising table with main information and their conversion status"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:307
+#: includes/admin/class-yith-wcaf-admin.php:322
 msgid ""
 "<b>Access to the affiliate’s detail page</b> from the affiliates table, to "
 "check the affiliate’s personal info, commissions, statistics, etc."
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:308
+#: includes/admin/class-yith-wcaf-admin.php:323
 msgid "Regular updates, translations and premium support"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliate.php:801
+#: includes/class-yith-wcaf-affiliate.php:800
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Enable affiliate"
 msgstr "Activar afiliado"
 
-#: includes/class-yith-wcaf-affiliate.php:802
+#: includes/class-yith-wcaf-affiliate.php:801
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Change status to accepted"
 msgstr "Cambiar estado a aceptado"
 
-#: includes/class-yith-wcaf-affiliate.php:814
+#: includes/class-yith-wcaf-affiliate.php:813
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Reject affiliate"
 msgstr "Rechazar afiliado"
 
-#: includes/class-yith-wcaf-affiliate.php:815
+#: includes/class-yith-wcaf-affiliate.php:814
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Change status to rejected"
 msgstr "Cambiar estado a rechazado"
 
+#: includes/class-yith-wcaf-affiliate.php:826
 #: includes/class-yith-wcaf-affiliate.php:827
-#: includes/class-yith-wcaf-affiliate.php:828
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Ban affiliate"
 msgstr "Bloquear afiliado"
 
+#: includes/class-yith-wcaf-affiliate.php:839
 #: includes/class-yith-wcaf-affiliate.php:840
-#: includes/class-yith-wcaf-affiliate.php:841
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Unban affiliate"
 msgstr "Desbloquear afiliado"
@@ -1558,18 +1558,18 @@ msgstr[0] "Convertido"
 msgstr[1] ""
 
 #. translators: 1. Status name.
-#: includes/class-yith-wcaf-commission.php:637
+#: includes/class-yith-wcaf-commission.php:644
 msgctxt "[ADMIN] Single commission actions"
 msgid "Change status to %s"
 msgstr "Cambiar estado a %s"
 
-#: includes/class-yith-wcaf-commission.php:654
+#: includes/class-yith-wcaf-commission.php:661
 msgctxt "[ADMIN] Single commission actions"
 msgid "Mark as paid"
 msgstr "Marcar como pagado"
 
 #. translators: 1. Payment gateway label.
-#: includes/class-yith-wcaf-commission.php:668
+#: includes/class-yith-wcaf-commission.php:675
 msgctxt "[ADMIN] Single commission actions"
 msgid "Pay via %s"
 msgstr "Pagar vía %s"
@@ -1775,40 +1775,40 @@ msgid "Terms accepted?"
 msgstr "¿Términos aceptados?"
 
 #. translators: 1. Refunded amount. 2. Refund id.
-#: includes/class-yith-wcaf-orders.php:628
+#: includes/class-yith-wcaf-orders.php:639
 msgid "Refunded %1$s due to refund #%2$s creation"
 msgstr "Restaurado %1$s debido a la creación del reembolso #%2$s "
 
 #. translators: 1. Restored amount. 2. Refund id.
-#: includes/class-yith-wcaf-orders.php:678
+#: includes/class-yith-wcaf-orders.php:689
 msgid "Restored %1$s due to refund #%2$s deletion"
 msgstr "Restaurado %1$s debido a la eliminación del reembolso #%2$s "
 
-#: includes/class-yith-wcaf-payment.php:173
+#: includes/class-yith-wcaf-payment.php:172
 msgctxt "[ADMIN] Placeholder gateway"
 msgid "Manual payment"
 msgstr "Pago manual"
 
-#: includes/class-yith-wcaf-payment.php:486
+#: includes/class-yith-wcaf-payment.php:485
 msgctxt "[ADMIN] General empty field"
 msgid "N/A"
 msgstr "N/A"
 
 #. translators: 1. Status name.
-#: includes/class-yith-wcaf-payment.php:513
+#: includes/class-yith-wcaf-payment.php:512
 msgctxt "[ADMIN] Single payment actions"
 msgid "Change status to %s"
 msgstr "Cambiar estado a %s"
 
 #. translators: 1. Payment gateway label.
-#: includes/class-yith-wcaf-payment.php:533
+#: includes/class-yith-wcaf-payment.php:532
 msgctxt "[ADMIN] Single payment actions"
 msgid "Pay via %s"
 msgstr "Pagar vía %s"
 
 #. translators: 1. Old status. 2. New status. 3. Payment id.
-#: includes/class-yith-wcaf-payment.php:1129
-#: includes/class-yith-wcaf-payment.php:1154
+#: includes/class-yith-wcaf-payment.php:1128
+#: includes/class-yith-wcaf-payment.php:1153
 msgctxt ""
 "[ADMIN] Note added to commission when status changes because of related "
 "payment operation"
@@ -2160,32 +2160,32 @@ msgctxt "[PRIVACY] Eraser message"
 msgid "Visit %s has been retained."
 msgstr "La visita %s ha sido retenida."
 
-#: includes/class-yith-wcaf.php:181
+#: includes/class-yith-wcaf.php:183
 msgctxt "[GLOBAL] After copy message"
 msgid "URL copied"
 msgstr "URL copiada"
 
-#: includes/class-yith-wcaf.php:182
+#: includes/class-yith-wcaf.php:184
 msgctxt "[FRONTEND] Toggle fields text"
 msgid "ON"
 msgstr "Sí"
 
-#: includes/class-yith-wcaf.php:183
+#: includes/class-yith-wcaf.php:185
 msgctxt "[FRONTEND] Toggle fields text"
 msgid "OFF"
 msgstr "No"
 
-#: includes/class-yith-wcaf.php:184
+#: includes/class-yith-wcaf.php:186
 msgctxt "[FRONTEND] Withdraw modal"
 msgid "Request withdrawal"
 msgstr "Solicitud de retirada"
 
-#: includes/class-yith-wcaf.php:186
+#: includes/class-yith-wcaf.php:188
 msgctxt "[GLOBAL] Form validation error"
 msgid "Please, accept this condition"
 msgstr "Por favor, acepta esta condición"
 
-#: includes/class-yith-wcaf.php:187
+#: includes/class-yith-wcaf.php:189
 msgctxt "[GLOBAL] Form validation error"
 msgid "Please, complete this field"
 msgstr "Por favor, completa este campo"
@@ -2225,22 +2225,22 @@ msgctxt "[FRONTEND] Default column content for dashboard tables"
 msgid "N/A"
 msgstr "N/A"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:653
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:654
 msgctxt "[FRONTEND] Dashboard table filters"
 msgid "All status"
 msgstr "Todos los estados"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:687
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:688
 msgctxt "[FRONTEND] Dashboard table"
 msgid "All products"
 msgstr "Todos los productos"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:707
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:708
 msgctxt "[FRONTEND] Dashboard table"
 msgid "From:"
 msgstr "Desde:"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:717
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:718
 msgctxt "[FRONTEND] Dashboard table"
 msgid "To:"
 msgstr "Hasta:"
@@ -2509,7 +2509,7 @@ msgid "Show menu"
 msgstr "Mostrar menú"
 
 #. translators: 1. Affiliate formatted name.
-#: includes/shortcodes/class-yith-wcaf-affiliate-dashboard-shortcode.php:221
+#: includes/shortcodes/class-yith-wcaf-affiliate-dashboard-shortcode.php:225
 msgctxt "[FRONTEND] No longer in use"
 msgid "Hello <strong>%1$s</strong> (not %1$s? <a href=\"%2$s\">Sign out</a>)."
 msgstr ""
@@ -2517,7 +2517,7 @@ msgstr ""
 "a>)."
 
 #. translators: 1. Link to affiliate settings page.
-#: includes/shortcodes/class-yith-wcaf-affiliate-dashboard-shortcode.php:238
+#: includes/shortcodes/class-yith-wcaf-affiliate-dashboard-shortcode.php:242
 msgctxt "[FRONTEND] No longer in use"
 msgid ""
 "From your affiliate dashboard you can view your recent commissions and "
@@ -2671,48 +2671,70 @@ msgid ""
 msgstr ""
 "No puedes activar la versión gratuita de %s mientras utilizas la premium. "
 
-#: plugin-options/affiliates/list-options.php:33
-msgctxt "[ADMIN] Title for affiliates table, in affiliates tab"
-msgid "Affiliates"
-msgstr "Afiliados"
-
 #: plugin-options/commissions-options.php:31
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Commissions List"
 msgstr "Lista de comisiones"
 
-#: plugin-options/commissions-options.php:34
+#: plugin-options/commissions-options.php:32
+#, fuzzy
+msgctxt "[ADMIN] Affiliate Commissions tab description"
+msgid "Monitor and manage the commissions generated by your affiliates."
+msgstr "Muestra las comisiones de los afiliados a tus afiliados"
+
+#: plugin-options/commissions-options.php:35
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Commissions Payments"
 msgstr "Pagos de comisiones"
 
-#: plugin-options/commissions/list-options.php:33
-msgid "Commissions"
-msgstr "Comisiones"
-
-#: plugin-options/commissions/payments-options.php:33
-msgid "Payments"
-msgstr "Pagos"
+#: plugin-options/commissions-options.php:36
+msgctxt "[ADMIN] Affiliate Commissions Payments tab description"
+msgid "A summary of the commissions generated and their respective payments."
+msgstr ""
 
 #: plugin-options/settings-options.php:31
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "General Options"
 msgstr "Opciones generales"
 
-#: plugin-options/settings-options.php:34
+#: plugin-options/settings-options.php:32
+#, fuzzy
+msgctxt "[ADMIN] General options tab description"
+msgid "Plugin Configuration Options."
+msgstr "Opciones de registro"
+
+#: plugin-options/settings-options.php:35
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Affiliates Registration"
 msgstr "Registro de afiliados"
 
-#: plugin-options/settings-options.php:37
+#: plugin-options/settings-options.php:36
+msgctxt "[ADMIN] Affiliate registration tab description"
+msgid "Manage options for registering new affiliates in your shop."
+msgstr ""
+
+#: plugin-options/settings-options.php:39
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Affiliate Dashboard"
 msgstr "Escritorio del afiliado"
 
 #: plugin-options/settings-options.php:40
+msgctxt "[ADMIN] Affiliate dashboard tab description"
+msgid ""
+"Customize the dashboard with which your affiliates monitor clicks and "
+"commissions."
+msgstr ""
+
+#: plugin-options/settings-options.php:43
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Commissions & Payments"
 msgstr "Comisiones y pagos"
+
+#: plugin-options/settings-options.php:44
+#, fuzzy
+msgctxt "[ADMIN] Commissions & Payments tab description"
+msgid "Configure commission management and payment."
+msgstr "Tu comisión está esperando el pago"
 
 #: plugin-options/settings/affiliates-dashboard-options.php:29
 msgctxt "[ADMIN] Affiliate dashboard settings page"
@@ -2864,8 +2886,8 @@ msgstr "Texto de red social"
 #: plugin-options/settings/affiliates-dashboard-options.php:127
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid ""
-"Enter the text to use in Twitter, WhatsApp, and Pinterest sharing. Use <b>"
-"%referral_url%</b> where you want to show the URL of your affiliate."
+"Enter the text to use in Twitter, WhatsApp, and Pinterest sharing. Use "
+"<b>%referral_url%</b> where you want to show the URL of your affiliate."
 msgstr ""
 "Será usado por Twitter, WhatsApp y Pinterest. Utiliza <b>%referral_url%</b> "
 "donde quieras mostrar la URL de tu afiliado."
@@ -2883,15 +2905,10 @@ msgstr ""
 
 #: plugin-options/settings/affiliates-registration-options.php:29
 msgctxt "[ADMIN] Affiliate registration settings page"
-msgid "Affiliate Registration Fields"
-msgstr "Campos de registro de afiliado"
-
-#: plugin-options/settings/affiliates-registration-options.php:35
-msgctxt "[ADMIN] Affiliate registration settings page"
 msgid "Registration form"
 msgstr "Formulario de registro"
 
-#: plugin-options/settings/affiliates-registration-options.php:38
+#: plugin-options/settings/affiliates-registration-options.php:36
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "To show this form in a custom page, use the Gutenberg block \"YITH "
@@ -2902,7 +2919,7 @@ msgstr ""
 "de Gutenberg «YITH Affiliates Formulario de registro» o copia y pega el "
 "shortcode <b>[yith_wcaf_registration_form]</b>"
 
-#: plugin-options/settings/affiliates-registration-options.php:57
+#: plugin-options/settings/affiliates-registration-options.php:51
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "Add the registration form fields to the default WooCommerce registration form"
@@ -2910,7 +2927,7 @@ msgstr ""
 "Añade los campos del formulario de registro al formulario de registro por "
 "defecto de WooCommerce"
 
-#: plugin-options/settings/affiliates-registration-options.php:60
+#: plugin-options/settings/affiliates-registration-options.php:54
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "Enable to add the registration form fields to WooCommerce default "
@@ -2925,18 +2942,18 @@ msgstr ""
 "perfil en tu sitio usando el formulario de registro por defecto de "
 "WooCommerce también se registren como afiliados."
 
-#: plugin-options/settings/affiliates-registration-options.php:75
+#: plugin-options/settings/affiliates-registration-options.php:70
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid "Registration Options"
 msgstr "Opciones de registro"
 
-#: plugin-options/settings/affiliates-registration-options.php:81
+#: plugin-options/settings/affiliates-registration-options.php:76
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid "Associate old commissions to new users with the same token"
 msgstr ""
 "Asocia las antiguas comisiones a los nuevos usuarios con el mismo token"
 
-#: plugin-options/settings/affiliates-registration-options.php:84
+#: plugin-options/settings/affiliates-registration-options.php:79
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "If enabled, when a new affiliate is registered the system will check if "
@@ -3063,12 +3080,12 @@ msgctxt "[ADMIN] General settings page"
 msgid "Referral cookies expire after"
 msgstr "Las cookies caducan después de"
 
-#: plugin-options/settings/general-options.php:96
+#: plugin-options/settings/general-options.php:97
 msgctxt "[ADMIN] General settings page"
 msgid "Set cookies via AJAX"
 msgstr "Establece cookies vía AJAX"
 
-#: plugin-options/settings/general-options.php:99
+#: plugin-options/settings/general-options.php:100
 msgctxt "[ADMIN] General settings page"
 msgid ""
 "Enable to execute an AJAX call to set up an affiliate cookie whenever the "
@@ -3235,47 +3252,52 @@ msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Recent Commissions"
 msgstr "Comisiones recientes"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:34
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:39
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Total earnings"
 msgstr "Ingresos totales"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:42
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:47
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Total paid"
 msgstr "Total pagado"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:50
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:55
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Total refunded"
 msgstr "Total reembolsado"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:58
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:63
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Balance"
 msgstr "Saldo"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:69
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:74
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Commission rate"
 msgstr "Porcentaje de comisión"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:77
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:82
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Conversion rate"
 msgstr "Porcentaje de conversión"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:89
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:94
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Visits"
 msgstr "Visitas"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:97
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:102
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Visits today"
 msgstr "Visitas hoy"
 
 #: templates/shortcodes/form-referrer.php:32
+#: assets/js/blocks/src/set-referrer/block.js:71
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:362
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:366
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:331
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:333
 msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Did anyone suggest our site to you?"
 msgstr "¿Alguien te ha sugerido nuestro sitio?"
@@ -3285,12 +3307,22 @@ msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Click here to enter his/her affiliate code"
 msgstr "Haz clic aquí para introducir tu código de afiliación"
 
-#: templates/shortcodes/form-referrer.php:51
+#: templates/shortcodes/form-referrer.php:61
+#: assets/js/blocks/src/set-referrer/block.js:101
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:382
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:386
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:361
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:363
 msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Affiliate code"
 msgstr "Código de afiliado"
 
-#: templates/shortcodes/form-referrer.php:55
+#: templates/shortcodes/form-referrer.php:65
+#: assets/js/blocks/src/set-referrer/block.js:120
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:395
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:399
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:380
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:382
 msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Set affiliate"
 msgstr "Establecer afiliado"
@@ -3669,135 +3701,289 @@ msgctxt "[ADMIN] Order commissions metabox"
 msgid "Store earnings:"
 msgstr "Beneficios del negocio:"
 
+#: assets/js/admin/src/dashboard/components/DashboardChart.jsx:180
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10195
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9989
+msgctxt "[DASHBOARD] Empty chart message"
+msgid "No data available"
+msgstr "No hay datos disponibles"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:15
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10382
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10155
+msgctxt "[DASHBOARD] Products leaderboard"
+msgid "Top products"
+msgstr "Mejores productos"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:22
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10384
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10162
+msgctxt "[DASHBOARD] Products leaderboard"
+msgid "Product"
+msgstr "Producto"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:31
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10388
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10171
+msgctxt "[DASHBOARD] Products leaderboard"
+msgid "Total commissions"
+msgstr "Comisiones totales"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:42
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10394
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10182
+msgctxt "[DASHBOARD] Products leaderboard"
+msgid "Earnings generated"
+msgstr "Beneficios generados"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:59
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10406
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10199
+msgctxt "[DASHBOARD] Affiliates leaderboard"
+msgid "Top affiliates"
+msgstr "Mejores afiliados"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:66
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10408
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10206
+#, fuzzy
+msgctxt "[DASHBOARD] Affiliates leaderboard"
+msgid "Affiliate"
+msgstr "Afiliado"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:75
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10412
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10215
+msgctxt "[DASHBOARD] Affiliates leaderboard"
+msgid "Total commissions"
+msgstr "Comisiones totales"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:86
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10418
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10226
+msgctxt "[DASHBOARD] Affiliates leaderboard"
+msgid "Earnings generated"
+msgstr "Beneficios generados"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:20
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9696
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9408
+msgctxt "[DASHBOARD] Filters"
+msgid "Show"
+msgstr "Mostrar"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:30
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9703
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9418
+msgctxt "[DASHBOARD] Filters"
+msgid "All affiliates"
+msgstr "Todos los afiliados"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:38
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:62
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9706
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9721
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9426
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9450
+msgctxt "[DASHBOARD] Filters"
+msgid "Single affiliate"
+msgstr "Afiliado único"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:57
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9720
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9445
+msgctxt "[DASHBOARD] Filters"
+msgid "Type to search for an affiliate"
+msgstr "Escribe para buscar un afiliado"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:73
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9726
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9461
+msgctxt "[DASHBOARD] Filters"
+msgid "Comparison"
+msgstr "Comparación"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:86
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9735
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9474
+msgctxt "[DASHBOARD] Filters"
+msgid "Check at least two affiliates below to compare"
+msgstr "Marca al menos dos afiliados para comparar"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:91
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9736
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9479
+msgctxt "[DASHBOARD] Filters"
+msgid "Search for affiliates to compare"
+msgstr "Buscar afiliados para comparar"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:96
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9737
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9484
+#, fuzzy
+msgctxt "[DASHBOARD] Filters"
+msgid "Compare Affiliates"
+msgstr "Mejores afiliados"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:101
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9738
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9489
+msgctxt "[DASHBOARD] Filters"
+msgid "Compare"
+msgstr "Comparar"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:116
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9745
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9504
+msgctxt "[DASHBOARD] Chart name"
+msgid "Total commissions"
+msgstr "Comisiones totales"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:125
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9749
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9513
+msgctxt "[DASHBOARD] Chart name"
+msgid "Paid commissions"
+msgstr "Comisiones pagadas"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:134
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9753
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9522
+msgctxt "[DASHBOARD] Chart name"
+msgid "Refunded commissions"
+msgstr "Comisiones reembolsadas"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:143
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9757
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9531
+msgctxt "[DASHBOARD] Chart name"
+msgid "Total earnings from affiliates"
+msgstr "Beneficios totales de los afiliados"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:152
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9761
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9540
+msgctxt "[DASHBOARD] Chart name"
+msgid "Total visits"
+msgstr "Total de visitas"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:161
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9765
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9549
+msgctxt "[DASHBOARD] Chart name"
+msgid "Total conversions"
+msgstr "Total de conversiones"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:170
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9769
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9558
+msgctxt "[DASHBOARD] Chart name"
+msgid "Average conversion rate"
+msgstr "Porcentaje medio de conversión"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:179
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9773
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9567
+msgctxt "[DASHBOARD] Chart name"
+msgid "Average conversion time"
+msgstr "Tiempo medio de conversión"
+
+#: assets/js/admin/src/dashboard/lib/dates.js:34
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9866
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9650
+msgctxt "[DASHBOARD] Time diff"
+msgid "y"
+msgstr "a"
+
+#: assets/js/admin/src/dashboard/lib/dates.js:42
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9869
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9658
+msgctxt "[DASHBOARD] Time diff"
+msgid "mo"
+msgstr "me"
+
+#: assets/js/admin/src/dashboard/lib/dates.js:50
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9872
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9666
+msgctxt "[DASHBOARD] Time diff"
+msgid "w"
+msgstr "sem"
+
+#: assets/js/admin/src/dashboard/lib/dates.js:58
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9875
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9674
+msgctxt "[DASHBOARD] Time diff"
+msgid "d"
+msgstr "d"
+
+#: assets/js/admin/src/dashboard/lib/dates.js:66
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9878
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9682
+msgctxt "[DASHBOARD] Time diff"
+msgid "h"
+msgstr "h"
+
+#: assets/js/admin/src/dashboard/lib/dates.js:74
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9881
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9690
+msgctxt "[DASHBOARD] Time diff"
+msgid "m"
+msgstr "m"
+
+#: assets/js/admin/src/dashboard/lib/dates.js:82
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9884
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9698
+msgctxt "[DASHBOARD] Time diff"
+msgid "s"
+msgstr "s"
+
+#: assets/js/blocks/src/set-referrer/edit.js:20
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:420
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:417
+#, fuzzy
+msgctxt "[BUILDERS] Shortcode attributes"
+msgid "Block options"
+msgstr "Opciones de Cookie"
+
+#: assets/js/blocks/src/set-referrer/edit.js:27
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:422
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:424
+msgctxt "[BUILDERS] Shortcode attributes"
+msgid "Initial affiliate token to show"
+msgstr "Token de afiliación inicial para mostrar"
+
+#: assets/js/blocks/src/set-referrer/block.json
+#, fuzzy
+msgctxt "block title"
+msgid "YITH Affiliates \"Set Referrer\" box"
+msgstr "YITH Affiliates - Casilla «Establecer referencia»"
+
+#: assets/js/blocks/src/set-referrer/block.json
+msgctxt "block description"
+msgid ""
+"Shows the \"Set referrer\" box, to allow customer set the user that "
+"suggested the site."
+msgstr ""
+
+#~ msgctxt "[ADMIN] Title for affiliates table, in affiliates tab"
+#~ msgid "Affiliates"
+#~ msgstr "Afiliados"
+
+#~ msgid "Commissions"
+#~ msgstr "Comisiones"
+
+#~ msgid "Payments"
+#~ msgstr "Pagos"
+
+#~ msgctxt "[ADMIN] Affiliate registration settings page"
+#~ msgid "Affiliate Registration Fields"
+#~ msgstr "Campos de registro de afiliado"
+
 #, fuzzy
 #~| msgctxt "[DASHBOARD] Filters"
 #~| msgid "Compare Affiliates"
 #~ msgid "YITH WooCommerce Affiliates"
 #~ msgstr "Comparar afiliados"
-
-#~ msgctxt "[DASHBOARD] Time diff"
-#~ msgid "s"
-#~ msgstr "s"
-
-#~ msgctxt "[DASHBOARD] Time diff"
-#~ msgid "m"
-#~ msgstr "m"
-
-#~ msgctxt "[DASHBOARD] Time diff"
-#~ msgid "h"
-#~ msgstr "h"
-
-#~ msgctxt "[DASHBOARD] Time diff"
-#~ msgid "d"
-#~ msgstr "d"
-
-#~ msgctxt "[DASHBOARD] Time diff"
-#~ msgid "w"
-#~ msgstr "sem"
-
-#~ msgctxt "[DASHBOARD] Time diff"
-#~ msgid "mo"
-#~ msgstr "me"
-
-#~ msgctxt "[DASHBOARD] Time diff"
-#~ msgid "y"
-#~ msgstr "a"
-
-#~ msgctxt "[DASHBOARD] Chart name"
-#~ msgid "Average conversion time"
-#~ msgstr "Tiempo medio de conversión"
-
-#~ msgctxt "[DASHBOARD] Chart name"
-#~ msgid "Average conversion rate"
-#~ msgstr "Porcentaje medio de conversión"
-
-#~ msgctxt "[DASHBOARD] Chart name"
-#~ msgid "Total conversions"
-#~ msgstr "Total de conversiones"
-
-#~ msgctxt "[DASHBOARD] Chart name"
-#~ msgid "Total visits"
-#~ msgstr "Total de visitas"
-
-#~ msgctxt "[DASHBOARD] Chart name"
-#~ msgid "Total earnings from affiliates"
-#~ msgstr "Beneficios totales de los afiliados"
-
-#~ msgctxt "[DASHBOARD] Chart name"
-#~ msgid "Refunded commissions"
-#~ msgstr "Comisiones reembolsadas"
-
-#~ msgctxt "[DASHBOARD] Chart name"
-#~ msgid "Paid commissions"
-#~ msgstr "Comisiones pagadas"
-
-#~ msgctxt "[DASHBOARD] Chart name"
-#~ msgid "Total commissions"
-#~ msgstr "Comisiones totales"
-
-#~ msgctxt "[DASHBOARD] Filters"
-#~ msgid "Compare"
-#~ msgstr "Comparar"
-
-#~ msgctxt "[DASHBOARD] Filters"
-#~ msgid "Search for affiliates to compare"
-#~ msgstr "Buscar afiliados para comparar"
-
-#~ msgctxt "[DASHBOARD] Filters"
-#~ msgid "Check at least two affiliates below to compare"
-#~ msgstr "Marca al menos dos afiliados para comparar"
-
-#~ msgctxt "[DASHBOARD] Filters"
-#~ msgid "Comparison"
-#~ msgstr "Comparación"
-
-#~ msgctxt "[DASHBOARD] Filters"
-#~ msgid "Type to search for an affiliate"
-#~ msgstr "Escribe para buscar un afiliado"
-
-#~ msgctxt "[DASHBOARD] Filters"
-#~ msgid "Single affiliate"
-#~ msgstr "Afiliado único"
-
-#~ msgctxt "[DASHBOARD] Filters"
-#~ msgid "All affiliates"
-#~ msgstr "Todos los afiliados"
-
-#~ msgctxt "[DASHBOARD] Filters"
-#~ msgid "Show"
-#~ msgstr "Mostrar"
-
-#~ msgctxt "[DASHBOARD] Affiliates leaderboard"
-#~ msgid "Earnings generated"
-#~ msgstr "Beneficios generados"
-
-#~ msgctxt "[DASHBOARD] Affiliates leaderboard"
-#~ msgid "Total commissions"
-#~ msgstr "Comisiones totales"
-
-#~ msgctxt "[DASHBOARD] Affiliates leaderboard"
-#~ msgid "Top affiliates"
-#~ msgstr "Mejores afiliados"
-
-#~ msgctxt "[DASHBOARD] Products leaderboard"
-#~ msgid "Earnings generated"
-#~ msgstr "Beneficios generados"
-
-#~ msgctxt "[DASHBOARD] Products leaderboard"
-#~ msgid "Total commissions"
-#~ msgstr "Comisiones totales"
-
-#~ msgctxt "[DASHBOARD] Products leaderboard"
-#~ msgid "Product"
-#~ msgstr "Producto"
-
-#~ msgctxt "[DASHBOARD] Products leaderboard"
-#~ msgid "Top products"
-#~ msgstr "Mejores productos"
-
-#~ msgctxt "[DASHBOARD] Empty chart message"
-#~ msgid "No data available"
-#~ msgstr "No hay datos disponibles"
 
 #~ msgctxt "[ADMIN] Template field in settings"
 #~ msgid "File was not found."
@@ -4395,8 +4581,8 @@ msgstr "Beneficios del negocio:"
 #~ "Please, refer to the following <a href=\"%s\" target=\"_blank\">example</"
 #~ "a> for invoice creation"
 #~ msgstr ""
-#~ "Por favor, haz referencia al siguiente <a href=\"%s\" target=\"_blank"
-#~ "\">example</a> para la creación de la factura"
+#~ "Por favor, haz referencia al siguiente <a href=\"%s\" "
+#~ "target=\"_blank\">example</a> para la creación de la factura"
 
 #~ msgctxt "[FRONTEND] Withdraw modal"
 #~ msgid "Please, use this info in your invoice:"
@@ -4446,8 +4632,8 @@ msgstr "Beneficios del negocio:"
 
 #~ msgctxt "[FRONTEND] Withdraw modal"
 #~ msgid ""
-#~ "Billing info not found. Please, fill in the fields in the <a target="
-#~ "\"_blank\" href=\"%s\">Settings tab &gt;</a>"
+#~ "Billing info not found. Please, fill in the fields in the <a "
+#~ "target=\"_blank\" href=\"%s\">Settings tab &gt;</a>"
 #~ msgstr ""
 #~ "Información de facturación no encontrada. Por favor, rellena los campos "
 #~ "en la <a target=\"_blank\" href=\"%s\">Pestaña de ajustes &gt;</a>"
@@ -4749,9 +4935,9 @@ msgstr "Beneficios del negocio:"
 #~ msgid ""
 #~ "Rate rules allow to override the global rate (defined in General options) "
 #~ "for specific users, user roles or products.<br/>Please note: rules "
-#~ "applied to products are higher in priority by default. <a target=\"_blank"
-#~ "\" href=\"%s\">Read the documentation to better understand how rules work "
-#~ "></a>"
+#~ "applied to products are higher in priority by default. <a "
+#~ "target=\"_blank\" href=\"%s\">Read the documentation to better understand "
+#~ "how rules work ></a>"
 #~ msgstr ""
 #~ "Las reglas de porcentaje permiten anular el porcentaje global (definida "
 #~ "en Opciones generales) para usuarios, roles de usuario o productos "
@@ -4780,17 +4966,9 @@ msgstr "Beneficios del negocio:"
 #~ msgid "YITH Show Coupons"
 #~ msgstr "YITH Mostrar Cupones"
 
-#~ msgctxt "[BUILDERS] Shortcode attributes"
-#~ msgid "Initial affiliate token to show"
-#~ msgstr "Token de afiliación inicial para mostrar"
-
 #~ msgctxt "[BUILDERS] Shortcode description"
 #~ msgid "Show \"Set referrer\" box"
 #~ msgstr "Muestra la casilla «Establecer referencia»"
-
-#~ msgctxt "[BUILDERS] Shortcode name"
-#~ msgid "YITH Affiliates \"Set Referrer\" box"
-#~ msgstr "YITH Affiliates - Casilla «Establecer referencia»"
 
 #~ msgctxt "[BUILDERS] Shortcode attributes"
 #~ msgid "There isn't any affiliate selected for current session"
@@ -5260,8 +5438,8 @@ msgstr "Beneficios del negocio:"
 #~ "IPN response received correctly from PayPal's server for payment #%1$s "
 #~ "(txn_id: %2$s)"
 #~ msgstr ""
-#~ "Respuesta IPN recibida correctamente del servidor de PayPal para el pago #"
-#~ "%1$s (txn_id: %2$s)"
+#~ "Respuesta IPN recibida correctamente del servidor de PayPal para el pago "
+#~ "#%1$s (txn_id: %2$s)"
 
 #~ msgctxt "[ADMIN] Gateway logs."
 #~ msgid ""
@@ -5607,10 +5785,6 @@ msgstr "Beneficios del negocio:"
 #~ "Your {site_title} commission from {confirmed_date} is awaiting payment"
 #~ msgstr ""
 #~ "Tu comisión {site_title} de {commission_date} está pendiente de pago"
-
-#~ msgctxt "[EMAILS] New affiliate commission"
-#~ msgid "Your commission is awaiting payment"
-#~ msgstr "Tu comisión está esperando el pago"
 
 #~ msgctxt "[EMAILS] New affiliate commission"
 #~ msgid ""
@@ -6619,10 +6793,10 @@ msgstr "Beneficios del negocio:"
 
 #~ msgctxt "[ADMIN] Commissions/Payments settings page"
 #~ msgid ""
-#~ "Choose a gateway to execute automatic payments.<br/>If you select \"None"
-#~ "\", the payments will be registered but not issued to any gateway. To "
-#~ "complete the payment, the admin has to manually select the gateway from "
-#~ "the \"Commission payments\" tab."
+#~ "Choose a gateway to execute automatic payments.<br/>If you select "
+#~ "\"None\", the payments will be registered but not issued to any gateway. "
+#~ "To complete the payment, the admin has to manually select the gateway "
+#~ "from the \"Commission payments\" tab."
 #~ msgstr ""
 #~ "Elige una pasarela para ejecutar los pagos automáticos.<br/>Si "
 #~ "seleccionas «Ninguna», los pagos se registrarán pero no se emitirán a "

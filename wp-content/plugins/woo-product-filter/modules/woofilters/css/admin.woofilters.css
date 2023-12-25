@@ -90,12 +90,17 @@
     border-bottom: 1px solid #d8dfe3;
     width: 100%;
 }
+#wpfFiltersEditForm .row {
+	flex-wrap: nowrap;
+	display: block;
+}
 #row-tab-settings .tabs-wrapper{
 	padding-top: 20px;
 }
 .wpfMainTabsContainer {
 	padding: 0 15px;
 }
+
 .wpfFiltersTabContents {
 	background-color: #f8fafb;
 	padding: 15px 15px 15px 0 !important;
@@ -546,12 +551,7 @@ input.wpfSmallInput{
 .wpfCombineOptions input.wpfSmallInput{
 	height: 28px;
 }
-#wpfAddDialog{
-	/*display: inline-block;*/
-	width: 100%!important;
-	margin-top: 10px;
-	min-height: 32px!important;
-}
+
 .wpfSkinWrapper{
 	display: inline-block;
 	max-width: 50%;

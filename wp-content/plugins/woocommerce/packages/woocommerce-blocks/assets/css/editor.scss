@@ -8,6 +8,10 @@
 
 			.wc-block-grid__product {
 				margin: 0 0 $gap-large 0;
+
+				.wc-block-grid__product-onsale {
+					position: absolute;
+				}
 			}
 		}
 
@@ -31,10 +35,6 @@
 	+ .wc-block-base-control-notice:last-child {
 		margin: -$gap 0 $gap-small;
 	}
-}
-
-svg.wc-block-editor-components-block-icon {
-	color: $studio-woocommerce-purple-50;
 }
 
 svg.wc-block-editor-components-block-icon--sparkles path {

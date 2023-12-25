@@ -3,9 +3,9 @@
  */
 import { useState, useEffect, useMemo } from '@wordpress/element';
 import { useDebounce } from 'use-debounce';
-import { isEmpty, sortBy } from 'lodash';
-import { useShallowEqual } from '@woocommerce/base-hooks';
 import { objectHasProp } from '@woocommerce/types';
+import { sort } from 'fast-sort';
+import { useShallowEqual } from '@woocommerce/base-hooks';
 
 /**
  * Internal dependencies
@@ -22,7 +22,7 @@ const buildCollectionDataQuery = (
 	if (
 		Array.isArray( collectionDataQueryState.calculate_attribute_counts )
 	) {
-		query.calculate_attribute_counts = sortBy(
+		query.calculate_attribute_counts = sort(
 			collectionDataQueryState.calculate_attribute_counts.map(
 				( { taxonomy, queryType } ) => {
 					return {
@@ -30,9 +30,8 @@ const buildCollectionDataQuery = (
 						query_type: queryType,
 					};
 				}
-			),
-			[ 'taxonomy', 'query_type' ]
-		);
+			)
+		).asc( [ 'taxonomy', 'query_type' ] );
 	}
 
 	return query;
@@ -47,7 +46,7 @@ interface UseCollectionDataProps {
 	queryStock?: boolean;
 	queryRating?: boolean;
 	queryState: Record< string, unknown >;
-	productIds?: number[];
+	isEditor?: boolean;
 }
 
 export const useCollectionData = ( {
@@ -56,7 +55,7 @@ export const useCollectionData = ( {
 	queryStock,
 	queryRating,
 	queryState,
-	productIds,
+	isEditor = false,
 }: UseCollectionDataProps ) => {
 	let context = useQueryStateContext();
 	context = `${ context }-collection-data`;
@@ -145,7 +144,7 @@ export const useCollectionData = ( {
 	] );
 
 	// Defer the select query so all collection-data query vars can be gathered.
-	const [ shouldSelect, setShouldSelect ] = useState( false );
+	const [ shouldSelect, setShouldSelect ] = useState( isEditor );
 	const [ debouncedShouldSelect ] = useDebounce( shouldSelect, 200 );
 
 	if ( ! shouldSelect ) {
@@ -165,7 +164,6 @@ export const useCollectionData = ( {
 			per_page: undefined,
 			orderby: undefined,
 			order: undefined,
-			...( ! isEmpty( productIds ) && { include: productIds } ),
 			...collectionDataQueryVars,
 		},
 		shouldSelect: debouncedShouldSelect,

@@ -9,9 +9,9 @@ namespace Automattic\WooCommerce\Internal\Admin\Notes;
 
 defined( 'ABSPATH' ) || exit;
 
-use \Automattic\WooCommerce\Admin\Notes\Note;
-use \Automattic\WooCommerce\Admin\Notes\NoteTraits;
-use \Automattic\WooCommerce\Internal\Admin\Onboarding\OnboardingProfile;
+use Automattic\WooCommerce\Admin\Notes\Note;
+use Automattic\WooCommerce\Admin\Notes\NoteTraits;
+use Automattic\WooCommerce\Internal\Admin\Onboarding\OnboardingProfile;
 
 /**
  * Selling_Online_Courses
@@ -76,7 +76,7 @@ class SellingOnlineCourses {
 		$note->add_action(
 			'learn-more',
 			__( 'Learn more', 'woocommerce' ),
-			'https://woocommerce.com/posts/how-to-sell-online-courses-wordpress/?utm_source=inbox&utm_medium=product',
+			'https://woo.com/posts/how-to-sell-online-courses-wordpress/?utm_source=inbox&utm_medium=product',
 			Note::E_WC_ADMIN_NOTE_ACTIONED
 		);
 

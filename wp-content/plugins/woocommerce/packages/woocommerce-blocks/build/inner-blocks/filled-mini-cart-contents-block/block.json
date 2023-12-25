@@ -1,8 +1,8 @@
 {
 	"name": "woocommerce/filled-mini-cart-contents-block",
 	"version": "1.0.0",
-	"title": "Filled Mini Cart view",
-	"description": "Contains blocks that display the content of the Mini Cart.",
+	"title": "Filled Mini-Cart view",
+	"description": "Contains blocks that display the content of the Mini-Cart.",
 	"category": "woocommerce",
 	"supports": {
 		"align": false,
@@ -22,6 +22,7 @@
 		}
 	},
 	"parent": [ "woocommerce/mini-cart-contents" ],
-	"textdomain": "woo-gutenberg-products-block",
-	"apiVersion": 2
+	"textdomain": "woocommerce",
+	"apiVersion": 2,
+	"$schema": "https://schemas.wp.org/trunk/block.json"
 }

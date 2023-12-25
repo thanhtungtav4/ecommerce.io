@@ -2,7 +2,7 @@
 namespace Automattic\WooCommerce\Blocks\Assets;
 
 use Automattic\WooCommerce\Blocks\Package;
-
+use Automattic\WooCommerce\Blocks\Domain\Services\Hydration;
 use Exception;
 use InvalidArgumentException;
 
@@ -67,8 +67,7 @@ class AssetDataRegistry {
 	 */
 	protected function init() {
 		add_action( 'init', array( $this, 'register_data_script' ) );
-		add_action( 'wp_print_footer_scripts', array( $this, 'enqueue_asset_data' ), 1 );
-		add_action( 'admin_print_footer_scripts', array( $this, 'enqueue_asset_data' ), 1 );
+		add_action( is_admin() ? 'admin_print_footer_scripts' : 'wp_print_footer_scripts', array( $this, 'enqueue_asset_data' ), 1 );
 	}
 
 	/**
@@ -84,13 +83,16 @@ class AssetDataRegistry {
 			'adminUrl'           => admin_url(),
 			'countries'          => WC()->countries->get_countries(),
 			'currency'           => $this->get_currency_data(),
+			'currentUserId'      => get_current_user_id(),
 			'currentUserIsAdmin' => current_user_can( 'manage_woocommerce' ),
+			'dateFormat'         => wc_date_format(),
 			'homeUrl'            => esc_url( home_url( '/' ) ),
 			'locale'             => $this->get_locale_data(),
+			'dashboardUrl'       => wc_get_account_endpoint_url( 'dashboard' ),
 			'orderStatuses'      => $this->get_order_statuses(),
 			'placeholderImgSrc'  => wc_placeholder_img_src(),
 			'productsSettings'   => $this->get_products_settings(),
-			'siteTitle'          => get_bloginfo( 'name' ),
+			'siteTitle'          => wp_specialchars_decode( get_bloginfo( 'name' ), ENT_QUOTES ),
 			'storePages'         => $this->get_store_pages(),
 			'wcAssetUrl'         => plugins_url( 'assets/', WC_PLUGIN_FILE ),
 			'wcVersion'          => defined( 'WC_VERSION' ) ? WC_VERSION : '',
@@ -227,6 +229,8 @@ class AssetDataRegistry {
 		 * Automattic\WooCommerce\Blocks\Package::container()->get( Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry::class )->add( $key, $value )
 		 * ```
 		 *
+		 * @since 5.0.0
+		 *
 		 * @deprecated
 		 * @param array $data Settings data.
 		 * @return array
@@ -290,9 +294,9 @@ class AssetDataRegistry {
 	 * You can only register data that is not already in the registry identified by the given key. If there is a
 	 * duplicate found, unless $ignore_duplicates is true, an exception will be thrown.
 	 *
-	 * @param string  $key               The key used to reference the data being registered.
-	 * @param mixed   $data              If not a function, registered to the registry as is. If a function, then the
-	 *                                   callback is invoked right before output to the screen.
+	 * @param string  $key              The key used to reference the data being registered. This should use camelCase.
+	 * @param mixed   $data             If not a function, registered to the registry as is. If a function, then the
+	 *                                  callback is invoked right before output to the screen.
 	 * @param boolean $check_key_exists If set to true, duplicate data will be ignored if the key exists.
 	 *                                  If false, duplicate data will cause an exception.
 	 *
@@ -314,14 +318,38 @@ class AssetDataRegistry {
 	}
 
 	/**
-	 * Hydrate from API.
+	 * Hydrate from the API.
 	 *
 	 * @param string $path REST API path to preload.
 	 */
 	public function hydrate_api_request( $path ) {
 		if ( ! isset( $this->preloaded_api_requests[ $path ] ) ) {
-			$this->preloaded_api_requests = rest_preload_api_request( $this->preloaded_api_requests, $path );
+			$this->preloaded_api_requests[ $path ] = Package::container()->get( Hydration::class )->get_rest_api_response_data( $path );
 		}
+	}
+
+	/**
+	 * Hydrate some data from the API.
+	 *
+	 * @param string  $key  The key used to reference the data being registered.
+	 * @param string  $path REST API path to preload.
+	 * @param boolean $check_key_exists If set to true, duplicate data will be ignored if the key exists.
+	 *                                  If false, duplicate data will cause an exception.
+	 *
+	 * @throws InvalidArgumentException  Only throws when site is in debug mode. Always logs the error.
+	 */
+	public function hydrate_data_from_api_request( $key, $path, $check_key_exists = false ) {
+		$this->add(
+			$key,
+			function() use ( $path ) {
+				if ( isset( $this->preloaded_api_requests[ $path ], $this->preloaded_api_requests[ $path ]['body'] ) ) {
+					return $this->preloaded_api_requests[ $path ]['body'];
+				}
+				$response = Package::container()->get( Hydration::class )->get_rest_api_response_data( $path );
+				return $response['body'] ?? '';
+			},
+			$check_key_exists
+		);
 	}
 
 	/**
@@ -364,15 +392,18 @@ class AssetDataRegistry {
 			$this->initialize_core_data();
 			$this->execute_lazy_data();
 
-			$data                   = rawurlencode( wp_json_encode( $this->data ) );
-			$preloaded_api_requests = rawurlencode( wp_json_encode( $this->preloaded_api_requests ) );
+			$data                          = rawurlencode( wp_json_encode( $this->data ) );
+			$wc_settings_script            = "var wcSettings = wcSettings || JSON.parse( decodeURIComponent( '" . esc_js( $data ) . "' ) );";
+			$preloaded_api_requests_script = '';
+
+			if ( count( $this->preloaded_api_requests ) > 0 ) {
+				$preloaded_api_requests        = rawurlencode( wp_json_encode( $this->preloaded_api_requests ) );
+				$preloaded_api_requests_script = "wp.apiFetch.use( wp.apiFetch.createPreloadingMiddleware( JSON.parse( decodeURIComponent( '" . esc_js( $preloaded_api_requests ) . "' ) ) ) );";
+			}
 
 			wp_add_inline_script(
 				$this->handle,
-				"
-				var wcSettings = wcSettings || JSON.parse( decodeURIComponent( '" . esc_js( $data ) . "' ) );
-				wp.apiFetch.use( wp.apiFetch.createPreloadingMiddleware( JSON.parse( decodeURIComponent( '" . esc_js( $preloaded_api_requests ) . "' ) ) ) )
-				",
+				$wc_settings_script . $preloaded_api_requests_script,
 				'before'
 			);
 		}

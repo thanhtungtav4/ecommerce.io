@@ -2,7 +2,7 @@
 /**
  * Payment data store
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -594,6 +594,10 @@ if ( ! class_exists( 'YITH_WCAF_Payment_Data_Store' ) ) {
 			global $wpdb;
 
 			$res = $this->cache_get( 'per_status_counts' );
+
+			if ( empty( $res ) ) {
+				$res = array();
+			}
 
 			if ( ! $res ) {
 				$defaults = array(

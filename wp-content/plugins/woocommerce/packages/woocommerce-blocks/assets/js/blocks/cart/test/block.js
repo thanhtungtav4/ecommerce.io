@@ -6,7 +6,7 @@ import { previewCart } from '@woocommerce/resource-previews';
 import { dispatch } from '@wordpress/data';
 import { CART_STORE_KEY as storeKey } from '@woocommerce/block-data';
 import { default as fetchMock } from 'jest-fetch-mock';
-import { __experimentalRegisterCheckoutFilters } from '@woocommerce/blocks-checkout';
+import { registerCheckoutFilters } from '@woocommerce/blocks-checkout';
 
 /**
  * Internal dependencies
@@ -32,18 +32,18 @@ import OrderSummarySubtotalBlock from '../inner-blocks/cart-order-summary-subtot
 import OrderSummaryShippingBlock from '../inner-blocks/cart-order-summary-shipping/frontend';
 import OrderSummaryTaxesBlock from '../inner-blocks/cart-order-summary-taxes/frontend';
 
+jest.mock( '@wordpress/compose', () => ( {
+	...jest.requireActual( '@wordpress/compose' ),
+	useResizeObserver: jest.fn().mockReturnValue( [ null, { width: 0 } ] ),
+} ) );
+
 const CartBlock = ( {
 	attributes = {
 		showRateAfterTaxName: false,
-		isShippingCalculatorEnabled: false,
 		checkoutPageId: 0,
 	},
 } ) => {
-	const {
-		showRateAfterTaxName,
-		isShippingCalculatorEnabled,
-		checkoutPageId,
-	} = attributes;
+	const { showRateAfterTaxName, checkoutPageId } = attributes;
 	return (
 		<Cart attributes={ attributes }>
 			<FilledCart>
@@ -54,11 +54,7 @@ const CartBlock = ( {
 					<OrderSummaryBlock>
 						<OrderSummaryHeadingBlock />
 						<OrderSummarySubtotalBlock />
-						<OrderSummaryShippingBlock
-							isShippingCalculatorEnabled={
-								isShippingCalculatorEnabled
-							}
-						/>
+						<OrderSummaryShippingBlock />
 						<OrderSummaryTaxesBlock
 							showRateAfterTaxName={ showRateAfterTaxName }
 						/>
@@ -240,7 +236,7 @@ describe( 'Testing cart', () => {
 			items: [ previewCart.items[ 0 ] ],
 		};
 
-		__experimentalRegisterCheckoutFilters( 'woo-blocks-test-extension', {
+		registerCheckoutFilters( 'woo-blocks-test-extension', {
 			showRemoveItemLink: ( value, extensions, { cartItem } ) => {
 				return cartItem.id !== cart.items[ 0 ].id;
 			},

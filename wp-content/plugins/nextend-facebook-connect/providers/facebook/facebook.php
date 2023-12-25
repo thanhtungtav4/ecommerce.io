@@ -76,13 +76,14 @@ class NextendSocialProviderFacebook extends NextendSocialProviderOAuth {
         ));
 
         parent::__construct(array(
-            'appid'          => '',
-            'secret'         => '',
-            'skin'           => 'dark',
-            'login_label'    => 'Continue with <b>Facebook</b>',
-            'register_label' => 'Sign up with <b>Facebook</b>',
-            'link_label'     => 'Link account with <b>Facebook</b>',
-            'unlink_label'   => 'Unlink account from <b>Facebook</b>'
+            'appid'              => '',
+            'secret'             => '',
+            'skin'               => 'dark',
+            'login_label'        => 'Continue with <b>Facebook</b>',
+            'register_label'     => 'Sign up with <b>Facebook</b>',
+            'link_label'         => 'Link account with <b>Facebook</b>',
+            'unlink_label'       => 'Unlink account from <b>Facebook</b>',
+            'profile_image_size' => 'default'
         ));
     }
 
@@ -172,7 +173,7 @@ class NextendSocialProviderFacebook extends NextendSocialProviderOAuth {
     public function validateSettings($newData, $postedData) {
         $newData = parent::validateSettings($newData, $postedData);
 
-        foreach ($postedData AS $key => $value) {
+        foreach ($postedData as $key => $value) {
 
             switch ($key) {
                 case 'tested':
@@ -194,6 +195,7 @@ class NextendSocialProviderFacebook extends NextendSocialProviderOAuth {
                     }
                     break;
                 case 'skin':
+                case 'profile_image_size':
                     $newData[$key] = trim(sanitize_text_field($value));
                     break;
             }
@@ -223,6 +225,8 @@ class NextendSocialProviderFacebook extends NextendSocialProviderOAuth {
      * @throws Exception
      */
     protected function getCurrentUserInfo() {
+        $profile_image_size = $this->settings->get('profile_image_size');
+        $profile_image_size !== "default" ? $pictureSize = 'picture.width(' . $profile_image_size . ')' : $pictureSize = 'picture.type(large)';
 
         $fields       = array(
             'id',
@@ -230,7 +234,7 @@ class NextendSocialProviderFacebook extends NextendSocialProviderOAuth {
             'email',
             'first_name',
             'last_name',
-            'picture.type(large)'
+            $pictureSize
         );
         $extra_fields = apply_filters('nsl_facebook_sync_node_fields', array(), 'me');
 

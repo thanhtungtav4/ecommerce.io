@@ -2,10 +2,10 @@
 Contributors: nosilver4u
 Donate link: https://ewww.io/donate/
 Tags: optimize, image, convert, webp, resize, compress, lazy load, optimization, lossless, lossy, seo, scale
-Requires at least: 5.8
-Tested up to: 6.1
-Requires PHP: 7.2
-Stable tag: 6.9.3
+Requires at least: 6.1
+Tested up to: 6.4
+Requires PHP: 7.3
+Stable tag: 7.2.2
 License: GPLv3
 
 Smaller Images, Faster Sites, Happier Visitors. Comprehensive image optimization that doesn't require a degree in rocket science.
@@ -38,7 +38,10 @@ With Easy IO, images are automatically compressed, scaled to fit the page and de
 
 Stuck? Feeling like maybe you DO need that rocket science degree? [We provide free one-on-one email support to everyone](https://ewww.io/contact-us/).
 Do you have an idea to make EWWW IO even better? [Share it and vote on future features](https://feedback.ewww.io/b/features)!
+
 Found a bug? Report the issue on [GitHub](https://github.com/nosilver4u/ewww-image-optimizer), and we'll get it fixed!
+
+You may report security issues through our Patchstack Vulnerability Disclosure Program. The Patchstack team helps validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/ewww-image-optimizer)
 
 = Bulk Optimize =
 
@@ -119,7 +122,7 @@ See [https://docs.ewww.io/article/39-bulk-optimizer-failure](https://docs.ewww.i
 
 = What are the supported operating systems? =
 
-I've tested it on Windows (with Apache), Linux, Mac OSX, FreeBSD, and Solaris. The Compress API and Easy IO CDN will work on any OS.
+Free mode using local server compression is supported on Windows, Linux, MacOS, and FreeBSD. The Compress API and Easy IO CDN will work on any OS.
 
 = I want to know more about image optimization, and why you chose these options/tools. =
 
@@ -136,6 +139,69 @@ That's not a question, but since I made it up, I'll answer it. See this resource
 
 * Feature requests can be viewed and submitted on our [feedback portal](https://feedback.ewww.io/b/features)
 * If you would like to help translate this plugin in your language, [join the team](https://translate.wordpress.org/projects/wp-plugins/ewww-image-optimizer/)
+
+= 7.2.2 =
+* fixed: Lazy Load compatibility with X/Pro themes and Cornerstone builder
+* fixed: JPG quality level ignored during PNG to JPG conversion
+* fixed: too much scaling for Visual Composer background images with zoom effect
+* fixed: Perfect Images compatibility function broken during image upload
+* fixed: Easy IO strips extra sub-folders in non-image URLs
+* fixed: compatibility with NextGEN Gallery 3.50+
+* fixed: optimization of dynamic thumbs for NextGEN Gallery
+
+= 7.2.1 =
+* changed: Scheduled Optimizer skips image errors faster
+* changed: use updated coding standards, and restructure code for async/background functions
+* removed: legacy image editor extensions for unmaintained plugins
+* security: randomize filename of debug log
+
+= 7.2.0 =
+* added: Easy IO rewrites poster/thumbnail image URLs for video elements
+* changed: Easy IO + Auto Scale checks images on load and resize events to reduce browser upscaling
+* changed: prevent Easy IO font substitution when OMGF is active
+* fixed: Auto Scale downscales too much for landscape images displayed in portrait containers
+* fixed: Easy IO compatibility with Brizy thumbnail generation endpoint
+
+= 7.1.0 =
+* added: deliver Google Fonts via Easy IO or Bunny Fonts for improved user privacy
+* fixed: PHP error trying to save EXIF data to JPG after resizing
+* fixed: could not disable auto-scaling
+* fixed: prevent errors when using legacy Animated GIF Resizing plugin
+* fixed: prevent WP Offload Media from prematurely re-offloading when using bulk optimizer
+
+= 7.0.2 =
+* fixed: background optimization incorrectly displays as disabled on fresh installs with object caching
+* fixed: Easy IO registration state not detected on multi-site
+* fixed: duplicate queries in wp-admin when used with WP Offload Media
+* fixed: deprecation notices when validating quality settings
+* fixed: error when checking a corrupted PNG for transparency
+
+= 7.0.1 =
+* fixed: Easy IO instructions display incorrect URL when images are on cloud storage (S3, GCS, etc.)
+* fixed: fatal error calling undefined method supports_webp
+
+= 7.0.0 =
+* breaking: namespaced and reorganized several classes, third party integrations should check for compatibility
+* added: allow video files to go through Easy IO CDN (pass through)
+* added: support for WP_Image_Editor_Imagick::set_imagick_time_limit() method added in WP 6.2
+* added: ewwwio_inline_webp_script_attrs filter to add custom data-* attributes to the JS WebP inline scripts
+* added: Easy IO support for BuddyBoss images, video, and documents
+* added: Bulk Optimizer and Scheduled Optimizer include BuddyBoss profile and cover image folders automatically
+* added: backup images post-resize but pre-compression with the ewww_image_optimizer_backup_post_resize filter
+* added: improved support for Hide My WP Ghost in Lazy Load, and WebP rewriting engine 
+* added: update attachment metadata for WPML replicas after image conversion
+* changed: improved Auto Scaling when using full-width layout in Elementor
+* changed: use fread to check mimetype of files for better performance
+* changed: style tag search/regex cleaned up to prevent excess markup
+* fixed: WebP images are added to WP Offload Media queue multiple times
+* fixed: PHP 8.1 deprecation notices from usage of add_submenu_page and add_query_arg
+* fixed: debug notice cannot be dismissed on sub-sites for network-activated installs
+* fixed: PHP notice when cleaning attachment metadata
+* fixed: error when certain options have been stored as strings rather than serialized arrays
+* fixed: tool path and content dir functions don't resolve symlinks
+* fixed: Easy IO image URLs leaking into image gallery block via post editor
+* fixed: JS WebP issues when body tag has script attributes
+* fixed: clearing debug log does not redirect back to settings page in rare cases
 
 = 6.9.3 =
 * changed: improved Brizy Builder compatibility

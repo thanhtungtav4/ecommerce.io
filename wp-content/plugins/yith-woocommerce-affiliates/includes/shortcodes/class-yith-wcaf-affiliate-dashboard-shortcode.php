@@ -2,7 +2,7 @@
 /**
  * Affiliate Dashboard shortcode
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH/Affiliates/Classes
  * @version 2.0.0
  */
@@ -186,6 +186,10 @@ if ( ! class_exists( 'YITH_WCAF_Affiliate_Dashboard_Shortcode' ) ) {
 		 */
 		public function get_template_atts( $atts ) {
 			$affiliate = YITH_WCAF_Affiliate_Factory::get_current_affiliate();
+
+			if ( ! $affiliate || ! $affiliate instanceof YITH_WCAF_Affiliate ) {
+				return;
+			}
 
 			$commissions              = array();
 			$show_commissions_summary = 'yes' === $atts['show_commissions_summary'];

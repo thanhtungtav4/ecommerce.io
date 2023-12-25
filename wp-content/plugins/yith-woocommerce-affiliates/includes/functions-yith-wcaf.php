@@ -2,7 +2,7 @@
 /**
  * Utility functions
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates
  * @version 1.0.0
  */

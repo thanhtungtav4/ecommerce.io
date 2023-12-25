@@ -24,12 +24,13 @@
 
 .yith-plugin-fw-welcome .yith-plugin-fw-welcome__icon {
   width: 60px;
+  margin-bottom: 10px;
 }
 
 .yith-plugin-fw-welcome .yith-plugin-fw-welcome__title {
   color: #03689f;
   font-size: 18px;
-  line-height: 2em;
+  line-height: 1.5em;
 }
 
 .yith-plugin-fw-welcome .yith-plugin-fw-welcome__description {

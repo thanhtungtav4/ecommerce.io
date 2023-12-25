@@ -1,0 +1,528 @@
+2023-11-28T00:02:03+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T00:12:20+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T00:14:17+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T00:38:21+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T00:38:24+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T00:40:19+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T00:40:23+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T00:47:02+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T01:47:51+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T02:37:29+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-admin/admin-ajax.php(22): require_once('...')
+#17 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T02:54:51+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T02:58:20+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T09:48:58+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T11:25:05+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T12:39:19+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T12:43:02+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T16:29:54+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T16:30:29+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T16:30:29+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T16:40:27+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T22:48:30+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T23:09:22+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+
+2023-11-28T23:18:57+00:00 CRITICAL Uncaught TypeError: array_map(): Argument #2 ($array) must be of type array, null given in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php:25
+Stack trace:
+#0 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php(25): array_map()
+#1 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(20): Xoo_Ml_Geolocation::get_data()
+#2 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(14): Xoo_Ml_Otp_Handler->__construct()
+#3 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(281): Xoo_Ml_Otp_Handler::get_instance()
+#4 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-otp-handler.php(283): xoo_ml_otp_handler()
+#5 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(66): require_once('...')
+#6 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(23): Xoo_Ml->includes()
+#7 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml.php(16): Xoo_Ml->__construct()
+#8 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(46): Xoo_Ml::get_instance()
+#9 /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/xoo-ml-main.php(39): xoo_ml()
+#10 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(310): xoo_ml_init()
+#11 /var/www/caraslens.com/htdocs/wp-includes/class-wp-hook.php(334): WP_Hook->apply_filters()
+#12 /var/www/caraslens.com/htdocs/wp-includes/plugin.php(517): WP_Hook->do_action()
+#13 /var/www/caraslens.com/htdocs/wp-settings.php(495): do_action()
+#14 /var/www/caraslens.com/wp-config.php(113): require_once('...')
+#15 /var/www/caraslens.com/htdocs/wp-load.php(55): require_once('...')
+#16 /var/www/caraslens.com/htdocs/wp-blog-header.php(13): require_once('...')
+#17 /var/www/caraslens.com/htdocs/index.php(17): require('...')
+#18 {main}
+  thrown in /var/www/caraslens.com/htdocs/wp-content/plugins/mobile-login-woocommerce/includes/class-xoo-ml-geolocation.php on line 25
+

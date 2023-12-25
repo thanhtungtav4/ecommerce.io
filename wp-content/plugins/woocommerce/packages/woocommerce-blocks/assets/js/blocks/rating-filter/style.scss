@@ -31,8 +31,6 @@
 
 	.wc-block-components-product-rating__stars {
 		display: inline-block;
-		line-height: 1;
-		height: 1em;
 	}
 
 	.wc-blocks-components-form-token-field-wrapper {
@@ -56,6 +54,7 @@
 	}
 
 	.wc-blocks-components-form-token-field-wrapper .components-form-token-field__input-container {
+		@include reset-color();
 		@include reset-typography();
 		border: 0;
 		padding: $gap-smaller;

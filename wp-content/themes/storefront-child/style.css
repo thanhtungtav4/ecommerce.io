@@ -355,3 +355,6 @@ select.xoo-ml-phone-cc + .select2.select2-container {
     width: calc(100% - 20px);
   }
 }
+.d-none{
+	display: none;
+}

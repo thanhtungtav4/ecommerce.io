@@ -28,6 +28,14 @@ export function generateUniqueId() {
 export const parseTaxonomyToGenerateURL = ( taxonomy: string ) =>
 	taxonomy.replace( 'pa_', '' );
 
+/**
+ * Formats filter values into a string for the URL parameters needed for filtering PHP templates.
+ *
+ * @param {string} url    Current page URL.
+ * @param {Array}  params Parameters and their constraints.
+ *
+ * @return {string}       New URL with query parameters in it.
+ */
 export const formatParams = ( url: string, params: Array< Param > = [] ) => {
 	const paramObject: Record< string, string > = {};
 
@@ -71,7 +79,9 @@ export const getActiveFilters = (
 				? defaultAttributeParam.split( ',' )
 				: [];
 
-		return defaultCheckedValue;
+		return defaultCheckedValue.map( ( value ) =>
+			encodeURIComponent( value ).toLowerCase()
+		);
 	}
 
 	return [];
@@ -117,7 +127,7 @@ export const parseAttributes = ( data: Record< string, unknown > ) => {
 			isString( data?.attributeId ) ? data.attributeId : '0',
 			10
 		),
-		showCounts: data?.showCounts !== 'false',
+		showCounts: data?.showCounts === 'true',
 		queryType:
 			( isString( data?.queryType ) && data.queryType ) ||
 			metadata.attributes.queryType.default,

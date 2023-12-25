@@ -7,11 +7,7 @@ import { Icon, chevronDown } from '@wordpress/icons';
 import Rating, {
 	RatingValues,
 } from '@woocommerce/base-components/product-rating';
-import {
-	usePrevious,
-	useShallowEqual,
-	useBorderProps,
-} from '@woocommerce/base-hooks';
+import { usePrevious, useShallowEqual } from '@woocommerce/base-hooks';
 import {
 	useQueryStateByKey,
 	useQueryStateByContext,
@@ -21,14 +17,14 @@ import { getSettingWithCoercion } from '@woocommerce/settings';
 import { isBoolean, isObject, objectHasProp } from '@woocommerce/types';
 import isShallowEqual from '@wordpress/is-shallow-equal';
 import { useState, useCallback, useMemo, useEffect } from '@wordpress/element';
-import CheckboxList from '@woocommerce/base-components/checkbox-list';
+import { CheckboxList } from '@woocommerce/blocks-components';
 import FilterSubmitButton from '@woocommerce/base-components/filter-submit-button';
 import FilterResetButton from '@woocommerce/base-components/filter-reset-button';
 import FormTokenField from '@woocommerce/base-components/form-token-field';
 import { addQueryArgs, removeQueryArgs } from '@wordpress/url';
-import { changeUrl } from '@woocommerce/utils';
+import { changeUrl, normalizeQueryParams } from '@woocommerce/utils';
 import classnames from 'classnames';
-import { difference } from 'lodash';
+import type { ReactElement } from 'react';
 
 /**
  * Internal dependencies
@@ -64,22 +60,20 @@ const translations = {
 
 /**
  * Component displaying a rating filter.
- *
- * @param {Object}  props            Incoming props for the component.
- * @param {Object}  props.attributes Incoming block attributes.
- * @param {boolean} props.isEditor
  */
 const RatingFilterBlock = ( {
 	attributes: blockAttributes,
-	isEditor = false,
+	isEditor,
+	noRatingsNotice = null,
 }: {
 	attributes: Attributes;
-	isEditor?: boolean;
+	isEditor: boolean;
+	noRatingsNotice?: ReactElement | null;
 } ) => {
 	const setWrapperVisibility = useSetWraperVisibility();
 
 	const filteringForPhpTemplate = getSettingWithCoercion(
-		'is_rendering_php_template',
+		'isRenderingPhpTemplate',
 		false,
 		isBoolean
 	);
@@ -92,6 +86,7 @@ const RatingFilterBlock = ( {
 		useCollectionData( {
 			queryRating: true,
 			queryState,
+			isEditor,
 		} );
 
 	const [ displayedOptions, setDisplayedOptions ] = useState(
@@ -123,8 +118,8 @@ const RatingFilterBlock = ( {
 		More info: https://github.com/woocommerce/woocommerce-blocks/pull/6920#issuecomment-1222402482
 	 */
 	const [ remountKey, setRemountKey ] = useState( generateUniqueId() );
-
-	const borderProps = useBorderProps( blockAttributes );
+	const [ displayNoProductRatingsNotice, setDisplayNoProductRatingsNotice ] =
+		useState( false );
 
 	/**
 	 * Used to redirect the page when filters are changed so templates using the Classic Template block can filter.
@@ -142,7 +137,7 @@ const RatingFilterBlock = ( {
 				QUERY_PARAM_KEY
 			);
 
-			if ( url !== window.location.href ) {
+			if ( url !== normalizeQueryParams( window.location.href ) ) {
 				changeUrl( url );
 			}
 
@@ -153,7 +148,7 @@ const RatingFilterBlock = ( {
 			[ QUERY_PARAM_KEY ]: checkedRatings.join( ',' ),
 		} );
 
-		if ( newUrl === window.location.href ) {
+		if ( newUrl === normalizeQueryParams( window.location.href ) ) {
 			return;
 		}
 
@@ -161,6 +156,10 @@ const RatingFilterBlock = ( {
 	};
 
 	const multiple = blockAttributes.selectType !== 'single';
+
+	const showChevron = multiple
+		? ! isLoading && checked.length < displayedOptions.length
+		: ! isLoading && checked.length === 0;
 
 	const onSubmit = useCallback(
 		( checkedOptions ) => {
@@ -227,12 +226,19 @@ const RatingFilterBlock = ( {
 		if ( filteredCountsLoading || blockAttributes.isPreview ) {
 			return;
 		}
+
 		const orderedRatings =
 			! filteredCountsLoading &&
 			objectHasProp( filteredCounts, 'rating_counts' ) &&
 			Array.isArray( filteredCounts.rating_counts )
 				? [ ...filteredCounts.rating_counts ].reverse()
 				: [];
+
+		if ( isEditor && orderedRatings.length === 0 ) {
+			setDisplayedOptions( previewOptions );
+			setDisplayNoProductRatingsNotice( true );
+			return;
+		}
 
 		const newOptions = orderedRatings
 			.filter(
@@ -306,7 +312,7 @@ const RatingFilterBlock = ( {
 	}
 
 	const hasFilterableProducts = getSettingWithCoercion(
-		'has_filterable_products',
+		'hasFilterableProducts',
 		false,
 		isBoolean
 	);
@@ -320,6 +326,7 @@ const RatingFilterBlock = ( {
 
 	return (
 		<>
+			{ displayNoProductRatingsNotice && noRatingsNotice }
 			<div
 				className={ classnames(
 					'wc-block-rating-filter',
@@ -333,12 +340,11 @@ const RatingFilterBlock = ( {
 					<>
 						<FormTokenField
 							key={ remountKey }
-							className={ classnames( borderProps.className, {
+							className={ classnames( {
 								'single-selection': ! multiple,
 								'is-loading': isLoading,
 							} ) }
 							style={ {
-								...borderProps.style,
 								borderStyle: 'none',
 							} }
 							suggestions={ displayedOptions
@@ -367,13 +373,19 @@ const RatingFilterBlock = ( {
 										: token;
 								} );
 
-								const added = difference( tokens, checked );
+								const added = [ tokens, checked ].reduce(
+									( a, b ) =>
+										a.filter( ( c ) => ! b.includes( c ) )
+								);
 
 								if ( added.length === 1 ) {
 									return onClick( added[ 0 ] );
 								}
 
-								const removed = difference( checked, tokens );
+								const removed = [ checked, tokens ].reduce(
+									( a, b ) =>
+										a.filter( ( c ) => ! b.includes( c ) )
+								);
 								if ( removed.length === 1 ) {
 									onClick( removed[ 0 ] );
 								}
@@ -445,7 +457,7 @@ const RatingFilterBlock = ( {
 								),
 							} }
 						/>
-						{ multiple && (
+						{ showChevron && (
 							<Icon icon={ chevronDown } size={ 30 } />
 						) }
 					</>
@@ -464,11 +476,11 @@ const RatingFilterBlock = ( {
 			</div>
 			{
 				<div className="wc-block-rating-filter__actions">
-					{ checked.length > 0 && ! isLoading && (
+					{ ( checked.length > 0 || isEditor ) && ! isLoading && (
 						<FilterResetButton
 							onClick={ () => {
 								setChecked( [] );
-								setProductRatings( [] );
+								setProductRatingsQuery( [] );
 								onSubmit( [] );
 							} }
 							screenReaderLabel={ __(

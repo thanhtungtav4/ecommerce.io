@@ -1,9 +1,7 @@
 <?php
 namespace Automattic\WooCommerce\Blocks\BlockTypes;
 
-use Automattic\WooCommerce\Blocks\Package;
-use Automattic\WooCommerce\Blocks\Assets;
-use Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry;
+use Automattic\WooCommerce\Blocks\Utils\CartCheckoutUtils;
 
 /**
  * Cart class.
@@ -24,6 +22,72 @@ class Cart extends AbstractBlock {
 	 * @var string
 	 */
 	protected $chunks_folder = 'cart-blocks';
+
+	/**
+	 * Initialize this block type.
+	 *
+	 * - Hook into WP lifecycle.
+	 * - Register the block with WordPress.
+	 */
+	protected function initialize() {
+		parent::initialize();
+		add_action( 'wp_loaded', array( $this, 'register_patterns' ) );
+	}
+
+	/**
+	 * Dequeues the scripts added by WC Core to the Cart page.
+	 *
+	 * @return void
+	 */
+	public function dequeue_woocommerce_core_scripts() {
+		wp_dequeue_script( 'wc-cart' );
+		wp_dequeue_script( 'wc-password-strength-meter' );
+		wp_dequeue_script( 'selectWoo' );
+		wp_dequeue_style( 'select2' );
+	}
+
+	/**
+	 * Register block pattern for Empty Cart Message to make it translatable.
+	 */
+	public function register_patterns() {
+		$shop_permalink = wc_get_page_id( 'shop' ) ? get_permalink( wc_get_page_id( 'shop' ) ) : '';
+
+		register_block_pattern(
+			'woocommerce/cart-heading',
+			array(
+				'title'    => '',
+				'inserter' => false,
+				'content'  => '<!-- wp:heading {"align":"wide", "level":1} --><h1 class="wp-block-heading alignwide">' . esc_html__( 'Cart', 'woocommerce' ) . '</h1><!-- /wp:heading -->',
+			)
+		);
+		register_block_pattern(
+			'woocommerce/cart-cross-sells-message',
+			array(
+				'title'    => '',
+				'inserter' => false,
+				'content'  => '<!-- wp:heading {"fontSize":"large"} --><h2 class="wp-block-heading has-large-font-size">' . esc_html__( 'You may be interested in…', 'woocommerce' ) . '</h2><!-- /wp:heading -->',
+			)
+		);
+		register_block_pattern(
+			'woocommerce/cart-empty-message',
+			array(
+				'title'    => '',
+				'inserter' => false,
+				'content'  => '
+					<!-- wp:heading {"textAlign":"center","className":"with-empty-cart-icon wc-block-cart__empty-cart__title"} --><h2 class="wp-block-heading has-text-align-center with-empty-cart-icon wc-block-cart__empty-cart__title">' . esc_html__( 'Your cart is currently empty!', 'woocommerce' ) . '</h2><!-- /wp:heading -->
+					<!-- wp:paragraph {"align":"center"} --><p class="has-text-align-center"><a href="' . esc_attr( esc_url( $shop_permalink ) ) . '">' . esc_html__( 'Browse store', 'woocommerce' ) . '</a></p><!-- /wp:paragraph -->
+				',
+			)
+		);
+		register_block_pattern(
+			'woocommerce/cart-new-in-store-message',
+			array(
+				'title'    => '',
+				'inserter' => false,
+				'content'  => '<!-- wp:heading {"textAlign":"center"} --><h2 class="wp-block-heading has-text-align-center">' . esc_html__( 'New in store', 'woocommerce' ) . '</h2><!-- /wp:heading -->',
+			)
+		);
+	}
 
 	/**
 	 * Get the editor script handle for this block type.
@@ -57,18 +121,33 @@ class Cart extends AbstractBlock {
 	}
 
 	/**
+	 * Get the frontend style handle for this block type.
+	 *
+	 * @return string[]
+	 */
+	protected function get_block_type_style() {
+		return array_merge( parent::get_block_type_style(), [ 'wc-blocks-packages-style' ] );
+	}
+
+	/**
 	 * Enqueue frontend assets for this block, just in time for rendering.
 	 *
-	 * @param array $attributes  Any attributes that currently are available from the block.
+	 * @param array    $attributes  Any attributes that currently are available from the block.
+	 * @param string   $content    The block content.
+	 * @param WP_Block $block    The block object.
 	 */
-	protected function enqueue_assets( array $attributes ) {
+	protected function enqueue_assets( array $attributes, $content, $block ) {
 		/**
 		 * Fires before cart block scripts are enqueued.
+		 *
+		 * @since 2.6.0
 		 */
 		do_action( 'woocommerce_blocks_enqueue_cart_block_scripts_before' );
-		parent::enqueue_assets( $attributes );
+		parent::enqueue_assets( $attributes, $content, $block );
 		/**
 		 * Fires after cart block scripts are enqueued.
+		 *
+		 * @since 2.6.0
 		 */
 		do_action( 'woocommerce_blocks_enqueue_cart_block_scripts_after' );
 	}
@@ -82,11 +161,8 @@ class Cart extends AbstractBlock {
 	 * @return string Rendered block type output.
 	 */
 	protected function render( $attributes, $content, $block ) {
-		// Deregister core cart scripts and styles.
-		wp_dequeue_script( 'wc-cart' );
-		wp_dequeue_script( 'wc-password-strength-meter' );
-		wp_dequeue_script( 'selectWoo' );
-		wp_dequeue_style( 'select2' );
+		// Dequeue the core scripts when rendering this block.
+		add_action( 'wp_enqueue_scripts', array( $this, 'dequeue_woocommerce_core_scripts' ), 20 );
 
 		/**
 		 * We need to check if $content has any templates from prior iterations of the block, in order to update to the latest iteration.
@@ -94,7 +170,7 @@ class Cart extends AbstractBlock {
 		 * The blocks used for testing should be always available in the block (not removable by the user).
 		 */
 
-		$regex_for_filled_cart_block = '/<div[\n\r\s\ta-zA-Z0-9_\-=\'"]*data-block-name="woocommerce\/filled-cart-block"[\n\r\s\ta-zA-Z0-9_\-=\'"]*>/mi';
+		$regex_for_filled_cart_block = '/<div[^<]*?data-block-name="woocommerce\/filled-cart-block"[^>]*?>/mi';
 		// Filled Cart block was added in i2, so we search for it to see if we have a Cart i1 template.
 		$has_i1_template = ! preg_match( $regex_for_filled_cart_block, $content );
 
@@ -136,8 +212,8 @@ class Cart extends AbstractBlock {
 			<div data-block-name="woocommerce/cart-order-summary-taxes-block" class="wp-block-woocommerce-cart-order-summary-taxes-block"></div>
 		';
 		// Order summary subtotal block was added in i3, so we search for it to see if we have a Cart i2 template.
-		$regex_for_order_summary_subtotal = '/<div[\n\r\s\ta-zA-Z0-9_\-=\'"]*data-block-name="woocommerce\/cart-order-summary-subtotal-block"[\n\r\s\ta-zA-Z0-9_\-=\'"]*>/mi';
-		$regex_for_order_summary          = '/<div[\n\r\s\ta-zA-Z0-9_\-=\'"]*data-block-name="woocommerce\/cart-order-summary-block"[\n\r\s\ta-zA-Z0-9_\-=\'"]*>/mi';
+		$regex_for_order_summary_subtotal = '/<div[^<]*?data-block-name="woocommerce\/cart-order-summary-subtotal-block"[^>]*?>/mi';
+		$regex_for_order_summary          = '/<div[^<]*?data-block-name="woocommerce\/cart-order-summary-block"[^>]*?>/mi';
 		$has_i2_template                  = ! preg_match( $regex_for_order_summary_subtotal, $content );
 
 		if ( $has_i2_template ) {
@@ -156,40 +232,8 @@ class Cart extends AbstractBlock {
 	 */
 	protected function enqueue_data( array $attributes = [] ) {
 		parent::enqueue_data( $attributes );
-		if ( wc_shipping_enabled() ) {
-			$this->asset_data_registry->add(
-				'shippingCountries',
-				function() {
-					return $this->deep_sort_with_accents( WC()->countries->get_shipping_countries() );
-				},
-				true
-			);
-			$this->asset_data_registry->add(
-				'shippingStates',
-				function() {
-					return $this->deep_sort_with_accents( WC()->countries->get_shipping_country_states() );
-				},
-				true
-			);
-		}
 
-		$this->asset_data_registry->add(
-			'countryLocale',
-			function() {
-				// Merge country and state data to work around https://github.com/woocommerce/woocommerce/issues/28944.
-				$country_locale = wc()->countries->get_country_locale();
-				$states         = wc()->countries->get_states();
-
-				foreach ( $states as $country => $states ) {
-					if ( empty( $states ) ) {
-						$country_locale[ $country ]['state']['required'] = false;
-						$country_locale[ $country ]['state']['hidden']   = true;
-					}
-				}
-				return $country_locale;
-			},
-			true
-		);
+		$this->asset_data_registry->add( 'countryData', CartCheckoutUtils::get_country_data(), true );
 		$this->asset_data_registry->add( 'baseLocation', wc_get_base_location(), true );
 		$this->asset_data_registry->add( 'isShippingCalculatorEnabled', filter_var( get_option( 'woocommerce_enable_shipping_calc' ), FILTER_VALIDATE_BOOLEAN ), true );
 		$this->asset_data_registry->add( 'displayItemizedTaxes', 'itemized' === get_option( 'woocommerce_tax_total_display' ), true );
@@ -199,48 +243,24 @@ class Cart extends AbstractBlock {
 		$this->asset_data_registry->add( 'shippingEnabled', wc_shipping_enabled(), true );
 		$this->asset_data_registry->add( 'hasDarkEditorStyleSupport', current_theme_supports( 'dark-editor-style' ), true );
 		$this->asset_data_registry->register_page_id( isset( $attributes['checkoutPageId'] ) ? $attributes['checkoutPageId'] : 0 );
+		$this->asset_data_registry->add( 'isBlockTheme', wc_current_theme_is_fse_theme(), true );
+
+		$pickup_location_settings = get_option( 'woocommerce_pickup_location_settings', [] );
+		$this->asset_data_registry->add( 'localPickupEnabled', wc_string_to_bool( $pickup_location_settings['enabled'] ?? 'no' ), true );
 
 		// Hydrate the following data depending on admin or frontend context.
 		if ( ! is_admin() && ! WC()->is_rest_api_request() ) {
-			$this->hydrate_from_api();
+			$this->asset_data_registry->hydrate_api_request( '/wc/store/v1/cart' );
 		}
 
 		/**
 		 * Fires after cart block data is registered.
+		 *
+		 * @since 2.6.0
 		 */
 		do_action( 'woocommerce_blocks_cart_enqueue_data' );
 	}
 
-	/**
-	 * Removes accents from an array of values, sorts by the values, then returns the original array values sorted.
-	 *
-	 * @param array $array Array of values to sort.
-	 * @return array Sorted array.
-	 */
-	protected function deep_sort_with_accents( $array ) {
-		if ( ! is_array( $array ) || empty( $array ) ) {
-			return $array;
-		}
-
-		$array_without_accents = array_map(
-			function( $value ) {
-				return is_array( $value )
-					? $this->deep_sort_with_accents( $value )
-					: remove_accents( wc_strtolower( html_entity_decode( $value ) ) );
-			},
-			$array
-		);
-
-		asort( $array_without_accents );
-		return array_replace( $array_without_accents, $array );
-	}
-
-	/**
-	 * Hydrate the cart block with data from the API.
-	 */
-	protected function hydrate_from_api() {
-		$this->asset_data_registry->hydrate_api_request( '/wc/store/v1/cart' );
-	}
 	/**
 	 * Register script and style assets for the block type before it is registered.
 	 *
@@ -250,8 +270,8 @@ class Cart extends AbstractBlock {
 		parent::register_block_type_assets();
 		$chunks        = $this->get_chunks_paths( $this->chunks_folder );
 		$vendor_chunks = $this->get_chunks_paths( 'vendors--cart-blocks' );
-
-		$this->register_chunk_translations( array_merge( $chunks, $vendor_chunks ) );
+		$shared_chunks = [];
+		$this->register_chunk_translations( array_merge( $chunks, $vendor_chunks, $shared_chunks ) );
 	}
 
 	/**

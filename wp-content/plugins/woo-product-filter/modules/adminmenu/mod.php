@@ -4,7 +4,7 @@ class AdminmenuWpf extends ModuleWpf {
 	private $_mainCap = 'manage_options';
 	public function init() {
 		parent::init();
-		add_action('admin_menu', array($this, 'initMenu'), 9);
+		add_action('admin_menu', array($this, 'initMenu'), 90);
 		$plugName = plugin_basename(WPF_DIR . WPF_MAIN_FILE);
 		add_filter('plugin_action_links_' . $plugName, array($this, 'addSettingsLinkForPlug') );
 	}
@@ -20,6 +20,7 @@ class AdminmenuWpf extends ModuleWpf {
 		return $links;
 	}
 	public function initMenu() {
+		
 		$mainCap = $this->getMainCap();
 		$mainSlug = DispatcherWpf::applyFilters('adminMenuMainSlug', $this->_mainSlug);
 		$mainMenuPageOptions = array(
@@ -29,7 +30,13 @@ class AdminmenuWpf extends ModuleWpf {
 			'menu_slug' => $mainSlug,
 			'function' => array(FrameWpf::_()->getModule('options'), 'getAdminPage'));
 		$mainMenuPageOptions = DispatcherWpf::applyFilters('adminMenuMainOption', $mainMenuPageOptions);
+		if (FrameWpf::_()->isWCLicense()) {
+			add_submenu_page('woocommerce', $mainMenuPageOptions['menu_title'], $mainMenuPageOptions['menu_title'], $mainMenuPageOptions['capability'], $mainMenuPageOptions['menu_slug'], $mainMenuPageOptions['function']);
+			return;
+		}
+		
 		add_menu_page($mainMenuPageOptions['page_title'], $mainMenuPageOptions['menu_title'], $mainMenuPageOptions['capability'], $mainMenuPageOptions['menu_slug'], $mainMenuPageOptions['function'], 'dashicons-list-view');
+		
 		//remove duplicated WP menu item
 		//add_submenu_page($mainMenuPageOptions['menu_slug'], '', '', $mainMenuPageOptions['capability'], $mainMenuPageOptions['menu_slug'], $mainMenuPageOptions['function']);
 		$tabs = FrameWpf::_()->getModule('options')->getTabs();

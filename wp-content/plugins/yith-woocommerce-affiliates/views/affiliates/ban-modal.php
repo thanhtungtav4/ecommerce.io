@@ -2,7 +2,7 @@
 /**
  * Ban affiliate modal
  *
- * @author YITH
+ * @author YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Views
  * @version 2.0.0
  */

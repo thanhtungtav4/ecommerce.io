@@ -2,7 +2,7 @@
  * Variation Swatches for WooCommerce
  *
  * Author: Emran Ahmed ( emran.bd.08@gmail.com )
- * Date: 4/13/2023, 3:09:16 AM
+ * Date: 11/21/2023, 2:00:07 PM
  * Released under the GPLv3 license.
  */
 /******/ (function() { // webpackBootstrap
@@ -354,6 +354,37 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
             event.preventDefault();
             $(this).parent().removeClass('enabled-display-limit-mode enabled-catalog-display-limit-mode');
             $(this).remove();
+          });
+          this.$element.find('[data-wvstooltip]').each(function (i, element) {
+            $(element).on('mouseenter', function (event) {
+              var rect = element.getBoundingClientRect();
+              var tooltip = window.getComputedStyle(element, ':before');
+              var arrow = window.getComputedStyle(element, ':after');
+              var arrowHeight = parseInt(arrow.getPropertyValue('border-top-width'), 10);
+              var tooltipHeight = parseInt(tooltip.getPropertyValue('height'), 10);
+              var tooltipWidth = parseInt(tooltip.getPropertyValue('width'), 10);
+              var offset = 2;
+              var calculateTooltipPosition = tooltipHeight + arrowHeight + offset;
+              element.classList.toggle('wvs-tooltip-position-bottom', rect.top < calculateTooltipPosition);
+              var width = tooltipWidth / 2;
+              var position = rect.left + rect.width / 2; // Left
+
+              var left = width - position;
+              var isLeft = width > position;
+              var computedRight = width + position;
+              var isRight = document.body.clientWidth < computedRight;
+              var right = document.body.clientWidth - computedRight;
+              element.style.setProperty('--horizontal-position', "0px");
+
+              if (isLeft) {
+                element.style.setProperty('--horizontal-position', "".concat(left + offset, "px"));
+              }
+
+              if (isRight) {
+                element.style.setProperty('--horizontal-position', "".concat(right - offset, "px"));
+              } //
+
+            });
           });
         }
       }, {

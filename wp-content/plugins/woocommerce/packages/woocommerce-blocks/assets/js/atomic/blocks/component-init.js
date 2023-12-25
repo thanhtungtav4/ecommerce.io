@@ -46,6 +46,33 @@ registerBlockComponent( {
 } );
 
 registerBlockComponent( {
+	blockName: 'woocommerce/product-rating-stars',
+	component: lazy( () =>
+		import(
+			/* webpackChunkName: "product-rating-stars" */ './product-elements/rating-stars/block'
+		)
+	),
+} );
+
+registerBlockComponent( {
+	blockName: 'woocommerce/product-rating-counter',
+	component: lazy( () =>
+		import(
+			/* webpackChunkName: "product-rating-counter" */ './product-elements/rating-counter/block'
+		)
+	),
+} );
+
+registerBlockComponent( {
+	blockName: 'woocommerce/product-average-rating',
+	component: lazy( () =>
+		import(
+			/* webpackChunkName: "product-average-rating" */ './product-elements/average-rating/block'
+		)
+	),
+} );
+
+registerBlockComponent( {
 	blockName: 'woocommerce/product-button',
 	component: lazy( () =>
 		import(
@@ -77,24 +104,6 @@ registerBlockComponent( {
 	component: lazy( () =>
 		import(
 			/* webpackChunkName: "product-sku" */ './product-elements/sku/block'
-		)
-	),
-} );
-
-registerBlockComponent( {
-	blockName: 'woocommerce/product-category-list',
-	component: lazy( () =>
-		import(
-			/* webpackChunkName: "product-category-list" */ './product-elements/category-list/block'
-		)
-	),
-} );
-
-registerBlockComponent( {
-	blockName: 'woocommerce/product-tag-list',
-	component: lazy( () =>
-		import(
-			/* webpackChunkName: "product-tag-list" */ './product-elements/tag-list/block'
 		)
 	),
 } );

@@ -2,7 +2,7 @@
 /**
  * Commission data store
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -841,6 +841,10 @@ if ( ! class_exists( 'YITH_WCAF_Commission_Data_Store' ) ) {
 
 			$res = $this->cache_get( 'per_status_counts' );
 
+			if ( empty( $res ) ) {
+				$res = array();
+			}
+
 			if ( ! $res ) {
 				$defaults = array(
 					'user_id'    => 0,
@@ -989,11 +993,19 @@ if ( ! class_exists( 'YITH_WCAF_Commission_Data_Store' ) ) {
 		public function process_orphan_commissions( $affiliate_id, $search_token ) {
 			global $wpdb;
 
-			$query = "SELECT im.meta_value
-				FROM {$wpdb->prefix}woocommerce_order_itemmeta as im 
-				LEFT JOIN {$wpdb->prefix}woocommerce_order_items AS i USING( order_item_id )
-				LEFT JOIN {$wpdb->postmeta} AS pm ON i.order_id = pm.post_id
-				WHERE im.meta_key = %s AND pm.meta_key = %s AND pm.meta_value = %s";
+			if ( yith_plugin_fw_is_wc_custom_orders_table_usage_enabled() ) {
+				$query = "SELECT im.meta_value
+					FROM {$wpdb->prefix}woocommerce_order_itemmeta as im
+					LEFT JOIN {$wpdb->prefix}woocommerce_order_items AS i USING( order_item_id )
+					LEFT JOIN {$wpdb->prefix}wc_orders_meta AS om ON i.order_id = om.order_id
+					WHERE im.meta_key = %s AND om.meta_key = %s AND om.meta_value = %s";
+			} else {
+				$query = "SELECT im.meta_value
+					FROM {$wpdb->prefix}woocommerce_order_itemmeta as im
+					LEFT JOIN {$wpdb->prefix}woocommerce_order_items AS i USING( order_item_id )
+					LEFT JOIN {$wpdb->postmeta} AS pm ON i.order_id = pm.post_id
+					WHERE im.meta_key = %s AND pm.meta_key = %s AND pm.meta_value = %s";
+			}
 
 			$query_args = array(
 				'_yith_wcaf_commission_id',

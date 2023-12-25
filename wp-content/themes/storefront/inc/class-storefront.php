@@ -354,6 +354,8 @@ if ( ! class_exists( 'Storefront' ) ) :
 			 */
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
+			wp_enqueue_script( 'wc-cart-fragments' );
+
 			wp_enqueue_script( 'storefront-navigation', get_template_directory_uri() . '/assets/js/navigation' . $suffix . '.js', array(), $storefront_version, true );
 
 			if ( has_nav_menu( 'handheld' ) ) {

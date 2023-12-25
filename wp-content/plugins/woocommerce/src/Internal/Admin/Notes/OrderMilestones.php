@@ -9,8 +9,8 @@ namespace Automattic\WooCommerce\Internal\Admin\Notes;
 
 defined( 'ABSPATH' ) || exit;
 
-use \Automattic\WooCommerce\Admin\Notes\Note;
-use \Automattic\WooCommerce\Admin\Notes\Notes;
+use Automattic\WooCommerce\Admin\Notes\Note;
+use Automattic\WooCommerce\Admin\Notes\Notes;
 /**
  * Order_Milestones
  */
@@ -239,13 +239,13 @@ class OrderMilestones {
 				return array(
 					'name'  => 'learn-more',
 					'label' => __( 'Learn more', 'woocommerce' ),
-					'query' => 'https://woocommerce.com/document/managing-orders/?utm_source=inbox&utm_medium=product',
+					'query' => 'https://woo.com/document/managing-orders/?utm_source=inbox&utm_medium=product',
 				);
 			case 10:
 				return array(
 					'name'  => 'browse',
 					'label' => __( 'Browse', 'woocommerce' ),
-					'query' => 'https://woocommerce.com/success-stories/?utm_source=inbox&utm_medium=product',
+					'query' => 'https://woo.com/success-stories/?utm_source=inbox&utm_medium=product',
 				);
 			case 100:
 			case 250:

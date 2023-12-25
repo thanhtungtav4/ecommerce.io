@@ -2,7 +2,7 @@
 /**
  * General admin table handling
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates
  * @version 1.0.0
  */
@@ -586,7 +586,7 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Admin_Table' ) ) {
 		 */
 		public function display() {
 			?>
-			<div class="table-container <?php echo esc_attr( implode( ' ', $this->get_container_classes() ) ); ?>">
+			<div class="table-container  <?php echo esc_attr( implode( ' ', $this->get_container_classes() ) ); ?>">
 				<?php
 				if ( ! $this->has_items() && ! ( $this->should_show_tablenav() && $this->is_filtered() ) ) {
 					$this->display_empty_state();
@@ -1202,6 +1202,21 @@ if ( ! class_exists( 'YITH_WCAF_Abstract_Admin_Table' ) ) {
 				esc_url( YITH_WCAF_Admin()->get_tab_url() ),
 				esc_html_x( 'Reset', '[ADMIN] Reset button label', 'yith-woocommerce-affiliates' )
 			);
+		}
+
+		/**
+		 * Print hidden fields required tro keep selections during filtering
+		 *
+		 * @return void
+		 */
+		protected function print_hidden_fields() {
+			$this->print_status_hidden();
+
+			?>
+			<input type="hidden" name="page" class="post_status_page" value="<?php echo esc_attr( YITH_WCAF_Admin()->get_panel_slug() ); ?>"/>
+			<input type="hidden" name="tab" class="post_status_page" value="<?php echo esc_attr( YITH_WCAF_Admin()->get_current_raw_tab() ); ?>"/>
+			<input type="hidden" name="sub_tab" class="post_status_page" value="<?php echo esc_attr( YITH_WCAF_Admin()->get_current_raw_subtab() ); ?>"/>
+			<?php
 		}
 
 		/**

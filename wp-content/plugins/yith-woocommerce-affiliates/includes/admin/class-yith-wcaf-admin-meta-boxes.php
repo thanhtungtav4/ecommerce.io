@@ -2,7 +2,7 @@
 /**
  * Registers metaboxes for the plugin
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -96,7 +96,7 @@ if ( ! class_exists( 'YITH_WCAF_Admin_Meta_Boxes' ) ) {
 				array(
 					'yith_wcaf_order_referral_commissions' => array(
 						'title'   => _x( 'Referral commissions', '[ADMIN] MetaBox title', 'yith-woocommerce-affiliates' ),
-						'screens' => array( 'shop_order', 'shop_subscription' ),
+						'screens' => array( 'shop_order', 'woocommerce_page_wc-orders', 'shop_subscription' ),
 						'context' => 'side',
 					),
 				)

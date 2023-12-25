@@ -2,7 +2,7 @@
 /**
  * Payment class
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -63,7 +63,6 @@ if ( ! class_exists( 'YITH_WCAF_Payment' ) ) {
 		 * @param int|\YITH_WCAF_Payment $payment Payment identifier.
 		 *
 		 * @throws Exception When not able to load Data Store class.
-		 * @author Antonio La Rocca <antonio.larocca@yithemes.com>
 		 */
 		public function __construct( $payment = 0 ) {
 			// set default values.

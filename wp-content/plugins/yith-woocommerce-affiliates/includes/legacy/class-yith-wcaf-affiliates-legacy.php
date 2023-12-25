@@ -5,7 +5,7 @@
  * This class is deprecated, and you should use none of it methods
  * Please, check \YITH_WCAF_Affiliate instead.
  *
- * @author YITH
+ * @author YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes\Legacy
  * @version 1.0.0
  */

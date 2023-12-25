@@ -2,7 +2,7 @@
 /**
  * Static class that will perform required operations to offer support for WPML plugin suite
  *
- * @author YITH
+ * @author YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */

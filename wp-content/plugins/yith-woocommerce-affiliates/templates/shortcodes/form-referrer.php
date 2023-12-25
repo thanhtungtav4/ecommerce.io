@@ -2,7 +2,7 @@
 /**
  * Referral Form
  *
- * @author YITH
+ * @author YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Templates
  * @version 1.0.6
  */
@@ -32,17 +32,27 @@ if ( ! defined( 'YITH_WCAF' ) ) {
 		$info_message = apply_filters( 'yith_wcaf_set_referrer_message', _x( 'Did anyone suggest our site to you?', '[FRONTEND] Set referrer shortcode', 'yith-woocommerce-affiliates' ) . ' <a href="#" class="show-referrer-form">' . _x( 'Click here to enter his/her affiliate code', '[FRONTEND] Set referrer shortcode', 'yith-woocommerce-affiliates' ) . '</a>' );
 
 		/**
-		 * APPLY_FILTERS: yith_wcaf_show_message_wc_print_notice
+		 * APPLY_FILTERS: yith_wcaf_show_referral_field
 		 *
-		 * Filters whether to show the message as a notice.
+		 * Filters whether to show the section to enter the referral token in the checkout.
 		 *
-		 * @param bool $show_message_as_notice Whether to show the message as a notice or not.
+		 * @param bool $show_referral_field Whether to show the referral field or not.
 		 */
-		if ( apply_filters( 'yith_wcaf_show_message_wc_print_notice', true ) && function_exists( 'wc_print_notice' ) ) {
-			wc_print_notice( $info_message, 'notice' );
-		} else {
-			echo wp_kses_post( $info_message );
+		if ( apply_filters( 'yith_wcaf_show_referral_field', true ) ) {
+			/**
+			 * APPLY_FILTERS: yith_wcaf_show_message_wc_print_notice
+			 *
+			 * Filters whether to show the message as a notice.
+			 *
+			 * @param bool $show_message_as_notice Whether to show the message as a notice or not.
+			 */
+			if ( apply_filters( 'yith_wcaf_show_message_wc_print_notice', true ) && function_exists( 'wc_print_notice' ) ) {
+				wc_print_notice( $info_message, 'notice' );
+			} else {
+				echo wp_kses_post( $info_message );
+			}
 		}
+
 		?>
 
 		<form class="referrer-form" method="post" style="display:none">

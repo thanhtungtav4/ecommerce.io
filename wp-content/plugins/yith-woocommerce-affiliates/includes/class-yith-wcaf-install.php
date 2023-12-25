@@ -2,7 +2,7 @@
 /**
  * Installation related functions and actions.
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates
  * @version 2.0.0
  */

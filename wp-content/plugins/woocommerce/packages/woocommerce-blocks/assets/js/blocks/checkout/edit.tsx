@@ -19,8 +19,11 @@ import {
 	ToggleControl,
 	CheckboxControl,
 } from '@wordpress/components';
+import { SlotFillProvider } from '@woocommerce/blocks-checkout';
 import type { TemplateArray } from '@wordpress/blocks';
-import { CartCheckoutFeedbackPrompt } from '@woocommerce/editor-components/feedback-prompt';
+import { useEffect, useRef } from '@wordpress/element';
+import { getQueryArg } from '@wordpress/url';
+import { dispatch, select } from '@wordpress/data';
 
 /**
  * Internal dependencies
@@ -46,14 +49,15 @@ const ALLOWED_BLOCKS: string[] = [
 ];
 
 export const Edit = ( {
+	clientId,
 	attributes,
 	setAttributes,
 }: {
+	clientId: string;
 	attributes: Attributes;
 	setAttributes: ( attributes: Record< string, unknown > ) => undefined;
 } ): JSX.Element => {
 	const {
-		allowCreateAccount,
 		showCompanyField,
 		requireCompanyField,
 		showApartmentField,
@@ -64,7 +68,24 @@ export const Edit = ( {
 		showReturnToCart,
 		showRateAfterTaxName,
 		cartPageId,
+		isPreview = false,
 	} = attributes;
+
+	// This focuses on the block when a certain query param is found. This is used on the link from the task list.
+	const focus = useRef( getQueryArg( window.location.href, 'focus' ) );
+
+	useEffect( () => {
+		if (
+			focus.current === 'checkout' &&
+			! select( 'core/block-editor' ).hasSelectedBlock()
+		) {
+			dispatch( 'core/block-editor' ).selectBlock( clientId );
+			dispatch( 'core/interface' ).enableComplementaryArea(
+				'core/edit-site',
+				'edit-site/block-inspector'
+			);
+		}
+	}, [ clientId ] );
 
 	const defaultTemplate = [
 		[ 'woocommerce/checkout-fields-block', {}, [] ],
@@ -76,31 +97,6 @@ export const Edit = ( {
 		newAttributes[ key ] = ! ( attributes[ key ] as boolean );
 		setAttributes( newAttributes );
 	};
-
-	const accountControls = (): JSX.Element => (
-		<InspectorControls>
-			<PanelBody
-				title={ __(
-					'Account options',
-					'woo-gutenberg-products-block'
-				) }
-			>
-				<ToggleControl
-					label={ __(
-						'Allow shoppers to sign up for a user account during checkout',
-						'woo-gutenberg-products-block'
-					) }
-					checked={ allowCreateAccount }
-					onChange={ () =>
-						setAttributes( {
-							allowCreateAccount: ! allowCreateAccount,
-						} )
-					}
-				/>
-			</PanelBody>
-			<CartCheckoutFeedbackPrompt />
-		</InspectorControls>
-	);
 
 	const addressFieldControls = (): JSX.Element => (
 		<InspectorControls>
@@ -158,7 +154,6 @@ export const Edit = ( {
 					/>
 				) }
 			</PanelBody>
-			<CartCheckoutFeedbackPrompt />
 		</InspectorControls>
 	);
 	const blockProps = useBlockPropsWithLocking();
@@ -171,44 +166,43 @@ export const Edit = ( {
 				/>
 			</InspectorControls>
 			<EditorProvider
+				isPreview={ isPreview }
 				previewData={ { previewCart, previewSavedPaymentMethods } }
 			>
-				<CheckoutProvider>
-					<SidebarLayout
-						className={ classnames( 'wc-block-checkout', {
-							'has-dark-controls': attributes.hasDarkControls,
-						} ) }
-					>
-						<CheckoutBlockControlsContext.Provider
-							value={ {
-								addressFieldControls,
-								accountControls,
-							} }
+				<SlotFillProvider>
+					<CheckoutProvider>
+						<SidebarLayout
+							className={ classnames( 'wc-block-checkout', {
+								'has-dark-controls': attributes.hasDarkControls,
+							} ) }
 						>
-							<CheckoutBlockContext.Provider
-								value={ {
-									allowCreateAccount,
-									showCompanyField,
-									requireCompanyField,
-									showApartmentField,
-									showPhoneField,
-									requirePhoneField,
-									showOrderNotes,
-									showPolicyLinks,
-									showReturnToCart,
-									cartPageId,
-									showRateAfterTaxName,
-								} }
+							<CheckoutBlockControlsContext.Provider
+								value={ { addressFieldControls } }
 							>
-								<InnerBlocks
-									allowedBlocks={ ALLOWED_BLOCKS }
-									template={ defaultTemplate }
-									templateLock="insert"
-								/>
-							</CheckoutBlockContext.Provider>
-						</CheckoutBlockControlsContext.Provider>
-					</SidebarLayout>
-				</CheckoutProvider>
+								<CheckoutBlockContext.Provider
+									value={ {
+										showCompanyField,
+										requireCompanyField,
+										showApartmentField,
+										showPhoneField,
+										requirePhoneField,
+										showOrderNotes,
+										showPolicyLinks,
+										showReturnToCart,
+										cartPageId,
+										showRateAfterTaxName,
+									} }
+								>
+									<InnerBlocks
+										allowedBlocks={ ALLOWED_BLOCKS }
+										template={ defaultTemplate }
+										templateLock="insert"
+									/>
+								</CheckoutBlockContext.Provider>
+							</CheckoutBlockControlsContext.Provider>
+						</SidebarLayout>
+					</CheckoutProvider>
+				</SlotFillProvider>
 			</EditorProvider>
 		</div>
 	);

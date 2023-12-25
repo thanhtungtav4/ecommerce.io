@@ -2,7 +2,7 @@
 /**
  * Payments options
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates
  * @version 1.0.0
  */
@@ -24,23 +24,9 @@ return apply_filters(
 	'yith_wcaf_payments_settings',
 	array(
 		'commissions-payments' => array(
-			'payments_section_start' => array(
-				'type' => 'title',
-				'desc' => '',
-				'id'   => 'yith_wcaf_payments_settings',
-			),
-			'payments_table'         => array(
-				'name'                 => __( 'Payments', 'yith-woocommerce-affiliates' ),
-				'type'                 => 'yith-field',
-				'yith-type'            => 'list-table',
-				'class'                => '',
-				'list_table_class'     => 'YITH_WCAF_Payments_Admin_Table',
-				'list_table_class_dir' => YITH_WCAF_INC . 'admin/admin-tables/class-yith-wcaf-payments-table.php',
-				'id'                   => 'payments',
-			),
-			'payments_section_end'   => array(
-				'type' => 'sectionend',
-				'id'   => 'yith_wcaf_payments_settings',
+			'payments-list-tab' => array(
+				'type'   => 'custom_tab',
+				'action' => 'yith_wcaf_print_payments_list_tab',
 			),
 		),
 	)

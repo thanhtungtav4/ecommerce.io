@@ -2,7 +2,7 @@
 /**
  * Commissions admin panel handling
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -129,8 +129,35 @@ if ( ! class_exists( 'YITH_WCAF_Commissions_Admin_Panel' ) ) {
 			// set get method.
 			$this->set_get_form();
 
+			add_action( 'yith_wcaf_print_commissions_list_tab', array( $this, 'render_list_table' ) );
+
 			// call parent constructor.
 			parent::__construct();
+		}
+
+
+		/**
+		 * Get affiliates commissions table.
+		 *
+		 * @return YITH_WCAF_Commissions_Admin_Table
+		 */
+		protected function get_list_table() {
+			return new YITH_WCAF_Commissions_Admin_Table();
+		}
+
+		/**
+		 * Render the Affiliates Commissions List tab.
+		 */
+		public function render_list_table(){
+			$list_table = $this->get_list_table();
+
+			$list_table->prepare_items();
+			$list_table->views();
+			?>
+			<form method="get" id="yith-wcaf-list-table-form" class="yith_wcaf_commissions yith-plugin-ui--wp-list-auto-h-scroll">
+				<?php $list_table->display(); ?>
+			</form>
+			<?php
 		}
 
 		/* === ADMIN ACTIONS === */

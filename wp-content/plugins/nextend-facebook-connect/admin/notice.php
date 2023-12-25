@@ -2,19 +2,19 @@
 
 
 $current = time();
-if (mktime(0, 0, 0, 11, 22, 2022) <= $current && $current < mktime(0, 0, 0, 11, 30, 2022)) {
-    if (get_option('nsl_bf_2022') != '1') {
+if (mktime(0, 0, 0, 11, 20, 2023) <= $current && $current < mktime(0, 0, 0, 11, 30, 2023)) {
+    if (get_option('nsl_bf_2023') != '1') {
 
         add_action('admin_notices', function () {
             ?>
-            <div class="notice notice-info is-dismissible" data-nsldismissable="nsl_bf_2022" style="display:grid;grid-template-columns: 100px auto;padding-top: 25px; padding-bottom: 22px;">
+            <div class="notice notice-info is-dismissible" data-nsldismissable="nsl_bf_2023" style="display:grid;grid-template-columns: 100px auto;padding-top: 25px; padding-bottom: 22px;">
                 <img alt="Nextend Social Login" src="<?php echo plugins_url('images/notice/nslnotice.png', NSL_ADMIN_PATH) ?>" width="64" height="64" style="grid-row: 1 / 4; align-self: center;justify-self: center">
                 <h3 style="margin:0;">Nextend Social Login - Black Friday Deal</h3>
                 <p style="margin:0 0 2px;">Don't miss out on our biggest sale of the year! Get your <b>Pro Addon</b>
-                    with <b>30% OFF</b> to access <b>WooCommerce support</b>, Apple provider and much more!
-                    Limited time offer expires on November 29.</p>
+                    with <b>up to 50% OFF</b> to access <b>WooCommerce support</b>, <b>Apple provider</b> and much more!
+                    This limited time offer expires on November 29.</p>
                 <p style="margin:0;">
-                    <a class="button button-primary" href="https://nextendweb.com/social-login/?coupon=SAVE3022&utm_source=wpfree&utm_medium=wp&utm_campaign=bf22#pricing" target="_blank">
+                    <a class="button button-primary" href="https://nextendweb.com/social-login/?coupon=BF2023&utm_source=wpfree&utm_medium=wp&utm_campaign=bf23#pricing" target="_blank">
                         Buy Now</a>
                     <a class="button button-dismiss" href="#">Dismiss</a>
                 </p>
@@ -70,7 +70,7 @@ if (mktime(0, 0, 0, 11, 22, 2022) <= $current && $current < mktime(0, 0, 0, 11, 
         add_action('wp_ajax_nsl_dismiss_admin_notice', function () {
             check_ajax_referer('nsl-dismissible-notice', 'nonce');
 
-            update_option('nsl_bf_2022', '1');
+            update_option('nsl_bf_2023', '1');
             wp_die();
         });
     }

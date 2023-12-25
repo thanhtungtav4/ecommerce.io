@@ -16,17 +16,6 @@ get_header(); ?>
       <dd>
         <a href="http://caraslens.com/sales-promotion/">
         <picture>
-          <source media="(max-width:768px)" srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/voucher-10-00-mobile.jpg" type="image/jpeg">
-          <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/voucher-10-00-desktop.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/voucher-10-00-desktop.jpg" alt="voucher-10" width="326" height="149">
-        </picture>
-        </a>
-      </dd>
-      </dt>
-    </dl>
-    <dl>
-      <dd>
-        <a href="http://caraslens.com/sales-promotion/">
-        <picture>
           <source media="(max-width:768px)" srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mctkm-combolens1day.jpg" type="image/jpeg">
           <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ctkm-combolens1day.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ctkm-combolens1day.jpg" alt="ctkm-combolens1day" width="326" height="149">
         </picture>
@@ -59,6 +48,16 @@ get_header(); ?>
         <picture>
           <source media="(max-width:768px)" srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mctkm-10danhgia.jpg" type="image/jpeg">
           <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ctkm-10danhgia.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ctkm-10danhgia.jpg" alt="ctkm-10danhgia" width="326" height="149">
+        </picture>
+        </a>
+      </dd>
+    </dl>
+    <dl>
+      <dd>
+        <a href="http://caraslens.com/sales-promotion/">
+        <picture>
+          <source media="(max-width:768px)" srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/mmenu-ctkm-combo-lens.jpg" type="image/jpeg">
+          <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ctkm-cuom.jpg" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/ctkm-cuom.jpg" alt="ctkm-10danhgia" width="326" height="149">
         </picture>
         </a>
       </dd>

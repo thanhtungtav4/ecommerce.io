@@ -4,7 +4,7 @@ class Woofilters_WidgetWpf extends ModuleWpf {
 		parent::init();
 		add_action('widgets_init', array($this, 'registerWidget'));
 		if (did_action('elementor/loaded')) {
-			add_action('elementor/widgets/widgets_registered', array($this, 'registerElementorWidget'));
+			add_action('elementor/widgets/register', array($this, 'registerElementorWidget'));
 			
 		}
 		add_action( 'elementor/editor/before_enqueue_scripts', array($this, 'woofiltersElementorEditorScripts') );

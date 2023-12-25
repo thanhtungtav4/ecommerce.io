@@ -3,14 +3,14 @@
  * Plugin Name: WooCommerce Blocks
  * Plugin URI: https://github.com/woocommerce/woocommerce-gutenberg-products-block
  * Description: WooCommerce blocks for the Gutenberg editor.
- * Version: 9.1.5
+ * Version: 11.6.2
  * Author: Automattic
  * Author URI: https://woocommerce.com
  * Text Domain:  woo-gutenberg-products-block
- * Requires at least: 5.9
- * Requires PHP: 7.0
- * WC requires at least: 7.0
- * WC tested up to: 7.1
+ * Requires at least: 6.4
+ * Requires PHP: 7.4
+ * WC requires at least: 8.2
+ * WC tested up to: 8.3
  *
  * @package WooCommerce\Blocks
  * @internal This file is only used when running as a feature plugin.
@@ -18,7 +18,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$minimum_wp_version = '5.9';
+$minimum_wp_version = '6.4.1';
 
 if ( ! defined( 'WC_BLOCKS_IS_FEATURE_PLUGIN' ) ) {
 	define( 'WC_BLOCKS_IS_FEATURE_PLUGIN', true );
@@ -96,7 +96,7 @@ function woocommerce_blocks_is_development_version() {
 /**
  * If development version is detected and the Jetpack constant is not defined, show a notice.
  */
-if ( woocommerce_blocks_is_development_version() && ! defined( 'JETPACK_AUTOLOAD_DEV' ) ) {
+if ( woocommerce_blocks_is_development_version() && ( ! defined( 'JETPACK_AUTOLOAD_DEV' ) || true !== JETPACK_AUTOLOAD_DEV ) ) {
 	add_action(
 		'admin_notices',
 		function () {
@@ -111,7 +111,6 @@ if ( woocommerce_blocks_is_development_version() && ! defined( 'JETPACK_AUTOLOAD
 		}
 	);
 }
-
 
 /**
  * Autoload packages.
@@ -178,7 +177,7 @@ add_action( 'plugins_loaded', array( '\Automattic\WooCommerce\Blocks\Package', '
  *
  * @return string|false        Path to the translation file to load. False if there isn't one.
  */
-function load_woocommerce_core_json_translation( $file, $handle, $domain ) {
+function load_woocommerce_core_js_translation( $file, $handle, $domain ) {
 	if ( 'woo-gutenberg-products-block' !== $domain ) {
 		return $file;
 	}
@@ -224,7 +223,7 @@ function load_woocommerce_core_json_translation( $file, $handle, $domain ) {
 	return $lang_dir . '/woocommerce-' . $locale . '-' . $core_path_md5 . '.json';
 }
 
-add_filter( 'load_script_translation_file', 'load_woocommerce_core_json_translation', 10, 3 );
+add_filter( 'load_script_translation_file', 'load_woocommerce_core_js_translation', 10, 3 );
 
 /**
  * Filter translations so we can retrieve translations from Core when the original and the translated

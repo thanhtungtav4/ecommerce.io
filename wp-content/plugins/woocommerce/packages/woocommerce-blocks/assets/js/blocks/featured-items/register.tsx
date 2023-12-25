@@ -4,12 +4,12 @@
 /**
  * External dependencies
  */
-import type { BlockConfiguration } from '@wordpress/blocks';
-import { FunctionComponent } from 'react';
 import { InnerBlocks } from '@wordpress/block-editor';
 import { registerBlockType } from '@wordpress/blocks';
 import { getSetting } from '@woocommerce/settings';
 import { isFeaturePluginBuild } from '@woocommerce/block-settings';
+import type { FunctionComponent } from 'react';
+import type { BlockConfiguration } from '@wordpress/blocks';
 
 /**
  * Internal dependencies
@@ -25,7 +25,6 @@ interface ExtendedBlockSupports {
 			gradients: boolean;
 			link: boolean;
 			text: string;
-			__experimentalDuotone?: string;
 		};
 		spacing?: {
 			margin: boolean | CSSDirections[];
@@ -65,7 +64,7 @@ export function register(
 			 */
 			minHeight: {
 				type: 'number',
-				default: getSetting( 'default_height', 500 ),
+				default: getSetting( 'defaultHeight', 500 ),
 			},
 		},
 		supports: {
@@ -73,10 +72,6 @@ export function register(
 			color: {
 				background: metadata.supports?.color?.background,
 				text: metadata.supports?.color?.text,
-				...( isFeaturePluginBuild() && {
-					__experimentalDuotone:
-						metadata.supports?.color?.__experimentalDuotone,
-				} ),
 			},
 			spacing: {
 				padding: metadata.supports?.spacing?.padding,
@@ -105,7 +100,7 @@ export function register(
 			editMode: false,
 			hasParallax: false,
 			isRepeated: false,
-			height: getSetting( 'default_height', 500 ),
+			height: getSetting( 'defaultHeight', 500 ),
 			mediaSrc: '',
 			overlayColor: '#000000',
 			showDesc: true,
@@ -116,7 +111,7 @@ export function register(
 		...DEFAULT_SETTINGS,
 		example: {
 			...DEFAULT_EXAMPLE,
-			example,
+			...example,
 		},
 		/**
 		 * Renders and manages the block.

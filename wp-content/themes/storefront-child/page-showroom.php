@@ -71,44 +71,41 @@ get_header(); ?>
                   <tr>
                     <td>
                       <p><b>HCM:</b></p>
-                      <p>619 Nguyễn Đình Chiểu, P2, Q3<span class="showroom-icon"><a target="_blank" href="https://goo.gl/maps/NPQszQ6gA3hkG3wT9?coh=178571&entry=tt"><i class="gg-pin"></i></a> <a href="tel:090 292 6071"><i class="gg-phone"></i></a></span></p>
-                      <p>350C Hoàng Văn Thụ, P4, Tân Bình <span class="showroom-icon"><a target="_blank" href="https://goo.gl/maps/eN9KhcMR2k3rTERp9?coh=178571&entry=tt"><i class="gg-pin"></i></a> <a href="#"><i class="gg-phone"></i></a></span></p>
-                      <p>88  Nguyễn Gia Trí, Bình Thạnh<span class="showroom-icon"><a target="_blank" href="https://goo.gl/maps/gno4NNr8f5pQ43Nh9?coh=178571&entry=tt"><i class="gg-pin"></i></a> <a href="#"><i class="gg-phone"></i></a></span></p>
+                      <p data-slide="1" >Quận 3: 619 Nguyễn Đình Chiểu, P.2<span class="showroom-icon"><a target="_blank" href="https://goo.gl/maps/NPQszQ6gA3hkG3wT9?coh=178571&entry=tt" onclick="window.open(this.href,'_blank');return false;" ><i class="gg-pin"></i></a> <a onclick="window.open(this.href,'_blank');return false;" href="tel:090 292 6071"><i class="gg-phone"></i></a></span></p>
+                      <p data-slide="2" >Q. Tân Bình: 350C Hoàng Văn Thụ, P.4<span class="showroom-icon"><a target="_blank" href="https://goo.gl/maps/eN9KhcMR2k3rTERp9?coh=178571&entry=tt" onclick="window.open(this.href,'_blank');return false;" ><i class="gg-pin"></i></a> <a href="#" onclick="window.open(this.href,'_blank');return false;"><i class="gg-phone"></i></a></span></p>
+                      <p data-slide="3" >Q. Bình Thạnh: 88 Nguyễn Gia Trí<span class="showroom-icon"><a onclick="window.open(this.href,'_blank');return false;" target="_blank" href="https://goo.gl/maps/gno4NNr8f5pQ43Nh9?coh=178571&entry=tt"><i class="gg-pin"></i></a> <a onclick="window.open(this.href,'_blank');return false;" href="#"><i class="gg-phone"></i></a></span></p>
                     </td>
                   </tr>
                   <tr>
                     <td>
                         <p><b>HÀ NỘI:</b></p>
-                        <p>02 Phố Huế, Hoàn Kiếm<span class="showroom-icon"><a target="_blank" href="https://goo.gl/maps/dJaFBtrcBqhhaQTf9?coh=178571&entry=tt"><i class="gg-pin"></i></a> <a href="tel:0981 470 967"><i class="gg-phone"></i></a></span></p>
+                        <p data-slide="4">02 Phố Huế, Hoàn Kiếm<span class="showroom-icon"><a target="_blank" href="https://goo.gl/maps/dJaFBtrcBqhhaQTf9?coh=178571&entry=tt" onclick="window.open(this.href,'_blank');return false;"><i class="gg-pin"></i></a> <a onclick="window.open(this.href,'_blank');return false;" href="tel:0981 470 967"><i class="gg-phone"></i></a></span></p>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <p><b>BIÊN HOÀ:</b></p>
-                      <p>1866 Nguyễn Ái Quốc, P. Trung Dũng, Biên Hòa, Đồng Nai (11:00 - 21:00) <span class="showroom-icon"><a  target="_blank" href="https://goo.gl/maps/xQCcxQxhpAXeY7Dz9?coh=178571&entry=tt"><i class="gg-pin"></i></a> <a href="tel:0934 076 705"><i class="gg-phone"></i></a></span></p>
-                    </td>  
+                      <p data-slide="5">1866 Nguyễn Ái Quốc, P. Trung Dũng, Biên Hòa, Đồng Nai (11:00 - 21:00) <span class="showroom-icon"><a  target="_blank" onclick="window.open(this.href,'_blank');return false;" href="https://goo.gl/maps/xQCcxQxhpAXeY7Dz9?coh=178571&entry=tt"><i class="gg-pin"></i></a> <a onclick="window.open(this.href,'_blank');return false;" href="tel:0934 076 705"><i class="gg-phone"></i></a></span></p>
+                    </td>
                   </tr>
                 </table>
               </div>
             </div>
             <div class="map slider-showroom">
               <div>
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/88-ndc.jpg">
+                <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/619-nguyen-dinh-chieu.png">
               </div>
               <div>
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/619-ndc.jpg">
+                <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/350c-HVT.png">
               </div>
               <div>
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carasce-350-hvt-blur.jpg">
+                <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/88-nguyen-gia-tri.png">
               </div>
               <div>
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carasce-350-hvt-blur2.jpg">
+                <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/pho-hue.png">
               </div>
-              <div>
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/carasce-350-hvt-blur3.jpg">
-              </div>
-              <div>
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/02-pho-hue.jpg">
+	    <div>
+                <img loading="lazy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/1866-bien-hoa.png">
               </div>
             </div>
           </div>
@@ -123,8 +120,13 @@ get_footer();
         dots: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
+        autoplay: false,
       });
     });
+   $('p[data-slide]').click(function(e) {
+    console.log("Hello world!");
+    e.preventDefault();
+    var slideno = $(this).data('slide');
+    $('.slider-showroom').slick('slickGoTo', slideno - 1);
+  });
 </script>

@@ -9,7 +9,7 @@
 	function AdminPage() {
 		this.$obj = this;
 		this.$allowMultipleFilters = ['wpfAttribute', 'wpfBrand', 'wpfCustomMeta'];
-		this.$multiSelectFields = ['f_mlist[]', 'f_cglist[][]'];
+		this.$multiSelectFields = ['f_mlist[]', 'f_cglist[][]', 'f_search_by_attributes_list[]'];
 		this.$noOptionsFilters = [''];
 		this.filtersSettings = [];
 		return this.$obj;
@@ -535,11 +535,14 @@
 				jQuery(".f_show_inputs_enabled_position").show();
 				jQuery(".f_show_inputs_enabled_currency").show();
 			} else {
+				var curSlider = jQuery('[name="f_price_show_currency_slider"]');
 				jQuery(".f_show_inputs_enabled_tooltip").hide();
 				jQuery(".f_show_inputs_enabled_position").hide();
 				jQuery(".f_show_inputs_enabled_currency").hide();
-				jQuery("[name='f_currency_position']").val('before');
-				jQuery("[name='f_currency_show_as']").val('symbol');
+				if (curSlider.length == 0 || !curSlider.prop('checked')) {
+					jQuery("[name='f_currency_position']").val('before');
+					jQuery("[name='f_currency_show_as']").val('symbol');
+				}
 				jQuery("[name='f_price_tooltip_show_as']").prop("checked",false);
 				jQuery("[name='f_price_tooltip_show_as']").attr("checked",false);
 			}
@@ -695,7 +698,12 @@
 			if (elem.length) {
 				if (isActive) {
 					if (elem.hasClass('wpfDependencyHidden')) {
-						elem.removeClass('wpfHidden');
+						var hide = false;
+						if (elem.closest('.wpfAddTypeControl').length) {
+							var $blockType = elem.closest('.wpfFilterOptions').find('select[name="f_frontend_type"]');
+							if ($blockType.length && !elem.closest('.wpfAddTypeControl').is('[data-type~="'+$blockType.val()+'"]')) hide = true;
+						}
+						if (!hide) elem.removeClass('wpfHidden');
 					} else {
 						elem.each(function() {
 							var el = jQuery(this);
@@ -1122,12 +1130,13 @@
 					var elmNameClear = elm.name.replace(/\[(\d+)\]/g, "[]");
 					if( _this.$multiSelectFields.includes(elmNameClear) ){
 						//add more filter for this type
-						var arrayValues = $elm.getSelectionOrder();
+						var arrayValues = typeof ChosenOrder !== 'undefined' && ChosenOrder.isChosenified(elm) ? $elm.getSelectionOrder() : $elm.val();
+						//var arrayValues = $elm.getSelectionOrder();
 						if(arrayValues){
 							items[elm.name] = arrayValues.toString();
 						}
 					}
-				}else if (value !== '') {
+				}else if (value !== '' && elm.name) {
 					items[elm.name] = $elm.val();
 				}
 			});

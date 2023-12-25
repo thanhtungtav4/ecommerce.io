@@ -101,6 +101,11 @@ class FrameWpf {
 					}
 				}
 			}
+			if (isset($this->_modules['templates'])) {
+				$m = $this->_modules['templates'];
+				unset($this->_modules['templates']);
+				$this->_modules['templates'] = $m;
+			}
 		}
 	}
 	protected function _initModules() {
@@ -159,7 +164,12 @@ class FrameWpf {
 			<tr class="plugin-update-tr wpf-pro-plugin-tr<?php echo esc_attr($active); ?>">
 				<td colspan="<?php echo esc_attr($colspan); ?>" class="plugin-update colspanchange">
 					<div class="update-message notice inline notice-error notice-alt">
-						<p><?php echo 'Current version of Free (Base) plugin WooCommerce Product Filter by WooBeWoo requires version of Woo Product Filter PRO plugin at least ' . esc_html(WPF_PRO_REQUIRES) . '.'; ?></p>
+						<p>
+						<?php 
+							/* translators: 1: plugin name 2: plugin version */
+							echo sprintf(esc_html__('Current version of Free (Base) plugin %1$s requires version of WBW Product Filter PRO plugin at least %2$s.', 'woo-product-filter'), esc_html__('Product Filter by WBW', 'woo-product-filter'), esc_html(WPF_PRO_REQUIRES));
+							?>
+						</p>
 					</div>
 				</td>
 			</tr>
@@ -517,7 +527,7 @@ class FrameWpf {
 	 */
 	public function isAdminPlugOptsPage() {
 		$page = ReqWpf::getVar('page');
-		if (is_admin() && strpos($page, self::_()->getModule('adminmenu')->getMainSlug()) !== false) {
+		if (is_admin() && !empty($page) && strpos($page, self::_()->getModule('adminmenu')->getMainSlug()) !== false) {
 			return true;
 		}
 		return false;
@@ -555,5 +565,8 @@ class FrameWpf {
 		}
 
 		return ( ( $notPro && false === $this->_proVersion ) || version_compare( $this->_proVersion, $requires, $compare ) );
+	}
+	public function isWCLicense() {
+		return $this->moduleExists('license') && $this->getModule('license') && isset($this->getModule('license')->isWooLicense) && $this->getModule('license')->isWooLicense;
 	}
 }

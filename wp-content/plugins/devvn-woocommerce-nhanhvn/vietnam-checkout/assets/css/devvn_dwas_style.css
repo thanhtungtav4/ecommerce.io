@@ -273,3 +273,15 @@ div#get_address_content {
 .woocommerce-column--shipping-address p.woocommerce-customer-details--phone{
     display: none;
 }
+
+@media (min-width: 768px){
+    .wcf-embed-checkout-form .woocommerce form .form-row-first {
+        width: 50% !important;
+        float: left !important;
+    }
+
+    .wcf-embed-checkout-form .woocommerce form .form-row-last {
+        width: 50% !important;
+        float: right !important;
+    }
+}

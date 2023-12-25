@@ -2,7 +2,7 @@
 /**
  * Affiliate Dashboard Menu
  *
- * @author Your Inspiration Themes
+ * @author YITH <plugins@yithemes.com>
  * @package YITH WooCommerce Affiliates
  * @version 1.0.5
  */

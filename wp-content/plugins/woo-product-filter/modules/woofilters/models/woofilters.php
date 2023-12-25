@@ -94,6 +94,13 @@ class WoofiltersModelWpf extends ModelWpf {
 				'unique'       => true,
 				'content_type' => '',
 			),
+			'wpfSearchNumber' => array(
+				'name'         => esc_html__('Search by Number', 'woo-product-filter'),
+				'slug'         => esc_attr__('number', 'woo-product-filter'),
+				'enabled'      => false,
+				'unique'       => false,
+				'content_type' => '',
+			),
 		);
 
 		/**

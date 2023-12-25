@@ -191,8 +191,13 @@ class RecommendationsManager {
 			}
 
 			foreach ( $pluginsRecommendations as $section => $plugins_recommendation ) {
-				$pluginsRecommendations[$section]['title'] = $sections[$section][$language]['name'];
-				$pluginsRecommendations[$section]['order'] = $sections[$section][$language]['order'];
+				// Use current site lang if available, otherwise 'en'.
+				$lang = array_key_exists( $language, $sections[$section] )
+					? $language
+					: 'en';
+
+				$pluginsRecommendations[$section]['title'] = $sections[$section][$lang]['name'];
+				$pluginsRecommendations[$section]['order'] = $sections[$section][$lang]['order'];
 			}
 		}
 
@@ -265,7 +270,7 @@ class RecommendationsManager {
 			'is_active'               => $isActive,
 			'slug'                    => $pluginData['slug'],
 			'recommendation_icon_url' => isset( $pluginData['recommendation_icon_url'] ) ? $pluginData['recommendation_icon_url'] : '',
-			'download_data'           => base64_encode( json_encode( $downloadData ) ),
+			'download_data'           => base64_encode( (string) json_encode( $downloadData ) ),
 		];
 	}
 

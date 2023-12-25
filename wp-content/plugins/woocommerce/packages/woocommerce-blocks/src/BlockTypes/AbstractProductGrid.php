@@ -348,6 +348,8 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 		 * @param boolean $is_cacheable The list of script dependencies.
 		 * @param array $query_args Query args for the products query passed to BlocksWpQuery.
 		 * @return array True to enable cache, false to disable cache.
+		 *
+		 * @since 2.5.0
 		 */
 		$is_cacheable      = (bool) apply_filters( 'woocommerce_blocks_product_grid_is_cacheable', true, $this->query_args );
 		$transient_version = \WC_Cache_Helper::get_transient_version( 'product_query' );
@@ -504,15 +506,17 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 		 * @param array $data Product data passed to the template.
 		 * @param \WC_Product $product Product object.
 		 * @return string Updated product grid item HTML.
+		 *
+		 * @since 2.2.0
 		 */
 		return apply_filters(
 			'woocommerce_blocks_product_grid_item_html',
 			"<li class=\"wc-block-grid__product\">
 				<a href=\"{$data->permalink}\" class=\"wc-block-grid__product-link\">
+					{$data->badge}
 					{$data->image}
 					{$data->title}
 				</a>
-				{$data->badge}
 				{$data->price}
 				{$data->rating}
 				{$data->button}
@@ -572,7 +576,6 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 			return '';
 		}
 		$rating_count = $product->get_rating_count();
-		$review_count = $product->get_review_count();
 		$average      = $product->get_average_rating();
 
 		if ( $rating_count > 0 ) {
@@ -646,6 +649,7 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 			'data-quantity'    => '1',
 			'data-product_id'  => $product->get_id(),
 			'data-product_sku' => $product->get_sku(),
+			'data-price'       => wc_get_price_to_display( $product ),
 			'rel'              => 'nofollow',
 			'class'            => 'wp-block-button__link ' . ( function_exists( 'wc_wp_theme_get_element_class_name' ) ? wc_wp_theme_get_element_class_name( 'button' ) : '' ) . ' add_to_cart_button',
 		);
@@ -675,12 +679,21 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 	 */
 	protected function enqueue_data( array $attributes = [] ) {
 		parent::enqueue_data( $attributes );
-		$this->asset_data_registry->add( 'min_columns', wc_get_theme_support( 'product_blocks::min_columns', 1 ), true );
-		$this->asset_data_registry->add( 'max_columns', wc_get_theme_support( 'product_blocks::max_columns', 6 ), true );
-		$this->asset_data_registry->add( 'default_columns', wc_get_theme_support( 'product_blocks::default_columns', 3 ), true );
-		$this->asset_data_registry->add( 'min_rows', wc_get_theme_support( 'product_blocks::min_rows', 1 ), true );
-		$this->asset_data_registry->add( 'max_rows', wc_get_theme_support( 'product_blocks::max_rows', 6 ), true );
-		$this->asset_data_registry->add( 'default_rows', wc_get_theme_support( 'product_blocks::default_rows', 3 ), true );
-		$this->asset_data_registry->add( 'stock_status_options', wc_get_product_stock_status_options(), true );
+		$this->asset_data_registry->add( 'minColumns', wc_get_theme_support( 'product_blocks::min_columns', 1 ), true );
+		$this->asset_data_registry->add( 'maxColumns', wc_get_theme_support( 'product_blocks::max_columns', 6 ), true );
+		$this->asset_data_registry->add( 'defaultColumns', wc_get_theme_support( 'product_blocks::default_columns', 3 ), true );
+		$this->asset_data_registry->add( 'minRows', wc_get_theme_support( 'product_blocks::min_rows', 1 ), true );
+		$this->asset_data_registry->add( 'maxRows', wc_get_theme_support( 'product_blocks::max_rows', 6 ), true );
+		$this->asset_data_registry->add( 'defaultRows', wc_get_theme_support( 'product_blocks::default_rows', 3 ), true );
+	}
+
+	/**
+	 * Get the frontend style handle for this block type.
+	 *
+	 * @return string[]
+	 */
+	protected function get_block_type_style() {
+		// Currently these blocks rely on the styles from the All Products block.
+		return [ 'wc-blocks-style', 'wc-blocks-style-all-products' ];
 	}
 }

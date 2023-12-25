@@ -77,7 +77,7 @@ get_header(); ?>
           <div class="c-sure">
             <ul class="slick-sure">
               <li>
-                <p>Freeship nội thành cho đơn <strong>từ 250.000đ</strong>– Tỉnh <strong>từ 400.000đ</strong></p>
+                <p>Freeship nội thành cho đơn <strong>từ 300.000đ</strong>– Tỉnh <strong>từ 500.000đ</strong></p>
                 <picture>
                   <source srcset="<?php echo get_stylesheet_directory_uri() ?>/assets/images/delivery_icon.svg" type="image/svg"><img class="lazyload" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/delivery_icon.png" data-src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/delivery_icon.png" alt="Freeship nội thành cho đơn từ 250.000đ – Tỉnh từ 400.000đ" loading="lazy" width="161" height="134">
                 </picture>

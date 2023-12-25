@@ -97,6 +97,8 @@ class NextendSocialUser {
 
         $user_id = false;
 
+        $nslLoginUrl = NextendSocialLogin::getLoginUrl();
+
         $providerUserID = $this->getAuthUserData('id');
 
         $email = '';
@@ -107,7 +109,13 @@ class NextendSocialUser {
         if (empty($email)) {
             $email = '';
         } else {
-            $user_id = email_exists($email);
+            $user_id_found = email_exists($email);
+            /**
+             * email_exists overrides could cause problems during the linking -> we should check if the returned ID is has integer type and if we are able to find an account with that ID.
+             */
+            if (is_int($user_id_found) && get_userdata($user_id_found)) {
+                $user_id = $user_id_found;
+            }
         }
 
         /**
@@ -125,7 +133,6 @@ class NextendSocialUser {
                 $registerDisabledMessage     = apply_filters('nsl_disabled_register_error_message', '');
                 $registerDisabledRedirectURL = apply_filters('nsl_disabled_register_redirect_url', '');
 
-                $nslLoginUrl            = NextendSocialLogin::getLoginUrl();
                 $defaultDisabledMessage = __('User registration is currently not allowed.');
 
                 $proxyPage = NextendSocialLogin::getProxyPage();
@@ -168,9 +175,14 @@ class NextendSocialUser {
                 $this->provider->redirectWithAuthenticationError($registerDisabledRedirectURL);
                 exit;
             }
-
-        } else if ($this->autoLink($user_id, $providerUserID)) {
-            $this->login($user_id);
+        } else {
+            if ($this->autoLink($user_id, $providerUserID)) {
+                $this->login($user_id);
+            } else {
+                $autolinkErrorRedirectURL = apply_filters('nsl_autolink_error_redirect_url', $nslLoginUrl);
+                $this->provider->redirectWithAuthenticationError($autolinkErrorRedirectURL);
+                exit;
+            }
         }
 
         $this->provider->redirectToLoginForm();
@@ -383,21 +395,24 @@ class NextendSocialUser {
             ), 10);
         }
 
-
-        $shouldRegister = true;
-        $error          = false;
-
+        $externalInsertUserStatus = [
+            'isExternalInsertUser' => false,
+            'error'                => false
+        ];
         /**
-         * The support of the BuddyPress login restriction might trigger our doAutoLogin() after BuddyPress registered the new account in our flow.
+         * If the account is created outside of Nextend Social Login, then Nextend Social Login should be prevented from inserting the user again.
+         * For this "isExternalInsertUser" needs to be set to true.
+         * If an error happens in the external registration, then the error message can be displayed by setting "error" to a WP_ERROR object.
          */
-        $this->integrationBuddyPressLoginRestriction($loginRestriction, $user_data, $shouldRegister, $error);
+        $externalInsertUserStatus = apply_filters('nsl_register_external_insert_user', $externalInsertUserStatus, $this, $user_data);
+        $error                    = $externalInsertUserStatus['error'];
 
-        if ($shouldRegister) {
+        if (!$externalInsertUserStatus['isExternalInsertUser']) {
             $error = wp_insert_user($user_data);
         }
 
         if (is_wp_error($error)) {
-
+            $this->provider->deleteTokenPersistentData();
             Notices::addError($error);
             $this->redirectToLastLocationLogin(true);
 
@@ -483,11 +498,21 @@ class NextendSocialUser {
                 $this,
                 'um_get_loginpage'
             ));
-            do_action('um_user_register', $user_id, array(
+            $um_registration_timestamp = current_time('timestamp');
+            $um_registration_args      = array(
                 'submitted' => array(
-                    'timestamp' => current_time('timestamp')
-                )
-            ));
+                    'timestamp' => $um_registration_timestamp
+                ),
+                'timestamp' => $um_registration_timestamp
+            );
+            $um_registration_form_data = array(
+                'custom_fields' => ""
+            );
+            /**
+             * Ultimate Member reads the data out of this meta field when it displays the user registration date at  the Users tabe > Info.
+             */
+            update_user_meta($user_id, 'timestamp', $um_registration_timestamp);
+            do_action('um_user_register', $user_id, $um_registration_args, $um_registration_form_data);
         }
 
 
@@ -739,11 +764,13 @@ class NextendSocialUser {
                 $terms = NextendSocialLogin::$settings->get('terms');
             }
 
+            $terms = __($terms, 'nextend-facebook-connect');
+
             if (function_exists('get_privacy_policy_url')) {
                 $terms = str_replace('#privacy_policy_url', get_privacy_policy_url(), $terms);
             }
 
-            echo __($terms, 'nextend-facebook-connect');
+            echo $terms;
 
             ?>
         </p>
@@ -756,50 +783,6 @@ class NextendSocialUser {
 
     public function um_get_loginpage($page_url) {
         return um_get_core_page('login');
-    }
-
-    /**
-     * BuddyPress - Support login restrictions
-     * If our login restriction is enabled, then users with email address should be able to login with social login
-     * only, if their account has been activated already.
-     *
-     * @param bool  $loginRestriction
-     * @param array $user_data
-     * @param bool  $shouldRegister
-     * @param bool  $error
-     */
-    private function integrationBuddyPressLoginRestriction($loginRestriction, $user_data, &$shouldRegister, &$error) {
-        if ($loginRestriction && class_exists('BuddyPress', false) && function_exists('bp_core_signup_user')) {
-            //we should only allow the login restriction if the email address is available and stored
-            if (is_email($user_data['user_email'])) {
-                //We need to unhook the doAutoLogin function, otherwise it will prevent BuddyPress from finishing its registration.
-                $autoLoginPriority = apply_filters('nsl_autologin_priority', 40);
-                remove_action('user_register', array(
-                    $this,
-                    'doAutoLogin'
-                ), $autoLoginPriority);
-
-                /**
-                 * The registration needs to be handled by BuddyPress.
-                 *
-                 * Limitation: To exclude the inactive users from certain features, BuddyPress removes the roles that we set and after the activation they set their default role.
-                 * This means that these accounts are  always registered with the BuddyPress default role.
-                 */
-                $user_id = bp_core_signup_user($user_data['user_login'], $user_data['user_pass'], $user_data['user_email'], array());
-                if (!is_wp_error($user_id)) {
-                    /**
-                     * If auto login is disabled, then we might continue our register flow.
-                     * so we shouldn't run wp_insert_user() again.
-                     */
-                    $shouldRegister = false;
-
-                    //If the registration was successful, attempt to log the user in.
-                    $this->doAutoLogin($user_id);
-                } else {
-                    $error = $user_id;
-                }
-            }
-        }
     }
 
     public function addProfileSyncActions() {

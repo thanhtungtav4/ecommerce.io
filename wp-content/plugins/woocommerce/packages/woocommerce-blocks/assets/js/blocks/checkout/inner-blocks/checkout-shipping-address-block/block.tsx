@@ -2,26 +2,30 @@
  * External dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { useMemo, useEffect, Fragment, useState } from '@wordpress/element';
-import { AddressForm } from '@woocommerce/base-components/cart-checkout';
+import { useMemo, Fragment } from '@wordpress/element';
+import { useEffectOnce } from 'usehooks-ts';
 import {
 	useCheckoutAddress,
-	useStoreEvents,
 	useEditorContext,
+	noticeContexts,
 } from '@woocommerce/base-context';
-import { CheckboxControl } from '@woocommerce/blocks-checkout';
+import {
+	CheckboxControl,
+	StoreNoticesContainer,
+} from '@woocommerce/blocks-checkout';
 import Noninteractive from '@woocommerce/base-components/noninteractive';
 import type {
 	BillingAddress,
-	ShippingAddress,
 	AddressField,
 	AddressFields,
 } from '@woocommerce/settings';
+import { useSelect } from '@wordpress/data';
+import { CART_STORE_KEY } from '@woocommerce/block-data';
 
 /**
  * Internal dependencies
  */
-import PhoneNumber from '../../phone-number';
+import CustomerAddress from './customer-address';
 
 const Block = ( {
 	showCompanyField = false,
@@ -37,45 +41,38 @@ const Block = ( {
 	requirePhoneField: boolean;
 } ): JSX.Element => {
 	const {
-		defaultAddressFields,
-		setShippingAddress,
 		setBillingAddress,
 		shippingAddress,
-		setShippingPhone,
 		useShippingAsBilling,
 		setUseShippingAsBilling,
 	} = useCheckoutAddress();
-	const { dispatchCheckoutEvent } = useStoreEvents();
 	const { isEditor } = useEditorContext();
 
-	// This is used to track whether the "Use shipping as billing" checkbox was checked on first load and if we synced
-	// the shipping address to the billing address if it was. This is not used on further toggles of the checkbox.
-	const [ addressesSynced, setAddressesSynced ] = useState( false );
+	// Syncs the billing address with the shipping address.
+	const syncBillingWithShipping = () => {
+		const syncValues: Partial< BillingAddress > = {
+			...shippingAddress,
+		};
 
-	// Clears data if fields are hidden.
-	useEffect( () => {
 		if ( ! showPhoneField ) {
-			setShippingPhone( '' );
+			delete syncValues.phone;
 		}
-	}, [ showPhoneField, setShippingPhone ] );
 
-	// Run this on first render to ensure addresses sync if needed, there is no need to re-run this when toggling the
-	// checkbox.
-	useEffect( () => {
-		if ( addressesSynced ) {
-			return;
+		if ( showCompanyField ) {
+			delete syncValues.company;
 		}
+
+		setBillingAddress( syncValues );
+	};
+
+	// Run this on first render to ensure addresses sync if needed (this is not re-ran when toggling the checkbox).
+	useEffectOnce( () => {
 		if ( useShippingAsBilling ) {
-			setBillingAddress( shippingAddress );
+			syncBillingWithShipping();
 		}
-		setAddressesSynced( true );
-	}, [
-		addressesSynced,
-		setBillingAddress,
-		shippingAddress,
-		useShippingAsBilling,
-	] );
+	} );
 
+	// Create address fields config from block attributes.
 	const addressFieldsConfig = useMemo( () => {
 		return {
 			company: {
@@ -92,57 +89,50 @@ const Block = ( {
 		showApartmentField,
 	] ) as Record< keyof AddressFields, Partial< AddressField > >;
 
-	const AddressFormWrapperComponent = isEditor ? Noninteractive : Fragment;
+	const WrapperComponent = isEditor ? Noninteractive : Fragment;
+	const noticeContext = useShippingAsBilling
+		? [ noticeContexts.SHIPPING_ADDRESS, noticeContexts.BILLING_ADDRESS ]
+		: [ noticeContexts.SHIPPING_ADDRESS ];
+	const hasAddress = !! (
+		shippingAddress.address_1 &&
+		( shippingAddress.first_name || shippingAddress.last_name )
+	);
+
+	const { cartDataLoaded } = useSelect( ( select ) => {
+		const store = select( CART_STORE_KEY );
+		return {
+			cartDataLoaded: store.hasFinishedResolution( 'getCartData' ),
+		};
+	} );
 
 	return (
 		<>
-			<AddressFormWrapperComponent>
-				<AddressForm
-					id="shipping"
-					type="shipping"
-					onChange={ ( values: Partial< ShippingAddress > ) => {
-						setShippingAddress( values );
-						if ( useShippingAsBilling ) {
-							setBillingAddress( values );
-						}
-						dispatchCheckoutEvent( 'set-shipping-address' );
-					} }
-					values={ shippingAddress }
-					fields={
-						Object.keys(
-							defaultAddressFields
-						) as ( keyof AddressFields )[]
-					}
-					fieldConfig={ addressFieldsConfig }
-				/>
-				{ showPhoneField && (
-					<PhoneNumber
-						id="shipping-phone"
-						isRequired={ requirePhoneField }
-						value={ shippingAddress.phone }
-						onChange={ ( value ) => {
-							setShippingPhone( value );
-							dispatchCheckoutEvent( 'set-phone-number', {
-								step: 'shipping',
-							} );
-						} }
+			<StoreNoticesContainer context={ noticeContext } />
+			<WrapperComponent>
+				{ cartDataLoaded ? (
+					<CustomerAddress
+						addressFieldsConfig={ addressFieldsConfig }
+						showPhoneField={ showPhoneField }
+						requirePhoneField={ requirePhoneField }
 					/>
-				) }
-			</AddressFormWrapperComponent>
-			<CheckboxControl
-				className="wc-block-checkout__use-address-for-billing"
-				label={ __(
-					'Use same address for billing',
-					'woo-gutenberg-products-block'
-				) }
-				checked={ useShippingAsBilling }
-				onChange={ ( checked: boolean ) => {
-					setUseShippingAsBilling( checked );
-					if ( checked ) {
-						setBillingAddress( shippingAddress as BillingAddress );
-					}
-				} }
-			/>
+				) : null }
+			</WrapperComponent>
+			{ hasAddress && (
+				<CheckboxControl
+					className="wc-block-checkout__use-address-for-billing"
+					label={ __(
+						'Use same address for billing',
+						'woo-gutenberg-products-block'
+					) }
+					checked={ useShippingAsBilling }
+					onChange={ ( checked: boolean ) => {
+						setUseShippingAsBilling( checked );
+						if ( checked ) {
+							syncBillingWithShipping();
+						}
+					} }
+				/>
+			) }
 		</>
 	);
 };

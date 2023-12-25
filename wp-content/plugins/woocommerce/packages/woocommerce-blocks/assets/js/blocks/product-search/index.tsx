@@ -21,8 +21,8 @@ import {
  */
 import './style.scss';
 import './editor.scss';
-import Block from './block.js';
-import Edit from './edit.js';
+import Block from './block';
+import Edit from './edit';
 
 const isBlockVariationAvailable = getSettingWithCoercion(
 	'isBlockVariationAvailable',
@@ -134,11 +134,6 @@ registerBlockType( 'woocommerce/product-search', {
 	supports: {
 		align: [ 'wide', 'full' ],
 		inserter: ! isBlockVariationAvailable,
-	},
-	example: {
-		attributes: {
-			hasLabel: true,
-		},
 	},
 	attributes,
 	transforms: {

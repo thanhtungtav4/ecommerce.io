@@ -2,7 +2,7 @@
 	"name": "woocommerce/checkout-express-payment-block",
 	"version": "1.0.0",
 	"title": "Express Checkout",
-	"description": "Provide an express payment option for your customers.",
+	"description": "Allow customers to breeze through with quick payment options.",
 	"category": "woocommerce",
 	"supports": {
 		"align": false,
@@ -26,7 +26,7 @@
 		}
 	},
 	"parent": [ "woocommerce/checkout-fields-block" ],
-	"textdomain": "woo-gutenberg-products-block",
+	"textdomain": "woocommerce",
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2
 }

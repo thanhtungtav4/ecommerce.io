@@ -3,17 +3,12 @@
  */
 import { __ } from '@wordpress/i18n';
 import classnames from 'classnames';
-import Label from '@woocommerce/base-components/label';
+import { Label } from '@woocommerce/blocks-components';
 import {
 	useInnerBlockLayoutContext,
 	useProductDataContext,
 } from '@woocommerce/shared-context';
-import {
-	useBorderProps,
-	useColorProps,
-	useSpacingProps,
-	useTypographyProps,
-} from '@woocommerce/base-hooks';
+import { useStyleProps } from '@woocommerce/base-hooks';
 import { withProductDataContext } from '@woocommerce/shared-hocs';
 import type { HTMLAttributes } from 'react';
 
@@ -27,14 +22,14 @@ type Props = BlockAttributes & HTMLAttributes< HTMLDivElement >;
 
 export const Block = ( props: Props ): JSX.Element | null => {
 	const { className, align } = props;
+	const styleProps = useStyleProps( props );
 	const { parentClassName } = useInnerBlockLayoutContext();
 	const { product } = useProductDataContext();
-	const borderProps = useBorderProps( props );
-	const colorProps = useColorProps( props );
-	const typographyProps = useTypographyProps( props );
-	const spacingProps = useSpacingProps( props );
 
-	if ( ! product.id || ! product.on_sale ) {
+	if (
+		( ! product.id || ! product.on_sale ) &&
+		! props.isDescendentOfSingleProductTemplate
+	) {
 		return null;
 	}
 
@@ -52,15 +47,9 @@ export const Block = ( props: Props ): JSX.Element | null => {
 				{
 					[ `${ parentClassName }__product-onsale` ]: parentClassName,
 				},
-				colorProps.className,
-				borderProps.className
+				styleProps.className
 			) }
-			style={ {
-				...colorProps.style,
-				...borderProps.style,
-				...typographyProps.style,
-				...spacingProps.style,
-			} }
+			style={ styleProps.style }
 		>
 			<Label
 				label={ __( 'Sale', 'woo-gutenberg-products-block' ) }

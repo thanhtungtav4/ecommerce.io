@@ -22,6 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 class WC_Gateway_Cheque extends WC_Payment_Gateway {
 
 	/**
+	 * Gateway instructions that will be added to the thank you page and emails.
+	 *
+	 * @var string
+	 */
+	public $instructions;
+
+	/**
 	 * Constructor for the gateway.
 	 */
 	public function __construct() {
@@ -102,7 +109,14 @@ class WC_Gateway_Cheque extends WC_Payment_Gateway {
 	 * @param bool     $plain_text Email format: plain text or HTML.
 	 */
 	public function email_instructions( $order, $sent_to_admin, $plain_text = false ) {
-		if ( $this->instructions && ! $sent_to_admin && 'cheque' === $order->get_payment_method() && $order->has_status( 'on-hold' ) ) {
+		/**
+		 * Filter the email instructions order status.
+		 *
+		 * @since 7.4
+		 * @param string $terms The order status.
+		 * @param object $order The order object.
+		 */
+		if ( $this->instructions && ! $sent_to_admin && 'cheque' === $order->get_payment_method() && $order->has_status( apply_filters( 'woocommerce_cheque_email_instructions_order_status', 'on-hold', $order ) ) ) {
 			echo wp_kses_post( wpautop( wptexturize( $this->instructions ) ) . PHP_EOL );
 		}
 	}

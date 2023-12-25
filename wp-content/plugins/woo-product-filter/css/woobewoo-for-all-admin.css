@@ -7,3 +7,23 @@
 #toplevel_page_wpf-filters a[href*="woobewoo.com"] {
     color: green;
 }
+#wpfAddDialog{
+	width: 100%!important;
+	margin-top: 10px;
+	min-height: 32px!important;
+}
+.wpfPopupLabel{
+	font-weight: bold;
+}
+.wpfPopupBlock{
+	margin-bottom: 15px;
+}
+.wpfPopupList{
+    max-height: 200px;
+    overflow: auto;
+	margin-top: 5px;
+}
+.wpfPopupList label{
+	margin-left: 10px;
+	margin-right: 10px;
+}

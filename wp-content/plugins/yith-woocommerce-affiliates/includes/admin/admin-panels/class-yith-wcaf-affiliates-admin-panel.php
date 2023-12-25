@@ -2,7 +2,7 @@
 /**
  * Affiliate admin panel handling
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -118,9 +118,9 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Panel' ) ) {
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 
 			// add affiliate modal.
-			add_action( 'yit_framework_after_print_wc_panel_content', array( $this, 'render_add_modal' ) );
-			add_action( 'yit_framework_after_print_wc_panel_content', array( $this, 'render_ban_modal' ) );
-			add_action( 'yit_framework_after_print_wc_panel_content', array( $this, 'render_reject_modal' ) );
+			add_action( 'yith_wcaf_print_affiliates_list_tab', array( $this, 'render_add_modal' ), 20 );
+			add_action( 'yith_wcaf_print_affiliates_list_tab', array( $this, 'render_ban_modal' ), 20 );
+			add_action( 'yith_wcaf_print_affiliates_list_tab', array( $this, 'render_reject_modal' ), 20 );
 
 			// default hidden columns.
 			add_filter( 'default_hidden_columns', array( $this, 'get_default_hidden_columns' ) );
@@ -128,8 +128,48 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Panel' ) ) {
 			// set get method.
 			$this->set_get_form();
 
+			add_action( 'yith_wcaf_print_affiliates_list_tab', array( $this, 'render_affiliates_list_tab' ) );
+
 			// call parent constructor.
 			parent::__construct();
+		}
+
+		/**
+		 * Get the affiliates list table.
+		 *
+		 * @return YITH_WCAF_Affiliates_Admin_Table|YITH_WCAF_Affiliates_Admin_Table_Premium
+		 */
+		protected function get_affiliates_list_table() {
+			require_once YITH_WCAF_INC . 'admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php';
+
+			return new YITH_WCAF_Affiliates_Admin_Table();
+		}
+
+		/**
+		 * Render the Affiliates List tab.
+		 */
+		public function render_affiliates_list_tab() {
+			$list_table = $this->get_affiliates_list_table();
+
+			echo sprintf(
+				'<a id="yith-wcaf-create-affiliate" href="#" class="yith-add-button">%s</a>',
+				esc_html_x( 'Add affiliate', '[ADMIN] Add new affiliate button, in affiliates tab', 'yith-woocommerce-affiliates' )
+			);
+
+			$list_table->prepare_items();
+			$list_table->views();
+			?>
+			<form method="get" id="yith-wcaf-list-table-form" class="yith-plugin-ui--wp-list-auto-h-scroll">
+				<?php $list_table->display(); ?>
+			</form>
+			<script type="text/javascript">
+				( function () {
+					var heading = document.querySelector( '.yith-plugin-fw__panel__content__page__title' ),
+						button  = document.getElementById( 'yith-wcaf-create-affiliate' );
+					heading && heading.parentNode.insertBefore( button, heading.nextSibling);
+				} )();
+			</script>
+			<?php
 		}
 
 		/* === ADMIN ACTIONS === */
@@ -211,6 +251,9 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Panel' ) ) {
 
 			$affiliate->set_status( 'enabled' );
 
+			// save the application date also when creating a brand new user.
+			$affiliate->update_meta_data( 'application_date', current_time( 'mysql' ) );
+
 			// set user role when required.
 			if ( 'create_affiliate' === $mode && 'customer' !== $role ) {
 				$affiliate->get_user()->add_role( $role );
@@ -218,6 +261,15 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Panel' ) ) {
 
 			// save brand new affiliate and get id.
 			$res = $affiliate->save();
+
+			/**
+			 * DO_ACTION: yith_wcaf_affiliate_saved
+			 *
+			 * Allows to trigger some action after saving the affiliate when it is added manually.
+			 *
+			 * @param YITH_WCAF_Affiliate $affiliate Affiliate object.
+			 */
+			do_action( 'yith_wcaf_affiliate_saved', $affiliate );
 
 			return array(
 				'added_affiliate' => $res,
@@ -313,6 +365,7 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Panel' ) ) {
 		 * Filters columns hidden by default, to add ones for current screen
 		 *
 		 * @param array $defaults Array of columns hidden by default.
+		 *
 		 * @return array Hidden columns.
 		 */
 		public function get_default_hidden_columns( $defaults ) {
@@ -384,7 +437,7 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Panel' ) ) {
 
 					foreach ( $affiliates as $affiliate ) {
 						$affiliate->delete();
-						$updated++;
+						$updated ++;
 					}
 					break;
 				case 'enable':
@@ -392,7 +445,7 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Panel' ) ) {
 						$affiliate->set_status( 'enabled' );
 						$affiliate->save();
 
-						$updated++;
+						$updated ++;
 					}
 					break;
 				case 'disable':
@@ -405,7 +458,7 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Panel' ) ) {
 						$affiliate->update_meta_data( 'reject_message', $reject_message );
 						$affiliate->save();
 
-						$updated++;
+						$updated ++;
 					}
 					break;
 				case 'ban':
@@ -419,7 +472,7 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Panel' ) ) {
 						$affiliate->update_meta_data( 'ban_message', $ban_message );
 						$affiliate->save();
 
-						$updated++;
+						$updated ++;
 					}
 					break;
 				case 'unban':
@@ -429,7 +482,7 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Panel' ) ) {
 						$affiliate->unban();
 						$affiliate->save();
 
-						$updated++;
+						$updated ++;
 					}
 					break;
 			}

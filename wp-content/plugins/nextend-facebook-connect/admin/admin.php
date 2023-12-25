@@ -37,7 +37,7 @@ class NextendSocialLoginAdmin {
     }
 
     public static function admin_menu() {
-        $menu = add_options_page('Nextend Social Login', 'Nextend Social Login', 'manage_options', 'nextend-social-login', array(
+        $menu = add_options_page('Nextend Social Login', 'Nextend Social Login', NextendSocialLogin::getRequiredCapability(), 'nextend-social-login', array(
             'NextendSocialLoginAdmin',
             'display_admin'
         ));
@@ -114,7 +114,7 @@ class NextendSocialLoginAdmin {
 
     public static function admin_init() {
 
-        if (current_user_can('manage_options')) {
+        if (current_user_can(NextendSocialLogin::getRequiredCapability())) {
             if (!defined('NSL_PRO_PATH')) {
                 require_once(dirname(__FILE__) . '/notice.php');
             }
@@ -240,7 +240,7 @@ class NextendSocialLoginAdmin {
     }
 
     public static function save_form_data() {
-        if (current_user_can('manage_options') && check_admin_referer('nextend-social-login')) {
+        if (current_user_can(NextendSocialLogin::getRequiredCapability()) && check_admin_referer('nextend-social-login')) {
             foreach ($_POST as $k => $v) {
                 if (is_string($v)) {
                     $_POST[$k] = stripslashes($v);
@@ -299,7 +299,7 @@ class NextendSocialLoginAdmin {
 
     public static function ajax_save_form_data() {
         check_ajax_referer('nextend-social-login');
-        if (current_user_can('manage_options')) {
+        if (current_user_can(NextendSocialLogin::getRequiredCapability())) {
             $view = !empty($_POST['view']) ? $_POST['view'] : '';
             switch ($view) {
                 case 'orderProviders':
@@ -1005,6 +1005,10 @@ class NextendSocialLoginAdmin {
         }
     }
 
+    /**
+     * @param NextendSocialProviderDummy $provider
+     * @param string                     $lastUpdated
+     */
     public static function show_getting_started_warning($provider, $lastUpdated) {
         if ($provider && $lastUpdated) {
 
@@ -1019,7 +1023,9 @@ class NextendSocialLoginAdmin {
             );
             $supportUrlWithArgs = add_query_arg($args, $supportURL);
 
-            printf(__('<p><strong><u>Warning</u></strong>: Providers change the App setup process quite often, which means some steps below might not be accurate. If you see significant difference in the written instructions and what you see at the provider, feel free to %1$sreport it%2$s, so we can check and update the instructions.<br><strong>Last updated:</strong> %3$s.</p>', 'nextend-facebook-connect'), '<a href="' . $supportUrlWithArgs . '" target="_blank">', '</a>', $lastUpdatedDate);
+            $documentationURL = 'https://nextendweb.com/nextend-social-login-docs/provider-' . $provider->getId() . '/';
+
+            printf(__('<p><strong><u>Warning</u></strong>: Providers change the App setup process quite often, which means some steps below might not be accurate. If you see significant difference in the written instructions and what you see at the provider, check the guide in the %1$sonline documentation%2$s first, just in case if we are already aware of the changes hence updated the guide. Otherwise feel free to %3$sreport the changes%4$s, so we can check and update the instructions.<br><strong>Last updated:</strong> %5$s.</p>', 'nextend-facebook-connect'), '<a href="' . $documentationURL . '" target="_blank">', '</a>', '<a href="' . $supportUrlWithArgs . '" target="_blank">', '</a>', $lastUpdatedDate);
         }
     }
 }

@@ -3,7 +3,7 @@
  * Affiliate Dashboard class
  * This is just an alias for {@see YITH_WCAF_Abstract_Dashboard}
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH/Affiliates/Classes
  * @version 2.0.0
  */

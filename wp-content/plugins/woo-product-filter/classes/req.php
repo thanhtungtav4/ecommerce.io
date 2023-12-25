@@ -11,7 +11,11 @@ class ReqWpf {
 	public static function startSession() {
 
 		if (!UtilsWpf::isSessionStarted()) {
-			session_start();
+			if (version_compare(phpversion(), '5.7.0', '<')) {
+				session_start();
+			} else {
+				session_start(['read_and_close' => true]);
+			}
 		}
 
 	}
@@ -89,6 +93,17 @@ class ReqWpf {
 				break;
 		}
 		return $default;
+	}
+	
+	public static function existGetVar( $begin ) {
+		if (isset($_GET) && is_array($_GET)) {
+			foreach ($_GET as $k => $v) {
+				if (strpos($k, $begin) === 0) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 

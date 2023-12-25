@@ -9,8 +9,8 @@ namespace Automattic\WooCommerce\Internal\Admin\Notes;
 
 defined( 'ABSPATH' ) || exit;
 
-use \Automattic\WooCommerce\Admin\Notes\Note;
-use \Automattic\WooCommerce\Admin\Notes\NoteTraits;
+use Automattic\WooCommerce\Admin\Notes\Note;
+use Automattic\WooCommerce\Admin\Notes\NoteTraits;
 
 /**
  * Real_Time_Order_Alerts
@@ -51,7 +51,7 @@ class RealTimeOrderAlerts {
 		$note->set_type( Note::E_WC_ADMIN_NOTE_INFORMATIONAL );
 		$note->set_name( self::NOTE_NAME );
 		$note->set_source( 'woocommerce-admin' );
-		$note->add_action( 'learn-more', __( 'Learn more', 'woocommerce' ), 'https://woocommerce.com/mobile/?utm_source=inbox&utm_medium=product' );
+		$note->add_action( 'learn-more', __( 'Learn more', 'woocommerce' ), 'https://woo.com/mobile/?utm_source=inbox&utm_medium=product' );
 		return $note;
 	}
 }

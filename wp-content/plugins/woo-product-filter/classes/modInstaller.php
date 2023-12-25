@@ -1,6 +1,7 @@
 <?php
 class ModInstallerWpf {
 	private static $_current = array();
+	private static $extPlugName = '';
 	/**
 	 * Install new ModuleWpf into plugin
 	 *
@@ -92,8 +93,16 @@ class ModInstallerWpf {
 	private static function _getPluginLocations() {
 		$locations = array();
 		$plug = ReqWpf::getVar('plugin');
+		if ( ( empty( $plug ) || is_array($plug) ) && !empty(self::$extPlugName) ) {
+			$plug = self::$extPlugName;
+		}
+			
 		if ( empty( $plug ) ) {
 			$plug = ReqWpf::getVar( 'checked' );
+			if ( isset( $plug[0] ) ) {
+				$plug = $plug[0];
+			}
+		} else if (is_array($plug)) {
 			if ( isset( $plug[0] ) ) {
 				$plug = $plug[0];
 			}
@@ -154,6 +163,9 @@ class ModInstallerWpf {
 		if (WPF_TEST_MODE) {
 			add_action('activated_plugin', array(FrameWpf::_(), 'savePluginActivationErrors'));
 		}
+		if (!empty($extPlugName)) {
+			self::$extPlugName = $extPlugName;
+		}
 		$locations = self::_getPluginLocations();
 
 		$modules = self::_getModulesFromXml($locations['xmlPath']);
@@ -171,6 +183,7 @@ class ModInstallerWpf {
 				}
 			}
 		}
+		self::$extPlugName = '';
 		if (ErrorsWpf::haveErrors(ErrorsWpf::MOD_INSTALL)) {
 			self::displayErrors(false);
 			return false;
@@ -191,7 +204,7 @@ class ModInstallerWpf {
 	public static function deactivate( $exclude = array() ) {
 		$locations = self::_getPluginLocations();
 		$modules = self::_getModulesFromXml($locations['xmlPath']);
-		if (empty($exclude)) {
+		if (empty($exclude) || !is_array($exclude)) {
 			$exclude = array();
 		}
 

@@ -1,18 +1,18 @@
 <?php 
-	$isSubscribe = $this->getModule()->getModel()->isSubscribe();
-	$isRating = $this->getModule()->getModel()->isRating();
-	if (!$isSubscribe || !$isRating) {
-?>
+$isSubscribe = $this->getModule()->getModel()->isSubscribe();
+$isRating = $this->getModule()->getModel()->isRating();
+if (!$isSubscribe || !$isRating) {
+	?>
 	<div class="row wpf-overview-block-row">
 		<?php if (!$isSubscribe) { ?>
 			<div class="col-sm-<?php echo $isRating ? 12 : 6; ?>">
 				<div class="wpf-overview-block">
 					<div class="wpf-overview-block-header">
 						<div class="wpf-overview-header-title">
-							<?php esc_html_e('Help improve WooBeWoo', 'woo-product-filter'); ?>
+							<?php esc_html_e('Help improve WBW', 'woo-product-filter'); ?>
 						</div>
 						<div class="wpf-overview-header-desc">
-							<?php esc_html_e('Stay up to date with news, life hacks, and new features from WooBeWoo. And also participate in surveys to improve plugins.', 'woo-product-filter'); ?>
+							<?php esc_html_e('Stay up to date with news, life hacks, and new features from WBW. And also participate in surveys to improve plugins.', 'woo-product-filter'); ?>
 						</div>
 					</div>
 					<div class="wpf-overview-block-body">

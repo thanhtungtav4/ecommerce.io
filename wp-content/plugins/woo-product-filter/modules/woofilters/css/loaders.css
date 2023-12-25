@@ -179,7 +179,7 @@
 .woobewoo-table-loader {
 	margin: 0 auto;
 }
-ul.products .spinner, .la-spinner, .wpfIconPreview .spinner, .wpfLoaderIconTemplate .spinner, .woobewoo-filter-loader.spinner {
+.la-spinner, .wpfIconPreview .spinner, .wpfLoaderIconTemplate .spinner, .woobewoo-filter-loader.spinner {
 	display: block;
 	visibility: visible;
 	background: transparent;

@@ -3,7 +3,7 @@
 
         window.NSLResetTerms = function () {
             var id = 'terms',
-                content =  <?php echo wp_json_encode(__('By clicking Register, you accept our <a href="#privacy_policy_url" target="_blank">Privacy Policy</a>', 'nextend-facebook-connect')); ?>;
+                content =  <?php echo wp_json_encode('By clicking Register, you accept our <a href="#privacy_policy_url" target="_blank">Privacy Policy</a>'); ?>;
 
             if ($('#wp-' + id + '-wrap').hasClass('html-active')) {
                 $('#' + id).val(content);

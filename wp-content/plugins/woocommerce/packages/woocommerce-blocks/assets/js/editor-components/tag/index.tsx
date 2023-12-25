@@ -10,6 +10,11 @@ import { useInstanceId } from '@wordpress/compose';
 import { useState } from '@wordpress/element';
 
 /**
+ * Internal dependencies
+ */
+import './editor.scss';
+
+/**
  * This component can be used to show an item styled as a "tag", optionally with an `X` + "remove"
  * or with a popover that is shown on click.
  */
@@ -88,6 +93,7 @@ const Tag = ( {
 						icon={ cancelCircleFilled }
 						size={ 20 }
 						className="clear-icon"
+						role="img"
 					/>
 				</Button>
 			) }

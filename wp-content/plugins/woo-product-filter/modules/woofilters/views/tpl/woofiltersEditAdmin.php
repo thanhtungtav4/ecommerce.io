@@ -5,6 +5,7 @@ if (!$isPro) {
 	$adPath = $this->getModule()->getModPath() . 'img/ad/';
 	$labelPro = ' Pro';
 }
+$isWCLicense = FrameWpf::_()->isWCLicense();
 
 list($categoryDisplay, $parentCategories) = $this->getModule()->getCategoriesDisplay();
 
@@ -28,13 +29,7 @@ $catArgs = array(
 $brandDisplay = array();
 $parentBrands = array();
 if (taxonomy_exists('pwb-brand')) {
-	$productBrands = get_terms( 'pwb-brand', $catArgs );
-	foreach ($productBrands as $c) {
-		if (0 == $c->parent) {
-			array_push($parentBrands, $c->term_id);
-		}
-		$brandDisplay[$c->term_id] = $c->name;
-	}
+	list($brandDisplay, $parentBrands) = $this->getModule()->getCategoriesDisplay('pwb-brand');
 }
 
 ?>
@@ -117,7 +112,7 @@ if (taxonomy_exists('pwb-brand')) {
 						<div class="wpfMainBtnsShell col-lg-4 col-md-4 col-sm-4 col-xs-12">
 							<ul class="wpfSub control-buttons">
 								<li>
-									<button id="buttonSave" class="button">
+									<button id="buttonSave" class="button<?php echo $isWCLicense ? ' button-primary' : ''; ?>">
 										<i class="fa fa-floppy-o" aria-hidden="true"></i><span><?php echo esc_html__('Save', 'woo-product-filter'); ?></span>
 									</button>
 								</li>

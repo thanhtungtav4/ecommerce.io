@@ -9,13 +9,14 @@ import {
 import { addFilter, hasFilter } from '@wordpress/hooks';
 import type { StoreDescriptor } from '@wordpress/data';
 import { CartCheckoutSidebarCompatibilityNotice } from '@woocommerce/editor-components/sidebar-compatibility-notice';
-import {
-	DefaultNotice,
-	LegacyNotice,
-} from '@woocommerce/editor-components/default-notice';
+import { NoPaymentMethodsNotice } from '@woocommerce/editor-components/no-payment-methods-notice';
+import { PAYMENT_STORE_KEY } from '@woocommerce/block-data';
+import { DefaultNotice } from '@woocommerce/editor-components/default-notice';
+import { IncompatibleExtensionsNotice } from '@woocommerce/editor-components/incompatible-extension-notice';
 import { useSelect } from '@wordpress/data';
 import { CartCheckoutFeedbackPrompt } from '@woocommerce/editor-components/feedback-prompt';
-import { isWcVersion } from '@woocommerce/settings';
+import { useState } from '@wordpress/element';
+
 declare module '@wordpress/editor' {
 	let store: StoreDescriptor;
 }
@@ -30,66 +31,116 @@ declare module '@wordpress/block-editor' {
 
 const withSidebarNotices = createHigherOrderComponent(
 	( BlockEdit ) => ( props ) => {
-		const { name: blockName, isSelected: isBlockSelected } = props;
+		const {
+			clientId,
+			name: blockName,
+			isSelected: isBlockSelected,
+		} = props;
+
+		const [
+			isIncompatibleExtensionsNoticeDismissed,
+			setIsIncompatibleExtensionsNoticeDismissed,
+		] = useState( true );
+
+		const toggleIncompatibleExtensionsNoticeDismissedStatus = (
+			isDismissed: boolean
+		) => {
+			setIsIncompatibleExtensionsNoticeDismissed( isDismissed );
+		};
+
+		const {
+			isCart,
+			isCheckout,
+			isPaymentMethodsBlock,
+			hasPaymentMethods,
+			parentId,
+		} = useSelect( ( select ) => {
+			const { getBlockParentsByBlockName, getBlockName } =
+				select( blockEditorStore );
+
+			const parents = getBlockParentsByBlockName( clientId, [
+				'woocommerce/cart',
+				'woocommerce/checkout',
+			] ).reduce(
+				(
+					accumulator: Record< string, string >,
+					parentClientId: string
+				) => {
+					const parentName = getBlockName( parentClientId );
+					accumulator[ parentName ] = parentClientId;
+					return accumulator;
+				},
+				{}
+			);
+
+			const currentBlockName = getBlockName( clientId );
+			const parentBlockIsCart =
+				Object.keys( parents ).includes( 'woocommerce/cart' );
+			const parentBlockIsCheckout = Object.keys( parents ).includes(
+				'woocommerce/checkout'
+			);
+			const currentBlockIsCart =
+				currentBlockName === 'woocommerce/cart' || parentBlockIsCart;
+			const currentBlockIsCheckout =
+				currentBlockName === 'woocommerce/checkout' ||
+				parentBlockIsCheckout;
+			const targetParentBlock = currentBlockIsCart
+				? 'woocommerce/cart'
+				: 'woocommerce/checkout';
+
+			return {
+				isCart: currentBlockIsCart,
+				isCheckout: currentBlockIsCheckout,
+				parentId:
+					currentBlockName === targetParentBlock
+						? clientId
+						: parents[ targetParentBlock ],
+				isPaymentMethodsBlock:
+					currentBlockName === 'woocommerce/checkout-payment-block',
+				hasPaymentMethods:
+					select( PAYMENT_STORE_KEY ).paymentMethodsInitialized() &&
+					Object.keys(
+						select( PAYMENT_STORE_KEY ).getAvailablePaymentMethods()
+					).length > 0,
+			};
+		} );
 
 		// Show sidebar notices only when a WooCommerce block is selected.
-		if ( ! blockName.startsWith( 'woocommerce/' ) || ! isBlockSelected ) {
+		if (
+			! blockName.startsWith( 'woocommerce/' ) ||
+			! isBlockSelected ||
+			! ( isCart || isCheckout )
+		) {
 			return <BlockEdit key="edit" { ...props } />;
 		}
 
-		const addressFieldOrAccountBlocks = [
-			'woocommerce/checkout-shipping-address-block',
-			'woocommerce/checkout-billing-address-block',
-			'woocommerce/checkout-contact-information-block',
-			'woocommerce/checkout-fields-block',
-		];
-		const { clientId } = props;
-		const { isCart, isCheckout, isAddressFieldBlock } = useSelect(
-			( select ) => {
-				const { getBlockParentsByBlockName, getBlockName } =
-					select( blockEditorStore );
-				const parent = getBlockParentsByBlockName( clientId, [
-					'woocommerce/cart',
-					'woocommerce/checkout',
-				] ).map( getBlockName );
-				const currentBlockName = getBlockName( clientId );
-				return {
-					isCart:
-						parent.includes( 'woocommerce/cart' ) ||
-						currentBlockName === 'woocommerce/cart',
-					isCheckout:
-						parent.includes( 'woocommerce/checkout' ) ||
-						currentBlockName === 'woocommerce/checkout',
-					isAddressFieldBlock:
-						addressFieldOrAccountBlocks.includes(
-							currentBlockName
-						),
-				};
-			}
-		);
 		return (
 			<>
-				{ ( isCart || isCheckout ) && (
-					<InspectorControls>
-						{ isWcVersion( '6.9.0', '>=' ) ? (
-							<DefaultNotice
-								block={ isCheckout ? 'checkout' : 'cart' }
-							/>
-						) : (
-							<LegacyNotice
-								block={ isCheckout ? 'checkout' : 'cart' }
-							/>
-						) }
+				<InspectorControls>
+					<IncompatibleExtensionsNotice
+						toggleDismissedStatus={
+							toggleIncompatibleExtensionsNoticeDismissedStatus
+						}
+						block={
+							isCart ? 'woocommerce/cart' : 'woocommerce/checkout'
+						}
+						clientId={ parentId }
+					/>
 
+					<DefaultNotice block={ isCheckout ? 'checkout' : 'cart' } />
+
+					{ isIncompatibleExtensionsNoticeDismissed ? (
 						<CartCheckoutSidebarCompatibilityNotice
 							block={ isCheckout ? 'checkout' : 'cart' }
 						/>
-						{ isAddressFieldBlock ? null : (
-							<CartCheckoutFeedbackPrompt />
-						) }
-					</InspectorControls>
-				) }
+					) : null }
 
+					{ isPaymentMethodsBlock && ! hasPaymentMethods && (
+						<NoPaymentMethodsNotice />
+					) }
+
+					<CartCheckoutFeedbackPrompt />
+				</InspectorControls>
 				<BlockEdit key="edit" { ...props } />
 			</>
 		);

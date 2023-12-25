@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: DevVN Woocommerce Reviews\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-14 15:27+0700\n"
-"PO-Revision-Date: 2022-08-07 22:59+0700\n"
+"PO-Revision-Date: 2023-06-04 19:56+0000\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Language: vi\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: devvn-woocommerce-reviews.php\n"
@@ -23,691 +23,43 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: devvn-woocommerce-reviews-main.php:302
-msgid "Review Options"
-msgstr "Tùy chọn đánh giá"
-
-#: devvn-woocommerce-reviews-main.php:317
-msgid "Schedule"
-msgstr ""
-
-#: devvn-woocommerce-reviews-main.php:318
-msgid "Wait to approved"
-msgstr "Đợi chấp nhận"
-
-#: devvn-woocommerce-reviews-main.php:321
-msgid "Phone"
-msgstr "Số điện thoại"
-
-#: devvn-woocommerce-reviews-main.php:325
-msgid "Like count"
-msgstr "Số lượt thích"
-
-#: devvn-woocommerce-reviews-main.php:329
-msgid "Review images"
-msgstr "Hình ảnh đánh giá"
-
-#: devvn-woocommerce-reviews-main.php:332
-msgid "Add Images"
-msgstr "Thêm ảnh"
-
-#: devvn-woocommerce-reviews-main.php:332
-msgid "Edit image"
-msgstr "Sửa ảnh"
-
-#: devvn-woocommerce-reviews-main.php:332
-msgid "Remove"
-msgstr "Xóa"
-
-#: devvn-woocommerce-reviews-main.php:332
-msgid "Delete"
-msgstr "Xóa"
-
-#: devvn-woocommerce-reviews-main.php:332
-msgid "Add gallery images"
-msgstr "Thêm album ảnh"
-
-#: devvn-woocommerce-reviews-main.php:352
-msgid "Quick review tags"
-msgstr "Thẻ đánh giá nhanh"
-
-#: devvn-woocommerce-reviews-main.php:465
-#: devvn-woocommerce-reviews-main.php:466
-#: devvn-woocommerce-reviews-main.php:476
-#: devvn-woocommerce-reviews-main.php:477
-msgid "DevVN Reviews"
-msgstr ""
-
-#: devvn-woocommerce-reviews-main.php:524
-msgid "Cài đặt"
-msgstr ""
-
-#: devvn-woocommerce-reviews-main.php:636
-#: devvn-woocommerce-reviews-main.php:686
-msgid "<strong>Error:</strong> Add plugin license to review"
-msgstr "<strong>Lỗi:</strong> Kích hoạt license để đánh giá"
-
-#: devvn-woocommerce-reviews-main.php:650
-#: devvn-woocommerce-reviews-main.php:2223
-msgid "Error: Phone number is required!"
-msgstr "Lỗi: Số điện thoại là bắt buộc!"
-
-#: devvn-woocommerce-reviews-main.php:654
-#: devvn-woocommerce-reviews-main.php:2227
-msgid "Error: The phone number is not in the correct format!"
-msgstr "Lỗi: Số điện thoại không đúng định dạng!"
-
-#: devvn-woocommerce-reviews-main.php:658
-msgid "Error: Your name is required!"
-msgstr "Lỗi: Tên là bắt buộc!"
-
-#: devvn-woocommerce-reviews-main.php:677
+#. 1: reviews count 2: product name
+#: templates/single-product-reviews-old.php:38
+#: templates/single-product-reviews.php:40
 #, php-format
-msgid "Nội dung đánh giá phải tối thiểu %s ký tự."
-msgstr ""
+msgid "%1$s review for %2$s"
+msgid_plural "%1$s reviews for %2$s"
+msgstr[0] "%1$s đánh giá cho %2$s"
 
-#: devvn-woocommerce-reviews-main.php:701
-msgid "<strong>Error:</strong> The image is not in the correct format"
-msgstr "<strong>Lỗi:</strong> Hình ảnh không đúng định dạng"
-
-#: devvn-woocommerce-reviews-main.php:704
+#: templates/single-product-reviews-old.php:88
+#: templates/single-product-reviews.php:84
 #, php-format
-msgid ""
-"<strong>Error:</strong> The image is too big. Only images allowed to be "
-"loaded <= %s"
-msgstr ""
-"<strong>Lỗi:</strong> Hình ảnh quá lớn. Chỉ những ảnh <= %s được phép tải lên"
-
-#: devvn-woocommerce-reviews-main.php:707
-msgid ""
-"<strong>ERROR:</strong> The uploaded file exceeds the upload_max_filesize "
-"directive in php.ini."
-msgstr ""
-"<strong>Lỗi:</strong> Tệp được tải lên vượt quá chỉ thị upload_max_filesize "
-"trong php.ini."
-
-#: devvn-woocommerce-reviews-main.php:709
-msgid ""
-"<strong>ERROR:</strong> The uploaded file exceeds the MAX_FILE_SIZE "
-"directive that was specified in the HTML form."
-msgstr ""
-"<strong>Lỗi:</strong> Tệp được tải lên vượt quá chỉ thị MAX_FILE_SIZE đã "
-"được chỉ định trong biểu mẫu HTML."
-
-#: devvn-woocommerce-reviews-main.php:711
-msgid ""
-"<strong>ERROR:</strong> The uploaded file was only partially uploaded. "
-"Please try again later."
-msgstr ""
-"<strong>Lỗi:</strong> Tệp được tải lên chỉ được tải lên một phần. Vui lòng "
-"thử lại sau."
-
-#: devvn-woocommerce-reviews-main.php:713
-msgid "<strong>ERROR:</strong> Missing a temporary folder."
-msgstr "<strong>Lỗi:</strong> Thiếu thư mục tạm thời."
-
-#: devvn-woocommerce-reviews-main.php:715
-msgid "<strong>ERROR:</strong> Failed to write file to disk."
-msgstr "<strong>Lỗi:</strong> Lỗi khi lưu dữ lieu."
-
-#: devvn-woocommerce-reviews-main.php:717
-msgid "<strong>ERROR:</strong> A PHP extension stopped the file upload."
-msgstr "<strong>LỖI:</strong> Tiện ích mở rộng PHP đã dừng tải tệp lên."
-
-#: devvn-woocommerce-reviews-main.php:849
-msgid "Fake đã mua hàng"
-msgstr ""
-
-#: devvn-woocommerce-reviews-main.php:851
-msgid "Purchased"
-msgstr "Đã mua"
-
-#: devvn-woocommerce-reviews-main.php:982
-#: devvn-woocommerce-reviews-main.php:1527
-msgid "Your phone is required!"
-msgstr "Số điện thoại là bắt buộc!"
-
-#: devvn-woocommerce-reviews-main.php:1018
-#: devvn-woocommerce-reviews-main.php:1428
-#: devvn-woocommerce-reviews-main.php:1486
-msgid "Comment successfully!"
-msgstr "Bình luận thành công!"
-
-#: devvn-woocommerce-reviews-main.php:1037
-msgid "Sent comment successfully. Pending approval!"
-msgstr "Gửi bình luận thành công. Đang chờ chấp nhận!"
-
-#: devvn-woocommerce-reviews-main.php:1042
-msgid "Comment failed to post"
-msgstr "Bình luận lỗi"
-
-#: devvn-woocommerce-reviews-main.php:1127
-#, php-format
-msgid "%s Comment"
-msgid_plural "%s Comments"
-msgstr[0] "%s bình luận"
-
-#: devvn-woocommerce-reviews-main.php:1223
-#: devvn-woocommerce-reviews-main.php:1276 templates/review.php:72
-msgid "Reply"
-msgstr "Trả lời"
-
-#: devvn-woocommerce-reviews-main.php:1227
-#: devvn-woocommerce-reviews-main.php:1280
-msgid "ago"
-msgstr "trước"
-
-#: devvn-woocommerce-reviews-main.php:1234
-#: devvn-woocommerce-reviews-main.php:1287
-#: includes/class-devvn-walker-comment.php:82 templates/review.php:82
-msgid "Edit"
-msgstr "Sửa"
-
-#: devvn-woocommerce-reviews-main.php:1272
-#: includes/class-devvn-walker-comment.php:43
-#: includes/shortcode-list-reviews.php:196 templates/review-meta.php:59
-msgid "Administrator"
-msgstr "Quản trị viên"
-
-#: devvn-woocommerce-reviews-main.php:1332
-msgid "Search by content"
-msgstr "Tìm kiếm theo nội dung"
-
-#: devvn-woocommerce-reviews-main.php:1334
-msgid "Search"
-msgstr "Tìm kiếm"
-
-#: devvn-woocommerce-reviews-main.php:1355
-#: templates/single-product-reviews-old.php:230
-#: templates/single-product-reviews.php:238
-msgid "Male"
-msgstr "Anh"
-
-#: devvn-woocommerce-reviews-main.php:1359
-#: templates/single-product-reviews-old.php:234
-#: templates/single-product-reviews.php:242
-msgid "Female"
-msgstr "Chị"
-
-#: devvn-woocommerce-reviews-main.php:1363
-#: templates/single-product-reviews-old.php:122
-#: templates/single-product-reviews-old.php:238
-#: templates/single-product-reviews.php:118
-#: templates/single-product-reviews.php:246
-msgid "Your name (Required)"
-msgstr "Họ tên (bắt buộc)"
-
-#: devvn-woocommerce-reviews-main.php:1367
-#: templates/single-product-reviews-old.php:123
-#: templates/single-product-reviews-old.php:242
-#: templates/single-product-reviews.php:119
-#: templates/single-product-reviews.php:250
-msgid "Your phone (Required)"
-msgstr "Số điện thoại (bắt buộc)"
-
-#: devvn-woocommerce-reviews-main.php:1372
-#: templates/single-product-reviews-old.php:124
-#: templates/single-product-reviews-old.php:247
-#: templates/single-product-reviews.php:120
-#: templates/single-product-reviews.php:255
-msgid "Email"
-msgstr "Email"
-
-#: devvn-woocommerce-reviews-main.php:1377
-#: templates/single-product-reviews-old.php:252
-#: templates/single-product-reviews.php:260
-msgid "Post comment"
-msgstr "Gửi"
-
-#: devvn-woocommerce-reviews-main.php:1386
-#: devvn-woocommerce-reviews-main.php:1439
-#: devvn-woocommerce-reviews-main.php:1497
-msgid "No comments yet"
-msgstr "Không có bình luận nào"
-
-#: devvn-woocommerce-reviews-main.php:1405
-#: devvn-woocommerce-reviews-main.php:1407
-#: devvn-woocommerce-reviews-main.php:1461
-#: devvn-woocommerce-reviews-main.php:1463
-#: devvn-woocommerce-reviews-main.php:1637
-#: devvn-woocommerce-reviews-main.php:2035
-msgid "Error!"
-msgstr "Lỗi!"
-
-#: devvn-woocommerce-reviews-main.php:1519
-#: templates/single-product-reviews-old.php:163
-#: templates/single-product-reviews.php:163
-msgid "Very poor"
-msgstr "Rất tệ"
-
-#: devvn-woocommerce-reviews-main.php:1520
-#: templates/single-product-reviews-old.php:162
-#: templates/single-product-reviews.php:162
-msgid "Not that bad"
-msgstr "Không tệ"
-
-#: devvn-woocommerce-reviews-main.php:1521
-#: templates/single-product-reviews-old.php:161
-#: templates/single-product-reviews.php:161
-msgid "Average"
-msgstr "Trung bình"
-
-#: devvn-woocommerce-reviews-main.php:1522
-#: templates/single-product-reviews-old.php:160
-#: templates/single-product-reviews.php:160
-msgid "Good"
-msgstr "Tốt"
-
-#: devvn-woocommerce-reviews-main.php:1523
-#: templates/single-product-reviews-old.php:159
-#: templates/single-product-reviews.php:159
-msgid "Perfect"
-msgstr "Tuyệt vời"
-
-#: devvn-woocommerce-reviews-main.php:1525
-msgid "Your name is required!"
-msgstr "Tên là bắt buộc!"
-
-#: devvn-woocommerce-reviews-main.php:1526
-msgid "Email is required!"
-msgstr "Email là bắt buộc!"
-
-#: devvn-woocommerce-reviews-main.php:1528
-msgid "Comments is required!"
-msgstr "Nội dung bình luận là bắt buộc!"
-
-#: devvn-woocommerce-reviews-main.php:1530
-#, php-format
-msgid "Minimum of %s characters"
-msgstr "Tối thiểu %s ký tự"
-
-#: devvn-woocommerce-reviews-main.php:1531
-#, php-format
-msgid "character ( Minimum of %d)"
-msgstr "ký tự (Tối thiểu %d)"
-
-#: devvn-woocommerce-reviews-main.php:1533
-msgid "The image is not in the correct format. Only accept jpg/png/gif"
-msgstr "Hình ảnh không đúng định dạng. Chỉ chấp nhận jpg/png/gif"
-
-#: devvn-woocommerce-reviews-main.php:1534
-#, php-format
-msgid "The image is too big. Only images allowed to be loaded <= %s"
-msgstr "Hình ảnh quá lớn. Chỉ những ảnh <= %s được phép tải lên"
-
-#: devvn-woocommerce-reviews-main.php:1535
-#, php-format
-msgid "Allow uploading only %d images"
-msgstr "Chỉ cho phép tải lên %d ảnh"
-
-#: devvn-woocommerce-reviews-main.php:1537
-msgid "Review successful!"
-msgstr "Đánh giá thành công!"
-
-# wpml-name: f24eaac94b2bc15d4963b232ce8d2c29
-#: devvn-woocommerce-reviews-main.php:1608
-#, php-format
-msgid ""
-"<strong>Mua bản quyền để được tự động update. <a href=\"%s\" target=\"_blank"
-"\">Xem thêm thông tin mua bản quyền</a></strong> hoặc liên hệ mua trực tiếp "
-"qua <a href=\"%s\" target=\"_blank\">facebook</a>"
-msgstr ""
-
-#: devvn-woocommerce-reviews-main.php:1628
-msgid "Đang thực hiện..."
-msgstr ""
-
-#: devvn-woocommerce-reviews-main.php:1629
-msgid "Đã xong"
-msgstr ""
-
-#: devvn-woocommerce-reviews-main.php:1630
-msgid "Có lỗi xảy ra. Fake lại ngay"
-msgstr ""
-
-#: devvn-woocommerce-reviews-main.php:1656
-#, php-format
-msgid "Đã sync %1$d đánh giá. Có %2$d lỗi."
-msgstr ""
-
-#: devvn-woocommerce-reviews-main.php:1666
-#: devvn-woocommerce-reviews-main.php:1676
-msgid "Done!"
-msgstr "Đã xong!"
-
-#: devvn-woocommerce-reviews-main.php:1750
-#, php-format
-msgid "Đã fake %1$d đánh giá."
-msgstr ""
-
-#: devvn-woocommerce-reviews-main.php:1830
-msgid "like"
-msgstr "thích"
-
-# 'interval' => 60 * 60 * 24 * 7,
-# 'display' => __( 'Weekly' ) );
-# return $schedules;
-#: devvn-woocommerce-reviews-main.php:1898
-msgid "Weekly"
-msgstr ""
-
-#: devvn-woocommerce-reviews-main.php:1916
-msgid "sold"
-msgstr "đã bán"
-
-#: devvn-woocommerce-reviews-main.php:1925
-msgid "Sold"
-msgstr "Đã bán"
-
-# if($rating == 0 && $devvn_review_settings['loop_rating_zero']){
-# $label = sprintf( __( 'Rated %s out of 5', 'woocommerce' ), $rating );
-# $html  = '<div class="star-rating" role="img" aria-label="' . esc_attr( $label ) . '">' . wc_get_star_rating_html( $rating, $count ) . '</div>';
-#: devvn-woocommerce-reviews-main.php:2342
-#: devvn-woocommerce-reviews-main.php:2634
-#, php-format
-msgid "Rated %s out of 5"
-msgstr ""
-
-# wpml-name: d64b7f57d03fccd67078b42f43a7e828
-#: devvn-woocommerce-reviews-main.php:2352
-#, php-format
-msgid "Phone number: %s"
-msgstr "Số điện thoại: %s"
-
-# <?php if($rating_count > 0):?>
-# <?php printf(_n('(%s customer review)', '(%s customer reviews)', $review_count, 'devvn-reviews'), '<span class="count">' . esc_html($review_count) . '</span>'); ?>
-# <?php else:?>
-#: devvn-woocommerce-reviews-main.php:2643
-#, php-format
-msgid "(%s customer review)"
-msgid_plural "(%s customer reviews)"
-msgstr[0] "(%s đánh giá)"
-
-# <?php else:?>
-# <?php _e('(customer review)', 'devvn-reviews');?>
-# <?php endif ?>
-#: devvn-woocommerce-reviews-main.php:2645
-msgid "(customer review)"
-msgstr "(đánh giá)"
-
-#: devvn-woocommerce-reviews.php:30
-msgid ""
-"Để Plugin <strong>DevVN Woocommerce Reviews</strong> hoạt động, bắt buộc cần "
-"kích hoạt <strong>php extension ionCube</strong>."
-msgstr ""
-
-# if ( $commenter['comment_author_email'] ) {
-# $moderation_note = __( 'Your comment is awaiting moderation.' );
-# } else {
-#: includes/class-devvn-walker-comment.php:19
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-# } else {
-# $moderation_note = __( 'Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.' );
-# }
-#: includes/class-devvn-walker-comment.php:21
-msgid ""
-"Your comment is awaiting moderation. This is a preview, your comment will be "
-"visible after it has been approved."
-msgstr ""
+msgid "%s"
+msgid_plural "%s"
+msgstr[0] ""
 
 #: includes/class-devvn-walker-comment.php:78
 #, php-format
 msgid "%s ago"
 msgstr "%s trước"
 
-#: includes/functions.php:7
+#: devvn-woocommerce-reviews-main.php:1194
 #, php-format
-msgid "Ngày hết hạn: %s"
-msgstr ""
+msgid "%s Comment"
+msgid_plural "%s Comments"
+msgstr[0] "%s bình luận"
 
-#: includes/option-auto-reviews.php:16
-msgid "Danh sách user"
-msgstr ""
-
-#: includes/option-auto-reviews.php:24
-msgid "Nội dung"
-msgstr ""
-
-#: includes/option-auto-reviews.php:32
-msgid "Số reviews / 1 sản phẩm"
-msgstr ""
-
-#: includes/option-auto-reviews.php:40
-msgid "Danh mục sản phẩm"
-msgstr ""
-
-#: includes/option-auto-reviews.php:70
-msgid "Ngày đánh giá"
-msgstr ""
-
-#: includes/option-auto-reviews.php:81
-msgid "Hành động"
-msgstr ""
-
-#: includes/reviews-setting.php:7
-msgid "Cài đặt bình luận và đánh giá cho Woocommerce"
-msgstr ""
-
-#: includes/reviews-setting.php:11
-msgid "Cài đặt chung"
-msgstr ""
-
-#: includes/reviews-setting.php:12
-msgid "Tự động đánh giá"
-msgstr ""
-
-#: includes/reviews-setting.php:13
-msgid "Schema Product"
-msgstr "Schema Product"
-
-#: includes/reviews-setting.php:14
-msgid "License"
-msgstr ""
-
-#: includes/reviews-setting.php:15
-msgid "Hướng dẫn sử dụng"
-msgstr ""
-
-#: includes/reviews-setting.php:16
-msgid "Check update"
-msgstr ""
-
-#: includes/schema-options.php:13
-msgid "Kích hoạt tính năng hỗ trợ Schema"
-msgstr ""
-
-#: includes/schema-options.php:23
-msgid "Brand"
-msgstr "Thương hiệu"
-
-#: includes/setting-general.php:13
-msgid "Hình ảnh"
-msgstr ""
-
-#: includes/setting-general.php:22
-msgid "Độ dài nội dung tối thiểu"
-msgstr ""
-
-#: includes/setting-general.php:29
-msgid "Vị trí hiển thị"
-msgstr ""
-
-#: includes/setting-general.php:54
-msgid "Tùy chỉnh label"
-msgstr ""
-
-#: includes/setting-general.php:65
-msgid "Ẩn/Hiện ngày đánh giá"
-msgstr ""
-
-#: includes/setting-general.php:72
-msgid "Ẩn/Hiện nút thích"
-msgstr ""
-
-#: includes/setting-general.php:79
-msgid "Show/Hide avatar"
-msgstr "Ẩn/Hiện ảnh đại diện"
-
-#: includes/setting-general.php:86
-msgid "Show/Hide sold count"
-msgstr "Hiển/Ẩn số lượng sản phẩm đã bán"
-
-#: includes/setting-general.php:93
-msgid "Hiển thị sđt bên cạnh tên"
-msgstr ""
-
-#: includes/setting-general.php:101
-msgid "Ẩn SĐT trong phần reviews"
-msgstr ""
-
-#: includes/setting-general.php:108
-msgid "Review style"
-msgstr "Kiểu review"
-
-#: includes/setting-general.php:115
-msgid "Custom Rating in Loop "
-msgstr "Hiển thị số đánh giá ngoài loop "
-
-#: includes/setting-general.php:122
-msgid "Show rating stars when there are no reviews"
-msgstr "Hiển thị đánh giá sao khi không có đánh giá nào"
-
-#: includes/setting-general.php:124
-msgid "No"
-msgstr "Không"
-
-#: includes/setting-general.php:125
-msgid "Yes"
-msgstr "Có"
-
-#: includes/setting-general.php:129
-msgid "Đánh giá nhanh"
-msgstr ""
-
-#: includes/setting-general.php:129
-msgid "New"
-msgstr "Mới"
-
-#: includes/setting-general.php:138
-msgid "Tùy chỉnh shortcode reviews"
-msgstr ""
-
-#: includes/setting-general.php:151
-msgid "Shortcode reviews"
-msgstr "Shortcode reviews"
-
-#: includes/setting-general.php:160 includes/setting-general.php:170
-msgid "Chạy Slider hình ảnh trong review"
-msgstr ""
-
-#: includes/setting-general.php:180
-msgid "Tổng số bài viết trên 1 trang"
-msgstr ""
-
-#: includes/setting-general.php:189
-msgid "Cố cột hiển thị"
-msgstr ""
-
-#: includes/setting-general.php:200
-msgid "Show product info in list"
-msgstr "Hiển thị thông tin sản phẩm trong danh sách"
-
-#: includes/setting-general.php:210
-msgid "Tùy chỉnh phần bình luận"
-msgstr ""
-
-#: includes/setting-general.php:214
-msgid "Ẩn/Hiện bình luận"
-msgstr ""
-
-#: includes/setting-general.php:222
-msgid "Số bình luận trên 1 trang"
-msgstr ""
-
-#: includes/setting-general.php:228
-msgid "Yêu cầu nhập SĐT"
-msgstr ""
-
-#: includes/setting-general.php:236
-msgid "Hiện/Ẩn trường email"
-msgstr ""
-
-#: includes/setting-general.php:244
-msgid "Kích hoạt cấu trúc FAQPage "
-msgstr ""
-
-#: includes/setting-general.php:252
-msgid "Hiện avatar"
-msgstr ""
-
-#: includes/setting-general.php:261
-msgid "Tùy chỉnh bình luận cho post"
-msgstr ""
-
-#: includes/setting-general.php:265
-msgid "Kích hoạt giao diện comment cho POST và PAGE"
-msgstr ""
-
-#: includes/setting-general.php:273
-msgid "Bắt buộc nhập sđt"
-msgstr ""
-
-#: includes/setting-general.php:281
-msgid "Công cụ"
-msgstr ""
-
-#: includes/setting-general.php:285
-msgid "Đồng bộ đánh giá"
-msgstr ""
-
-#: includes/setting-general.php:292
-msgid "Fake label khách đã mua hàng"
-msgstr ""
-
-#: includes/setting-general.php:300
-msgid "Mở comment"
-msgstr "Mở comment"
-
-#: includes/setting-general.php:307
-msgid "Fake số lượng đã bán"
-msgstr ""
+#: templates/single-product-reviews-old.php:63
+#, php-format
+msgid "%s customer review"
+msgid_plural "%s customer reviews"
+msgstr[0] "%s đánh giá"
 
 #: includes/shortcode-list-reviews.php:111
 #, php-format
 msgid "%s image"
 msgid_plural "%s images"
 msgstr[0] "%s ảnh"
-
-#: includes/shortcode-list-reviews.php:135
-#: includes/shortcode-list-reviews.php:192 templates/review-meta.php:55
-#, php-format
-msgid "Bought at %s"
-msgstr "Đã mua tại %s"
-
-#: includes/shortcode-list-reviews.php:152
-#: includes/shortcode-list-reviews.php:208
-msgid "View product"
-msgstr "Xem sản phẩm"
-
-#: includes/shortcode-list-reviews.php:159
-#, php-format
-msgid "View %s images from customers"
-msgstr "Xem %s hình ảnh từ khách hàng"
-
-#: includes/shortcode-list-reviews.php:242
-msgid "Customer images"
-msgstr "Hình ảnh từ khách hàng"
-
-#: includes/shortcode-list-reviews.php:269
-msgid "View more"
-msgstr "Xem thêm"
-
-# wpml-name: cdd1ece3506eb105c9f1c6502f3ac639
-#: includes/shortcode-list-reviews.php:307
-msgid "Product information is incorrect"
-msgstr ""
 
 #: includes/shortcode-list-reviews.php:315
 #, php-format
@@ -721,101 +73,21 @@ msgid "%s review"
 msgid_plural "%s reviews"
 msgstr[0] "%s đánh giá"
 
-# <em class="woocommerce-review__awaiting-approval">
-# <?php esc_html_e( 'Your review is awaiting approval', 'woocommerce' ); ?>
-# </em>
-#: templates/review-meta.php:31
-msgid "Your review is awaiting approval"
-msgstr ""
-
-# if ( post_password_required() ) { ?>
-# <p class="nocomments"><?php _e( 'This post is password protected. Enter the password to view comments.' ); ?></p>
-# <?php
-#: templates/single-post-comments.php:16
-msgid "This post is password protected. Enter the password to view comments."
-msgstr ""
-
-# wpml-name: 95e3ca513a2f54bf26b3d5269c86834b
-#: templates/single-post-comments.php:30
+# <?php if($rating_count > 0):?>
+# <?php printf(_n('(%s customer review)', '(%s customer reviews)', $review_count, 'devvn-reviews'), '<span class="count">' . esc_html($review_count) . '</span>'); ?>
+# <?php else:?>
+#: devvn-woocommerce-reviews-main.php:2870
 #, php-format
-msgid "Question and answer (%1$s comment)"
-msgstr "Bình luận bài viết (%1$s bình luận)"
+msgid "(%s customer review)"
+msgid_plural "(%s customer reviews)"
+msgstr[0] "(%s đánh giá)"
 
-# wpml-name: c7231db9f502f786f7bfb89a61405108
-#: templates/single-post-comments.php:30
-#, php-format
-msgid "Question and answer (%1$s comments)"
-msgstr "Bình luận bài viết (%1$s bình luận)"
-
-#: templates/single-post-comments.php:61
-msgid "Your Name"
-msgstr "Tên của bạn"
-
-#: templates/single-post-comments.php:71
-msgid "Your Email"
-msgstr "Email"
-
-#: templates/single-post-comments.php:89
-msgid "Type your comment here"
-msgstr "Xin mời nhập ý kiến của bạn tại đây"
-
-#: templates/single-post-comments.php:107
-msgid "Your Phone"
-msgstr "Số điện thoại"
-
-# <!-- If comments are closed. -->
-# <p class="nocomments"><?php _e( 'Comments are closed.' ); ?></p>
-#
-#: templates/single-post-comments.php:150
-msgid "Comments are closed."
-msgstr ""
-
-#. translators: 1: reviews count 2: product name
-#: templates/single-product-reviews-old.php:38
-#: templates/single-product-reviews.php:40
-#, php-format
-msgid "%1$s review for %2$s"
-msgid_plural "%1$s reviews for %2$s"
-msgstr[0] "%1$s đánh giá cho %2$s"
-
-#. translators: %s is product title
-#: templates/single-product-reviews-old.php:41
-#: templates/single-product-reviews-old.php:114
-#: templates/single-product-reviews.php:43
-#: templates/single-product-reviews.php:110
-#, php-format
-msgid "Review %s"
-msgstr "Đánh giá %s"
-
-#: templates/single-product-reviews-old.php:63
-#, php-format
-msgid "%s customer review"
-msgid_plural "%s customer reviews"
-msgstr[0] "%s đánh giá"
-
-#: templates/single-product-reviews-old.php:88
-#: templates/single-product-reviews.php:84
-#, php-format
-msgid "%s"
-msgid_plural "%s"
-msgstr[0] ""
-
-#: templates/single-product-reviews-old.php:94
-#: templates/single-product-reviews.php:90
-msgid "0 review"
-msgstr "0 đánh giá"
-
-#: templates/single-product-reviews-old.php:101
-#: templates/single-product-reviews.php:97
-msgid "Write a review"
-msgstr "Đánh giá ngay"
-
-#. translators: %s is product title
-#: templates/single-product-reviews-old.php:116
-#: templates/single-product-reviews.php:112
-#, php-format
-msgid "Leave a Reply to %s"
-msgstr "Trả lời %s"
+# <?php else:?>
+# <?php _e('(customer review)', 'devvn-reviews');?>
+# <?php endif ?>
+#: devvn-woocommerce-reviews-main.php:2872
+msgid "(customer review)"
+msgstr "(đánh giá)"
 
 #: templates/single-product-reviews-old.php:124
 #: templates/single-product-reviews-old.php:247
@@ -824,54 +96,16 @@ msgstr "Trả lời %s"
 msgid "(Required)"
 msgstr "(bắt buộc)"
 
-#: templates/single-product-reviews-old.php:126
-#: templates/single-product-reviews.php:122
-msgid "Submit a review"
-msgstr "Gửi đánh giá"
-
-#: templates/single-product-reviews-old.php:129
-#: templates/single-product-reviews.php:125
-msgid "Cancel"
-msgstr "Hủy"
-
-# * translators: %s opening and closing link tags respectively *
-# $comment_form['must_log_in'] = '<p class="must-log-in">' . sprintf( esc_html__( 'You must be %1$slogged in%2$s to post a review.', 'woocommerce' ), '<a href="' . esc_url( $account_page_url ) . '">', '</a>' ) . '</p>';
-# }
-#. translators: %s opening and closing link tags respectively
-#: templates/single-product-reviews-old.php:139
-#: templates/single-product-reviews.php:135
-#, php-format
-msgid "You must be %1$slogged in%2$s to post a review."
-msgstr ""
-
-#: templates/single-product-reviews-old.php:142
-#: templates/single-product-reviews.php:138
-msgid "Choose a image"
-msgstr "Gửi ảnh thực tế"
-
-#: templates/single-product-reviews-old.php:152
-#: templates/single-product-reviews.php:152
-msgid "Please share some comments..."
-msgstr "Mời bạn chia sẻ thêm một số cảm nhận..."
-
 #: templates/single-product-reviews-old.php:153
 #: templates/single-product-reviews.php:153
 #, php-format
 msgid "0 character ( Minimum of %d)"
 msgstr "0 ký tự (Tối thiểu %d)"
 
-#: templates/single-product-reviews-old.php:157
-#: templates/single-product-reviews.php:157
-msgid "How do you feel about the product? ( Select star)"
-msgstr "Bạn cảm thấy thế nào về sản phẩm? (Chọn sao)"
-
-# $comment_form['comment_field'] .= '<div class="comment-form-rating"><label for="rating">' . esc_html__( 'How do you feel about the product? ( Select star)', 'devvn-reviews' ) . '</label><select name="rating" id="rating" required>
-# <option value="">' . esc_html__( 'Rate&hellip;', 'woocommerce' ) . '</option>
-# <option value="5">' . esc_html__( 'Perfect', 'woocommerce' ) . '</option>
-#: templates/single-product-reviews-old.php:158
-#: templates/single-product-reviews.php:158
-msgid "Rate&hellip;"
-msgstr ""
+#: templates/single-product-reviews-old.php:94
+#: templates/single-product-reviews.php:90
+msgid "0 review"
+msgstr "0 đánh giá"
 
 #: templates/single-product-reviews-old.php:177
 #: templates/single-product-reviews.php:177
@@ -883,32 +117,109 @@ msgstr ""
 "<div class=\"note_review\"><u>Lưu ý:</u> để đánh giá được phê duyệt, vui "
 "lòng tham khảo %s</div>"
 
-# <?php else : ?>
-# <p class="woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'woocommerce' ); ?></p>
-# <?php endif; ?>
-#: templates/single-product-reviews-old.php:186
-#: templates/single-product-reviews.php:186
+#: devvn-woocommerce-reviews-main.php:782
+msgid "<strong>ERROR:</strong> A PHP extension stopped the file upload."
+msgstr "<strong>LỖI:</strong> Tiện ích mở rộng PHP đã dừng tải tệp lên."
+
+#: devvn-woocommerce-reviews-main.php:701
+#: devvn-woocommerce-reviews-main.php:751
+msgid "<strong>Error:</strong> Add plugin license to review"
+msgstr "<strong>Lỗi:</strong> Kích hoạt license để đánh giá"
+
+#: devvn-woocommerce-reviews-main.php:780
+msgid "<strong>ERROR:</strong> Failed to write file to disk."
+msgstr "<strong>Lỗi:</strong> Lỗi khi lưu dữ lieu."
+
+#: devvn-woocommerce-reviews-main.php:778
+msgid "<strong>ERROR:</strong> Missing a temporary folder."
+msgstr "<strong>Lỗi:</strong> Thiếu thư mục tạm thời."
+
+#: devvn-woocommerce-reviews-main.php:766
+msgid "<strong>Error:</strong> The image is not in the correct format"
+msgstr "<strong>Lỗi:</strong> Hình ảnh không đúng định dạng"
+
+#: devvn-woocommerce-reviews-main.php:769
+#, php-format
 msgid ""
-"Only logged in customers who have purchased this product may leave a review."
+"<strong>Error:</strong> The image is too big. Only images allowed to be "
+"loaded <= %s"
+msgstr ""
+"<strong>Lỗi:</strong> Hình ảnh quá lớn. Chỉ những ảnh <= %s được phép tải lên"
+
+#: devvn-woocommerce-reviews-main.php:774
+msgid ""
+"<strong>ERROR:</strong> The uploaded file exceeds the MAX_FILE_SIZE "
+"directive that was specified in the HTML form."
+msgstr ""
+"<strong>Lỗi:</strong> Tệp được tải lên vượt quá chỉ thị MAX_FILE_SIZE đã "
+"được chỉ định trong biểu mẫu HTML."
+
+#: devvn-woocommerce-reviews-main.php:772
+msgid ""
+"<strong>ERROR:</strong> The uploaded file exceeds the upload_max_filesize "
+"directive in php.ini."
+msgstr ""
+"<strong>Lỗi:</strong> Tệp được tải lên vượt quá chỉ thị upload_max_filesize "
+"trong php.ini."
+
+#: devvn-woocommerce-reviews-main.php:776
+msgid ""
+"<strong>ERROR:</strong> The uploaded file was only partially uploaded. "
+"Please try again later."
+msgstr ""
+"<strong>Lỗi:</strong> Tệp được tải lên chỉ được tải lên một phần. Vui lòng "
+"thử lại sau."
+
+# wpml-name: f24eaac94b2bc15d4963b232ce8d2c29
+#: devvn-woocommerce-reviews-main.php:1677
+#, php-format
+msgid ""
+"<strong>Mua bản quyền để được tự động update. <a href=\"%s\" "
+"target=\"_blank\">Xem thêm thông tin mua bản quyền</a></strong> hoặc liên hệ "
+"mua trực tiếp qua <a href=\"%s\" target=\"_blank\">facebook</a>"
 msgstr ""
 
-# <?php else : ?>
-# <p class="woocommerce-noreviews"><?php esc_html_e( 'There are no reviews yet.', 'woocommerce' ); ?></p>
-# <?php endif; ?>
-#: templates/single-product-reviews-old.php:211
-#: templates/single-product-reviews.php:218
-msgid "There are no reviews yet."
-msgstr "Chưa có đánh giá nào."
+#: includes/review-reminder.php:20 includes/review-reminder.php:22
+msgid "Active"
+msgstr "Kích hoạt"
 
-#: templates/single-product-reviews-old.php:219
-#: templates/single-product-reviews.php:227
-msgid "Question and Answer"
-msgstr "Hỏi đáp"
+#: devvn-woocommerce-reviews-main.php:389
+msgid "Add gallery images"
+msgstr "Thêm album ảnh"
 
-#: templates/single-product-reviews-old.php:223
-#: templates/single-product-reviews.php:231
-msgid "Type your comments..."
-msgstr "Mời bạn tham gia thảo luận, vui lòng nhập tiếng Việt có dấu."
+#: devvn-woocommerce-reviews-main.php:389
+msgid "Add Images"
+msgstr "Thêm ảnh"
+
+#: devvn-woocommerce-reviews-main.php:1339
+#: includes/class-devvn-walker-comment.php:43
+#: includes/shortcode-list-reviews.php:196 templates/review-meta.php:59
+msgid "Administrator"
+msgstr "Quản trị viên"
+
+#: includes/review-reminder.php:26
+msgid "After days"
+msgstr "Sau bao nhiêu ngày"
+
+#: includes/review-reminder.php:29
+msgid "After how many days will email to customers. Default: 10"
+msgstr ""
+"Sau bao nhiêu ngày kể từ khi đơn hoàn thành sẽ gửi mail cho khách. Mặc định: "
+"10"
+
+#: devvn-woocommerce-reviews-main.php:1294
+#: devvn-woocommerce-reviews-main.php:1347
+msgid "ago"
+msgstr "trước"
+
+#: devvn-woocommerce-reviews-main.php:1602
+#, php-format
+msgid "Allow uploading only %d images"
+msgstr "Chỉ cho phép tải lên %d ảnh"
+
+#: devvn-woocommerce-reviews-main.php:1588
+msgid "Average"
+msgstr "Trung bình"
 
 # <span class="star_average"><?php echo $average;?> <i class="devvn-star"></i></span>
 # <strong><?php _e('Average rating', 'devvn-reviews')?></strong>
@@ -917,6 +228,305 @@ msgstr "Mời bạn tham gia thảo luận, vui lòng nhập tiếng Việt có 
 msgid "Average rating"
 msgstr "Đánh giá trung bình"
 
+#: includes/shortcode-list-reviews.php:135
+#: includes/shortcode-list-reviews.php:192 templates/review-meta.php:55
+#, php-format
+msgid "Bought at %s"
+msgstr "Đã mua tại %s"
+
+#: includes/schema-options.php:23
+msgid "Brand"
+msgstr "Thương hiệu"
+
+#: includes/setting-general.php:273
+msgid "Bắt buộc nhập sđt"
+msgstr ""
+
+#: templates/single-product-reviews-old.php:129
+#: templates/single-product-reviews.php:125
+msgid "Cancel"
+msgstr "Hủy"
+
+#: devvn-woocommerce-reviews-main.php:1598
+#, php-format
+msgid "character ( Minimum of %d)"
+msgstr "ký tự (Tối thiểu %d)"
+
+#: includes/reviews-setting.php:17
+msgid "Check update"
+msgstr ""
+
+#: templates/single-product-reviews-old.php:142
+#: templates/single-product-reviews.php:138
+msgid "Choose a image"
+msgstr "Gửi ảnh thực tế"
+
+#: includes/setting-general.php:160 includes/setting-general.php:170
+msgid "Chạy Slider hình ảnh trong review"
+msgstr ""
+
+#: includes/option-auto-reviews.php:72
+msgid "Chọn sản phẩm"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:1109
+msgid "Comment failed to post"
+msgstr "Bình luận lỗi"
+
+#: devvn-woocommerce-reviews-main.php:1085
+#: devvn-woocommerce-reviews-main.php:1495
+#: devvn-woocommerce-reviews-main.php:1553
+msgid "Comment successfully!"
+msgstr "Bình luận thành công!"
+
+#: devvn-woocommerce-reviews-main.php:1595
+msgid "Comments is required!"
+msgstr "Nội dung bình luận là bắt buộc!"
+
+#: includes/setting-general.php:115
+msgid "Custom Rating in Loop "
+msgstr "Hiển thị số đánh giá ngoài loop "
+
+#: includes/shortcode-list-reviews.php:242
+msgid "Customer images"
+msgstr "Hình ảnh từ khách hàng"
+
+#: devvn-woocommerce-reviews-main.php:589
+msgid "Cài đặt"
+msgstr ""
+
+#: includes/reviews-setting.php:7
+msgid "Cài đặt bình luận và đánh giá cho Woocommerce"
+msgstr ""
+
+#: includes/reviews-setting.php:11
+msgid "Cài đặt chung"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:1699
+msgid "Có lỗi xảy ra. Fake lại ngay"
+msgstr ""
+
+#: includes/setting-general.php:281
+msgid "Công cụ"
+msgstr ""
+
+#: includes/setting-general.php:189
+msgid "Cố cột hiển thị"
+msgstr ""
+
+#: includes/option-auto-reviews.php:40
+msgid "Danh mục sản phẩm"
+msgstr ""
+
+#: includes/option-auto-reviews.php:16
+msgid "Danh sách user"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:389
+msgid "Delete"
+msgstr "Xóa"
+
+#. Name of the plugin
+msgid "DevVN - Woocommerce Reviews"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:522
+#: devvn-woocommerce-reviews-main.php:523
+#: devvn-woocommerce-reviews-main.php:533
+#: devvn-woocommerce-reviews-main.php:534
+msgid "DevVN Reviews"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:1736
+#: devvn-woocommerce-reviews-main.php:1746
+msgid "Done!"
+msgstr "Đã xong!"
+
+#: devvn-woocommerce-reviews-main.php:1301
+#: devvn-woocommerce-reviews-main.php:1354 templates/review.php:82
+msgid "Edit"
+msgstr "Sửa"
+
+#: devvn-woocommerce-reviews-main.php:389
+msgid "Edit image"
+msgstr "Sửa ảnh"
+
+#: devvn-woocommerce-reviews-main.php:1439
+#: templates/single-product-reviews-old.php:124
+#: templates/single-product-reviews-old.php:247
+#: templates/single-product-reviews.php:120
+#: templates/single-product-reviews.php:255
+msgid "Email"
+msgstr "Email"
+
+#: devvn-woocommerce-reviews-main.php:1593
+msgid "Email is required!"
+msgstr "Email là bắt buộc!"
+
+#: devvn-woocommerce-reviews-main.php:1472
+#: devvn-woocommerce-reviews-main.php:1474
+#: devvn-woocommerce-reviews-main.php:1528
+#: devvn-woocommerce-reviews-main.php:1530
+#: devvn-woocommerce-reviews-main.php:1707
+#: devvn-woocommerce-reviews-main.php:2150
+msgid "Error!"
+msgstr "Lỗi!"
+
+#: devvn-woocommerce-reviews-main.php:715
+#: devvn-woocommerce-reviews-main.php:2348
+msgid "Error: Phone number is required!"
+msgstr "Lỗi: Số điện thoại là bắt buộc!"
+
+#: devvn-woocommerce-reviews-main.php:719
+#: devvn-woocommerce-reviews-main.php:2352
+msgid "Error: The phone number is not in the correct format!"
+msgstr "Lỗi: Số điện thoại không đúng định dạng!"
+
+#: devvn-woocommerce-reviews-main.php:723
+msgid "Error: Your name is required!"
+msgstr "Lỗi: Tên là bắt buộc!"
+
+#: includes/setting-general.php:292
+msgid "Fake label khách đã mua hàng"
+msgstr ""
+
+#: includes/setting-general.php:307
+msgid "Fake số lượng đã bán"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:917
+msgid "Fake đã mua hàng"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:1426
+#: templates/single-product-reviews-old.php:234
+#: templates/single-product-reviews.php:242
+msgid "Female"
+msgstr "Chị"
+
+#: devvn-woocommerce-reviews-main.php:1589
+msgid "Good"
+msgstr "Tốt"
+
+#: includes/setting-general.php:93
+msgid "Hiển thị sđt bên cạnh tên"
+msgstr ""
+
+#: includes/setting-general.php:252
+msgid "Hiện avatar"
+msgstr ""
+
+#: includes/setting-general.php:236
+msgid "Hiện/Ẩn trường email"
+msgstr ""
+
+#: templates/single-product-reviews-old.php:157
+#: templates/single-product-reviews.php:157
+msgid "How do you feel about the product? ( Select star)"
+msgstr "Bạn cảm thấy thế nào về sản phẩm? (Chọn sao)"
+
+#. Author URI of the plugin
+msgid "https://levantoan.com/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://levantoan.com/san-pham/devvn-woocommerce-reviews/"
+msgstr ""
+
+#: includes/option-auto-reviews.php:117
+msgid "Hành động"
+msgstr ""
+
+#: includes/setting-general.php:13
+msgid "Hình ảnh"
+msgstr ""
+
+#: includes/reviews-setting.php:16
+msgid "Hướng dẫn sử dụng"
+msgstr ""
+
+#: includes/setting-general.php:244
+msgid "Kích hoạt cấu trúc FAQPage "
+msgstr ""
+
+#: includes/setting-general.php:265
+msgid "Kích hoạt giao diện comment cho POST và PAGE"
+msgstr ""
+
+#: includes/schema-options.php:13
+msgid "Kích hoạt tính năng hỗ trợ Schema"
+msgstr ""
+
+#. %s is product title
+#: templates/single-product-reviews-old.php:116
+#: templates/single-product-reviews.php:112
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Trả lời %s"
+
+#: includes/reviews-setting.php:15
+msgid "License"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:1900
+msgid "like"
+msgstr "thích"
+
+#: devvn-woocommerce-reviews-main.php:382
+msgid "Like count"
+msgstr "Số lượt thích"
+
+#. Author of the plugin
+msgid "Lê Văn Toản"
+msgstr ""
+
+#: includes/review-reminder.php:39
+msgid "Mail content"
+msgstr "Nội dung email"
+
+#: includes/review-reminder.php:33
+msgid "Mail title"
+msgstr "Tiêu đề email"
+
+#: devvn-woocommerce-reviews-main.php:1422
+#: templates/single-product-reviews-old.php:230
+#: templates/single-product-reviews.php:238
+msgid "Male"
+msgstr "Anh"
+
+#: devvn-woocommerce-reviews-main.php:1597
+#, php-format
+msgid "Minimum of %s characters"
+msgstr "Tối thiểu %s ký tự"
+
+#: includes/setting-general.php:300
+msgid "Mở comment"
+msgstr "Mở comment"
+
+#: includes/setting-general.php:129
+msgid "New"
+msgstr "Mới"
+
+#: includes/functions.php:7
+#, php-format
+msgid "Ngày hết hạn: %s"
+msgstr ""
+
+#: includes/option-auto-reviews.php:106
+msgid "Ngày đánh giá"
+msgstr ""
+
+#: includes/setting-general.php:124
+msgid "No"
+msgstr "Không"
+
+#: devvn-woocommerce-reviews-main.php:1453
+#: devvn-woocommerce-reviews-main.php:1506
+#: devvn-woocommerce-reviews-main.php:1564
+msgid "No comments yet"
+msgstr "Không có bình luận nào"
+
 # <?php else:?>
 # <strong><?php _e('No reviews', 'devvn-reviews')?></strong>
 # <?php endif;?>
@@ -924,53 +534,342 @@ msgstr "Đánh giá trung bình"
 msgid "No reviews"
 msgstr "Chưa có<br> đánh giá nào"
 
-#. Plugin Name of the plugin/theme
-msgid "DevVN - Woocommerce Reviews"
+#: devvn-woocommerce-reviews-main.php:1587
+msgid "Not that bad"
+msgstr "Không tệ"
+
+#: includes/option-auto-reviews.php:24
+msgid "Nội dung"
 msgstr ""
 
-#. Plugin URI of the plugin/theme
-msgid "https://levantoan.com/san-pham/devvn-woocommerce-reviews/"
+#: devvn-woocommerce-reviews-main.php:742
+#, php-format
+msgid "Nội dung đánh giá phải tối thiểu %s ký tự."
 msgstr ""
 
-#. Description of the plugin/theme
+#: devvn-woocommerce-reviews-main.php:1590
+msgid "Perfect"
+msgstr "Tuyệt vời"
+
+#: devvn-woocommerce-reviews-main.php:378
+msgid "Phone"
+msgstr "Số điện thoại"
+
+# wpml-name: d64b7f57d03fccd67078b42f43a7e828
+#: devvn-woocommerce-reviews-main.php:2477
+#, php-format
+msgid "Phone number: %s"
+msgstr "Số điện thoại: %s"
+
+#: templates/single-product-reviews-old.php:152
+#: templates/single-product-reviews.php:152
+msgid "Please share some comments..."
+msgstr "Mời bạn chia sẻ thêm một số cảm nhận..."
+
+#: devvn-woocommerce-reviews-main.php:1444
+#: templates/single-product-reviews-old.php:252
+#: templates/single-product-reviews.php:260
+msgid "Post comment"
+msgstr "Gửi"
+
+# wpml-name: cdd1ece3506eb105c9f1c6502f3ac639
+#: includes/shortcode-list-reviews.php:307
+msgid "Product information is incorrect"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:328
+msgid "Product Reviews"
+msgstr "Đánh giá sản phẩm"
+
+#: devvn-woocommerce-reviews-main.php:919
+msgid "Purchased"
+msgstr "Đã mua"
+
+#: templates/single-product-reviews-old.php:219
+#: templates/single-product-reviews.php:227
+msgid "Question and Answer"
+msgstr "Hỏi đáp"
+
+#: devvn-woocommerce-reviews-main.php:409
+msgid "Quick review tags"
+msgstr "Thẻ đánh giá nhanh"
+
+#: devvn-woocommerce-reviews-main.php:389
+msgid "Remove"
+msgstr "Xóa"
+
+#: devvn-woocommerce-reviews-main.php:1290
+#: devvn-woocommerce-reviews-main.php:1343 templates/review.php:72
+msgid "Reply"
+msgstr "Trả lời"
+
+#. %s is product title
+#: templates/single-product-reviews-old.php:41
+#: templates/single-product-reviews-old.php:114
+#: templates/single-product-reviews.php:43
+#: templates/single-product-reviews.php:110
+#, php-format
+msgid "Review %s"
+msgstr "Đánh giá %s"
+
+#: devvn-woocommerce-reviews-main.php:386
+msgid "Review images"
+msgstr "Hình ảnh đánh giá"
+
+#: devvn-woocommerce-reviews-main.php:356
+msgid "Review Options"
+msgstr "Tùy chọn đánh giá"
+
+#: includes/reviews-setting.php:13
+msgid "Review reminder"
+msgstr "Lời nhắc đánh giá"
+
+#: includes/setting-general.php:108
+msgid "Review style"
+msgstr "Kiểu review"
+
+#: devvn-woocommerce-reviews-main.php:1604
+msgid "Review successful!"
+msgstr "Đánh giá thành công!"
+
+#: devvn-woocommerce-reviews-main.php:374
+msgid "Schedule"
+msgstr ""
+
+#: includes/reviews-setting.php:14
+msgid "Schema Product"
+msgstr "Schema Product"
+
+#: devvn-woocommerce-reviews-main.php:1401
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: devvn-woocommerce-reviews-main.php:1399
+msgid "Search by content"
+msgstr "Tìm kiếm theo nội dung"
+
+#: devvn-woocommerce-reviews-main.php:1104
+msgid "Sent comment successfully. Pending approval!"
+msgstr "Gửi bình luận thành công. Đang chờ chấp nhận!"
+
+#: includes/setting-general.php:151
+msgid "Shortcode reviews"
+msgstr "Shortcode reviews"
+
+#: includes/setting-general.php:200
+msgid "Show product info in list"
+msgstr "Hiển thị thông tin sản phẩm trong danh sách"
+
+#: includes/setting-general.php:122
+msgid "Show rating stars when there are no reviews"
+msgstr "Hiển thị đánh giá sao khi không có đánh giá nào"
+
+#: includes/setting-general.php:79
+msgid "Show/Hide avatar"
+msgstr "Ẩn/Hiện ảnh đại diện"
+
+#: includes/setting-general.php:86
+msgid "Show/Hide sold count"
+msgstr "Hiển/Ẩn số lượng sản phẩm đã bán"
+
+#: devvn-woocommerce-reviews-main.php:1995
+msgid "Sold"
+msgstr "Đã bán"
+
+#: devvn-woocommerce-reviews-main.php:1986
+msgid "sold"
+msgstr "đã bán"
+
+#: includes/option-auto-reviews.php:96
+msgid "SP chưa có reviews"
+msgstr ""
+
+#: templates/single-product-reviews-old.php:126
+#: templates/single-product-reviews.php:122
+msgid "Submit a review"
+msgstr "Gửi đánh giá"
+
+#: includes/setting-general.php:222
+msgid "Số bình luận trên 1 trang"
+msgstr ""
+
+#: includes/option-auto-reviews.php:32
+msgid "Số reviews / 1 sản phẩm"
+msgstr ""
+
+#. Description of the plugin
 msgid ""
 "Thay đổi giao diện phần đánh giá và thêm phần thảo luận cho chi tiết sản "
 "phẩm trong Woocommerce"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Lê Văn Toản"
+#: devvn-woocommerce-reviews-main.php:1600
+msgid "The image is not in the correct format. Only accept jpg/png/gif"
+msgstr "Hình ảnh không đúng định dạng. Chỉ chấp nhận jpg/png/gif"
+
+#: devvn-woocommerce-reviews-main.php:1601
+#, php-format
+msgid "The image is too big. Only images allowed to be loaded <= %s"
+msgstr "Hình ảnh quá lớn. Chỉ những ảnh <= %s được phép tải lên"
+
+#: templates/single-post-comments.php:89
+msgid "Type your comment here"
+msgstr "Xin mời nhập ý kiến của bạn tại đây"
+
+#: templates/single-product-reviews-old.php:223
+#: templates/single-product-reviews.php:231
+msgid "Type your comments..."
+msgstr "Mời bạn tham gia thảo luận, vui lòng nhập tiếng Việt có dấu."
+
+#: includes/setting-general.php:261
+msgid "Tùy chỉnh bình luận cho post"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "https://levantoan.com/"
+#: includes/setting-general.php:54
+msgid "Tùy chỉnh label"
 msgstr ""
 
-# wpml-name: f5275277ec4d2fd6fc8c2caf53757b7a
-#~ msgid "%1$s reviews for %2$s"
-#~ msgstr "%1$s đánh giá cho %2$s"
+#: includes/setting-general.php:210
+msgid "Tùy chỉnh phần bình luận"
+msgstr ""
 
-# wpml-name: b51bdff4f4016351f0707fd0bf464128
-#~ msgid "%s Comments"
-#~ msgstr "%s bình luận"
+#: includes/setting-general.php:138
+msgid "Tùy chỉnh shortcode reviews"
+msgstr ""
 
-# wpml-name: 6e1247b3e35a61d3c83f60a85fcbb438
-#~ msgid "%s customer reviews"
-#~ msgstr "%s đánh giá"
+#: includes/setting-general.php:180
+msgid "Tổng số bài viết trên 1 trang"
+msgstr ""
 
-# wpml-name: 3acc043e842e7524d9603157aab2d0f4
-#~ msgid "%s images"
-#~ msgstr "%s ảnh"
+#: includes/reviews-setting.php:12
+msgid "Tự động đánh giá"
+msgstr ""
 
-# wpml-name: 118e43efd8dc216f739e49993bca50f8
-#~ msgid "%s reviews"
-#~ msgstr "%s đánh giá"
+#: devvn-woocommerce-reviews-main.php:1586
+msgid "Very poor"
+msgstr "Rất tệ"
 
-# <?php if($rating_count > 0):?>
-# <?php printf(_n('(%s customer review)', '(%s customer reviews)', $review_count, 'devvn-reviews'), '<span class="count">' . esc_html($review_count) . '</span>'); ?>
-# <?php else:?>
-#~ msgid "(%s customer reviews)"
-#~ msgstr "(%s đánh giá)"
+#: includes/shortcode-list-reviews.php:159
+#, php-format
+msgid "View %s images from customers"
+msgstr "Xem %s hình ảnh từ khách hàng"
 
-#~ msgid "Show photos of reviews"
-#~ msgstr "Hiển thị hình ảnh từ khách hàng"
+#: includes/shortcode-list-reviews.php:269
+msgid "View more"
+msgstr "Xem thêm"
+
+#: includes/shortcode-list-reviews.php:152
+#: includes/shortcode-list-reviews.php:208
+msgid "View product"
+msgstr "Xem sản phẩm"
+
+#: includes/setting-general.php:29
+msgid "Vị trí hiển thị"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:375
+msgid "Wait to approved"
+msgstr "Đợi chấp nhận"
+
+#: templates/single-product-reviews-old.php:101
+#: templates/single-product-reviews.php:97
+#: templates/single-product-reviews.php:97
+msgid "Write a review"
+msgstr "Đánh giá ngay"
+
+#: includes/setting-general.php:125
+msgid "Yes"
+msgstr "Có"
+
+#: templates/single-post-comments.php:71
+msgid "Your Email"
+msgstr "Email"
+
+#: templates/single-post-comments.php:61
+msgid "Your Name"
+msgstr "Tên của bạn"
+
+#: devvn-woocommerce-reviews-main.php:1430
+#: templates/single-product-reviews-old.php:122
+#: templates/single-product-reviews-old.php:238
+#: templates/single-product-reviews.php:118
+#: templates/single-product-reviews.php:246
+msgid "Your name (Required)"
+msgstr "Họ tên (bắt buộc)"
+
+#: devvn-woocommerce-reviews-main.php:1592
+msgid "Your name is required!"
+msgstr "Tên là bắt buộc!"
+
+#: templates/single-post-comments.php:107
+msgid "Your Phone"
+msgstr "Số điện thoại"
+
+#: devvn-woocommerce-reviews-main.php:1434
+#: templates/single-product-reviews-old.php:123
+#: templates/single-product-reviews-old.php:242
+#: templates/single-product-reviews.php:119
+#: templates/single-product-reviews.php:250
+msgid "Your phone (Required)"
+msgstr "Số điện thoại (bắt buộc)"
+
+#: devvn-woocommerce-reviews-main.php:1050
+#: devvn-woocommerce-reviews-main.php:1594
+msgid "Your phone is required!"
+msgstr "Số điện thoại là bắt buộc!"
+
+#: includes/setting-general.php:228
+msgid "Yêu cầu nhập SĐT"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:1697
+msgid "Đang thực hiện..."
+msgstr ""
+
+#: includes/setting-general.php:129
+msgid "Đánh giá nhanh"
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:1820
+#, php-format
+msgid "Đã fake %1$d đánh giá."
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:1726
+#, php-format
+msgid "Đã sync %1$d đánh giá. Có %2$d lỗi."
+msgstr ""
+
+#: devvn-woocommerce-reviews-main.php:1698
+msgid "Đã xong"
+msgstr ""
+
+#: devvn-woocommerce-reviews.php:34
+msgid ""
+"Để Plugin <strong>DevVN Woocommerce Reviews</strong> hoạt động, bắt buộc cần "
+"kích hoạt <strong>php extension ionCube</strong>."
+msgstr ""
+
+#: includes/setting-general.php:285
+msgid "Đồng bộ đánh giá"
+msgstr ""
+
+#: includes/setting-general.php:22
+msgid "Độ dài nội dung tối thiểu"
+msgstr ""
+
+#: includes/setting-general.php:101
+msgid "Ẩn SĐT trong phần reviews"
+msgstr ""
+
+#: includes/setting-general.php:214
+msgid "Ẩn/Hiện bình luận"
+msgstr ""
+
+#: includes/setting-general.php:65
+msgid "Ẩn/Hiện ngày đánh giá"
+msgstr ""
+
+#: includes/setting-general.php:72
+msgid "Ẩn/Hiện nút thích"
+msgstr ""

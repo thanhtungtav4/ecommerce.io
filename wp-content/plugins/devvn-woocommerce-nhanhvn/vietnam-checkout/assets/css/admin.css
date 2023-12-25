@@ -64,3 +64,6 @@ span.new_label {
 .devvn_order_title p {
     margin-bottom: 5px !important;
 }
+.select2-container--open {
+    z-index: 999999999 !important;
+}

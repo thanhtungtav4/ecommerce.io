@@ -433,7 +433,6 @@ function gtm4wp_admin_output_field( $args ) {
 			}
 
 			break;
-
 		default:
 			if ( preg_match( '/' . GTM4WP_OPTIONS . '\\[blacklist\\-[^\\]]+\\]/i', $args['label_for'] ) ) {
 				if ( 'blacklist-sandboxed' === $args['entityid'] ) {
@@ -600,6 +599,18 @@ function gtm4wp_sanitize_options( $options ) {
 				$newoptionvalue = '';
 			}
 			$output[ $optionname ] = trim( (string) $newoptionvalue );
+
+		} elseif ( GTM4WP_OPTION_GTMCUSTOMPATH === $optionname ) {
+			// remove https:// prefix if used.
+			$newoptionvalue = trim( $newoptionvalue, "/\n\r\t\v\x00" );
+
+			$gtm_custom_path_has_error = (bool) preg_match( '/^[a-zA-Z0-9\.\-\_]*$/', $newoptionvalue );
+			if ( false === $gtm_custom_path_has_error ) {
+				add_settings_error( GTM4WP_ADMIN_GROUP, GTM4WP_OPTIONS . '[' . GTM4WP_OPTION_GTMCUSTOMPATH . ']', esc_html__( 'Invalid GTM custom domain path. Value can include anything between a-z, A-Z, 0-9 or any of the characters . - _', 'duracelltomi-google-tag-manager' ) );
+				$newoptionvalue = '';
+			}
+
+			$output[ $optionname ] = $newoptionvalue;
 
 		} elseif ( GTM4WP_OPTION_INTEGRATE_AMPID === $optionname ) {
 			// Accelerated Mobile Pages settings.
@@ -994,16 +1005,19 @@ function gtm4wp_show_admin_page() {
 
 /**
  * Hook function for admin_menu. Adds the plugin options page into the Settings menu of the WordPress admin.
+ * The capability can be changed with the gtm4wp_admin_page_capability filter.
  *
  * @see https://developer.wordpress.org/reference/hooks/admin_menu/
  *
  * @return void
  */
 function gtm4wp_add_admin_page() {
+	$capability = apply_filters( 'gtm4wp_admin_page_capability', 'manage_options' );
+
 	add_options_page(
 		esc_html__( 'Google Tag Manager for WordPress settings', 'duracelltomi-google-tag-manager' ),
 		esc_html__( 'Google Tag Manager', 'duracelltomi-google-tag-manager' ),
-		'manage_options',
+		$capability,
 		GTM4WP_ADMINSLUG,
 		'gtm4wp_show_admin_page'
 	);
@@ -1043,6 +1057,7 @@ function gtm4wp_add_admin_js( $hook ) {
 			'depecratedeventstabtitle' => esc_html__( 'Deprecated', 'duracelltomi-google-tag-manager' ),
 			'sitetabtitle'             => esc_html__( 'Site', 'duracelltomi-google-tag-manager' ),
 			'misctabtitle'             => esc_html__( 'Misc', 'duracelltomi-google-tag-manager' ),
+			'consentmodetabtitle'      => esc_html__( 'Google Consent Mode', 'duracelltomi-google-tag-manager' ),
 		);
 		wp_localize_script( 'admin-subtabs', 'gtm4wp', $subtabtexts );
 

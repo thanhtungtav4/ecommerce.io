@@ -1,13 +1,13 @@
 <?php
 namespace Automattic\WooCommerce\Blocks;
 
-use Automattic\WooCommerce\Blocks\BlockTypes\AtomicBlock;
 use Automattic\WooCommerce\Blocks\Package;
 use Automattic\WooCommerce\Blocks\Assets\AssetDataRegistry;
 use Automattic\WooCommerce\Blocks\Assets\Api as AssetApi;
 use Automattic\WooCommerce\Blocks\Integrations\IntegrationRegistry;
 use Automattic\WooCommerce\Blocks\BlockTypes\Cart;
 use Automattic\WooCommerce\Blocks\BlockTypes\Checkout;
+use Automattic\WooCommerce\Blocks\BlockTypes\MiniCartContents;
 
 /**
  * BlockTypesController class.
@@ -51,6 +51,47 @@ final class BlockTypesController {
 		add_filter( 'render_block', array( $this, 'add_data_attributes' ), 10, 2 );
 		add_action( 'woocommerce_login_form_end', array( $this, 'redirect_to_field' ) );
 		add_filter( 'widget_types_to_hide_from_legacy_widget_block', array( $this, 'hide_legacy_widgets_with_block_equivalent' ) );
+		add_action( 'woocommerce_delete_product_transients', array( $this, 'delete_product_transients' ) );
+		add_filter(
+			'woocommerce_is_checkout',
+			function( $return ) {
+				return $return || $this->has_block_variation( 'woocommerce/classic-shortcode', 'shortcode', 'checkout' );
+			}
+		);
+		add_filter(
+			'woocommerce_is_cart',
+			function( $return ) {
+				return $return || $this->has_block_variation( 'woocommerce/classic-shortcode', 'shortcode', 'cart' );
+			}
+		);
+	}
+
+	/**
+	 * Check if the current post has a block with a specific attribute value.
+	 *
+	 * @param string $block_id The block ID to check for.
+	 * @param string $attribute The attribute to check.
+	 * @param string $value The value to check for.
+	 * @return boolean
+	 */
+	private function has_block_variation( $block_id, $attribute, $value ) {
+		$post = get_post();
+
+		if ( ! $post ) {
+			return false;
+		}
+
+		if ( has_block( $block_id, $post->ID ) ) {
+			$blocks = (array) parse_blocks( $post->post_content );
+
+			foreach ( $blocks as $block ) {
+				if ( isset( $block['attrs'][ $attribute ] ) && $value === $block['attrs'][ $attribute ] ) {
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 
 	/**
@@ -60,10 +101,10 @@ final class BlockTypesController {
 		$block_types = $this->get_block_types();
 
 		foreach ( $block_types as $block_type ) {
-			$block_type_class    = __NAMESPACE__ . '\\BlockTypes\\' . $block_type;
-			$block_type_instance = new $block_type_class( $this->asset_api, $this->asset_data_registry, new IntegrationRegistry() );
-		}
+			$block_type_class = __NAMESPACE__ . '\\BlockTypes\\' . $block_type;
 
+			new $block_type_class( $this->asset_api, $this->asset_data_registry, new IntegrationRegistry() );
+		}
 	}
 
 	/**
@@ -82,6 +123,8 @@ final class BlockTypesController {
 		 *
 		 * This hook defines which block namespaces should have block name and attribute `data-` attributes appended on render.
 		 *
+		 * @since 5.9.0
+		 *
 		 * @param array $allowed_namespaces List of namespaces.
 		 */
 		$allowed_namespaces = array_merge( [ 'woocommerce', 'woocommerce-checkout' ], (array) apply_filters( '__experimental_woocommerce_blocks_add_data_attributes_to_namespace', [] ) );
@@ -90,6 +133,8 @@ final class BlockTypesController {
 		 * Filters the list of allowed Block Names
 		 *
 		 * This hook defines which block names should have block name and attribute data- attributes appended on render.
+		 *
+		 * @since 5.9.0
 		 *
 		 * @param array $allowed_namespaces List of namespaces.
 		 */
@@ -156,6 +201,13 @@ final class BlockTypesController {
 	}
 
 	/**
+	 * Delete product transients when a product is deleted.
+	 */
+	public function delete_product_transients() {
+		delete_transient( 'wc_blocks_has_downloadable_product' );
+	}
+
+	/**
 	 * Get list of block types.
 	 *
 	 * @return array
@@ -164,64 +216,89 @@ final class BlockTypesController {
 		global $pagenow;
 
 		$block_types = [
+			'ActiveFilters',
+			'AddToCartForm',
+			'AllProducts',
 			'AllReviews',
+			'AttributeFilter',
+			'Breadcrumbs',
+			'CatalogSorting',
+			'ClassicTemplate',
+			'ClassicShortcode',
+			'CustomerAccount',
 			'FeaturedCategory',
 			'FeaturedProduct',
+			'FilterWrapper',
 			'HandpickedProducts',
+			'MiniCart',
+			'StoreNotices',
+			'PriceFilter',
+			'ProductAddToCart',
 			'ProductBestSellers',
+			'ProductButton',
 			'ProductCategories',
 			'ProductCategory',
+			'ProductCollection',
+			'ProductCollectionNoResults',
+			'ProductImage',
+			'ProductImageGallery',
 			'ProductNew',
 			'ProductOnSale',
-			'ProductsByAttribute',
-			'ProductTopRated',
-			'ReviewsByProduct',
-			'ReviewsByCategory',
-			'ProductSearch',
-			'ProductTag',
-			'AllProducts',
-			'PriceFilter',
-			'AttributeFilter',
-			'StockFilter',
-			'RatingFilter',
-			'ActiveFilters',
-			'ClassicTemplate',
-			'ProductAddToCart',
-			'ProductButton',
-			'ProductCategoryList',
-			'ProductImage',
 			'ProductPrice',
+			'ProductTemplate',
+			'ProductQuery',
+			'ProductAverageRating',
 			'ProductRating',
+			'ProductRatingCounter',
+			'ProductRatingStars',
+			'ProductResultsCount',
+			'ProductReviews',
 			'ProductSaleBadge',
+			'ProductSearch',
 			'ProductSKU',
 			'ProductStockIndicator',
 			'ProductSummary',
-			'ProductTagList',
+			'ProductTag',
 			'ProductTitle',
-			'MiniCart',
-			'MiniCartContents',
-			'ProductQuery',
-			'FilterWrapper',
+			'ProductTopRated',
+			'ProductsByAttribute',
+			'RatingFilter',
+			'ReviewsByCategory',
+			'ReviewsByProduct',
+			'RelatedProducts',
+			'ProductDetails',
+			'SingleProduct',
+			'StockFilter',
+			'PageContentWrapper',
+			'OrderConfirmation\Status',
+			'OrderConfirmation\Summary',
+			'OrderConfirmation\Totals',
+			'OrderConfirmation\TotalsWrapper',
+			'OrderConfirmation\Downloads',
+			'OrderConfirmation\DownloadsWrapper',
+			'OrderConfirmation\BillingAddress',
+			'OrderConfirmation\ShippingAddress',
+			'OrderConfirmation\BillingWrapper',
+			'OrderConfirmation\ShippingWrapper',
+			'OrderConfirmation\AdditionalInformation',
 		];
 
-		$block_types = array_merge( $block_types, Cart::get_cart_block_types(), Checkout::get_checkout_block_types() );
+		$block_types = array_merge(
+			$block_types,
+			Cart::get_cart_block_types(),
+			Checkout::get_checkout_block_types(),
+			MiniCartContents::get_mini_cart_block_types()
+		);
 
 		if ( Package::feature()->is_experimental_build() ) {
-			$block_types[] = 'SingleProduct';
-		}
-
-		/**
-		 * This disables specific blocks in Widget Areas by not registering them.
-		 */
-		if ( in_array( $pagenow, [ 'widgets.php', 'themes.php', 'customize.php' ], true ) && ( empty( $_GET['page'] ) || 'gutenberg-edit-site' !== $_GET['page'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
-			$block_types = array_diff(
-				$block_types,
-				[
-					'AllProducts',
-					'Cart',
-					'Checkout',
-				]
-			);
+			$block_types[] = 'ProductGallery';
+			$block_types[] = 'ProductGalleryLargeImage';
+			$block_types[] = 'ProductGalleryLargeImageNextPrevious';
+			$block_types[] = 'ProductGalleryPager';
+			$block_types[] = 'ProductGalleryThumbnails';
+			$block_types[] = 'CollectionFilters';
+			$block_types[] = 'CollectionStockFilter';
+			$block_types[] = 'CollectionPriceFilter';
 		}
 
 		/**
@@ -245,7 +322,23 @@ final class BlockTypesController {
 			$block_types = array_diff(
 				$block_types,
 				[
+					'AddToCartForm',
+					'Breadcrumbs',
+					'CatalogSorting',
 					'ClassicTemplate',
+					'ProductResultsCount',
+					'ProductDetails',
+					'OrderConfirmation\Status',
+					'OrderConfirmation\Summary',
+					'OrderConfirmation\Totals',
+					'OrderConfirmation\TotalsWrapper',
+					'OrderConfirmation\Downloads',
+					'OrderConfirmation\DownloadsWrapper',
+					'OrderConfirmation\BillingAddress',
+					'OrderConfirmation\ShippingAddress',
+					'OrderConfirmation\BillingWrapper',
+					'OrderConfirmation\ShippingWrapper',
+					'OrderConfirmation\AdditionalInformation',
 				]
 			);
 		}

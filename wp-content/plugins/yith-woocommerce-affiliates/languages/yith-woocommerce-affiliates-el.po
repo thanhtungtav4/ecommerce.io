@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: YITH WooCommerce Affiliates Premium\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
 "affiliates\n"
-"POT-Creation-Date: 2022-09-08T11:08:50+00:00\n"
+"POT-Creation-Date: 2023-12-21T09:46:04+00:00\n"
 "PO-Revision-Date: 2020-03-09 13:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: YITH <plugins@yithemes.com>\n"
@@ -34,8 +34,8 @@ msgstr ""
 
 #: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:209
 #: includes/abstracts/class-yith-wcaf-abstract-admin-table.php:300
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:150
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:244
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:157
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:251
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-profile-fields-admin-table.php:50
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-profile-fields-admin-table.php:72
 #: includes/admin/admin-tables/class-yith-wcaf-affiliates-profile-fields-admin-table.php:90
@@ -422,53 +422,60 @@ msgctxt "[ADMIN] Affiliate screen notice message"
 msgid "There was an error while unbanning affiliates."
 msgstr "Παρουσιάστηκε σφάλμα κατά την διάρκεια επεξεργασίας πληρωμών"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:158
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:156
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:70
+#, fuzzy
+msgctxt "[ADMIN] Add new affiliate button, in affiliates tab"
+msgid "Add affiliate"
+msgstr "Προσθήκη θυγατρικής"
+
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:198
 msgctxt "[ADMIN] Error message for affiliate creation"
 msgid "You must select a valid user to add as affiliate"
 msgstr ""
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:163
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:203
 msgctxt "[ADMIN] Error message for affiliate creation"
 msgid "You must enter a valid username for the affiliate"
 msgstr ""
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:169
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:209
 #, fuzzy
 msgctxt "[ADMIN] Error message for affiliate creation"
 msgid "You must enter a valid email for the affiliate"
 msgstr "Παρακαλώ, βεβαιωθείτε ότι πληκτρολογήσατε έγκυρη αξία για το πεδίο %s"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:175
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:215
 msgctxt "[ADMIN] Error message for affiliate creation"
 msgid "You must select a valid role for the affiliate"
 msgstr ""
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:181
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:221
 msgctxt "[ADMIN] Error message for affiliate creation"
 msgid "You must enter a valid password for the affiliate"
 msgstr ""
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:302
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:354
 #, fuzzy
 msgctxt "[ADMIN] Ban affiliate modal"
 msgid "Ban affiliate"
 msgstr "Αποκλεισμός συνεργάτη"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:303
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:355
 #, fuzzy
 msgctxt "[ADMIN] Ban affiliate modal"
 msgid "Reject affiliate"
 msgstr "Επιλογή συνεργάτη"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:304
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:221
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:356
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:247
 #, fuzzy
 msgctxt "[ADMIN] Confirm modal"
 msgid "Confirm"
 msgstr "Μη Επιβεβαιωμένη"
 
-#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:305
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:222
+#: includes/admin/admin-panels/class-yith-wcaf-affiliates-admin-panel.php:357
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:248
 msgctxt "[ADMIN] Confirm modal"
 msgid "This operation cannot be undone. Are you sure you want to proceed?"
 msgstr ""
@@ -648,23 +655,23 @@ msgid "Commission(s) %s could not be paid."
 msgstr "Προμήθειες %s δεν πληρώθηκαν επιτυχώς"
 
 #. translators: 1. Old status. 2. New status. 3. Username.
-#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:168
-#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:279
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:162
-#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:267
+#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:195
+#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:306
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:188
+#: includes/admin/admin-panels/class-yith-wcaf-payments-admin-panel.php:293
 msgctxt "[ADMIN] Status change note"
 msgid "Status changed from %1$s to %2$s by %3$s."
 msgstr ""
 
 #. translators: 1. Current user login.
-#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:290
+#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:317
 #, fuzzy
 msgctxt "[ADMIN] Status change note"
 msgid "Moved to the trash by %s."
 msgstr "Μεταφέρθηκε στα διαγραμμένα από %s"
 
 #. translators: 1. Current user login. 2. New commission status.
-#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:309
+#: includes/admin/admin-panels/class-yith-wcaf-commissions-admin-panel.php:336
 #, fuzzy
 msgctxt "[ADMIN] Status change note"
 msgid "%1$s restored this item; the system automatically assigned %2$s status."
@@ -772,32 +779,32 @@ msgctxt "[ADMIN] Payments action messages"
 msgid "Payment %s could not be completed."
 msgstr "Προμήθειες %s δεν πληρώθηκαν επιτυχώς"
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:110
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:154
 msgctxt "[ADMIN] Duration field"
 msgid "Seconds"
 msgstr ""
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:111
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:155
 msgctxt "[ADMIN] Duration field"
 msgid "Minutes"
 msgstr ""
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:112
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:156
 msgctxt "[ADMIN] Duration field"
 msgid "Hours"
 msgstr ""
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:113
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:157
 msgctxt "[ADMIN] Duration field"
 msgid "Days"
 msgstr ""
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:114
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:158
 msgctxt "[ADMIN] Duration field"
 msgid "Weeks"
 msgstr ""
 
-#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:115
+#: includes/admin/admin-panels/class-yith-wcaf-settings-admin-panel.php:159
 msgctxt "[ADMIN] Duration field"
 msgid "Months"
 msgstr ""
@@ -808,116 +815,109 @@ msgctxt "[ADMIN] Affiliate empty table message"
 msgid "Sorry! There is no affiliate registered yet."
 msgstr "Συγνώμη! Δεν υπάρχουν καταγεγραμμένες επιτυχίες ακόμη"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:70
-#: plugin-options/affiliates/list-options.php:40
-#, fuzzy
-msgctxt "[ADMIN] Add new affiliate button, in affiliates tab"
-msgid "Add affiliate"
-msgstr "Προσθήκη θυγατρικής"
-
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:104
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:111
 #, fuzzy
 msgctxt "[ADMIN] Affiliate status in admin table"
 msgid "Banned"
 msgstr "Αποκλείστηκε"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:109
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:116
 #, fuzzy
 msgctxt "[ADMIN] Affiliate status in admin table"
 msgid "Pending"
 msgstr "Eν αναμονή"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:113
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:120
 #, fuzzy
 msgctxt "[ADMIN] Affiliate status in admin table"
 msgid "Rejected"
 msgstr "Απορρίφθηκε"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:118
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:125
 #, fuzzy
 msgctxt "[ADMIN] Affiliate status in admin table"
 msgid "Accepted"
 msgstr "Αποδεκτή"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:259
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:266
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Affiliate"
 msgstr "Συνεργάτης"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:260
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:267
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "ID"
 msgstr "ID"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:261
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:268
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Token"
 msgstr "Διακριτικό πρόσβασης"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:262
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:269
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Rate"
 msgstr "Ποσοστό"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:263
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:270
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Earnings"
 msgstr "Έσοδα"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:264
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:271
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Paid"
 msgstr "Πληρωμένα"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:265
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:272
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Balance"
 msgstr "Διαφορά"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:266
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:273
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Visits"
 msgstr "Επισκέψεις"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:267
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:274
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Conversion"
 msgstr "Μετατροπή"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:268
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:275
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Conversion rate"
 msgstr "Ποσοστό μετατροπής"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:269
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:276
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Status"
 msgstr "Κατάσταση"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:270
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:277
 #, fuzzy
 msgctxt "[ADMIN] Affiliates table headings"
 msgid "Actions"
 msgstr "Ενέργειες"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:340
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:347
 #, fuzzy
 msgctxt "[ADMIN] Affiliates view"
 msgid "All"
 msgstr "Όλα"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:342
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:349
 #, fuzzy
 msgctxt "[ADMIN] Affiliates view"
 msgid "Banned"
@@ -925,31 +925,31 @@ msgid_plural "Banned"
 msgstr[0] "Αποκλείστηκε"
 msgstr[1] "Αποκλείστηκε"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:368
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:375
 #, fuzzy
 msgctxt "[ADMIN] Affiliates bulk actions"
 msgid "Delete affiliate"
 msgstr "Διαγραφή Θυγατρικών"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:369
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:376
 #, fuzzy
 msgctxt "[ADMIN] Affiliates bulk actions"
 msgid "Change status to accepted"
 msgstr "Αλλαγή κατάστασης σε ακυρωμένη"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:370
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:377
 #, fuzzy
 msgctxt "[ADMIN] Affiliates bulk actions"
 msgid "Change status to rejected"
 msgstr "Αλλαγή κατάστασης σε Απορρίφθηκε"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:371
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:378
 #, fuzzy
 msgctxt "[ADMIN] Affiliates bulk actions"
 msgid "Ban affiliate"
 msgstr "Αποκλεισμός συνεργάτη"
 
-#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:372
+#: includes/admin/admin-tables/class-yith-wcaf-affiliates-admin-table.php:379
 #, fuzzy
 msgctxt "[ADMIN] Affiliates bulk actions"
 msgid "Unban affiliate"
@@ -1151,7 +1151,7 @@ msgctxt "[ADMIN] Gateways table headings"
 msgid "Available"
 msgstr "Απενεργοποίηση"
 
-#: includes/admin/admin-tables/class-yith-wcaf-gateways-admin-table.php:149
+#: includes/admin/admin-tables/class-yith-wcaf-gateways-admin-table.php:148
 #, fuzzy
 msgctxt "[ADMIN] Gateways table headings"
 msgid "Active"
@@ -1420,57 +1420,57 @@ msgctxt "[ADMIN] Success message after deleting template from theme directory"
 msgid "Template file deleted from the theme."
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:220
+#: includes/admin/class-yith-wcaf-admin.php:221
 #, fuzzy
 msgctxt "[ADMIN] Panel tabs"
 msgid "Affiliates"
 msgstr "Συνεργάτες"
 
-#: includes/admin/class-yith-wcaf-admin.php:221
+#: includes/admin/class-yith-wcaf-admin.php:225
 #, fuzzy
 msgctxt "[ADMIN] Panel tabs"
 msgid "Commissions"
 msgstr "Προμήθειες"
 
-#: includes/admin/class-yith-wcaf-admin.php:222
+#: includes/admin/class-yith-wcaf-admin.php:229
 #, fuzzy
 msgctxt "[ADMIN] Panel tabs"
 msgid "General Options"
 msgstr "Γενικές λεπτομέρειες"
 
-#: includes/admin/class-yith-wcaf-admin.php:279
+#: includes/admin/class-yith-wcaf-admin.php:293
 msgctxt "[HELP TAB] Video title"
 msgid ""
 "Check this video to learn how to <b>set up an affiliate program for your "
 "online shop:</b>"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:300
+#: includes/admin/class-yith-wcaf-admin.php:315
 msgid ""
 "<b>Get access to advanced reports</b> (hits, commissions, earnings, best "
 "affiliates, popular products, etc.) in the integrated dashboard"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:301
+#: includes/admin/class-yith-wcaf-admin.php:316
 msgid ""
 "Create a <b>custom advanced form for your affiliate’s registration</b> "
 "process: add unlimited fields to the form, such as Website or Blog url, "
 "Links of their social channels, a small bio, etc. "
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:302
+#: includes/admin/class-yith-wcaf-admin.php:317
 msgid ""
 "Override the default commission rate and <b>set a different rate value for "
 "specific users, user roles or products</b>"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:303
+#: includes/admin/class-yith-wcaf-admin.php:318
 msgid ""
 "<b>Exclude specific products, categories, tag, user or user roles</b> from "
 "the affiliation program"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:304
+#: includes/admin/class-yith-wcaf-admin.php:319
 msgid ""
 "<b>Automatic payment of the commissions</b> (with PayPal or Stripe) when the "
 "affiliate reaches a threshold, on a specific month date (ex: each 1st of "
@@ -1478,61 +1478,61 @@ msgid ""
 "schedule a daily payment. "
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:305
+#: includes/admin/class-yith-wcaf-admin.php:320
 msgid ""
 "<b>Let affiliates to ask their commissions withdrawal</b> (and upload or "
 "generate invoices for their requests)"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:306
+#: includes/admin/class-yith-wcaf-admin.php:321
 msgid ""
 "<b>Get access to the report of clicks</b> generated from referrers in a "
 "summarising table with main information and their conversion status"
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:307
+#: includes/admin/class-yith-wcaf-admin.php:322
 msgid ""
 "<b>Access to the affiliate’s detail page</b> from the affiliates table, to "
 "check the affiliate’s personal info, commissions, statistics, etc."
 msgstr ""
 
-#: includes/admin/class-yith-wcaf-admin.php:308
+#: includes/admin/class-yith-wcaf-admin.php:323
 msgid "Regular updates, translations and premium support"
 msgstr ""
 
-#: includes/class-yith-wcaf-affiliate.php:801
+#: includes/class-yith-wcaf-affiliate.php:800
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Enable affiliate"
 msgstr "Άρση αποκλεισμού συνεργάτη"
 
-#: includes/class-yith-wcaf-affiliate.php:802
+#: includes/class-yith-wcaf-affiliate.php:801
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Change status to accepted"
 msgstr "Αλλαγή κατάστασης σε ακυρωμένη"
 
-#: includes/class-yith-wcaf-affiliate.php:814
+#: includes/class-yith-wcaf-affiliate.php:813
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Reject affiliate"
 msgstr "Επιλογή συνεργάτη"
 
-#: includes/class-yith-wcaf-affiliate.php:815
+#: includes/class-yith-wcaf-affiliate.php:814
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Change status to rejected"
 msgstr "Αλλαγή κατάστασης σε Απορρίφθηκε"
 
+#: includes/class-yith-wcaf-affiliate.php:826
 #: includes/class-yith-wcaf-affiliate.php:827
-#: includes/class-yith-wcaf-affiliate.php:828
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Ban affiliate"
 msgstr "Αποκλεισμός συνεργάτη"
 
+#: includes/class-yith-wcaf-affiliate.php:839
 #: includes/class-yith-wcaf-affiliate.php:840
-#: includes/class-yith-wcaf-affiliate.php:841
 #, fuzzy
 msgctxt "[ADMIN] Single affiliate actions"
 msgid "Unban affiliate"
@@ -1728,20 +1728,20 @@ msgstr[0] "Μετατράπηκε"
 msgstr[1] "Μετατράπηκε"
 
 #. translators: 1. Status name.
-#: includes/class-yith-wcaf-commission.php:637
+#: includes/class-yith-wcaf-commission.php:644
 #, fuzzy
 msgctxt "[ADMIN] Single commission actions"
 msgid "Change status to %s"
 msgstr "Αλλαγή κατάστασης σε %s"
 
-#: includes/class-yith-wcaf-commission.php:654
+#: includes/class-yith-wcaf-commission.php:661
 #, fuzzy
 msgctxt "[ADMIN] Single commission actions"
 msgid "Mark as paid"
 msgstr "Σημειώστε ως πληρωμένο"
 
 #. translators: 1. Payment gateway label.
-#: includes/class-yith-wcaf-commission.php:668
+#: includes/class-yith-wcaf-commission.php:675
 #, fuzzy
 msgctxt "[ADMIN] Single commission actions"
 msgid "Pay via %s"
@@ -1960,46 +1960,46 @@ msgid "Terms accepted?"
 msgstr "Αποδεκτή"
 
 #. translators: 1. Refunded amount. 2. Refund id.
-#: includes/class-yith-wcaf-orders.php:628
+#: includes/class-yith-wcaf-orders.php:639
 #, fuzzy
 msgid "Refunded %1$s due to refund #%2$s creation"
 msgstr "%s επιστράφηκε λόγω δημιουργίας επιστροφής #%s"
 
 #. translators: 1. Restored amount. 2. Refund id.
-#: includes/class-yith-wcaf-orders.php:678
+#: includes/class-yith-wcaf-orders.php:689
 #, fuzzy
 msgid "Restored %1$s due to refund #%2$s deletion"
 msgstr "%s αποκαταστάθηκε λόγω διαγραφής επιστροφής #%s"
 
-#: includes/class-yith-wcaf-payment.php:173
+#: includes/class-yith-wcaf-payment.php:172
 #, fuzzy
 msgctxt "[ADMIN] Placeholder gateway"
 msgid "Manual payment"
 msgstr "Δείτε όλες τις πληρωμές"
 
-#: includes/class-yith-wcaf-payment.php:486
+#: includes/class-yith-wcaf-payment.php:485
 #, fuzzy
 msgctxt "[ADMIN] General empty field"
 msgid "N/A"
 msgstr "N/A"
 
 #. translators: 1. Status name.
-#: includes/class-yith-wcaf-payment.php:513
+#: includes/class-yith-wcaf-payment.php:512
 #, fuzzy
 msgctxt "[ADMIN] Single payment actions"
 msgid "Change status to %s"
 msgstr "Αλλαγή κατάστασης σε %s"
 
 #. translators: 1. Payment gateway label.
-#: includes/class-yith-wcaf-payment.php:533
+#: includes/class-yith-wcaf-payment.php:532
 #, fuzzy
 msgctxt "[ADMIN] Single payment actions"
 msgid "Pay via %s"
 msgstr "Πληρώστε μέσω %s"
 
 #. translators: 1. Old status. 2. New status. 3. Payment id.
-#: includes/class-yith-wcaf-payment.php:1129
-#: includes/class-yith-wcaf-payment.php:1154
+#: includes/class-yith-wcaf-payment.php:1128
+#: includes/class-yith-wcaf-payment.php:1153
 msgctxt ""
 "[ADMIN] Note added to commission when status changes because of related "
 "payment operation"
@@ -2400,34 +2400,34 @@ msgctxt "[PRIVACY] Eraser message"
 msgid "Visit %s has been retained."
 msgstr "Η επιτυχία %s έχει κρατηθεί."
 
-#: includes/class-yith-wcaf.php:181
+#: includes/class-yith-wcaf.php:183
 msgctxt "[GLOBAL] After copy message"
 msgid "URL copied"
 msgstr ""
 
-#: includes/class-yith-wcaf.php:182
+#: includes/class-yith-wcaf.php:184
 msgctxt "[FRONTEND] Toggle fields text"
 msgid "ON"
 msgstr ""
 
-#: includes/class-yith-wcaf.php:183
+#: includes/class-yith-wcaf.php:185
 msgctxt "[FRONTEND] Toggle fields text"
 msgid "OFF"
 msgstr ""
 
-#: includes/class-yith-wcaf.php:184
+#: includes/class-yith-wcaf.php:186
 #, fuzzy
 msgctxt "[FRONTEND] Withdraw modal"
 msgid "Request withdrawal"
 msgstr "Αίτηση Ανάληψης"
 
-#: includes/class-yith-wcaf.php:186
+#: includes/class-yith-wcaf.php:188
 #, fuzzy
 msgctxt "[GLOBAL] Form validation error"
 msgid "Please, accept this condition"
 msgstr "Παρακαλώ, αποδεχθείτε τους Όρους και Προϋποθέσεις μας"
 
-#: includes/class-yith-wcaf.php:187
+#: includes/class-yith-wcaf.php:189
 #, fuzzy
 msgctxt "[GLOBAL] Form validation error"
 msgid "Please, complete this field"
@@ -2475,25 +2475,25 @@ msgctxt "[FRONTEND] Default column content for dashboard tables"
 msgid "N/A"
 msgstr "N/A"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:653
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:654
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table filters"
 msgid "All status"
 msgstr "Γενικά στατιστικά"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:687
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:688
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "All products"
 msgstr "Επιτρεπόμενα προϊόντα"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:707
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:708
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "From:"
 msgstr "Από:"
 
-#: includes/dashboard/class-yith-wcaf-dashboard-table.php:717
+#: includes/dashboard/class-yith-wcaf-dashboard-table.php:718
 #, fuzzy
 msgctxt "[FRONTEND] Dashboard table"
 msgid "To:"
@@ -2780,7 +2780,7 @@ msgid "Show menu"
 msgstr "Εμφάνιση μενού"
 
 #. translators: 1. Affiliate formatted name.
-#: includes/shortcodes/class-yith-wcaf-affiliate-dashboard-shortcode.php:221
+#: includes/shortcodes/class-yith-wcaf-affiliate-dashboard-shortcode.php:225
 #, fuzzy
 msgctxt "[FRONTEND] No longer in use"
 msgid "Hello <strong>%1$s</strong> (not %1$s? <a href=\"%2$s\">Sign out</a>)."
@@ -2789,7 +2789,7 @@ msgstr ""
 "Αποσύνδεση</a>)."
 
 #. translators: 1. Link to affiliate settings page.
-#: includes/shortcodes/class-yith-wcaf-affiliate-dashboard-shortcode.php:238
+#: includes/shortcodes/class-yith-wcaf-affiliate-dashboard-shortcode.php:242
 #, fuzzy
 msgctxt "[FRONTEND] No longer in use"
 msgid ""
@@ -2962,31 +2962,28 @@ msgid ""
 "one."
 msgstr "Δεν μπορείτε να ενεργοποιήσετε την δωρεάν έκδοση του "
 
-#: plugin-options/affiliates/list-options.php:33
-#, fuzzy
-msgctxt "[ADMIN] Title for affiliates table, in affiliates tab"
-msgid "Affiliates"
-msgstr "Συνεργάτες"
-
 #: plugin-options/commissions-options.php:31
 #, fuzzy
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Commissions List"
 msgstr "Προμήθειες"
 
-#: plugin-options/commissions-options.php:34
+#: plugin-options/commissions-options.php:32
+#, fuzzy
+msgctxt "[ADMIN] Affiliate Commissions tab description"
+msgid "Monitor and manage the commissions generated by your affiliates."
+msgstr "Εμφάνιση του πίνακα ελέγχου θυγατρικών στις θυγατρικές σας"
+
+#: plugin-options/commissions-options.php:35
 #, fuzzy
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Commissions Payments"
 msgstr "Πληρωμές προμήθειας"
 
-#: plugin-options/commissions/list-options.php:33
-msgid "Commissions"
-msgstr "Προμήθειες"
-
-#: plugin-options/commissions/payments-options.php:33
-msgid "Payments"
-msgstr "Πληρωμές"
+#: plugin-options/commissions-options.php:36
+msgctxt "[ADMIN] Affiliate Commissions Payments tab description"
+msgid "A summary of the commissions generated and their respective payments."
+msgstr ""
 
 #: plugin-options/settings-options.php:31
 #, fuzzy
@@ -2994,23 +2991,48 @@ msgctxt "[ADMIN] Affiliate tab title"
 msgid "General Options"
 msgstr "Γενικές λεπτομέρειες"
 
-#: plugin-options/settings-options.php:34
+#: plugin-options/settings-options.php:32
+#, fuzzy
+msgctxt "[ADMIN] General options tab description"
+msgid "Plugin Configuration Options."
+msgstr "Φόρμα εγγραφής"
+
+#: plugin-options/settings-options.php:35
 #, fuzzy
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Affiliates Registration"
 msgstr "Φόρμα Εγγραφής YITH Affiliates"
 
-#: plugin-options/settings-options.php:37
+#: plugin-options/settings-options.php:36
+#, fuzzy
+msgctxt "[ADMIN] Affiliate registration tab description"
+msgid "Manage options for registering new affiliates in your shop."
+msgstr "Επιτυχής εγγραφή χρήστη ως συνεργάτης του καταστήματός σας"
+
+#: plugin-options/settings-options.php:39
 #, fuzzy
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Affiliate Dashboard"
 msgstr "Πίνακας Ελέγχου Θυγατρικής"
 
 #: plugin-options/settings-options.php:40
+msgctxt "[ADMIN] Affiliate dashboard tab description"
+msgid ""
+"Customize the dashboard with which your affiliates monitor clicks and "
+"commissions."
+msgstr ""
+
+#: plugin-options/settings-options.php:43
 #, fuzzy
 msgctxt "[ADMIN] Affiliate tab title"
 msgid "Commissions & Payments"
 msgstr "Πληρωμές προμήθειας"
+
+#: plugin-options/settings-options.php:44
+#, fuzzy
+msgctxt "[ADMIN] Commissions & Payments tab description"
+msgid "Configure commission management and payment."
+msgstr "Η προμήθειά σας αναμένεται να πληρωθεί"
 
 #: plugin-options/settings/affiliates-dashboard-options.php:29
 #, fuzzy
@@ -3168,8 +3190,8 @@ msgstr "Κοινωνικό κείμενο"
 #, fuzzy
 msgctxt "[ADMIN] Affiliate dashboard settings page"
 msgid ""
-"Enter the text to use in Twitter, WhatsApp, and Pinterest sharing. Use <b>"
-"%referral_url%</b> where you want to show the URL of your affiliate."
+"Enter the text to use in Twitter, WhatsApp, and Pinterest sharing. Use "
+"<b>%referral_url%</b> where you want to show the URL of your affiliate."
 msgstr ""
 "Θα χρησιμοποιείται από Twitter, WhatsApp και Pinterest. Χρησιμοποιείστε "
 "<strong>%referral_url%</strong> εκεί που θέλετε να φαίνεται το URL της "
@@ -3189,16 +3211,10 @@ msgstr ""
 #: plugin-options/settings/affiliates-registration-options.php:29
 #, fuzzy
 msgctxt "[ADMIN] Affiliate registration settings page"
-msgid "Affiliate Registration Fields"
-msgstr "Φόρμα Εγγραφής YITH Affiliates"
-
-#: plugin-options/settings/affiliates-registration-options.php:35
-#, fuzzy
-msgctxt "[ADMIN] Affiliate registration settings page"
 msgid "Registration form"
 msgstr "Φόρμα εγγραφής"
 
-#: plugin-options/settings/affiliates-registration-options.php:38
+#: plugin-options/settings/affiliates-registration-options.php:36
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "To show this form in a custom page, use the Gutenberg block \"YITH "
@@ -3206,13 +3222,13 @@ msgid ""
 "<b>[yith_wcaf_registration_form]</b>"
 msgstr ""
 
-#: plugin-options/settings/affiliates-registration-options.php:57
+#: plugin-options/settings/affiliates-registration-options.php:51
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "Add the registration form fields to the default WooCommerce registration form"
 msgstr ""
 
-#: plugin-options/settings/affiliates-registration-options.php:60
+#: plugin-options/settings/affiliates-registration-options.php:54
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "Enable to add the registration form fields to WooCommerce default "
@@ -3222,19 +3238,19 @@ msgid ""
 "be registered as affiliates."
 msgstr ""
 
-#: plugin-options/settings/affiliates-registration-options.php:75
+#: plugin-options/settings/affiliates-registration-options.php:70
 #, fuzzy
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid "Registration Options"
 msgstr "Φόρμα εγγραφής"
 
-#: plugin-options/settings/affiliates-registration-options.php:81
+#: plugin-options/settings/affiliates-registration-options.php:76
 #, fuzzy
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid "Associate old commissions to new users with the same token"
 msgstr "Συνδέστε προηγούμενες προμήθειες"
 
-#: plugin-options/settings/affiliates-registration-options.php:84
+#: plugin-options/settings/affiliates-registration-options.php:79
 msgctxt "[ADMIN] Affiliate registration settings page"
 msgid ""
 "If enabled, when a new affiliate is registered the system will check if "
@@ -3370,12 +3386,12 @@ msgctxt "[ADMIN] General settings page"
 msgid "Referral cookies expire after"
 msgstr "Λήξη cookie παραπ."
 
-#: plugin-options/settings/general-options.php:96
+#: plugin-options/settings/general-options.php:97
 msgctxt "[ADMIN] General settings page"
 msgid "Set cookies via AJAX"
 msgstr ""
 
-#: plugin-options/settings/general-options.php:99
+#: plugin-options/settings/general-options.php:100
 msgctxt "[ADMIN] General settings page"
 msgid ""
 "Enable to execute an AJAX call to set up an affiliate cookie whenever the "
@@ -3566,55 +3582,60 @@ msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Recent Commissions"
 msgstr "Πρόσφατες προμήθειες"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:34
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:39
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Total earnings"
 msgstr "Συνολικά Έσοδα"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:42
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:47
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Total paid"
 msgstr "Πληρωμένο σύνολο"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:50
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:55
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Total refunded"
 msgstr "Σύνολο Επιστροφής"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:58
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:63
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Balance"
 msgstr "Διαφορά"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:69
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:74
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Commission rate"
 msgstr "Ημερομηνία προμήθειας"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:77
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:82
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Conversion rate"
 msgstr "Ποσοστό μετατροπής"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:89
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:94
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Visits"
 msgstr "Επισκέψεις"
 
-#: templates/shortcodes/dashboard-summary/affiliate-stats.php:97
+#: templates/shortcodes/dashboard-summary/affiliate-stats.php:102
 #, fuzzy
 msgctxt "[FRONTEND] Affiliate dashboard"
 msgid "Visits today"
 msgstr "Επισκέψεις"
 
 #: templates/shortcodes/form-referrer.php:32
+#: assets/js/blocks/src/set-referrer/block.js:71
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:362
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:366
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:331
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:333
 #, fuzzy
 msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Did anyone suggest our site to you?"
@@ -3626,13 +3647,23 @@ msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Click here to enter his/her affiliate code"
 msgstr "Κάντε κλικ εδώ για να πληκτρολογήσετε τον κωδικό συνεργάτη τους"
 
-#: templates/shortcodes/form-referrer.php:51
+#: templates/shortcodes/form-referrer.php:61
+#: assets/js/blocks/src/set-referrer/block.js:101
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:382
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:386
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:361
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:363
 #, fuzzy
 msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Affiliate code"
 msgstr "Συνεργάτης"
 
-#: templates/shortcodes/form-referrer.php:55
+#: templates/shortcodes/form-referrer.php:65
+#: assets/js/blocks/src/set-referrer/block.js:120
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:395
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:399
+#: assets/js/blocks/yith-wcaf-set-referrer-frontend.bundle.js:380
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:382
 #, fuzzy
 msgctxt "[FRONTEND] Set referrer shortcode"
 msgid "Set affiliate"
@@ -4034,6 +4065,310 @@ msgctxt "[ADMIN] Order commissions metabox"
 msgid "Store earnings:"
 msgstr "Έσοδα Καταστήματος:"
 
+#: assets/js/admin/src/dashboard/components/DashboardChart.jsx:180
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10195
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9989
+#, fuzzy
+msgctxt "[DASHBOARD] Empty chart message"
+msgid "No data available"
+msgstr "Απενεργοποίηση"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:15
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10382
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10155
+#, fuzzy
+msgctxt "[DASHBOARD] Products leaderboard"
+msgid "Top products"
+msgstr "Επιτρεπόμενα προϊόντα"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:22
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10384
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10162
+#, fuzzy
+msgctxt "[DASHBOARD] Products leaderboard"
+msgid "Product"
+msgstr "Προϊόν"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:31
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10388
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10171
+#, fuzzy
+msgctxt "[DASHBOARD] Products leaderboard"
+msgid "Total commissions"
+msgstr "Προμήθειες"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:42
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10394
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10182
+#, fuzzy
+msgctxt "[DASHBOARD] Products leaderboard"
+msgid "Earnings generated"
+msgstr "Έσοδα"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:59
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10406
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10199
+#, fuzzy
+msgctxt "[DASHBOARD] Affiliates leaderboard"
+msgid "Top affiliates"
+msgstr "Αποκλεισμός συνεργάτη"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:66
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10408
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10206
+#, fuzzy
+msgctxt "[DASHBOARD] Affiliates leaderboard"
+msgid "Affiliate"
+msgstr "Συνεργάτης"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:75
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10412
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10215
+#, fuzzy
+msgctxt "[DASHBOARD] Affiliates leaderboard"
+msgid "Total commissions"
+msgstr "Προμήθειες"
+
+#: assets/js/admin/src/dashboard/components/DashboardLeaderboards/config.js:86
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10418
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:10226
+#, fuzzy
+msgctxt "[DASHBOARD] Affiliates leaderboard"
+msgid "Earnings generated"
+msgstr "Έσοδα"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:20
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9696
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9408
+#, fuzzy
+msgctxt "[DASHBOARD] Filters"
+msgid "Show"
+msgstr "Εμφάνιση μενού"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:30
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9703
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9418
+#, fuzzy
+msgctxt "[DASHBOARD] Filters"
+msgid "All affiliates"
+msgstr "Συνεργάτες"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:38
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:62
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9706
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9721
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9426
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9450
+#, fuzzy
+msgctxt "[DASHBOARD] Filters"
+msgid "Single affiliate"
+msgstr "Νέα θυγατρική"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:57
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9720
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9445
+#, fuzzy
+msgctxt "[DASHBOARD] Filters"
+msgid "Type to search for an affiliate"
+msgstr "Αναζήτηση θυγατρικής&hellip;"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:73
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9726
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9461
+#, fuzzy
+msgctxt "[DASHBOARD] Filters"
+msgid "Comparison"
+msgstr "Εταιρεία"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:86
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9735
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9474
+msgctxt "[DASHBOARD] Filters"
+msgid "Check at least two affiliates below to compare"
+msgstr ""
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:91
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9736
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9479
+#, fuzzy
+msgctxt "[DASHBOARD] Filters"
+msgid "Search for affiliates to compare"
+msgstr "Πίσω στον πίνακα συνεργατών"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:96
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9737
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9484
+#, fuzzy
+msgctxt "[DASHBOARD] Filters"
+msgid "Compare Affiliates"
+msgstr "Συνεργάτες"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:101
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9738
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9489
+#, fuzzy
+msgctxt "[DASHBOARD] Filters"
+msgid "Compare"
+msgstr "Εταιρεία"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:116
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9745
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9504
+#, fuzzy
+msgctxt "[DASHBOARD] Chart name"
+msgid "Total commissions"
+msgstr "Προμήθειες"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:125
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9749
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9513
+#, fuzzy
+msgctxt "[DASHBOARD] Chart name"
+msgid "Paid commissions"
+msgstr "Πληρωμή Προμηθειών"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:134
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9753
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9522
+#, fuzzy
+msgctxt "[DASHBOARD] Chart name"
+msgid "Refunded commissions"
+msgstr "Παραπομπή Προμηθειών"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:143
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9757
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9531
+#, fuzzy
+msgctxt "[DASHBOARD] Chart name"
+msgid "Total earnings from affiliates"
+msgstr "Ενεργοποίηση διαχείρισης κουπονιών για θυγατρικές"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:152
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9761
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9540
+#, fuzzy
+msgctxt "[DASHBOARD] Chart name"
+msgid "Total visits"
+msgstr "Σύνολο προμηθειών"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:161
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9765
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9549
+#, fuzzy
+msgctxt "[DASHBOARD] Chart name"
+msgid "Total conversions"
+msgstr "Σύνολο προμηθειών"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:170
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9769
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9558
+#, fuzzy
+msgctxt "[DASHBOARD] Chart name"
+msgid "Average conversion rate"
+msgstr "Μέσος όρος ποσοστού μετατροπής"
+
+#: assets/js/admin/src/dashboard/components/DashboardStats/config.js:179
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9773
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9567
+#, fuzzy
+msgctxt "[DASHBOARD] Chart name"
+msgid "Average conversion time"
+msgstr "Μέσος όρος χρόνου μετατροπής"
+
+#: assets/js/admin/src/dashboard/lib/dates.js:34
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9866
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9650
+msgctxt "[DASHBOARD] Time diff"
+msgid "y"
+msgstr ""
+
+#: assets/js/admin/src/dashboard/lib/dates.js:42
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9869
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9658
+msgctxt "[DASHBOARD] Time diff"
+msgid "mo"
+msgstr ""
+
+#: assets/js/admin/src/dashboard/lib/dates.js:50
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9872
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9666
+msgctxt "[DASHBOARD] Time diff"
+msgid "w"
+msgstr ""
+
+#: assets/js/admin/src/dashboard/lib/dates.js:58
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9875
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9674
+msgctxt "[DASHBOARD] Time diff"
+msgid "d"
+msgstr ""
+
+#: assets/js/admin/src/dashboard/lib/dates.js:66
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9878
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9682
+msgctxt "[DASHBOARD] Time diff"
+msgid "h"
+msgstr ""
+
+#: assets/js/admin/src/dashboard/lib/dates.js:74
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9881
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9690
+msgctxt "[DASHBOARD] Time diff"
+msgid "m"
+msgstr ""
+
+#: assets/js/admin/src/dashboard/lib/dates.js:82
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9884
+#: assets/js/admin/yith-wcaf-dashboard.bundle.js:9698
+#, fuzzy
+msgctxt "[DASHBOARD] Time diff"
+msgid "s"
+msgstr "%s"
+
+#: assets/js/blocks/src/set-referrer/edit.js:20
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:420
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:417
+#, fuzzy
+msgctxt "[BUILDERS] Shortcode attributes"
+msgid "Block options"
+msgstr "Cookie"
+
+#: assets/js/blocks/src/set-referrer/edit.js:27
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:422
+#: assets/js/blocks/yith-wcaf-set-referrer.bundle.js:424
+msgctxt "[BUILDERS] Shortcode attributes"
+msgid "Initial affiliate token to show"
+msgstr ""
+
+#: assets/js/blocks/src/set-referrer/block.json
+#, fuzzy
+msgctxt "block title"
+msgid "YITH Affiliates \"Set Referrer\" box"
+msgstr "Πίνακας Ελέγχου YITH Affiliates"
+
+#: assets/js/blocks/src/set-referrer/block.json
+msgctxt "block description"
+msgid ""
+"Shows the \"Set referrer\" box, to allow customer set the user that "
+"suggested the site."
+msgstr ""
+
+#, fuzzy
+#~ msgctxt "[ADMIN] Title for affiliates table, in affiliates tab"
+#~ msgid "Affiliates"
+#~ msgstr "Συνεργάτες"
+
+#~ msgid "Commissions"
+#~ msgstr "Προμήθειες"
+
+#~ msgid "Payments"
+#~ msgstr "Πληρωμές"
+
+#, fuzzy
+#~ msgctxt "[ADMIN] Affiliate registration settings page"
+#~ msgid "Affiliate Registration Fields"
+#~ msgstr "Φόρμα Εγγραφής YITH Affiliates"
+
 #, fuzzy
 #~ msgctxt "[ADMIN] Affiliate screen columns"
 #~ msgid "Refunds"
@@ -4273,9 +4608,6 @@ msgstr "Έσοδα Καταστήματος:"
 #~ msgid "Payments correctly registered"
 #~ msgstr "Επιτυχώς εγγεγραμμένες πληρωμές"
 
-#~ msgid "User was correctly registered as affiliate of your store"
-#~ msgstr "Επιτυχής εγγραφή χρήστη ως συνεργάτης του καταστήματός σας"
-
 #~ msgid ""
 #~ "There was a problem while registering the affiliate; please, try again "
 #~ "later"
@@ -4321,8 +4653,8 @@ msgstr "Έσοδα Καταστήματος:"
 #~ msgid ""
 #~ "Commission assigned to affiliate #%d (previously was assigned to #%d)"
 #~ msgstr ""
-#~ "Η προμήθεια ανατέθηκε στην θυγατρική #%d (προηγουμένως ανατεθειμένη σε #"
-#~ "%d)"
+#~ "Η προμήθεια ανατέθηκε στην θυγατρική #%d (προηγουμένως ανατεθειμένη σε "
+#~ "#%d)"
 
 #~ msgid "Your request has been processed correctly"
 #~ msgstr "Το αίτημα σας επεξεργάστηκε επιτυχώς"
@@ -4569,9 +4901,6 @@ msgstr "Έσοδα Καταστήματος:"
 #~ msgid "Delete click logs"
 #~ msgstr "Διαγραφή καταγραφής κλικ"
 
-#~ msgid "Search for an affiliate&hellip;"
-#~ msgstr "Αναζήτηση θυγατρικής&hellip;"
-
 #~ msgid "Delete Logs"
 #~ msgstr "Διαγραφή Αρχείου Καταγραφής"
 
@@ -4644,9 +4973,6 @@ msgstr "Έσοδα Καταστήματος:"
 
 #~ msgid "Number of conversions"
 #~ msgstr "Αριθμός μετατροπών"
-
-#~ msgid "Average conversion rate"
-#~ msgstr "Μέσος όρος ποσοστού μετατροπής"
 
 #~ msgid "Average percent conversion rate"
 #~ msgstr "Μέσος όρος τοις εκατό του ποσοστού μετατροπής"
@@ -4898,9 +5224,6 @@ msgstr "Έσοδα Καταστήματος:"
 
 #~ msgid "Process dangling commissions"
 #~ msgstr "Επεξεργασία ορφανών προμηθειών"
-
-#~ msgid "Pay Commissions"
-#~ msgstr "Πληρωμή Προμηθειών"
 
 #~ msgid "Pay commissions via %s"
 #~ msgstr "Πληρωμή προμηθειών μέσω %s"
@@ -5309,9 +5632,6 @@ msgstr "Έσοδα Καταστήματος:"
 #~ msgid "Eanble coupon handling"
 #~ msgstr "Ενεργοποίηση διαχείρισης κουπονιού"
 
-#~ msgid "Enable coupons handling for affiliates"
-#~ msgstr "Ενεργοποίηση διαχείρισης κουπονιών για θυγατρικές"
-
 #~ msgid "Show coupon section"
 #~ msgstr "Εμφάνιση ενότητας κουπονιών"
 
@@ -5467,9 +5787,6 @@ msgstr "Έσοδα Καταστήματος:"
 
 #~ msgid "Invoice number"
 #~ msgstr "Αριθμός τιμολογίου"
-
-#~ msgid "Company"
-#~ msgstr "Εταιρεία"
 
 #~ msgid "Billing country"
 #~ msgstr "Χώρα χρέωσης"
@@ -5892,9 +6209,6 @@ msgstr "Έσοδα Καταστήματος:"
 #~ "Αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου στέλνεται σε πελάτες κάθε φορά "
 #~ "που η κατάσταση προμήθειας αλλάζει σε “εκκρεμής”"
 
-#~ msgid "Your commission is awaiting payment"
-#~ msgstr "Η προμήθειά σας αναμένεται να πληρωθεί"
-
 #~ msgid ""
 #~ "Your {site_title} commission from {commission_date} is awaiting payment"
 #~ msgstr ""
@@ -6125,8 +6439,8 @@ msgstr "Έσοδα Καταστήματος:"
 #~ msgid_plural ""
 #~ "Funds credited to user as payment for commissions %s (Payment #%d)"
 #~ msgstr[0] ""
-#~ "Κεφάλαια που πιστώνονται στο χρήστη ως πληρωμή για προμήθεια %s (Πληρωμή #"
-#~ "%d)"
+#~ "Κεφάλαια που πιστώνονται στο χρήστη ως πληρωμή για προμήθεια %s (Πληρωμή "
+#~ "#%d)"
 #~ msgstr[1] ""
 #~ "Κεφάλαια που πιστώνονται στο χρήστη ως πληρωμή για προμήθειες %s (Πληρωμή "
 #~ "#%d)"
@@ -6207,8 +6521,8 @@ msgstr "Έσοδα Καταστήματος:"
 #~ msgstr "Η αυτόματη αναβάθμιση δεν είναι διαθέσιμη για το πρόσθετο,"
 
 #~ msgid ""
-#~ "please <a href=\"%activate_link%\">activate</a> your copy of %plugin_name"
-#~ "%."
+#~ "please <a href=\"%activate_link%\">activate</a> your copy of "
+#~ "%plugin_name%."
 #~ msgstr ""
 #~ "παρακαλώ <a href=“%activate_link%”>activate</a> το αντίγραφο του "
 #~ "%plugin_name%."
@@ -6259,19 +6573,20 @@ msgstr "Έσοδα Καταστήματος:"
 #~ msgstr "Παραχωρήθηκε άκυρο URL."
 
 #~ msgid ""
-#~ "There is a new version of %1$s available. <a href=\"%2$s\" class="
-#~ "\"thickbox yit-changelog-button open-plugin-details-modal\" title=\"%3$s"
-#~ "\">View version %4$s details</a>."
+#~ "There is a new version of %1$s available. <a href=\"%2$s\" "
+#~ "class=\"thickbox yit-changelog-button open-plugin-details-modal\" "
+#~ "title=\"%3$s\">View version %4$s details</a>."
 #~ msgstr ""
 #~ "Υπάρχει διαθέσιμη νέα έκδοση του %1$s. <a href=“%2$s” class=“thickbox yit-"
 #~ "changelog-button open-plugin-details-modal” title=“%3$s”>View version "
 #~ "%4$s details</a>."
 
 #~ msgid ""
-#~ "There is a new version of %1$s available. <a href=\"%2$s\" class="
-#~ "\"thickbox yit-changelog-button open-plugin-details-modal\" title=\"%3$s"
-#~ "\">View version %4$s details</a>. <em>You have to activate the plugin on "
-#~ "a single site of the network to benefit from automatic updates.</em>"
+#~ "There is a new version of %1$s available. <a href=\"%2$s\" "
+#~ "class=\"thickbox yit-changelog-button open-plugin-details-modal\" "
+#~ "title=\"%3$s\">View version %4$s details</a>. <em>You have to activate "
+#~ "the plugin on a single site of the network to benefit from automatic "
+#~ "updates.</em>"
 #~ msgstr ""
 #~ "Υπάρχει διαθέσιμη νέα έκδοση του %1$s. <a href=“%2$s” class=“thickbox yit-"
 #~ "changelog-button open-plugin-details-modal” title=“%3$s”>View version "
@@ -6280,11 +6595,11 @@ msgstr "Έσοδα Καταστήματος:"
 #~ "</em>"
 
 #~ msgid ""
-#~ "There is a new version of %1$s available. <a href=\"%2$s\" class="
-#~ "\"thickbox yit-changelog-button open-plugin-details-modal\" title=\"%3$s"
-#~ "\">View version %4$s details</a>. <em>Automatic update is unavailable for "
-#~ "this plugin, please <a href=\"%5$s\" title=\"License activation"
-#~ "\">activate</a> your copy of %6s.</em>"
+#~ "There is a new version of %1$s available. <a href=\"%2$s\" "
+#~ "class=\"thickbox yit-changelog-button open-plugin-details-modal\" "
+#~ "title=\"%3$s\">View version %4$s details</a>. <em>Automatic update is "
+#~ "unavailable for this plugin, please <a href=\"%5$s\" title=\"License "
+#~ "activation\">activate</a> your copy of %6s.</em>"
 #~ msgstr ""
 #~ "Υπάρχει διαθέσιμη νέα έκδοση του %1$s. <a href=“%2$s” class=“thickbox yit-"
 #~ "changelog-button open-plugin-details-modal” title=“%3$s”>View version "
@@ -6293,10 +6608,11 @@ msgstr "Έσοδα Καταστήματος:"
 #~ "activation”>ενεργοποιείστε</a> το αντίγραφο του %6s.</em>"
 
 #~ msgid ""
-#~ "There is a new version of %1$s available. <a href=\"%2$s\" class="
-#~ "\"thickbox yit-changelog-button open-plugin-details-modal\" title=\"%3$s"
-#~ "\">View version %4$s details</a> or <a href=\"%5$s\" class=\"%6$s\" data-"
-#~ "plugin=\"%7$s\" data-slug=\"%8$s\" data-name=\"%1$s\">update now</a>."
+#~ "There is a new version of %1$s available. <a href=\"%2$s\" "
+#~ "class=\"thickbox yit-changelog-button open-plugin-details-modal\" "
+#~ "title=\"%3$s\">View version %4$s details</a> or <a href=\"%5$s\" "
+#~ "class=\"%6$s\" data-plugin=\"%7$s\" data-slug=\"%8$s\" data-"
+#~ "name=\"%1$s\">update now</a>."
 #~ msgstr ""
 #~ "Υπάρχει διαθέσιμη νέα έκδοση του %1$s. <a href=“%2$s” class=“thickbox yit-"
 #~ "changelog-button open-plugin-details-modal” title=“%3$s”>View version "
@@ -6308,9 +6624,9 @@ msgstr "Έσοδα Καταστήματος:"
 #~ "available one. </em>Please, make sure you've downloaded the latest "
 #~ "version of <em>%1$s</em> from the only <a href=\"https://yithemes.com\" "
 #~ "target=\"_blank\">YITH official website</a>, specifically, from your <a "
-#~ "href=\"https://yithemes.com/my-account/recent-downloads/\" target=\"_blank"
-#~ "\">Downloads page</a>. This is the only way to be sure the version you "
-#~ "are using is 100%% malware-free."
+#~ "href=\"https://yithemes.com/my-account/recent-downloads/\" "
+#~ "target=\"_blank\">Downloads page</a>. This is the only way to be sure the "
+#~ "version you are using is 100%% malware-free."
 #~ msgstr ""
 #~ "<br/><b>Please note:</b> You are using a higher version than the latest "
 #~ "available one. </em>Please, make sure you’ve downloaded the latest "
@@ -6332,9 +6648,6 @@ msgstr "Έσοδα Καταστήματος:"
 
 #~ msgid "Update Plugin"
 #~ msgstr "Αναβάθμιση Πρόσθετου"
-
-#~ msgid "%s"
-#~ msgstr "%s"
 
 #~ msgid ""
 #~ "I cannot find the license key for activating the theme I have bought some "
@@ -6435,9 +6748,6 @@ msgstr "Έσοδα Καταστήματος:"
 
 #~ msgid "<b>%s</b> Details"
 #~ msgstr "<b>%s</b> Λεπτομέρειες"
-
-#~ msgid "Back to affiliates table"
-#~ msgstr "Πίσω στον πίνακα συνεργατών"
 
 #~ msgid "Referral link:"
 #~ msgstr "Λινκ παραπομπής:"
@@ -6565,9 +6875,6 @@ msgstr "Έσοδα Καταστήματος:"
 
 #~ msgid "Sum of all earnings generated by affiliate links so far"
 #~ msgstr "Σύνολο όλων των εσόδων παραγόμενων από λινκ συνεργατών έως τώρα"
-
-#~ msgid "Average conversion time"
-#~ msgstr "Μέσος όρος χρόνου μετατροπής"
 
 #~ msgid "Average time from click to sale"
 #~ msgstr "Μέσος όρος χρόνου από κλικ σε πώληση"

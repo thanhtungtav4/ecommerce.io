@@ -3,8 +3,8 @@ Contributors: AmirHelzer, strategio, dgwatkins, andrewp-2
 Tags: CMS, commerce, ecommerce, e-commerce, woocommerce, multilingual, multicurrency, multi-currency
 License: GPLv2
 Requires at least: 4.7
-Tested up to: 6.2
-Stable tag: 5.1.3
+Tested up to: 6.4
+Stable tag: 5.3.2
 Requires PHP: 5.6
 
 Make your store multilingual and enable multiple currencies.
@@ -114,7 +114,7 @@ WooCommerce Multilingual is compatible with all major WooCommerce extensions. We
 = Minimum Requirements =
 
 * WordPress 4.7 or later
-* PHP version 5.6 or later
+* PHP version 7.0 or later
 * MySQL version 5.6 or later
 * WooCommerce 3.9.0 or later
 

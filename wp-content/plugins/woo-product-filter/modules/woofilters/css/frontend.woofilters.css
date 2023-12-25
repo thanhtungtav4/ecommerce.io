@@ -305,6 +305,7 @@
 	padding: 0px;
 	padding-inline-start: 0;
 	padding-left: 0px;
+	padding-bottom: 1px;
 }
 .wpfFilterLayoutVer, .wpfFilterLayoutHor {
 	display: -ms-flexbox;
@@ -414,4 +415,18 @@
 
 ul ul.wpfHideAllParent {
 	margin: 0;
+}
+.rtl .wpfSingleInputSearch button, .rtl .wpfSearchWrapper button {
+	left: 0 !important;
+	right: auto !important;
+}
+.rtl .wpfSingleInputSearch input, .rtl .wpfSearchWrapper input {
+	padding-left: 25px !important;
+}
+.rtl .wpfMainWrapper .wpfCount {
+	padding-left: 0;
+	padding-right: 10px;
+}
+.rtl .wpfFilterWrapper i, .rtl .wpfFilterWrapper svg {
+    float: left;
 }

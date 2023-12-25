@@ -2,7 +2,7 @@
 /**
  * Registers Order Referral Commission meta box
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -26,10 +26,10 @@ if ( ! class_exists( 'YITH_WCAF_Order_Referral_Commissions_Meta_Box' ) ) {
 		 */
 		public static function print( $post ) {
 			// set order id.
-			$order_id = $post->ID;
+			$order_id = $post instanceof WC_Order ? $post->get_id() : $post->ID;
 
 			// if we're on wc subscription page, use subscription parent order.
-			if ( 'shop_subscription' === $post->post_type ) {
+			if ( $post instanceof WP_Post && 'shop_subscription' === $post->post_type ) {
 				$order_id = $post->post_parent;
 			}
 

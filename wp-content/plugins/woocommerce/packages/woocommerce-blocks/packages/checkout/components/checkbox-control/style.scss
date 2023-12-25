@@ -1,19 +1,26 @@
 .wc-block-components-checkbox {
+	@include reset-color();
 	@include reset-typography();
-	margin-top: em($gap-large);
+	margin-top: em($gap);
 
 	label {
 		align-items: flex-start;
 		display: flex;
 		position: relative;
+		cursor: pointer;
 		@include font-size(small);
+		margin-bottom: 0 !important;
+
+		input[type="checkbox"] {
+			cursor: inherit;
+		}
 	}
 
 	.wc-block-components-checkbox__input[type="checkbox"] {
 		font-size: 1em;
 		appearance: none;
 		border: 2px solid $input-border-gray;
-		border-radius: 2px;
+		border-radius: $universal-border-radius;
 		box-sizing: border-box;
 		height: em(24px);
 		width: em(24px);

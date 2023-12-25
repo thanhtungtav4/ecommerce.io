@@ -2,7 +2,7 @@
 /**
  * Checkout Handler class
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -28,6 +28,7 @@ if ( ! class_exists( 'YITH_WCAF_Checkout' ) ) {
 			// register checkout handling.
 			add_action( 'woocommerce_checkout_order_processed', array( $this, 'process_checkout' ), 10, 1 );
 			add_action( 'woocommerce_rest_insert_shop_order_object', array( $this, 'process_checkout' ), 10, 1 );
+			add_action( 'woocommerce_store_api_checkout_order_processed', array( $this, 'process_checkout' ), 10, 1 );
 
 			// delete commissions for awaiting payment orders.
 			add_action( 'woocommerce_after_checkout_validation', array( $this, 'delete_order_awaiting_payment_commissions' ) );

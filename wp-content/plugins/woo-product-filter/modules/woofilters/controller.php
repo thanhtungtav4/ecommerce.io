@@ -135,7 +135,7 @@ class WoofiltersControllerWpf extends ControllerWpf {
 		$onlyStatistics = isset($params['only_statistics']);
 		$onlyFilterRecount = $onlyStatistics || isset($params['only_recound']);
 		$synchroFilterId = !empty($params['synchro_filter_id']) ? $params['synchro_filter_id'] : '';
-		
+				
 		if ($onlyStatistics) {
 			$filterSettings['only_have_found'] = true;
 			$filterSettings['filter_recount'] = 0;
@@ -228,7 +228,8 @@ class WoofiltersControllerWpf extends ControllerWpf {
 		//Prepare params for WooCommerce Shop and Category template variants.
 		$shopPageId = wc_get_page_id('shop');
 		$currentPageId = isset($queryvars['page_id']) ? $queryvars['page_id'] : 0;
-		$categoryPageId = isset($queryvars['product_category_id']) ? $queryvars['product_category_id'] : false;
+		$allProductsFiltering = isset($filterSettings['all_products_filtering']) && $filterSettings['all_products_filtering'];
+		$categoryPageId = isset($queryvars['product_category_id']) && !$allProductsFiltering ? $queryvars['product_category_id'] : false;
 
 		$calcParentCategory = null;
 		$showProducts = true;
@@ -296,7 +297,7 @@ class WoofiltersControllerWpf extends ControllerWpf {
 			}
 		}
 		if (!empty($wpfFId)) {
-			$jscript .= '<script type="text/javascript">wpfDoActionsAfterLoad('.$wpfFId .',' . ( empty($filterItems) || empty($filterItems['have_posts']) ? 0 : 1 ) . ');</script>';
+			$jscript .= '<script type="text/javascript">wpfDoActionsAfterLoad(' . $wpfFId . ',' . ( empty($filterItems) || empty($filterItems['have_posts']) ? 0 : 1 ) . ');</script>';
 		}
 
 		if (!$onlyFilterRecount) {
@@ -886,6 +887,11 @@ class WoofiltersControllerWpf extends ControllerWpf {
 							$args['author__in'] = $vendorIds;
 						}
 						break;
+					case 'wpfSearchNumber':
+						if (!empty($setting['settings']['value'])) {
+							$args['tax_query'] = DispatcherWpf::applyFilters('addCustomTaxQueryPro', $args['tax_query'], array($setting['name'] => $setting['settings']['value']), 'url');
+						}
+						break;
 				}
 			}
 		}
@@ -941,7 +947,9 @@ class WoofiltersControllerWpf extends ControllerWpf {
 		$args = $module->addWooOptions($args);
 
 		if ($shortcodeAttr) {
-			$args = $this->addShortcodeAttrToArgs($args, $shortcodeAttr, $filterSettings);
+			if (!isset($filterSettings['do_not_use_shortcut']) || !$filterSettings['do_not_use_shortcut']) {
+				$args = $this->addShortcodeAttrToArgs($args, $shortcodeAttr, $filterSettings);
+			}
 		}
 		return $args;
 	}

@@ -4,6 +4,10 @@
 	margin: 0 auto $gap;
 	position: relative;
 
+	.wc-block-must-login-prompt {
+		display: block;
+	}
+
 	.wc-block-components-main {
 		box-sizing: border-box;
 		margin: 0;
@@ -45,11 +49,11 @@
 .is-large {
 	.wc-block-components-sidebar {
 		.wc-block-components-totals-item,
-		.wc-block-components-panel {
+		.wc-block-components-panel,
+		.wc-block-components-totals-coupon {
 			padding-left: $gap;
 			padding-right: $gap;
 		}
-
 		.wc-block-components-panel {
 			.wc-block-components-totals-item {
 				padding: 0;

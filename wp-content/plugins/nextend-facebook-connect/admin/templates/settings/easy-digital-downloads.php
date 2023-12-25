@@ -203,6 +203,11 @@ NextendSocialLoginAdmin::showProBox();
                     <code><?php _e('Action:'); ?>
                         edd_cart_items_before</code></label><br>
                 <label><input type="radio" name="edd_checkout"
+                              value="before_purchase_form" <?php if ($settings->get('edd_checkout') == 'before_purchase_form') : ?> checked="checked" <?php endif; ?><?php echo $attr; ?>>
+                    <span><?php _e('Connect button on', 'nextend-facebook-connect'); ?></span>
+                    <code><?php _e('Action:'); ?>
+                        edd_before_purchase_form</code></label><br>
+                <label><input type="radio" name="edd_checkout"
                               value="form_top" <?php if ($settings->get('edd_checkout') == 'form_top') : ?> checked="checked" <?php endif; ?><?php echo $attr; ?>>
                     <span><?php _e('Connect button on', 'nextend-facebook-connect'); ?></span>
                     <code><?php _e('Action:'); ?>

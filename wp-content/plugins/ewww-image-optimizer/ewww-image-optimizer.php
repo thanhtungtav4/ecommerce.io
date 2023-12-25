@@ -13,9 +13,9 @@ Plugin Name: EWWW Image Optimizer
 Plugin URI: https://wordpress.org/plugins/ewww-image-optimizer/
 Description: Smaller Images, Faster Sites, Happier Visitors. Comprehensive image optimization that doesn't require a degree in rocket science.
 Author: Exactly WWW
-Version: 6.9.3
-Requires at least: 5.8
-Requires PHP: 7.2
+Version: 7.2.2
+Requires at least: 6.1
+Requires PHP: 7.3
 Author URI: https://ewww.io/
 License: GPLv3
 */
@@ -24,19 +24,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! defined( 'EWWW_IO_CLOUD_PLUGIN' ) ) {
-	define( 'EWWW_IO_CLOUD_PLUGIN', false );
-}
-
 // Check the PHP version.
-if ( ! defined( 'PHP_VERSION_ID' ) || PHP_VERSION_ID < 70200 ) {
+if ( ! defined( 'PHP_VERSION_ID' ) || PHP_VERSION_ID < 70300 ) {
 	add_action( 'network_admin_notices', 'ewww_image_optimizer_unsupported_php' );
 	add_action( 'admin_notices', 'ewww_image_optimizer_unsupported_php' );
 } elseif ( defined( 'EWWW_IMAGE_OPTIMIZER_VERSION' ) ) {
-	// Prevent loading both EWWW IO plugins.
+	// Prevent loading more than one EWWW IO plugin.
 	add_action( 'network_admin_notices', 'ewww_image_optimizer_dual_plugin' );
 	add_action( 'admin_notices', 'ewww_image_optimizer_dual_plugin' );
-} elseif ( false === strpos( add_query_arg( null, null ), 'ewwwio_disable=1' ) ) {
+} elseif ( false === strpos( add_query_arg( '', '' ), 'ewwwio_disable=1' ) ) {
+
+	define( 'EWWW_IMAGE_OPTIMIZER_VERSION', 722 );
+	// Initialize a global.
+	$ewww_defer = true;
+
+	if ( WP_DEBUG && function_exists( 'memory_get_usage' ) ) {
+		$ewww_memory = 'plugin load: ' . memory_get_usage( true ) . "\n";
+	}
+
+	/**
+	 * Always use relative paths unless the user has already defined this constant.
+	 *
+	 * @var bool EWWW_IMAGE_OPTIMIZER_RELATIVE
+	 */
+	if ( ! defined( 'EWWW_IMAGE_OPTIMIZER_RELATIVE' ) ) {
+		define( 'EWWW_IMAGE_OPTIMIZER_RELATIVE', true );
+	}
 	/**
 	 * The full path of the plugin file (this file).
 	 *
@@ -69,11 +82,11 @@ if ( ! defined( 'PHP_VERSION_ID' ) || PHP_VERSION_ID < 70200 ) {
 	define( 'EWWW_IMAGE_OPTIMIZER_IMAGES_PATH', plugin_dir_path( __FILE__ ) . 'images/' );
 	if ( ! defined( 'EWWW_IMAGE_OPTIMIZER_TOOL_PATH' ) ) {
 		if ( ! defined( 'EWWWIO_CONTENT_DIR' ) ) {
-			$ewwwio_content_dir = trailingslashit( WP_CONTENT_DIR ) . trailingslashit( 'ewww' );
+			$ewwwio_content_dir = trailingslashit( realpath( WP_CONTENT_DIR ) ) . trailingslashit( 'ewww' );
 			if ( ! is_writable( WP_CONTENT_DIR ) || ! empty( $_ENV['PANTHEON_ENVIRONMENT'] ) ) {
 				$upload_dir = wp_get_upload_dir();
 				if ( false === strpos( $upload_dir['basedir'], '://' ) && is_writable( $upload_dir['basedir'] ) ) {
-					$ewwwio_content_dir = trailingslashit( $upload_dir['basedir'] ) . trailingslashit( 'ewww' );
+					$ewwwio_content_dir = trailingslashit( realpath( $upload_dir['basedir'] ) ) . trailingslashit( 'ewww' );
 				}
 			}
 			/**
@@ -94,46 +107,34 @@ if ( ! defined( 'PHP_VERSION_ID' ) || PHP_VERSION_ID < 70200 ) {
 	}
 
 	/**
-	 * All the 'unique' functions for the core EWWW IO plugin.
+	 * All the 'unique' functions for the core EWWW IO plugin (slowly being replaced with oop).
 	 */
-	require_once( EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'unique.php' );
+	require_once EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'unique.php';
 	/**
 	 * All the 'common' functions for both EWWW IO plugins.
 	 */
-	require_once( EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'common.php' );
+	require_once EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'common.php';
 	/**
-	 * All the base functions for our plugins.
+	 * All the base functions for our plugins and classes to inherit.
 	 */
-	require_once( EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'classes/class-eio-base.php' );
+	require_once EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'classes/class-base.php';
 	/**
-	 * The various class extensions for background optimization.
+	 * The setup functions for EWWW IO.
 	 */
-	require_once( EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'classes/class-ewwwio-media-background-process.php' );
+	require_once EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'classes/class-plugin.php';
 	/**
-	 * EWWW_Image class for working with queued images and image records from the database.
+	 * Class for local optimization tool installation/valication.
 	 */
-	require_once( EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'classes/class-ewww-image.php' );
+	require_once EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'classes/class-local.php';
 	/**
-	 * EIO_Backup class for managing image backups.
-	 */
-	require_once( EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'classes/class-eio-backup.php' );
-	/**
-	 * EWWWIO_Tracking class for reporting anonymous site data.
-	 */
-	require_once( EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'classes/class-ewwwio-tracking.php' );
-	/**
-	 * The main function to return a single EIO_Base object to functions elsewhere.
+	 * The main function to return a single EWWW\Plugin object to functions elsewhere.
 	 *
-	 * @return object object|EIO_Base The one true EIO_Base instance.
+	 * @return object object|EWWW\Plugin The one true EWWW\Plugin instance.
 	 */
-	function eio_plugin() {
-		// TODO: create an intermediary EIO_Plugin class that inherits from EIO_Base. This
-		// can be used for things like defining constants, including other files, and adding hooks.
-		if ( method_exists( 'EIO_Base', 'instance' ) ) {
-			return EIO_Base::instance();
-		}
-		return new EIO_Base();
+	function ewwwio() {
+		return EWWW\Plugin::instance();
 	}
+	ewwwio();
 } // End if().
 
 if ( ! function_exists( 'ewww_image_optimizer_unsupported_php' ) ) {
@@ -141,7 +142,7 @@ if ( ! function_exists( 'ewww_image_optimizer_unsupported_php' ) ) {
 	 * Display a notice that the PHP version is too old.
 	 */
 	function ewww_image_optimizer_unsupported_php() {
-		echo '<div id="ewww-image-optimizer-warning-php" class="error"><p><a href="https://docs.ewww.io/article/55-upgrading-php" target="_blank" data-beacon-article="5ab2baa6042863478ea7c2ae">' . esc_html__( 'EWWW Image Optimizer requires PHP 7.2 or greater. Newer versions of PHP are significantly faster and much more secure. If you are unsure how to upgrade to a supported version, ask your webhost for instructions.', 'ewww-image-optimizer' ) . '</a></p></div>';
+		echo '<div id="ewww-image-optimizer-warning-php" class="error"><p><a href="https://docs.ewww.io/article/55-upgrading-php" target="_blank" data-beacon-article="5ab2baa6042863478ea7c2ae">' . esc_html__( 'EWWW Image Optimizer requires PHP 7.4 or greater. Newer versions of PHP are significantly faster and much more secure. If you are unsure how to upgrade to a supported version, ask your webhost for instructions.', 'ewww-image-optimizer' ) . '</a></p></div>';
 	}
 
 	/**

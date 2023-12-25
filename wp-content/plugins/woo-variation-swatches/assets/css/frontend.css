@@ -2,43 +2,68 @@
  * Variation Swatches for WooCommerce
  *
  * Author: Emran Ahmed ( emran.bd.08@gmail.com )
- * Date: 4/13/2023, 3:09:16 AM
+ * Date: 11/21/2023, 2:00:07 PM
  * Released under the GPLv3 license.
  */
-.woo-variation-swatches.wvs-tooltip .radio-variable-item[data-wvstooltip] {
-  position: relative;
-}
-.woo-variation-swatches.wvs-tooltip .radio-variable-item[data-wvstooltip]::before, .woo-variation-swatches.wvs-tooltip .radio-variable-item[data-wvstooltip]::after {
-  left: 8px;
-  bottom: 100%;
-}
-.woo-variation-swatches.wvs-tooltip .radio-variable-item .image-tooltip-wrapper {
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
+.woo-variation-swatches.wvs-tooltip {
+  /*	.radio-variable-item[data-wvstooltip] {
+          position: relative;
+
+          &::before,
+          &::after {
+              left: 8px;
+              bottom: 100%;
+          }
+      }*/
+  /*.radio-variable-item .image-tooltip-wrapper {
+      transform: translateX(-50%);
+      left: 8px;
+  }*/
+  /*&.wvs-archive-align-center .wvs-archive-variation-wrapper .radio-variable-item {
+      &[data-wvstooltip]::before,
+      &[data-wvstooltip]::after {
+          left: 50%;
+      }
+
+      .image-tooltip-wrapper {
           transform: translateX(-50%);
-  left: 8px;
-}
-.woo-variation-swatches.wvs-tooltip.wvs-archive-align-center .wvs-archive-variation-wrapper .radio-variable-item[data-wvstooltip]::before, .woo-variation-swatches.wvs-tooltip.wvs-archive-align-center .wvs-archive-variation-wrapper .radio-variable-item[data-wvstooltip]::after {
-  left: 50%;
-}
-.woo-variation-swatches.wvs-tooltip.wvs-archive-align-center .wvs-archive-variation-wrapper .radio-variable-item .image-tooltip-wrapper {
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
+          left: 50%;
+      }
+  }
+
+  &.wvs-archive-align-right .wvs-archive-variation-wrapper .radio-variable-item {
+      &[data-wvstooltip]::before,
+      &[data-wvstooltip]::after {
+          left: 100%;
+      }
+
+      .image-tooltip-wrapper {
           transform: translateX(-50%);
-  left: 50%;
-}
-.woo-variation-swatches.wvs-tooltip.wvs-archive-align-right .wvs-archive-variation-wrapper .radio-variable-item[data-wvstooltip]::before, .woo-variation-swatches.wvs-tooltip.wvs-archive-align-right .wvs-archive-variation-wrapper .radio-variable-item[data-wvstooltip]::after {
-  left: 100%;
-}
-.woo-variation-swatches.wvs-tooltip.wvs-archive-align-right .wvs-archive-variation-wrapper .radio-variable-item .image-tooltip-wrapper {
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  left: 100%;
+          left: 100%;
+      }
+  }*/
 }
 
 [data-wvstooltip],
 .wvs-has-image-tooltip {
+  --font-size: 14px;
+  --arrow-width: 5px;
+  --arrow-distance: 10px;
+  --arrow-position: calc(var(--arrow-distance) * -1);
+  --tip-redius: 3px;
+  --tip-min-width: 100px;
+  --tip-min-height: 100px;
+  --tip-height: 30px;
+  --tip-breakpoint-start: 53vw;
+  --tip-distance: calc(var(--arrow-distance) + var(--tip-height));
+  --tip-position: calc(var(--tip-distance) * -1);
+  --image-tip-min-height: calc(var(--tip-min-height) + var(--tip-height));
+  --image-tip-max-height: calc(var(--tooltip-height) + var(--tip-height));
+  --image-tip-width-dynamic: clamp(var(--tip-min-width), var(--tip-breakpoint-start), var(--tooltip-width));
+  --image-tip-height-dynamic: clamp(var(--tip-min-height), var(--tip-breakpoint-start), var(--tooltip-height));
+  --image-tip-ratio: calc(var(--tooltip-height) / var(--tooltip-width));
+  --image-tip-position: calc(100% + var(--arrow-distance));
+  --horizontal-position: 0px;
   position: relative;
   cursor: pointer;
   outline: none;
@@ -51,38 +76,53 @@
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: absolute;
-  bottom: 130%;
-  left: 50%;
   z-index: 999;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  -webkit-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
   -webkit-transition: opacity 500ms ease-in-out;
   -o-transition: opacity 500ms ease-in-out;
   transition: opacity 500ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 [data-wvstooltip]:before,
 .wvs-has-image-tooltip:before {
-  margin-bottom: 5px;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  padding: 7px;
-  border-radius: 3px;
+  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  border-radius: var(--tip-redius);
   background-color: var(--wvs-tooltip-background-color, #333333);
   color: var(--wvs-tooltip-text-color, #FFFFFF);
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.2;
+  height: var(--tip-height);
+  line-height: var(--tip-height);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: var(--tip-min-width);
+  padding-inline: 10px;
+  -webkit-transform: translateX(var(--horizontal-position));
+      -ms-transform: translateX(var(--horizontal-position));
+          transform: translateX(var(--horizontal-position));
+  top: auto;
+  bottom: var(--image-tip-position);
+  font-size: var(--font-size);
 }
 
 [data-wvstooltip]:before {
-  min-width: 100px;
   content: attr(data-wvstooltip) " " attr(data-wvstooltip-out-of-stock);
 }
 
@@ -90,12 +130,11 @@
   content: attr(data-title);
   background-image: var(--tooltip-background);
   background-repeat: no-repeat;
-  width: var(--tooltip-width);
-  height: calc(var(--tooltip-height) + 20px);
+  min-width: var(--image-tip-width-dynamic);
+  height: calc(var(--image-tip-height-dynamic) + var(--tip-height));
+  /*min-width: max-content;*/
   background-size: contain;
   background-position: center top;
-  padding: 0;
-  line-height: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,30 +150,39 @@
           justify-content: flex-end;
   -ms-flex-line-pack: center;
       align-content: center;
-  font-size: 12px;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
 
 [data-wvstooltip]:after,
 .wvs-has-image-tooltip:after {
-  margin-left: -5px;
   width: 0;
-  border-top: 5px solid var(--wvs-tooltip-background-color, #333333);
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
+  border: var(--arrow-width) solid transparent;
+  border-top-color: var(--wvs-tooltip-background-color, #333333);
   content: " ";
   font-size: 0;
   line-height: 0;
+  top: var(--arrow-position);
+  bottom: auto;
 }
 
 [data-wvstooltip]:hover:before,
 [data-wvstooltip]:hover:after,
 .wvs-has-image-tooltip:hover:before,
 .wvs-has-image-tooltip:hover:after {
-  bottom: 120%;
   visibility: visible;
   opacity: 1;
+}
+
+.wvs-tooltip-position-bottom[data-wvstooltip]:after, .wvs-tooltip-position-bottom.wvs-has-image-tooltip:after {
+  border-top-color: transparent;
+  border-bottom-color: var(--wvs-tooltip-background-color, #333333);
+  top: auto;
+  bottom: var(--arrow-position);
+}
+.wvs-tooltip-position-bottom[data-wvstooltip]:before, .wvs-tooltip-position-bottom.wvs-has-image-tooltip:before {
+  bottom: auto;
+  top: calc(var(--tip-position) * -1);
 }
 
 .wvs-theme-sober .product form.cart .variations .variable,
@@ -385,6 +433,15 @@
   display: none !important;
 }
 
+.woo-variation-swatches .wp-block-getwooplugins-variation-swatches.swatches-align-center {
+  --wvs-position: center;
+}
+.woo-variation-swatches .wp-block-getwooplugins-variation-swatches.swatches-align-left {
+  --wvs-position: flex-start;
+}
+.woo-variation-swatches .wp-block-getwooplugins-variation-swatches.swatches-align-right {
+  --wvs-position: flex-end;
+}
 .woo-variation-swatches .woo-variation-raw-select + .select2 {
   display: none !important;
 }
@@ -550,7 +607,12 @@
 .woo-variation-swatches .variable-items-wrapper.radio-variable-items-wrapper .radio-variable-item {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   list-style: none;
   cursor: pointer;
   /*margin: 5px 0;*/
@@ -561,9 +623,12 @@
   vertical-align: middle;
 }
 .woo-variation-swatches .variable-items-wrapper.radio-variable-items-wrapper .radio-variable-item input {
-  margin: 5px;
+  /*margin: 5px;*/
   width: 20px;
   height: 20px;
+}
+.woo-variation-swatches .variable-items-wrapper.radio-variable-items-wrapper .radio-variable-item input + span {
+  margin-inline: 10px;
 }
 .woo-variation-swatches .variable-items-wrapper.radio-variable-items-wrapper .radio-variable-item .variable-item-radio-value-wrapper {
   display: inline-block;
@@ -611,16 +676,13 @@
   text-decoration: line-through;
 }
 .woo-variation-swatches .variable-items-wrapper.radio-variable-items-wrapper .radio-variable-item:hover {
-  -webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  /*box-shadow: 0 0 0 3px rgba(#000, 10%);*/
 }
 .woo-variation-swatches .variable-items-wrapper.radio-variable-items-wrapper .radio-variable-item:focus {
-  -webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
+  /*box-shadow: 0 0 0 3px rgba(#000, 30%);*/
 }
 .woo-variation-swatches .variable-items-wrapper.radio-variable-items-wrapper .radio-variable-item.selected, .woo-variation-swatches .variable-items-wrapper.radio-variable-items-wrapper .radio-variable-item.selected:hover {
-  -webkit-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
-          box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
+  /*box-shadow: 0 0 0 2px rgba(#000, 90%);*/
 }
 .woo-variation-swatches .variable-items-wrapper .variable-item {
   margin: 0;
@@ -817,7 +879,7 @@
   margin: 0;
 }
 .woo-variation-swatches .wvs-style-rounded.variable-items-wrapper .variable-item.radio-variable-item {
-  border-radius: 2px;
+  /*border-radius: 2px;*/
 }
 .woo-variation-swatches .wvs-style-rounded.variable-items-wrapper .variable-item.radio-variable-item img {
   border-radius: 100%;
@@ -836,7 +898,7 @@
   border-radius: 0;
 }
 .woo-variation-swatches .wvs-style-squared.variable-items-wrapper .variable-item.radio-variable-item {
-  border-radius: 2px;
+  /*border-radius: 2px;*/
 }
 .woo-variation-swatches .wvs-style-squared.variable-items-wrapper .variable-item.radio-variable-item img {
   border-radius: 5px;
@@ -912,10 +974,22 @@
 .woo-variation-swatches.wvs-show-label .variations th, .woo-variation-swatches.wvs-show-label .variations td {
   display: block;
   width: auto !important;
+  text-align: start;
 }
 .woo-variation-swatches.wvs-show-label .variations th label, .woo-variation-swatches.wvs-show-label .variations th .woo-selected-variation-item-name, .woo-variation-swatches.wvs-show-label .variations td label, .woo-variation-swatches.wvs-show-label .variations td .woo-selected-variation-item-name {
   display: inline-block;
   margin: 0 2px;
+}
+.woo-variation-swatches.wvs-show-label .variations th .woo-selected-variation-item-name, .woo-variation-swatches.wvs-show-label .variations td .woo-selected-variation-item-name {
+  font-weight: 600;
+}
+.woo-variation-swatches .variations .woo-variation-item-label {
+  margin: 0;
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+}
+.woo-variation-swatches .variations .woo-variation-item-label .woo-selected-variation-item-name {
+  font-weight: 600;
 }
 .woo-variation-swatches .grouped-variable-items {
   display: -webkit-box;
@@ -962,4 +1036,7 @@
 }
 .woo-variation-swatches .grouped-variable-items .group-variable-items-name {
   font-style: italic;
+}
+.woo-variation-swatches .wvs-hide-view-cart-link {
+  display: none;
 }

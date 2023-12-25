@@ -375,7 +375,23 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
                                 window.location.reload(true);
                             }
                         } else {
-                            window.location.reload(true);
+                            if (window.opener === null) {
+                                /**
+                                 * Cross-Origin-Opener-Policy blocked the access to the opener
+                                 */
+                                if (typeof BroadcastChannel === "function") {
+                                    const _nslLoginBroadCastChannel = new BroadcastChannel('nsl_login_broadcast_channel');
+                                    _nslLoginBroadCastChannel.postMessage({
+                                        action: 'redirect',
+                                        href:<?php echo wp_json_encode($this->getLoginUrl()); ?>});
+                                    _nslLoginBroadCastChannel.close();
+                                    window.close();
+                                } else {
+                                    window.location.reload(true);
+                                }
+                            } else {
+                                window.location.reload(true);
+                            }
                         }
                     } catch (e) {
                         window.location.reload(true);
@@ -558,7 +574,7 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
         return $ID;
     }
 
-    public function getConnectButton($buttonStyle = 'default', $redirectTo = null, $trackerData = false, $labelType = 'login') {
+    public function getConnectButton($buttonStyle = 'default', $redirectTo = null, $trackerData = false, $labelType = 'login', $customLabel = false) {
         $arg = array();
         if (!empty($redirectTo)) {
             $arg['redirect'] = urlencode($redirectTo);
@@ -577,10 +593,14 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
 
         }
 
-        $label                  = $this->settings->get('login_label');
-        $useCustomRegisterLabel = NextendSocialLogin::$settings->get('custom_register_label');
-        if ($labelType == 'register' && $useCustomRegisterLabel) {
-            $label = $this->settings->get('register_label');;
+        if ($customLabel) {
+            $label = str_replace('{{providerName}}', $this->getLabel(), $customLabel);
+        } else {
+            $label                  = $this->settings->get('login_label');
+            $useCustomRegisterLabel = NextendSocialLogin::$settings->get('custom_register_label');
+            if ($labelType == 'register' && $useCustomRegisterLabel) {
+                $label = $this->settings->get('register_label');
+            }
         }
 
         switch ($buttonStyle) {
@@ -943,7 +963,7 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
      * @return bool
      */
     public function isTest() {
-        if (is_user_logged_in() && current_user_can('manage_options')) {
+        if (is_user_logged_in() && current_user_can(NextendSocialLogin::getRequiredCapability())) {
             if (isset($_REQUEST['test'])) {
                 Persistent::set('test', 1);
 
@@ -976,11 +996,32 @@ abstract class NextendSocialProvider extends NextendSocialProviderDummy {
         <head>
             <meta charset=utf-8>
             <title><?php _e('The test was successful', 'nextend-facebook-connect'); ?></title>
+            <?php
+            NextendSocialLogin::nslDOMReady();
+            ?>
             <script type="text/javascript">
-                window.opener.location.reload(true);
-                window.close();
+                if (window.opener) {
+                    window.opener.location.reload(true);
+                    window.close();
+                } else {
+                    /**
+                     * Cross-Origin-Opener-Policy blocked the access to the opener
+                     */
+                    if (typeof BroadcastChannel === "function") {
+                        const nslVerifySettingsBroadCastChannel = new BroadcastChannel("nsl_verify_settings_broadcast_channel");
+                        nslVerifySettingsBroadCastChannel.postMessage({action: 'reload'});
+                        nslVerifySettingsBroadCastChannel.close();
+                        window.close();
+                    } else {
+                        window._nslDOMReady(function () {
+                            document.body.innerHTML = 'Close this window and refresh the parent window!';
+                        });
+                    }
+                }
             </script>
         </head>
+        <body>
+        </body>
         </html>
         <?php
         exit;

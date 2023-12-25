@@ -3,7 +3,7 @@
  * Shortcodes class
  * Behaves as a Factory for shortcode instances, while installing existing shortcodes.
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 2.0.0
  */
@@ -35,7 +35,7 @@ if ( ! class_exists( 'YITH_WCAF_Shortcodes' ) ) {
 		public static $is_registration_form = false;
 
 		/**
-		 * Array of events to schedule
+		 * Array of available shortcodes
 		 *
 		 * @var array
 		 */
@@ -102,6 +102,20 @@ if ( ! class_exists( 'YITH_WCAF_Shortcodes' ) ) {
 		public static function get_shortcodes( $context = 'view' ) {
 			// init shortcodes for the plugin.
 			if ( empty( self::$shortcodes ) ) {
+				self::$shortcodes = array(
+					'registration_form',
+					'affiliate_dashboard',
+					'link_generator',
+					'show_if_affiliate',
+					'show_summary',
+					'show_clicks',
+					'show_commissions',
+					'show_payments',
+					'show_settings',
+				);
+			}
+
+			if ( 'view' === $context ) {
 				/**
 				 * APPLY_FILTERS: yith_wcaf_shortcodes
 				 *
@@ -109,23 +123,6 @@ if ( ! class_exists( 'YITH_WCAF_Shortcodes' ) ) {
 				 *
 				 * @param array $shortcodes Available shortcodes.
 				 */
-				self::$shortcodes = apply_filters(
-					'yith_wcaf_shortcodes',
-					array(
-						'registration_form',
-						'affiliate_dashboard',
-						'link_generator',
-						'show_if_affiliate',
-						'show_summary',
-						'show_clicks',
-						'show_commissions',
-						'show_payments',
-						'show_settings',
-					)
-				);
-			}
-
-			if ( 'view' === $context ) {
 				return apply_filters( 'yith_wcaf_shortcodes', self::$shortcodes );
 			}
 

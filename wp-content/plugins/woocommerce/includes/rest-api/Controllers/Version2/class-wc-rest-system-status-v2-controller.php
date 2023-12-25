@@ -11,6 +11,9 @@
 defined( 'ABSPATH' ) || exit;
 
 use Automattic\WooCommerce\Internal\WCCom\ConnectionHelper;
+use Automattic\WooCommerce\Internal\ProductDownloads\ApprovedDirectories\Register as Download_Directories;
+use Automattic\WooCommerce\Internal\DataStores\Orders\DataSynchronizer as Order_DataSynchronizer;
+use Automattic\WooCommerce\Utilities\OrderUtil;
 /**
  * System status controller class.
  *
@@ -143,6 +146,12 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 							'description' => __( 'Site URL.', 'woocommerce' ),
 							'type'        => 'string',
 							'format'      => 'uri',
+							'context'     => array( 'view' ),
+							'readonly'    => true,
+						),
+						'store_id'                  => array(
+							'description' => __( 'WooCommerce Store Identifier.', 'woocommerce' ),
+							'type'        => 'string',
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
@@ -475,61 +484,61 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 					'context'     => array( 'view' ),
 					'readonly'    => true,
 					'properties'  => array(
-						'api_enabled'              => array(
+						'api_enabled'                    => array(
 							'description' => __( 'REST API enabled?', 'woocommerce' ),
 							'type'        => 'boolean',
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
-						'force_ssl'                => array(
+						'force_ssl'                      => array(
 							'description' => __( 'SSL forced?', 'woocommerce' ),
 							'type'        => 'boolean',
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
-						'currency'                 => array(
+						'currency'                       => array(
 							'description' => __( 'Currency.', 'woocommerce' ),
 							'type'        => 'string',
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
-						'currency_symbol'          => array(
+						'currency_symbol'                => array(
 							'description' => __( 'Currency symbol.', 'woocommerce' ),
 							'type'        => 'string',
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
-						'currency_position'        => array(
+						'currency_position'              => array(
 							'description' => __( 'Currency position.', 'woocommerce' ),
 							'type'        => 'string',
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
-						'thousand_separator'       => array(
+						'thousand_separator'             => array(
 							'description' => __( 'Thousand separator.', 'woocommerce' ),
 							'type'        => 'string',
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
-						'decimal_separator'        => array(
+						'decimal_separator'              => array(
 							'description' => __( 'Decimal separator.', 'woocommerce' ),
 							'type'        => 'string',
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
-						'number_of_decimals'       => array(
+						'number_of_decimals'             => array(
 							'description' => __( 'Number of decimals.', 'woocommerce' ),
 							'type'        => 'integer',
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
-						'geolocation_enabled'      => array(
+						'geolocation_enabled'            => array(
 							'description' => __( 'Geolocation enabled?', 'woocommerce' ),
 							'type'        => 'boolean',
 							'context'     => array( 'view' ),
 							'readonly'    => true,
 						),
-						'taxonomies'               => array(
+						'taxonomies'                     => array(
 							'description' => __( 'Taxonomy terms for product/order statuses.', 'woocommerce' ),
 							'type'        => 'array',
 							'context'     => array( 'view' ),
@@ -538,7 +547,7 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 								'type' => 'string',
 							),
 						),
-						'product_visibility_terms' => array(
+						'product_visibility_terms'       => array(
 							'description' => __( 'Terms in the product visibility taxonomy.', 'woocommerce' ),
 							'type'        => 'array',
 							'context'     => array( 'view' ),
@@ -546,6 +555,42 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 							'items'       => array(
 								'type' => 'string',
 							),
+						),
+						'wccom_connected'                => array(
+							'description' => __( 'Is store connected to Woo.com?', 'woocommerce' ),
+							'type'        => 'string',
+							'context'     => array( 'view' ),
+							'readonly'    => true,
+						),
+						'enforce_approved_download_dirs' => array(
+							'description' => __( 'Enforce approved download directories?', 'woocommerce' ),
+							'type'        => 'boolean',
+							'context'     => array( 'view' ),
+							'readonly'    => true,
+						),
+						'HPOS_feature_screen_enabled'    => array(
+							'description' => __( 'Is HPOS feature screen enabled?', 'woocommerce' ),
+							'type'        => 'boolean',
+							'context'     => array( 'view' ),
+							'readonly'    => true,
+						),
+						'HPOS_enabled'                   => array(
+							'description' => __( 'Is HPOS enabled?', 'woocommerce' ),
+							'type'        => 'boolean',
+							'context'     => array( 'view' ),
+							'readonly'    => true,
+						),
+						'order_datastore'                => array(
+							'description' => __( 'Order datastore.', 'woocommerce' ),
+							'type'        => 'string',
+							'context'     => array( 'view' ),
+							'readonly'    => true,
+						),
+						'HPOS_sync_enabled'              => array(
+							'description' => __( 'Is HPOS sync enabled?', 'woocommerce' ),
+							'type'        => 'boolean',
+							'context'     => array( 'view' ),
+							'readonly'    => true,
 						),
 					),
 				),
@@ -767,7 +812,7 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 
 			if ( false === $get_response_code || is_wp_error( $get_response_code ) ) {
 				$response = wp_safe_remote_get(
-					'https://woocommerce.com/wc-api/product-key-api?request=ping&network=' . ( is_multisite() ? '1' : '0' ),
+					'https://woo.com/wc-api/product-key-api?request=ping&network=' . ( is_multisite() ? '1' : '0' ),
 					array(
 						'user-agent' => 'WooCommerce/' . WC()->version . '; ' . get_bloginfo( 'url' ),
 					)
@@ -787,6 +832,7 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 		return array(
 			'home_url'                  => get_option( 'home' ),
 			'site_url'                  => get_option( 'siteurl' ),
+			'store_id'                  => get_option( \WC_Install::STORE_ID_OPTION, null ),
 			'version'                   => WC()->version,
 			'log_directory'             => WC_LOG_DIR,
 			'log_directory_writable'    => (bool) @fopen( WC_LOG_DIR . 'test-log.log', 'a' ), // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged, WordPress.WP.AlternativeFunctions.file_system_read_fopen
@@ -1238,18 +1284,30 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 
 		// Return array of useful settings for debugging.
 		return array(
-			'api_enabled'               => 'yes' === get_option( 'woocommerce_api_enabled' ),
-			'force_ssl'                 => 'yes' === get_option( 'woocommerce_force_ssl_checkout' ),
-			'currency'                  => get_woocommerce_currency(),
-			'currency_symbol'           => get_woocommerce_currency_symbol(),
-			'currency_position'         => get_option( 'woocommerce_currency_pos' ),
-			'thousand_separator'        => wc_get_price_thousand_separator(),
-			'decimal_separator'         => wc_get_price_decimal_separator(),
-			'number_of_decimals'        => wc_get_price_decimals(),
-			'geolocation_enabled'       => in_array( get_option( 'woocommerce_default_customer_address' ), array( 'geolocation_ajax', 'geolocation' ), true ),
-			'taxonomies'                => $term_response,
-			'product_visibility_terms'  => $product_visibility_terms,
-			'woocommerce_com_connected' => ConnectionHelper::is_connected() ? 'yes' : 'no',
+			'api_enabled'                    => 'yes' === get_option( 'woocommerce_api_enabled' ),
+			'force_ssl'                      => 'yes' === get_option( 'woocommerce_force_ssl_checkout' ),
+			'currency'                       => get_woocommerce_currency(),
+			'currency_symbol'                => get_woocommerce_currency_symbol(),
+			'currency_position'              => get_option( 'woocommerce_currency_pos' ),
+			'thousand_separator'             => wc_get_price_thousand_separator(),
+			'decimal_separator'              => wc_get_price_decimal_separator(),
+			'number_of_decimals'             => wc_get_price_decimals(),
+			'geolocation_enabled'            => in_array(
+				get_option( 'woocommerce_default_customer_address' ),
+				array(
+					'geolocation_ajax',
+					'geolocation',
+				),
+				true
+			),
+			'taxonomies'                     => $term_response,
+			'product_visibility_terms'       => $product_visibility_terms,
+			'woocommerce_com_connected'      => ConnectionHelper::is_connected() ? 'yes' : 'no',
+			'enforce_approved_download_dirs' => wc_get_container()->get( Download_Directories::class )->get_mode() === Download_Directories::MODE_ENABLED,
+			'order_datastore'                => WC_Data_Store::load( 'order' )->get_current_class_name(),
+			'HPOS_feature_screen_enabled'    => wc_get_container()->get( Automattic\WooCommerce\Internal\Features\FeaturesController::class )->feature_is_enabled( 'custom_order_tables' ),
+			'HPOS_enabled'                   => OrderUtil::custom_orders_table_usage_is_enabled(),
+			'HPOS_sync_enabled'              => wc_get_container()->get( Order_DataSynchronizer::class )->data_sync_is_enabled(),
 		);
 	}
 
@@ -1282,12 +1340,12 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 			),
 			_x( 'Cart', 'Page setting', 'woocommerce' ) => array(
 				'option'    => 'woocommerce_cart_page_id',
-				'shortcode' => '[' . apply_filters( 'woocommerce_cart_shortcode_tag', 'woocommerce_cart' ) . ']',
+				'shortcode' => '[' . apply_filters_deprecated( 'woocommerce_cart_shortcode_tag', array( 'woocommerce_cart' ), '8.3.0', 'woocommerce_create_pages' ) . ']',
 				'block'     => 'woocommerce/cart',
 			),
 			_x( 'Checkout', 'Page setting', 'woocommerce' ) => array(
 				'option'    => 'woocommerce_checkout_page_id',
-				'shortcode' => '[' . apply_filters( 'woocommerce_checkout_shortcode_tag', 'woocommerce_checkout' ) . ']',
+				'shortcode' => '[' . apply_filters_deprecated( 'woocommerce_checkout_shortcode_tag', array( 'woocommerce_checkout' ), '8.3.0', 'woocommerce_create_pages' ) . ']',
 				'block'     => 'woocommerce/checkout',
 			),
 			_x( 'My account', 'Page setting', 'woocommerce' ) => array(
@@ -1337,6 +1395,11 @@ class WC_REST_System_Status_V2_Controller extends WC_REST_Controller {
 			if ( $values['block'] && get_post( $page_id ) ) {
 				$block_required = true;
 				$block_present = WC_Blocks_Utils::has_block_in_page( $page_id, $values['block'] );
+
+				// Compatibility with the classic shortcode block which can be used instead of shortcodes.
+				if ( ! $block_present && ( 'woocommerce/checkout' === $values['block'] || 'woocommerce/cart' === $values['block'] ) ) {
+					$block_present = WC_Blocks_Utils::has_block_in_page( $page_id, 'woocommerce/classic-shortcode', true );
+				}
 			}
 
 			// Wrap up our findings into an output array.

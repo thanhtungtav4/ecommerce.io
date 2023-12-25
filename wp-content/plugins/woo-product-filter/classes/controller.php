@@ -133,6 +133,10 @@ abstract class ControllerWpf {
 	 * Common method for list table data
 	 */
 	public function getListForTbl() {
+		check_ajax_referer('wpf-save-nonce', 'wpfNonce');
+		if (!current_user_can('manage_options')) {
+			wp_die();
+		}
 		$res = new ResponseWpf();
 		$res->ignoreShellData();
 		$model = $this->getModel();
@@ -163,8 +167,8 @@ abstract class ControllerWpf {
 		// jqGrid search
 		$isSearch = ReqWpf::getVar('_search');
 		if ($isSearch) {
-			$searchField = trim(ReqWpf::getVar('searchField'));
-			$searchString = trim(ReqWpf::getVar('searchString'));
+			$searchField = trim(ReqWpf::getVar('searchField', 'all', ''));
+			$searchString = trim(ReqWpf::getVar('searchString', 'all', ''));
 			if (!empty($searchField) && !empty($searchString)) {
 				// For some cases - we will need to modify search keys and/or values before put it to the model
 				$model->addWhere(array(

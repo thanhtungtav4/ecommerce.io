@@ -1,17 +1,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nextend-facebook-connect\n"
-"POT-Creation-Date: 2022-11-04 09:00+0100\n"
-"PO-Revision-Date: 2022-11-04 09:00+0100\n"
+"POT-Creation-Date: 2023-11-03 17:51+0100\n"
+"PO-Revision-Date: 2023-11-03 17:51+0100\n"
 "Last-Translator: \n"
 "Language-Team: nextend-facebook-connect\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ../..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
@@ -216,13 +216,21 @@ msgid ""
 "information please check our %2$s %1$s compatibility tutorial%3$s!"
 msgstr ""
 
-#, php-format
+#, fuzzy, php-format
+#| msgid ""
+#| "<p><strong><u>Warning</u></strong>: Providers change the App setup "
+#| "process quite often, which means some steps below might not be accurate. "
+#| "If you see significant difference in the written instructions and what "
+#| "you see at the provider, feel free to %1$sreport it%2$s, so we can check "
+#| "and update the instructions.<br><strong>Last updated:</strong> %3$s.</p>"
 msgid ""
 "<p><strong><u>Warning</u></strong>: Providers change the App setup process "
 "quite often, which means some steps below might not be accurate. If you see "
 "significant difference in the written instructions and what you see at the "
-"provider, feel free to %1$sreport it%2$s, so we can check and update the "
-"instructions.<br><strong>Last updated:</strong> %3$s.</p>"
+"provider, check the guide in the %1$sonline documentation%2$s first, just in "
+"case if we are already aware of the changes hence updated the guide. "
+"Otherwise feel free to %3$sreport the changes%4$s, so we can check and "
+"update the instructions.<br><strong>Last updated:</strong> %5$s.</p>"
 msgstr ""
 "<p><strong><u>Attenzione</u></strong>: I provider cambiano spesso il "
 "processo di setup delle App, significa che qualche passaggio che "
@@ -342,8 +350,19 @@ msgstr "Disabilita login per i seguenti ruoli"
 msgid "Default roles for user who registered with this provider"
 msgstr "Ruolo default per chi si registra con questi provider"
 
-msgid "Default"
-msgstr "Default"
+#, fuzzy, php-format
+#| msgid "Choose the \"<b>OAuth client ID</b>\" option."
+msgid "Default (The %1$s is: %2$s)"
+msgstr "Scegli l'opzione \"<b>OAuth client ID</b>\"."
+
+#, fuzzy
+#| msgid "Default redirect url"
+msgid "default WordPress role"
+msgstr "Url di redirect default"
+
+#, php-format
+msgid "Default (The %s.)"
+msgstr ""
 
 msgid "Register"
 msgstr "Registra"
@@ -673,6 +692,9 @@ msgstr "Bottone connetti dopo la registrazione"
 msgid "Register button style"
 msgstr "Stile del bottone di registrazione"
 
+msgid "Default"
+msgstr "Default"
+
 msgid "Fullwidth"
 msgstr ""
 
@@ -753,6 +775,29 @@ msgstr "Centro"
 msgid "Right"
 msgstr "Destra"
 
+#, fuzzy
+#| msgid "WooCommerce registration notification"
+msgid "BuddyPress registration integration"
+msgstr "Notifica di registrazione di WooCommerce"
+
+#, php-format
+msgid ""
+"When this setting is enabled the actual registration will be done by %1$s, "
+"so it could send the activation emails uppon registration."
+msgstr ""
+
+#, php-format
+msgid ""
+"%1$s To prevent the login with social login until the account is activated, "
+"you also need to enable the %2$s feature on the %3$s tab!"
+msgstr ""
+
+msgid "Usage:"
+msgstr "Utilizzo:"
+
+msgid "Support login restrictions"
+msgstr "Restrizioni al login"
+
 msgid "Login button"
 msgstr "Bottone login"
 
@@ -774,9 +819,6 @@ msgstr "Stile bottone"
 #, php-format
 msgid "%1$s Add your custom actions here. One action per line."
 msgstr ""
-
-msgid "Usage:"
-msgstr "Utilizzo:"
 
 #, php-format
 msgid ""
@@ -957,9 +999,6 @@ msgstr ""
 "Se vuoi mettere in blacklist dei parametri url. Inserisci un pattern per "
 "linea."
 
-msgid "Support login restrictions"
-msgstr "Restrizioni al login"
-
 #, php-format
 msgid "Please visit to our %1$s to check what plugins are supported!"
 msgstr "Per favore, visita %1$s per verificare quali plugins sono supportati!"
@@ -1058,13 +1097,6 @@ msgstr "Non collegare bottoni"
 
 msgid "Link buttons after account details"
 msgstr "Collega bottoni dopo i dettagli dell'account"
-
-msgid ""
-"By clicking Register, you accept our <a href=\"#privacy_policy_url\" target="
-"\"_blank\">Privacy Policy</a>"
-msgstr ""
-"Cliccando su Registrati, accetti la nostra <a href=\"#privacy_policy_url\" "
-"target=\"_blank\">Privacy Policy</a>"
 
 msgid "Store"
 msgstr "Memorizza"
@@ -1292,10 +1324,6 @@ msgstr ""
 msgid "Register For This Site"
 msgstr "Registrati su questo sito"
 
-msgctxt "Register form submit button label"
-msgid "Register"
-msgstr "Registra"
-
 #, php-format
 msgid "%1$s requires PHP version %2$s+, plugin is currently NOT ACTIVE."
 msgstr ""
@@ -1315,6 +1343,13 @@ msgstr "Please update %1$s to version %2$s or newer."
 
 msgid "Update now!"
 msgstr "Aggiorna adesso!"
+
+msgid ""
+"By clicking Register, you accept our <a href=\"#privacy_policy_url\" target="
+"\"_blank\">Privacy Policy</a>"
+msgstr ""
+"Cliccando su Registrati, accetti la nostra <a href=\"#privacy_policy_url\" "
+"target=\"_blank\">Privacy Policy</a>"
 
 msgid "Hold On"
 msgstr ""
@@ -1352,18 +1387,26 @@ msgstr "Accedi con le tue credenziali %s se non sei loggato"
 msgid "Click on the App with App ID: <b>%s</b>"
 msgstr "Clicca sull'App con l'App ID: <b>%s</b>"
 
-msgid "In the left sidebar, click on \"<b>Facebook Login > Settings</b>\""
+#, php-format
+msgid ""
+"Click on the %1$s tab on the left side and then click on the %2$s button "
+"that appears next to the %3$s item."
 msgstr ""
-"Sulla barra laterale clicca clicca su \"<b>Accesso Facebook > Impostazioni</"
-"b>\""
+
+#, php-format
+msgid ""
+"Press the %1$s button that you can find below the %2$s section, next to %3$s."
+msgstr ""
 
 #, fuzzy, php-format
 #| msgid "Add the following URL to the \"<b>Return URLs</b>\" field: <b>%s</b>"
 msgid "Add the following URL to the %s field:"
 msgstr "Aggiungi l'URL seguente al campo \"<b>URLs di ritorno</b>\": <b>%s</b>"
 
-msgid "Click on \"<b>Save Changes</b>\""
-msgstr "Clicca su \"<b>Salva Modifiche</b>\""
+#, fuzzy, php-format
+#| msgid "Click on the \"<b>Create</b>\" button"
+msgid "Click on the %1$s button."
+msgstr "Clicca sul bottone \"<b>Crea</b>\""
 
 #, php-format
 msgid ""
@@ -1391,6 +1434,16 @@ msgstr ""
 "la tua App %1$s."
 
 #, php-format
+msgid ""
+"<u><b>WARNING:</b></u> As of February 1, 2023, %1$s requires Business "
+"Verification for Advanced Access, which is necessary for the Facebook login "
+"feature. This means that, individuals can no longer use %1$s login on their "
+"websites to offer social login for their visitors, only verified businesses "
+"will be able to use this provider! For more information about this "
+"limitation, please check the %2$sofficial statement%3$s. "
+msgstr ""
+
+#, php-format
 msgctxt "App creation"
 msgid "Create %s"
 msgstr "Crea %s"
@@ -1403,94 +1456,106 @@ msgstr "Vai su %s"
 msgid "Log in with your %s credentials if you are not logged in."
 msgstr "Accedi con le tue credenziali %s se non sei loggato."
 
-msgid ""
-"Click on the \"<b>Create App</b>\" button and in the Popup choose the "
-"\"<b>Consumer</b>\" App type!"
-msgstr ""
-"Clicca sul bottone \"<b>Crea un'App</b>\" e nel popup scegli \"<b>App "
-"Utente</b>\"!"
-
-msgid ""
-"If you see the message \"<b>Become a Facebook Developer</b>\", then you need "
-"to click on the green \"<b>Register Now</b>\" button, fill the form then "
-"finally verify your account."
-msgstr ""
-"Se vedi il messaggio \"<b>Diventa uno Sviluppatore Facebook</b>\", dovrai "
-"cliccare sul bottone verde \"<b>Registrati Adesso</b>\", compilare il form "
-"ed infine verificare il tuo account."
-
 #, php-format
 msgid ""
-"Fill \"<b>App Display Name</b>\", \"<b>App Contact Email</b>\". The "
-"specified \"App Display Name\" will appear on your %s!"
+"Click on the %1$s button and then choose the %2$s option as use case and "
+"press %3$s!"
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid ""
+#| "Fill \"<b>App Display Name</b>\", \"<b>App Contact Email</b>\". The "
+#| "specified \"App Display Name\" will appear on your %s!"
+msgid ""
+"Fill the %1$s and %2$s fields. The specified app name will appear on your "
+"%3$s!"
 msgstr ""
 "Compila \"<b>Nome mostrato</b>\" e \"<b>Email di contatto</b>\". Il \"Nome "
 "mostrato \" apparirà sulla tua %s!"
 
+#, php-format
 msgid ""
-"<b>Optional</b>: choose a \"<b>Business Manager Account</b>\" in the popup, "
-"if you have any."
+"%1$sOptional%2$s: choose a %3$s if you would like to. If you didn't choose a "
+"%3$s at this point, you will need to select it in step 19, before you start "
+"the %4$s! "
 msgstr ""
 
-msgid "Click the \"<b>Create App</b>\" button and complete the Security Check."
+#, fuzzy, php-format
+#| msgid ""
+#| "Click the \"<b>Create App</b>\" button and complete the Security Check."
+msgid "Click the %1$s button and complete the Security Check."
 msgstr ""
 "Clicca il bottone \"<b>Crea App</b>\" e completa la Verifica di Sicurezza."
 
 #, php-format
-msgid "Find \"<b>%1$s</b>\" and click \"<b>Set Up</b>\"."
-msgstr "Cerca <b>\"%s\"</b> e clicca \"<b>Imposta</b>\"."
-
-#, php-format
 msgid ""
-"Select \"<b>Web</b>\" and enter the following URL to the \"<b>Site URL</b>\" "
-"field: <b>%s</b>"
+"A message at the top of the page might prompt you to switch to %1$s. Ignore "
+"that, as our integration is for %2$s!"
 msgstr ""
-"Seleziona \"<b>Web</b>\" e inserisci la seguente URL nel campo \"<b>URL sito "
-"internet</b>\": <b>%s</b>"
 
-msgid "Press “<b>Save</b>”."
-msgstr "Premi “<b>Salva</b>”."
-
-#, php-format
+#, fuzzy, php-format
+#| msgid ""
+#| "Click on the \"<b>Create an App</b>\" button on the top right corner."
 msgid ""
-"Click on the “<b>%1$s</b>” option what you find on the left side, under “<b>"
-"%2$s</b> - <b>%3$s</b>”"
+"Click on the %1$s button. (If you receive a blank page after you pressed the "
+"%1$s button, you might need to refresh the page.)"
 msgstr ""
-"Clicca sulla opzione “<b>%1$s</b>” che troverai sul lato sinistro, sotto“<b>"
-"%2$s</b> - <b>%3$s</b>”"
-
-msgid "Click on “<b>Save Changes</b>”."
-msgstr "Clicca su \"<b>Salva Modifiche</b>”."
+"Clicca sul bottone \"<b>Crea un'App</b>\" nell'angolo in alto a destra."
 
 #, php-format
 msgid ""
-"On the top left side, click on the “<b>%1$s</b>” menu point, then click “<b>"
-"%2$s</b>”."
+"Press the %1$s button on the top right corner, so you can return to the "
+"previous page."
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Switch on the \"<b>%s</b>\" option."
+msgid ""
+"Below the %1$s section, find the %2$s permission and click on the %3$s "
+"button."
+msgstr "Scegli l'opzione \"<b>%s</b>\"."
+
+#, fuzzy, php-format
+#| msgid "Click on the \"<b>Create</b>\" button"
+msgid "Press the %1$s button on the top right corner again."
+msgstr "Clicca sul bottone \"<b>Crea</b>\""
+
+#, fuzzy, php-format
+#| msgid ""
+#| "On the top left side, click on the “<b>%1$s</b>” menu point, then click "
+#| "“<b>%2$s</b>”."
+msgid "On the left side, click on the %1$s tab, then click %2$s."
 msgstr ""
 "In alto a sinistra, clicca nel menù su “<b>%1$s</b>”, quindi clicca “<b>"
 "%2$s</b>”."
 
-#, php-format
-msgid ""
-"Enter your domain name to the \"<b>App Domains</b>\" field, probably: <b>%s</"
-"b>"
+#, fuzzy, php-format
+#| msgid ""
+#| "Enter your domain name to the \"<b>App Domains</b>\" field, probably: <b>"
+#| "%s</b>"
+msgid "Enter your domain name to the %1$s field, probably: %2$s"
 msgstr ""
 "Inserisci il nome del tuo dominio nel campo \"<b>Domini App</b>\", "
 "probabilmente: <b>%s</b>"
 
+#, fuzzy, php-format
+#| msgid ""
+#| "Fill up the \"<b>Privacy Policy URL</b>\" field. Provide a publicly "
+#| "available and easily accessible privacy policy that explains what data "
+#| "you are collecting and how you will use that data."
 msgid ""
-"Fill up the \"<b>Privacy Policy URL</b>\" field. Provide a publicly "
-"available and easily accessible privacy policy that explains what data you "
-"are collecting and how you will use that data."
+"Fill up the %1$s field. Provide a publicly available and easily accessible "
+"privacy policy that explains what data you are collecting and how you will "
+"use that data."
 msgstr ""
 "Inserisci l'\"<b>URL della Privacy Policy</b> nel campo\". Fornisci una "
 "privacy policy pubblica e facilmente accessibile, che spieghi quali "
 "informazioni stai raccogliendo e come le userai."
 
+#, php-format
 msgid ""
-"At \"<b>User Data Deletion</b>\", choose the \"<b>Data Deletion Instructions "
-"URL</b>\" option, and enter the <i>URL of your page</i>* with the "
-"instructions on how users can delete their accounts on your site."
+"At %1$s, choose the %2$s option, and enter the %3$s with the instructions on "
+"how users can delete their accounts on your site."
 msgstr ""
 
 msgid ""
@@ -1498,50 +1563,75 @@ msgid ""
 "on your site, either by the user or by the admin:"
 msgstr ""
 
+#, php-format
 msgid ""
-"<u>If each user has an option to delete the account</u>: the URL should "
+"%1$sIf each user has an option to delete the account%2$s: the URL should "
 "point to a guide showing the way users can delete their accounts."
 msgstr ""
 
+#, php-format
 msgid ""
-"<u>If the accounts are deleted by an admin</u>: then you should have a "
+"%1$sIf the accounts are deleted by an admin%2$s: then you should have a "
 "section - usually in the Privacy Policy - with the contact details, where "
 "users can send their account erasure requests. In this case the URL should "
 "point to this section of the document."
 msgstr ""
 
-msgid ""
-"Select a “<b>Category</b>”, an “<b>App Icon</b>” and pick the “<b>App "
-"Purpose</b>” option that describes your App the best, then press \"<b>Save "
-"Changes</b>\"."
-msgstr ""
-"Seleziona una “<b>Categoria</b>”, una “<b>Icona dell'App</b>” e seleziona "
-"l'opzione “<b>Finalità App</b>” che descriva al meglio la tua App, poi premi "
-"\"<b>Salva Modifiche</b>\"."
-
-msgid ""
-"Your application is currently private, which means that only you can log in "
-"with it. In the top bar switch the \"<b>App Mode</b>\" from "
-"\"<b>Development</b>\" to \"<b>Live</b>\"."
-msgstr ""
-"La tua applicazione è attualmente privata, che significa che solo tu puoi "
-"accedere con essa. Nella barra in alto cambia il selettore \"<b>Modalità "
-"App</b>\" da \"<b>Sviluppo</b>\" a \"<b>Live</b>\"."
+#, fuzzy, php-format
+#| msgid "Choose the \"<b>OAuth client ID</b>\" option."
+msgid "Select a %1$s, an %2$s."
+msgstr "Scegli l'opzione \"<b>OAuth client ID</b>\"."
 
 #, php-format
+msgid "Scroll down to the bottom of the page, press the %s button."
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid ""
+#| "Find \"<b>OAuth 2.0 settings</b>\" section and add the following URL to "
+#| "the \"<b>Redirect URLs</b>\" field:"
 msgid ""
-"By default, your application only has Standard access for the permissions, "
-"which is not enough for %1$s.<br>On the left side, click on <strong>%2$s</"
-"strong> then click <strong>%3$s</strong>. In the table you will find the "
-"\"<strong>%4$s</strong>\" and \"<strong>%5$s</strong>\" permissions and you "
-"should click on the <strong>%6$s</strong> buttons next to them. "
+"Select %1$s platform, then press %2$s and enter the following URL into the "
+"%3$s field: %4$s"
+msgstr ""
+"Cerca la sezione \"<b>OAuth 2.0 settings</b>\" e aggiungi l'URL seguente al "
+"campo \"<b>Redirect URLs</b>\":"
+
+#, php-format
+msgid "Press the %s button."
 msgstr ""
 
 #, php-format
 msgid ""
-"At the top of the page you can find your \"<b>%1$s</b>\" and you can see "
-"your \"<b>%2$s</b>\" if you click on the \"Show\" button. These will be "
-"needed in plugin’s settings."
+"By default, your application only has Standard Access for the %1$s and %2$s "
+"permissions, which means that only you can log in with it. To get Advanced "
+"Access you will need to go trough the %3$s, that you can start on the %4$s "
+"tab on the left side."
+msgstr ""
+
+#, php-format
+msgid ""
+"Currently your app is in Development Mode which also means that people "
+"outside of your business can not use it. Once your verification is "
+"completed, click on the %1$s tab and publish your app by clicking on the "
+"%1$s button at the bottom right corner. Before you press it, it is "
+"recommended to check the steps listed on the %2$s page, if you configured "
+"everything properly."
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "On the left hand side, click on the \"<b>%s</b>\" tab."
+msgid "After everything is done, click on the %1$s tab, then click %2$s."
+msgstr "Sulla sinistra, clicca sulla tab \"<b>%s</b>\"."
+
+#, fuzzy, php-format
+#| msgid ""
+#| "At the top of the page you can find your \"<b>%1$s</b>\" and you can see "
+#| "your \"<b>%2$s</b>\" if you click on the \"Show\" button. These will be "
+#| "needed in plugin’s settings."
+msgid ""
+"At the top of the page you can find your %1$s and you can see your %2$s if "
+"you click on the %3$s button. These will be needed in plugin’s settings."
 msgstr ""
 "In cima alla pagina troverai la tua \"<b>%1$s</b>\" e potrai vedere la tua "
 "\"<b>%2$s</b>\" se clicchi sul bottone \"Mostra\". Ti serviranno per la "
@@ -1598,6 +1688,21 @@ msgid ""
 msgstr ""
 
 msgid "Find out why?"
+msgstr ""
+
+msgid "Profile image size"
+msgstr "Dimensioni immagine profilo"
+
+msgid "Small"
+msgstr ""
+
+msgid "Medium"
+msgstr ""
+
+msgid "Large"
+msgstr ""
+
+msgid "Extra Large"
 msgstr ""
 
 msgid "Continue with <b>Facebook</b>"
@@ -1823,6 +1928,12 @@ msgstr "Scollega account da <b>Google</b>"
 msgid "Required API: %1$s"
 msgstr "API richiesta: %1$s"
 
+msgid "X"
+msgstr ""
+
+msgid "Legacy"
+msgstr ""
+
 #, php-format
 msgid "On the left side, under the %s section click on the name of your App."
 msgstr ""
@@ -1845,6 +1956,20 @@ msgstr ""
 #| msgid "Click on \"Save\""
 msgid "Click on %s"
 msgstr "Clicca su \"Salva\""
+
+#, php-format
+msgid ""
+"To allow your visitors to log in with their %1$s account, first you must "
+"create an %1$s App. The following guide will help you through the %1$s App "
+"creation process. After you have created your %1$s App, head over to "
+"\"Settings\" and configure the given \"%2$s\" and \"%3$s\" according to your "
+"%1$s App."
+msgstr ""
+"Per consentire ai tuoi visitatori di accedere con i loro account %1$s, devi "
+"prima creare una App %1$s . La guida seguente ti aiuterà attraverso il "
+"processo di creazione dell'App %1$s. Dopo che hai creato la tua App %1$s, "
+"vai sopra \"Impostazioni\" e configura i \"%2$s\" and \"%3$s\" ottenuti "
+"secondo la tua App %1$s."
 
 msgid ""
 "If you don't have a developer account yet, please apply one by filling all "
@@ -1879,18 +2004,10 @@ msgstr ""
 msgid "Into the %1$s field, enter a name for your App, then press %2$s again!"
 msgstr ""
 
-#, php-format
-msgid ""
-"You’ll find your API key and secret on this page. Copy and paste the \"<b>"
-"%1$s</b>\" and the \"<b>%2$s</b>\" to the corresponding fields at %3$s and "
-"press \"<b>Save Changes</b>\"."
-msgstr ""
-
-#, php-format
-msgid ""
-"Go back to your Twitter project and on the left side, under the \"<b>%s</b>"
-"\" section click on the name of your App."
-msgstr ""
+#, fuzzy, php-format
+#| msgid "Click on the \"<b>Create</b>\" button"
+msgid "Click on the  the %1$s button on the bottom right corner."
+msgstr "Clicca sul bottone \"<b>Crea</b>\""
 
 #, php-format
 msgid "Scroll down and click on the %1$s button at %2$s."
@@ -1900,13 +2017,6 @@ msgstr ""
 #| msgid "Choose the \"<b>OAuth client ID</b>\" option."
 msgid "Choose the %1$s option at %2$s."
 msgstr "Scegli l'opzione \"<b>OAuth client ID</b>\"."
-
-#, php-format
-msgid ""
-"If you want to get the email address as well, then don’t forget to enable "
-"the %1$s option. In this case you also need to fill the \"<b>%2$s</b>\" and "
-"the \"<b>%3$s</b>\" fields with the corresponding URLs!"
-msgstr ""
 
 #, fuzzy, php-format
 #| msgid "Choose the \"<b>OAuth client ID</b>\" option."
@@ -1924,19 +2034,83 @@ msgstr "Clicca su \"<b>%s</b>\"."
 
 #, php-format
 msgid ""
-"On the left side, under the \"<b>%s</b>\" section click on the name of your "
-"Project ( that you created the App for )."
+"Find your %1$s and %2$s. Copy and paste the credentials to the corresponding "
+"fields at %3$s and press %4$s."
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Finally <b>verify the settings</b> and <b>enable the provider</b>!"
+msgid "Verify the settings and enable the %1$s provider!"
+msgstr "Infine <b>verifica le impostazioni</b> e <b>abilita il provider</b>!"
+
+#, php-format
+msgid ""
+"%1$s: %2$s has some %3$srate limits%4$s that you need to consider before you "
+"choose a plan. For example we use the %5$s endpoint, which have:"
+msgstr ""
+
+msgid "WARNING"
 msgstr ""
 
 #, php-format
 msgid ""
-"Click on the %1$s button, then fill the %2$s, %3$s, %4$s and %5$s forms."
+"%1$s which means a user can make a fix number of requests every 24 hours."
+msgstr ""
+
+#, fuzzy
+#| msgid "User and Admin"
+msgid "User Rate Limit:"
+msgstr "Utente e Admin"
+
+#, php-format
+msgid ""
+"%1$s which means your App can serve a fix number of requests in total every "
+"30 days. This limit is shared between all users and applied to the entire "
+"project."
+msgstr ""
+
+msgid "Effective 30-day limit:"
 msgstr ""
 
 #, php-format
 msgid ""
-"Once your application for the Elevated access has been approved, go back to "
-"%1$s then <b>verify</b> and <b>enable</b> the %2$s provider!"
+"Once the rate limit is reached, people won't be able to login with %1$s "
+"until the limit resets. If you want to have a higher limit, you might need "
+"to upgrade to the %3$sBasic plan of %2$s %4$s."
+msgstr ""
+
+#, php-format
+msgid ""
+"You’ll find your API key and secret on this page. Copy and paste the \"<b>"
+"%1$s</b>\" and the \"<b>%2$s</b>\" to the corresponding fields at %3$s and "
+"press \"<b>Save Changes</b>\"."
+msgstr ""
+
+#, php-format
+msgid ""
+"Go back to your X project and on the left side, under the \"<b>%s</b>\" "
+"section click on the name of your App."
+msgstr ""
+
+#, php-format
+msgid ""
+"If you want to get the email address as well, then don’t forget to enable "
+"the %1$s option. In this case you also need to fill the \"<b>%2$s</b>\" and "
+"the \"<b>%3$s</b>\" fields with the corresponding URLs!"
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Finally <b>verify the settings</b> and <b>enable the provider</b>!"
+msgid "Go back to %1$s then <b>verify</b> and <b>enable</b> the %2$s provider!"
+msgstr "Infine <b>verifica le impostazioni</b> e <b>abilita il provider</b>!"
+
+msgid "API version"
+msgstr ""
+
+msgid "v1.1"
+msgstr ""
+
+msgid "v2"
 msgstr ""
 
 msgid "API Key"
@@ -1947,23 +2121,32 @@ msgstr "API Key"
 msgid "API Key Secret"
 msgstr "API Secret"
 
-msgid "Profile image size"
-msgstr "Dimensioni immagine profilo"
-
 msgid "Original"
 msgstr "Originale"
 
-msgid "Continue with <b>Twitter</b>"
-msgstr "Continua con <b>Twitter</b>"
+#, fuzzy
+#| msgid "Continue with <b>VK</b>"
+msgid "Continue with <b>X</b>"
+msgstr "Continua con <b>VK</b>"
 
-msgid "Sign up with <b>Twitter</b>"
-msgstr "Registrati con <b>Twitter</b>"
+#, fuzzy
+#| msgid "Continue with <b>VK</b>"
+msgid "Sign up with <b>X</b>"
+msgstr "Continua con <b>VK</b>"
 
-msgid "Link account with <b>Twitter</b>"
-msgstr "Collega account con <b>Twitter</b>"
+#, fuzzy
+#| msgid "Link account with <b>VK</b>"
+msgid "Link account with <b>X</b>"
+msgstr "Collega account con <b>VK</b>"
 
-msgid "Unlink account from <b>Twitter</b>"
-msgstr "Scollega account da <b>Twitter</b>"
+#, fuzzy
+#| msgid "Unlink account from <b>VK</b>"
+msgid "Unlink account from <b>X</b>"
+msgstr "Scollega account da <b>VK</b>"
+
+msgctxt "Register form submit button label"
+msgid "Register"
+msgstr "Registra"
 
 #, php-format
 msgid "%s Buttons"
@@ -2007,9 +2190,6 @@ msgstr ""
 msgid "<strong>Error</strong>: Sorry, that username is not allowed."
 msgstr "<strong>Error</strong>: Mi spiace, quello username non è consentito."
 
-msgid "Username"
-msgstr "Username"
-
 msgid "<strong>Error</strong>: Please enter an email address."
 msgstr "<strong>Errore</strong>: Per favore inserisci una password."
 
@@ -2022,9 +2202,6 @@ msgid ""
 msgstr ""
 "<strong>Errore</strong>: Questa email è già registrata, per favore scegline "
 "un'altra."
-
-msgid "Registration confirmation will be emailed to you."
-msgstr "La conferma di registrazione ti sarà inviata per email."
 
 msgid "<strong>Error</strong>: Please enter a password."
 msgstr "<strong>Errore</strong>: Per favore inserisci una password."
@@ -2040,18 +2217,6 @@ msgid ""
 msgstr ""
 "<strong>Errore</strong>: Per favore inserisci la stessa password in entrambi "
 "i campi."
-
-msgid "Password"
-msgstr "Password"
-
-msgid "Strength indicator"
-msgstr "Indicatore di forza"
-
-msgid "Confirm use of weak password"
-msgstr "Conferma l'utilizzo di una password debole"
-
-msgid "Confirm password"
-msgstr "Conferma password"
 
 #, php-format
 msgid ""
@@ -2104,6 +2269,22 @@ msgstr ""
 "Molte di queste informazioni possono essere recuperate quando il campo è "
 "markato come Pubblico sulla pagina utente %s!"
 
+#, fuzzy, php-format
+#| msgid ""
+#| "Most of these information can only be retrieved, when the field is marked "
+#| "as Public on the user's %s page!"
+msgid ""
+"Most of these information can only be retrieved, when the field is filled on "
+"the user's %s page!"
+msgstr ""
+"Molte di queste informazioni possono essere recuperate quando il campo è "
+"markato come Pubblico sulla pagina utente %s!"
+
+#, php-format
+msgid ""
+"The TikTok Sync data requires the %1$s with the necessary scopes enabled!"
+msgstr ""
+
 #, php-format
 msgid "Visit %s"
 msgstr "Visita %s"
@@ -2122,20 +2303,6 @@ msgstr "Clicca \"<b>Modifica</b>\"."
 #| msgid "Add the following URL to the \"<b>Return URLs</b>\" field: <b>%s</b>"
 msgid "Add the following URL to the %s field: "
 msgstr "Aggiungi l'URL seguente al campo \"<b>URLs di ritorno</b>\": <b>%s</b>"
-
-#, php-format
-msgid ""
-"To allow your visitors to log in with their %1$s account, first you must "
-"create an %1$s App. The following guide will help you through the %1$s App "
-"creation process. After you have created your %1$s App, head over to "
-"\"Settings\" and configure the given \"%2$s\" and \"%3$s\" according to your "
-"%1$s App."
-msgstr ""
-"Per consentire ai tuoi visitatori di accedere con i loro account %1$s, devi "
-"prima creare una App %1$s . La guida seguente ti aiuterà attraverso il "
-"processo di creazione dell'App %1$s. Dopo che hai creato la tua App %1$s, "
-"vai sopra \"Impostazioni\" e configura i \"%2$s\" and \"%3$s\" ottenuti "
-"secondo la tua App %1$s."
 
 msgid ""
 "If you don't have a Security Profile yet, you'll need to create one. You can "
@@ -2747,6 +2914,207 @@ msgid "Unlink account from <b>GitHub</b>"
 msgstr "Scollega account da <b>GitHub</b>"
 
 #, fuzzy, php-format
+#| msgid ""
+#| "Select the \"<b>Settings</b>\" tab and scroll down to the Authentication "
+#| "section!"
+msgid "Select the %1$s tab on the left and scroll down to the %2$s section!"
+msgstr ""
+"Seleziona la tab \"<b>Settaggi</b>\" e scrolla giù alla sezione "
+"Autenticazione!"
+
+#, fuzzy
+#| msgid "Add the following URL to the \"<b>Return URLs</b>\" field: <b>%s</b>"
+msgid "Add the following URL:"
+msgstr "Aggiungi l'URL seguente al campo \"<b>URLs di ritorno</b>\": <b>%s</b>"
+
+#, fuzzy, php-format
+#| msgid "Click on the \"<b>Create</b>\" button"
+msgid "Click on the %s button."
+msgstr "Clicca sul bottone \"<b>Crea</b>\""
+
+#, fuzzy, php-format
+#| msgid "Click on the \"<b>Create</b>\" button"
+msgid "Click on the blue \"%s\" button!"
+msgstr "Clicca sul bottone \"<b>Crea</b>\""
+
+#, php-format
+msgid ""
+"Select an image for your App, fill in the \"%1$s\" and \"%2$s\" fields, "
+"comply with the \"%3$s\", then click on the \"%4$s\" button!"
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Once you have a project, you'll end up in the dashboard."
+msgid "Once you have a project, click on it, and you will enter the %1$s."
+msgstr "Una volta ottenuto il progetto, ti troverai sulla dashboard."
+
+#, php-format
+msgid ""
+"Copy and save the \"%1$s\" value. This is what you will use later on the "
+"Settings tab for the \"%1$s\" field."
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid ""
+#| "On the left side, click on the \"<b>%1$s</b>\" menu point, then click the "
+#| "\"<b>%2$s</b>\" button in the top bar."
+msgid ""
+"Then in the side bar on the left side, find the \"%1$s\" menu and click on "
+"the \"%2$s\" menu point. Click on the \"%3$s\" button, then on \"%4$s\"."
+msgstr ""
+"Sul lato sinistro, clicca nel menù su \"<b>%1$s</b>\", quindi clicca il "
+"bottone \"<b>%2$s</b>\" nella barra superiore."
+
+#, php-format
+msgid ""
+"Copy and save this code, this is what you will use for the \"%1$s\" on the "
+"Settings tab."
+msgstr ""
+
+#, php-format
+msgid ""
+"Also, make sure to set the \"%1$s\" to \"%2$s\" with the \"%3$s\" button."
+msgstr ""
+
+#, php-format
+msgid "Next, go to the \"%1$s\" in the \"%2$s\" menu on the left."
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid ""
+#| "Enter your domain name to the \"<b>App Domains</b>\" field, probably: <b>"
+#| "%s</b>"
+msgid ""
+"Click on the blue \"%1$s\" button, then enter your domain name into the "
+"\"%2$s\" field, probably: %3$s"
+msgstr ""
+"Inserisci il nome del tuo dominio nel campo \"<b>Domini App</b>\", "
+"probabilmente: <b>%s</b>"
+
+#, php-format
+msgid ""
+"Below the \"%1$s\" menu on the left, click on the \"%2$s\" menu point, then "
+"set the \"%3$s\" ON-OFF switch to ON. A popup will appear, where you should "
+"click on the \"%4$s\" button."
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid ""
+#| "Under the \"<b>%1$s</b>\" section click \"<b>%2$s</b>\" and add the "
+#| "following URL:"
+msgid ""
+"Scroll down to the \"%1$s\" section, then click on the \"%2$s\" button, and "
+"enter the following URL: "
+msgstr ""
+"Sotto la sezione \"<b>%1$s</b>\" clicca sul bottone <b>%2$s</b> e aggiungi "
+"l'URL seguente:"
+
+#, fuzzy, php-format
+#| msgid ""
+#| "On the left side, click on the “<b>%1$s</b>” menu point in the Settings."
+msgid "After this, click on the \"%1$s\" menu point on the left."
+msgstr "A sinistra, clicca nel menù su “<b>%1$s</b>” nei Settaggi."
+
+#, php-format
+msgid ""
+"Click on the \"%1$s\" button for the Scopes with the \"%2$s\" and for any "
+"other scope that you will need:"
+msgstr ""
+
+#, php-format
+msgid ""
+"%s - Purpose: Used for the username generation and for setting the first "
+"name and last name."
+msgstr ""
+
+#, php-format
+msgid ""
+"%s - Purpose: Accounts will be registered or linked based on this email "
+"address."
+msgstr ""
+
+#, php-format
+msgid "%s - Purpose: This image will be used as the avatar of the account."
+msgstr ""
+
+#, php-format
+msgid ""
+"In the popup you should set the \"%1$s\" to either \"%2$s\" or \"%3$s\" "
+"depending on your needs."
+msgstr ""
+
+#, php-format
+msgid ""
+"Finally fill the \"%1$s\" field. It is important to clearly state what you "
+"want to use the consent item for."
+msgstr ""
+
+#, php-format
+msgid ""
+"%1$s The \"%2$s\" type itself and certain scopes (e.g. \"%3$s\", \"%4$s\" - "
+"used when you turn on the corresponding setting on our %5$s tab), will "
+"require you to register business information, or if you are a single "
+"developer verify your identity (both can be done under the \"%6$s\" menu "
+"point), in order to be able to request consent to these items."
+msgstr ""
+
+msgid "WARNING:"
+msgstr ""
+
+#, php-format
+msgid ""
+"Find the \"%1$s\" and \"%2$s\" values you copied earlier. You will need "
+"these for the fields with the same name on the \"%3$s\" tab."
+msgstr ""
+
+#, fuzzy
+#| msgid "API Key"
+msgid "REST API Key"
+msgstr "API Key"
+
+#, fuzzy
+#| msgid "Client Secret"
+msgid "Client Secret Code"
+msgstr "Client Secret"
+
+#, fuzzy
+#| msgid "Authentication error"
+msgid "Authorization Prompt"
+msgstr "Errore di autenticazione"
+
+msgid "Display account select modal"
+msgstr ""
+
+msgid "Force user to enter login credentials on each login"
+msgstr ""
+
+msgid "Start the authentication with the Kakao Account sign-up page."
+msgstr ""
+
+msgid "Mini"
+msgstr ""
+
+#, fuzzy
+#| msgid "Continue with <b>VK</b>"
+msgid "Continue with <b>Kakao</b>"
+msgstr "Continua con <b>VK</b>"
+
+#, fuzzy
+#| msgid "Continue with <b>VK</b>"
+msgid "Sign up with <b>Kakao</b>"
+msgstr "Continua con <b>VK</b>"
+
+#, fuzzy
+#| msgid "Link account with <b>VK</b>"
+msgid "Link account with <b>Kakao</b>"
+msgstr "Collega account con <b>VK</b>"
+
+#, fuzzy
+#| msgid "Unlink account from <b>VK</b>"
+msgid "Unlink account from <b>Kakao</b>"
+msgstr "Scollega account da <b>VK</b>"
+
+#, fuzzy, php-format
 #| msgid "Navigate to %s"
 msgid "Navigate to your %s"
 msgstr "Naviga a %s"
@@ -2920,6 +3288,15 @@ msgid ""
 "LINE authentication screen."
 msgstr ""
 
+msgid "Allow Auto login"
+msgstr ""
+
+#, php-format
+msgid ""
+"Having the Auto login enabled could make the login fail in certain cases. "
+"%1$sLearn more%2$s."
+msgstr ""
+
 #, fuzzy
 #| msgid "Continue with <b>LinkedIn</b>"
 msgid "Continue with <b>Line</b>"
@@ -2940,77 +3317,98 @@ msgstr "Collega account con <b>LinkedIn</b>"
 msgid "Unlink account from <b>Line</b>"
 msgstr "Scollega account da <b>LinkedIn</b>"
 
-msgid "Click on your App and go to the \"<b>Auth</b>\" tab."
+#, fuzzy, php-format
+#| msgid "Click on your App and go to the \"<b>Auth</b>\" tab."
+msgid "Click on your App and go to the %s tab."
 msgstr "Clicca sulla tua App e vai nella tab \"<b>Auth</b>\"."
 
-msgid "Click on \"<b>Update</b>\" to save the changes"
+#, fuzzy, php-format
+#| msgid "Add the following URL to the \"<b>Return URLs</b>\" field: <b>%s</b>"
+msgid "Add the following URL at %s:"
+msgstr "Aggiungi l'URL seguente al campo \"<b>URLs di ritorno</b>\": <b>%s</b>"
+
+#, fuzzy, php-format
+#| msgid "Click on \"<b>Update</b>\" to save the changes"
+msgid "Click on %s to save the changes"
 msgstr "Clicca su \"<b>Aggiorna</b>\" per salvare le modifiche"
 
-msgid "Locate the \"<b>Create app</b>\" button and click on it."
+#, fuzzy, php-format
+#| msgid "Locate the \"<b>Create app</b>\" button and click on it."
+msgid "Locate the %s button and click on it."
 msgstr "Cerca il bottone \"<b>Crea app</b>\" e cliccaci."
 
-msgid "Enter the name of your App to the \"App name\" field."
+#, fuzzy, php-format
+#| msgid "Enter the name of your App to the \"App name\" field."
+msgid "Enter the name of your App to the %s field."
 msgstr "Inserisci il nome della tua App nel campo \"Nome App\"."
 
-#, php-format
+#, fuzzy, php-format
+#| msgid ""
+#| "Find your company page in the \"<b>Company</b>\" field. If you don't have "
+#| "one yet, create new one at: %s"
 msgid ""
-"Find your company page in the \"<b>Company</b>\" field. If you don't have "
-"one yet, create new one at: %s"
+"Find your page in the %1$s field. If you don't have one yet, create new one "
+"at: %2$s"
 msgstr ""
 "Cerca la pagina della tua azienda nel campo \"<b>Azienda</b>\". Se non ne "
 "hai ancora una, creane una nuova qui: %s"
 
-msgid ""
-"Enter your \"<b>Privacy policy URL</b>\" and upload an \"<b>App logo</b>\""
+#, php-format
+msgid "Enter your %1$s and upload an %2$s"
 msgstr ""
-"Inserisci l'URL della tua \"<b>Privacy policy</b>\" e carica un \"<b>logo "
-"per l'App</b>\""
 
-msgid ""
-"Read and agree the \"<b>API Terms of Use</b>\" then click the \"<b>Create "
-"App</b>\" button!"
-msgstr ""
-"Leggi e acconsenti ai \"<b>Termini di Utilizzo delle API</b>\" poi clicca il "
-"bottone \"<b>Crea App</b>\"!"
+#, fuzzy, php-format
+#| msgid "Switch on the \"<b>%s</b>\" option."
+msgid "Read and agree the %1$s then click the %2$s button!"
+msgstr "Scegli l'opzione \"<b>%s</b>\"."
 
+#, fuzzy, php-format
+#| msgid ""
+#| "You will end up in the App setting area. Click on the \"<b>Products</b>\" "
+#| "tab."
 msgid ""
-"You will end up in the App setting area. Click on the \"<b>Products</b>\" "
-"tab."
+"You will end up in the products area. If you aren't already there click on "
+"the %s tab."
 msgstr ""
 "Finirai nell'area delle impostazioni dell'App. Clicca sulla tab "
 "\"<b>Prodotti</b>\"."
 
-#, php-format
-msgid "Find <b>\"%s\"</b> and click \"<b>Select</b>\"."
-msgstr "Cerca <b>\"%s\"</b> e clicca \"<b>Seleziona</b>\"."
+#, fuzzy, php-format
+#| msgid "Switch on the \"<b>%s</b>\" option."
+msgid "Find %1$s and click %2$s."
+msgstr "Scegli l'opzione \"<b>%s</b>\"."
 
+#, fuzzy, php-format
+#| msgid ""
+#| "A modal will appear where you need to tick the \"<b>I have read and agree "
+#| "to these terms</b>\" checkbox and finally press the \"<b>Add product</b>"
+#| "\" button."
 msgid ""
-"A modal will appear where you need to tick the \"<b>I have read and agree to "
-"these terms</b>\" checkbox and finally press the \"<b>Add product</b>\" "
-"button."
+"A modal will appear where you need to tick the %1$s checkbox and finally "
+"press the %2$s button."
 msgstr ""
 "Una finestra Modal ti apparirà, dove dovrai spuntare il la casella \"<b>Ho "
 "letto e accetto questi termini</b>\", in conclusione premi il bottone "
 "\"<b>Aggiungi prodotto</b>\"."
 
-msgid "Click on the \"<b>Auth</b>\" tab."
-msgstr "Clicca sulla tab \"<b>Auth</b>\"."
+#, fuzzy, php-format
+#| msgid "Click on the \"<b>Create</b>\" button"
+msgid "Click on the %1$s tab."
+msgstr "Clicca sul bottone \"<b>Crea</b>\""
 
 #, fuzzy, php-format
 #| msgid ""
 #| "Find \"<b>OAuth 2.0 settings</b>\" section and add the following URL to "
 #| "the \"<b>Redirect URLs</b>\" field:"
-msgid "Find the %1$s section and add the following URL to the %2$s field:"
+msgid "Find the %1$s section and add the following URL at %2$s:"
 msgstr ""
 "Cerca la sezione \"<b>OAuth 2.0 settings</b>\" e aggiungi l'URL seguente al "
 "campo \"<b>Redirect URLs</b>\":"
 
+#, php-format
 msgid ""
-"Find the necessary \"<b>Client ID</b>\" and \"<b>Client Secret</b>\" under "
-"the Application credentials section, on the <b>Auth</b> tab."
+"Find the necessary %1$s and %2$s under the %3$s section, on the %4$s tab."
 msgstr ""
-"Cerca il \"<b>Client ID</b>\" and \"<b>Client Secret</b>\" richiesti sotto "
-"la sezione Credenziali applicazione, nella tab <b>Auth</b>."
 
 msgid "Continue with <b>LinkedIn</b>"
 msgstr "Continua con <b>LinkedIn</b>"
@@ -3180,17 +3578,6 @@ msgid ""
 "%2$s"
 msgstr ""
 
-#, fuzzy
-#| msgid "Authentication error"
-msgid "Authorization Prompt"
-msgstr "Errore di autenticazione"
-
-msgid "Display account select modal"
-msgstr ""
-
-msgid "Force user to enter login credentials on each login"
-msgstr ""
-
 msgid "Display authorization and authentication dialog only when necessary"
 msgstr ""
 
@@ -3222,15 +3609,27 @@ msgstr ""
 msgid "Click on the name of your %s App, under the REST API apps section."
 msgstr "Clicca sul nome della tua %s App, sotto la sezione dell'app REST API."
 
+#, fuzzy, php-format
+#| msgid ""
+#| "Under the \"<b>%1$s</b>\" section click \"<b>%2$s</b>\" and add the "
+#| "following URL:"
 msgid ""
-"Scroll down to \"<b>LIVE APP SETTINGS</b>\", find the \"<b>Live Return URL</"
-"b>\" heading and click \"<b>Show</b>\"."
+"Scroll down to %1$s section, find the %2$s feature and and click on the %3$s "
+"link."
 msgstr ""
-"Scendi giù fino a \"<b>SETTAGGI APP LIVE</b>\", cerca il titolo \"<b>Live "
-"Return URL</b>\" e clicca su \"<b>Mostra</b>\"."
+"Sotto la sezione \"<b>%1$s</b>\" clicca sul bottone <b>%2$s</b> e aggiungi "
+"l'URL seguente:"
 
-msgid "Click on \"Save\""
-msgstr "Clicca su \"Salva\""
+#, fuzzy, php-format
+#| msgid "Add the following URL to the \"<b>Return URLs</b>\" field: <b>%s</b>"
+msgid "Add the following URL to the %s field and press %2$s:"
+msgstr "Aggiungi l'URL seguente al campo \"<b>URLs di ritorno</b>\": <b>%s</b>"
+
+#, php-format
+msgid ""
+"Wait for %1$s to approve the %2$s feature ( this might take up to 7 business "
+"days ). The %3$s row will indicate the current status. "
+msgstr ""
 
 #, fuzzy, php-format
 #| msgid ""
@@ -3262,62 +3661,62 @@ msgid ""
 msgstr ""
 "Compila il campo \"<b>Nome App</b>\" e clicca il bottone \"<b>Crea App</b>\"."
 
-msgid ""
-"Scroll down to \"<b>LIVE APP SETTINGS</b>\", find the \"<b>Live Return URL</"
-"b>\" heading then click \"<b>Show</b>\"."
-msgstr ""
-"Scendi giù fino a \"<b>LIVE APP SETTINGS</b>\", cerca il titolo \"<b>Live "
-"Return URL</b>\" e poi clicca \"<b>Mostra</b>\"."
-
-msgid ""
-"Scroll down to \"<b>App feature options</b>\" section and tick \"<b>Log In "
-"with PayPal</b>\"."
-msgstr ""
-"Scendi giù fino alla sezione \"<b>Caratteristiche e Opzioni dell'App</b>\" e "
-"spunta \"<b>Accedi con PayPal</b>\"."
-
 #, php-format
-msgid "Click %1$s that appears after the %2$s text."
+msgid ""
+"Scroll down to %1$s section, and turn off all features. ( If you are trying "
+"to set up social login in an existing App, then create a new App, as this "
+"App should be used only for social login because some of the non used "
+"features might cause scope specific problems. )"
 msgstr ""
 
-msgid "Tick \"<b>Full name</b>\"."
-msgstr "Spunta \"<b>Nome completo</b>\"."
+#, fuzzy, php-format
+#| msgid "Switch on the \"<b>%s</b>\" option."
+msgid "Find the %1$s feature and check the checkbox."
+msgstr "Scegli l'opzione \"<b>%s</b>\"."
+
+#, fuzzy, php-format
+#| msgid "Click on the \"<b>Create</b>\" button"
+msgid "Click on the %1$s link that you can find below the %2$s feature."
+msgstr "Clicca sul bottone \"<b>Crea</b>\""
+
+#, fuzzy, php-format
+#| msgid "Switch on the \"<b>%s</b>\" option."
+msgid "Scroll down to %1$s section, and tick the %2$s field."
+msgstr "Scegli l'opzione \"<b>%s</b>\"."
 
 #, php-format
 msgid ""
 "If you want to get the email address as well, then don't forget to tick %1$s "
 "option. In this case you should also enable the %2$s setting in our %3$s "
-"%4$s tab."
+"%4$s tab. ( If you enabled extra fields on our Sync data tab, don't forget "
+"to tick the other necessary fields either! )"
 msgstr ""
 
 msgid "Email scope"
 msgstr ""
 
-msgid "Fill \"<b>Privacy policy URL</b>\" and  \"<b>User agreement URL</b>\"."
-msgstr ""
-"Compila \"<b>URL Privacy policy</b>\" e \"<b>URL Accordo con l'utente</b>\"."
-
-msgid ""
-"Scroll up to \"<b>LIVE API CREDENTIALS</b>\" section and find the necessary "
-"\"<b>Client ID</b>\" and \"<b>Secret</b>\"! ( Make sure you are in "
-"\"<b>Live</b>\" mode and not \"Sandbox\". )"
-msgstr ""
-"Sali su fino alla sezione \"<b>LIVE API CREDENTIALS</b>\" e cerca il "
-"\"<b>Client ID</b>\" and \"<b>Secret</b>\" richiesti! (Accertati di trovarti "
-"nella modalità \"<b>Live</b>\" e non quella \"Sandbox\". )"
+#, fuzzy, php-format
+#| msgid "Switch on the \"<b>%s</b>\" option."
+msgid "Fill the %1$s and %2$s fields."
+msgstr "Scegli l'opzione \"<b>%s</b>\"."
 
 #, php-format
 msgid ""
-"%1$s Before you could start using the App, it requires an App review, which "
-"might take up to 7 business days to process. Below the %2$s field you can "
-"check the %3$s. Once your App got approved, you could continue with the "
-"provider verification in our %4$s tab."
+"Optional: If you want the unverified %1$s accounts to be able to login with "
+"your App, then check the %2$s field, too."
 msgstr ""
 
-#, fuzzy
-#| msgid "Important:"
-msgid "Important note:"
-msgstr "Importante:"
+#, fuzzy, php-format
+#| msgid "When all fields are filled, click \"<b>Save</b>\"."
+msgid "When all fields are filled, click %1$s in the modal."
+msgstr "Quando tutti i campi sono compilati, clicca \"<b>Salva</b>\"."
+
+#, php-format
+msgid ""
+"Once the %1$s feature is approved, scroll up to the %2$s section and find "
+"the necessary %3$s and %4$s values, you will need these on the %5$s tab of "
+"the plugin!"
+msgstr ""
 
 msgid "Secret"
 msgstr "Secret"
@@ -3338,6 +3737,70 @@ msgstr "Collega account con <b>PayPal</b>"
 
 msgid "Unlink account from <b>PayPal</b>"
 msgstr "Scollega account da <b>PayPal</b>"
+
+#, fuzzy, php-format
+#| msgid "Click on the name of your %s App."
+msgid "Click on %1$s in the bottom left corner of your %2$s App."
+msgstr "Clicca sul nome della tua %s App."
+
+#, php-format
+msgid "Replace your existing %s with this URL:"
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Click on the \"<b>Create</b>\" button"
+msgid "Click on the %s button"
+msgstr "Clicca sul bottone \"<b>Crea</b>\""
+
+#, php-format
+msgid "Make sure you have the %s radio option selected!"
+msgstr ""
+
+#, fuzzy, php-format
+#| msgid "Enter a \"<b>Description</b>\" for your app!"
+msgid "Enter a %s for your App."
+msgstr "Inserisci una \"<b>Descrizione</b>\" per la tua app!"
+
+#, fuzzy, php-format
+#| msgid "Enter a \"<b>Description</b>\" for your app!"
+msgid "Optional: Enter a %1$s and set an %2$s for your App."
+msgstr "Inserisci una \"<b>Descrizione</b>\" per la tua app!"
+
+#, fuzzy, php-format
+#| msgid ""
+#| "Complete the Human test and click the \"<b>Register my application</b>\" "
+#| "button."
+msgid "Complete the Human test and click the %s button."
+msgstr ""
+"Completa il \"Test Umano\" e clicca il bottone \"<b>Registra la mia "
+"applicazione</b>\"."
+
+#, php-format
+msgid ""
+"Finally find your %1$s, which is the value just below the name and type of "
+"your app, and the %2$s, which is the value next to %3$s. These will be "
+"needed in the plugin's settings."
+msgstr ""
+
+#, fuzzy
+#| msgid "Continue with <b>VK</b>"
+msgid "Continue with <b>Reddit</b>"
+msgstr "Continua con <b>VK</b>"
+
+#, fuzzy
+#| msgid "Continue with <b>VK</b>"
+msgid "Sign up with <b>Reddit</b>"
+msgstr "Continua con <b>VK</b>"
+
+#, fuzzy
+#| msgid "Link account with <b>VK</b>"
+msgid "Link account with <b>Reddit</b>"
+msgstr "Collega account con <b>VK</b>"
+
+#, fuzzy
+#| msgid "Unlink account from <b>VK</b>"
+msgid "Unlink account from <b>Reddit</b>"
+msgstr "Scollega account da <b>VK</b>"
 
 #, fuzzy, php-format
 #| msgid "Click on the name of your %s App."
@@ -3551,15 +4014,6 @@ msgid "To be able to create a %1$s, you need to spend at least $5 in the %2$s."
 msgstr ""
 
 #, fuzzy, php-format
-#| msgid ""
-#| "Enter your domain name to the \"<b>App Domains</b>\" field, probably: <b>"
-#| "%s</b>"
-msgid "Enter your domain name to the %1$s field, probably: %2$s"
-msgstr ""
-"Inserisci il nome del tuo dominio nel campo \"<b>Domini App</b>\", "
-"probabilmente: <b>%s</b>"
-
-#, fuzzy, php-format
 #| msgid "Choose the \"<b>OAuth client ID</b>\" option."
 msgid "Check the %1$s option."
 msgstr "Scegli l'opzione \"<b>OAuth client ID</b>\"."
@@ -3639,15 +4093,10 @@ msgstr ""
 #| msgid ""
 #| "Enter your domain name to the \"<b>App Domains</b>\" field, probably: <b>"
 #| "%s</b>"
-msgid ""
-"Enter your domain name into the %1$s field, if it is not added already: %2$s"
+msgid "Add the following URL to the %s field, if it is not added already: "
 msgstr ""
 "Inserisci il nome del tuo dominio nel campo \"<b>Domini App</b>\", "
 "probabilmente: <b>%s</b>"
-
-#, php-format
-msgid "Press the %s button."
-msgstr ""
 
 #, php-format
 msgid ""
@@ -3677,11 +4126,6 @@ msgid ""
 "website into the %3$s field, probably: %4$s"
 msgstr ""
 
-#, fuzzy, php-format
-#| msgid "Click on the \"<b>Create</b>\" button"
-msgid "Click on the %s button."
-msgstr "Clicca sul bottone \"<b>Crea</b>\""
-
 #, php-format
 msgid ""
 "Click on %1$s on the left hand menu then add the %2$s product, and press the "
@@ -3696,15 +4140,6 @@ msgstr "Sulla sinistra, clicca sulla tab \"<b>%s</b>\"."
 #, php-format
 msgid "Enter your %1$s and %2$s URLs."
 msgstr ""
-
-#, fuzzy, php-format
-#| msgid ""
-#| "Enter your domain name to the \"<b>App Domains</b>\" field, probably: <b>"
-#| "%s</b>"
-msgid "Enter your domain name into the %1$s field, probably: %2$s"
-msgstr ""
-"Inserisci il nome del tuo dominio nel campo \"<b>Domini App</b>\", "
-"probabilmente: <b>%s</b>"
 
 #, fuzzy, php-format
 #| msgid "Switch on the \"<b>%s</b>\" option."
@@ -3808,11 +4243,6 @@ msgid "Click on the %s button on the right side."
 msgstr "Clicca sul bottone \"<b>Crea</b>\""
 
 #, fuzzy, php-format
-#| msgid "Enter a \"<b>Description</b>\" for your app!"
-msgid "Enter a %s for your App."
-msgstr "Inserisci una \"<b>Descrizione</b>\" per la tua app!"
-
-#, fuzzy, php-format
 #| msgid "Click on the \"<b>Create</b>\" button"
 msgid "Select the %1$s option in the %2$s list."
 msgstr "Clicca sul bottone \"<b>Crea</b>\""
@@ -3858,6 +4288,9 @@ msgstr "Clicca sul bottone \"<b>Gestisci</b>\" vicino l'App associata."
 
 msgid "Go to the \"<b>Settings</b>\" menu"
 msgstr "Vai al menu \"<b>Settaggi</b>\""
+
+msgid "Click on \"<b>Update</b>\" to save the changes"
+msgstr "Clicca su \"<b>Aggiorna</b>\" per salvare le modifiche"
 
 msgid "Locate the blue \"<b>Create app</b>\" button and click on it."
 msgstr "Cerca il bottone \"<b>Crea app</b>\" e cliccaci."
@@ -4044,6 +4477,196 @@ msgstr "OR"
 
 msgid "Social accounts"
 msgstr "Account social"
+
+msgid "Registration confirmation will be emailed to you."
+msgstr "La conferma di registrazione ti sarà inviata per email."
+
+msgid "Password"
+msgstr "Password"
+
+#, fuzzy
+#| msgid "Confirm password"
+msgid "Hide password"
+msgstr "Conferma password"
+
+msgid "Strength indicator"
+msgstr "Indicatore di forza"
+
+msgid "Confirm use of weak password"
+msgstr "Conferma l'utilizzo di una password debole"
+
+msgid "Confirm password"
+msgstr "Conferma password"
+
+msgid "Username"
+msgstr "Username"
+
+#~ msgid ""
+#~ "Scroll down to \"<b>LIVE APP SETTINGS</b>\", find the \"<b>Live Return "
+#~ "URL</b>\" heading and click \"<b>Show</b>\"."
+#~ msgstr ""
+#~ "Scendi giù fino a \"<b>SETTAGGI APP LIVE</b>\", cerca il titolo \"<b>Live "
+#~ "Return URL</b>\" e clicca su \"<b>Mostra</b>\"."
+
+#~ msgid "Click on \"Save\""
+#~ msgstr "Clicca su \"Salva\""
+
+#~ msgid ""
+#~ "Scroll down to \"<b>LIVE APP SETTINGS</b>\", find the \"<b>Live Return "
+#~ "URL</b>\" heading then click \"<b>Show</b>\"."
+#~ msgstr ""
+#~ "Scendi giù fino a \"<b>LIVE APP SETTINGS</b>\", cerca il titolo \"<b>Live "
+#~ "Return URL</b>\" e poi clicca \"<b>Mostra</b>\"."
+
+#~ msgid ""
+#~ "Scroll down to \"<b>App feature options</b>\" section and tick \"<b>Log "
+#~ "In with PayPal</b>\"."
+#~ msgstr ""
+#~ "Scendi giù fino alla sezione \"<b>Caratteristiche e Opzioni dell'App</b>"
+#~ "\" e spunta \"<b>Accedi con PayPal</b>\"."
+
+#~ msgid "Tick \"<b>Full name</b>\"."
+#~ msgstr "Spunta \"<b>Nome completo</b>\"."
+
+#~ msgid ""
+#~ "Fill \"<b>Privacy policy URL</b>\" and  \"<b>User agreement URL</b>\"."
+#~ msgstr ""
+#~ "Compila \"<b>URL Privacy policy</b>\" e \"<b>URL Accordo con l'utente</b>"
+#~ "\"."
+
+#~ msgid ""
+#~ "Scroll up to \"<b>LIVE API CREDENTIALS</b>\" section and find the "
+#~ "necessary \"<b>Client ID</b>\" and \"<b>Secret</b>\"! ( Make sure you are "
+#~ "in \"<b>Live</b>\" mode and not \"Sandbox\". )"
+#~ msgstr ""
+#~ "Sali su fino alla sezione \"<b>LIVE API CREDENTIALS</b>\" e cerca il "
+#~ "\"<b>Client ID</b>\" and \"<b>Secret</b>\" richiesti! (Accertati di "
+#~ "trovarti nella modalità \"<b>Live</b>\" e non quella \"Sandbox\". )"
+
+#, fuzzy
+#~| msgid "Important:"
+#~ msgid "Important note:"
+#~ msgstr "Importante:"
+
+#~ msgid ""
+#~ "Enter your \"<b>Privacy policy URL</b>\" and upload an \"<b>App logo</b>\""
+#~ msgstr ""
+#~ "Inserisci l'URL della tua \"<b>Privacy policy</b>\" e carica un \"<b>logo "
+#~ "per l'App</b>\""
+
+#~ msgid ""
+#~ "Read and agree the \"<b>API Terms of Use</b>\" then click the \"<b>Create "
+#~ "App</b>\" button!"
+#~ msgstr ""
+#~ "Leggi e acconsenti ai \"<b>Termini di Utilizzo delle API</b>\" poi clicca "
+#~ "il bottone \"<b>Crea App</b>\"!"
+
+#, php-format
+#~ msgid "Find <b>\"%s\"</b> and click \"<b>Select</b>\"."
+#~ msgstr "Cerca <b>\"%s\"</b> e clicca \"<b>Seleziona</b>\"."
+
+#~ msgid "Click on the \"<b>Auth</b>\" tab."
+#~ msgstr "Clicca sulla tab \"<b>Auth</b>\"."
+
+#~ msgid ""
+#~ "Find the necessary \"<b>Client ID</b>\" and \"<b>Client Secret</b>\" "
+#~ "under the Application credentials section, on the <b>Auth</b> tab."
+#~ msgstr ""
+#~ "Cerca il \"<b>Client ID</b>\" and \"<b>Client Secret</b>\" richiesti "
+#~ "sotto la sezione Credenziali applicazione, nella tab <b>Auth</b>."
+
+#, fuzzy, php-format
+#~| msgid "Click on the \"<b>Create</b>\" button"
+#~ msgid "Pick the %1$s option for the platform."
+#~ msgstr "Clicca sul bottone \"<b>Crea</b>\""
+
+#~ msgid "Continue with <b>Twitter</b>"
+#~ msgstr "Continua con <b>Twitter</b>"
+
+#~ msgid "Sign up with <b>Twitter</b>"
+#~ msgstr "Registrati con <b>Twitter</b>"
+
+#~ msgid "Link account with <b>Twitter</b>"
+#~ msgstr "Collega account con <b>Twitter</b>"
+
+#~ msgid "Unlink account from <b>Twitter</b>"
+#~ msgstr "Scollega account da <b>Twitter</b>"
+
+#~ msgid "In the left sidebar, click on \"<b>Facebook Login > Settings</b>\""
+#~ msgstr ""
+#~ "Sulla barra laterale clicca clicca su \"<b>Accesso Facebook > "
+#~ "Impostazioni</b>\""
+
+#~ msgid "Click on \"<b>Save Changes</b>\""
+#~ msgstr "Clicca su \"<b>Salva Modifiche</b>\""
+
+#~ msgid ""
+#~ "Click on the \"<b>Create App</b>\" button and in the Popup choose the "
+#~ "\"<b>Consumer</b>\" App type!"
+#~ msgstr ""
+#~ "Clicca sul bottone \"<b>Crea un'App</b>\" e nel popup scegli \"<b>App "
+#~ "Utente</b>\"!"
+
+#~ msgid ""
+#~ "If you see the message \"<b>Become a Facebook Developer</b>\", then you "
+#~ "need to click on the green \"<b>Register Now</b>\" button, fill the form "
+#~ "then finally verify your account."
+#~ msgstr ""
+#~ "Se vedi il messaggio \"<b>Diventa uno Sviluppatore Facebook</b>\", dovrai "
+#~ "cliccare sul bottone verde \"<b>Registrati Adesso</b>\", compilare il "
+#~ "form ed infine verificare il tuo account."
+
+#, php-format
+#~ msgid "Find \"<b>%1$s</b>\" and click \"<b>Set Up</b>\"."
+#~ msgstr "Cerca <b>\"%s\"</b> e clicca \"<b>Imposta</b>\"."
+
+#, php-format
+#~ msgid ""
+#~ "Select \"<b>Web</b>\" and enter the following URL to the \"<b>Site URL</b>"
+#~ "\" field: <b>%s</b>"
+#~ msgstr ""
+#~ "Seleziona \"<b>Web</b>\" e inserisci la seguente URL nel campo \"<b>URL "
+#~ "sito internet</b>\": <b>%s</b>"
+
+#~ msgid "Press “<b>Save</b>”."
+#~ msgstr "Premi “<b>Salva</b>”."
+
+#, php-format
+#~ msgid ""
+#~ "Click on the “<b>%1$s</b>” option what you find on the left side, under "
+#~ "“<b>%2$s</b> - <b>%3$s</b>”"
+#~ msgstr ""
+#~ "Clicca sulla opzione “<b>%1$s</b>” che troverai sul lato sinistro, "
+#~ "sotto“<b>%2$s</b> - <b>%3$s</b>”"
+
+#~ msgid "Click on “<b>Save Changes</b>”."
+#~ msgstr "Clicca su \"<b>Salva Modifiche</b>”."
+
+#, php-format
+#~ msgid ""
+#~ "Enter your domain name to the \"<b>App Domains</b>\" field, probably: <b>"
+#~ "%s</b>"
+#~ msgstr ""
+#~ "Inserisci il nome del tuo dominio nel campo \"<b>Domini App</b>\", "
+#~ "probabilmente: <b>%s</b>"
+
+#~ msgid ""
+#~ "Select a “<b>Category</b>”, an “<b>App Icon</b>” and pick the “<b>App "
+#~ "Purpose</b>” option that describes your App the best, then press "
+#~ "\"<b>Save Changes</b>\"."
+#~ msgstr ""
+#~ "Seleziona una “<b>Categoria</b>”, una “<b>Icona dell'App</b>” e seleziona "
+#~ "l'opzione “<b>Finalità App</b>” che descriva al meglio la tua App, poi "
+#~ "premi \"<b>Salva Modifiche</b>\"."
+
+#~ msgid ""
+#~ "Your application is currently private, which means that only you can log "
+#~ "in with it. In the top bar switch the \"<b>App Mode</b>\" from "
+#~ "\"<b>Development</b>\" to \"<b>Live</b>\"."
+#~ msgstr ""
+#~ "La tua applicazione è attualmente privata, che significa che solo tu puoi "
+#~ "accedere con essa. Nella barra in alto cambia il selettore \"<b>Modalità "
+#~ "App</b>\" da \"<b>Sviluppo</b>\" a \"<b>Live</b>\"."
 
 #, fuzzy, php-format
 #~| msgid "Switch on the \"<b>%s</b>\" option."
@@ -4251,9 +4874,6 @@ msgstr "Account social"
 #~ msgctxt "NSL Register Form submit button text"
 #~ msgid "Register"
 #~ msgstr "Registra"
-
-#~ msgid "Once you have a project, you'll end up in the dashboard."
-#~ msgstr "Una volta ottenuto il progetto, ti troverai sulla dashboard."
 
 #~ msgid "Save your settings!"
 #~ msgstr "Salva le impostazioni!"

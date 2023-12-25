@@ -47,7 +47,11 @@
               <dd><a href="/chinh-sach-giao-nhan/"><?php _e('Delivery policy', 'storefront') ?></a></dd>
               <dd><a href="/huong-dan-mua-hang/"><?php _e('Shopping guide', 'storefront') ?></a></dd>
               <dd><a href="/hoi-dap/"><?php _e('FAQs', 'storefront') ?></a></dd>
-              <dd><a href="/<?php echo apply_filters( 'wpml_get_translated_slug', 'showroom', 'page' , 'ICL_LANGUAGE_CODE');?>"><?php _e('CONTACT US', 'storefront') ?></a></dd>
+              <dd><a href="/gioi-thieu/"><?php _e('About CARAS', 'storefront') ?></a></dd>
+              <dd><a href="/cach-deo-lens/"><?php _e('User manual', 'storefront') ?></a></dd>
+              <dd><a href="/blog/"><?php _e('Blog', 'storefront') ?></a></dd>
+
+              <dd><a href="/<?php echo apply_filters( 'wpml_get_translated_slug', 'showroom', 'page' , 'ICL_LANGUAGE_CODE');?>"><?php _e('Showroom', 'storefront') ?></a></dd>
             </dl>
           </dt>
           <dt>MEDICAL CERTIFICATES

@@ -255,8 +255,9 @@ class WC_Discounts {
 			return $is_coupon_valid;
 		}
 
-		if ( ! isset( $this->discounts[ $coupon->get_code() ] ) ) {
-			$this->discounts[ $coupon->get_code() ] = array_fill_keys( array_keys( $this->items ), 0 );
+		$coupon_code = $coupon->get_code();
+		if ( ! isset( $this->discounts[ $coupon_code ] ) || ! is_array( $this->discounts[ $coupon_code ] ) ) {
+			$this->discounts[ $coupon_code ] = array_fill_keys( array_keys( $this->items ), 0 );
 		}
 
 		$items_to_apply = $this->get_items_to_apply_coupon( $coupon );

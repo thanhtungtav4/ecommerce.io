@@ -3,6 +3,55 @@
 * Author: https://levantoan.com
 */
 
+add_action('flatsome_product_box_after','sold_flatsome_product_box_after');
+function sold_flatsome_product_box_after(){
+    echo do_shortcode('[devvn_sold]');
+}
+
+============ Css fix cho 1 số theme============================
+.devvn_list_item_popup_left .owl-nav > div.owl-next {
+    right: 10px;
+    left: auto;
+}
+
+.devvn_list_item_popup_left .owl-nav > div {
+    position: absolute;
+    top: 50%;
+    height: 40px;
+    width: 30px;
+    left: 10px;
+    color: #fff !important;
+    text-align: center;
+    line-height: 1 !important;
+    margin: -20px 0 0 0 !important;
+    text-indent: -999px;
+}
+
+.devvn_list_item_popup_left .owl-nav > div.owl-next:after {
+    content: "›";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 65px;
+    display: block;
+    text-indent: 0;
+    line-height: 1;
+    text-shadow: 0 0 3px #000;
+}
+
+.devvn_list_item_popup_left .owl-nav > div.owl-prev:after {
+    content: "‹";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 65px;
+    display: block;
+    text-indent: 0;
+    line-height: 1;
+    text-shadow: 0 0 3px #000;
+}
+============ Css fix cho 1 số theme============================
+
 add_filter('wc_get_template', 'custom_wc_get_template', 20, 2);
 function custom_wc_get_template($template, $template_name){
     global $devvn_review_settings;
@@ -32,7 +81,146 @@ function custom_devvn_reviews_image_mime_types($mime_types){
     return $mime_types;
 }
 
+/* Css for Blocksy*/
+a.devvn_buy_now.devvn_buy_now_ajax {
+    display: var(--display, inline-flex);
+    align-items: center;
+    justify-content: center;
+    min-height: var(--buttonMinHeight);
+    padding: var(--button-padding);
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: center;
+    border-radius: var(--buttonBorderRadius, 3px);
+    transition: all .2s ease;
+    --has-link-decoration: var(
+    --false);
+    background: red;
+    color: #fff;
+    font-family: var(--buttonFontFamily, var(--fontFamily));
+    font-size: var(--buttonFontSize);
+    font-weight: var(--buttonFontWeight);
+    font-style: var(--buttonFontStyle);
+    line-height: var(--buttonLineHeight);
+    letter-spacing: var(--buttonLetterSpacing);
+    text-transform: var(--buttonTextTransform);
+    -webkit-text-decoration: var(--buttonTextDecoration);
+    text-decoration: var(--buttonTextDecoration);
+    vertical-align: bottom;
+}
+.popup-customer-info-group .devvn-order-btn {
+    text-align: center;
+}
+.devvn_prod_variable .quantity {
+    width: 108px;
+    padding-left: 0;
+    margin-left: 94px;
+}
+.devvn_prod_variable .quantity .screen-reader-text {
+    left: -73px;
+    top: 15px;
+}
+a.devvn_buy_now.devvn_buy_now_style {
+    margin-top: 10px;
+}
+div#reviews.woocommerce-Reviews {
+    display: block !important;
+    max-width: var(--default-editor, var(--block-max-width)) !important;
+    margin-left: var(--default-editor, auto) !important;
+    margin-right: var(--default-editor, auto) !important;
+    width: var(--default-editor, var(--block-width)) !important;
+}
+div#comments {
+    width: 100% !important;
+}
+form#commentform {
+    display: block !important;
+}
+.comment-form-rating .stars.selected a:not(.active):before, .comment-form-rating .stars.selected a.active:before {
+    content: "S" !important;
+}
+.woocommerce-Reviews .comment_container {
+    padding-top: 0;
+}
+.woocommerce-Reviews .commentlist {
+    border-top: 0;
+}
+.woocommerce-Reviews .meta span:before {
+    display: none;
+}
+.woocommerce-Reviews .meta span {
+    text-indent: unset !important;
+    margin: unset !important;
+}
+/* End Css*/
+
+/*Hiện lại cookie*/
+add_filter('devvn_post_comment_form', function ($args){
+    if ( has_action( 'set_comment_cookies', 'wp_set_comment_cookies' ) && get_option( 'show_comments_cookies_opt_in' ) ) {
+        $html5 = 'html5' === $args['format'];
+        $checked_attribute  = ( $html5 ? ' checked' : ' checked="checked"' );
+        $consent = empty( $commenter['comment_author_email'] ) ? '' : $checked_attribute;
+        $args['fields']['cookies'] = sprintf(
+            '<p class="comment-form-cookies-consent">%s %s</p>',
+            sprintf(
+                '<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"%s />',
+                $consent
+            ),
+            sprintf(
+                '<label for="wp-comment-cookies-consent">%s</label>',
+                __( 'Save my name, email, and website in this browser for the next time I comment.' )
+            )
+        );
+    }
+    return $args;
+});
+.devvn_row_post_comment p.comment-form-cookies-consent {order: 6;width: 100%;display: block;position: absolute;top: 10px;}
+
+.devvn_row_post_comment {
+    position: relative;
+    padding-top: 46px !important;
+}
+/*End Hiện lại cookie*/
+
 == Những thay đổi ==
+
+= V1.4.9 - 05.08.2023 =
+
+* Fix lỗi avatar khi review không có email
+
+= V1.4.8 - 03.08.2023 =
+
+* Update core
+
+= V1.4.7 - 08.07.2023 =
+
+* Update lỗi thiếu shippingDetails and hasMerchantReturnPolicy trong schema cho plugin Schema Pro
+* Tối ưu shortcode hiển thị hình ảnh khách hàng.
+Ví dụ muốn thêm hình ảnh khách hàng vào chỗ bất kỳ trong trang sp thì dùng shortcode
+[devvn_list_reviews post_id="0" view_style="2" number="3" pc_column="3" tablet_column="3" mobile_column="3"]
+Nếu cần hiển thị cho sp nào khác thì thay post_id bằng ID của sản phẩm. Để 0 sẽ lấy sp hiện tại
+
+= V1.4.6 - 19.06.2023 =
+
+* Sửa lỗi thiếu shippingDetails and hasMerchantReturnPolicy trong schema. Cái này không bắt buộc nhưng google cứ báo nên fix luôn
+
+= V1.4.5 - 05.06.2023 =
+
+* Nâng cấp tương thích với chức năng High-Performance Order Storage (HPOS) trong Woocommerce. HPOS là 1 chức năng tối ưu cho order trong Woocommerce và sẽ mặc định ở Woocommerce V8.0
+* Thêm chức năng "nhắc đánh giá" tới khách hàng khi đơn hàng hoàn thành
+
+= V1.4.3 - 09.04.2023 =
+
+* Tối ưu core
+
+= V1.4.2 - 28.03.2023 =
+
+* Thêm hiệu ứng scroll lên đầu danh sách bình luận khi ấn phân trang bình luận trong trang sản phẩm
+* Fix lỗi upload ảnh ở chức năng "Tự động đánh giá" khi link ảnh không có đuôi file kiểu .jpg .png
 
 = V1.4.1 - 04.11.2022 =
 

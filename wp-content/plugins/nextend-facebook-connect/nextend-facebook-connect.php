@@ -2,8 +2,8 @@
 /*
 Plugin Name: Nextend Social Login
 Plugin URI: https://nextendweb.com/
-Description: Nextend Social Login displays social login buttons for Facebook, Google and Twitter.
-Version: 3.1.7
+Description: Nextend Social Login displays social login buttons for Facebook, Google and X (formerly Twitter).
+Version: 3.1.11
 Requires PHP: 7.0
 Requires at least: 4.9
 Author: Nextendweb

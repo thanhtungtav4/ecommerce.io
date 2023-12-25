@@ -2,7 +2,7 @@
 /**
  * Main class
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates
  * @version 1.0.0
  */
@@ -25,7 +25,7 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 		 * @const string
 		 * @since 2.0.0
 		 */
-		const VERSION = '2.10.0';
+		const VERSION = '3.2.0';
 
 		/**
 		 * Plugin version
@@ -76,6 +76,8 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 			// enqueue frontend scripts.
 			add_action( 'init', array( $this, 'register_scripts' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+
+			add_action( 'before_woocommerce_init', array( $this, 'declare_wc_features_support' ) );
 		}
 
 		/**
@@ -104,7 +106,7 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 			}
 
 			// register plugin script.
-			wp_register_script( 'yith-wcaf-shortcodes', YITH_WCAF_URL . "assets/js/yith-wcaf-shortcodes.bundle{$suffix}.js", array( 'jquery', 'jquery-blockui', 'jquery-ui-datepicker', 'selectWoo', 'wc-country-select' ), self::VERSION, true );
+			YITH_WCAF_Scripts::register( 'yith-wcaf-shortcodes', '', array( 'jquery', 'jquery-blockui', 'jquery-ui-datepicker', 'selectWoo', 'wc-country-select' ) );
 
 			/**
 			 * DO_ACTION: yith_wcaf_scripts_registered
@@ -319,6 +321,15 @@ if ( ! class_exists( 'YITH_WCAF' ) ) {
 			spl_autoload_call( 'YITH_WCAF_Coupons_Legacy' );
 			spl_autoload_call( 'YITH_WCAF_Payments_Legacy' );
 			spl_autoload_call( 'YITH_WCAF_Rate_Handler_Legacy' );
+		}
+
+		/**
+		 * Declare support for WooCommerce features.
+		 */
+		public function declare_wc_features_support() {
+			if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', YITH_WCAF_INIT, true );
+			}
 		}
 
 		/* === HELPER METHODS === */

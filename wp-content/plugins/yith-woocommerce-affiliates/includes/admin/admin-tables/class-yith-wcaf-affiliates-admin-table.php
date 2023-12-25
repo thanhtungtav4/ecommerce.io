@@ -2,7 +2,7 @@
 /**
  * Affiliate Table class
  *
- * @author  YITH
+ * @author  YITH <plugins@yithemes.com>
  * @package YITH\Affiliates\Classes
  * @version 1.0.0
  */
@@ -66,9 +66,16 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Table' ) ) {
 		public function display_empty_message() {
 			parent::display_empty_message();
 			?>
-			<a href="#" role="button" class="button yith-add-button yith-plugin-fw__button--xxl" >
+			<a id="yith-wcaf-create-affiliate" href="#" role="button" class="button yith-add-button yith-plugin-fw__button--xxl" >
 				<?php echo esc_html_x( 'Add affiliate', '[ADMIN] Add new affiliate button, in affiliates tab', 'yith-woocommerce-affiliates' ); ?>
 			</a>
+            <script type="text/javascript">
+                ( function () {
+                    var heading = document.querySelector( '.yith-plugin-fw__panel__content__page__title' ),
+                        button  = document.getElementById( 'yith-wcaf-create-affiliate' );
+                    heading && heading.parentNode.insertBefore( button, heading.nextSibling);
+                } )();
+            </script>
 			<?php
 		}
 
@@ -388,9 +395,9 @@ if ( ! class_exists( 'YITH_WCAF_Affiliates_Admin_Table' ) ) {
 				return;
 			}
 
+			$this->print_hidden_fields();
 			$this->print_affiliate_filter();
 			$this->print_filter_button();
-			$this->print_status_hidden();
 			$this->print_reset_button();
 		}
 

@@ -66,11 +66,11 @@ class PromoControllerWpf extends ControllerWpf {
 				}
 				$msg .= '<b>' . $fData['label'] . '</b>: ' . nl2br($data[ $fName ]) . '<br />';
 			}
-			if (FrameWpf::_()->getModule('mail')->send('support@supsystic.zendesk.com', $data['subject'], $msg, $data['name'], $data['email'])) {
+			/*if (FrameWpf::_()->getModule('mail')->send('support@supsystic.zendesk.com', $data['subject'], $msg, $data['name'], $data['email'])) {
 				update_option(WPF_CODE . '_last__time_contact_send', $time);
 			} else {
 				$res->pushError( FrameWpf::_()->getModule('mail')->getMailErrors() );
-			}
+			}*/
 		}
 		$res->ajaxExec();
 	}
